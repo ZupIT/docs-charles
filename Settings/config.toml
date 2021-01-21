@@ -61,13 +61,6 @@ description = "A Docsy example site"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.no]
-title = "Charles C.D."
-description = "Docsy er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
 
 [markup]
   [markup.goldmark]
@@ -140,6 +133,9 @@ sidebar_search_disable = false
 navbar_logo = true
 # Set to true to disable the About link in the site footer
 footer_about_disable = false
+
+main_slug_to_hide_primary = "docs-charles"
+main_slug_to_hide_secondary = "docs-charlespt"
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
 # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
