@@ -10,7 +10,7 @@ description: >-
 
 Circles are the main approach related to the [**new deploy concept**](../../../faq/about-charles#what-is-circle-deploy) brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
 
-![Circle generation with Charles deployments](/ docs-charles/deploy_em_circulos%20%289%29%20%281%29.png)
+![Circle generation with Charles deployments](/static/deploy_em_circulos.png)
 
 Circles indicate clients segmentation and also support the version management created for a specific audience.
 
