@@ -20,7 +20,7 @@ Porém, se todos do time tiverem a mesma permissão, podemos criar apenas um gru
 
 * Time do Produto X.
 
-![Visualiza&#xE7;&#xE3;o do Grupo de Usu&#xE1;rios &quot;Data Analysts do Produto X&quot;](/ docs-charles/image%20%283%29.png)
+![Visualiza&#xE7;&#xE3;o do Grupo de Usu&#xE1;rios &quot;Data Analysts do Produto X&quot;](/docs-charles/image%20%283%29.png)
 
 ## Permissões para o Grupo de Usuários no Workspace
 
@@ -33,7 +33,7 @@ Os seguintes perfis são suportados:
 * **Analista**: possui permissão para criar, editar e deletar círculos, módulos e hipóteses. E também pode visualizar as configurações dos módulos.
 * **Leitor**: pode visualizar círculos, hipóteses e módulos.
 
-![Escolha de permiss&#xE3;o ao associar um grupo de usu&#xE1;rios a um workspace.](/ docs-charles/chrome-capture-3-.gif)
+![Escolha de permiss&#xE3;o ao associar um grupo de usu&#xE1;rios a um workspace.](/docs-charles/chrome-capture-3-.gif)
 
 ### Mapa de Permissões
 

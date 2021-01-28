@@ -17,4 +17,4 @@ Certifique-se de que você já tenha instalado e configurado o [**Circle Matcher
 2. Utilize [**Circle Matcher**](../referencia/circle-matcher) para verificar se as regras lógicas criadas para as segmentações estão identificando corretamente os usuários. 
 3. Faça o deploy no círculo criado. 
 
-![](/ docs-charles/usando-circulos%20%281%29.gif)
+![](/docs-charles/usando-circulos%20%281%29.gif)

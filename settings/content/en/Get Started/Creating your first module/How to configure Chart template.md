@@ -27,7 +27,7 @@ The structure below has the necessary templates to deploy a module that contains
 
 The image below shows how your directory must look like: 
 
-![ Chart template directory of circle-sample](/ docs-charles/screen-shot-2020-08-13-at-09.16.04.png)
+![ Chart template directory of circle-sample](/docs-charles/screen-shot-2020-08-13-at-09.16.04.png)
 
 ### Step 2: configure the directory items 
 

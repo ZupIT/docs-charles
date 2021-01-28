@@ -7,7 +7,7 @@ weight: 80
 
 Charles offers metrics for you to monitor deploys and circles. 
 
-![](/ docs-charles/metrics-circ-e-deplo.png)
+![](/docs-charles/metrics-circ-e-deplo.png)
 
 ## Deploy metrics
 
@@ -25,7 +25,7 @@ There are other available information:
 
 See the example below:  
 
-![](/ docs-charles/deploy.gif)
+![](/docs-charles/deploy.gif)
 
 ## Circles metrics 
 
@@ -39,4 +39,4 @@ The circle metrics allows you to have an overview about your circles on Charles,
 
 See below: 
 
-![](/ docs-charles/erro.gif)
+![](/docs-charles/erro.gif)

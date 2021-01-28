@@ -18,7 +18,7 @@ Em configurações do workspace, clique na seção **Add Metric Action** e siga 
 **3. Type a description:** Descreva o sua action;  
 **4. Select a plugin:** Selecione um plugin para executar a ação.
 
-![](/ docs-charles/usandoactions-metricas%20%281%29.gif)
+![](/docs-charles/usandoactions-metricas%20%281%29.gif)
 
 {{% alert color="info" %}}
 O único plugin disponível no momento é o **circle deployment**. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
@@ -35,7 +35,7 @@ Depois de configurar sua action, você deve cadastrá-la no seu grupo de métric
    2. **Select action type:** Selecione a action que você configurou antes;
    3. **Action configuration:** Configuração de execução do plugin escolhido.
 
-![](/ docs-charles/adicionando-a-action-correto.gif)
+![](/docs-charles/adicionando-a-action-correto.gif)
 
 ### Como funciona? 
 
@@ -43,4 +43,4 @@ Dentro do seu círculo você cadastra o [**grupo de métricas**](../../referenci
 
 Você pode acompanhar o status da action no quadro dentro de 'Grupo de métricas', veja abaixo: 
 
-![](/ docs-charles/status-actionsgif.gif)
+![](/docs-charles/status-actionsgif.gif)

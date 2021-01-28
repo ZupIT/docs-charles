@@ -16,7 +16,7 @@ When a user access Charles, it is verified which manager was configured during t
 
 On the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if an customized IDM has been configurated, for example, Google, the user will be redirected to Google's page to proceed the authentication. If this is not the scenario, Charles authentication screen is returned to continue the flow.
 
-![](/ docs-charles/untitled-diagram-1-.png)
+![](/docs-charles/untitled-diagram-1-.png)
 
 ### Why configure an IDM? 
 

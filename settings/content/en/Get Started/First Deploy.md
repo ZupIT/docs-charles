@@ -25,7 +25,7 @@ Here, we will focus on the first approach with the following steps:
 
 After you have done the whole process above, your release will be ready to deploy.
 
-![Example of release created and ready to deploy](/ docs-charles/primeiro_deploy-1-%20%282%29%20%282%29.png)
+![Example of release created and ready to deploy](/docs-charles/primeiro_deploy-1-%20%282%29%20%282%29.png)
 
 Now, just follow the next steps to the [**Open Sea**](https://docs.charlescd.io/key-concepts) deploy:
 
@@ -37,4 +37,4 @@ Now, just follow the next steps to the [**Open Sea**](https://docs.charlescd.io/
 
 Finally, Charles will provide the created release on cluster in the Open Sea. The deploy status will be shown and updated along the process.
 
-![Example of a deploy in open sea](/ docs-charles/primeiro-deploy%20%281%29%20%281%29%20%282%29.gif)
+![Example of a deploy in open sea](/docs-charles/primeiro-deploy%20%281%29%20%281%29%20%282%29.gif)

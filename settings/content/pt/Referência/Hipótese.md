@@ -14,7 +14,7 @@ As hipóteses são as alternativas cadastradas na plataforma para resolver algum
 
 Imagine uma situação na qual duas equipes trabalham no mesmo produto e têm ideias diferentes para aumentar a taxa de conversão de clientes. A equipe A sugere adicionar um botão na página, enquanto a equipe B acredita que incluir um box de "_sugestão de venda_" será mais assertivo.
 
-![](/ docs-charles/hipoteses-1-.png)
+![](/docs-charles/hipoteses-1-.png)
 
 Dessa forma, o Charles possibilita que as duas equipes criem duas hipóteses distintas. Assim, cada uma, poderá conduzir o desenvolvimento através de um board gerado automaticamente. A partir disso, cada equipe poderá selecionar de forma independente, os círculos com usuários distintos para validar os resultados de cada uma das hipóteses.
 
@@ -27,7 +27,7 @@ Esses cartões podem ser de dois tipos:
 1. **Feature:** são os cartões que envolvem codificação, como a implementação de novas funcionalidades \(features\) ou ajustes em partes do projeto. 
 2. **Action:** são os cartões que indicam uma ação a ser feita, como, por exemplo, realizar um teste de campo com os usuários. 
 
-![](/ docs-charles/ref-hipoteses2%20%281%29.png)
+![](/docs-charles/ref-hipoteses2%20%281%29.png)
 
 Quando um cartão de feature é adicionado, o Charles cria uma nova branch no git do cliente que, por sua vez, é armazenada diretamente no SCM utilizado, seja ele Git ou Bitbucket. 
 
@@ -35,7 +35,7 @@ O nome da branch é escolhido pelo usuário por meio do campo **Branch name**, v
 
 ## Branches Protegidas
 
-![](/ docs-charles/branch_name.png)
+![](/docs-charles/branch_name.png)
 
 Quando você excluir ou alterar um cartão do tipo **feature** para o tipo **action,** a branch associada pode ser excluída. 
 
@@ -69,7 +69,7 @@ Se você alterar um cartão de feature para o de action e se a branch associada 
 
 Caso você exclua um cartão cuja branch associada estiver configurada como protegida, ao ir para opção de exclusão de cartão, perceberá que a branch virá desabilitada. Veja como na imagem abaixo:
 
-![](/ docs-charles/clipboard-2020-05-10-at-4.10.26-pm.png)
+![](/docs-charles/clipboard-2020-05-10-at-4.10.26-pm.png)
 
 ### Configuração
 
@@ -92,6 +92,6 @@ Depois que esse processo termina e todos os códigos são mesclados, uma nova ra
 
 * **Releases Deployed:** os cartões nessa coluna mostram de onde estão implantados os builds da hipótese.
 
-![](/ docs-charles/ref-hipoteses.png)
+![](/docs-charles/ref-hipoteses.png)
 
 Quando uma hipótese é movida para coluna **Ready To Go**, você indica ao sistema que aquele cartão pode passar pelo processo de **Generate Release Candidate**, ou seja, a hipótese se transformará em uma release branch da release master presente no seu git.

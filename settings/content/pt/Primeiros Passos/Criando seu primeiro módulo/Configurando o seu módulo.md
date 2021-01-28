@@ -22,7 +22,7 @@ Caso tenha microsserviços dentro deste fluxo que não fazem parte do seu teste,
 
 Veja abaixo: 
 
-![](/ docs-charles/header-propagation-ptbr-v2.png)
+![](/docs-charles/header-propagation-ptbr-v2.png)
 
 > 1. Ao realizar a chamada de um microsserviço, antes é obtido através do módulo `circle-matcher`o id do círculo que o usuário pertence.
 > 2. O id é inserido no header de todas as próximas requisições com a chave `X-Circle-Id`.

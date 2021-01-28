@@ -10,7 +10,7 @@ description: >-
 
 Circles are the main approach related to the [**new deploy concept**](../../../faq/about-charles#what-is-circle-deploy) brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
 
-![Circle generation with Charles deployments](/static/deploy_em_circulos.png)
+![Circle generation with Charles deployments](/docs-charles/deploy_em_circulos.png)
 
 Circles indicate clients segmentation and also support the version management created for a specific audience.
 
@@ -61,7 +61,7 @@ It is important to remember that your payload and your keys must be the same.
 
 See the example on how to create a circle below: 
 
-![How to create a circle](/ docs-charles/chrome-capture-7-.gif)
+![How to create a circle](/docs-charles/chrome-capture-7-.gif)
 
 {{% alert color="info" %}}
 **The best advantage to use segmentation** is the possibility to combine logic with several attributes to create different audience categories and, in this way, use them on hypothesis tests. 
@@ -86,17 +86,17 @@ This characteristics can be defined based on the following logics:
 
 See some examples below:
 
-![Example of manual segmentation](/ docs-charles/image%20%285%29.png)
+![Example of manual segmentation](/docs-charles/image%20%285%29.png)
 
 ### **Segmentation by CSV importation**
 
 This segmentation is used only in the first CSV column to create rules. The first line in the first column must contain the key name and the same one must be informed on the key field._._
 
-![Example of CSV importation](/ docs-charles/chrome-capture-5-.jpg)
+![Example of CSV importation](/docs-charles/chrome-capture-5-.jpg)
 
 After you have finished the file upload and saved the configuration, an overview will show up demonstrating how your segmentation is:
 
-![Overview of CVS importation](/ docs-charles/image%20%284%29.png)
+![Overview of CVS importation](/docs-charles/image%20%284%29.png)
 
 This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a .csv file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.
 
@@ -110,19 +110,19 @@ Once your circle is created, even without the configuration, it already has a si
 
 To get this information, select the workspace you want and then on the left menu, click on **Copy ID.**
 
-![](/ docs-charles/circuloid%20%282%29.gif)
+![](/docs-charles/circuloid%20%282%29.gif)
 
 ## Active and inactive circles
 
 The existence of releases defines if a circle is active or not, which is the implemented versions for users segmentation. Therefore, active circles have implemented releases while the inactive circle doesn't have any.
 
-![Active and Inactive circle filter](/ docs-charles/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7rKxDdQhwf1rfMyili%2F-M7rMicKEB9xYtEJ-28B%2Fchrome-capture%20%282%29.gif?alt=media&token=04dfdbc0-4976-489e-aee4-44ec4946640f)
+![Active and Inactive circle filter](/docs-charles/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7rKxDdQhwf1rfMyili%2F-M7rMicKEB9xYtEJ-28B%2Fchrome-capture%20%282%29.gif?alt=media&token=04dfdbc0-4976-489e-aee4-44ec4946640f)
 
 ## How to integrate circle with services?
 
 Once the **circle which the user belongs** to is detected, this information must be passed on to all next requests through the `x-circle-id` parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Let's see how it woks on example below:
 
-![](/ docs-charles/como_integrar_circulos_com_servicos_copy%20%282%29.png)
+![](/docs-charles/como_integrar_circulos_com_servicos_copy%20%282%29.png)
 
 At some point during the interaction of the user and your application **\(App1\)**, for example, the login - the **`Identify`** service of **`charles-circle-matcher`** - must be triggered to get the circle.
 
@@ -134,14 +134,14 @@ If the **`x-circle-id`** is not passed on, all the requests will be redirected t
 
 We will give an example of a specific scenario where your environment has two services: **Application A** and **Application B** and your circles must use the following versions:
 
-![](/ docs-charles/versoes_diferentes_na_minha_release_eng%20%281%29.png)
+![](/docs-charles/versoes_diferentes_na_minha_release_eng%20%281%29.png)
 
 So, the redirect logic using **`x-circle-id`** will be:
 
 1. The user sends to the header:  `x-circle-id="QA Circle"`. On this circle, the request will be redirect to a **X version** of the service on **Application A** and the **Y version** of the service on **Application B**. 
 2. The user sends to the header:  `x-circle-id=”Dev Circle”`. On this circle, the request will be redirect to the **Z version** of the service on **Application A** and **Z version** of the service on **Application B.** 
 
-![Example of Application 1 and Application 2](/ docs-charles/versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
+![Example of Application 1 and Application 2](/docs-charles/versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
 
 ## How to route your circles with Kubernetes Clusters?
 
@@ -159,7 +159,7 @@ Besides that, there is a default \(v1\) version for users that don't fit in any 
 
 Let's supposed that, to make a request to identify a user, an ID 8756 is returned. This information will be passed by the next service interaction through the header `x-circle-id`. The image below shows how Charles uses the internal resources to route the correct release.
 
-![](/ docs-charles/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&token=7b73c615-db6c-438e-a142-e4c131b6d606)
+![](/docs-charles/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&token=7b73c615-db6c-438e-a142-e4c131b6d606)
 
 When performing a version implementation in a circle, Charles makes all the configuration so that the routing is correctly done. To understand better how this works, let's use a scenario where a request comes from a service outside the stack, see the image above.
 

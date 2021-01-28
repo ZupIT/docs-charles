@@ -31,7 +31,7 @@ The project is available in the official [**repository**](http://github.com/zupi
 Before the steps, it is necessary to make an application image upload in your registred [**registry**](../../../../get-started/defining-a-workspace/docker-registry). 
 {{% /alert %}}
 
-![](/ docs-charles/usscreen-shot-2020-08-12-at-17.34.57.png)
+![](/docs-charles/usscreen-shot-2020-08-12-at-17.34.57.png)
 
 To access the Circles Sample chart template,[ **click here**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). If you have any doubts about this configuration, check here **a step by step reference**. 
 
@@ -43,7 +43,7 @@ To implement the default circle example, follow the steps:
 2. Select the **Default** circle; 
 3. Click on **Insert** release and choose the **Create Release** option.
 
-![](/ docs-charles/us2screen-shot-2020-08-12-at-18.11.44.png)
+![](/docs-charles/us2screen-shot-2020-08-12-at-18.11.44.png)
 
 {{% alert color="info" %}}
 On the **Version name** field, you have to inform the full name of the release you want to use. 
@@ -70,7 +70,7 @@ In case the installation had been made in another environment, make sure that th
 
 Access [http://localhost:8080](http://localhost:8080)
 
-![](/ docs-charles/us3screen-shot-2020-08-12-at-21.48.08.png)
+![](/docs-charles/us3screen-shot-2020-08-12-at-21.48.08.png)
 
 When accessing the circles sample screen, you need to fill out a form, so the sample is able to access the `moove` API to list the worspace circles you have defined. See below how to it: 
 
@@ -84,6 +84,6 @@ You can get this information on some request header, for example, circles list, 
 
 Now, you are able to create circles and identify in which circles the user will enter given a certain payload, see it on the images below: 
 
-![](/ docs-charles/us4screen-shot-2020-08-12-at-22.18.35.png)
+![](/docs-charles/us4screen-shot-2020-08-12-at-22.18.35.png)
 
-![](/ docs-charles/us4screen-shot-2020-08-12-at-22.20.44.png)
+![](/docs-charles/us4screen-shot-2020-08-12-at-22.20.44.png)

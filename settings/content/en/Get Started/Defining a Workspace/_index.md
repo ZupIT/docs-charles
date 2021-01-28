@@ -20,7 +20,7 @@ Each workspace has the following configurations:
 * [**Circle Matcher**](https://docs.charlescd.io/reference/circle-matcher);
 * [**Metrics provider**](https://docs.charlescd.io/reference/metrics). 
 
-![Workspace configuration](/ docs-charles/settings_-_workspace_-_11.4_-_add_group_permissions2x%20%282%29.png)
+![Workspace configuration](/docs-charles/settings_-_workspace_-_11.4_-_add_group_permissions2x%20%282%29.png)
 
 {{% alert color="warning" %}}
 The **root** user gives you the permission to create a workspace. However, users with **mantainer** profile are able to configure with the necessary information as well.
@@ -32,4 +32,4 @@ Once your workspace is created, even without the configuration definitions**,** 
 
 To get this information, select the workspace you want and then on the left menu, click on **Copy ID.**
 
-![](/ docs-charles/workspaceid%20%282%29.gif)
+![](/docs-charles/workspaceid%20%282%29.gif)

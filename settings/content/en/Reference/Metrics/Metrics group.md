@@ -16,7 +16,7 @@ To create your metrics group, follow the next steps:
 
 1. In **add metrics group**, type the name you want for your group and click on **add group**: 
 
-![](/ docs-charles/criacaogroup%20%281%29.gif)
+![](/docs-charles/criacaogroup%20%281%29.gif)
 
 After you have created your group, now you are able to register your metrics.
 
@@ -28,13 +28,13 @@ After you have created your group, now you are able to register your metrics.
 
 See the example below: 
 
-![](/ docs-charles/metric+filter%20%281%29.gif)
+![](/docs-charles/metric+filter%20%281%29.gif)
 
 5.  After that, define a **Threshold** to establish a limit to your metric. 
 
 For example, if you want to know if your application hits 50 errors, just customize the **threshold** and you will be notify when you hit this metric. 
 
-![](/ docs-charles/threshold%20%281%29.gif)
+![](/docs-charles/threshold%20%281%29.gif)
 
 {{% alert color="success" %}}
 Done! You have registered your metrics group.
@@ -42,7 +42,7 @@ Done! You have registered your metrics group.
 
 Now, you can follow up the result with graphics and the available information, as you can see below: 
 
-![](/ docs-charles/graficos%20%281%29.gif)
+![](/docs-charles/graficos%20%281%29.gif)
 
 ### **Metrics group: Advanced**
 
@@ -50,4 +50,4 @@ There is an **advanced** function inside the metrics group, you can customize yo
 
 See the example below: 
 
-![](/ docs-charles/advanced%20%281%29.png)
+![](/docs-charles/advanced%20%281%29.png)

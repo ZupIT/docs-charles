@@ -22,7 +22,7 @@ If there is a microservice inside this flow that doesn't make part of your test,
 
 See below: 
 
-![](/ docs-charles/header-propagation-v2-en.png)
+![](/docs-charles/header-propagation-v2-en.png)
 
 > 1. When you make a microservice request, `circle matcher` gets the circle id for this specific request. 
 > 2. The id is inserted in the header with the `X-Circle-Id` key.

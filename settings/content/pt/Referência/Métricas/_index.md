@@ -12,7 +12,7 @@ As métricas são os indicadores que permitem você quantificar o **desempenho e
 
 Com o Charles, você pode obter métricas de cada um dos seus círculos, possibilitando assim análises sobre a[ **saúde**](../../primeiros-passos/criando-seu-primeiro-modulo/#metricas-de-saude) de cada um deles.
 
-![Painel de m&#xE9;tricas no Charles ](/ docs-charles/metricas%20%281%29.png)
+![Painel de m&#xE9;tricas no Charles ](/docs-charles/metricas%20%281%29.png)
 
 ## Quais as métricas disponíveis no Charles?
 

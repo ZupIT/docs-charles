@@ -21,7 +21,7 @@ Cada workspace possui as seguintes configurações:
 * Personalização do [**Circle Matcher**](../../../referencia/circle-matcher).
 * Registro do [**Provedor de Métricas**](adicionando-o-datasource) das suas aplicações.
 
-![Configura&#xE7;&#xF5;es do workspace](/ docs-charles/settings_-_workspace_-_11.4_-_add_group_permissions2x.png)
+![Configura&#xE7;&#xF5;es do workspace](/docs-charles/settings_-_workspace_-_11.4_-_add_group_permissions2x.png)
 
 {{% alert color="warning" %}}
 A criação do workspace pode ser feita apenas pelo usuário **root**. Entretanto, o preenchimento das configurações podem também ser feitas pelos usuários associados ao workspace com perfil de **mantenedor**.
@@ -33,4 +33,4 @@ Assim que seu workspace é criado, mesmo sem a definição das configurações, 
 
 Para obter essa informação, selecione o workspace desejado e, no menu à esquerda, clique em **Copy ID**:
 
-![](/ docs-charles/workspaceid.gif)
+![](/docs-charles/workspaceid.gif)

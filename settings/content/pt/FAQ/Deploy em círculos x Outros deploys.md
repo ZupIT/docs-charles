@@ -12,9 +12,9 @@ description: >-
 
 Nos deploys tradicionais, é comum que a aplicação precise passar por diversos ambientes até chegar à produção. Já com o Charles, o sistema de deploys em círculos funciona somente em um ambiente de produção. A validação por release é fragmentada de acordo com os círculos selecionados, ou seja, você pode ir ampliando gradativamente o acesso à release a mais e mais círculos.
 
-![Processo de deploy tradicional](/ docs-charles/deploy-tradicional.png)
+![Processo de deploy tradicional](/docs-charles/deploy-tradicional.png)
 
-![Processo de deploy em c&#xED;rculos](/ docs-charles/deploy_em_circulos%20%285%29.png)
+![Processo de deploy em c&#xED;rculos](/docs-charles/deploy_em_circulos%20%285%29.png)
 
 
 
@@ -26,9 +26,9 @@ O principal benefício desta técnica é que o downtime é zero, trazendo mais s
 
 No caso do Charles, o deploy em círculos oferece ao time mais confiança e rapidez no lançamento de novas versões, com downtime zero e sem custos adicionais de infraestrutura. Além disso, é possível refinar através dos círculos quem serão os usuários que farão a validação da sua nova versão.
 
-![Processo de deploy blue-green](/ docs-charles/blue_green.png)
+![Processo de deploy blue-green](/docs-charles/blue_green.png)
 
-![Processo de deploy em c&#xED;rculos](/ docs-charles/deploy_em_circulos%20%287%29.png)
+![Processo de deploy em c&#xED;rculos](/docs-charles/deploy_em_circulos%20%287%29.png)
 
 
 
@@ -42,6 +42,6 @@ No caso do Charles, a lógica de deploys em círculos segue um padrão parecido 
 
 O grande diferencial da plataforma é que, caso algum problema seja encontrado ou a hipótese já tenha sido validada, a reversão é realizada de forma simples: você pode retirar os usuários daquele círculo, realizar o deploy de outra versão para aquele grupo ou levar a versão da aplicação para mar aberto, isto é, para todos os clientes que não estão inseridos em um círculo dentro do Charles.
 
-![Processo de release can&#xE1;rio](/ docs-charles/deploy_em_circulos_x_canary_releases%20%281%29.png)
+![Processo de release can&#xE1;rio](/docs-charles/deploy_em_circulos_x_canary_releases%20%281%29.png)
 
-![Processo de deploy em c&#xED;rculo](/ docs-charles/deploy_em_circulos%20%286%29.png)
+![Processo de deploy em c&#xED;rculo](/docs-charles/deploy_em_circulos%20%286%29.png)

@@ -28,7 +28,7 @@ Para começar, você precisa salvar os seus templates em uma ferramenta de versi
 
 A imagem demonstra como seu diretório deve ficar:  
 
-![ Diret&#xF3;rio de chart template do circle-sample](/ docs-charles/screen-shot-2020-08-13-at-09.16.04.png)
+![ Diret&#xF3;rio de chart template do circle-sample](/docs-charles/screen-shot-2020-08-13-at-09.16.04.png)
 
 ### Passo 2: Configure os itens do diretório 
 

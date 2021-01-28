@@ -25,7 +25,7 @@ The boards shows two cards categories: **the blue one represents a feature codin
 
 If you want to generate new releases, the blue cards represent features, when they are on the **Ready to Go** column, you select only one or a subset of them to build a release.
 
-![Example of cards selection ](/ docs-charles/gerando-release-board-1-%20%282%29%20%281%29.gif)
+![Example of cards selection ](/docs-charles/gerando-release-board-1-%20%282%29%20%281%29.gif)
 
 As soon as a release creation is triggered, a new branch with the prefix **release-darwin** will be created on the module repository and the configured CI tool will go off. Besides that, a new card with the **'Building'** status will show up on the **Builds** column to represent a process in progress.
 
@@ -39,7 +39,7 @@ Once you made it, the [**Villager**](https://github.com/ZupIT/charlescd/tree/mas
 Any cases of success or error will be shown on your release card.
 {{% /alert %}}
 
-![Example of release status](/ docs-charles/release-2%20%281%29.png)
+![Example of release status](/docs-charles/release-2%20%281%29.png)
 
 ### **Releases through existing images on configured Docker Registry**
 
@@ -49,7 +49,7 @@ If you are creating the circle at this moment, click on **Insert release** and t
 
 On the release creation screen, fill the name and select one module and its component. On the field beside, all available images on that component will be listed on the registry. Select one and, if it's necessary, add more modules to the release, clicking on **Add module** and repeat the previous process. When all your modules are registered, click on **deploy**.
 
-![Exemple of release creation by Registry images](/ docs-charles/releases-por-meio-de-imagens-existentes%20%281%29%20%281%29.gif)
+![Exemple of release creation by Registry images](/docs-charles/releases-por-meio-de-imagens-existentes%20%281%29%20%281%29.gif)
 
 After deploying this new release, it will be available to use in other circles, just look into '**Search for existing releases'** option.
 
@@ -57,4 +57,4 @@ After deploying this new release, it will be available to use in other circles, 
 
 If the release was generated through hypothesis board on your workspace, when you create a circle deploy, you are able to search for it on '**Search for existing releases**'.
 
-![Example of release search by circle deploy ](/ docs-charles/may-29-2020_17-21-33%20%281%29%20%281%29.gif)
+![Example of release search by circle deploy ](/docs-charles/may-29-2020_17-21-33%20%281%29%20%281%29.gif)

@@ -31,7 +31,7 @@ O projeto está disponibilizado no [**repositório**](http://github.com/zupit/ch
 É necessário um passo anterior onde seja feito upload da imagem da aplicação no seu [**registry**](../../../../../primeiros-passos/definindo-workspace/docker-registry) cadastrado.
 {{% /alert %}}
 
-![](/ docs-charles/screen-shot-2020-08-12-at-17.34.57.png)
+![](/docs-charles/screen-shot-2020-08-12-at-17.34.57.png)
 
 Para acessar o chart template do Circles Sample,[ **clique aqui**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). Caso tenha dúvida sobre essa configuração, veja a [**referência com um passo-a-passo**](../../../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template).
 
@@ -43,7 +43,7 @@ Para implantar o exemplo no círculo default, siga os passos:
 2. Selecione o círculo **Default**;
 3. Clique em **Insert release** e escolha a opção **Create Release**.
 
-![](/ docs-charles/screen-shot-2020-08-12-at-18.11.44.png)
+![](/docs-charles/screen-shot-2020-08-12-at-18.11.44.png)
 
 {{% alert color="info" %}}
 No campo **Version name** você deve informar o nome completo da release que você deseja utilizar.
@@ -70,7 +70,7 @@ Caso a instalação tenha sido feita em outro ambiente garanta que o Circles Sam
 
 Acesse [http://localhost:8080](http://localhost:8080)
 
-![](/ docs-charles/screen-shot-2020-08-12-at-21.48.08.png)
+![](/docs-charles/screen-shot-2020-08-12-at-21.48.08.png)
 
 Ao acessar a tela do circles sample, você precisa preencher um formulário para que o sample consiga acessar a API do `moove` e listar os círculos do workspace que você definiu. Veja abaixo como: 
 
@@ -84,6 +84,6 @@ Essas informações podem ser obtidas no header de alguma requisição como, por
 
 Agora, você pode criar círculos e identificar em qual círculo o usuário vai entrar  dado um determinado payload, como nas imagens abaixo: 
 
-![](/ docs-charles/screen-shot-2020-08-12-at-22.18.35.png)
+![](/docs-charles/screen-shot-2020-08-12-at-22.18.35.png)
 
-![](/ docs-charles/screen-shot-2020-08-12-at-22.20.44.png)
+![](/docs-charles/screen-shot-2020-08-12-at-22.20.44.png)

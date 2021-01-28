@@ -30,7 +30,7 @@ Nesta seção de passos iremos focar a primeira abordagem:
 
 Depois que você realizou o processo acima, sua release está pronta para o deploy. No exemplo abaixo, é a release em destaque: 
 
-![](/ docs-charles/chrome-capture-4-.gif)
+![](/docs-charles/chrome-capture-4-.gif)
 
 ### Deploy em mar aberto
 
@@ -44,4 +44,4 @@ Agora siga os seguintes passos para o deploy em[ **mar aberto:**](../principais-
 
 Depois disso, o Charles se encarregará de disponibilizar a release criada no cluster configurado em mar aberto. O status do deploy será exibido e atualizado conforme o progresso.
 
-![Exemplo de deploy em mar aberto](/ docs-charles/primeiro-deploy.gif)
+![Exemplo de deploy em mar aberto](/docs-charles/primeiro-deploy.gif)

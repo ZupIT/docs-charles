@@ -16,7 +16,7 @@ Para criar o seu grupo de métricas, siga os passos abaixo:
 
 1. Em **Add metrics group,** digite o nome que desejar para o seu grupo e clique em **add group**. 
 
-![](/ docs-charles/criacaogroup.gif)
+![](/docs-charles/criacaogroup.gif)
 
 Depois que você criou seu grupo, agora você pode cadastrar a sua métrica:
 
@@ -28,13 +28,13 @@ Depois que você criou seu grupo, agora você pode cadastrar a sua métrica:
 
 Veja abaixo: 
 
-![](/ docs-charles/metric+filter.gif)
+![](/docs-charles/metric+filter.gif)
 
 5.  Feito isso, defina um **Threshold** para estabelecer um limite para sua métrica. 
 
 Por exemplo, se você quiser saber quando sua aplicação atingir um limite de 50 erros, basta customizar o **threshold**  para que você seja informado de quando essa métrica for atingida. 
 
-![](/ docs-charles/threshold.gif)
+![](/docs-charles/threshold.gif)
 
 {{% alert color="success" %}}
 Pronto! Você cadastrou seu grupo de métricas. 
@@ -42,7 +42,7 @@ Pronto! Você cadastrou seu grupo de métricas.
 
 Agora acompanhe o resultado com os gráficos e as informações disponíveis. 
 
-![](/ docs-charles/graficos.gif)
+![](/docs-charles/graficos.gif)
 
 ### **Grupo de Métricas: Advanced** 
 
@@ -50,4 +50,4 @@ Há uma função **advanced** dentro do grupo. Aqui, você pode customizar sua p
 
 Veja como no exemplo abaixo: __
 
-![](/ docs-charles/advanced.png)
+![](/docs-charles/advanced.png)
