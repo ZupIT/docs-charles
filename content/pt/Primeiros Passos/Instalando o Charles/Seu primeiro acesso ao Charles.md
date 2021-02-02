@@ -43,7 +43,7 @@ Para mais informações de como mudar o host do seu sistema, [**acesse aqui**](h
 
 **Passo 3:** Por fim, digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.
 
-## 2. Microk8s
+## **2. Microk8s**
 
 O Microk8s está disponível para as Plataformas do Microsoft Windows, Apple MacOS e para Linux. 
 

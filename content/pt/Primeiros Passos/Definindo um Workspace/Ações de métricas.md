@@ -5,11 +5,11 @@ weight: 34
 
 ---
 
-## O que é? 
+## **O que é?** 
 
-Depois de [**cadastrar seu grupo de métricas**](../../../../../referencia/metricas/grupo-de-metricas), o Charles mostra o acompanhamento delas e oferece ações para cada uma delas. 
+Depois de [**cadastrar seu grupo de métricas**](/docs-charles/pt/referência/métricas/grupo-de-métricas/), o Charles mostra o acompanhamento delas e oferece ações para cada uma delas. 
 
-## Como configurar? 
+## **Como configurar?** 
 
 Em configurações do workspace, clique na seção **Add Metric Action** e siga os passos:
 
@@ -24,7 +24,7 @@ Em configurações do workspace, clique na seção **Add Metric Action** e siga 
 O único plugin disponível no momento é o **circle deployment**. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
 {{% /alert %}}
 
-### Adicionando a action 
+### **Adicionando a action** 
 
 Depois de configurar sua action, você deve cadastrá-la no seu grupo de métricas e adicioná-la ao seu círculo. Para fazer isso:
 
@@ -39,7 +39,7 @@ Depois de configurar sua action, você deve cadastrá-la no seu grupo de métric
 
 ### Como funciona? 
 
-Dentro do seu círculo você cadastra o [**grupo de métricas**](../../referencia/metricas/grupo-de-metricas), que é responsável por criar métricas que você quer acompanhar e você também vincula ações a esse grupo. Quando todos thresholds são alcançados, a ação será disparada e ocorrerá o que está descrito no plugin como, por exemplo, fazer o deploy daquele círculo em um outro círculo.
+Dentro do seu círculo você cadastra o [**grupo de métricas**](/docs-charles/pt/referência/métricas/grupo-de-métricas/), que é responsável por criar métricas que você quer acompanhar e você também vincula ações a esse grupo. Quando todos thresholds são alcançados, a ação será disparada e ocorrerá o que está descrito no plugin como, por exemplo, fazer o deploy daquele círculo em um outro círculo.
 
 Você pode acompanhar o status da action no quadro dentro de 'Grupo de métricas', veja abaixo: 
 

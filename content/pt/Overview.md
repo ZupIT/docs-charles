@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-## O que é o Charles?
+## **O que é o Charles?**
 
 O Charles é uma ferramenta open source que realiza deploys de forma ágil, contínua e segura, permitindo que as equipes de desenvolvimento realizem simultaneamente validações de hipóteses com grupos específicos de usuários. 
 
@@ -18,7 +18,7 @@ O produto traz um conceito pioneiro no mercado e na comunidade: **deploys em cí
 
 Neste modelo de deploy, é possível **segmentar seus clientes através de características específicas** e, ao mesmo tempo, submeter diversas versões de uma mesma aplicação para teste com os usuários dos círculos. 
 
-## Como nasceu o produto?
+## **Como nasceu o produto?**
 
 O Charles surgiu da necessidade de oferecer para a comunidade uma solução mais eficaz no trabalho de fazer deploys e testar hipóteses simultaneamente, permitindo mais rapidez na identificação de erros e execução de possíveis soluções para resolver os bugs. 
 
@@ -26,7 +26,7 @@ O conceito por trás da ferramenta remete à teoria proposta pelo biólogo _Char
 
 Por esse motivo, consideramos que o Charles é a aplicação do _darwinismo_ dentro do universo de desenvolvimento e programação.
 
-## O que o Charles faz?
+## **O que o Charles faz?**
 
 A metodologia implementada pelo Charles traz várias vantagens, como:
 
@@ -39,14 +39,14 @@ A metodologia implementada pelo Charles traz várias vantagens, como:
 
 Para utilizar o Charles, é preciso cumprir alguns pré-requisitos:
 
-1. **Instalação:** veja o que é necessário [**aqui**](primeiros-passos/instalando-charles/#pre-requisitos).
+1. **Instalação:** veja o que é necessário [**aqui**](/docs-charles/pt/primeiros-passos/instalando-o-charles/).
 2. Para o funcionamento completo da ferramenta é preciso:
 
-* Possuir um [**Registry**](primeiros-passos/definindo-workspace/docker-registry) onde as imagens das suas aplicações são armazenadas.
+* Possuir um [**Registry**](/docs-charles/pt/primeiros-passos/definindo-um-workspace/docker-registry/) onde as imagens das suas aplicações são armazenadas.
 * Definir um **fluxo de CI**. É esperado que esse fluxo seja ativado por meio de algum gatilho, por exemplo, um nome de branch que tenha um prefixo definido. Além disso, o pipeline deve realizar a construção da imagem da aplicação e o envio da mesma para o registry citado anteriormente.
-* Elaborar o [**Helm template**](primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template#o-que-e-o-helm) das suas aplicações. Isso é importante, porque o CD configurado por meio do Charles necessitará dessa informação para realizar o deploy da sua aplicação.
+* Elaborar o [**Helm template**](/docs-charles/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/) das suas aplicações. Isso é importante, porque o CD configurado por meio do Charles necessitará dessa informação para realizar o deploy da sua aplicação.
 
-## Arquitetura do sistema
+## **Arquitetura do sistema**
 
 A plataforma foi construída utilizando a abordagem de microsserviços e possui os seguintes módulos:
 

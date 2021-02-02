@@ -8,7 +8,7 @@ weight: 37
 After creating and configuring your workspace, it is necessary to add the modules.
 
 {{% alert color="info" %}}
-A **module** is your application stored in a [**Git repository previously registered**](https://docs.charlescd.io/get-started/defining-a-workspace).
+A **module** is your application stored in a [**Git repository previously registered**](/docs-charles/get-started/defining-a-workspace/_index2/).
 {{% /alert %}}
 
 To add it, access the **Modules** menu on your workspace and set the following properties:
@@ -18,7 +18,7 @@ To add it, access the **Modules** menu on your workspace and set the following p
 * **Helm repository URL:**  your repository where the helm template of your application it is in. 
 
 {{% alert color="info" %}}
-For more information about Helm Repository, [**access here**](how-to-configure-chart-template). 
+For more information about Helm Repository, [**access here**](/docs-charles/get-started/creating-your-first-module/how-to-configure-chart-template/). 
 {{% /alert %}}
 
 If you have a lot of applications on your repository, register them with the components and add the following:
@@ -30,12 +30,12 @@ In both cases, you need to inform the minimum risk value you'd like to be alerte
 
 ![Creating a module screen](/docs-charles/criac-a-o-de-modulo%20%282%29%20%281%29.png)
 
-## Components
+## **Components**
 
 {{% alert color="info" %}}
 Components are abstractions of the applications. If in your repository there are many applications, every component will match one of them.
 {{% /alert %}}
 
-### Health metrics
+### **Health metrics**
 
 For every component, it is possible to register metrics for health analysis: **latency** \(ms\) and **HTTP error** \(%\). When the limits are reached, or at least 10%, you will receive an alert that will show your application status on the circle that may have an issue.

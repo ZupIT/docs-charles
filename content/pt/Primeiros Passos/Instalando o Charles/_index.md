@@ -6,17 +6,17 @@ description: Esta seção descreve como instalar o Charles no seu projeto.
 
 ---
 
-## Componentes
+## **Componentes**
 
 A instalação do CharlesCD consiste nos seguintes **componentes**:
 
-1. Módulos específicos da[ **arquitetura do Charles**](../../#arquitetura-do-sistema)
+1. Módulos específicos da[ **arquitetura do Charles**](/docs-charles/pt/overview/)
 2. **Keycloak**, usado para autenticação e autorização no projeto.
 3. Um **banco PostgreSQL** que servirá os módulos de backend \(`moove`, `butler` ,`villager` e `charlescd-compass`\) e o Keycloak.
 4. Um **Redis** para uso do `charlescd-circle-matcher`
 5. Um módulo chamado **`octopipe`** está na instalação padrão do Charles. É uma plataforma nativa criada pelo time para que a instalação seja mais fácil e sem configurações prévias. Entretanto, é opcional e você pode desabilitá-la.
 
-##  Pré-Requisitos
+##  **Pré-Requisitos**
 
 Para instalar o Charles, será necessário um ambiente com os seguintes requisitos:
 
@@ -31,7 +31,7 @@ Para instalar o Charles, será necessário um ambiente com os seguintes requisit
 Quando você instala o Charles, ele já possui uma ingress padrão, no entanto se você quiser usar a sua própria, [**veja os passos para habilitá-la.** ](.././#ingress)
 {{% /alert %}}
 
-## Recursos mínimos
+## **Recursos mínimos**
 
 Os recursos mínimos considerando apenas a instalação do Charles são:
 
@@ -39,6 +39,6 @@ Os recursos mínimos considerando apenas a instalação do Charles são:
 * **Minikube**: 4GB de RAM;
 * **Cluster**: 2GB de RAM.
 
-## Próximos passos 
+## **Próximos passos**
 
 Nesta seção, você viu os componentes, pré-requisitos e recursos mínimos para instalar o Charles. Para continuar a instalação veja:

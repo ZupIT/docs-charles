@@ -20,7 +20,7 @@ Neste caso, você irá utilizar:
 ### Como instalar?
 
 {{% alert color="danger" %}}
-Esta instalação utiliza senhas padrões que podem ser encontradas no nosso repositório. Para trocá-las, opte pela [**instalação via helm**](instalando-via-helm) onde você pode realizar a troca das senhas.
+Esta instalação utiliza senhas padrões que podem ser encontradas no nosso repositório. Para trocá-las, opte pela [**instalação via helm**](/docs-charles/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/) onde você pode realizar a troca das senhas.
 {{% /alert %}}
 
 Para criar esta estrutura, basta executar os arquivos em algum cluster pré-configurado, como Minikube, GKE, EKS, etc. Os passos a serem executados são estes:

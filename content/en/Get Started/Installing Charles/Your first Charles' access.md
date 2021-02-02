@@ -111,7 +111,7 @@ microk8s.kubectl get svc -n charles
 
 ```
 
-**Passo 2:** now that you have the **external ip,** **replace the ip-external-charles,** add this line on your OS host file:
+**Step 2:** now that you have the **external ip,** **replace the ip-external-charles,** add this line on your OS host file:
 
 ```text
 <IP-EXTERNAL-CHARLES>       charles.info.example
