@@ -10,11 +10,11 @@ description: >-
 
 As métricas são os indicadores que permitem você quantificar o **desempenho e o status de suas aplicações** a partir da análise de dados expostos pelas próprias aplicações e pelas ferramentas de infraestrutura.
 
-Com o Charles, você pode obter métricas de cada um dos seus círculos, possibilitando assim análises sobre a[ **saúde**](../../primeiros-passos/criando-seu-primeiro-modulo/#metricas-de-saude) de cada um deles.
+Com o Charles, você pode obter métricas de cada um dos seus círculos, possibilitando assim análises sobre a[ **saúde**](/docs-charles/pt/primeiros-passos/criando-seu-primeiro-módulo/) de cada um deles.
 
 ![Painel de m&#xE9;tricas no Charles ](/docs-charles/metricas%20%281%29.png)
 
-## Quais as métricas disponíveis no Charles?
+## **Quais as métricas disponíveis no Charles?**
 
 Atualmente, é possível extrair duas métricas relacionadas ao CharlesCD, que são:
 
@@ -23,7 +23,7 @@ Atualmente, é possível extrair duas métricas relacionadas ao CharlesCD, que s
 | istio\_charles\_request\_total | Número total de requisições | Contador |
 | istio\_charles\_request\_duration\_seconds | Agrupamento do tempo de resposta de cada requisição | Histograma |
 
-### Metainformações
+### **Metainformações**
 
 A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.
 

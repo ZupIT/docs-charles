@@ -8,9 +8,9 @@ description: >-
 
 ---
 
-O grupo de métricas é uma funcionalidade que permite você cadastrar e organizar em grupos qualquer tipo de métrica dentro da sua aplicação. Essas métricas são relacionadas com o [**provedor que você cadastrou anteriormente**](../../../primeiros-passos/definindo-workspace/adicionando-o-datasource). 
+O grupo de métricas é uma funcionalidade que permite você cadastrar e organizar em grupos qualquer tipo de métrica dentro da sua aplicação. Essas métricas são relacionadas com o [**provedor que você cadastrou anteriormente**](/docs-charles/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/). 
 
-### Como criar um grupo?
+### **Como criar um grupo?**
 
 Para criar o seu grupo de métricas, siga os passos abaixo:
 
@@ -48,6 +48,6 @@ Agora acompanhe o resultado com os gráficos e as informações disponíveis.
 
 Há uma função **advanced** dentro do grupo. Aqui, você pode customizar sua própria métrica, como por exemplo, uma query de banco de dados, ou ainda especificar de acordo com a sua necessidade.
 
-Veja como no exemplo abaixo: __
+Veja como no exemplo abaixo: 
 
 ![](/docs-charles/advanced.png)

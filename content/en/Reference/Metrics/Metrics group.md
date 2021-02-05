@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**provider you previously registred.** ](../../../get-started/defining-a-workspace/register-metrics-provider)
+The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**provider you previously registred.** ](/docs-charles/get-started/defining-a-workspace/datasource/)
 
 ### **How to create?**
 

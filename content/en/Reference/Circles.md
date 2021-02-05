@@ -8,31 +8,31 @@ description: >-
 
 ---
 
-Circles are the main approach related to the [**new deploy concept**](../../../faq/about-charles#what-is-circle-deploy) brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
+Circles are the main approach related to the [**new deploy concept**](/docs-charles/faq/about-charles/) brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
 
 ![Circle generation with Charles deployments](/docs-charles/deploy_em_circulos.png)
 
 Circles indicate clients segmentation and also support the version management created for a specific audience.
 
-Once the right people are chosen to have access to your release associated to a circle, Charles will generate a[ **series of business or performance metrics**](metrics/#charles-available-metrics). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
+Once the right people are chosen to have access to your release associated to a circle, Charles will generate a[ **series of business or performance metrics**](/docs-charles/reference/metrics/charles-metrics/). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
 
-## How to create circles?
+## **How to create circles?**
 
-To create a circle, you just have to follow these steps:
+To create a circle, just follow these steps:
 
 **1.** Click on Create Circle.  
 **2.** Give a name to your circle.  
 **3.** Define a segmentation.  
 **4.** \[Optional\] Implement a release.
 
-## What is a segmentation? 
+## **What is a segmentation?**
 
 Segmentations are a subset of characteristics that you define to put all your users together in a circle. To make this happen, there are two ways to segment your users: 
 
 * **By filling in information manually** 
 * Through a **CVS file importation**.
 
-### How do you define it? 
+### **How do you define it?** 
 
 Segmentations have the following fields that you have to fill: 
 
@@ -40,7 +40,7 @@ Segmentations have the following fields that you have to fill:
 * **Conditional:** it is the logic implication that will condition your key and value.
 * **Value:** they are the values in your base that can be used to make the segmentation logic.
 
-The key and value fields are established based on the information that will be sent in the request, that [**identifies the circles**](../../get-started/defining-a-workspace/circle-matcher) where your user belong to. For example, the following payload could represent the information you have about a client: 
+The key and value fields are established based on the information that will be sent in the request, that [**identifies the circles**](/docs-charles/get-started/defining-a-workspace/circle-matcher/) where your user belong to. For example, the following payload could represent the information you have about a client: 
 
 ```text
 {
@@ -59,12 +59,12 @@ The keys used could be any of the ones sent in your application payload to the C
 It is important to remember that your payload and your keys must be the same. 
 {{% /alert %}}
 
-See the example on how to create a circle below: 
+Check out an example on how to create a circle below: 
 
 ![How to create a circle](/docs-charles/chrome-capture-7-.gif)
 
 {{% alert color="info" %}}
-**The best advantage to use segmentation** is the possibility to combine logic with several attributes to create different audience categories and, in this way, use them on hypothesis tests. 
+**The best advantage to use segmentation** is the possibility to combine logic with several attributes to create different audience categories and use them on hypothesis tests. 
 
 For example, using the characteristics ‘profession’ and ‘region’, you are able to create a circle with engineers from the brazilian north region, another one with engineers from the southeast and a third one with all brazilians engineers.
 {{% /alert %}}
@@ -98,13 +98,13 @@ After you have finished the file upload and saved the configuration, an overview
 
 ![Overview of CVS importation](/docs-charles/image%20%284%29.png)
 
-This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a .csv file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.
+This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a **.csv** file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.
 
 {{% alert color="warning" %}}
 OR is the only logic operator supported on this segmentation.
 {{% /alert %}}
 
-### How to get **my circle's identifier**?  <a id="como-obter-o-identificador-do-meu-workspace"></a>
+### **How to get my circle's identifier?** 
 
 Once your circle is created, even without the configuration, it already has a single identifier. 
 
@@ -112,19 +112,19 @@ To get this information, select the workspace you want and then on the left menu
 
 ![](/docs-charles/circuloid%20%282%29.gif)
 
-## Active and inactive circles
+## **Active and inactive circles**
 
 The existence of releases defines if a circle is active or not, which is the implemented versions for users segmentation. Therefore, active circles have implemented releases while the inactive circle doesn't have any.
 
-![Active and Inactive circle filter](/docs-charles/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7rKxDdQhwf1rfMyili%2F-M7rMicKEB9xYtEJ-28B%2Fchrome-capture%20%282%29.gif?alt=media&token=04dfdbc0-4976-489e-aee4-44ec4946640f)
+![Active and Inactive circle filter]((\docs-charles\reference\chrome-capture-activeinactivecircles.gif))
 
-## How to integrate circle with services?
+## **How to integrate circle with services?**
 
 Once the **circle which the user belongs** to is detected, this information must be passed on to all next requests through the `x-circle-id` parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Let's see how it woks on example below:
 
 ![](/docs-charles/como_integrar_circulos_com_servicos_copy%20%282%29.png)
 
-At some point during the interaction of the user and your application **\(App1\)**, for example, the login - the **`Identify`** service of **`charles-circle-matcher`** - must be triggered to get the circle.
+At some point during the interaction of the user and your application **\(App1\)**, for example, the login -  **`Identify`** service of **`charles-circle-matcher`** - must be triggered to get the circle.
 
 By that, the ID must be passed on as value in the **`x-circle-id`** parameter located on the header of all next requests of your services **\(`App2`\).** Charles is responsible to disseminate this information because when it's received on Kubernetes, it will be used to redirect the request to a corresponding release version associated with a circle.
 
@@ -132,7 +132,7 @@ If the **`x-circle-id`** is not passed on, all the requests will be redirected t
 
 ### **Mix of services with different versions of my release**
 
-We will give an example of a specific scenario where your environment has two services: **Application A** and **Application B** and your circles must use the following versions:
+Check this example of a specific scenario where your environment has two services: **Application A** and **Application B** and your circles must use the following versions:
 
 ![](/docs-charles/versoes_diferentes_na_minha_release_eng%20%281%29.png)
 
@@ -143,7 +143,7 @@ So, the redirect logic using **`x-circle-id`** will be:
 
 ![Example of Application 1 and Application 2](/docs-charles/versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
 
-## How to route your circles with Kubernetes Clusters?
+## **How to route your circles with Kubernetes Clusters?**
 
 **Charles** involves [**Kubernetes**](https://kubernetes.io/docs/home/) and [**Istio**](https://istio.io/docs/) on traffic routing. Let's think about a scenario where there are two circles:
 

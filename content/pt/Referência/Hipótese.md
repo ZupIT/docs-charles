@@ -18,7 +18,7 @@ Imagine uma situação na qual duas equipes trabalham no mesmo produto e têm id
 
 Dessa forma, o Charles possibilita que as duas equipes criem duas hipóteses distintas. Assim, cada uma, poderá conduzir o desenvolvimento através de um board gerado automaticamente. A partir disso, cada equipe poderá selecionar de forma independente, os círculos com usuários distintos para validar os resultados de cada uma das hipóteses.
 
-## Como criar hipóteses?
+## **Como criar hipóteses?**
 
 Ao cadastrar uma hipótese dentro do Charles, a sua requisição será encaminhada ao `charlescd-moove`. Ao final desse processo, o sistema irá gerar automaticamente um quadro \(board\) no qual é possível criar e gerenciar cartões com as releases e as ações necessárias para testar as hipóteses levantadas.
 
@@ -33,7 +33,7 @@ Quando um cartão de feature é adicionado, o Charles cria uma nova branch no gi
 
 O nome da branch é escolhido pelo usuário por meio do campo **Branch name**, veja abaixo:
 
-## Branches Protegidas
+## **Branches Protegidas**
 
 ![](/docs-charles/branch_name.png)
 
@@ -43,13 +43,13 @@ Se a branch já existir, ela é associada somente ao cartão.
 
 Para evitar exclusões indevidas de branches, o Charles permite a configuração de **branches protegidas**. Essas branches não podem ser excluídas pelo Charles. 
 
-### Excluindo um Cartão
+### **Excluindo um Cartão**
 
 Se você excluir um cartão ou alterar um cartão de feature para o de action e  a branch associada se encontrar na lista de branches protegidas; a exclusão da branch será ignorada.
 
 Existem 3 opções de de exclusão de cartão:
 
-### Configuração <a id="configuracao"></a>
+### **Configuração**
 
 1. **Arquivar:** Somente desabilita o cartão;
 2. **Excluir card:** Exclui somente o card;
@@ -57,9 +57,7 @@ Existem 3 opções de de exclusão de cartão:
 
 A configuração é realizada por meio da propriedade de ambiente `charlescd.protected.branches`no módulo `moove`. O valor padrão dela é **master**, **main** e **trunk**.
 
-## Branches Protegidas
-
-## Gestão do Board
+## **Gestão do Board**
 
 Quando você excluir ou alterar um cartão do tipo **feature** para o tipo **action,** a branch associada pode ser excluída. 
 
@@ -71,7 +69,7 @@ Caso você exclua um cartão cuja branch associada estiver configurada como prot
 
 ![](/docs-charles/clipboard-2020-05-10-at-4.10.26-pm.png)
 
-### Configuração
+### **Configuração**
 
 A configuração é realizada por meio da propriedade de ambiente `charlescd.protected.branches`no módulo `moove`. O valor padrão dela é **master**, **main** e **trunk**.
 
