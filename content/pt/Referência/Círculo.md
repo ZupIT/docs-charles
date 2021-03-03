@@ -10,7 +10,8 @@ description: >-
 
 Os círculos são o principal diferencial do [**novo conceito de deploy** ](../../../faq/sobre-charles#o-que-e-deploy-em-circulos)trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
 
-![Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles](/docs-charles/deploy_em_circulos%20%288%29%20%281%29.png)
+![Geração de círculos com o Charles](/docs-charles/deploy_em_circulos.png)
+
 
 Além de indicar as segmentações de clientes, os círculos também auxiliam na gestão de versões implantadas para este público.
 

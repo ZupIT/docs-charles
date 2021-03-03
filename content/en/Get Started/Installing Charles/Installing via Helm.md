@@ -6,7 +6,7 @@ weight: 8
 ---
 
 {{% alert color="info" %}}
-Before proceeding, make sure that all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure that all the [**requirements**](/docs-charles/get-started/installing-charles/_index2/) are properly installed.
 {{% /alert %}}
 
 This installation is recommended for those who already has an infrastructure to deal with a more complex environment or who has some limitations of security/scalability, which demands a **more complete install customization** of CharlesCD.  

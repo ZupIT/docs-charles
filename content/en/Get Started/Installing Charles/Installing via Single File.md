@@ -6,7 +6,7 @@ weight: 6
 ---
 
 {{% alert color="info" %}}
-Before proceeding, make sure that all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure that all the [**requirements**](/docs-charles/get-started/installing-charles/_index2/) are properly installed.
 {{% /alert %}}
 
 This installation is recommended for those who never used Charles before and just want the **first contact in a testing environment**, without looking for scalability or security.

@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-### O que é Identity Manager \(IDM\)?
+### **O que é Identity Manager \(IDM\)?**
 
 É o responsável por gerenciar a identidade dos usuários que acessarão uma determinada aplicação, neste caso, o Charles.
 
@@ -20,17 +20,17 @@ No exemplo da imagem abaixo, é ilustrado um fluxo onde se faz a verificação d
 
 ![](/docs-charles/untitled-diagram-1-.png)
 
-### Porque configurar um IDM?
+### **Porque configurar um IDM?**
 
 Para garantir a segurança dos acessos ao Charles, é necessário ter um gerenciador de identidade. Para isso, o Charles oferece duas opções:
 
-### IDM Padrão
+### **IDM Padrão**
 
 Na instalação padrão do Charles, já existe o **Keycloak** que é utilizado para fazer a gestão dos usuários. Portanto, se você não tem um IDM personalizado que queira utilizar, a instalação padrão te oferece esse suporte.
 
-### IDM Externa
+### **IDM Externa**
 
-Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na [**referência sobre IDM**](../../../referencia/identity-manager).
+Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na [**referência sobre IDM**](/docs-charles/pt/referência/identity-manager/).
 
 {{% alert color="info" %}}
 Há alguns fluxos bloqueados quando um IDM externo é utilizado, veja abaixo: 

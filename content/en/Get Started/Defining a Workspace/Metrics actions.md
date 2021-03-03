@@ -5,11 +5,11 @@ weight: 34
 
 ---
 
-## What is it? 
+## **What is it?** 
 
-After you had [**register your metrics group**](../../../../../reference/metrics/metrics-group), Charles follows up and offers actions for each one of them. 
+After you had [**register your metrics group**](/docs-charles/reference/metrics/metrics-group), Charles follows up and offers actions for each one of them. 
 
-## How to configure? 
+## **How to configure?** 
 
 In workspace configuration, click on the section **Add Metric Action** and follow the steps: 
 
@@ -24,7 +24,7 @@ In workspace configuration, click on the section **Add Metric Action** and follo
 The only available plugin so far is **circle deployment**. Charles allows you to make your own plugin, the way you want and to fulfill your application's purpose, for example, an action that sends an email to warn your circle status.
 {{% /alert %}}
 
-### Adding an action
+### **Adding an action**
 
 After you have configured your action, you have to register in your metrics group and add it to your circle. To do that: 
 
@@ -36,7 +36,7 @@ After you have configured your action, you have to register in your metrics grou
 
 ![](/docs-charles/adicionando-a-action-correto%20%281%29.gif)
 
-### How does it work? 
+### **How does it work?** 
 
 Inside your circle you register the [**metrics group**](../../reference/metrics/metrics-group), which it is responsible to create metrics that you want to track and you can also add action to this group. When you get to the threshold, the action will be triggered and what it is described in your plugin will happen, like for example, make a deploy of one circle in another circle. 
 

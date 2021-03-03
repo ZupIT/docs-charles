@@ -9,12 +9,12 @@ description: >-
 ---
 
 {{% alert color="info" %}}
-Após criar o seu primeiro [**módulo** ](criando-seu-primeiro-modulo/)e cadastrar as [**credenciais do seu cluster**,](definindo-workspace/ambiente-de-deploy) você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](../../../referencia/release) e disponibilizá-la no cluster configurado.
+Após criar o seu primeiro [**módulo** ](/docs-charles/pt/primeiros-passos/criando-seu-primeiro-módulo/)e cadastrar as [**credenciais do seu cluster**,](/docs-charles/pt/primeiros-passos/definindo-um-workspace/ambiente-de-deploy/) você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](/docs-charles/pt/referência/release/) e disponibilizá-la no cluster configurado.
 {{% /alert %}}
 
-### Como fazer o primeiro deploy?
+### **Como fazer o primeiro deploy?**
 
-No CharlesCD, há duas alternativas para a criação de uma release: utilizar o fluxo de um quadro de [**hipótese**](../../referencia/hipotese) ou criá-la a partir de imagens docker já disponíveis no [**registry** ](definindo-workspace/docker-registry)configurado. 
+No CharlesCD, há duas alternativas para a criação de uma release: utilizar o fluxo de um quadro de [**hipótese**](/docs-charles/pt/referência/hipotese) ou criá-la a partir de imagens docker já disponíveis no [**registry** ](/docs-charles/pt/primeiros-passos/definindo-um-workspace/docker-registry/)configurado. 
 
 Nesta seção de passos iremos focar a primeira abordagem:
 
@@ -32,9 +32,9 @@ Depois que você realizou o processo acima, sua release está pronta para o depl
 
 ![](/docs-charles/chrome-capture-4-.gif)
 
-### Deploy em mar aberto
+### **Deploy em mar aberto**
 
-Agora siga os seguintes passos para o deploy em[ **mar aberto:**](../principais-conceitos#mar-aberto-default)
+Agora siga os seguintes passos para o deploy em[ **mar aberto:**](/docs-charles/pt/principais-conceitos/)
 
 1. Na tela inicial do Charles, clique em **Circles**;
 2. Clique no círculo **Default** \(Este representa o mar aberto\);
