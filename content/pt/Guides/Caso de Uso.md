@@ -8,12 +8,12 @@ description: >-
 
 ---
 
-## Circles Sample
+## **Circles Sample**
 
 Circles Sample é uma aplicação desenvolvida pelo nosso time para que você possa implantá-la em um ambiente de testes e conhecer melhor sobre o conceito de **deploy em círculos**. Além disso, ela pode ser utilizada para entender como configurar o chart template da sua aplicação.
 
 {{% alert color="info" %}}
- Para reproduzir este caso de uso é necessário que você já tenha um workspace definido, para saber mais [**veja essa seção**](../../../../../../primeiros-passos/definindo-workspace/)
+ Para reproduzir este caso de uso é necessário que você já tenha um workspace definido, para saber mais [**veja essa seção**](/docs-charles/pt/primeiros-passos/definindo-um-workspace/)
 {{% /alert %}}
 
 O caso de uso se baseia nos seguintes passos:
@@ -23,19 +23,19 @@ O caso de uso se baseia nos seguintes passos:
 3. Configuração para acesso ao Circles Sample através do seu cluster de Kubernetes;
 4. Teste da aplicação utilizando círculos diferentes.
 
-### Cadastrando o Circles Sample nos seus módulos
+### **Cadastrando o Circles Sample nos seus módulos**
 
 O projeto está disponibilizado no [**repositório**](http://github.com/zupit/charlescd) oficial, para fazer o cadastro do módulo, siga as configurações abaixo:
 
 {{% alert color="warning" %}}
-É necessário um passo anterior onde seja feito upload da imagem da aplicação no seu [**registry**](../../../../../primeiros-passos/definindo-workspace/docker-registry) cadastrado.
+É necessário um passo anterior onde seja feito upload da imagem da aplicação no seu [**registry**](/docs-charles/pt/primeiros-passos/definindo-um-workspace/docker-registry/) cadastrado.
 {{% /alert %}}
 
 ![](/docs-charles/screen-shot-2020-08-12-at-17.34.57.png)
 
-Para acessar o chart template do Circles Sample,[ **clique aqui**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). Caso tenha dúvida sobre essa configuração, veja a [**referência com um passo-a-passo**](../../../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template).
+Para acessar o chart template do Circles Sample,[ **clique aqui**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). Caso tenha dúvida sobre essa configuração, veja a [**referência com um passo-a-passo**](/docs-charles/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/).
 
-### Implantando uma versão no círculo Default
+### **Implantando uma versão no círculo Default**
 
 Para implantar o exemplo no círculo default, siga os passos: 
 
@@ -49,9 +49,9 @@ Para implantar o exemplo no círculo default, siga os passos:
 No campo **Version name** você deve informar o nome completo da release que você deseja utilizar.
 {{% /alert %}}
 
-### Expondo a aplicação
+### **Expondo a aplicação**
 
-#### Minikube
+#### **Minikube**
 
 Para acessar a aplicação utilizando o Minikube, execute o `minikube tunnel`  e verifique se o **external-ip** gerado para o Circles Sample é diferente de **127.0.0.1 \(localhost\)**. Neste caso altere seu host conforme o exemplo abaixo:
 
@@ -66,7 +66,7 @@ Para acessar a aplicação utilizando o Minikube, execute o `minikube tunnel`  e
 
 Caso a instalação tenha sido feita em outro ambiente garanta que o Circles Sample esteja no mesmo domínio do `moove`.
 
-### Acessando Circles Sample
+### **Acessando Circles Sample**
 
 Acesse [http://localhost:8080](http://localhost:8080)
 

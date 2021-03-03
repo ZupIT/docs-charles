@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-## Por que configurar o CD? 
+## **Por que configurar o CD?**
 
 Essa configuração é necessária para você indicar ao Charles qual é a ferramenta de CD que você utiliza para fazer os deploys no seu cluster. Outro ponto importante é que você deve fornecer o token do seu repositório git que contém os templates do helm. 
 
@@ -18,7 +18,7 @@ Atualmente, o Charles está habilitado para usar **Spinnaker** ou **CharlesCD** 
 O CharlesCD está em constante evolução e, por isso, está previsto no roadmap do projeto a integração com mais ferramentas de CD. 
 {{% /alert %}}
 
-## Como configurar?
+## **Como configurar?**
 
 O Charles utiliza uma arquitetura apropriada para ferramentas de Continuous Deployment \(CD\) e isso possibilita que ele se encaixe no ecossistema escolhido por você. Estas ferramentas são utilizadas para realizar a execução dos manifestos Kubernetes no cluster configurado e para fazer a autenticação com diversos provedores de cloud \(AWS, GCP, Azure\).
 
@@ -36,7 +36,7 @@ Para cadastrar qualquer uma delas, siga os seguintes passos:
 3. Clique em **Add CD Configuration**;
 4. Selecione as opções **CharlesCD** ou **Spinnaker**, dependendo da sua preferência.
 
-## Utilizando Spinnaker
+## **Utilizando Spinnaker**
 
 Preencha os seguintes campos:
 
@@ -46,7 +46,7 @@ Preencha os seguintes campos:
 4. **Git account:** insira o nome da configuração de git criada na [**instalação do Spinnaker**](https://spinnaker.io/setup/artifacts/github/); Nesse caso, de acordo com a documentação do Spinnaker é a propriedade `ARTIFACT_ACCOUNT_NAME`.
 5. **Kubernetes account:** insira o nome da configuração de acesso ao cluster Kubernetes criado na instalação do Spinnaker.
 
-## Utilizando CharlesCD
+## **Utilizando CharlesCD**
 
 Preencha os seguintes campos:
 
@@ -56,11 +56,11 @@ Preencha os seguintes campos:
 4. **Git token:** insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**](../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template) que serão utilizados durante o deployment da sua [**aplicação**](../../primeiros-passos/criando-seu-primeiro-modulo/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_".
 5. Selecione um **manager** para associar à CD Configuration. As opções são: **Default**, **EKS**, **Others.**
 
-### Default
+### **Default**
 
 Esta opção deve ser utilizada quando o cluster de destino das aplicações é o mesmo em que o Octopipe está instalado. Desta forma, não é necessário criar nenhum mecanismo extra de autenticação.
 
-### EKS
+### **EKS**
 
 Para clusters gerenciados pelo EKS \(Elastic Kubernetes Service\), basta selecionar a opção e inserir os seguintes campos:
 
@@ -69,7 +69,7 @@ Para clusters gerenciados pelo EKS \(Elastic Kubernetes Service\), basta selecio
 3. **AWS Region**: Região onde o cluster EKS está instalado;
 4. **AWS Cluster Name**: Nome do cluster EKS.
 
-### Others
+### **Others**
 
 Para outros provedores de cloud, utilizamos uma abordagem mais simples em que apenas alguns campos do _kubeconfig_ devem ser utilizados. São eles:
 

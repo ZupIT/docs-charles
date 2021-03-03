@@ -8,7 +8,7 @@ description: 'Nesta seção, você encontra detalhes de como funciona o Identity
 
 Na instalação padrão, você tem a opção para que o **próprio Charles gerencie a autenticação dos seus usuários** na plataforma. Entretanto, caso você já tenha um Identity Manager \(IDM\) e queira utilizá-lo, basta fazer a sua configuração durante a instalação do Charles.
 
-## Configurando o IDM
+## **Configurando o IDM**
 
 Em`charlescd/install/helm-chart/values.yaml`, altere os valores nos módulos:
 

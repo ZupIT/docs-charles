@@ -5,7 +5,7 @@ weight: 61
 
 ---
 
-## Por que configurar o Registry?  <a id="why-do-you-have-to-configure-a-registry"></a>
+## **Por que configurar o Registry?**
 
 ‌Um dos pontos para o Charles trabalhar é saber onde estão as imagens da sua aplicação. Para fazer isso, é esperado que você armazene-as em um docker registry e garanta o acesso a elas. 
 

@@ -6,11 +6,11 @@ description: You will find details on IDM or Identity Manager configuration
 
 ---
 
-On the default installation, you have the option which **Charles manages your users' authentications** on the platform. However, if you already have an Identiy Manager \(IDM\) and want to use it, just configure during Charles installation. 
+On the default installation, you can choose how **Charles manages your users' authentications** on the platform. However, if you already have an Identiy Manager \(IDM\) and want to use it, just configure during Charles installation. 
 
-## Configuring IDM
+## **Configuring IDM**
 
-On`charlescd/install/helm-chart/values.yaml`, change the values on the modules:
+On `charlescd/install/helm-chart/values.yaml`, change the values on the modules:
 
 ### **moove**
 
