@@ -1,0 +1,15 @@
+{
+  "horusecCliFalsePositiveHashes": [
+    ""
+  ],
+  "horusecCliFilesOrPathsToIgnore": [
+    "**/themes/devrel/**",
+    "**/themes/docsy/**",
+    "**/content/**"
+  ],
+  "horusecCliToolsConfig": {
+    "Eslint": {
+      "isToIgnore": true
+    }
+  }
+}
