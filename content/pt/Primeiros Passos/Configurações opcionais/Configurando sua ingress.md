@@ -1,6 +1,6 @@
 ---
 title: Configurando sua ingress
-weight: 17
+weight: 15
 description: 'Nesta seção, você encontra sobre como configurar a sua ingress.'
 ---
 
@@ -8,12 +8,12 @@ description: 'Nesta seção, você encontra sobre como configurar a sua ingress.
 
 Caso você queira utilizar sua ingress, ao invés da que possui na instalação do Charles, siga o seguinte passo:
 
-* Em `charlescd/install/helm-chart/values.yaml`, nas configurações de ingress, mude o valor de **`enabled`** para **`false`** como no exemplo abaixo.
+* em `charlescd/install/helm-chart/values.yaml`, nas configurações de ingress, mude o valor de **`enabled`** para **`true`** como no exemplo abaixo.
 
 ```text
-host: charles.info.example
+ingress:
+  enabled: true
+  host: charles.info.example
   class: nginx
-  controller:
-  nginx:
-  enabled: false
+
 ```

@@ -1,6 +1,6 @@
 ---
 title: Adicionando o Datasource
-weight: 32
+weight: 28
 description: 'Nesta seção, você encontra detalhes de como adicionar o datasource no Charles.'
 ---
 
@@ -9,18 +9,18 @@ description: 'Nesta seção, você encontra detalhes de como adicionar o datasou
 Para quantificar a performance de suas aplicações e acompanhar o status delas, o Charles oferece dois tipos de DataSource: Prometheus e Google Analytics. 
 
 {{% alert color="warning" %}}
-Antes de adicionar o Datasource, é necessário ter finalizado a [**configuração de métricas**](/docs-charles/pt/referência/métricas/configurando-as-métricas/).
+Antes de adicionar o Datasource, é necessário ter finalizado a [**configuração de métricas**](../../../referencia/metricas/configurando-metricas).
 {{% /alert %}}
 
-### **Como configurar?** 
+### Como configurar? 
 
 Para realizar a configuração de cadastro, basta seguir os seguintes passos:
 
 1. Clique no seu nome, no canto inferior esquerdo e, em seguida, selecione **Settings**.
 2. Clique em **Credentials;**
 3. Clique em **Add DataSource;**
-4. Selecione a **opção de ferramenta** que você utiliza, **Prometheus** ou **Google Analytics**;
+4. Selecione a **opção de ferramenta** que você utiliza;
 5. **Data source health:** essa opção é para saber mais detalhes sobre a saúde do seu círculo.
 6. Faça a configuração baseada na ferramenta selecionada.
 
-![](/docs-charles/datasource%20%281%29.gif)
+![](//workspace_datasource%20%281%29.gif)

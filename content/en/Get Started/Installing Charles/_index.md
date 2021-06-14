@@ -1,11 +1,11 @@
 ---
 title: Installing Charles
-weight: 1
+weight: 4
 ---
 
 ---
 
-## **Components**
+## Components
 
 CharlesCD's installation considers these **components**:
 
@@ -15,7 +15,7 @@ CharlesCD's installation considers these **components**:
 4. A **Redis**, to be used by `charlescd-circle-matcher`
 5. By default, a module called `octopipe` is added to the installation. This is a native platform created by our team to make installation easier, without previous configurations. However, you can disable it in the installation files.
 
-## **Requirements**
+## Requirements
 
 To install Charles it will be necessary an environment with the following requisites: 
 
@@ -27,10 +27,10 @@ To install Charles it will be necessary an environment with the following requis
 {{% alert color="warning" %}}
 **What is Ingress?** It is an engine that exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. You can find out more about it [**here**](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress). 
 
-When you install Charles it comes with a default ingress, however if you want to use your own, follow [**the steps to enable it**. ](/docs-charles/get-started/optional-configuration/configuring-your-ingress)
+When you install Charles it comes with a default ingress, however if you want to use your own, follow [**the steps to enable it**. ](.././#ingress)
 {{% /alert %}}
 
-## **Resources** 
+## Resources 
 
 The minimum resources considering only the installation of Charles are: 
 
@@ -38,12 +38,6 @@ The minimum resources considering only the installation of Charles are:
 * **Minikube**: 4GB of RAM. 
 * **Cluster**: 2GB of RAM
 
-## **Next steps**
+## Next steps
 
 On this section, you saw components, requirements and resources to install Charles. To continue the installation, see:
-
-👉 [**Installing via Single File**. ](/docs-charles/get-started/installing-charles//installing-via-single-file/)
-
-👉 [**Installing via Helm**. ](/docs-charles/get-started/installing-charles/installing-via-helm/)
-
-👉 [**Your first Charles' access**. ](/docs-charles/get-started/installing-charles//your-first-charles-access/)

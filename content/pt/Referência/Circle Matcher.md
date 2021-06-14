@@ -14,48 +14,63 @@ Uma boa prática é realizar essa identificação sempre que o usuário faz logi
 
 Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace.**](../primeiros-passos/definindo-workspace/circle-matcher)
 
-### **Identificando círculos através do CharlesCD**
+### **Como é realizada a identificação de círculos?**
 
-Ao utilizar a interface é possível perceber que existem duas formas de realizar a identificação dos círculos. Para isto, acesse o menu **Circles** dentro de um **workspace** e selecione o ícone indicado abaixo:
+1. A aplicação realiza uma busca em toda a sua base de dados por círculos que tenham as mesmas regras informadas na requisição. 
+2. Caso não haja um círculo compatível com as regras informadas cadastrado, o Circle Matcher verifica se o usuário irá ser selecionado pelos círculos com segmentação por porcentagem através de seu algoritmo que utiliza probabilidade na seleção.
+3. Para finalizar, se nenhum círculo se encaixar, o Circle Matcher irá retornar o círculo default cadastrado.  
 
-![Identifica&#xE7;&#xE3;o do &#xED;cone do Circle Matcher](/docs-charles/chrome-capture%20%281%29.jpg)
+### Identificando círculos através do CharlesCD
 
-As duas formas de realizar essa validação são:
+Ao utilizar a interface é possível perceber que existe uma forma de realizar a identificação dos círculos. Para isto, acesse o menu **Circles** dentro de um **workspace** e selecione o ícone indicado abaixo:
 
-* **Default:** nessa opção, você adiciona manualmente chaves e valores que definem as características de um usuário de teste. E, com base nisso, ao executar o **Try**, você receberá todos os círculos que ele se encaixa.  
+![](//circle-matcher%20%282%29.png)
 
-![Identifica&#xE7;&#xE3;o dos seus c&#xED;rculos com a op&#xE7;&#xE3;o Default.](/docs-charles/circle-matcher-default%20%281%29.gif)
+Você adiciona manualmente chaves e valores que definem as características de um usuário de teste. E, com base nisso, ao executar o **Try**, você receberá todos os círculos que ele se encaixa.  
 
-* **JSON:** é similar à opção anterior, só que aqui você pode copiar e colar no **campo de payload** um **JSON** do seu ambiente produtivo ao invés de adicionar manualmente.
-
-![Identifica&#xE7;&#xE3;o dos seus c&#xED;rculos com a op&#xE7;&#xE3;o JSON.](/docs-charles/circle-matcher-json%20%281%29.gif)
+![](//circle-matcher.gif)
 
 {{% alert color="warning" %}}
 Se você passar informações que estejam fora das condições lógicas configuradas nos círculos, o sistema irá retornar que aquele usuário está no círculo _Default_, ou seja, na versão padrão da sua aplicação.
 {{% /alert %}}
 
-## **Identificação de círculos através da API**
+## Identificação de círculos **por meio** da API
 
 Você pode integrar nas suas aplicações o recurso **Identify** do módulo [`circle-matcher`](https://github.com/ZupIT/charlescd/tree/master/circle-matcher) para detectar os círculos que o seu usuário pertence.
 
 Por exemplo, dada a utilização dos seguintes parâmetros ao segmentar:
 
-![](https://lh6.googleusercontent.com/q573-961WtpntVK8NfXXvPgzSPrxLwxjx3QXRqM3vBlHFM8nAoDkpn1KD26Zfw3_wJtjnhVldYcwRUUzhbveEvqJz6n16NQFkxi0S3hh8rk6Y7OUmWtnBOl_qJekzoymQ64mFF8k)
+![](//circlematcher-identificacao-de-circulos-atraves-da-api.png)
 
 Ao realizar a requisição de identificação com as seguintes informações, círculos compatíveis serão retornados.
 
-- **Método API: POST**
-- **URL: https:// api.charlescd-circle-matcher.com/identify**
-- Método utilizado para identificar círculos, baseado em características de um usuário.
+{% api-method method="post" host="https://" path="api.charlescd-circle-matcher.com/identify" %}}
+{% api-method-summary %}}
+Identify
+{% endapi-method-summary %}}
 
-**1.  Request:**
+{% api-method-description %}}
+Método utilizado para identificar círculos, baseado em características de um usuário.
+{% endapi-method-description %}}
 
-| **Body Parameter** | **Tipo**  | **Obrigatório** |  **Definição** |
-| :--- | :--- | :--- | :--- |
-| requestData | Object |       ✓ | { "state": "NY", "profession": "Lawyer", "age": 46, "city": "Stony Brook"} |
-| workspaceId | String |        ✓ | UUID |
+{% api-method-spec %}}
+{% api-method-request %}}
+{% api-method-body-parameters %}}
+{% api-method-parameter name="requestData" type="object" required=true %}}
+{ "state": "NY", "profession": "Lawyer", "age": 46, "city": "Stony Brook"
+{% endapi-method-parameter %}}
 
-**2. Response**
+{% api-method-parameter name="workspaceId" type="string" required=true %}}
+UUID
+{% endapi-method-parameter %}}
+{% endapi-method-body-parameters %}}
+{% endapi-method-request %}}
+
+{% api-method-response %}}
+{% api-method-response-example httpCode=200 %}}
+{% api-method-response-example-description %}}
+
+{% endapi-method-response-example-description %}}
 
 ```text
 {
@@ -71,28 +86,46 @@ Ao realizar a requisição de identificação com as seguintes informações, c�
   ]
 }
 ```
+{% endapi-method-response-example %}}
+{% endapi-method-response %}}
+{% endapi-method-spec %}}
+{% endapi-method %}}
 
-Como nesse exemplo existem círculos correspondentes com as informações sobre o usuário, o   **`charlescd-circle-matcher`** retorna uma lista com eles. Aqui, dois círculos se encaixaram: NY Lawyers e Stony Brook’s Citizens. A ordem de retorno dos círculos é feita pela data de criação, portanto o círculo mais recente será o primeiro da lista.
+Como nesse exemplo existem círculos correspondentes com as informações sobre o usuário, o **`charlescd-circle-matcher`**retorna uma lista com eles. Aqui, dois círculos se encaixaram: NY Lawyers e Stony Brook’s Citizens. A ordem de retorno dos círculos é feita pela data de criação, portanto o círculo mais recente será o primeiro da lista.
 
 O corpo da requisição é totalmente flexível, porém vale lembrar que as chaves devem ter a mesma nomenclatura definida nas regras de segmentação do círculo. Veja no caso a seguir:
 
-![](https://lh3.googleusercontent.com/FdPVIHDFeYJCkC_6Y1P3ZOBSqmNlGkl9q2_XyIayNKQo2Mp9IXBY7PzvpzW0Mej1P9Ox8AG12QiA1H0w5uozWP1UYWafcfwXLKBOf3G-ObIVoPHtYGOlWd5Ju01uLuScqtCn8qQ1)
+![](//circle-matcher-stony-brooks-citizens.png)
 
 O círculo **Stony Brook’s Citizens** foi criado para a identificar usuários que tenham como característica a chave **`city`** e o exato valor **`London`**. Sendo assim, ele não estará na listagem ao realizar uma requisição para o **`Identify`** caso seja informado o corpo da requisição como no exemplo abaixo:
 
-- **Método API: POST**
-- **URL: https://
-api.charlescd-circle-matcher.com/identify**
-- Método utilizado para identificar círculos, baseado em características de um usuário.
+{% api-method method="post" host="https://" path="api.charlescd-circle-matcher.com/identify" %}}
+{% api-method-summary %}}
+Identify
+{% endapi-method-summary %}}
 
-**1.  Request:**
+{% api-method-description %}}
+Método utilizado para identificar círculos, baseado em características de um usuário.
+{% endapi-method-description %}}
 
-| **Body Parameter** | **Tipo**  | **Obrigatório** |  **Definição** |
-| :--- | :--- | :--- | :--- |
-| requestData | Object |       ✓ | {{ "age": 46, "city": "London" }|
-| workspaceId | String |        ✓ | UUID |
+{% api-method-spec %}}
+{% api-method-request %}}
+{% api-method-body-parameters %}}
+{% api-method-parameter name="requestData" type="object" required=true %}}
+{ "age": 46, "city": "London" }
+{% endapi-method-parameter %}}
 
-**2. Response**
+{% api-method-parameter name="workspaceId" type="string" required=true %}}
+UUID
+{% endapi-method-parameter %}}
+{% endapi-method-body-parameters %}}
+{% endapi-method-request %}}
+
+{% api-method-response %}}
+{% api-method-response-example httpCode=200 %}}
+{% api-method-response-example-description %}}
+Listagem de todos os círculos aos quais o usuário pertence
+{% endapi-method-response-example-description %}}
 
 ```
 {
@@ -104,4 +137,7 @@ api.charlescd-circle-matcher.com/identify**
   ]
 }
 ```
-
+{% endapi-method-response-example %}}
+{% endapi-method-response %}}
+{% endapi-method-spec %}}
+{% endapi-method %}}

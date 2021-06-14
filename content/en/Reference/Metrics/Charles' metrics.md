@@ -7,9 +7,9 @@ weight: 80
 
 Charles offers metrics for you to monitor deploys and circles. 
 
-![](/docs-charles/metrics-circ-e-deplo.png)
+![](//metrics-circ-e-deplo.png)
 
-## **Deploy's metrics**
+## Deploy metrics
 
 Deploy metrics is a functionality that allows a dashboard view with the necessary information for you to follow up your deployments, such as success or error occurences number and the average implementation time.
 
@@ -25,9 +25,9 @@ There are other available information:
 
 See the example below:  
 
-![](/docs-charles/deploy.gif)
+![](//deploy.gif)
 
-## **Circles' metrics**
+## Circles metrics 
 
 It is a management feature that helps you view and follow the technical information about your circles.
 
@@ -39,4 +39,4 @@ The circle metrics allows you to have an overview about your circles on Charles,
 
 See below: 
 
-![](/docs-charles/erro.gif)
+![](//erro.gif)

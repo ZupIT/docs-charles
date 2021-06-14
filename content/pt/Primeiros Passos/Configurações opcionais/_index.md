@@ -1,6 +1,6 @@
 ---
 title: Configurações opcionais
-weight: 13
+weight: 11
 description: >-
   Nesta seção, você encontra detalhes sobre as configurações opcionais no
   Charles.

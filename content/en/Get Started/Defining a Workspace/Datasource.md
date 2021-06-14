@@ -14,7 +14,7 @@ In order to quatify your application's performances and follow up its status, Ch
 Before you add the Datasource, it is necessary to finish your [**metrics configuration**](../../../reference/metrics/setting-up-your-metrics).
 {{% /alert %}}
 
-### **How to configure?**
+### How to configure? 
 
 You have to follow the next steps: 
 
@@ -25,4 +25,4 @@ You have to follow the next steps:
 5. **Data source health:** this option gives you more details about your circle's health; 
 6. Make the configuration based on the selected tool. 
 
-![](/docs-charles/datasource.gif)
+![](//datasource.gif)

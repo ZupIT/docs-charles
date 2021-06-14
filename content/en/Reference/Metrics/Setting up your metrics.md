@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-### **Istio Configuration**
+### Istio Configuration
 
 {{% alert color="danger" %}}
 All the configuration in this section were tested and validated with Istio versions between 1.2 and 1.5. Any other version is not assured to work.
@@ -176,7 +176,7 @@ spec:
 {{% /tab %}}
 {{< /tabs >}}
 
-### **Configuring your metrics tool**
+### Configuring your metrics tool
 
 After you finish your Istio configuration it is necessary configure your metrics tool.
 

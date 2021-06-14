@@ -8,19 +8,19 @@ description: 'In this section, you will find more information about Users Groups
 
 A user group can represent a team or even a subset of people based on their skills.
 
-For example, a big team can have different Charles access permissions according to their job position, it could have these groups:
+For example, a big team would have different Charles access permissions according to their job position, we could have these groups:
 
-* *Product X developers;* 
-* *Product X QAs;*
-* *Product X Data Analysts.*
+* _Product X developers; Desenvolvedores do Produto X._
+* _Product X QAs;_
+* _Product X Data Analysts._
 
 However, if everyone in a team have the same permission, we are able to create only one group with its users.
 
-* *Product X Team.*
+* _Product X Team._
 
-![Preview of User Group &quot;Data Analysts do Produto X&quot;](/docs-charles/image%20%283%29%20%282%29.png)
+![Preview of User Group &quot;Data Analysts do Produto X&quot;](//image%20%283%29%20%282%29.png)
 
-## **Permissions for user groups in your workspace**
+## Permissions for user groups in your workspace
 
 Charles permissions are given to a user group when you associate them to a workspace.
 
@@ -34,9 +34,9 @@ The following profiles are available:
 * **Analyst**: they have permission to edit and delete circles, modules and hypothesis. And also view the modules configuration.
 * **Reader**: is able to view circles, hypothesis and modules.
 
-![Permission options to associate users&apos; groups on a workspace.](/docs-charles/chrome-capture-3-%20%282%29.gif)
+![Permission options to associate users&apos; groups on a workspace.](//chrome-capture-3-%20%282%29.gif)
 
-### **Permissions map**
+### Permissions map
 
 See below the permission given to each profile:
 

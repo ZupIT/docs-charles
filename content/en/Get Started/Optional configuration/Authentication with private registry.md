@@ -5,11 +5,11 @@ weight: 15
 
 ---
 
-## **Why do you need to authenticate?**
+## Why do you need to authenticate?
 
 Authentication is required if you use a private registry. This way, the cluster will be able to communicate with your registry to pull the images.
 
-## **How do you authenticate?**
+## How do you authenticate?
 
 Kubernetes cluster uses a type of docker-registry **Secret** to authenticate the registry container. You have to generate it. 
 

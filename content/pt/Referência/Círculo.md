@@ -8,10 +8,9 @@ description: >-
 
 ---
 
-Os círculos são o principal diferencial do [**novo conceito de deploy** ](/docs-charles/pt/faq/sobre-o-charles/)trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
+Os círculos são o principal diferencial do [**novo conceito de deploy** ](../../../faq/sobre-charles#o-que-e-deploy-em-circulos)trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
 
-![Geração de círculos com o Charles](/docs-charles/deploy_em_circulos.png)
-
+![Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles](//deploy_em_circulos%20%288%29%20%281%29.png)
 
 Além de indicar as segmentações de clientes, os círculos também auxiliam na gestão de versões implantadas para este público.
 
@@ -26,22 +25,25 @@ Para você criar um círculo, siga os seguintes passos:
 **3.** Defina uma **segmentação**.  
 **4.** \[Opcional\] Implante uma release.
 
-## **O que é uma segmentação?** 
+## O que é uma segmentação? 
 
-As segmentações são um **conjunto de características** que você define para agrupar seus usuários nos círculos. Existem duas maneiras de segmentar seus usuários: 
+As segmentações são um **conjunto de características ou um valor percentual**  que você define para agrupar seus usuários nos círculos. Existem três maneiras de segmentar seus usuários: 
 
-1. Através do **preenchimento de informações de forma manual.**
+1. Por meio do **preenchimento de regras de forma manual.**
 2. Por meio da **importação de um arquivo CSV**.
+3. Por meio de um **valor de porcentagem em relação ao total de acessos à aplicação** 
 
-### **Como definir?**  
+### Campos de uma segmentação 
 
-As segmentações possuem os seguintes campos: 
+As segmentações manuais possuem os seguintes campos: 
 
-* **Chave**: é o mesmo valor presente como chave payload da requisição de identificação do usuário.
+* **Chave**: é o mesmo valor presente como chave _payload_ da requisição de identificação do usuário.
 * **Condição**: é a implicação lógica que condicionará sua chave e seu valor.
 * **Valor**: são os valores existentes na sua base que poderão ser utilizados para compor a lógica de segmentação.
 
-Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](/docs-charles/pt/referência/circle-matcher/) que o seu usuário pertence. Por exemplo, considere que o seguinte payload represente as informações que você possui do seu cliente:
+#### Chave e valor
+
+Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](circle-matcher#identificando-circulos-atraves-do-charlescd) aos quais o seu usuário pertence. Por exemplo, considere que o seguinte payload representa as informações que você possui do seu cliente:
 
 ```text
 {
@@ -56,13 +58,35 @@ Os campos **chave** e **valor** são estabelecidos com base nas informações qu
 
 As chaves utilizadas podem ser qualquer uma enviada no payload da sua aplicação ao circle-matcher do Charles, como: **id**, **name**, **state**, **city**, **age** e **groupId**. 
 
-{{% alert color="info" %}}
-É importante lembrar que o seu payload e as chaves devem ser exatamente iguais.
+{{% alert color="warning" %}}
+**O seu payload e as chaves devem ser iguais.**
 {{% /alert %}}
+
+### Porcentagem
+
+A segmentação por porcentagem possui o seguinte campo: 
+
+* **Porcentagem**: valor que indica o percentual \(%\) das requisições que serão direcionadas para um círculo. Por exemplo, em um cenário que exista um circulo com porcentagem de 10%,  a cada 100 requisições, aproximadamente 10 serão direcionadas para o círculo. 
+
+{{% alert color="warning" %}}
+A soma dos fatores dos círculos ativos com segmentação por porcentagem nunca deve ultrapassar 100.
+
+Caso seja igual a 100, significa que o círculo **Default** jamais será indicado pelo Circle Matcher.
+{{% /alert %}}
+
+Esse direcionamento é feito somente para usuários que pertencem ao círculo **Default** ou aos círculos com **segmentação de porcentagem**.  Os usuários que pertencem ao círculos com segmentação por regras, seja manual ou por CSV, nunca serão direcionados para círculos com segmentação por porcentagem.
+
+Se na sua configuração existir círculos com segmentação por regras e círculos com segmentação por porcentagem, veja abaixo a lógica de identificação no Circle Matcher:
+
+1. Verifica se o payload faz _match_ com algum círculo de segmentação por regras. Caso positivo, este\(s\) círculo\(s\) será\(ão\) retornado\(s\) e a busca pelos círculos é finalizada.
+2. Se não encontrar nenhum círculo compatível e existir círculos ativos com segmentação por porcentagem,  um número aleatório entre 1 e 100 é sorteado e se ele for menor ou igual ao fator do círculo, este é retornado.
+3. Caso nenhum dos passos anteriores encontre um círculo compatível, o id do círculo **Default** é retornado.
+
+### Exemplo de criação de círculo
 
 Veja abaixo um exemplo de como criar um círculo: 
 
-![Como criar um c&#xED;rculo](/docs-charles/chrome-capture-7-.gif)
+![Como criar c&#xED;rculos](//circle_create_segmentation.gif)
 
 {{% alert color="info" %}}
 Uma **grande vantagem de utilizar as segmentações** é a possibilidade fazer combinações lógicas entre vários atributos para criar diferentes categorias de públicos e, dessa forma, utilizá-los nos testes das hipóteses.   
@@ -86,17 +110,17 @@ Essas características podem ser definidas com base nas lógicas de:
 
 Veja alguns exemplos:
 
-![Exemplo de segmenta&#xE7;&#xE3;o manual](/docs-charles/image%20%285%29.png)
+![](//segmentacao-manual%20%281%29.png)
 
 ### **Segmentação por importação de CSV**
 
-Nessa modalidade, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo _key:_
+Nessa modalidade, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo **key**_:_
 
-![Exemplo de importa&#xE7;&#xE3;o por CSV ](/docs-charles/chrome-capture-5-.jpg)
+![Exemplo de importa&#xE7;&#xE3;o por CSV ](//chrome-capture-5-.jpg)
 
 Depois de ter feito o upload do arquivo e salvado as configurações, aparecerá um overview demonstrando como está sua segmentação:
 
-![Overview](/docs-charles/image%20%284%29.png)
+![Overview](//image%20%284%29.png)
 
 Essa segmentação permite, por exemplo, extrair de uma base externa de IDs dos clientes um perfil específico e importá-los direto na plataforma do Charles. Quando um arquivo .csv é importado e se ele conter alguma linha em branco, ocorrerá um erro da importação, pois não é permitido a criação de segmentos dessa forma.
 
@@ -104,7 +128,44 @@ Essa segmentação permite, por exemplo, extrair de uma base externa de IDs dos 
 O único operador lógico suportado nesta segmentação é o OR \(Ou\).
 {{% /alert %}}
 
-### **Como obter o identificador do meu círculo?**
+### **Segmentação por porcentagem**
+
+É o tipo de segmento que distribui aos círculos a quantidade total de requisições que não foram filtradas em alguma segmentação manual. Essas requisições são entregues, de maneira proporcional, entre o círculos configurados para essa segmentação e o círculo default.
+
+O valor da porcentagem para cada círculo é definido entre 0 e 100, e a soma de todos os círculos ativos não pode ultrapassar 100%.
+
+#### Exemplos de segmentação por porcentagem
+
+Supondo que você criou dois círculos com porcentagem: 
+
+* O círculo **A,** com 15%
+* O círculo **B,** com 26%.
+
+A partir daí, o algoritmo para identificação sorteia um número entre 1 e 100 \(inclusive\), e em seguida, é feita a seguinte análise:
+
+1. Se o número for menor ou igual a 15, é retornado o círculo **A**.
+2. Se o número for maior que 15 e menor ou igual a 41 \(15 + 26\), é retornado o círculo **B**.
+3. Se o número for maior que 41, é retornado o círculo **Default**.
+
+Se não houver nenhum círculo configurado ou ativo, a quantidade disponível será de 100%, como na imagem abaixo:
+
+![](//perc1.png)
+
+Se você, por exemplo, possui três círculos ativos por porcentagem e cada um tem o valor de 30% , a quantidade disponível para seu novo círculo será de 10%. Veja abaixo:  
+
+![](//perc2.png)
+
+Depois que a segmentação é criada, o percentual disponível só será alterado caso uma release seja implantada para aquele círculo e ele se torne ativo.
+
+![](//perc3.png)
+
+Se, por exemplo, **a porcentagem** **atingir os 100% disponíveis,**  é necessário alterar ou remover os círculos ativos e configurados para que haja espaço para você criar um novo círculo.
+
+![](//perc4.png)
+
+
+
+### Como obter o identificador do meu círculo?
 
 Assim que seu círculo é criado, mesmo sem a definição das configurações, ele já possui um identificador único. 
 
@@ -114,19 +175,19 @@ Para obter essa informação, siga estes passos:
 2. Clique em "default" 
 3. E, no menu à esquerda, clique em **Copy ID**
 
-![](/docs-charles/circuloid.gif)
+![](//circle_copyid%20%281%29.gif)
 
-## **Círculos ativos e inativos**
+## Círculos ativos e inativos
 
-O que define se um círculo é ativo ou não, é a existência de [**releases**](/docs-charles/reference/releases/), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
+O que define se um círculo é ativo ou não, é a existência de [**releases**](release), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
 
-![](\docs-charles\reference\chrome-capture-activeinactivecircles.gif)
+![](//circulo-ativo-e-inativo%20%281%29.gif)
 
-## **Como integrar círculos com serviços?**
+## Como integrar círculos com serviços?
 
-Uma vez detectado o [**círculo ao qual o usuário pertence**,](/docs-charles/reference/circle-matcher/) essa informação deve ser repassada para todas as próximas requisições através do parâmetro **`x-circle-id`** no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:
+Uma vez detectado o [**círculo ao qual o usuário pertence**,](circle-matcher#identificacao-de-circulos-atraves-da-api) essa informação deve ser repassada para todas as próximas requisições através do parâmetro **`x-circle-id`** no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:
 
-![](/docs-charles/como_integrar_circulos_com_servicos_copy%20%281%29.png)
+![](//como_integrar_circulos_com_servicos_copy%20%281%29.png)
 
 Na prática, em algum momento durante a interação do usuário com a sua aplicação \(**`App1`**\) - por exemplo, o login - o serviço **`Identify`** do **`circle-matcher`** deverá ser acionado para obter o círculo.
 
@@ -138,16 +199,16 @@ Caso o **`x-circle-id`** não seja repassado, todas as requisições serão redi
 
 Para facilitar o entendimento, vamos exemplificar com um cenário onde o seu ambiente possui dois serviços: **Aplicação A** e **Aplicação B** e os seus círculos devem fazer o uso das seguintes versões:
 
-![](/docs-charles/versoes_diferentes_na_minha_release%20%281%29%20%281%29.png)
+![](//versoes_diferentes_na_minha_release%20%281%29%20%281%29.png)
 
 Sendo assim, a lógica de redirecionamento utilizando o **`x-circle-id`**será:
 
 1. O usuário envia no header: `x-circle-id="Círculo QA"`. Nesse círculo, a chamada será redirecionada para a **versão X** do serviço **Aplicação A** e a **versão Y** do serviço **Aplicação B**. 
 2. O usuário envia no header: `x-circle-id=”Circulo Dev”`. Nesse círculo, a chamada será redirecionada para a **versão Z** do serviço **Aplicação A e a versão Z** do serviço **Aplicação B.**
 
-![](/docs-charles/versoes_diferentes_na_minha_release_ii-1-%20%281%29.png)
+![](//versoes_diferentes_na_minha_release_ii-1-%20%281%29.png)
 
-## **Como rotear círculos com cluster de Kubernetes?**
+## Como rotear círculos com cluster de Kubernetes?
 
 O **Charles** envolve o [**Kubernetes**](https://kubernetes.io/docs/home/) e o [**Istio**](https://istio.io/docs/) no roteamento de tráfego, considere o seguinte cenário onde existe dois círculos:
 
@@ -163,7 +224,7 @@ Além disso, existe uma versão default \(v1\) para usuários que não se encaix
 
 Suponha que, ao realizar a requisição para identificação do usuário, seja retornado o id 8756. Com isso, essa informação deverá ser repassada nas próximas interações com serviços através do header `x-circle-id`. A imagem abaixo retrata como o Charles utiliza internamente os recursos para rotear a release correta:
 
-![](/docs-charles/cluster_de_kubernetes%20%281%29%20%281%29.png)
+![](//cluster_de_kubernetes%20%281%29%20%281%29.png)
 
 Ao realizar a implantação de uma versão em um círculo, o Charles realiza todas as configurações para que o roteamento seja feito da maneira correta. Para entender melhor como ele acontece, vamos utilizar um cenário onde uma requisição vem de um serviço fora da stack, como mostra na figura acima.
 
