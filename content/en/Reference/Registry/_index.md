@@ -5,7 +5,7 @@ weight: 61
 
 ---
 
-## **Why do you have to configure a Registry?** 
+## Why do you have to configure a Registry? 
 
 One of the main points for Charles to work is to know where are the images of your applications. To do this, you are expected to store them in a docker registry and grant access to it. 
 

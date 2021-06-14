@@ -8,13 +8,13 @@ description: >-
 
 ---
 
-## **What are metrics?**
+## What are metrics?
 
 Metrics are indicators that allows you to quantify the performance and the applications status based on the analysis of exposed data from the own application and by the infrastructure tools.
 
-CharlesCD allows you to get the metrics of all your circles, you will be able to see their [**health**](/docs-charles/get-started/creating-your-first-module/configuring-your-module/) analysis and performances.
+CharlesCD allows you to get the metrics of all your circles, you will be able to see their [**health**](../../../get-started/creating-your-first-module/#health-metrics) analysis and performances.
 
-## **Charles' available metrics**
+## Charles' available metrics
 
 CharlesCD metrics are:
 
@@ -23,7 +23,7 @@ CharlesCD metrics are:
 | istio\_charles\_request\_total | Total amount of requests | Counter |
 | istio\_charles\_request\_duration\_seconds | Response time for each request | Histogram |
 
-### **Metadata**
+### Metadata
 
 Each metric has a metadata range that allows a variety of filter and analysis types to be created. These metadata are described on the table below:
 

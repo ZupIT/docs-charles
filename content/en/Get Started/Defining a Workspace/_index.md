@@ -16,11 +16,11 @@ You need only one installation, and the teams will be able to use Charles with d
 Each workspace has the following configurations:
 
 * Access control and **user groups permissions**;
-* [**Git**](/docs-charles/get-started/defining-a-workspace/git-credentials/)**,** [**Docker Registry**](/docs-charles/tarted/defining-a-workspace/docker-registry/) and [**Continuous Deployment \(CD\)**;](/docs-charles/reference/cd-configuration/)
-* [**Circle Matcher**](/docs-charles/reference/circle-matcher/);
-* [**Metrics provider**](/docs-charles/reference/metrics/setting-up-your-metrics/). 
+* [**Git**](git-credentials)**,** [**Docker Registry**](https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry) and [**Continuous Deployment \(CD\)**;](https://docs.charlescd.io/reference/cd-configuration)
+* [**Circle Matcher**](https://docs.charlescd.io/reference/circle-matcher);
+* [**Metrics provider**](https://docs.charlescd.io/reference/metrics). 
 
-![Workspace configuration](/docs-charles/settings_-_workspace_-_11.4_-_add_group_permissions2x%20%282%29.png)
+![Workspace configuration](//settings_-_workspace_-_11.4_-_add_group_permissions2x%20%282%29.png)
 
 {{% alert color="warning" %}}
 The **root** user gives you the permission to create a workspace. However, users with **mantainer** profile are able to configure with the necessary information as well.
@@ -32,4 +32,4 @@ Once your workspace is created, even without the configuration definitions**,** 
 
 To get this information, select the workspace you want and then on the left menu, click on **Copy ID.**
 
-![](/docs-charles/workspaceid%20%282%29.gif)
+![](//workspaceid%20%282%29.gif)

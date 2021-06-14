@@ -5,7 +5,7 @@ weight: 39
 
 ---
 
-## **What is Helm?** 
+## What is Helm? 
 
 Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless the complexity.
 
@@ -15,7 +15,7 @@ On Charles context,  [**Chart Template**](https://helm.sh/docs/chart_template_gu
 If you haven't configured your module yet, [**access here**](.././) It is important to remember, you have to register the URL in this module. 
 {{% /alert %}}
 
-## **How to configure the chart template?**
+## How to configure the chart template?
 
 Follow the next steps to try out our sample app.
 
@@ -27,9 +27,9 @@ The structure below has the necessary templates to deploy a module that contains
 
 The image below shows how your directory must look like: 
 
-![ Chart template directory of circle-sample](/docs-charles/screen-shot-2020-08-13-at-09.16.04.png)
+![ Chart template directory of circle-sample](//screen-shot-2020-08-13-at-09.16.04.png)
 
-### **Step 2: configure the directory items** 
+### Step 2: configure the directory items 
 
 After you have created the directory, now you have to configure it. See below which files are necessary to configure: 
 

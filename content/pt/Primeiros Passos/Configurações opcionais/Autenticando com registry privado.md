@@ -1,18 +1,18 @@
 ---
 title: Autenticando com registry privado
-weight: 15
+weight: 13
 description: >-
-  Nessa seção você encontra como realizar a autenticação com seu registry
+  Nessa seção, você encontra como realizar a autenticação com seu registry
   privado.
 ---
 
 ---
 
-## **Por que autenticar?**
+## Por que autenticar?
 
-Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**](/docs-charles/pt/primeiros-passos/definindo-um-workspace/docker-registry/) quando for preciso fazer o pull das imagens durante alguma implantação.
+Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**](../../definindo-workspace/docker-registry) quando for preciso fazer o pull das imagens durante alguma implantação.
 
-## **Como autenticar?**
+## Como autenticar?
 
 O cluster Kubernetes utiliza o tipo **secret** do **docker-registy** para autenticar o registry container. 
 
@@ -38,4 +38,4 @@ Com o secret em mãos, você precisará aplicar essa informação no namespace o
 kubectl -n your-namespace apply secret-registry.yaml
 ```
 
-Depois disso, seu cluster conseguirá manter a comunicação com o registry.
+Finalizando desses passos, seu cluster conseguirá manter a comunicação com o registry.

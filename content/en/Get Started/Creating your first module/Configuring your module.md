@@ -6,9 +6,9 @@ description: This section describes how to use lib to propagate header
 
 ---
 
-## **Why configure it?** 
+## Why configure it? 
 
-The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to [**propagate the header `X-Circle-Id` that ensures the requests are being redirected to the right version of your application**](/docs-charles/reference/circles/). This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.
+The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to [**propagate the header `X-Circle-Id` that ensures the requests are being redirected to the right version of your application**](../../../../reference/circles#how-to-integrate-circle-with-services). This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.
 
 For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow. 
 
@@ -22,7 +22,7 @@ If there is a microservice inside this flow that doesn't make part of your test,
 
 See below: 
 
-![](/docs-charles/header-propagation-v2-en.png)
+![](//header-propagation-v2-en.png)
 
 > 1. When you make a microservice request, `circle matcher` gets the circle id for this specific request. 
 > 2. The id is inserted in the header with the `X-Circle-Id` key.
@@ -34,7 +34,7 @@ If you want your request to get to the `butler` correct version, it is necessary
 
 When a test happens with `moove` module, for example, and if it is integrated with `villager` and `butler`, the `x-circle-id`  header propagation makes you look for `villager` and  `butler` versions that are the same `moove` ones, however, this is not the scenario, these requests between `moove` and its integration will be treated by the open sea. 
 
-##  **How to add it?**  
+## How to add it?  
 
 Charles has a library that works for any **Java** application that uses **Spring** as a framework and another one for **.NET Core**. These libs were built because there wasn't another way used in these development environments.
 

@@ -1,13 +1,15 @@
 ---
 title: Seu primeiro acesso ao Charles
-weight: 10
+weight: 8
 description: 'Nesta seção, você encontra como acessar o Charles.'
 ---
 
 ---
 
 {{% alert color="info" %}}
-No primeiro acesso, **independente do método de instalação**, o usuário padrão de administrador é **charlesadmin@admin** e a senha **charlesadmin.**
+No primeiro acesso, **independente do método de instalação**, o usuário padrão de administrador é **charlesadmin@admin** e a senha **charlesadmin.** 
+
+Logo depois de fazer o primeiro login, troque essa senha. 
 {{% /alert %}}
 
 Há **três formas de acessar a aplicação:** 
@@ -38,17 +40,17 @@ kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-Para mais informações de como mudar o host do seu sistema, [**acesse aqui**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
+Veja mais sobre como mudar [**o host do seu sistema**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
 {{% /alert %}}
 
 **Passo 3:** Por fim, digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.
 
-## **2. Microk8s**
+## 2. Microk8s
 
 O Microk8s está disponível para as Plataformas do Microsoft Windows, Apple MacOS e para Linux. 
 
 {{% alert color="info" %}}
-Para mais informações sobre como instalar o **Microk8s**, [**visite o site do projeto**](https://microk8s.io). 
+Acesse o site do projeto para saber mais sobre [**como instalar o Microk8s**](https://microk8s.io/)
 {{% /alert %}}
 
 Uma vez instalado o Microk8s, você deve habilitar os seguintes add-ons:
@@ -119,7 +121,7 @@ microk8s.kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-Para mais informações sobre como mudar o **host file**, [**acesse aqui**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
+Veja mais sobre como mudar o [**host file**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/) 
 {{% /alert %}}
 
 **Passo 3:** Digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.

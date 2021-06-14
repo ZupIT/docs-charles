@@ -1,6 +1,6 @@
 ---
 title: Instalando via Helm
-weight: 8
+weight: 6
 description: 'Nesta seção, você encontra como instalar o Charles via Helm.'
 ---
 
@@ -21,10 +21,10 @@ Para realizar o processo, é necessário ter instalado:
 
 ### Como instalar?
 
-Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Você encontra [**aqui toda a documentação dos campos editáveis**.](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
+Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. **Veja a** [**documentação dos campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
 
 {{% alert color="warning" %}}
-As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**](https://github.com/ZupIT/charlescd/blob/master/install/helm-chart/values.yaml) As principais senhas para personalizar estão em:
+As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**](https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml) As principais senhas para personalizar estão em:
 
 * butler.database.password
 * moove, database.password
@@ -34,6 +34,9 @@ As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**
 * postgresql.postgresqlPassword
 * redis.password
 * compass.database.password
+* hermes.database.password
+* rabbitmq.auth.password
+* gate.database.password
 
 Para mais detalhes, acesse o link citado acima, que possui toda a documentação dos campos editáveis.
 {{% /alert %}}
@@ -50,3 +53,18 @@ helm install charlescd <repo-folder> -n <namespace>
 
 Por isso, não deixe de customizar os campos caso queira algo gerenciável. 
 {{% /alert %}}
+
+### Troque a senha padrão \(default password\) 
+
+Depois de instalar o CharlesCD, troque algumas **senhas padrão**, veja abaixo: 
+
+**Senha do Keycloak**:   
+**1.** Acesse: **http://&lt;charlescd-url&gt;/keycloak/auth;**  
+**2.** Clique em **Administration Console;**   
+**3.**  Insira a senha do usuário do Keycloak \(admin - firstpassword\) e troque a senha padrão.
+
+**Senha do CharlesCD:**  
+Acesse o CharlesCD e logue com  
+**1. Usuário:** **charlesadmin@admin  
+2. Senha**: **charlesadmin;  
+3.** Vá até **Account &gt; Profile** e depois em **Change Password** e escolha sua nova senha.

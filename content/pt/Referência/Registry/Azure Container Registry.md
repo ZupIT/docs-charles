@@ -1,6 +1,6 @@
 ---
 title: Azure Container Registry
-weight: 63
+weight: 61
 ---
 
 ---

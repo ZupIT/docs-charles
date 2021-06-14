@@ -6,10 +6,10 @@ weight: 44
 ---
 
 {{% alert color="info" %}}
-After you have created your first [**module**](/docs-charles/get-started/creating-your-first-module/_index2/) and registered your [**cluster crendentials**,](/docs-charles/get-started/defining-a-workspace/deploy-environment/) you have finished all the steps needed to make your first deploy. Now, it is necessary to create a [**release** ](/docs-charles/reference/releases/) and provide it on the configured cluster.
+After you have created your first [**module**](creating-your-first-module/) and registered your [**cluster crendentials**,](defining-a-workspace/deploy-environment) you have finished all the steps needed to make your first deploy. Now, it is necessary to create a [**release** ](../../../reference/releases)and provide it on the configured cluster.
 {{% /alert %}}
 
-Charles offers two alternatives to create a release: use the [**hypothesis** ](/docs-charles/reference/hyphotesis/) flow chart or create it with docker images already available on your configured [**registry**.](/docs-charles/get-started/defining-a-workspace/_index2/)
+Charles offers two alternatives to create a release: use the [**hypothesis** ](../../reference/hyphotesis)flow chart or create it with docker images already available on your configured [**registry**.](defining-a-workspace/docker-registry)
 
 Here, we will focus on the first approach with the following steps:
 
@@ -25,9 +25,9 @@ Here, we will focus on the first approach with the following steps:
 
 After you have done the whole process above, your release will be ready to deploy.
 
-![Example of release created and ready to deploy](/docs-charles/primeiro_deploy-1-%20%282%29%20%282%29.png)
+![Example of release created and ready to deploy](//primeiro_deploy-1-%20%282%29%20%282%29.png)
 
-Now, just follow the next steps to the [**Open Sea**](/docs-charles/key-concepts/) deploy:
+Now, just follow the next steps to the [**Open Sea**](https://docs.charlescd.io/key-concepts) deploy:
 
 1. On Charles homepage, click on **Circles**; 
 2. Click on the Default circle \(it represents the open sea\) 
@@ -37,4 +37,4 @@ Now, just follow the next steps to the [**Open Sea**](/docs-charles/key-concepts
 
 Finally, Charles will provide the created release on cluster in the Open Sea. The deploy status will be shown and updated along the process.
 
-![Example of a deploy in open sea](/docs-charles/primeiro-deploy%20%281%29%20%281%29%20%282%29.gif)
+![Example of a deploy in open sea](//primeiro-deploy%20%281%29%20%281%29%20%282%29.gif)
