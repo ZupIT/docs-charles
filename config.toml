@@ -2,7 +2,8 @@ baseURL = "https://docs.charlescd.io"
 
 title = "Charles C.D."
 
-publishDir = "../docs"
+publishDir = "./public"
+# publishDir = "../docs"
 
 enableRobotsTXT = true
 
