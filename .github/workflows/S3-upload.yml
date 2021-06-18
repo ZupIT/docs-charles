@@ -9,7 +9,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -26,11 +26,11 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.78.1'
+          hugo-version: '0.83.1'
           extended: true
 
       - name: S3 upload (images)
-        run: aws s3 sync --acl public-read --follow-symlinks static/shared s3://$AWS_S3_BUCKET/shared/ --delete
+        run: aws s3 sync --follow-symlinks static/shared s3://$AWS_S3_BUCKET/shared/ --delete
 
       - name: Remove static images
         shell: bash
@@ -64,6 +64,6 @@ jobs:
         run: rm -rf faq & rm -rf pt/faq
 
       - name: S3 upload
-        run: aws s3 sync --acl public-read --follow-symlinks public s3://$AWS_S3_BUCKET/$VERSION/ --delete
+        run: aws s3 sync --follow-symlinks public s3://$AWS_S3_BUCKET/$VERSION/ --delete
         env:
           VERSION: ${{ steps.version.outputs.branch_version }}
