@@ -2,7 +2,7 @@ name: S3 UPLOAD
 
 on:
   push:
-    branches: [release*]
+    branches: [release*] 
 
 env:
   AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
@@ -21,7 +21,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: sa-east-1
+          aws-region: us-east-1
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -53,9 +53,9 @@ jobs:
           VERSION: ${{ steps.version.outputs.branch_version }}
 
       - name: Build
-        run: yarn build-playground && hugo -D --minify -b $BASE_URL/$VERSION
+        run: hugo -D --minify -b $BASE_URL/$VERSION
         env:
-          BASE_URL: https://docs.usebeagle.io
+          BASE_URL: https://docs.charlescd.io
           VERSION: ${{ steps.version.outputs.branch_version }}
 
       - name: remove FAQ
