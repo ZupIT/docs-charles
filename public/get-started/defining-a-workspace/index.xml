@@ -1,0 +1,113 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Defining a Workspace</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/</link><description>Recent content in Defining a Workspace on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/index.xml" rel="self" type="application/rss+xml"/><item><title>Get Started: Docker registry</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/docker-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/docker-registry/</guid><description>
+&lt;hr>
+&lt;div class="alert alert-warning" role="alert">
+This is mandatory information.
+&lt;/div>
+&lt;p>One of the steps to configure your workspace is to inform Charles which docker registry you store your application&amp;rsquo;s images. This access is important because CharlesCD can watch newly generated images and list the ones already saved in your registry to deploy them in circles.&lt;/p>
+&lt;p>Charles is already integrated with some docker registries, choose one and add the information:&lt;/p></description></item><item><title>Get Started: Deploy environment</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/deploy-environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/deploy-environment/</guid><description>
+&lt;hr>
+&lt;p>It is necessary to register cluster &lt;a href="https://kubernetes.io">&lt;strong>Kubernetes&lt;/strong>&lt;/a> credentials to configure your workspace. These are specific configurations to each Continuous Deployment (CD) tool that is integrated with Charles. At the moment, the Charles has a native deploy or you can integrate with &lt;a href="https://www.spinnaker.io/">&lt;strong>Spinnaker&lt;/strong>&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Charles has a module called &lt;strong>Octopipe&lt;/strong> that is light and low cost way to make cluster Kubernetes deploys.
+&lt;/div>
+&lt;h3>How to make your deploy?&lt;/h3>
+&lt;p>See below the example on how to perform your deploy using &lt;strong>CharlesCD&lt;/strong> in the same installation cluster:&lt;/p>
+&lt;ol>
+&lt;li>Click on &lt;strong>Add CD Configuration&lt;/strong>;&lt;/li>
+&lt;li>Select the option &lt;strong>CharlesCD.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>After these steps, fill out the next fields:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Name:&lt;/strong> configuration name that will be created;&lt;/li>
+&lt;li>&lt;strong>Namespace:&lt;/strong> Define the namespace that will be used on Kubernetes cluster deploys;&lt;/li>
+&lt;li>&lt;strong>Git provider&lt;/strong>: Define the git provider (&lt;strong>GitHub&lt;/strong> or &lt;strong>GitLab&lt;/strong>);&lt;/li>
+&lt;li>&lt;strong>Git token:&lt;/strong> insert an authentication token that has access to the git repository where your &lt;a href="../../creating-your-first-module/how-to-configure-chart-template">&lt;strong>Helm templates&lt;/strong>&lt;/a> are stored (they will be used during the deployment of your &lt;a href="../../creating-your-first-module/">&lt;strong>application&lt;/strong>&lt;/a>). If your Git Provider is &lt;strong>GitHub&lt;/strong>, &amp;ldquo;&lt;em>repo&lt;/em>&amp;rdquo; permission is required. Otherwise, configure the accesses in &lt;strong>GitLab&lt;/strong>:&amp;quot;&lt;em>api&lt;/em> &amp;quot; and &amp;ldquo;&lt;em>read_repository&lt;/em>&amp;rdquo;.&lt;/li>
+&lt;li>Select the &lt;strong>Default&lt;/strong> option.&lt;/li>
+&lt;/ol>
+&lt;p>After finishing your configuration, you can associate it with a module later. For more information, check the &lt;a href="https://docs.charlescd.io/reference/cd-configuration">&lt;strong>CD Configuration&lt;/strong>&lt;/a> page.&lt;/p></description></item><item><title>Get Started: Circle Matcher</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/circle-matcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/circle-matcher/</guid><description>
+&lt;hr>
+&lt;h2>Why do you have to configure?&lt;/h2>
+&lt;p>When &lt;a href="../../.././">&lt;strong>creating a workspace&lt;/strong>&lt;/a>, you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment, since Charles can handle, at the same time, different environments in multiple workspaces.&lt;/p>
+&lt;p>Circle Matcher is a independent module, despite that, it is possible to install it in any area you want inside its architecture, for example, a public cluster.&lt;/p>
+&lt;p>This configuration is necessary, so you are able to perform operations in Charles, like creating and editing segments in a circle.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+It is important to remember, on Charle&amp;rsquo;s context, the Circle Matcher module receives most of the environment&amp;rsquo;s request, because it is the application that identifies the user based on the rules that you have configured while managing a circle.
+&lt;/div>
+&lt;p>If you want to know more about &lt;strong>Circle Matcher&lt;/strong>, see the &lt;a href="../../../../reference/circle-matcher">&lt;strong>References section&lt;/strong>&lt;/a>.&lt;/p>
+&lt;h2>How must be configured&lt;/h2>
+&lt;h4>Option 1: Configure Circle Matcher in a separate architecture&lt;/h4>
+&lt;p>You have to configure the public DNS that points to your desired Circle Matcher.&lt;/p>
+&lt;blockquote>
+&lt;p>Example: &lt;strong>&lt;a href="http://charles.info.example/charlescd-circle-matcher">http://charles.info.example/charlescd-circle-matcher&lt;/a>&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;h4>Option 2: Configure Circle Matcher in the same Charles' namespace&lt;/h4>
+&lt;p>If you want to use Circle Matcher in the same namespace that Charles is installed, you can use the same DNS reference.&lt;/p>
+&lt;p>The difference is in terms of performance, it is recommended to use Kubernetes service name.&lt;/p>
+&lt;blockquote>
+&lt;p>Example: &lt;strong>http://charlescd-circle-matcher:8080&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;h2>Next steps&lt;/h2>
+&lt;p>On this section, you saw how to create your Circle Matcher. To continue your workspace configuration, Charles offers metrics that need to be configured.&lt;/p>
+&lt;p>👉 Go to &lt;a href="../../../reference/metrics/setting-up-your-metrics">&lt;strong>Setting up your metrics&lt;/strong> &lt;/a>and find out how Charles uses metrics.&lt;/p></description></item><item><title>Get Started: Git credentials</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/git-credentials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/git-credentials/</guid><description>
+&lt;hr>
+&lt;p>While you are configuring your workspace, you need to register on Git, to grant access to your repositories. This access is important because Charles will be able to create, delete and merge branches during the hypothesis board use, and it is also possible to view and create releases.&lt;/p>
+&lt;h3>How to configure?&lt;/h3>
+&lt;p>There are two register categories: GitHub and GitLab. To configure it, add the following information:&lt;/p>
+&lt;h3>&lt;strong>GitHub&lt;/strong>&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: this name will be used by your Charles configuration.&lt;/li>
+&lt;li>&lt;strong>URL&lt;/strong>: if you have a custom domain, add it here. If you don&amp;rsquo;t, add a pattern value here &lt;a href="https://github.com">https://github.com&lt;/a> (without the trailing &amp;ldquo;/&amp;quot;).&lt;/li>
+&lt;li>&lt;strong>Token&lt;/strong>: when &lt;a href="https://help.github.com/pt/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">&lt;strong>this token&lt;/strong>&lt;/a> is generated, it needs to have all access to the &lt;strong>&amp;ldquo;repo&amp;rdquo;&lt;/strong> item.&lt;/li>
+&lt;/ul>
+&lt;h3>&lt;strong>GitLab&lt;/strong>&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: this name will be used by your Charles configuration.&lt;/li>
+&lt;li>&lt;strong>URL&lt;/strong>: if you have a custom domain, add it here. If you don&amp;rsquo;t, add a pattern value here &lt;a href="https://gitlab.com/">https://gitlab.com&lt;/a> (without the trailing &amp;ldquo;/&amp;quot;).&lt;/li>
+&lt;li>&lt;strong>Token&lt;/strong>: check out GitLab&amp;rsquo;s documentation&lt;a href="https://docs.gitlab.com/ee/api/#personalproject-access-tokens"> &lt;strong>on how to create a token&lt;/strong>&lt;/a> It&amp;rsquo;s important to highlight that the token needs to have the following accesses: &amp;ldquo;&lt;strong>api&amp;rdquo;&lt;/strong> and &lt;strong>&amp;ldquo;read_repository&amp;rdquo;.&lt;/strong>&lt;/li>
+&lt;/ul></description></item><item><title>Get Started: Datasource</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/datasource/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/datasource/</guid><description>
+&lt;hr>
+&lt;p>In order to quatify your application&amp;rsquo;s performances and follow up its status, Charles offers two types of Datasource: Prometheus and Google Analytics.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Before you add the Datasource, it is necessary to finish your &lt;a href="../../../reference/metrics/setting-up-your-metrics">&lt;strong>metrics configuration&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;h3>How to configure?&lt;/h3>
+&lt;p>You have to follow the next steps:&lt;/p>
+&lt;ol>
+&lt;li>Click on your name, on the botton left corner and then select &lt;strong>Settings&lt;/strong>.;&lt;/li>
+&lt;li>Click on &lt;strong>Credentials;&lt;/strong>&lt;/li>
+&lt;li>Click on &lt;strong>Add Datasource;&lt;/strong>&lt;/li>
+&lt;li>Select your &lt;strong>tool option, Prometheus&lt;/strong> or &lt;strong>Google Analytics;&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Data source health:&lt;/strong> this option gives you more details about your circle&amp;rsquo;s health;&lt;/li>
+&lt;li>Make the configuration based on the selected tool.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//datasource.gif" alt="">&lt;/p></description></item><item><title>Get Started: Metrics actions</title><link>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/metrics-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/defining-a-workspace/metrics-actions/</guid><description>
+&lt;hr>
+&lt;h2>What is it?&lt;/h2>
+&lt;p>After you had &lt;a href="../../../../../reference/metrics/metrics-group">&lt;strong>register your metrics group&lt;/strong>&lt;/a>, Charles follows up and offers actions for each one of them.&lt;/p>
+&lt;h2>How to configure?&lt;/h2>
+&lt;p>In workspace configuration, click on the section &lt;strong>Add Metric Action&lt;/strong> and follow the steps:&lt;/p>
+&lt;p>&lt;strong>1. Add action configuration&lt;/strong>: add a configuration action;&lt;br>
+&lt;strong>2. Type a nickname:&lt;/strong> writer a name for your action;&lt;br>
+&lt;strong>3. Type a description:&lt;/strong> describe the action;&lt;br>
+&lt;strong>4. Select a plugin:&lt;/strong> select a plugin to run the action.&lt;/p>
+&lt;p>&lt;img src="//usandoactions-metricas%20%282%29.gif" alt="">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+The only available plugin so far is &lt;strong>circle deployment&lt;/strong>. Charles allows you to make your own plugin, the way you want and to fulfill your application&amp;rsquo;s purpose, for example, an action that sends an email to warn your circle status.
+&lt;/div>
+&lt;h3>Adding an action&lt;/h3>
+&lt;p>After you have configured your action, you have to register in your metrics group and add it to your circle. To do that:&lt;/p>
+&lt;ol>
+&lt;li>Access Metrics group;&lt;/li>
+&lt;li>Select &amp;lsquo;&lt;strong>Add action&lt;/strong>&amp;rsquo; and fill the fields:
+&lt;ol>
+&lt;li>&lt;strong>Type a nickname for action:&lt;/strong> Select the name of your action;&lt;/li>
+&lt;li>&lt;strong>Select action type:&lt;/strong> Select the action you have configured before;&lt;/li>
+&lt;li>&lt;strong>Action configuration:&lt;/strong> Configuration to run the chosen plugin.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//adicionando-a-action-correto%20%281%29.gif" alt="">&lt;/p>
+&lt;h3>How does it work?&lt;/h3>
+&lt;p>Inside your circle you register the &lt;a href="../../reference/metrics/metrics-group">&lt;strong>metrics group&lt;/strong>&lt;/a>, which it is responsible to create metrics that you want to track and you can also add action to this group. When you get to the threshold, the action will be triggered and what it is described in your plugin will happen, like for example, make a deploy of one circle in another circle.&lt;/p>
+&lt;p>You can track the action&amp;rsquo;s status in the &amp;lsquo;Metrics group&amp;rsquo; board, see below:&lt;/p>
+&lt;p>&lt;img src="//status-actionsgif.gif" alt="">&lt;/p></description></item></channel></rss>

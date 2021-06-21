@@ -1,7 +1,8 @@
 name: S3 UPLOAD
 
 on:
-  create 
+  push:
+    branches: [release*]
 
 env:
   AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
@@ -29,12 +30,12 @@ jobs:
           extended: true
 
       - name: S3 upload (images)
-        run: aws s3 sync --follow-symlinks static/shared s3://$AWS_S3_BUCKET/shared/ --delete
+        run: aws s3 sync --follow-symlinks static/ s3://$AWS_S3_BUCKET/shared/ --delete
 
       - name: Remove static images
         shell: bash
-        working-directory: static
-        run: rm -rf shared
+        working-directory: .
+        run: rm -rf static
 
       - name: Installing Dependencies
         run: yarn
@@ -45,7 +46,7 @@ jobs:
         shell: bash
 
       - name: Config version path
-        working-directory: config/_default
+        working-directory: .
         shell: bash
         run: sed -i -E "s/current_version = .*/current_version = \"$VERSION\"/g" config.toml
         env:

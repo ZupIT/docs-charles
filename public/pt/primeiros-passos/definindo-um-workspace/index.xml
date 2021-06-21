@@ -1,0 +1,385 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Definindo um Workspace</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/</link><description>Recent content in Definindo um Workspace on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/index.xml" rel="self" type="application/rss+xml"/><item><title>Primeiros Passos: Docker Registry</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/docker-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/docker-registry/</guid><description>
+&lt;hr>
+&lt;div class="alert alert-warning" role="alert">
+Essa informação é obrigatória.
+&lt;/div>
+&lt;p>Durante a configuração do seu workspace, é necessário cadastrar o registry onde as imagens das suas aplicações estão armazenadas. Esse acesso é importante, pois uma vez configurado, o CharlesCD pode &lt;strong>observar novas imagens sendo geradas e listar as imagens já salvas no seu registry&lt;/strong> para implantá-las.&lt;/p>
+&lt;p>Charles já é integrado com alguns docker registries, escolha um e adicione as informações especificadas:&lt;/p></description></item><item><title>Primeiros Passos: Ambiente de deploy</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/ambiente-de-deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/ambiente-de-deploy/</guid><description>
+&lt;hr>
+&lt;p>Ao configurar seu workspace é preciso cadastrar as credenciais de acesso ao cluster &lt;a href="https://kubernetes.io/">&lt;strong>Kubernetes&lt;/strong>&lt;/a>. Essas configurações são específicas para cada uma das ferramentas de &lt;em>Continuous Deployment&lt;/em> (CD) que são integradas ao CharlesCD. No momento, o Charles realiza o deploy nativamente ou você pode integrar com o &lt;a href="https://www.spinnaker.io/">&lt;strong>Spinnaker&lt;/strong>&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+O &lt;strong>Charles&lt;/strong> possui um módulo chamado Octopipe que é uma forma leve e de baixo custo de fazer deploy em clusters Kubernetes.
+&lt;/div>
+&lt;h3>Como realizar seu deploy?&lt;/h3>
+&lt;p>Veja abaixo o exemplo de como realizar seu deploy utilizando o CharlesCD no mesmo cluster de instalação:&lt;/p>
+&lt;ol>
+&lt;li>Clique em &lt;strong>Add CD Configuration&lt;/strong>;&lt;/li>
+&lt;li>Selecione a opção &lt;strong>CharlesCD.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>Após esses passos, preencha os campos a seguir:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Name:&lt;/strong> nome da configuração que será criada.&lt;/li>
+&lt;li>&lt;strong>Namespace:&lt;/strong> defina o namespace que será utilizado nos deploys no cluster &lt;em>Kubernetes.&lt;/em>&lt;/li>
+&lt;li>&lt;strong>Git provider&lt;/strong>: defina o provedor de git a ser utilizado (&lt;strong>GitHub ou GitLab&lt;/strong>).&lt;/li>
+&lt;li>&lt;strong>Git token:&lt;/strong> insira um token de autenticação que tenha acesso repositório git onde está armazenado os seus &lt;a href="../../../criando-seu-primeiro-modulo/configurando-o-chart-template">&lt;strong>templates Helm&lt;/strong>&lt;/a> que serão utilizados durante o deployment da sua &lt;a href="../../../criando-seu-primeiro-modulo/">&lt;strong>aplicação&lt;/strong>&lt;/a>. Caso o seu Git Provider seja &lt;strong>GitHub&lt;/strong>, é necessário a permissão &amp;ldquo;&lt;em>repo&lt;/em>&amp;rdquo;. Se for o contrário, configure no &lt;strong>GitLab&lt;/strong> os acessos: &amp;ldquo;&lt;em>api&lt;/em> '' e &amp;ldquo;&lt;em>read_repository&lt;/em>&amp;rdquo;.&lt;/li>
+&lt;li>Selecione a opção &lt;strong>Default&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse &lt;a href="../../../referencia/preparando-seu-deploy">&lt;strong>Configurações de CD&lt;/strong>.&lt;/a>&lt;/p></description></item><item><title>Primeiros Passos: Circle Matcher</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/circle-matcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/circle-matcher/</guid><description>
+&lt;hr>
+&lt;h2>Por que configurar?&lt;/h2>
+&lt;p>Quando você &lt;a href="../../../.././">&lt;strong>cria um workspace&lt;/strong>&lt;/a>, é preciso informar ao Charles para qual Circle Matcher esse workspace atual apontará. É possível que haja um Circle Matcher para cada ambiente, já que o Charles lida, ao mesmo tempo, com diferentes ambientes em vários workspaces.&lt;/p>
+&lt;p>Apesar do Circle Matcher ser um módulo independente no Charles, é possível instalá-lo em qualquer área de preferência dentro da arquitetura como, por exemplo, em um cluster público.&lt;/p>
+&lt;p>Essa configuração é necessária para que você possa executar operações dentro do Charles, como criar ou editar segmentos de um círculo.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Vale lembrar que, no contexto do Charles, o módulo do Circle Matcher é o que mais recebe solicitações no ambiente por identificar os usuários com base nas regras que você configurou ao &lt;a href="../../../../../referencia/circulo#como-criar-circulos">&lt;strong>gerenciar um círculo&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;p>Se você deseja saber mais sobre o que é um Circle Matcher, &lt;a href="../../../../referencia/circle-matcher">&lt;strong>veja a seção Referência&lt;/strong>&lt;/a>.&lt;/p>
+&lt;h2>Como deve ser configurado&lt;/h2>
+&lt;h4>Opção 1: Configurar o Circle Matcher em uma arquitetura à parte&lt;/h4>
+&lt;p>Você deve configurar o DNS público que aponta para o Circle Matcher desejado.&lt;/p>
+&lt;blockquote>
+&lt;p>Exemplo: &lt;strong>&lt;a href="http://charles.info.example/charlescd-circle-matcher">http://charles.info.example/charlescd-circle-matcher&lt;/a>&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;h4>Opção 2: Configurar o Circle Matcher no mesmo namespace do Charles&lt;/h4>
+&lt;p>Caso prefira usar o Circle Matcher no mesmo namespace em que Charles está instalado, você pode usar a mesma referência de DNS.&lt;/p>
+&lt;p>A diferença é que, em termos de desempenho, o mais recomendado é usar o nome do serviço do Kubernetes.&lt;/p>
+&lt;blockquote>
+&lt;p>Exemplo: &lt;strong>http://charlescd-circle-matcher:8080&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;h2>Próximos passos&lt;/h2>
+&lt;p>Nesta seção, você viu como criar seu Circle Matcher. Para continuar sua configuração de um workspace, o Charles oferece métricas que precisam ser configuradas.&lt;/p>
+&lt;p>👉 Vá para página &lt;a href="../../../referencia/metricas/configurando-metricas">&lt;strong>Configurando as métricas&lt;/strong>&lt;/a> e descubra como Charles utiliza as métricas.&lt;/p></description></item><item><title>Primeiros Passos: Adicionando o Datasource</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/</guid><description>
+&lt;hr>
+&lt;p>Para quantificar a performance de suas aplicações e acompanhar o status delas, o Charles oferece dois tipos de DataSource: Prometheus e Google Analytics.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Antes de adicionar o Datasource, é necessário ter finalizado a &lt;a href="../../../referencia/metricas/configurando-metricas">&lt;strong>configuração de métricas&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;h3>Como configurar?&lt;/h3>
+&lt;p>Para realizar a configuração de cadastro, basta seguir os seguintes passos:&lt;/p>
+&lt;ol>
+&lt;li>Clique no seu nome, no canto inferior esquerdo e, em seguida, selecione &lt;strong>Settings&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Credentials;&lt;/strong>&lt;/li>
+&lt;li>Clique em &lt;strong>Add DataSource;&lt;/strong>&lt;/li>
+&lt;li>Selecione a &lt;strong>opção de ferramenta&lt;/strong> que você utiliza;&lt;/li>
+&lt;li>&lt;strong>Data source health:&lt;/strong> essa opção é para saber mais detalhes sobre a saúde do seu círculo.&lt;/li>
+&lt;li>Faça a configuração baseada na ferramenta selecionada.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//workspace_datasource%20%281%29.gif" alt="">&lt;/p></description></item><item><title>Primeiros Passos: Ações</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/</guid><description>
+&lt;hr>
+&lt;h2>O que é?&lt;/h2>
+&lt;p>Depois de &lt;a href="../../../../referencia/metricas/grupo-de-metricas">&lt;strong>cadastrar seu grupo de métricas&lt;/strong>&lt;/a>, o Charles mostra o acompanhamento dessas métricas e oferece ações para cada uma delas. Ação é um tipo de trigger que será disparado quando todos os limites (thresholds) são alcançados.&lt;/p>
+&lt;h2>Como configurar?&lt;/h2>
+&lt;p>Em configurações do workspace, clique na seção &lt;strong>Add Metric Action&lt;/strong> e siga os passos:&lt;/p>
+&lt;p>&lt;strong>1. Add action configuration&lt;/strong>: Adicione uma ação de configuração;&lt;br>
+&lt;strong>2. Type a nickname:&lt;/strong> Escreva um nome para sua action;&lt;br>
+&lt;strong>3. Type a description:&lt;/strong> Descreva o sua action;&lt;br>
+&lt;strong>4. Select a plugin:&lt;/strong> Selecione um plugin para executar a ação.&lt;/p>
+&lt;p>&lt;img src="//workspace_metricaction%20%282%29.gif" alt="">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+O único plugin disponível no momento é o &lt;strong>circle deployment&lt;/strong>. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
+&lt;/div>
+&lt;p>Para mais informações sobre &lt;strong>Action&lt;/strong>, veja a &lt;a href="../../../referencia/metricas/acoes">&lt;strong>seção de Referência&lt;/strong>&lt;/a>.&lt;/p></description></item><item><title>Primeiros Passos: Webhooks</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/definindo-um-workspace/webhooks/</guid><description>
+&lt;hr>
+&lt;h2>O que é?&lt;/h2>
+&lt;p>Webhook é um recurso que observa os eventos de um sistema. Quando os eventos acontecem, o webhook tem a função de enviar uma notificação para os interessados cadastrados em receber as informações desse evento.&lt;/p>
+&lt;p>O Charles possui o módulo**&lt;code>charlescd-hermes&lt;/code>**, que é responsável por identificar esses eventos e enviar aos inscritos as notificações.&lt;/p>
+&lt;h3>Como cadastrar?&lt;/h3>
+&lt;p>É necessário criar configurações de webhook para utilizar essa funcionalidade no Charle. Para isso, siga os passos abaixo:&lt;/p>
+&lt;ol>
+&lt;li>Em &lt;strong>Workspace&lt;/strong>, clique em &lt;strong>&amp;lsquo;Add Webhook&amp;rsquo;&lt;/strong>;&lt;/li>
+&lt;li>Preencha os campos de:
+&lt;ul>
+&lt;li>&lt;strong>Descrição:&lt;/strong> adicione a descrição do webhook;&lt;/li>
+&lt;li>&lt;strong>Webhook URL:&lt;/strong> coloque a URL do serviço;&lt;/li>
+&lt;li>&lt;strong>Secret (Opcional):&lt;/strong> adicione, se necessário, a chave de aplicação;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Escolha o evento: &lt;strong>deploy&lt;/strong>, &lt;strong>undeploy&lt;/strong> ou &lt;strong>ambos&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Depois do cadastro, um card aparecerá com o status de sucesso ou erro da última mensagem enviada. Veja a imagem abaixo:&lt;/p>
+&lt;p>&lt;img src="//image%20%286%29.png" alt="Exemplo de mensagem de erro para solicita&amp;#xE7;&amp;#xE3;o do webhooks">&lt;/p>
+&lt;p>As informações do evento são enviadas na propriedade &lt;strong>content&lt;/strong>. O seu serviço exposto precisa aceitar essa propriedade no corpo da requisição.&lt;/p>
+&lt;h3>&lt;strong>Propriedade comum dos objetos do payload de webhook&lt;/strong>&lt;/h3>
+&lt;p>Cada payload de evento possui propriedades únicas. Você pode encontrá-las nas seções individuais de eventos. Abaixo estão as propriedades comuns:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Key&lt;/th>
+&lt;th style="text-align:left">Tipo&lt;/th>
+&lt;th style="text-align:left">Descrição&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">subscriptionId&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">O id da subscrição do Webhook.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">subscriptionId&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">O id da subscrição do Webhook.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">executionId&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">O id de execução do evento. Permite rastrear todo ciclo de vida da notificação.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">event&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Detalhes do evento.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2>Eventos&lt;/h2>
+&lt;p>Os eventos observáveis são &lt;strong>início&lt;/strong> e &lt;strong>finalização&lt;/strong> de &lt;strong>deploy&lt;/strong> e &lt;strong>undeploy.&lt;/strong>&lt;/p>
+&lt;h3>Deploy&lt;/h3>
+&lt;p>Quando você cadastra um webhook para receber informações sobre eventos de &lt;strong>deploy&lt;/strong> de um determinado workspace, ou quando um deploy for iniciado e finalizado automaticamente, você irá receber uma notificação com detalhes do evento.&lt;/p>
+&lt;p>Quando o evento é disparado, um payload HTTP POST é enviado a URL do webhook cadastrado.&lt;/p>
+&lt;p>Veja abaixo:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Key&lt;/th>
+&lt;th style="text-align:left">Tipo&lt;/th>
+&lt;th style="text-align:left">Descrição&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">type&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Tipo do evento. Os valores possíveis são &lt;em>START_DEPLOY e FINISH_DEPLOY&lt;/em>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">status&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Status do evento. Os valores possíveis são &lt;em>SUCCESS&lt;/em> e &lt;em>ERROR&lt;/em>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">date&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Data de execução do evento.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">timeExecution&lt;/td>
+&lt;td style="text-align:left">Long&lt;/td>
+&lt;td style="text-align:left">Tempo de execução do evento.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">worspaceId&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Id do workspace.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">author&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações do autor do evento.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">circle&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações do círculo do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">release&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Informações do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">features&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações das features do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">error&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Mensagem de erro em caso de status com erro.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Exemplo de payload do evento &lt;strong>de Deploy&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">{
+&amp;#34;content&amp;#34;: &amp;#34;{
+&amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;event&amp;#34;: {
+&amp;#34;type&amp;#34;: &amp;#34;FINISH_DEPLOY&amp;#34;,
+&amp;#34;status&amp;#34;: &amp;#34;FAIL&amp;#34;,
+&amp;#34;error&amp;#34;: &amp;#34;Failed to pull image nexus.mydomain.co.uk/nginx Error: image nginx:latest not found&amp;#34;,
+&amp;#34;date&amp;#34;: &amp;#34;2020-01-10 22:00:00&amp;#34;,
+&amp;#34;workspaceId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;author&amp;#34;: {
+&amp;#34;email&amp;#34;: &amp;#34;charlescd@zup.com.br&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;CharlesCD&amp;#34;
+},
+&amp;#34;circle&amp;#34;: {
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;circle-qas&amp;#34;
+},
+&amp;#34;release&amp;#34;: {
+&amp;#34;tag&amp;#34;: &amp;#34;tag&amp;#34;,
+&amp;#34;modules&amp;#34;: [{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;ZupIt/charlescd&amp;#34;,
+&amp;#34;componentes&amp;#34;: [{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;charlescd-moove&amp;#34;
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;charlescd-villager&amp;#34;
+}
+]
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;ZupIt/horusec&amp;#34;,
+&amp;#34;componentes&amp;#34;: [{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130005&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;horusec-account&amp;#34;
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130006&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;horusec-analytics&amp;#34;
+}
+]
+}
+],
+&amp;#34;features&amp;#34;: [{
+&amp;#34;name&amp;#34;: &amp;#34;new-moove-feature&amp;#34;,
+&amp;#34;branchName&amp;#34;: &amp;#34;feature/moove-feature&amp;#34;
+},
+{
+&amp;#34;name&amp;#34;: &amp;#34;new-horusec-feature&amp;#34;,
+&amp;#34;branchName&amp;#34;: &amp;#34;feature/horusec-feature&amp;#34;
+}
+]
+}
+}
+}&amp;#34;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3>Undeploy&lt;/h3>
+&lt;p>Quando você cadastra um webhook para receber informações sobre eventos de &lt;strong>undeploy,&lt;/strong> de um determinado workspace, quando um undeploy for iniciado e finalizado automaticamente você irá receber uma notificação com detalhes do evento.&lt;/p>
+&lt;p>Quando o evento é disparado, um payload HTTP POST é enviado a URL do webhook cadastrado, veja abaixo:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Key&lt;/th>
+&lt;th style="text-align:left">Tipo&lt;/th>
+&lt;th style="text-align:left">Descrição&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">type&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Tipo do evento. Os valores possíveis são &lt;em>START_UNDEPLOY e FINISH_UNDEPLOY&lt;/em>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">status&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Status do evento. Os valores possíveis são &lt;em>SUCCESS&lt;/em> e &lt;em>ERROR&lt;/em>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">date&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Data de execução do evento.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">worspaceId&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Id do workspace.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">author&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações do autor do evento.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">circle&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações do círculo do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">release&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Informações do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">features&lt;/td>
+&lt;td style="text-align:left">Object&lt;/td>
+&lt;td style="text-align:left">Informações das features do deploy/undeploy.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">error&lt;/td>
+&lt;td style="text-align:left">String&lt;/td>
+&lt;td style="text-align:left">Mensagem de erro em caso de status com erro.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Exemplo de payload do evento &lt;strong>de Undeploy&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;#34;content&amp;#34;: &amp;#34;{
+&amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;event&amp;#34;: {
+&amp;#34;type&amp;#34;: &amp;#34;START_UNDEPLOY&amp;#34;,
+&amp;#34;status&amp;#34;: &amp;#34;SUCCESS&amp;#34;,
+&amp;#34;date&amp;#34;: &amp;#34;2020-01-10 22:00:00&amp;#34;,
+&amp;#34;workspaceId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;author&amp;#34;: {
+&amp;#34;email&amp;#34;: &amp;#34;charlescd@zup.com.br&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;CharlesCd&amp;#34;
+},
+&amp;#34;circle&amp;#34;: {
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;circle-qas&amp;#34;
+},
+&amp;#34;release&amp;#34;: {
+&amp;#34;tag&amp;#34;: &amp;#34;tag&amp;#34;,
+&amp;#34;modules&amp;#34;: [
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;ZupIt/charlescd&amp;#34;,
+&amp;#34;componentes&amp;#34;: [
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;charlescd-moove&amp;#34;
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;charlescd-villager&amp;#34;
+}
+]
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;ZupIt/horusec&amp;#34;,
+&amp;#34;componentes&amp;#34;: [
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130005&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;horusec-account&amp;#34;
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130006&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;horusec-analytics&amp;#34;
+}
+]
+}
+],
+&amp;#34;features&amp;#34;: [
+{
+&amp;#34;name&amp;#34;: &amp;#34;new-moove-feature&amp;#34;,
+&amp;#34;branchName&amp;#34;: &amp;#34;feature/moove-feature&amp;#34;
+},
+{
+&amp;#34;name&amp;#34;: &amp;#34;new-horusec-feature&amp;#34;,
+&amp;#34;branchName&amp;#34;: &amp;#34;feature/horusec-feature&amp;#34;
+}
+]
+}
+}
+}&amp;#34;
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

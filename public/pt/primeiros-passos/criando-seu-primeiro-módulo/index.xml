@@ -1,0 +1,68 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Criando seu primeiro módulo</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/</link><description>Recent content in Criando seu primeiro módulo on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/index.xml" rel="self" type="application/rss+xml"/><item><title>Primeiros Passos: Configurando o chart template</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-o-chart-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-o-chart-template/</guid><description>
+&lt;hr>
+&lt;h2>&lt;strong>O que é o Helm?&lt;/strong>&lt;/h2>
+&lt;p>O Helm Charts é um gerenciador de pacotes que permite você definir, instalar e atualizar as aplicações no Kubernetes, independente do grau de complexidade.&lt;/p>
+&lt;p>No contexto do Charles, o &lt;a href="https://helm.sh/docs/chart_template_guide/getting_started/">&lt;strong>Chart Template&lt;/strong>&lt;/a> é usado como uma coleção de arquivos relacionados a configurações do Kubernetes.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Se você não tiver configurado o &lt;strong>seu módulo,&lt;/strong> &lt;a href=".././">&lt;strong>acesse aqui&lt;/strong>&lt;/a>. É importante lembrar que você deve cadastrar a URL no módulo.
+&lt;/div>
+&lt;h2>Como configurar o chart template?&lt;/h2>
+&lt;p>Siga os próximos passos para configurar o app de exemplo.&lt;/p>
+&lt;h3>&lt;strong>Passo 1: Crie um diretório do chart template&lt;/strong>&lt;/h3>
+&lt;p>Para começar, você precisa salvar os seus templates em uma ferramenta de versionamento da sua preferência. Assim que criar um novo chart template, você precisa dar ao diretório o mesmo nome do componente ao qual ele se refere&lt;/p>
+&lt;p>A estrutura abaixo contém os templates necessários para se fazer o deploy de um módulo que possui um componente chamado “circles-sample”.&lt;/p>
+&lt;p>A imagem demonstra como seu diretório deve ficar:&lt;/p>
+&lt;p>&lt;img src="//screen-shot-2020-08-13-at-09.16.04.png" alt=" Diret&amp;#xF3;rio de chart template do circle-sample">&lt;/p>
+&lt;h3>Passo 2: Configure os itens do diretório&lt;/h3>
+&lt;p>Depois de criado o diretório, você deve configurá-lo. Veja quais arquivos são necessários para seguir com essa configuração:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>templates/ :&lt;/strong> contém nossos modelos.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>deployment.yaml:&lt;/strong> descreve a estrutura de &lt;a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">&lt;strong>deployment&lt;/strong>&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>service.yaml:&lt;/strong> descreve a estrutura do &lt;a href="https://kubernetes.io/docs/concepts/services-networking/service/">&lt;strong>service&lt;/strong>&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>O arquivo &lt;strong>Chart.yaml&lt;/strong> contém uma descrições como version, name, description. É necessário definir a version como &amp;ldquo;darwin&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>O arquivo &lt;strong>circles-sample.yaml&lt;/strong> possui os valores que serão utilizados nos nossos templates.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Essas são as informações que o Charles precisa ter no templates. Vale ressaltar que você pode incrementar esses templates da forma como você preferir.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>Com o seu diretório configurado de acordo com a estrutura acima, vá até a pasta &amp;ldquo;circles-sample&amp;rdquo; e execute o comando &lt;strong>&amp;quot;&lt;code>helm package .&lt;/code>&amp;quot;&lt;/strong>.&lt;/p>
+&lt;p>Ao final desse comando, você terá uma arquivo &lt;strong>tgz&lt;/strong> com o nome de circles-samples-darwin. Nossa ferramenta de CD procura esse &lt;strong>tgz&lt;/strong> para executar o template&lt;/p>
+&lt;/div></description></item><item><title>Primeiros Passos: Configurando seus módulos para propagar o id do círculo</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-seus-m%C3%B3dulos-para-propagar-o-id-do-c%C3%ADrculo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-seus-m%C3%B3dulos-para-propagar-o-id-do-c%C3%ADrculo/</guid><description>
+&lt;hr>
+&lt;h2>Por que configurar?&lt;/h2>
+&lt;p>Quando você trabalha em cenários com vários microsserviços, configurar os módulos é uma forma de garantir a propagação de header &lt;code>x-circle-id&lt;/code> e com isso certificar o &lt;a href="../../../../referencia/circulo#como-integrar-circulos-com-servicos">&lt;strong>roteamento dos usuários para as versões corretas&lt;/strong>&lt;/a>. Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microserviços que fazem parte do seu teste de hipótese.&lt;/p>
+&lt;p>Por exemplo, se você testar uma feature entre microserviços que tenham integrações em um fluxo de abertura de conta, é necessário garantir que o usuário será redirecionado a todas as versões corretas que estão no teste de hipóteses, criado para esse fluxo.&lt;/p>
+&lt;p>Para garantir isso, você pode utilizar uma biblioteca de propagação do header &lt;code>x-circle-id&lt;/code>, que faz com que o &lt;a href="../../../referencia/circle-matcher#identificacao-de-circulos-atraves-da-api">&lt;strong>id do círculo identificado pelo &lt;code>circle-matcher&lt;/code>&lt;/strong>&lt;/a>seja repassado entre todas as requisições dentro da malha de microserviço, garantindo assim, que os usuários sejam redirecionados para a versão correta do seu teste de hipótese.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Caso exista um microserviço dentro do fluxo que não faz parte do seu teste, o valor do círculo será repassado, mas a sua requisição cairá em mar aberto, porque não há nenhuma versão destinada para aquele círculo.
+&lt;/div>
+&lt;h3>&lt;strong>Exemplo&lt;/strong>&lt;/h3>
+&lt;p>Veja o workflow abaixo que mostra como a configuração funciona:&lt;/p>
+&lt;p>&lt;img src="//header-propagation-ptbr-v2.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>Ao realizar a chamada de um microserviço, o id do círculo que o usuário pertence é obtido por meio do módulo &lt;code>circle-matcher&lt;/code>.&lt;/li>
+&lt;li>O id é inserido no header de todas as próximas requisições com a chave &lt;strong>&lt;code>X-Circle-Id&lt;/code>&lt;/strong>.&lt;/li>
+&lt;li>A biblioteca de propagação possibilita repassar o &lt;strong>&lt;code>x-circle-id&lt;/code>&lt;/strong> no header para a chamada de um outro microserviço, no caso o &lt;strong>&lt;code>butler&lt;/code>.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>No Charles quando acontece um teste de hipótese no &lt;code>butler&lt;/code>, por exemplo, ele está integrado com o &lt;code>moove&lt;/code>que é o microserviço que atende as requisições do frontend.&lt;/p>
+&lt;p>Se você quiser que sua requisição chegue na versão correta do &lt;code>butler&lt;/code>, é preciso que o &lt;strong>&lt;code>moove&lt;/code>&lt;/strong> repasse o header &lt;strong>&lt;code>X-Circle-Id&lt;/code>&lt;/strong> (obtido por meio de uma requisição para o &lt;code>circle-matcher&lt;/code>) nessas requisições feitas para ele. E se envolver mais de um &lt;strong>microserviço,&lt;/strong> é preciso propagar o header para garantir que o usuário tenha a mesma versão daquele círculo.&lt;/p>
+&lt;p>Quando acontece um teste no &lt;code>moove&lt;/code> e se ele estiver integrado com o &lt;code>villager&lt;/code> e o &lt;code>butler&lt;/code>, a propagação do header &lt;code>X-Circle-Id&lt;/code> faz com que você procure por versões do &lt;code>villager&lt;/code> e do &lt;code>butler&lt;/code> na mesma versão do &lt;code>moove&lt;/code>, porém como esse não é o cenário, essas requisições entre o &lt;code>moove&lt;/code> e suas integrações serão tratadas pelo mar aberto.&lt;/p>
+&lt;h2>Como adicionar?&lt;/h2>
+&lt;p>O Charles possui uma biblioteca (lib) que funciona para qualquer aplicação &lt;strong>Java&lt;/strong> que utilize o &lt;strong>Spring&lt;/strong> como framework e outra para &lt;strong>.NET Core.&lt;/strong> As libs foram construídas por não existir nenhuma alternativa amplamente utilizada para esse cenário.&lt;/p>
+&lt;p>Para usá-las, você precisa adicioná-las a sua aplicação:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/tree/master/tracing/spring">&lt;strong>Lib para Java e Spring&lt;/strong> &lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20">&lt;strong>Lib para .NET&lt;/strong>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+O &lt;strong>Node.js&lt;/strong> já possui uma lib, &lt;a href="https://www.npmjs.com/package/hpropagate">&lt;strong>veja na página do npm&lt;/strong>&lt;/a>.
+&lt;/div></description></item></channel></rss>

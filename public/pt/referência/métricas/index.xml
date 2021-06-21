@@ -1,0 +1,328 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Métricas</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/</link><description>Recent content in Métricas on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/index.xml" rel="self" type="application/rss+xml"/><item><title>Referência: Configurando as métricas</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/</guid><description>
+&lt;hr>
+&lt;p>A configuração de métricas no Charles é realizada no &lt;strong>Istio&lt;/strong> e no seu &lt;strong>próprio provedor&lt;/strong>. Veja os detalhes abaixo.&lt;/p>
+&lt;h2>Configurando Istio&lt;/h2>
+&lt;p>As métricas relacionadas às requisições de cada círculo podem ser quantificadas e expostas pelo Istio.&lt;/p>
+&lt;div class="alert alert-danger" role="alert">
+A configuração pode ser feita a partir da versão =&amp;gt;1.7 do Istio.
+&lt;/div>
+&lt;h2>Configurando sua própria ferramenta de métricas&lt;/h2>
+&lt;p>Depois de habilitar o Istio, você precisa configurar sua ferramenta para que ela possa ler as métricas expostas.&lt;/p>
+&lt;p>Veja abaixo os detalhes das &lt;strong>ferramentas compatíveis com o Charles&lt;/strong>.&lt;/p>
+&lt;div class='code-tabs'>
+&lt;ul class="nav nav-tabs">&lt;/ul>
+&lt;div class="tab-content">
+&lt;div class="tab-pane" title="">
+&lt;p>O Prometheus é uma ferramenta de código aberto focada em monitoramento e alertas. É considerada a principal recomendação para monitoramento do &lt;a href="https://cncf.io/">&lt;strong>Cloud Native Computing Foundation&lt;/strong>&lt;/a>, além de uma das principais ferramentas do mercado.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>Se quiser saber mais, sugerimos a &lt;a href="https://prometheus.io/">&lt;strong>doc oficial&lt;/strong>&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;p>É preciso configurar o Prometheus para que ele consiga ler e armazenar os dados das métricas habilitadas, conforme o tutorial que explicamos no início.&lt;/p>
+&lt;p>Para fazer isso, é necessário adicionar o job abaixo para que leia a métrica gerada pelo Istio. Para configurar, edite o arquivo &lt;strong>prometheus.yml&lt;/strong> no seu &lt;strong>Prometheus configMap&lt;/strong>.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>É importante lembrar que, para que essas configurações funcionem, é necessário que seu Prometheus esteja no mesmo cluster de Kubernetes que o Istio e o restante das suas aplicações.&lt;/p>
+&lt;/div>
+&lt;p>Basta adicionar o job abaixo para realizar a configuração.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">global&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">15s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_timeout&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">10s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">evaluation_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">15s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">job_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charles-metrics&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">honor_timestamps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">5s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_timeout&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">5s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">metrics_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/v1/metrics&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scheme&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kubernetes_sd_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">role&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">endpoints&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespaces&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">names&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">namespace1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">namespace2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">relabel_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">separator&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">_meta_kubernetes_pod_label(.+)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">labelmap&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">__meta_kubernetes_pod_label_circleId]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">separator&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">(.*)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">__meta_kubernetes_pod_label_version]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">separator&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">(.*)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">version&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">__meta_kubernetes_pod_name]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">separator&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">(.*)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">pod_name&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">job_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">kubernetes-pods&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kubernetes_sd_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">role&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">pod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">relabel_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">keep&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_annotation_pryometheus_io_scrape&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">(.+)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_annotation_prometheus_io_path&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">__metrics_path__&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">([^:]+)(?::\d+)?;(\d+)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1:$2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__address__&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_annotation_prometheus_io_port&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">__address__ &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_namespace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">kubernetes_namespace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_label_circleId&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_label_component&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">destination_component &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">replace&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_name&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_label&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">kubernetes_pod_name&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">drop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Pending|Succeeded|Failed&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">__meta_kubernetes_pod_phase&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-info" role="alert">
+&lt;p>Mude o nome do &lt;strong>namespace&lt;/strong> para um onde sua aplicação está deployada.&lt;/p>
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, &lt;a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config">&lt;strong>veja a documentação&lt;/strong>&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;h3>Metadados&lt;/h3>
+&lt;p>A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.&lt;/p>
+&lt;p>‌Cada métrica possui uma faixa de metadado que permite uma variedade de filtros e tipos de análises a serem criadas. Foram adicionados mais metadados ao Istio e ele são descritos na tabela abaixo:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Metadado&lt;/th>
+&lt;th style="text-align:left">Descrição&lt;/th>
+&lt;th style="text-align:left">Tipo&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">destination_component&lt;/td>
+&lt;td style="text-align:left">Valor presente na label &amp;ldquo;app&amp;rdquo; da POD que recebeu a requisição ou &amp;ldquo;unknown&amp;rdquo; se a informação não estiver presente.&lt;/td>
+&lt;td style="text-align:left">Texto&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">circle_source&lt;/td>
+&lt;td style="text-align:left">Label do círculo injetado em qualquer pod do Kubernetes.&lt;/td>
+&lt;td style="text-align:left">Texto&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">response_code&lt;/td>
+&lt;td style="text-align:left">O status HTTP da resposta daquela requisição.&lt;/td>
+&lt;td style="text-align:left">Número&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane" title="">
+&lt;p>O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.&lt;/p>
+&lt;p>Para usá-lo no seu grupo de métricas, você precisa de:&lt;/p>
+&lt;ul>
+&lt;li>Uma conta Google e o Analytics configurado.&lt;/li>
+&lt;/ul>
+&lt;p>Se você quiser usar o Charles para analizar os dados do seu Google Analytics, você precisa adicionar uma nova métrica com a ID do circulo (&lt;strong>renomeando como circle_source&lt;/strong>) na label da sua métrica.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>Para mais informações sobre o Google Analytics, &lt;a href="https://developers.google.com/analytics/devguides/reporting/core/v4">&lt;strong>veja a documentação&lt;/strong>&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Metadado&lt;/th>
+&lt;th style="text-align:left">Descrição&lt;/th>
+&lt;th style="text-align:left">Tipo&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">destination_component&lt;/td>
+&lt;td style="text-align:left">Valor presente na label &amp;ldquo;app&amp;rdquo; da POD que recebeu a requisição ou &amp;ldquo;unknown&amp;rdquo; se a informação não estiver presente&lt;/td>
+&lt;td style="text-align:left">Texto&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">circle_source&lt;/td>
+&lt;td style="text-align:left">Header &amp;ldquo;x-circle-source&amp;rdquo; que é colocado pelo filtro do Envoy na interceptação de cada requisição&lt;/td>
+&lt;td style="text-align:left">Texto&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">response_code&lt;/td>
+&lt;td style="text-align:left">O status HTTP da resposta daquela requisição&lt;/td>
+&lt;td style="text-align:left">Númer&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Referência: Grupo de métricas</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/</guid><description>
+&lt;hr>
+&lt;p>O grupo de métricas é uma funcionalidade que permite você cadastrar e organizar em grupos qualquer tipo de métrica dentro da sua aplicação. Essas métricas são relacionadas com o &lt;a href="../../../primeiros-passos/definindo-workspace/adicionando-o-datasource">&lt;strong>provedor que você cadastrou anteriormente&lt;/strong>&lt;/a>.&lt;/p>
+&lt;h3>Como criar um grupo?&lt;/h3>
+&lt;p>Para criar o seu grupo de métricas, siga os passos abaixo:&lt;/p>
+&lt;p>&lt;strong>Passo 1:&lt;/strong> Vá até em &amp;lsquo;&lt;strong>Circles&amp;rsquo;&lt;/strong> no menu lateral direito e escolha o circulo que você quer criar um novo grupo de métrica;&lt;/p>
+&lt;p>&lt;strong>Passo 2:&lt;/strong> Em &lt;strong>Add metrics group,&lt;/strong> digite o nome que desejar para o seu grupo e clique em &lt;strong>add group&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="//criacaogroup.gif" alt="">&lt;/p>
+&lt;p>Depois que você criou seu grupo, agora você pode cadastrar a sua métrica:&lt;/p>
+&lt;p>&lt;strong>Passo 3:&lt;/strong> Clique em &lt;strong>Add metric&lt;/strong> e coloque o nome da métrica que você deseja;&lt;/p>
+&lt;p>&lt;strong>Passo 4:&lt;/strong> Em &lt;strong>select a data source&lt;/strong>, selecione o seu provedor de métrica já cadastrado;&lt;/p>
+&lt;p>&lt;strong>Passo 5:&lt;/strong> Clique em &lt;strong>Metric&lt;/strong> e escolha uma métrica e depois disso, utilize o &lt;strong>Filter&lt;/strong> para customizar com o valor e a condicional que você precisa. Esse é o campo onde o seu provedor irá retornar as métricas que já existem.&lt;/p>
+&lt;p>Veja o exemplo abaixo:&lt;/p>
+&lt;p>&lt;img src="//metric+filter.gif" alt="">&lt;/p>
+&lt;p>&lt;strong>Passo 6:&lt;/strong> Defina um &lt;strong>Threshold&lt;/strong> para estabelecer um limite para sua métrica.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>&lt;strong>Threshold&lt;/strong> são limites predeterminados que você pode configurar no Charles. Ele irá informar quando um deles atingir o valor especificado.&lt;/p>
+&lt;p>Por exemplo, se você quiser saber quando sua aplicação atingir um limite de 50 erros, basta customizar o &lt;strong>threshold&lt;/strong> para que você seja informado de quando essa métrica for atingida.&lt;/p>
+&lt;/div>
+&lt;p>&lt;img src="//threshold.gif" alt="">&lt;/p>
+&lt;div class="alert alert-success" role="alert">
+Pronto! Você cadastrou seu grupo de métricas.
+&lt;/div>
+&lt;p>Agora acompanhe o resultado com os gráficos e as informações disponíveis.&lt;/p>
+&lt;p>&lt;img src="//graficos.gif" alt="">&lt;/p>
+&lt;h2>&lt;strong>Grupo de Métricas: Advanced&lt;/strong>&lt;/h2>
+&lt;p>Você pode customizar sua própria métrica com a funcão &lt;strong>advanced.&lt;/strong> Essa opção é para usuários que já sabem fazer uma query no Datasource que eles estão utilizando, e também oferece o poder de criar qualquer métrica usando essa ferramenta.&lt;/p>
+&lt;p>Veja o exemplo abaixo_,_ mostra onde usar o **PromQL** para fazer queries no Prometheus, criando um novo tipo de métrica:&lt;/p>
+&lt;p>&lt;img src="//advanced.png" alt="">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Para mais exemplo do modo avançado, &lt;strong>veja essa seção&lt;/strong>.
+&lt;/div></description></item><item><title>Referência: Ações</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/</guid><description>
+&lt;hr>
+&lt;h3>Como a&lt;strong>dicionar uma action?&lt;/strong>&lt;/h3>
+&lt;p>Depois de configurar sua action, você deve cadastrá-la no seu grupo de métricas e adicioná-la ao seu círculo.&lt;/p>
+&lt;p>Siga os próximo passos para fazer isso:&lt;/p>
+&lt;p>&lt;strong>Passo 1:&lt;/strong> Acesse o grupo de métricas;&lt;/p>
+&lt;p>&lt;strong>Passo 2:&lt;/strong> Selecione &amp;lsquo;&lt;strong>Add action&lt;/strong>&amp;rsquo; e preencha os campos:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Type a nickname for action&lt;/strong>: Selecione o nome da sua action;&lt;/li>
+&lt;li>&lt;strong>Select action type&lt;/strong>: Selecione a action que você configurou antes;&lt;/li>
+&lt;li>&lt;strong>Action configuration&lt;/strong>: Configuração de execução do plugin escolhido.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://lh4.googleusercontent.com/ZsNzqltV7-ayZ5flGjB1tpNmFARKOlNCcW-GyznFxJIwR3e3_sDOXCqP_fZ5GTTCprorbKE2qbJaNSvhYYtv3ToOl2rxUqqeba3lUg_aHM5le0QjB2_6dkHRVar2tI6aBjuhU-Pq" alt="">&lt;/p>
+&lt;h3>&lt;strong>Como funciona?&lt;/strong>&lt;/h3>
+&lt;p>Ações são triggers que serão disparados quando todos os limites (threshold) predeterminados são alcançados em um grupo de métricas.&lt;/p>
+&lt;p>O &lt;a href="grupo-de-metricas">&lt;strong>grupo de métricas&lt;/strong>&lt;/a> cria métricas que você deseja acompanhar e você também pode adicionar ações a esse grupo. Quando todos thresholds são alcançados, a ação será disparada e ocorrerá o que está descrito no plugin como, por exemplo, fazer o deploy daquele círculo em um outro círculo.&lt;/p>
+&lt;p>Você pode acompanhar o status da ação no quadro dentro de &lt;strong>&amp;lsquo;Grupo de métricas&lt;/strong>&amp;rsquo;, veja abaixo:&lt;/p>
+&lt;p>&lt;img src="https://lh5.googleusercontent.com/YCz6joPhPCj8__wqgl1zRR8ESI2TzrzIkiq3uWoHXdNKaDs_3zoP3kKRYIQGhUNLgMqhmcwiuD55BkRy_rsgBPHY6rMOHXnxCRHqrC6B5dBjsuBtZaTQwH0RBb9Ob2i8kcE9jGG0" alt="">&lt;/p></description></item><item><title>Referência: Grupo de métricas para monitorar a saúde</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/</guid><description>
+&lt;hr>
+&lt;h2>O que é?&lt;/h2>
+&lt;p>Quando sua aplicação já fez o deployment, é uma boa prática checar a saúde, confirmar se o software está funcionando bem ou observar se precisa de algum cuidado específico.&lt;/p>
+&lt;p>Você pode fazer isso com o Charles, utilizando o &lt;a href="../../../primeiros-passos/definindo-workspace/adicionando-o-datasource">&lt;strong>datasource configurado anteriormente&lt;/strong>&lt;/a> para criar um grupo de métricas especifico que informa o status da sua imagem em que foi feito o deploy.&lt;/p>
+&lt;p>Você encontra abaixo os detalhes.&lt;/p>
+&lt;h2>Requisitos&lt;/h2>
+&lt;p>Para monitorar suas métricas, é preciso ter:&lt;/p>
+&lt;ul>
+&lt;li>Datasource configurado e usando o &lt;a href="https://prometheus.io/">&lt;strong>Prometheus&lt;/strong>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://istio.io/latest/">&lt;strong>Istio&lt;/strong>&lt;/a> 1.7 ou versões mais recentes.&lt;/li>
+&lt;/ul>
+&lt;h2>Como monitorar?&lt;/h2>
+&lt;ol>
+&lt;li>Você precisar criar seu &lt;strong>grupo de métricas&lt;/strong> e &lt;strong>sua própria métrica&lt;/strong>, para fazer isso &lt;a href="grupo-de-metricas">&lt;strong>siga os passos aqui&lt;/strong>&lt;/a>;&lt;/li>
+&lt;li>No modo avançado, execute o &lt;strong>PromQL queries&lt;/strong> para monitorar suas métricas.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+Para saber mais sobre o &lt;strong>PromQL&lt;/strong>, veja a &lt;a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">&lt;strong>documentação&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;h2>Exemplos de métricas&lt;/h2>
+&lt;p>Depois de ter criado o seu grupo de métricas, você também pode criar suas própria métrica. Veja alguns exemplos abaixo.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Quando você utiliza algum desses exemplos, você pode criar várias métricas, como a proporção de erro pelo total de requisições e você também pode disparar uma ação se essa métrica atingir 10%.
+&lt;/div>
+&lt;h3>Métrica de latência&lt;/h3>
+&lt;p>Aqui, a métrica foi criada para oferecer uma média de latência. Ela divide a duração (em milissegundos) das requisições no último minuto pelo total de requisições no mesmo tempo.&lt;/p>
+&lt;p>No final da query, o valor é multiplicado por 1000 e você consegue ver o resultado em segundos.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Mude o valor de &lt;strong>xyz&lt;/strong> em uma query usando o valor do Circle ID. É válido para todos os exemplos abaixo.
+&lt;/div>
+&lt;pre>&lt;code>round (
+( sum (
+irate (
+istio_request_duration_milliseconds_sum{circle_source=&amp;quot;xyz&amp;quot;}[1m]
+)
+) by(destination_component) /
+sum (
+irate (
+istio_request_duration_milliseconds_count{circle_source=&amp;quot;xyz&amp;quot;}[1m]
+)
+) by(destination_component)
+)
+* 1000
+)
+&lt;/code>&lt;/pre>
+&lt;div class="alert alert-info" role="alert">
+Depois que você instalou o Istio e Prometheus e habilitou o Istio injection em seus pods, o seu Datasource terá as métricas do Istio. Essas métricas podem ser usadas para construir outras mais avançadas. Veja mais sobre essa métrica na &lt;a href="https://istio.io/latest/docs/reference/config/metrics/">&lt;strong>documentação&lt;/strong> &lt;strong>Istio Standard Metrics&lt;/strong>&lt;/a>
+&lt;/div>
+&lt;h3>Métrica do total de requisições&lt;/h3>
+&lt;p>Essa métrica oferece o total de requisições no último minuto:&lt;/p>
+&lt;pre>&lt;code>ceil (
+sum (
+irate (
+istio_requests_total{circle_source=&amp;quot;xyz&amp;quot;}[1m]
+)
+)
+by(destination_component)
+)
+&lt;/code>&lt;/pre>&lt;h3>Métricas de erro de requisção&lt;/h3>
+&lt;p>Essa métrica mostra quais as requisições no último minuto, mas apenas para a status de resposta com o código 404:&lt;/p>
+&lt;pre>&lt;code>ceil (
+sum (
+irate (
+istio_requests_total{circle_source=&amp;quot;xyz&amp;quot;,
+response_code=&amp;quot;404&amp;quot;}[1m]
+)
+)
+by(destination_component)
+)
+&lt;/code>&lt;/pre>
+&lt;div class="alert alert-warning" role="alert">
+Você precisa definir um limite (threshold) que preencha o que você precisa monitorar.
+&lt;/div></description></item><item><title>Referência: Métricas do Charles</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/</guid><description>
+&lt;hr>
+&lt;p>O Charles oferece métricas para você monitorar os deploys e os círculos.&lt;/p>
+&lt;p>&lt;img src="//metrics-circ-e-deplo.png" alt="">&lt;/p>
+&lt;h2>Métrica de deploy&lt;/h2>
+&lt;p>A métrica de deploy é uma funcionalidade que permite a visualização de um dashboard com as informações necessárias para você acompanhar os seus deployments, como os números de ocorrências com sucessos ou erros e o tempo médio de implantação.&lt;/p>
+&lt;p>Há também outras informações disponíveis, como:&lt;/p>
+&lt;ul>
+&lt;li>O nome da release usada;&lt;/li>
+&lt;li>O círculo escolhido;&lt;/li>
+&lt;li>A data e a duração do deploy;&lt;/li>
+&lt;li>O responsável pelo deploy;&lt;/li>
+&lt;li>Casos de undeploy;&lt;/li>
+&lt;li>Módulos, componentes e versões utilizados;&lt;/li>
+&lt;li>Status do deploy: Deployed, Deploying, Error, Undeployed e Undeploying.&lt;/li>
+&lt;/ul>
+&lt;p>Veja o exemplo abaixo:&lt;/p>
+&lt;p>&lt;img src="//deploy.gif" alt="">&lt;/p>
+&lt;h2>Métrica de círculos&lt;/h2>
+&lt;p>É um gerenciador que facilita a visualização e o acompanhamento de informações técnicas sobre seus círculos.&lt;/p>
+&lt;p>Com as métricas de círculo você pode ter uma visão geral sobre o seus círculos no Charles, como:&lt;/p>
+&lt;ul>
+&lt;li>Os círculos &lt;a href="../../circulo#circulos-ativos-e-inativos">&lt;strong>ativos e inativos&lt;/strong>&lt;/a>;&lt;/li>
+&lt;li>Tempo de vida do círculo;&lt;/li>
+&lt;li>A data da última atualização;&lt;/li>
+&lt;/ul>
+&lt;p>Veja abaixo:&lt;/p>
+&lt;p>&lt;img src="//erro%20%281%29.gif" alt="">&lt;/p></description></item></channel></rss>

@@ -1,0 +1,55 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Registry</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/</link><description>Recent content in Registry on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Referência: Azure Container Registry</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/azure-container-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/azure-container-registry/</guid><description>
+&lt;hr>
+&lt;p>Informe os dados abaixo para conceder acesso a Charles ao seu Azure Container Registry:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Nome&lt;/strong>: esse nome representará sua configuração no Charles;&lt;/li>
+&lt;li>&lt;strong>URL do seu registry&lt;/strong>: a URL para o seu registry padrão é &lt;a href="https://registry-name.azurecr.io/">https://&lt;strong>registry-name&lt;/strong>.azurecr.io/&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Username&lt;/strong>: ID da entidade de serviço que será usada pelo Kubernetes para acessar o registro;&lt;/li>
+&lt;li>&lt;strong>Password&lt;/strong>: senha da entidade de serviço.&lt;/li>
+&lt;/ul>
+&lt;p>Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da &lt;a href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-concepts">&lt;strong>Azure Container Registry&lt;/strong>&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+A funcionalidade de Connection Test garante que as credenciais informadas são válidas.
+&lt;/div></description></item><item><title>Referência: Docker Hub</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/docker-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/docker-hub/</guid><description>
+&lt;hr>
+&lt;p>Informe os dados abaixo para conceder acesso a Charles ao seu Docker Hub:&lt;/p>
+&lt;p>&lt;strong>Nome&lt;/strong>: esse nome representará sua configuração no Charles;&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>URL do seu registry&lt;/strong>: a URL do seu Docker Hub &lt;a href="https://registry.hub.docker.com/">&lt;strong>https://registry.hub.docker.com&lt;/strong>&lt;/a>&lt;strong>;&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Username:&lt;/strong> adicione o seu &lt;strong>dockerid&lt;/strong>;&lt;/li>
+&lt;li>&lt;strong>Password:&lt;/strong> a senha do seu Docker Hub ou o &lt;strong>token de acesso&lt;/strong>. Veja a baixo como gerar:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Acesse sua conta docker;&lt;/li>
+&lt;li>Vá em configurações (&lt;strong>Account settings&lt;/strong>);&lt;/li>
+&lt;li>Selecione a opção &lt;strong>Security&lt;/strong>;&lt;/li>
+&lt;li>Clique em &lt;strong>new access token&lt;/strong> e copie o token gerado.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+A funcionalidade de Connection Test garante que as credenciais informadas são válidas.
+&lt;/div></description></item><item><title>Referência: ECR</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/ecr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/ecr/</guid><description>
+&lt;hr>
+&lt;p>Informe os dados abaixo para conceder acesso a Charles ao seu Amazon ECR:&lt;/p>
+&lt;p>&lt;strong>Nome&lt;/strong>: esse nome representará sua configuração no Charles;&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>URL do seu registry&lt;/strong>: segundo a convenção, a URL para o seu registry padrão é &lt;a href="https://aws_account_id.dkr.ecr.region.amazonaws.com">https://&lt;strong>aws_account_id&lt;/strong>.dkr.ecr.region.amazonaws.com&lt;/a>;&lt;/li>
+&lt;li>&lt;strong>Access Key&lt;/strong>: informação de segurança gerada pela AWS ECR;&lt;/li>
+&lt;li>&lt;strong>Secret Key&lt;/strong>: informação de segurança gerada pela AWS ECR;&lt;/li>
+&lt;li>&lt;strong>Region&lt;/strong>: a região de onde você está operando.&lt;/li>
+&lt;/ul>
+&lt;p>Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da &lt;a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">&lt;strong>Amazon ECR&lt;/strong>&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+A funcionalidade de Connection Test garante que as credenciais informadas são válidas.
+&lt;/div></description></item><item><title>Referência: GCR</title><link>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/gcr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/refer%C3%AAncia/registry/gcr/</guid><description>
+&lt;hr>
+&lt;p>Informe os dados abaixo para conceder acesso a Charles ao seu Google Cloud Registry:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Nome&lt;/strong>: esse nome representará sua configuração no Charles;&lt;/li>
+&lt;li>&lt;strong>URL do seu registry&lt;/strong>: a URL do seu GCR, como&lt;input disabled="" type="checkbox"> (%20https://gcr.io)&lt;a href="%20https://gcr.io">&lt;strong>https://gcr.io&lt;/strong>&lt;/a>;&lt;/li>
+&lt;li>&lt;strong>Project ID:&lt;/strong> acesse o &lt;em>Google Cloud Platform&lt;/em>, selecione seu projeto e &lt;a href="https://support.google.com/googleapi/answer/7014113?hl=en">&lt;strong>copie o id&lt;/strong>;&lt;/a>&lt;/li>
+&lt;li>&lt;strong>JSON key:&lt;/strong> adicione o JSON key gerado. Para mais informações de &lt;a href="https://cloud.google.com/container-registry/docs/advanced-authentication#json-key">&lt;strong>como gerar seu json key, veja aqui&lt;/strong>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da &lt;a href="https://cloud.google.com/container-registry">&lt;strong>Google Container Registry&lt;/strong>&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+A funcionalidade de Connection Test garante que as credenciais informadas são válidas.
+&lt;/div></description></item></channel></rss>

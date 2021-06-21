@@ -1,0 +1,834 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Reference</title><link>http://docs.charlescd.io/v1.0.x/reference/</link><description>Recent content in Reference on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Reference: Circles</title><link>http://docs.charlescd.io/v1.0.x/reference/circles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/circles/</guid><description>
+&lt;hr>
+&lt;p>Circles are the main approach related to the &lt;a href="../../../faq/about-charles#what-is-circle-deploy">&lt;strong>new deploy concept&lt;/strong>&lt;/a> brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.&lt;/p>
+&lt;p>&lt;img src="//deploy_em_circulos%20%289%29%20%281%29.png" alt="Circle generation with Charles deployments">&lt;/p>
+&lt;p>Circles indicate clients segmentation and also support the version management created for a specific audience.&lt;/p>
+&lt;p>Once the right people are chosen to have access to your release associated to a circle, Charles will generate a&lt;a href="metrics/#charles-available-metrics"> &lt;strong>series of business or performance metrics&lt;/strong>&lt;/a>. This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.&lt;/p>
+&lt;h2>How to create circles?&lt;/h2>
+&lt;p>To create a circle, you just have to follow these steps:&lt;/p>
+&lt;p>&lt;strong>1.&lt;/strong> Click on Create Circle.&lt;br>
+&lt;strong>2.&lt;/strong> Give a name to your circle.&lt;br>
+&lt;strong>3.&lt;/strong> Define a segmentation.&lt;br>
+&lt;strong>4.&lt;/strong> [Optional] Implement a release.&lt;/p>
+&lt;h2>What is a segmentation?&lt;/h2>
+&lt;p>Segmentations are a subset of characteristics that you define to put all your users together in a circle. To make this happen, there are two ways to segment your users:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>By filling in information manually&lt;/strong>&lt;/li>
+&lt;li>Through a &lt;strong>CVS file importation&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;h3>How do you define it?&lt;/h3>
+&lt;p>Segmentations have the following fields that you have to fill:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Key:&lt;/strong> it is the same value in the user&amp;rsquo;s identify request payload.&lt;/li>
+&lt;li>&lt;strong>Conditional:&lt;/strong> it is the logic implication that will condition your key and value.&lt;/li>
+&lt;li>&lt;strong>Value:&lt;/strong> they are the values in your base that can be used to make the segmentation logic.&lt;/li>
+&lt;/ul>
+&lt;p>The key and value fields are established based on the information that will be sent in the request, that &lt;a href="../../get-started/defining-a-workspace/circle-matcher">&lt;strong>identifies the circles&lt;/strong>&lt;/a> where your user belong to. For example, the following payload could represent the information you have about a client:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">{
+&amp;#34;id&amp;#34;: &amp;#34;7f2926d5-ff08-4d49-96df-d4ba0fc07b52&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;Alice&amp;#34;,
+&amp;#34;state&amp;#34;: &amp;#34;MG&amp;#34;,
+&amp;#34;city&amp;#34;: &amp;#34;Uberlândia&amp;#34;,
+&amp;#34;age&amp;#34;: &amp;#34;47&amp;#34;,
+&amp;#34;groupId&amp;#34;: &amp;#34;a435bd12-ae82-48c8-b164-066d91ffe3a5&amp;#34;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The keys used could be any of the ones sent in your application payload to the Charles' circle-matcher, such as: &lt;strong>id&lt;/strong>, &lt;strong>name&lt;/strong>, &lt;strong>state&lt;/strong>, &lt;strong>city&lt;/strong>, &lt;strong>age&lt;/strong> e &lt;strong>groupId&lt;/strong>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+It is important to remember that your payload and your keys must be the same.
+&lt;/div>
+&lt;p>See the example on how to create a circle below:&lt;/p>
+&lt;p>&lt;img src="//chrome-capture-7-.gif" alt="How to create a circle">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>&lt;strong>The best advantage to use segmentation&lt;/strong> is the possibility to combine logic with several attributes to create different audience categories and, in this way, use them on hypothesis tests.&lt;/p>
+&lt;p>For example, using the characteristics ‘profession’ and ‘region’, you are able to create a circle with engineers from the brazilian north region, another one with engineers from the southeast and a third one with all brazilians engineers.&lt;/p>
+&lt;/div>
+&lt;h3>&lt;strong>Manual segmentation&lt;/strong>&lt;/h3>
+&lt;p>On this kind of segmentation, you define the logic the circle will follow to build a match with predetermined characteristics.&lt;/p>
+&lt;p>This characteristics can be defined based on the following logics:&lt;/p>
+&lt;ul>
+&lt;li>Equal to&lt;/li>
+&lt;li>Not Equal&lt;/li>
+&lt;li>Lower Than&lt;/li>
+&lt;li>Lower or equal to&lt;/li>
+&lt;li>Higher than&lt;/li>
+&lt;li>Higher or equal to&lt;/li>
+&lt;li>Between&lt;/li>
+&lt;li>Starts With&lt;/li>
+&lt;/ul>
+&lt;p>See some examples below:&lt;/p>
+&lt;p>&lt;img src="//image%20%285%29.png" alt="Example of manual segmentation">&lt;/p>
+&lt;h3>&lt;strong>Segmentation by CSV importation&lt;/strong>&lt;/h3>
+&lt;p>This segmentation is used only in the first CSV column to create rules. The first line in the first column must contain the key name and the same one must be informed on the key field.&lt;em>.&lt;/em>&lt;/p>
+&lt;p>&lt;img src="//chrome-capture-5-.jpg" alt="Example of CSV importation">&lt;/p>
+&lt;p>After you have finished the file upload and saved the configuration, an overview will show up demonstrating how your segmentation is:&lt;/p>
+&lt;p>&lt;img src="//image%20%284%29.png" alt="Overview of CVS importation">&lt;/p>
+&lt;p>This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a .csv file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+OR is the only logic operator supported on this segmentation.
+&lt;/div>
+&lt;h3>How to get &lt;strong>my circle&amp;rsquo;s identifier&lt;/strong>? &lt;a id="como-obter-o-identificador-do-meu-workspace">&lt;/a>&lt;/h3>
+&lt;p>Once your circle is created, even without the configuration, it already has a single identifier.&lt;/p>
+&lt;p>To get this information, select the workspace you want and then on the left menu, click on &lt;strong>Copy ID.&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="//circuloid%20%282%29.gif" alt="">&lt;/p>
+&lt;h2>Active and inactive circles&lt;/h2>
+&lt;p>The existence of releases defines if a circle is active or not, which is the implemented versions for users segmentation. Therefore, active circles have implemented releases while the inactive circle doesn&amp;rsquo;t have any.&lt;/p>
+&lt;p>&lt;img src="//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7rKxDdQhwf1rfMyili%2F-M7rMicKEB9xYtEJ-28B%2Fchrome-capture%20%282%29.gif?alt=media&amp;amp;token=04dfdbc0-4976-489e-aee4-44ec4946640f" alt="Active and Inactive circle filter">&lt;/p>
+&lt;h2>How to integrate circle with services?&lt;/h2>
+&lt;p>Once the &lt;strong>circle which the user belongs&lt;/strong> to is detected, this information must be passed on to all next requests through the &lt;code>x-circle-id&lt;/code> parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Let&amp;rsquo;s see how it woks on example below:&lt;/p>
+&lt;p>&lt;img src="//como_integrar_circulos_com_servicos_copy%20%282%29.png" alt="">&lt;/p>
+&lt;p>At some point during the interaction of the user and your application &lt;strong>(App1)&lt;/strong>, for example, the login - the &lt;strong>&lt;code>Identify&lt;/code>&lt;/strong> service of &lt;strong>&lt;code>charles-circle-matcher&lt;/code>&lt;/strong> - must be triggered to get the circle.&lt;/p>
+&lt;p>By that, the ID must be passed on as value in the &lt;strong>&lt;code>x-circle-id&lt;/code>&lt;/strong> parameter located on the header of all next requests of your services &lt;strong>(&lt;code>App2&lt;/code>).&lt;/strong> Charles is responsible to disseminate this information because when it&amp;rsquo;s received on Kubernetes, it will be used to redirect the request to a corresponding release version associated with a circle.&lt;/p>
+&lt;p>If the &lt;strong>&lt;code>x-circle-id&lt;/code>&lt;/strong> is not passed on, all the requests will be redirected to &lt;strong>Default&lt;/strong> versions, which means it will use the standard releases of your applications, without a specific segmentation.&lt;/p>
+&lt;h3>&lt;strong>Mix of services with different versions of my release&lt;/strong>&lt;/h3>
+&lt;p>We will give an example of a specific scenario where your environment has two services: &lt;strong>Application A&lt;/strong> and &lt;strong>Application B&lt;/strong> and your circles must use the following versions:&lt;/p>
+&lt;p>&lt;img src="//versoes_diferentes_na_minha_release_eng%20%281%29.png" alt="">&lt;/p>
+&lt;p>So, the redirect logic using &lt;strong>&lt;code>x-circle-id&lt;/code>&lt;/strong> will be:&lt;/p>
+&lt;ol>
+&lt;li>The user sends to the header: &lt;code>x-circle-id=&amp;quot;QA Circle&amp;quot;&lt;/code>. On this circle, the request will be redirect to a &lt;strong>X version&lt;/strong> of the service on &lt;strong>Application A&lt;/strong> and the &lt;strong>Y version&lt;/strong> of the service on &lt;strong>Application B&lt;/strong>.&lt;/li>
+&lt;li>The user sends to the header: &lt;code>x-circle-id=”Dev Circle”&lt;/code>. On this circle, the request will be redirect to the &lt;strong>Z version&lt;/strong> of the service on &lt;strong>Application A&lt;/strong> and &lt;strong>Z version&lt;/strong> of the service on &lt;strong>Application B.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//versoes_diferentes_na_minha_release_ii_eng%20%281%29.png" alt="Example of Application 1 and Application 2">&lt;/p>
+&lt;h2>How to route your circles with Kubernetes Clusters?&lt;/h2>
+&lt;p>&lt;strong>Charles&lt;/strong> involves &lt;a href="https://kubernetes.io/docs/home/">&lt;strong>Kubernetes&lt;/strong>&lt;/a> and &lt;a href="https://istio.io/docs/">&lt;strong>Istio&lt;/strong>&lt;/a> on traffic routing. Let&amp;rsquo;s think about a scenario where there are two circles:&lt;/p>
+&lt;ul>
+&lt;li>Campinas residents (identify by ID 1234);&lt;/li>
+&lt;li>Belo Horizonte&amp;rsquo;s residents (identify by ID 8746).&lt;/li>
+&lt;/ul>
+&lt;p>Both circles were implemented with service releases called &lt;strong>&amp;lsquo;application&amp;rsquo;&lt;/strong>, but with different versions:&lt;/p>
+&lt;ul>
+&lt;li>Campinas' residents (1234): version 2, v2.&lt;/li>
+&lt;li>Belo Horizonte&amp;rsquo;s residents (8746): version 3, v3.&lt;/li>
+&lt;/ul>
+&lt;p>Besides that, there is a default (v1) version for users that don&amp;rsquo;t fit in any specific circle.&lt;/p>
+&lt;p>Let&amp;rsquo;s supposed that, to make a request to identify a user, an ID 8756 is returned. This information will be passed by the next service interaction through the header &lt;code>x-circle-id&lt;/code>. The image below shows how Charles uses the internal resources to route the correct release.&lt;/p>
+&lt;p>&lt;img src="//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&amp;amp;token=7b73c615-db6c-438e-a142-e4c131b6d606" alt="">&lt;/p>
+&lt;p>When performing a version implementation in a circle, Charles makes all the configuration so that the routing is correctly done. To understand better how this works, let&amp;rsquo;s use a scenario where a request comes from a service outside the stack, see the image above.&lt;/p>
+&lt;p>The request will be received by Ingress, which performs all the routing control to the service mesh.&lt;/p>
+&lt;ol>
+&lt;li>Once the request entry is allowed, Virtual Service inquiries the traffic routing rules to be applied on the addressed host. In this case, the evaluation happens through&lt;code>x-circle-id&lt;/code> header specification, in a way that the traffic corresponds to the &lt;strong>application&lt;/strong> service.&lt;/li>
+&lt;li>Besides the service, it is also necessary to know which subset is defined on the register. This verification is made on &lt;strong>Destination rules&lt;/strong>.&lt;/li>
+&lt;li>The traffic redirect is peformed based on previous information, until it gets to the service version.&lt;/li>
+&lt;li>If the &lt;code>x-circle-id&lt;/code> is not informed, there is a rule defined by Virtual Service that will forward to the default version (v1).&lt;/li>
+&lt;/ol></description></item><item><title>Reference: Circle Matcher</title><link>http://docs.charlescd.io/v1.0.x/reference/circle-matcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/circle-matcher/</guid><description>
+&lt;hr>
+&lt;p>Circle Matcher is a resource that allows you to validate if your &lt;a href="circles">&lt;strong>circles&lt;/strong>&lt;/a> are in coherent segmentations. You can also use it in your applications to determine in which circle your users fit better.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+One good practice is to always make this identification when a user logs in the application. However, this can be changed according to your business needs.
+&lt;/div>
+&lt;p>For more information on how to configure your &lt;strong>Circle Matcher in a workspace&lt;/strong>, &lt;a href="../../get-started/defining-a-workspace/circle-matcher">&lt;strong>see Defining Workspace section&lt;/strong>&lt;/a>&lt;/p>
+&lt;h2>Identifying circles through CharlesCD&lt;/h2>
+&lt;p>Once you start using the interface, it&amp;rsquo;s possible to notice that there are two ways to perform the circle identification. For that, access the &lt;strong>Circles&lt;/strong> menu inside a &lt;strong>workspace&lt;/strong> and select the icon indicated below:&lt;/p>
+&lt;p>&lt;img src="//chrome-capture%20%282%29.jpg" alt="Circle Matcher identification icon ">&lt;/p>
+&lt;p>The two ways to make this validation are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Default:&lt;/strong> in this option, you add manually keys and values to define the characteristics of a user test. Based on that, once you run the &lt;strong>Try&lt;/strong>, &lt;strong>you will receive all the circles related to these user.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="//circle-matcher-default%20%282%29.gif" alt="Circle identification with Default option.">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>JSON:&lt;/strong> similar to the default option, with the difference that here you can copy and paste in &lt;strong>payload field&lt;/strong> a &lt;strong>JSON&lt;/strong> of your productive environment instead of adding manually.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="//circle-matcher-json%20%282%29.gif" alt="Circle identification with JSON option. ">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+If you pass some information that are off the preconfigured logic conditions in the circles, the system will return indicating that the user is on &lt;em>Default&lt;/em> circle, on the standard version of your application.
+&lt;/div>
+&lt;h2>Circle identification through API&lt;/h2>
+&lt;p>You can integrate in your applications the &lt;strong>Identify&lt;/strong> resource on the &lt;a href="https://github.com/ZupIT/charlescd/tree/master/circle-matcher">&lt;code>charles-circle-matcher&lt;/code>&lt;/a> module to detect the circles the user belongs to.&lt;/p>
+&lt;p>For example, considering the use of the parameters below to segment:&lt;/p>
+&lt;p>&lt;img src="https://lh6.googleusercontent.com/q573-961WtpntVK8NfXXvPgzSPrxLwxjx3QXRqM3vBlHFM8nAoDkpn1KD26Zfw3_wJtjnhVldYcwRUUzhbveEvqJz6n16NQFkxi0S3hh8rk6Y7OUmWtnBOl_qJekzoymQ64mFF8k" alt="">&lt;/p>
+&lt;p>Once you send the identification request with some information, compatible circles will be returned.&lt;/p>
+&lt;p>{% api-method method=&amp;ldquo;post&amp;rdquo; host=&amp;ldquo;https:// api.charlescd-circle-matcher.com/identify &amp;quot; path=&amp;rdquo;&amp;quot; %}}
+{% api-method-summary %}}
+Identify
+{% endapi-method-summary %}}&lt;/p>
+&lt;p>{% api-method-description %}}
+Method used to identify circles based on the user&amp;rsquo;s characteristics
+{% endapi-method-description %}}&lt;/p>
+&lt;p>{% api-method-spec %}}
+{% api-method-request %}}
+{% api-method-body-parameters %}}
+{% api-method-parameter name=&amp;ldquo;requestData&amp;rdquo; type=&amp;ldquo;object&amp;rdquo; required=true %}}
+{ &amp;ldquo;state&amp;rdquo;: &amp;ldquo;NY&amp;rdquo;, &amp;ldquo;profession&amp;rdquo;: &amp;ldquo;Lawyer&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 46, &amp;ldquo;city&amp;rdquo;: &amp;ldquo;Stony Brook&amp;rdquo;}
+{% endapi-method-parameter %}}&lt;/p>
+&lt;p>{% api-method-parameter name=&amp;ldquo;workspaceId&amp;rdquo; type=&amp;ldquo;string&amp;rdquo; required=true %}}
+UUID
+{% endapi-method-parameter %}}
+{% endapi-method-body-parameters %}}
+{% endapi-method-request %}}&lt;/p>
+&lt;p>{% api-method-response %}}
+{% api-method-response-example httpCode=200 %}}
+{% api-method-response-example-description %}}&lt;/p>
+&lt;p>{% endapi-method-response-example-description %}}&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">{
+&amp;#34;circles&amp;#34;: [
+{
+&amp;#34;id&amp;#34;: &amp;#34;6577ae92-648c-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;NY Lawyers&amp;#34;
+},
+{
+&amp;#34;id&amp;#34;: &amp;#34;6577b112-648c-11ea-bc55-0242ac130003&amp;#34;,
+&amp;#34;name&amp;#34;: &amp;#34;Stony Brook&amp;#39;s Citizens&amp;#34;
+}
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>{% endapi-method-response-example %}}
+{% endapi-method-response %}}
+{% endapi-method-spec %}}
+{% endapi-method %}}&lt;/p>
+&lt;p>As the example above shows, there are circles with the given information of the user, which means that &lt;strong>&lt;code>charlescd-circle-matcher&lt;/code>&lt;/strong> will return a list with all the circles. Here, there are two circles that fit with this&lt;/p></description></item><item><title>Reference: Cd Configuration</title><link>http://docs.charlescd.io/v1.0.x/reference/cd-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/cd-configuration/</guid><description>
+&lt;hr>
+&lt;h2>Why do you have to configure the CD?&lt;/h2>
+&lt;p>This configuration is necessary to point to Charles which CD tool you use to make deploys in your cluster. It is also important to mention that you have to provide your git repository token that contains the &lt;a href="../../../get-started/creating-your-first-module/how-to-configure-chart-template#what-is-helm">&lt;strong>helm templates.&lt;/strong> &lt;/a>&lt;/p>
+&lt;p>At this moment, Charles is able to use Spinnaker or CharlesCD (Octopipe).&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+CharlesCD is always evolving, so there&amp;rsquo;s a roadmap that is in constant update, which means that we&amp;rsquo;re looking for more CD tools integrations.
+&lt;/div>
+&lt;h2>How to configure?&lt;/h2>
+&lt;p>Charles uses a proper architecture to Continuous Deployment (CD) and that makes it fits in the environment chosen by you. These tools are used to run the Kubernetes manifestos on a configured cluster and to authenticate with a variety of cloud providers (AWS, GCP, Azure).&lt;/p>
+&lt;p>To make this configuration, you have to choose between CharlesCD or Spinnaker. After that, it is necessary to fill some fields with the authentication that it will be made in the chosen cluster.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.spinnaker.io/">&lt;strong>Spinnaker&lt;/strong>&lt;/a>: tool created by Netflix, and used by companies and community.&lt;/li>
+&lt;li>&lt;strong>CharlesCD&lt;/strong>: behind the scenes, there is a light and low-cost tool developed by Charles Team that does the deployment.&lt;/li>
+&lt;/ul>
+&lt;p>To register any of them, follow the next steps:&lt;/p>
+&lt;ol>
+&lt;li>On Charles' homepage, select &lt;strong>Settings&lt;/strong> in the lower-left corner;&lt;/li>
+&lt;li>Click on &lt;strong>Credentials;&lt;/strong>&lt;/li>
+&lt;li>Click on &lt;strong>Add CD Configuration;&lt;/strong>&lt;/li>
+&lt;li>Select the option &lt;strong>CharlesCD&lt;/strong> or &lt;strong>Spinnaker&lt;/strong>, which will depend on which system you use.&lt;/li>
+&lt;/ol>
+&lt;h2>Using Spinnaker&lt;/h2>
+&lt;p>Fill the following fields:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Name:&lt;/strong> configuration &lt;strong>name&lt;/strong> that will be created;&lt;/li>
+&lt;li>&lt;strong>Namespace:&lt;/strong> define the namespace that it will be used on Kubernetes cluster deploys. You have to create your namespace, once Charles does not do it;&lt;/li>
+&lt;li>&lt;strong>URL:&lt;/strong> insert the access URL to the Spinnaker;&lt;/li>
+&lt;li>&lt;strong>Git account:&lt;/strong> Insert a git configuration name created on &lt;a href="https://spinnaker.io/setup/artifacts/github/">&lt;strong>Spinnaker&amp;rsquo;s installation&lt;/strong>&lt;/a>. In this case, it&amp;rsquo;s the property &lt;code>ARTIFACT_ACCOUNT_NAME&lt;/code> configured according to the &lt;strong>Spinnaker&lt;/strong> documentation.&lt;/li>
+&lt;li>&lt;strong>Kubernetes account:&lt;/strong> insert the access configuration name to Kubernetes' cluster, created on the Spinnaker installation.&lt;/li>
+&lt;/ol>
+&lt;h2>Using CharlesCD&lt;/h2>
+&lt;p>Fill the following fields:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Name:&lt;/strong> configuration name that it will be created;&lt;/li>
+&lt;li>&lt;strong>Namespace:&lt;/strong> defines the namespace that will be used on Kubernetes cluster deploys. You have to create your namespace, once Charles does not do it;&lt;/li>
+&lt;li>&lt;strong>Git provider&lt;/strong>: defines the git provider to be used (&lt;strong>GitHub&lt;/strong> or &lt;strong>GitLab&lt;/strong>);&lt;/li>
+&lt;li>&lt;strong>Git token:&lt;/strong> insert an authentication token that has access to the git repository where your &lt;a href="../../get-started/creating-your-first-module/how-to-configure-chart-template">&lt;strong>Helm templates&lt;/strong>&lt;/a> are stored (they will be used during the deployment of your &lt;a href="../../get-started/creating-your-first-module/">&lt;strong>application&lt;/strong>&lt;/a>). If your Git Provider is &lt;strong>GitHub&lt;/strong>, &amp;ldquo;&lt;em>repo&lt;/em>&amp;rdquo; permission is required. Otherwise, configure the accesses in &lt;strong>GitLab&lt;/strong>: &amp;ldquo;&lt;em>api&lt;/em>&amp;rdquo; and &amp;ldquo;&lt;em>read_repository&lt;/em>&amp;rdquo;.&lt;/li>
+&lt;li>Select a &lt;strong>manager&lt;/strong> to associate with the CD configuration. The options are &lt;strong>Default&lt;/strong>, &lt;strong>EKS&lt;/strong> and &lt;strong>Others.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h3>&lt;strong>Default&lt;/strong>&lt;/h3>
+&lt;p>This option must be used when the application’s cluster is the same where CharlesCD is installed. This way it is not necessary to create an extra authentication mechanism.&lt;/p>
+&lt;h3>&lt;strong>EKS&lt;/strong>&lt;/h3>
+&lt;p>For a cluster managed by EKS (Elastic Kubernetes Service), you only have to select the option and fill the following fields:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>AWS SID:&lt;/strong> Statement ID**;**&lt;/li>
+&lt;li>&lt;strong>AWS Secret:&lt;/strong> Access key to EKS cluster;&lt;/li>
+&lt;li>&lt;strong>AWS Region:&lt;/strong> Region where the EKS cluster is installed;&lt;/li>
+&lt;li>&lt;strong>AWS Cluster Name:&lt;/strong> EKS’s cluster name.&lt;/li>
+&lt;/ol>
+&lt;h3>&lt;strong>Others&lt;/strong>&lt;/h3>
+&lt;p>For the other cloud providers, we use a simpler approach, that only a few &lt;em>kubeconfig&lt;/em> fields must be used. Here they are:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Host:&lt;/strong> Cluster URL&amp;rsquo;s access;&lt;/li>
+&lt;li>&lt;strong>Client Certificate:&lt;/strong> &lt;em>kubeconfig&lt;/em> &amp;ldquo;client-certificate-data&amp;rdquo; field;&lt;/li>
+&lt;li>&lt;strong>Client Key:&lt;/strong> &lt;em>kubeconfig&lt;/em> &amp;ldquo;client-key-data&amp;rdquo; field;&lt;/li>
+&lt;li>&lt;strong>CA Data:&lt;/strong> &lt;em>kubeconfig&lt;/em> &amp;ldquo;certificate-authority-data&amp;rdquo; field.&lt;/li>
+&lt;/ol>
+&lt;p>All the information provided above is encrypted by Charles. Once this process is done, it is possible to associate the configuration in modules and after that deploy versions of them.&lt;/p></description></item><item><title>Reference: Users Groups</title><link>http://docs.charlescd.io/v1.0.x/reference/users-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/users-groups/</guid><description>
+&lt;hr>
+&lt;p>A user group can represent a team or even a subset of people based on their skills.&lt;/p>
+&lt;p>For example, a big team would have different Charles access permissions according to their job position, we could have these groups:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Product X developers; Desenvolvedores do Produto X.&lt;/em>&lt;/li>
+&lt;li>&lt;em>Product X QAs;&lt;/em>&lt;/li>
+&lt;li>&lt;em>Product X Data Analysts.&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>However, if everyone in a team have the same permission, we are able to create only one group with its users.&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Product X Team.&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="//image%20%283%29%20%282%29.png" alt="Preview of User Group &amp;quot;Data Analysts do Produto X&amp;quot;">&lt;/p>
+&lt;h2>Permissions for user groups in your workspace&lt;/h2>
+&lt;p>Charles permissions are given to a user group when you associate them to a workspace.&lt;/p>
+&lt;p>The following profiles are available:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Maintainer&lt;/strong>: can access and edit all workspace configuration. They can do implementations and create, edit and delete circles, hypothesis and modules.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Developer&lt;/strong>: they have access to do implementations&lt;/p>
+&lt;p>and also create, edit and delete circles, modules and hypothesis.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Analyst&lt;/strong>: they have permission to edit and delete circles, modules and hypothesis. And also view the modules configuration.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Reader&lt;/strong>: is able to view circles, hypothesis and modules.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="//chrome-capture-3-%20%282%29.gif" alt="Permission options to associate users&amp;apos; groups on a workspace.">&lt;/p>
+&lt;h3>Permissions map&lt;/h3>
+&lt;p>See below the permission given to each profile:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Modules&lt;/th>
+&lt;th style="text-align:left">Action&lt;/th>
+&lt;th style="text-align:center">Root&lt;/th>
+&lt;th style="text-align:center">Maintainer&lt;/th>
+&lt;th style="text-align:center">Developer&lt;/th>
+&lt;th style="text-align:center">Analyst&lt;/th>
+&lt;th style="text-align:center">Reader&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Users&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Edit&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>User Groups&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Edit&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Workspace&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Configure&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Circle&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create/Edit/Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Hypothesis&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create/Edit/Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Modules&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Create/Edit/Delete&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">View&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Deploy&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Make deployments&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">✔&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Reference: Hypothesis</title><link>http://docs.charlescd.io/v1.0.x/reference/hypothesis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/hypothesis/</guid><description>
+&lt;hr>
+&lt;p>Hypothesis are &lt;strong>registered alternatives&lt;/strong> on the platform to solve some issues or to validate changes of applications that you have integrated on CharlesCD.&lt;/p>
+&lt;p>Its possible that one hypothesis may have one or more features that are directly related to modules or/and projects that were registered before in your workspace.&lt;/p>
+&lt;p>Imagine a situation in which two teams work on the same product and have different ideas to raise the client conversion rate. Team A suggests adding a button on the page, meanwhile Team B believes that include a ‘selling suggestion’ box will be more assertive.&lt;/p>
+&lt;p>&lt;img src="//hypothesis%20%281%29.png" alt="">&lt;/p>
+&lt;p>Charles makes it possible for both teams to create different hypothesis, so each team is able to lead the development through a board that is automatically created and then they also can independently select different users circles to validate the results of each hypothesis.&lt;/p>
+&lt;h2>How to create hypothesis?&lt;/h2>
+&lt;p>When you register a hypothesis on Charles, your request will be forwarded to &lt;code>charlescd-moove&lt;/code>. At the end of this process, the system will create a board and you will be able to manage and create release cards with the necessary actions to test all your hypothesis.&lt;/p>
+&lt;p>There are two types of cards:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Feature:&lt;/strong> cards that involve coding like the new features implementation or fixes on the project.&lt;/li>
+&lt;li>&lt;strong>Action:&lt;/strong> cards that indicate an action to be done, for example, perform a field test with the users.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//ref-hipoteses2%20%282%29.png" alt="">&lt;/p>
+&lt;p>When a feature card is added, Charles creates a new git branch for the client that is directly stored in the used SCM, Git or Bitbucket, for example.&lt;/p>
+&lt;p>The name of the branch is chosen by the user through &lt;strong>Branch name&lt;/strong> field, see below:&lt;/p>
+&lt;h2>Protected branches&lt;/h2>
+&lt;p>&lt;img src="//branch_name.png" alt="">&lt;/p>
+&lt;p>When you delete or alter a card from the &lt;strong>feature&lt;/strong> type to the &lt;strong>action&lt;/strong> one, the associated branch can be deleted.&lt;/p>
+&lt;p>If the branch already exists, it is only associated to a card.&lt;/p>
+&lt;p>To avoid wrong deletions, Charles allows the &lt;strong>protected branches&lt;/strong> configuration. These branches cannot be deleted by Charles.&lt;/p>
+&lt;h3>Deleting a card&lt;/h3>
+&lt;p>If you delete a card or alter a feature card to a an action one and if the associated branch is on the protected branches list, the deletion branch will be ignored.&lt;/p>
+&lt;p>There are three delete card options:&lt;/p>
+&lt;h3>Configuration&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>Archive:&lt;/strong> Only disable the card;&lt;/li>
+&lt;li>&lt;strong>Delete card:&lt;/strong> Delete only the card;&lt;/li>
+&lt;li>&lt;strong>Delete card and branch:&lt;/strong> Delete the card and the associated branch.&lt;/li>
+&lt;/ol>
+&lt;p>You have to configure through environment property &lt;code>charlescd.protected.branches&lt;/code> on &lt;code>moove&lt;/code> module. The default value is &lt;strong>master&lt;/strong>, &lt;strong>main&lt;/strong> and &lt;strong>trunk&lt;/strong>.&lt;/p>
+&lt;h2>Protected branches&lt;/h2>
+&lt;p>When you delete or alter a card from the &lt;strong>feature&lt;/strong> type to the &lt;strong>action&lt;/strong> one, the associated branch can be deleted.&lt;/p>
+&lt;p>To avoid wrong deletions, Charles allows the &lt;strong>protected branches&lt;/strong> configuration. These branches cannot be deleted by Charles.&lt;/p>
+&lt;p>If you alter a feature card to a an action one and if the associated branch is on the protected branches list, the deletion will be ignored.&lt;/p>
+&lt;p>In case you delete a card where the associated branch is configured as protected, when you go to the delete card option, you will see the branch will be disabled. See the image below:&lt;/p>
+&lt;p>&lt;img src="//clipboard-2020-05-10-at-4.10.26-pm.png" alt="">&lt;/p>
+&lt;h3>Configuration&lt;/h3>
+&lt;p>You have to configure through environment property &lt;code>charlescd.protected.branches&lt;/code> on &lt;code>moove&lt;/code> module. The default value is &lt;strong>master&lt;/strong>, &lt;strong>main&lt;/strong> and &lt;strong>trunk&lt;/strong>.&lt;/p>
+&lt;h2>Board management&lt;/h2>
+&lt;p>The board is organized and structured based on Agile methodology, so you are able to create a backlog with tasks and prioritize what is going to be done (to do) and indicate which ones are in progress (doing).&lt;/p>
+&lt;p>As the hypothesis development evolves, the tasks are moved to the next column. The status for each activity are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>To Do:&lt;/strong> tasks that are prioritized and need to be done;&lt;/li>
+&lt;li>&lt;strong>Doing:&lt;/strong> tasks in progress;&lt;/li>
+&lt;li>&lt;strong>Ready to go:&lt;/strong> finished tasks, if it is a feature card, it is possible to generate a build.&lt;/li>
+&lt;li>&lt;strong>Builds:&lt;/strong> all builds are generated here, after a combination with the features on the previous column. You can expand the cards to have more information.&lt;/li>
+&lt;/ul>
+&lt;p>Charles is responsible to orchestrate the merges resolution, especially if several same modules cards appears, but with different git ramifications.&lt;/p>
+&lt;p>After this process is finished and the codes are mixed, a new release ramification is created and the card state is changed to build.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Releases Deployed:&lt;/strong> the cards on this column show where the hypothesis builds are implemented.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="//ref-hipoteses%20%281%29%20%281%29.png" alt="">&lt;/p>
+&lt;p>When a hypothesis is moved to the &lt;strong>Ready to Go&lt;/strong> column, you indicate to the system that a specific card can go through a &lt;strong>Generate Release Candidate&lt;/strong> process, which means the hypothesis will transform into a branch release of the master release on your git.&lt;/p></description></item><item><title>Reference: Identity Manager</title><link>http://docs.charlescd.io/v1.0.x/reference/identity-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/identity-manager/</guid><description>
+&lt;hr>
+&lt;p>On the default installation, you have the option which &lt;strong>Charles manages your users' authentications&lt;/strong> on the platform. However, if you already have an Identiy Manager (IDM) and want to use it, just configure during Charles installation.&lt;/p>
+&lt;h2>Configuring IDM&lt;/h2>
+&lt;p>On&lt;code>charlescd/install/helm-chart/values.yaml&lt;/code>, change the values on the modules:&lt;/p>
+&lt;h3>&lt;strong>moove&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">internalIdmEnabled: false
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>internalIdmEnabled&lt;/code> : Refers whether moove must use the default IDM or not. To inform that you will use an external IDM, add the value&lt;code>false&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3>&lt;strong>ui&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">authUri: http://charles.info.example/keycloak
+isIdmEnabled: &amp;#34;1&amp;#34;
+idmLoginUri: /protocol/openid-connect/auth
+idmLogoutUri: /protocol/openid-connect/logout
+idmRedirectHost: http://charles.info.example
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>authUri&lt;/code>: Stores the base endpoint of your IDM that will make authentication. For example, if you were going to use Google, the value would be: &lt;a href="https://accounts.google.com/o/oauth2/v2/auth?">&lt;code>https://accounts.google.com/o/oauth2/v2/auth?&lt;/code>&lt;/a>.&lt;/li>
+&lt;li>&lt;code>isIdmEnabled&lt;/code>: refers if the customized UI will make the authentication. On this case, 0 indicates that it will use the default and 1 a customized IDM.&lt;/li>
+&lt;li>&lt;code>idmLoginUri&lt;/code>: it is your authUri base complement, it&amp;rsquo;s used to indicate which endpoint will login.&lt;/li>
+&lt;li>&lt;code>idmLogoutUri&lt;/code>: it is your authUri base complement, it&amp;rsquo;s used to indicate which endpoint will logout.&lt;/li>
+&lt;li>&lt;code>idmRedirectHost&lt;/code>: this field you inform Charles' URL where the user will be redirected right after a successful authentication.&lt;/li>
+&lt;/ul>
+&lt;h3>&lt;strong>nginx&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">idm:
+endpoint: http://charlescd-keycloak-http/
+port: 443
+path: keycloak/auth/realms/charlescd/.well-known/openid-configuration
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>idm.endpoint:&lt;/code> this fields represents the hostname of the IDM that you&amp;rsquo;re using with Charles.&lt;/li>
+&lt;li>&lt;code>idm.port:&lt;/code> this fields represents the port of the IDM that you&amp;rsquo;re using with Charles.&lt;/li>
+&lt;li>&lt;code>idm.path:&lt;/code> this fields represents the path that will be used by envoy to validate your token. For this token validation, Charles uses the openid /userinfo endpoint.&lt;/li>
+&lt;/ul></description></item><item><title>Reference: Releases</title><link>http://docs.charlescd.io/v1.0.x/reference/releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/releases/</guid><description>
+&lt;hr>
+&lt;p>Releases are application versions. It is different from other ways of deploy that releases generally go through lots of environments until they reach production, with CharlesCD it is possible that the same release will be published for different&lt;a href="circles"> &lt;strong>circles&lt;/strong>&lt;/a>.&lt;/p>
+&lt;h2>How to create releases with Charles?&lt;/h2>
+&lt;p>There are two ways to create releases with Charles:&lt;/p>
+&lt;ol>
+&lt;li>Hypothesis board;&lt;/li>
+&lt;li>Existing images on docker registry.&lt;/li>
+&lt;/ol>
+&lt;p>The first one offers a better use of the product, because it works with the hypothesis concept tests during the development cycle. The second option offers the flexibility needed if you want cases which the generation of artifacts or the development process are apart from CharlesCD.&lt;/p>
+&lt;h3>Releases through hypothesis board&lt;/h3>
+&lt;p>After registering a &lt;strong>hypothesis&lt;/strong> on Charles, you can use the board that is automatically generated to create and manage cards that represents your hypothesis development.&lt;/p>
+&lt;p>The boards shows two cards categories: &lt;strong>the blue one represents a feature coding&lt;/strong> and &lt;strong>the gray one a action that does not involve implementation.&lt;/strong>&lt;/p>
+&lt;p>If you want to generate new releases, the blue cards represent features, when they are on the &lt;strong>Ready to Go&lt;/strong> column, you select only one or a subset of them to build a release.&lt;/p>
+&lt;p>&lt;img src="//gerando-release-board-1-%20%282%29%20%281%29.gif" alt="Example of cards selection ">&lt;/p>
+&lt;p>As soon as a release creation is triggered, a new branch with the prefix &lt;strong>release-darwin&lt;/strong> will be created on the module repository and the configured CI tool will go off. Besides that, a new card with the &lt;strong>&amp;lsquo;Building&amp;rsquo;&lt;/strong> status will show up on the &lt;strong>Builds&lt;/strong> column to represent a process in progress.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Triggering the pipeline of your CI tool through &lt;strong>release-darwin&lt;/strong> prefix, it is expected that it will generate a image of your application and make the push for your &lt;a href="../../../get-started/defining-a-workspace/docker-registry">&lt;strong>registry&lt;/strong>.&lt;/a>
+&lt;/div>
+&lt;p>Once you made it, the &lt;a href="https://github.com/ZupIT/charlescd/tree/master/villager">&lt;strong>Villager&lt;/strong>&lt;/a> will watch your registry to search for the generated release. Hold on until you card status is changed to &lt;strong>Built&lt;/strong>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Any cases of success or error will be shown on your release card.
+&lt;/div>
+&lt;p>&lt;img src="//release-2%20%281%29.png" alt="Example of release status">&lt;/p>
+&lt;h3>&lt;strong>Releases through existing images on configured Docker Registry&lt;/strong>&lt;/h3>
+&lt;p>To create a release without using the hypothesis board, it is necessary that the Docker images are already available on you &lt;a href="../../get-started/defining-a-workspace/docker-registry">&lt;strong>configured registry&lt;/strong> &lt;/a>for the module. If this requirement is done, just click on the &lt;a href="circles">&lt;strong>circles&lt;/strong>&lt;/a> option on Charles menu and select the circle for a release deploy to be created.&lt;/p>
+&lt;p>If you are creating the circle at this moment, click on &lt;strong>Insert release&lt;/strong> and then Create release. If the circle is already created, click on &lt;strong>Override release&lt;/strong> and then &lt;strong>Create release&lt;/strong>.&lt;/p>
+&lt;p>On the release creation screen, fill the name and select one module and its component. On the field beside, all available images on that component will be listed on the registry. Select one and, if it&amp;rsquo;s necessary, add more modules to the release, clicking on &lt;strong>Add module&lt;/strong> and repeat the previous process. When all your modules are registered, click on &lt;strong>deploy&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="//releases-por-meio-de-imagens-existentes%20%281%29%20%281%29.gif" alt="Exemple of release creation by Registry images">&lt;/p>
+&lt;p>After deploying this new release, it will be available to use in other circles, just look into &amp;lsquo;&lt;strong>Search for existing releases&amp;rsquo;&lt;/strong> option.&lt;/p>
+&lt;h2>How to search for an existing release?&lt;/h2>
+&lt;p>If the release was generated through hypothesis board on your workspace, when you create a circle deploy, you are able to search for it on &amp;lsquo;&lt;strong>Search for existing releases&lt;/strong>&amp;rsquo;.&lt;/p>
+&lt;p>&lt;img src="//may-29-2020_17-21-33%20%281%29%20%281%29.gif" alt="Example of release search by circle deploy ">&lt;/p></description></item><item><title>Reference: Setting up your metrics</title><link>http://docs.charlescd.io/v1.0.x/reference/metrics/setting-up-your-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/metrics/setting-up-your-metrics/</guid><description>
+&lt;hr>
+&lt;h3>Istio Configuration&lt;/h3>
+&lt;div class="alert alert-danger" role="alert">
+All the configuration in this section were tested and validated with Istio versions between 1.2 and 1.5. Any other version is not assured to work.
+&lt;/div>
+&lt;p>Metrics are related to circle requests are quantified and exposed by Istio, so it&amp;rsquo;s necessary to configure it to get information about each circle.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+If you want to learn more about Istio&amp;rsquo;s telemetry, check out their &lt;a href="https://istio.io/docs/tasks/observability/metrics/">&lt;strong>documentation&lt;/strong>&lt;/a>
+&lt;/div>
+&lt;p>To configure your Istio, it is necessary to enable it, so it will be able to show metrics and then you have to configure to show Charles' metrics.&lt;/p>
+&lt;p>If your Istio is not enabled to show metrics, follow the next steps:&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+The configuration below refers to Istio&amp;rsquo;s 1.5.
+&lt;/div>
+&lt;p>Create a file named &lt;strong>telemetry.yaml with the following content:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">apiVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">install.istio.io/v1alpha2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">IstioControlPlane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">spec&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">prometheus&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">telemetry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">v1&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">v2&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, run the command below:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ istioctl manifest apply -f telemetry.yaml
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+To run the command above, it is necessary to have configured the &lt;strong>istioctl&lt;/strong>, if you haven&amp;rsquo;t done that, please click &lt;a href="https://istio.io/docs/setup/getting-started/#download">&lt;strong>here&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;p>To show the metrics related to Charles, you have to run the command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ kubectl apply -f path/your-metrics-config.yaml
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+The file &lt;strong>your-metrics-config.yaml&lt;/strong> that has been used mostly to refer the tool you use.
+&lt;/div>
+&lt;p>The files for configuration can be found below:&lt;/p>
+&lt;div class='code-tabs'>
+&lt;ul class="nav nav-tabs">&lt;/ul>
+&lt;div class="tab-content">
+&lt;div class="tab-pane" title="">
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#8f5902;font-style:italic"># Configuration for request count metric instance&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">apiVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">config.istio.io/v1alpha2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">instance&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charlesrequesttotal&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">spec&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">compiledTemplate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">metric&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dimensions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">source.workload.name | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_pod&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">destination.workload.name | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.host | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_component&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">destination.labels[&amp;#34;app&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">circle_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.headers[&amp;#34;x-circle-id&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">circle_source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">response.headers[&amp;#34;x-circle-source&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">request_circle_source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.headers[&amp;#34;x-circle-source&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">response_status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">response.code | 200&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">monitoredResourceType&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#34;UNSPECIFIED&amp;#34;&amp;#39;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Configuration for response duration metric instance&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">apiVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">config.istio.io/v1alpha2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">instance&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charlesrequestduration&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">spec&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">compiledTemplate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">metric&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">response.duration | &amp;#34;0ms&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dimensions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">source.workload.name | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_pod&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">destination.workload.name | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.host | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">destination_component&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">destination.labels[&amp;#34;app&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">circle_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.headers[&amp;#34;x-circle-id&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">circle_source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">response.headers[&amp;#34;x-circle-source&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">request_circle_source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">request.headers[&amp;#34;x-circle-source&amp;#34;] | &amp;#34;unknown&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">response_status&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">response.code | 200&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">monitoredResourceType&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#34;UNSPECIFIED&amp;#34;&amp;#39;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Configuration for a Prometheus handler&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">apiVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">config.istio.io/v1alpha2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">handler&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charleshandler&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">spec&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">compiledAdapter&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">prometheus&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">metrics&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charles_request_total&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Prometheus metric name&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">instance_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charlesrequesttotal.instance.istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">COUNTER&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">label_names&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_pod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_host&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_component&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">circle_id&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">response_status&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">request_circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charles_request_duration_seconds&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Prometheus metric name&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">instance_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charlesrequestduration.instance.istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">DISTRIBUTION&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">label_names&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_pod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_host&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">destination_component&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">circle_id&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">response_status&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">request_circle_source&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">buckets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">explicit_buckets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">bounds&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.01&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.025&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.25&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">0.75&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">2.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Rule to send metric instances to a Prometheus handler&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">apiVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">config.istio.io/v1alpha2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">rule&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">metadata&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charlesprom&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">spec&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">actions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">handler&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">charleshandler&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">instances&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">charlesrequesttotal&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">charlesrequestduration&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3>Configuring your metrics tool&lt;/h3>
+&lt;p>After you finish your Istio configuration it is necessary configure your metrics tool.&lt;/p>
+&lt;p>The first step is select the right tool, so Charles will be able to read.&lt;/p>
+&lt;div class="alert alert-danger" role="alert">
+At this moment, Charles only supports Prometheus as a metric tool. We are working on to bring others along the way.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+If the tool you use it isn&amp;rsquo;t accepted yet, feel free to &lt;a href="https://github.com/ZupIT/charlescd/issues">&lt;strong>make a suggestion&lt;/strong>&lt;/a> or make your own implementation and &lt;a href="https://github.com/ZupIT/charlescd/blob/master/CONTRIBUTING">&lt;strong>contribute with us&lt;/strong>&lt;/a>. Make our community grow more each day.
+&lt;/div>
+&lt;div class='code-tabs'>
+&lt;ul class="nav nav-tabs">&lt;/ul>
+&lt;div class="tab-content">
+&lt;div class="tab-pane" title="">
+&lt;p>Prometheus is an open source system for monitoring and alerting toolkit. It is the main monitoring recommendation on &lt;a href="https://cncf.io/">&lt;strong>Cloud Native Computing Foundation&lt;/strong>&lt;/a>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>If you want to know more about Prometheus, check it out &lt;a href="https://prometheus.io/">&lt;strong>their documentation&lt;/strong>&lt;/a>&lt;/p>
+&lt;/div>
+&lt;p>In order to Prometheus to be able to read and store metrics data, we must configure it.&lt;/p>
+&lt;p>To do so, it&amp;rsquo;s necessary to add the job below so it will read Istio&amp;rsquo;s generated metrics.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>It is important to remember that all these configuration considers that your Prometheus is on the same Kubernetes cluster as your Istio and the rest of your applications.&lt;/p>
+&lt;/div>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">global&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">15s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_timeout&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">10s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">evaluation_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">1m&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">job_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-mesh&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">15s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scrape_timeout&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">10s&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">metrics_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/metrics&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">scheme&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kubernetes_sd_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">role&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">endpoints&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespaces&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">names&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">istio-system&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#The namespace where your Istio is installed&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">relabel_configs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">source_labels&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">separator&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">regex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">istio-telemetry;prometheus&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">replacement&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">action&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">keep&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-warning" role="alert">
+&lt;p>Stay tuned about the configuration &lt;strong>namespaces&lt;/strong>, the configured value must be the same installed on your Istio.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Reference: Metrics group</title><link>http://docs.charlescd.io/v1.0.x/reference/metrics/metrics-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/metrics/metrics-group/</guid><description>
+&lt;hr>
+&lt;p>The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the &lt;a href="../../../get-started/defining-a-workspace/register-metrics-provider">&lt;strong>provider you previously registred.&lt;/strong> &lt;/a>&lt;/p>
+&lt;h3>&lt;strong>How to create?&lt;/strong>&lt;/h3>
+&lt;p>To create your metrics group, follow the next steps:&lt;/p>
+&lt;ol>
+&lt;li>In &lt;strong>add metrics group&lt;/strong>, type the name you want for your group and click on &lt;strong>add group&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//criacaogroup%20%281%29.gif" alt="">&lt;/p>
+&lt;p>After you have created your group, now you are able to register your metrics.&lt;/p>
+&lt;p>2 Click on &lt;strong>Add metric&lt;/strong> and put the metrics name you want;&lt;/p>
+&lt;ol start="3">
+&lt;li>
+&lt;p>In &lt;strong>select a data source&lt;/strong>, select your metrics provider already registered;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Metric&lt;/strong> is the field where your provider will return the metrics, choose one and after that use the &lt;strong>Filter&lt;/strong> option to customize with the value and the conditional you need.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>See the example below:&lt;/p>
+&lt;p>&lt;img src="//metric+filter%20%281%29.gif" alt="">&lt;/p>
+&lt;ol start="5">
+&lt;li>After that, define a &lt;strong>Threshold&lt;/strong> to establish a limit to your metric.&lt;/li>
+&lt;/ol>
+&lt;p>For example, if you want to know if your application hits 50 errors, just customize the &lt;strong>threshold&lt;/strong> and you will be notify when you hit this metric.&lt;/p>
+&lt;p>&lt;img src="//threshold%20%281%29.gif" alt="">&lt;/p>
+&lt;div class="alert alert-success" role="alert">
+Done! You have registered your metrics group.
+&lt;/div>
+&lt;p>Now, you can follow up the result with graphics and the available information, as you can see below:&lt;/p>
+&lt;p>&lt;img src="//graficos%20%281%29.gif" alt="">&lt;/p>
+&lt;h3>&lt;strong>Metrics group: Advanced&lt;/strong>&lt;/h3>
+&lt;p>There is an &lt;strong>advanced&lt;/strong> function inside the metrics group, you can customize your own metric, like for example, a database query, or specifically according to what you need.&lt;/p>
+&lt;p>See the example below:&lt;/p>
+&lt;p>&lt;img src="//advanced%20%281%29.png" alt="">&lt;/p></description></item><item><title>Reference: Charles' metrics</title><link>http://docs.charlescd.io/v1.0.x/reference/metrics/charles-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/reference/metrics/charles-metrics/</guid><description>
+&lt;hr>
+&lt;p>Charles offers metrics for you to monitor deploys and circles.&lt;/p>
+&lt;p>&lt;img src="//metrics-circ-e-deplo.png" alt="">&lt;/p>
+&lt;h2>Deploy metrics&lt;/h2>
+&lt;p>Deploy metrics is a functionality that allows a dashboard view with the necessary information for you to follow up your deployments, such as success or error occurences number and the average implementation time.&lt;/p>
+&lt;p>There are other available information:&lt;/p>
+&lt;ul>
+&lt;li>Release name;&lt;/li>
+&lt;li>The chosen circle;&lt;/li>
+&lt;li>Deploy&amp;rsquo;s date and duration;&lt;/li>
+&lt;li>Responsible for the deploy;&lt;/li>
+&lt;li>Undeploy cases;&lt;/li>
+&lt;li>Modules, components and used versions;&lt;/li>
+&lt;li>Deploy status: Deployed, Deploying, Error, Undeployed and Undeploying.&lt;/li>
+&lt;/ul>
+&lt;p>See the example below:&lt;/p>
+&lt;p>&lt;img src="//deploy.gif" alt="">&lt;/p>
+&lt;h2>Circles metrics&lt;/h2>
+&lt;p>It is a management feature that helps you view and follow the technical information about your circles.&lt;/p>
+&lt;p>The circle metrics allows you to have an overview about your circles on Charles, like:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../circles#active-and-inactive-circles">&lt;strong>Active and inactive&lt;/strong>&lt;/a> circles;&lt;/li>
+&lt;li>Circle average life time;&lt;/li>
+&lt;li>Last update date.&lt;/li>
+&lt;/ul>
+&lt;p>See below:&lt;/p>
+&lt;p>&lt;img src="//erro.gif" alt="">&lt;/p></description></item></channel></rss>

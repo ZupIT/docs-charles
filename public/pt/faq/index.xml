@@ -1,0 +1,45 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – FAQ</title><link>http://docs.charlescd.io/v1.0.x/pt/faq/</link><description>Recent content in FAQ on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/faq/index.xml" rel="self" type="application/rss+xml"/><item><title>FAQ: Sobre o Charles</title><link>http://docs.charlescd.io/v1.0.x/pt/faq/sobre-o-charles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/faq/sobre-o-charles/</guid><description>
+&lt;hr>
+&lt;h2>O que é o Charles?&lt;/h2>
+&lt;p>O Charles é uma ferramenta open source de continuous deployment que realiza deploys de forma ágil, contínua e segura, permitindo que sejam feitas, de forma simultânea, validações de hipóteses com grupos específicos de usuários.&lt;/p>
+&lt;h2>O que é deploy em círculos?&lt;/h2>
+&lt;p>O deploy em círculos é um conceito pioneiro trazido pelo Charles. Graças a ele, é possível que você realize o deploy de uma mesma aplicação para diferentes segmentações de usuários ao mesmo tempo.&lt;/p>
+&lt;h2>Qual diferencial do Charles?&lt;/h2>
+&lt;p>Diferente de outras modalidades de deploy, o Charles possibilita a realização simultânea de segmentações de usuários por meio de &lt;a href="../../../referencia/circulo">&lt;strong>círculos&lt;/strong>. &lt;/a>&lt;/p>
+&lt;p>Utilizando a ferramenta, o processo de entrega que em ambientes tradicionais ocorre em frequências demoradas - semanal, quinzenal ou até mesmo mensal -, ganha um novo ritmo. O ciclo de feedback do seu produto se torna mais rápido e eficaz e, com isso, você consegue fazer a gestão do timing de forma mais inteligente e assertiva.&lt;/p>
+&lt;p>Além disso, os desenvolvedores são encorajados a inovarem e realizarem várias implantações de novas versões, pois a identificação de bugs ocorre em menos tempo e a criação de círculos auxilia na minimização do error budget.&lt;/p>
+&lt;p>Para saber mais sobre a abordagem de microsserviços e os módulos do Charles, veja &lt;a href="../../#arquitetura-do-sistema">&lt;strong>a arquitetura da plataforma.&lt;/strong> &lt;/a>&lt;/p></description></item><item><title>FAQ: Deploy em círculos x Outros deploys</title><link>http://docs.charlescd.io/v1.0.x/pt/faq/deploy-em-c%C3%ADrculos-x-outros-deploys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/faq/deploy-em-c%C3%ADrculos-x-outros-deploys/</guid><description>
+&lt;hr>
+&lt;h2>Deploy em círculos x Deploy tradicional&lt;/h2>
+&lt;p>Nos deploys tradicionais, é comum que a aplicação precise passar por diversos ambientes até chegar à produção. Já com o Charles, o sistema de deploys em círculos funciona somente em um ambiente de produção. A validação por release é fragmentada de acordo com os círculos selecionados, ou seja, você pode ir ampliando gradativamente o acesso à release a mais e mais círculos.&lt;/p>
+&lt;p>&lt;img src="//deploy-tradicional.png" alt="Processo de deploy tradicional">&lt;/p>
+&lt;p>&lt;img src="//deploy_em_circulos%20%285%29.png" alt="Processo de deploy em c&amp;#xED;rculos">&lt;/p>
+&lt;h2>Deploy em círculos x Blue-green deploys&lt;/h2>
+&lt;p>No blue-green deployment, ou implantação azul-verde, são criados dois ambientes idênticos na infraestrutura, porém com diferentes versões de uma aplicação implantados em cada um. Dessa forma, é possível testar suas hipóteses que, uma vez confirmadas, podem migrar de uma versão para outra.&lt;/p>
+&lt;p>O principal benefício desta técnica é que o downtime é zero, trazendo mais segurança para a transição. Apesar disso, o custo para o blue-green deployment é bastante elevado, já que demanda o dobro de infraestrutura para ser executado.&lt;/p>
+&lt;p>No caso do Charles, o deploy em círculos oferece ao time mais confiança e rapidez no lançamento de novas versões, com downtime zero e sem custos adicionais de infraestrutura. Além disso, é possível refinar através dos círculos quem serão os usuários que farão a validação da sua nova versão.&lt;/p>
+&lt;p>&lt;img src="//blue_green.png" alt="Processo de deploy blue-green">&lt;/p>
+&lt;p>&lt;img src="//deploy_em_circulos%20%287%29.png" alt="Processo de deploy em c&amp;#xED;rculos">&lt;/p>
+&lt;h2>Deploy em círculos x Canary releases&lt;/h2>
+&lt;p>No canary release, ou implantação canário, é feita a publicação gradual da nova versão de um software a partir de um roteamento dentro da infraestrutura. À medida em que a versão é testada e se torna mais confiável, seu acesso é expandido a mais usuários da base.&lt;/p>
+&lt;p>Entretanto, essa técnica não propõe nenhuma estratégia de escolha de usuários para a expansão. Por esse motivo, torna-se mais difícil gerenciar as versões existentes do sistema, o que contribui para que você não opere com tanto versionamento e, assim, limite suas possibilidades de testar hipóteses.&lt;/p>
+&lt;p>No caso do Charles, a lógica de deploys em círculos segue um padrão parecido de mudança paralela. Isto significa que na plataforma você também começa liberando o acesso à release a um número reduzido de usuários e vai expandindo o acesso à medida que o sistema passa por testes.&lt;/p>
+&lt;p>O grande diferencial da plataforma é que, caso algum problema seja encontrado ou a hipótese já tenha sido validada, a reversão é realizada de forma simples: você pode retirar os usuários daquele círculo, realizar o deploy de outra versão para aquele grupo ou levar a versão da aplicação para mar aberto, isto é, para todos os clientes que não estão inseridos em um círculo dentro do Charles.&lt;/p>
+&lt;p>&lt;img src="//deploy_em_circulos_x_canary_releases%20%281%29.png" alt="Processo de release can&amp;#xE1;rio">&lt;/p>
+&lt;p>&lt;img src="//deploy_em_circulos%20%286%29.png" alt="Processo de deploy em c&amp;#xED;rculo">&lt;/p></description></item><item><title>FAQ: Comunidade</title><link>http://docs.charlescd.io/v1.0.x/pt/faq/comunidade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/faq/comunidade/</guid><description>
+&lt;hr>
+&lt;h3>&lt;strong>Qual repositório do Charles?&lt;/strong>&lt;/h3>
+&lt;p>No Charles, trabalhamos com o conceito de monorepo. Logo, você encontra todos os projetos disponíveis neste &lt;a href="https://github.com/ZupIT/charlescd">&lt;strong>repositório público&lt;/strong>&lt;/a>.&lt;/p>
+&lt;h3>&lt;strong>Quer reportar alguma issue ou sugerir uma edição na doc?&lt;/strong>&lt;/h3>
+&lt;ul>
+&lt;li>Acesse nosso repositório no Github &lt;code>ZupIT/charlescd&lt;/code>;&lt;/li>
+&lt;li>Indique para qual branch você quer atribuir o seu pull request (PR);&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+É importante que, antes de abrir o PR, você confirme se a branch está correta. Para documentação em inglês é a &lt;code>englishdocs&lt;/code>, enquanto que para a documentação em português é a &lt;code>v0.2.1&lt;/code>.
+&lt;/div>
+&lt;ul>
+&lt;li>Enquanto estiver escrevendo, inclua a label &amp;ldquo;Docs&amp;rdquo; para identificarmos mais rapidamente que se trata de uma solicitação para nossa documentação.&lt;/li>
+&lt;/ul>
+&lt;p>O seu pull request passará por duas rodadas de revisão antes de ser publicada.&lt;/p>
+&lt;p>Para saber mais sobre como ajudar com Charles, confira nossas &lt;a href="https://github.com/ZupIT/charlescd/blob/master/CONTRIBUTING">&lt;strong>políticas e informações de contribuição&lt;/strong>&lt;/a> no Github.&lt;/p></description></item></channel></rss>

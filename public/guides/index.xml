@@ -1,0 +1,54 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Guides</title><link>http://docs.charlescd.io/v1.0.x/guides/</link><description>Recent content in Guides on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Guides: Use Cases</title><link>http://docs.charlescd.io/v1.0.x/guides/use-cases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/guides/use-cases/</guid><description>
+&lt;hr>
+&lt;h2>Circles Sample&lt;/h2>
+&lt;p>Circles Sample is developed by our team in order to make you able to implement it in a test environment and to get to know the deploy in circles concept better. Besides, it can be helpful to understand how to configure the chart template of your application,&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+To run this use case, you must already have a defined workspace, to know more about, &lt;a href="../../../../../get-started/defining-a-workspace/">&lt;strong>check this section&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;p>The use case is based on the following steps:&lt;/p>
+&lt;ul>
+&lt;li>Charles Circles Sample register;&lt;/li>
+&lt;li>A new version implementation in a circle;&lt;/li>
+&lt;li>Configuration to access the Circles Sample through your Kubernetes cluster;&lt;/li>
+&lt;li>Application test using different circles.&lt;/li>
+&lt;/ul>
+&lt;h3>Registering Circle Sample in your modules&lt;/h3>
+&lt;p>The project is available in the official &lt;a href="http://github.com/zupit/charlescd">&lt;strong>repository&lt;/strong>&lt;/a>, to register your module, follow the configuration below:&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Before the steps, it is necessary to make an application image upload in your registred &lt;a href="../../../../get-started/defining-a-workspace/docker-registry">&lt;strong>registry&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;p>&lt;img src="//usscreen-shot-2020-08-12-at-17.34.57.png" alt="">&lt;/p>
+&lt;p>To access the Circles Sample chart template,&lt;a href="https://api.github.com/repos/zupit/charlescd/contents/samples/circles"> &lt;strong>click here&lt;/strong>&lt;/a>. If you have any doubts about this configuration, check here &lt;strong>a step by step reference&lt;/strong>.&lt;/p>
+&lt;h3>Implementing a default circle version&lt;/h3>
+&lt;p>To implement the default circle example, follow the steps:&lt;/p>
+&lt;ol>
+&lt;li>Go to the Circles menu and select the &lt;strong>Inactive&lt;/strong> filter.&lt;/li>
+&lt;li>Select the &lt;strong>Default&lt;/strong> circle;&lt;/li>
+&lt;li>Click on &lt;strong>Insert&lt;/strong> release and choose the &lt;strong>Create Release&lt;/strong> option.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="//us2screen-shot-2020-08-12-at-18.11.44.png" alt="">&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+On the &lt;strong>Version name&lt;/strong> field, you have to inform the full name of the release you want to use.
+&lt;/div>
+&lt;h3>Exposing the application&lt;/h3>
+&lt;h4>Minikube&lt;/h4>
+&lt;p>To access the application using Minikube, run the &lt;code>minikube tunnel&lt;/code> and verify if the &lt;strong>external-ip&lt;/strong> generated to the Charles Sample is different from the &lt;strong>127.0.0.1 (localhost)&lt;/strong>. On this case, change your host like the example below:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic">#127.0.0.1 localhost&lt;/span>
+&amp;lt;external-ip&amp;gt; localhost
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4>Cluster&lt;/h4>
+&lt;p>In case the installation had been made in another environment, make sure that the Circle Sample it is on the same &lt;code>moove&lt;/code> domain.&lt;/p>
+&lt;h3>Accessing Circles Sample&lt;/h3>
+&lt;p>Access &lt;a href="http://localhost:8080">http://localhost:8080&lt;/a>&lt;/p>
+&lt;p>&lt;img src="//us3screen-shot-2020-08-12-at-21.48.08.png" alt="">&lt;/p>
+&lt;p>When accessing the circles sample screen, you need to fill out a form, so the sample is able to access the &lt;code>moove&lt;/code> API to list the worspace circles you have defined. See below how to it:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Insert URL Moove:&lt;/strong> insert an API to access a &lt;a href="../../../../#arquitetura-do-sistema">&lt;strong>moove&lt;/strong>&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Authorization:&lt;/strong> inform the access token to the o &lt;a href="../#arquitetura-do-sistema">&lt;strong>moove&lt;/strong>&lt;/a> API &lt;code>Bearer access-token&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Workspace ID:&lt;/strong> inform the workspace id you want to access.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+You can get this information on some request header, for example, circles list, hypothesis, etc. Or in the cookies tab in the browser.
+&lt;/div>
+&lt;p>Now, you are able to create circles and identify in which circles the user will enter given a certain payload, see it on the images below:&lt;/p>
+&lt;p>&lt;img src="//us4screen-shot-2020-08-12-at-22.18.35.png" alt="">&lt;/p>
+&lt;p>&lt;img src="//us4screen-shot-2020-08-12-at-22.20.44.png" alt="">&lt;/p></description></item></channel></rss>

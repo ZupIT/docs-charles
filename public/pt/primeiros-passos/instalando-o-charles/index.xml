@@ -1,0 +1,154 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Instalando o Charles</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/</link><description>Recent content in Instalando o Charles on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/index.xml" rel="self" type="application/rss+xml"/><item><title>Primeiros Passos: Instalando via Helm</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/</guid><description>
+&lt;hr>
+&lt;div class="alert alert-info" role="alert">
+Antes de prosseguir, tenha certeza de que todos os &lt;a href=".././#pre-requisitos">&lt;strong>pré-requisitos&lt;/strong>&lt;/a> estão devidamente instalados.
+&lt;/div>
+&lt;p>Esta instalação é indicada para quem possui uma infraestrutura já montada, devido um ambiente mais complexo ou há algumas limitações de segurança e/ou escalabilidade, o que exige uma &lt;strong>customização mais completa da instalação&lt;/strong> do CharlesCD.&lt;/p>
+&lt;h3>Requisitos&lt;/h3>
+&lt;p>Para realizar o processo, é necessário ter instalado:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">&lt;strong>Kubectl&lt;/strong>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://helm.sh/docs/intro/install/">&lt;strong>Helm&lt;/strong> &lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Como instalar?&lt;/h3>
+&lt;p>Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um &lt;strong>template helm&lt;/strong> com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. &lt;strong>Veja a&lt;/strong> &lt;a href="https://github.com/ZupIT/charlescd/tree/master/install/helm-chart">&lt;strong>documentação dos campos editáveis&lt;/strong>&lt;/a>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>As senhas utilizadas pelo Charles estão armazenadas no arquivo &lt;a href="https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml">&lt;strong>values.yaml&lt;/strong>&lt;/a> As principais senhas para personalizar estão em:&lt;/p>
+&lt;ul>
+&lt;li>butler.database.password&lt;/li>
+&lt;li>moove, database.password&lt;/li>
+&lt;li>villager.database.password&lt;/li>
+&lt;li>circlematcher.redis.password&lt;/li>
+&lt;li>keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li>
+&lt;li>postgresql.postgresqlPassword&lt;/li>
+&lt;li>redis.password&lt;/li>
+&lt;li>compass.database.password&lt;/li>
+&lt;li>hermes.database.password&lt;/li>
+&lt;li>rabbitmq.auth.password&lt;/li>
+&lt;li>gate.database.password&lt;/li>
+&lt;/ul>
+&lt;p>Para mais detalhes, acesse o link citado acima, que possui toda a documentação dos campos editáveis.&lt;/p>
+&lt;/div>
+&lt;p>Para realizar a instalação com helm charts, basta executar o comando abaixo após a customização dos campos:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">// customize tudo que precisa no arquivo values.yaml antes de executar o seguinte comando
+helm install charlescd &amp;lt;repo-folder&amp;gt; -n &amp;lt;namespace&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;p>É importante lembrar que, caso não seja feita nenhuma customização, o resultado final será igual à instalação via singlefile em que, por padrão, instalamos o PostgreSQL, Redis, Keycloak e Octopipe.&lt;/p>
+&lt;p>Por isso, não deixe de customizar os campos caso queira algo gerenciável.&lt;/p>
+&lt;/div>
+&lt;h3>Troque a senha padrão (default password)&lt;/h3>
+&lt;p>Depois de instalar o CharlesCD, troque algumas &lt;strong>senhas padrão&lt;/strong>, veja abaixo:&lt;/p>
+&lt;p>&lt;strong>Senha do Keycloak&lt;/strong>:&lt;br>
+&lt;strong>1.&lt;/strong> Acesse: &lt;strong>http://&amp;lt;charlescd-url&amp;gt;/keycloak/auth;&lt;/strong>&lt;br>
+&lt;strong>2.&lt;/strong> Clique em &lt;strong>Administration Console;&lt;/strong>&lt;br>
+&lt;strong>3.&lt;/strong> Insira a senha do usuário do Keycloak (admin - firstpassword) e troque a senha padrão.&lt;/p>
+&lt;p>&lt;strong>Senha do CharlesCD:&lt;/strong>&lt;br>
+Acesse o CharlesCD e logue com&lt;br>
+&lt;strong>1. Usuário:&lt;/strong> &lt;strong>charlesadmin@admin&lt;br>
+2. Senha&lt;/strong>: &lt;strong>charlesadmin;&lt;br>
+3.&lt;/strong> Vá até &lt;strong>Account &amp;gt; Profile&lt;/strong> e depois em &lt;strong>Change Password&lt;/strong> e escolha sua nova senha.&lt;/p></description></item><item><title>Primeiros Passos: Seu primeiro acesso ao Charles</title><link>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/seu-primeiro-acesso-ao-charles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/pt/primeiros-passos/instalando-o-charles/seu-primeiro-acesso-ao-charles/</guid><description>
+&lt;hr>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>No primeiro acesso, &lt;strong>independente do método de instalação&lt;/strong>, o usuário padrão de administrador é &lt;strong>charlesadmin@admin&lt;/strong> e a senha &lt;strong>charlesadmin.&lt;/strong>&lt;/p>
+&lt;p>Logo depois de fazer o primeiro login, troque essa senha.&lt;/p>
+&lt;/div>
+&lt;p>Há &lt;strong>três formas de acessar a aplicação:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Minikube.&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Microk8s.&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Cloud provider.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Veja abaixo como funciona a configuração para cada uma delas.&lt;/p>
+&lt;h2>&lt;strong>1. Minikube&lt;/strong>&lt;/h2>
+&lt;p>No minikube, o &lt;strong>load balancer nginx não cria automaticamente um IP externo.&lt;/strong> Para tornar isso possível, siga os passos:&lt;/p>
+&lt;p>&lt;strong>Passo 1:&lt;/strong> Execute o comando abaixo&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">minikube tunnel
+// digite sua senha root, em uma nova aba do terminal e execute:
+kubectl get svc -n charles
+// agora o IP externo está disponível
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Passo 2:&lt;/strong> Agora que você tem um IP externo, troque o valor &amp;lt;ip-external-charles&amp;gt; pelo IP externo e adicione essa linha no seu arquivo de host do OS:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+Veja mais sobre como mudar &lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>o host do seu sistema&lt;/strong>&lt;/a>.
+&lt;/div>
+&lt;p>&lt;strong>Passo 3:&lt;/strong> Por fim, digite no seu navegador &lt;strong>&lt;a href="http://charles.info.example">http://charles.info.example&lt;/a>&lt;/strong> e a aplicação estará disponível.&lt;/p>
+&lt;h2>2. Microk8s&lt;/h2>
+&lt;p>O Microk8s está disponível para as Plataformas do Microsoft Windows, Apple MacOS e para Linux.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+Acesse o site do projeto para saber mais sobre &lt;a href="https://microk8s.io/">&lt;strong>como instalar o Microk8s&lt;/strong>&lt;/a>
+&lt;/div>
+&lt;p>Uma vez instalado o Microk8s, você deve habilitar os seguintes add-ons:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>DNS&lt;/strong>: Descobrimento dos serviços dentro do cluster;&lt;/li>
+&lt;li>&lt;strong>Storage:&lt;/strong> Criação de volumes e persistências das PODs;&lt;/li>
+&lt;li>&lt;strong>MetalLB:&lt;/strong> Acesso aos serviços expostos pelo Kubernetes. Para este add-on, você terá que escolher um range de IPs onde o Load Balancer irá atribuir para a exposição dos seus serviços.&lt;/li>
+&lt;/ul>
+&lt;p>Siga os passos abaixo para habilitar o Microk8s no Charles:&lt;/p>
+&lt;p>&lt;strong>Passo 1:&lt;/strong> Prepare o Microk8s para receber o CharlesCD.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">microk8s enable dns storage metallb
+Enabling DNS
+Applying manifest
+serviceaccount/coredns created
+configmap/coredns created
+deployment.apps/coredns created
+service/kube-dns created
+clusterrole.rbac.authorization.k8s.io/coredns created
+clusterrolebinding.rbac.authorization.k8s.io/coredns created
+Restarting kubelet
+DNS is enabled
+Enabling default storage class
+deployment.apps/hostpath-provisioner created
+storageclass.storage.k8s.io/microk8s-hostpath created
+serviceaccount/microk8s-hostpath created
+clusterrole.rbac.authorization.k8s.io/microk8s-hostpath created
+clusterrolebinding.rbac.authorization.k8s.io/microk8s-hostpath created
+Storage will be available soon
+Enabling MetalLB
+Enter each IP address range delimited by comma
+(e.g. &amp;#39;10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111&amp;#39;):
+// Nesta etapa, você pode escolher um range ou usar o sugerido, vamos utilizar
+// 10.64.140.43-10.64.140.49
+10.64.140.43-10.64.140.49
+Applying registry manifest
+namespace/metallb-system created
+podsecuritypolicy.policy/speaker unchanged
+serviceaccount/controller created
+serviceaccount/speaker created
+clusterrole.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrole.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+role.rbac.authorization.k8s.io/config-watcher created
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+rolebinding.rbac.authorization.k8s.io/config-watcher created
+daemonset.apps/speaker created
+deployment.apps/controller created
+configmap/config created
+MetalLB is enabled
+// Com o microk8s configurado, podemos então instalar o Charles usando
+// o single-file
+microk8s.kubectl create namespace charles
+​​microk8s.kubectl apply -n charles -f https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml
+// agora o IP externo está disponível
+microk8s.kubectl get svc -n charles
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Passo 2:&lt;/strong> Agora que você tem um IP externo, troque o valor &lt;strong>&amp;lt;ip-external-charles&amp;gt;&lt;/strong> pelo IP externo e adicione a linha no seu arquivo de host do OS:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+Veja mais sobre como mudar o &lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>host file&lt;/strong>&lt;/a>
+&lt;/div>
+&lt;p>&lt;strong>Passo 3:&lt;/strong> Digite no seu navegador &lt;strong>&lt;a href="http://charles.info.example">http://charles.info.example&lt;/a>&lt;/strong> e a aplicação estará disponível.&lt;/p>
+&lt;h2>&lt;strong>3. Cloud Provider (AWS, GCP, AZURE)&lt;/strong>&lt;/h2>
+&lt;p>No caso do Cloud Provider, você pode criar automaticamente o &lt;strong>IP externo para o load balancer nginx&lt;/strong> ao fazer sua instalação em um cluster de kubernetes gerenciado.&lt;/p>
+&lt;p>Siga os passos quando todos os componentes estiverem prontos.&lt;/p>
+&lt;p>&lt;strong>Passo 1:&lt;/strong> Obtenha o IP externo com o comando.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">kubectl get svc -n charles
+// get external IP value
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Passo 2:&lt;/strong> Adicione a linha abaixo no seu arquivo de host do OS (&lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>veja aqui como mudar o host&lt;/strong>&lt;/a>) caso você queira acessar do browser da sua máquina:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>Caso queira usar essa instalação em ambientes de produção ou desenvolvimento, deverá expor a aplicação usando um DNS.&lt;/p>
+&lt;p>Depois de apontar seu DNS para o IP externo, faça o clone das configurações (seja o singlefile ou os arquivos do helm) e troque todas as ocorrências de &lt;a href="http://charles.info.example">http://charles.info.example&lt;/a> para o seu novo DNS, depois execute o comando de instalação novamente.&lt;/p>
+&lt;/div></description></item></channel></rss>
