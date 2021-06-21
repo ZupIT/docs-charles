@@ -93,6 +93,7 @@ archived_version = false
 # Used in the "version-banner" partial to display a version number for the
 # current doc set.
 version = "0.0"
+current_version = ""
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
