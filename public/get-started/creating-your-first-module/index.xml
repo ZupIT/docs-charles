@@ -1,68 +1,127 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Creating your first module</title><link>http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/</link><description>Recent content in Creating your first module on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/index.xml" rel="self" type="application/rss+xml"/><item><title>Get Started: How to configure Chart template</title><link>http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/how-to-configure-chart-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/how-to-configure-chart-template/</guid><description>
-&lt;hr>
-&lt;h2>What is Helm?&lt;/h2>
-&lt;p>Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless the complexity.&lt;/p>
-&lt;p>On Charles context, &lt;a href="https://helm.sh/docs/chart_template_guide/getting_started/">&lt;strong>Chart Template&lt;/strong>&lt;/a> is used like a file collection related to the Kubernetes configuration.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-If you haven&amp;rsquo;t configured your module yet, &lt;a href=".././">&lt;strong>access here&lt;/strong>&lt;/a> It is important to remember, you have to register the URL in this module.
-&lt;/div>
-&lt;h2>How to configure the chart template?&lt;/h2>
-&lt;p>Follow the next steps to try out our sample app.&lt;/p>
-&lt;h3>&lt;strong>Step 1: create a chart template directory&lt;/strong>&lt;/h3>
-&lt;p>To start, you need to save your templates in any git repository you want. When you create a new chart template, you must give the directory the same name as the component as it refers to.&lt;/p>
-&lt;p>The structure below has the necessary templates to deploy a module that contains a component called &amp;ldquo;circles-sample&amp;rdquo;, it is available here.&lt;/p>
-&lt;p>The image below shows how your directory must look like:&lt;/p>
-&lt;p>&lt;img src="//screen-shot-2020-08-13-at-09.16.04.png" alt=" Chart template directory of circle-sample">&lt;/p>
-&lt;h3>Step 2: configure the directory items&lt;/h3>
-&lt;p>After you have created the directory, now you have to configure it. See below which files are necessary to configure:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>templates/&lt;/strong> : it has the models.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>deployment.yaml:&lt;/strong> describes the &lt;a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">&lt;strong>deployment&lt;/strong>&lt;/a> structure.&lt;/li>
-&lt;li>&lt;strong>service.yaml:&lt;/strong> describes the &lt;a href="https://kubernetes.io/docs/concepts/services-networking/service/">&lt;strong>service&lt;/strong>&lt;/a> structure.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;strong>Chart.yaml&lt;/strong> file contains the descriptions as version, name, description. It is necessary to define the version as &amp;ldquo;darwin&amp;rdquo;.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;strong>circles-sample.yaml&lt;/strong> file has the values that it will be used in the templates.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>This information Charles needs to have on the templates. It is important to remember that you can customize these templates the way you want it.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>After you have configured your directory according to the structure above, go to the &amp;ldquo;circles-samples&amp;rdquo; folder and run the command &lt;strong>&amp;quot;&lt;code>helm package .&lt;/code>&amp;quot;&lt;/strong>.&lt;/p>
-&lt;p>In the end of this command, you will have a &lt;strong>tgz&lt;/strong> file with the circles-samples-darwin name. Our CD tool looks for this &lt;strong>tgz&lt;/strong> to run the template.&lt;/p>
-&lt;/div></description></item><item><title>Get Started: Configuring your module</title><link>http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/configuring-your-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/creating-your-first-module/configuring-your-module/</guid><description>
-&lt;hr>
-&lt;h2>Why configure it?&lt;/h2>
-&lt;p>The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to &lt;a href="../../../../reference/circles#how-to-integrate-circle-with-services">&lt;strong>propagate the header &lt;code>X-Circle-Id&lt;/code> that ensures the requests are being redirected to the right version of your application&lt;/strong>&lt;/a>. This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.&lt;/p>
-&lt;p>For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow.&lt;/p>
-&lt;p>This process is made by a library to propagate the header &lt;code>X-Circle-Id&lt;/code>, that makes the circle id to pass all the requests inside the microservice mesh, making sure that you get to the &lt;a href="../../../reference/circle-matcher#identify">&lt;strong>correct version of you hypothesis test&lt;/strong>&lt;/a>.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles C.D. – Creating your first module</title>
+    <link>https://docs.charlescd.io/get-started/creating-your-first-module/</link>
+    <description>Recent content in Creating your first module on Charles C.D.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://docs.charlescd.io/get-started/creating-your-first-module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Get Started: How to configure Chart template</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;What is Helm?&lt;/h2&gt;
+&lt;p&gt;Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless the complexity.&lt;/p&gt;
+&lt;p&gt;On Charles context,  &lt;a href=&#34;https://helm.sh/docs/chart_template_guide/getting_started/&#34;&gt;&lt;strong&gt;Chart Template&lt;/strong&gt;&lt;/a&gt; is used like a file collection related to the Kubernetes configuration.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+If you haven&amp;rsquo;t configured your module yet, &lt;a href=&#34;.././&#34;&gt;&lt;strong&gt;access here&lt;/strong&gt;&lt;/a&gt; It is important to remember, you have to register the URL in this module.
+&lt;/div&gt;
+
+&lt;h2&gt;How to configure the chart template?&lt;/h2&gt;
+&lt;p&gt;Follow the next steps to try out our sample app.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 1: create a chart template directory&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;To start, you need to save your templates in any git repository you want. When you create a new chart template, you must give the directory the same name as the component as it refers to.&lt;/p&gt;
+&lt;p&gt;The structure below has the necessary templates to deploy a module that contains a component called &amp;ldquo;circles-sample&amp;rdquo;, it is available here.&lt;/p&gt;
+&lt;p&gt;The image below shows how your directory must look like:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//screen-shot-2020-08-13-at-09.16.04.png&#34; alt=&#34; Chart template directory of circle-sample&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;Step 2: configure the directory items&lt;/h3&gt;
+&lt;p&gt;After you have created the directory, now you have to configure it. See below which files are necessary to configure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;templates/&lt;/strong&gt; : it has the models.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;deployment.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;&lt;strong&gt;deployment&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;service.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;Chart.yaml&lt;/strong&gt; file contains the descriptions as version, name, description. It is necessary to define the version as &amp;ldquo;darwin&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;circles-sample.yaml&lt;/strong&gt; file has the values that it will be used in the templates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This information Charles needs to have on the templates. It is important to remember that you can customize these templates the way you want it.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;After you have configured your directory according to the structure above, go to the &amp;ldquo;circles-samples&amp;rdquo; folder and run the command &lt;strong&gt;&amp;quot;&lt;code&gt;helm package .&lt;/code&gt;&amp;quot;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In the end of this command, you will have a &lt;strong&gt;tgz&lt;/strong&gt; file with the circles-samples-darwin name. Our CD tool looks for this &lt;strong&gt;tgz&lt;/strong&gt; to run the template.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Configuring your module</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;Why configure it?&lt;/h2&gt;
+&lt;p&gt;The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to &lt;a href=&#34;../../../../reference/circles#how-to-integrate-circle-with-services&#34;&gt;&lt;strong&gt;propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt; that ensures the requests are being redirected to the right version of your application&lt;/strong&gt;&lt;/a&gt;. This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.&lt;/p&gt;
+&lt;p&gt;For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow.&lt;/p&gt;
+&lt;p&gt;This process is made by a library to propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt;, that makes the circle id to pass all the requests inside the microservice mesh, making sure that you get to the &lt;a href=&#34;../../../reference/circle-matcher#identify&#34;&gt;&lt;strong&gt;correct version of you hypothesis test&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
 If there is a microservice inside this flow that doesn&amp;rsquo;t make part of your test, the circle value will be passed, but your request will fall into the open sea, because there isn&amp;rsquo;t any version for that circle.
-&lt;/div>
-&lt;h3>&lt;strong>Example&lt;/strong>&lt;/h3>
-&lt;p>See below:&lt;/p>
-&lt;p>&lt;img src="//header-propagation-v2-en.png" alt="">&lt;/p>
-&lt;blockquote>
-&lt;ol>
-&lt;li>When you make a microservice request, &lt;code>circle matcher&lt;/code> gets the circle id for this specific request.&lt;/li>
-&lt;li>The id is inserted in the header with the &lt;code>X-Circle-Id&lt;/code> key.&lt;/li>
-&lt;li>The propagate header library makes it possible to pass the &lt;code>x-circle-id&lt;/code> in the header to request to another microservice, in this case &lt;code>butler&lt;/code>.&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;p>When a hypothesis test happens on &lt;code>butler&lt;/code>, for example, it is integrated with &lt;code>moove&lt;/code> which is a microservice that answers the requests on the frontend.&lt;/p>
-&lt;p>If you want your request to get to the &lt;code>butler&lt;/code> correct version, it is necessary that &lt;code>moove&lt;/code> pass the &lt;code>x-Circle-Id&lt;/code> header (obtained by circle matcher) in the requests made for it. If involves more than one &lt;strong>microservice&lt;/strong>, you have to propagate the header to make sure the user gets the same version of that circle.&lt;/p>
-&lt;p>When a test happens with &lt;code>moove&lt;/code> module, for example, and if it is integrated with &lt;code>villager&lt;/code> and &lt;code>butler&lt;/code>, the &lt;code>x-circle-id&lt;/code> header propagation makes you look for &lt;code>villager&lt;/code> and &lt;code>butler&lt;/code> versions that are the same &lt;code>moove&lt;/code> ones, however, this is not the scenario, these requests between &lt;code>moove&lt;/code> and its integration will be treated by the open sea.&lt;/p>
-&lt;h2>How to add it?&lt;/h2>
-&lt;p>Charles has a library that works for any &lt;strong>Java&lt;/strong> application that uses &lt;strong>Spring&lt;/strong> as a framework and another one for &lt;strong>.NET Core&lt;/strong>. These libs were built because there wasn&amp;rsquo;t another way used in these development environments.&lt;/p>
-&lt;p>To use them, you need to add them to your application:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/tree/master/tracing/spring">&lt;strong>Lib para Java e Spring&lt;/strong> &lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20">&lt;strong>Lib para .NET&lt;/strong>&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-info" role="alert">
-For &lt;strong>Node.js&lt;/strong> there is already a lib and &lt;a href="https://www.npmjs.com/package/hpropagate">&lt;strong>you can find it here&lt;/strong>&lt;/a>
-&lt;/div></description></item></channel></rss>
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;See below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//header-propagation-v2-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;When you make a microservice request, &lt;code&gt;circle matcher&lt;/code&gt; gets the circle id for this specific request.&lt;/li&gt;
+&lt;li&gt;The id is inserted in the header with the &lt;code&gt;X-Circle-Id&lt;/code&gt; key.&lt;/li&gt;
+&lt;li&gt;The propagate header library makes it possible to pass the &lt;code&gt;x-circle-id&lt;/code&gt; in the header to request to another microservice, in this case &lt;code&gt;butler&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When a hypothesis test happens on &lt;code&gt;butler&lt;/code&gt;, for example, it is integrated with &lt;code&gt;moove&lt;/code&gt; which is a microservice that answers the requests on the frontend.&lt;/p&gt;
+&lt;p&gt;If you want your request to get to the &lt;code&gt;butler&lt;/code&gt; correct version, it is necessary that &lt;code&gt;moove&lt;/code&gt; pass the &lt;code&gt;x-Circle-Id&lt;/code&gt; header (obtained by circle matcher) in the requests made for it. If involves more than one &lt;strong&gt;microservice&lt;/strong&gt;, you have to propagate the header to make sure the user gets the same version of that circle.&lt;/p&gt;
+&lt;p&gt;When a test happens with &lt;code&gt;moove&lt;/code&gt; module, for example, and if it is integrated with &lt;code&gt;villager&lt;/code&gt; and &lt;code&gt;butler&lt;/code&gt;, the &lt;code&gt;x-circle-id&lt;/code&gt;  header propagation makes you look for &lt;code&gt;villager&lt;/code&gt; and  &lt;code&gt;butler&lt;/code&gt; versions that are the same &lt;code&gt;moove&lt;/code&gt; ones, however, this is not the scenario, these requests between &lt;code&gt;moove&lt;/code&gt; and its integration will be treated by the open sea.&lt;/p&gt;
+&lt;h2&gt;How to add it?&lt;/h2&gt;
+&lt;p&gt;Charles has a library that works for any &lt;strong&gt;Java&lt;/strong&gt; application that uses &lt;strong&gt;Spring&lt;/strong&gt; as a framework and another one for &lt;strong&gt;.NET Core&lt;/strong&gt;. These libs were built because there wasn&amp;rsquo;t another way used in these development environments.&lt;/p&gt;
+&lt;p&gt;To use them, you need to add them to your application:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/tracing/spring&#34;&gt;&lt;strong&gt;Lib para Java e Spring&lt;/strong&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20&#34;&gt;&lt;strong&gt;Lib para .NET&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&#34;https://www.npmjs.com/package/hpropagate&#34;&gt;&lt;strong&gt;you can find it here&lt;/strong&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

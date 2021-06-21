@@ -1,104 +1,195 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Installing Charles</title><link>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/</link><description>Recent content in Installing Charles on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/get-started/installing-charles/index.xml" rel="self" type="application/rss+xml"/><item><title>Get Started: Installing via Single File</title><link>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/installing-via-single-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/installing-via-single-file/</guid><description>
-&lt;hr>
-&lt;div class="alert alert-info" role="alert">
-Before proceeding, make sure that all the &lt;a href=".././#requirements">&lt;strong>requirements&lt;/strong>&lt;/a> are properly installed.
-&lt;/div>
-&lt;p>This installation is recommended for those who never used Charles before and just want the &lt;strong>first contact in a testing environment&lt;/strong>, without looking for scalability or security.&lt;/p>
-&lt;p>In this case, you will have to:&lt;/p>
-&lt;ul>
-&lt;li>Use a &lt;strong>yaml&lt;/strong> file with all the &lt;a href="https://docs.charlescd.io/get-started/installing-charles#components">&lt;strong>components&lt;/strong>&lt;/a>;&lt;/li>
-&lt;li>Use a &lt;strong>Load Balancer&lt;/strong> previously configured.&lt;/li>
-&lt;/ul>
-&lt;h3>How to install?&lt;/h3>
-&lt;div class="alert alert-danger" role="alert">
-This installation uses standard passwords that can be found in our repository. To change them, you have to choose &lt;a href="installing-via-helm">&lt;strong>helm installation&lt;/strong>&lt;/a> where you can make the password change.
-&lt;/div>
-&lt;p>To create this structure, you have to execute the files in a configured cluster, such as minikube, microk8s, GKE, EKS, etc. The steps to be executed are:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">kubectl create namespace charles
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles C.D. – Installing Charles</title>
+    <link>https://docs.charlescd.io/get-started/installing-charles/</link>
+    <description>Recent content in Installing Charles on Charles C.D.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://docs.charlescd.io/get-started/installing-charles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Get Started: Installing via Single File</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/installing-via-single-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/installing-via-single-file/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Before proceeding, make sure that all the &lt;a href=&#34;.././#requirements&#34;&gt;&lt;strong&gt;requirements&lt;/strong&gt;&lt;/a&gt; are properly installed.
+&lt;/div&gt;
+
+&lt;p&gt;This installation is recommended for those who never used Charles before and just want the &lt;strong&gt;first contact in a testing environment&lt;/strong&gt;, without looking for scalability or security.&lt;/p&gt;
+&lt;p&gt;In this case, you will have to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a &lt;strong&gt;yaml&lt;/strong&gt; file with all the &lt;a href=&#34;https://docs.charlescd.io/get-started/installing-charles#components&#34;&gt;&lt;strong&gt;components&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Use a &lt;strong&gt;Load Balancer&lt;/strong&gt; previously configured.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;How to install?&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
+This installation uses standard passwords that can be found in our repository. To change them, you have to choose &lt;a href=&#34;installing-via-helm&#34;&gt;&lt;strong&gt;helm installation&lt;/strong&gt;&lt;/a&gt; where you can make the password change.
+&lt;/div&gt;
+
+&lt;p&gt;To create this structure, you have to execute the files in a configured cluster, such as minikube, microk8s, GKE, EKS, etc. The steps to be executed are:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl create namespace charles
+
 kubectl apply -n charles -f https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>At the end of the process, you will have inside of the namespace &lt;code>charles&lt;/code> all the modules of the project and its dependencies installed in a simpler way. Here you will find the&lt;a href="https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml"> &lt;strong>files in the repository&lt;/strong>&lt;/a>.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p>
-&lt;p>After doing this, clone the single-file.yaml and change all occurrences from &lt;a href="http://charles.info.example">http://charles.info.example&lt;/a> to &amp;lt;your-dns&amp;gt;, then execute the install command again.&lt;/p>
-&lt;p>&lt;code>kubectl install -f &amp;lt;single-file-path&amp;gt; -n charles&lt;/code>&lt;/p>
-&lt;/div>
-&lt;div class="alert alert-danger" role="alert">
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At the end of the process, you will have inside of the namespace &lt;code&gt;charles&lt;/code&gt; all the modules of the project and its dependencies installed in a simpler way. Here you will find the&lt;a href=&#34;https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml&#34;&gt; &lt;strong&gt;files in the repository&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p&gt;
+&lt;p&gt;After doing this, clone the single-file.yaml and change all occurrences from &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; to &amp;lt;your-dns&amp;gt;, then execute the install command again.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kubectl install -f &amp;lt;single-file-path&amp;gt; -n charles&lt;/code&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
 The purpose of this installation is only for tests. Using this for production environment is not recommended due to lack o backup, high availability, etc.
-&lt;/div></description></item><item><title>Get Started: Installing via Helm</title><link>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/installing-via-helm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/installing-via-helm/</guid><description>
-&lt;hr>
-&lt;div class="alert alert-info" role="alert">
-Before proceeding, make sure that all the &lt;a href=".././#requirements">&lt;strong>requirements&lt;/strong>&lt;/a> are properly installed.
-&lt;/div>
-&lt;p>This installation is recommended for those who already has an infrastructure to deal with a more complex environment or who has some limitations of security/scalability, which demands a &lt;strong>more complete install customization&lt;/strong> of CharlesCD.&lt;/p>
-&lt;h3>Requisites&lt;/h3>
-&lt;p>To run the process, you must have the following programs:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">&lt;strong>Kubectl&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://helm.sh/docs/intro/install/">&lt;strong>Helm&lt;/strong> &lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3>How does it works?&lt;/h3>
-&lt;p>This installation is recommended if you want a specific customization. To make this happen, there is a helm template with all the available fields to be altered, including the database and consumed resources. You will find the documentation with the&lt;a href="https://github.com/ZupIT/charlescd/tree/master/install/helm-chart"> &lt;strong>editable fields here&lt;/strong>&lt;/a>.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;p>The passwords used by Charles are stored in the &lt;a href="https://github.com/ZupIT/charlescd/blob/master/install/helm-chart/values.yaml">&lt;strong>values.yaml&lt;/strong>&lt;/a> file. The main passwords to customized are:&lt;/p>
-&lt;ul>
-&lt;li>butler.database.password&lt;/li>
-&lt;li>moove, database.password&lt;/li>
-&lt;li>villager.database.password&lt;/li>
-&lt;li>circlematcher.redis.password&lt;/li>
-&lt;li>keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li>
-&lt;li>postgresql.postgresqlPassword&lt;/li>
-&lt;li>redis.password&lt;/li>
-&lt;li>compass.database.password&lt;/li>
-&lt;/ul>
-&lt;p>For more details, access the link mentioned before about editable fields.&lt;/p>
-&lt;/div>
-&lt;p>To complete the installation with helm charts, just run the command below after you customized the fields:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">// customize everything you need in the file values.yaml before you execute the following command
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Installing via Helm</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/installing-via-helm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/installing-via-helm/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Before proceeding, make sure that all the &lt;a href=&#34;.././#requirements&#34;&gt;&lt;strong&gt;requirements&lt;/strong&gt;&lt;/a&gt; are properly installed.
+&lt;/div&gt;
+
+&lt;p&gt;This installation is recommended for those who already has an infrastructure to deal with a more complex environment or who has some limitations of security/scalability, which demands a &lt;strong&gt;more complete install customization&lt;/strong&gt; of CharlesCD.&lt;/p&gt;
+&lt;h3&gt;Requisites&lt;/h3&gt;
+&lt;p&gt;To run the process, you must have the following programs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;&lt;strong&gt;Kubectl&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;How does it works?&lt;/h3&gt;
+&lt;p&gt;This installation is recommended if you want a specific customization. To make this happen, there is a helm template with all the available fields to be altered, including the database and consumed resources. You will find the documentation with the&lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt; &lt;strong&gt;editable fields here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;The passwords used by Charles are stored in the &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/master/install/helm-chart/values.yaml&#34;&gt;&lt;strong&gt;values.yaml&lt;/strong&gt;&lt;/a&gt; file.  The main passwords to customized are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;butler.database.password&lt;/li&gt;
+&lt;li&gt;moove, database.password&lt;/li&gt;
+&lt;li&gt;villager.database.password&lt;/li&gt;
+&lt;li&gt;circlematcher.redis.password&lt;/li&gt;
+&lt;li&gt;keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li&gt;
+&lt;li&gt;postgresql.postgresqlPassword&lt;/li&gt;
+&lt;li&gt;redis.password&lt;/li&gt;
+&lt;li&gt;compass.database.password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more details, access the link mentioned before about editable fields.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;To complete the installation with helm charts, just run the command below after you customized the fields:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;// customize everything you need in the file values.yaml before you execute the following command
 helm install charlescd &amp;lt;repo-folder&amp;gt; -n &amp;lt;namespace&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-&lt;p>It&amp;rsquo;s important to remember that, in case of no customization at all, the final result is the same as in case #1 in which, for standard, we install the PostgreSQL, Redis, Keycloak and CharlesCD.&lt;/p>
-&lt;p>So, you must not forget to customize the fields in case you want something manageable.&lt;/p>
-&lt;/div></description></item><item><title>Get Started: Your first Charles' access</title><link>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/your-first-charles-access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/installing-charles/your-first-charles-access/</guid><description>
-&lt;hr>
-&lt;div class="alert alert-info" role="alert">
-At the first access, &lt;strong>regardless of the installation method&lt;/strong>, the default admin user is &lt;strong>charlesadmin@admin&lt;/strong> and the password is &lt;strong>charlesadmin.&lt;/strong>
-&lt;/div>
-&lt;p>There are three ways to access the application:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Minikube;&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>Microk8s;&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>Cloud provider.&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;p>See below how the configuration works on each one of them:&lt;/p>
-&lt;h2>&lt;strong>1. Minikube&lt;/strong>&lt;/h2>
-&lt;p>On the minikube, the &lt;strong>load balancer&lt;/strong> does not automatically create an &lt;strong>external IP,&lt;/strong> to make this possible, follow the steps:&lt;/p>
-&lt;p>&lt;strong>Step 1&lt;/strong>: Just run the command below:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">minikube tunnel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to remember that, in case of no customization at all, the final result is the same as in case #1 in which, for standard, we install the PostgreSQL, Redis, Keycloak and CharlesCD.&lt;/p&gt;
+&lt;p&gt;So, you must not forget to customize the fields in case you want something manageable.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Your first Charles&#39; access</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/your-first-charles-access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/your-first-charles-access/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+At the first access, &lt;strong&gt;regardless of the installation method&lt;/strong&gt;, the default admin user is &lt;strong&gt;charlesadmin@admin&lt;/strong&gt; and the password is &lt;strong&gt;charlesadmin.&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are three ways to access the application:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Minikube;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Microk8s;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud provider.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See below how the configuration works on each one of them:&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;1. Minikube&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;On the minikube, the &lt;strong&gt;load balancer&lt;/strong&gt; does not automatically create an &lt;strong&gt;external IP,&lt;/strong&gt; to make this possible, follow the steps:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: Just run the command below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;minikube tunnel
 // enter your root password, then open another terminal tab and run:
 kubectl get svc -n charles
 // now the nginx IP external appears
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Step 2:&lt;/strong> Now that you have the &lt;strong>external ip,&lt;/strong> &lt;strong>replace the ip-external-charles&lt;/strong> and add this line on your host file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-For more information on &lt;strong>how to change the host file,&lt;/strong> &lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>access here.&lt;/strong> &lt;/a>
-&lt;/div>
-&lt;p>&lt;strong>Step 3:&lt;/strong> In your browser type &lt;strong>&lt;a href="http://charles.info.example">http://charles.info.example&lt;/a>&lt;/strong> and the entire application is available.&lt;/p>
-&lt;h2>2. Microk8s&lt;/h2>
-&lt;p>Microk8s is available for Microsoft Windows, Apple MacOS and Linux platforms.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-For more information on how to install Microk8s visit the &lt;a href="https://microk8s.io/">&lt;strong>project&amp;rsquo;s website&lt;/strong>&lt;/a>
-&lt;/div>
-&lt;p>Once Microk8s is installed, you have to enable the following add-ons:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DNS:&lt;/strong> discovery of services within the cluster;&lt;/li>
-&lt;li>&lt;strong>Storage:&lt;/strong> creating volumes and persistence of PODs;&lt;/li>
-&lt;li>&lt;strong>MetalLB:&lt;/strong> access to the services exposed by kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.&lt;/li>
-&lt;/ul>
-&lt;p>Follow the next steps to enable Microk8s on Charles:&lt;/p>
-&lt;p>&lt;strong>Step 1:&lt;/strong> prepare Microk8s to receive the CharlesCD;&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">microk8s enable dns storage metallb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Now that you have the &lt;strong&gt;external ip,&lt;/strong&gt; &lt;strong&gt;replace the ip-external-charles&lt;/strong&gt; and add this line on your host file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt; &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;access here.&lt;/strong&gt; &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; In your browser type &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; and the entire application is available.&lt;/p&gt;
+&lt;h2&gt;2. Microk8s&lt;/h2&gt;
+&lt;p&gt;Microk8s is available for Microsoft Windows, Apple MacOS and Linux platforms.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information on how to install Microk8s visit the &lt;a href=&#34;https://microk8s.io/&#34;&gt;&lt;strong&gt;project&amp;rsquo;s website&lt;/strong&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once Microk8s is installed, you have to enable the following add-ons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DNS:&lt;/strong&gt; discovery of services within the cluster;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Storage:&lt;/strong&gt; creating volumes and persistence of PODs;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MetalLB:&lt;/strong&gt; access to the services exposed by kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Follow the next steps to enable Microk8s on Charles:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; prepare Microk8s to receive the CharlesCD;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;microk8s enable dns storage metallb
 Enabling DNS
 Applying manifest
 serviceaccount/coredns created
@@ -117,7 +208,7 @@ clusterrole.rbac.authorization.k8s.io/microk8s-hostpath created
 clusterrolebinding.rbac.authorization.k8s.io/microk8s-hostpath created
 Storage will be available soon
 Enabling MetalLB
-Enter each IP address range delimited by comma
+Enter each IP address range delimited by comma 
 (e.g. &amp;#39;10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111&amp;#39;):
 // In this step, you can choose a range or use the suggested one, we will use
 // 10.64.140.43-10.64.140.49
@@ -137,32 +228,52 @@ daemonset.apps/speaker created
 deployment.apps/controller created
 configmap/config created
 MetalLB is enabled
+
 // With microk8s configured, we can then install Charles using
 // the single-file
 microk8s.kubectl create namespace charles
 ​​microk8s.kubectl apply -n charles -f https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml
+
 // now the nginx IP external appears
 microk8s.kubectl get svc -n charles
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Passo 2:&lt;/strong> now that you have the &lt;strong>external ip,&lt;/strong> &lt;strong>replace the ip-external-charles,&lt;/strong> add this line on your OS host file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-For more information on &lt;strong>how to change the host file,&lt;/strong> &lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>access here.&lt;/strong> &lt;/a>
-&lt;/div>
-&lt;p>&lt;strong>Step 3:&lt;/strong> type in your browser &lt;strong>&lt;a href="http://charles.info.example">http://charles.info.example&lt;/a>&lt;/strong> and the entire application will be available.&lt;/p>
-&lt;h2>&lt;strong>3. Cloud Provider (AWS, GCP, AZURE)&lt;/strong>&lt;/h2>
-&lt;p>On Cloud Provider, if you install on a managed kubernetes, &lt;strong>the external ip for the nginx load balancer is created automatically&lt;/strong>,&lt;/p>
-&lt;p>When all the components are ready follow the next steps:&lt;/p>
-&lt;p>&lt;strong>Step 1:&lt;/strong> Just take the external IP with the command below and add it to your hosts file.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">kubectl get svc -n charles
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; now that you have the &lt;strong&gt;external ip,&lt;/strong&gt; &lt;strong&gt;replace the ip-external-charles,&lt;/strong&gt; add this line on your OS host file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt; &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;access here.&lt;/strong&gt; &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; type in your browser &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; and the entire application will be  available.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;3. Cloud Provider (AWS, GCP, AZURE)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;On Cloud Provider, if you install on a managed kubernetes, &lt;strong&gt;the external ip for the nginx load balancer is created automatically&lt;/strong&gt;,&lt;/p&gt;
+&lt;p&gt;When all the components are ready follow the next steps:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Just take the external IP with the command below and add it to your hosts file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl get svc -n charles
 // get external IP value
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Step 2:&lt;/strong> Add the line below in you &lt;a href="https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/">&lt;strong>OS host file&lt;/strong>&lt;/a>, if you want to access the browser in your device.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;IP-EXTERNAL-CHARLES&amp;gt; charles.info.example
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p>
-&lt;p>After doing this, clone the configurations (it can be singlefile or the helm files) and change all occurrences from &lt;a href="http://charles.info.example">http://charles.info.example&lt;/a> to your new DNS, then run the install command again.&lt;/p>
-&lt;/div>
-&lt;div class="alert alert-danger" role="alert">
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;  Add the line below in you &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;OS host file&lt;/strong&gt;&lt;/a&gt;, if you want to access the browser in your device.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p&gt;
+&lt;p&gt;After doing this, clone the configurations (it can be singlefile or the helm files) and change all occurrences from &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; to your new DNS, then run the install command again.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
 The purpose of this installation is only for tests. Using this for production environment is not recommended due to lack o backup, high availability, etc.
-&lt;/div></description></item></channel></rss>
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

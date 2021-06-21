@@ -199,7 +199,7 @@ url = "https://docs.charlescd.io"
 [deployment]
 
 [[deployment.targets]]
-name = "predoc.charles.io"
+name = "predoc.charlescd.io"
 URL = "s3://predoc-charles?region=us-east-1"
 
 # If you are using a CloudFront CDN, deploy will invalidate the cache as needed.

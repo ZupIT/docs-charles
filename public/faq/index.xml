@@ -1,359 +1,414 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – FAQ</title><link>http://docs.charlescd.io/v1.0.x/faq/</link><description>Recent content in FAQ on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/faq/index.xml" rel="self" type="application/rss+xml"/><item><title>FAQ: About Charles</title><link>http://docs.charlescd.io/v1.0.x/faq/about-charles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/faq/about-charles/</guid><description>
-&lt;hr>
-&lt;h2>What is Charles?&lt;/h2>
-&lt;p>CharlesCD is an open source tool that makes more agile, safe and continuous deploy, which allows development teams to validate their hypothesis with specific groups of users, simultaneously.&lt;/p>
-&lt;h2>What is circle deploy?&lt;/h2>
-&lt;p>The circle deploy is the pioneer concept created by Charles. Thanks to it, it&amp;rsquo;s possible to deploy the same application with different segmentations of users at the same time.&lt;/p>
-&lt;h2>What is the main difference on Charles?&lt;/h2>
-&lt;p>Unlike other ways of deploy, Charles allows developers to perform simultaneous segmentation and agroupment of user with circles.&lt;/p>
-&lt;p>With the tool, the delivery process in traditionals environments occurs in longer frequencies - weekly, biweekly or even monthly - gains a new rhythm. The feedback cycle of your product becomes faster and effective, which means that you can manage your timing in a more intelligent and assertive way. ‌&lt;/p>
-&lt;p>Besides, developers will be more encouraged to innovate and to make more implementations of new versions, once that identifying bugs is easier and creating circles helps on minimizing the error budget.&lt;/p>
-&lt;p>For more information about microservices and Charles' modules, check out the &lt;a href="../../#system-architecture">&lt;strong>platform&amp;rsquo;s architecture&lt;/strong>&lt;/a>.&lt;/p></description></item><item><title>FAQ: Circle deploy vs Other deploys</title><link>http://docs.charlescd.io/v1.0.x/faq/circle-deploy-vs-other-deploys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/faq/circle-deploy-vs-other-deploys/</guid><description>
-&lt;hr>
-&lt;h2>Circle deploy x Traditional deploy&lt;/h2>
-&lt;p>In traditional deploys, it&amp;rsquo;s common that the application has to pass into different environments until it gets to production. With Charles, the circle deploy system works only in production environment. The release validation is fragmented according to selected circles, in other words, you can open gradually the access to your release to more and more circles.&lt;/p>
-&lt;p>&lt;img src="//deploy-tradicional%20%282%29.png" alt="Process of traditional deploy ">&lt;/p>
-&lt;p>&lt;img src="//deploy_em_circulos%20%283%29%20%281%29.png" alt="Process of circle deploy">&lt;/p>
-&lt;h2>Circle deploy x Blue-green deploys&lt;/h2>
-&lt;p>At blue-green deployment, it&amp;rsquo;s possible to create two identical environments in your infrastructure, but with different versions of an application implemented in each other. In this way, it&amp;rsquo;s possible to test your hypothesis that, once confirmed, can be migrated to one version to another.&lt;/p>
-&lt;p>The main benefit is that the downtime is zero, which brings more safety for the transition process. Despite this, it represents a higher cost because this deployment demands the double of infrastructure to be executed.&lt;/p>
-&lt;p>With Charles, the circle deploy offers to teams more confidence and agility on launching new versions, with zero downtime and no additional costs on infrastructure. Besides, it&amp;rsquo;s possible to filter, through circles, which users will validate your new application version.&lt;/p>
-&lt;p>&lt;img src="//blue_green%20%281%29%20%281%29.png" alt="Process of blue-green deploy">&lt;/p>
-&lt;p>&lt;img src="//deploy_em_circulos%20%281%29%20%281%29.png" alt="Process of circle deploy">&lt;/p>
-&lt;h2>Circle deploy x Canary release&lt;/h2>
-&lt;p>At canary release, it is done the gradual publishing of a software new version from routing within the infrastructure. As soon as the version is tested and it&amp;rsquo;s more trustworthy, your access is expanded to more users from your base.&lt;/p>
-&lt;p>However, this technique doesn&amp;rsquo;t have any strategy for choosing the users during this expansion. For this reason, it becomes more difficult to manage the existing versions of your system, which contributes for not working with many versions, generating limits of possibilities to test hypothesis.&lt;/p>
-&lt;p>With Charles, the circle deploy logic follows a pattern similar to parallel change. That means that, in the platform, you can also start opening the access to a release to a reduced number of users and goes gradually expanding as soon as the system pass into tests.&lt;/p>
-&lt;p>The main difference of Charles is that, if you find any error or you have a hypothesis alredy validated, the reverse is easily done: you can take users off the circle or make a deploy of another version with that group or even bring a version of your application to &lt;a href="../../key-concepts#open-sea">&lt;strong>open sea&lt;/strong>&lt;/a>&lt;strong>,&lt;/strong> that is, to all the clients not in a Charle&amp;rsquo;s circle.&lt;/p>
-&lt;p>&lt;img src="//deploy_em_circulos_x_canary_releases%20%282%29.png" alt="Process of Canary Release">&lt;/p>
-&lt;p>&lt;img src="//deploy_em_circulos%20%2810%29.png" alt="Process of circle deploy">&lt;/p></description></item><item><title>FAQ: Zupitcharlescd</title><link>http://docs.charlescd.io/v1.0.x/faq/zupitcharlescd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/faq/zupitcharlescd/</guid><description>
-&lt;h1>ZupIT/charlescd&lt;/h1>
-&lt;h2>Changelog&lt;/h2>
-&lt;h3>0.3.10 (01/10/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/545">#545&lt;/a> Workflow prod oidc&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/553">#553&lt;/a> change npm to yarn in prodrelease&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/550">#550&lt;/a> Matcher s3 sync&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/552">#552&lt;/a> wrong react-select version change required props&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/534">#534&lt;/a> Add dockerhub support&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/551">#551&lt;/a> Matcher s3 sync keycloak login&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/519">#519&lt;/a> Fixing filter when adding user groups at workspace&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/492">#492&lt;/a> Filter within the metrics group&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/544">#544&lt;/a> fix nginx error in single file installation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/543">#543&lt;/a> CharleCD code of conduct&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/541">#541&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.9 (25/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/540">#540&lt;/a> Issues&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/538">#538&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.8 (25/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/537">#537&lt;/a> Rename compass docker-repository name&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/536">#536&lt;/a> Fix Create Workspace&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/533">#533&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.7 (25/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/535">#535&lt;/a> Revert &amp;ldquo;Building villager native&amp;rdquo;&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/477">#477&lt;/a> Support to Google Cloud Registry&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/531">#531&lt;/a> Adding files for installation with new idm integration&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/529">#529&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/532">#532&lt;/a> Revert &amp;ldquo;Revert &amp;ldquo;[DevCraft] IDM and microfrontend feature&amp;rdquo;&amp;rdquo;&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/530">#530&lt;/a> Revert &amp;ldquo;[DevCraft] IDM and microfrontend feature&amp;rdquo;&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/507">#507&lt;/a> [DevCraft] IDM and microfrontend feature&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/466">#466&lt;/a> Charlescd adapter to work with devcraft&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/527">#527&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/524">#524&lt;/a> Add gcr support&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/526">#526&lt;/a> Fixing variables at workflows.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/525">#525&lt;/a> Fix cd configuration eks form names&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/435">#435&lt;/a> Building villager native&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/455">#455&lt;/a> Upgrade Quarkus 1.2.1 to 1.7.1 and fix Test for new version of Quarkus&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/516">#516&lt;/a> Issue workspace switch&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/522">#522&lt;/a> Revert &amp;ldquo;Support to Google Cloud Registry&amp;rdquo;&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/481">#481&lt;/a> Bump node-fetch from 2.6.0 to 2.6.1 in /ui&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/506">#506&lt;/a> Feature change login process&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/497">#497&lt;/a> Using database permissions on moove filter&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/487">#487&lt;/a> Remove proxy&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/480">#480&lt;/a> Bump node-fetch from 2.6.0 to 2.6.1 in /butler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/510">#510&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/512">#512&lt;/a> fix-villager-swagger-path&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/503">#503&lt;/a> fix users load workspace&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.6 (21/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/511">#511&lt;/a> Fix import csv bug&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.5 (19/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/509">#509&lt;/a> Change Octopipe to not update deployed resources&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/508">#508&lt;/a> Updating java version of moove dev release&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/495">#495&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/442">#442&lt;/a> Fix multiple registry auth bug&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.4 (16/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/502">#502&lt;/a> Update application-k8s.properties&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/501">#501&lt;/a> Fix chart error&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/500">#500&lt;/a> Update Nginx Chart.yaml&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/499">#499&lt;/a> Compass copyright&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/452">#452&lt;/a> Removing authorization from keycloak&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/496">#496&lt;/a> Fix compass installation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/491">#491&lt;/a> lock Casl version&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/494">#494&lt;/a> fix compass chart&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/414">#414&lt;/a> Fixing workspace permissions.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/486">#486&lt;/a> Notification transaction&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/488">#488&lt;/a> Fix compass job&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/485">#485&lt;/a> Adding compass chart&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/483">#483&lt;/a> Transaction on create deployment use-case&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/463">#463&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/473">#473&lt;/a> Fix average time&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/476">#476&lt;/a> Change on click expand for a redirect to that circle&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/474">#474&lt;/a> fix hardcoded sandbox namespace&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/472">#472&lt;/a> fix one deployment issues&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/470">#470&lt;/a> Update link to documentation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/428">#428&lt;/a> Adding filter to UserGroup findAll&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/438">#438&lt;/a> Circle segments validation on PATCH&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/348">#348&lt;/a> Reset password - Root View&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/423">#423&lt;/a> Segmentation view - Hide logical operator and vertical line&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/418">#418&lt;/a> Create metrics groups&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/468">#468&lt;/a> V2 one deployment circle&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/467">#467&lt;/a> Removing comments on nginx-conf.yaml&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.4-rc.3 (04/09/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/462">#462&lt;/a> Refinement UI&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/460">#460&lt;/a> Butler stabilization version concat validation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/459">#459&lt;/a> validate componentName + imageTag cannot be greater than 63&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/456">#456&lt;/a> Fix spinnaker tests, return hostValue and gatewayName on executions index&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/454">#454&lt;/a> Add component name v2&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/453">#453&lt;/a> Index pagination by 0, validate query string params&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/407">#407&lt;/a> remove module controller&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/393">#393&lt;/a> add label circleId&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/451">#451&lt;/a> Fix ingress options v2&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/450">#450&lt;/a> Add page indication on paginated response&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/443">#443&lt;/a> Codecov upgrade 1.0.7 to 1.0.13&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/441">#441&lt;/a> Butler stabilization execution list&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/437">#437&lt;/a> Add circle label on deployment&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/439">#439&lt;/a> Add new ingress options butler v2&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/434">#434&lt;/a> use pgcrypto to generate uuid&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/429">#429&lt;/a> No rollback when pod is shared&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/347">#347&lt;/a> Change user password&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/433">#433&lt;/a> create pg extension in case the database cant run uuid_generate_v4&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/432">#432&lt;/a> dont run cleanup query if no expired executions are found&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/427">#427&lt;/a> Butler stabilization fix undeployment callback&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/431">#431&lt;/a> dont log entire objects on deploy&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/405">#405&lt;/a> Hotfix: user can not edit profile picture.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/375">#375&lt;/a> Validating if email is already registered.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/420">#420&lt;/a> Update execution status and notify moove on undeployment&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/417">#417&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/415">#415&lt;/a> alter migrations and entities&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/419">#419&lt;/a> Fix repeated drules v2&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/416">#416&lt;/a> Fix incomingCircleId for callbacks&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/398">#398&lt;/a> Hotfix: moove was allowing post and delete requests without token&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.4-rc.2 (21/08/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/387">#387&lt;/a> Add link that opens Charles Documentation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/408">#408&lt;/a> Set components running to false on cleanup&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/406">#406&lt;/a> fix butler callback url&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/404">#404&lt;/a> Remove hardcoded user/pass&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/403">#403&lt;/a> Fix butler undeployment return&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/401">#401&lt;/a> fix callback url&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/400">#400&lt;/a> notify moove on cd callback&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/399">#399&lt;/a> Return the same dto for v1 and v2 deployments&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/372">#372&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/396">#396&lt;/a> Butler v2 undeploy tests&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/382">#382&lt;/a> Fix empty deploy period&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/394">#394&lt;/a> Butler stabilization autofix&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/380">#380&lt;/a> V2 Undeployments&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/322">#322&lt;/a> Improve tests&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/331">#331&lt;/a> Validating circle segments&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/391">#391&lt;/a> add new circles-sample tgz and change service port&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/389">#389&lt;/a> Fixing Octopipe Host and Circles Sample port&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/373">#373&lt;/a> Bump class-transformer from 0.2.3 to 0.3.1 in /butler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/388">#388&lt;/a> Butler stabilization lint fix&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/385">#385&lt;/a> enable CORS on the moove and circle matcher routes via nginx&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/335">#335&lt;/a> Issue modal user group layout&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/366">#366&lt;/a> Fixing GitLab integration&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.4-rc.1 (13/08/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/386">#386&lt;/a> added option for Octopipe to skip https validation on git requests&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/384">#384&lt;/a> Changing circle sample&amp;rsquo;s chart template value&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/327">#327&lt;/a> Correction User Group Tab Layout&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/326">#326&lt;/a> Creating Circle Sample.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/381">#381&lt;/a> Butler stabilization timeout&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.3 (12/08/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/379">#379&lt;/a> Octopipe support for gitlab&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/363">#363&lt;/a> Using Keycloak internal host for authentication&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/369">#369&lt;/a> Merge default deployments&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/377">#377&lt;/a> validate image url to match k8s format and length&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/376">#376&lt;/a> validate unique components per on deploy&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.2 (07/08/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/368">#368&lt;/a> extract functions&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/343">#343&lt;/a> remove quiz app workflow&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/367">#367&lt;/a> Fixing octopipe dockerfile path&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.1 (06/08/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/364">#364&lt;/a> Prioritize requeue deployments, fix deployment validation test&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/193">#193&lt;/a> Unify callback resources&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/354">#354&lt;/a> Support for role authentication on AWS&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/338">#338&lt;/a> Adding jsonformatter to missing localdatetime fields&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/334">#334&lt;/a> Update resetVersion function to clean errors&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/333">#333&lt;/a> Remove React.memo from some menus&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/302">#302&lt;/a> Workspace Location Dropdown Issue&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/345">#345&lt;/a> Provider connection test&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/362">#362&lt;/a> Fix v2 butler unusedversions&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/350">#350&lt;/a> Circle dashboard improvement&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/360">#360&lt;/a> Tests mock server&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/361">#361&lt;/a> Fix virtualservice consolidated value&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/359">#359&lt;/a> Fix open sea deployment&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/298">#298&lt;/a> Fix env string in butler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/358">#358&lt;/a> Spinnaker v2 integration&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/357">#357&lt;/a> Removing intermitent unit test&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/355">#355&lt;/a> Spinnaker v2 tests&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/330">#330&lt;/a> Deployment dash history&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/356">#356&lt;/a> Update components status on callback, more handler tests&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/352">#352&lt;/a> Handler test example without testing pgboss&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/283">#283&lt;/a> Circles Metrics Dashboard MVP&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/344">#344&lt;/a> Stabilization v2 implement handler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/346">#346&lt;/a> Spinnaker connector v2&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/278">#278&lt;/a> Octopipe new deployer&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/316">#316&lt;/a> Remove global state integration test&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/340">#340&lt;/a> Stabilization: setup queue and handler service&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/336">#336&lt;/a> Updating copyright&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/323">#323&lt;/a> Updating Deployment Graphics Dashboard&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/329">#329&lt;/a> Stabilization v2 modules config&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/328">#328&lt;/a> Fixing moove deployment template and single-file.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/308">#308&lt;/a> Fix Deployment callback update&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/324">#324&lt;/a> WIP: Stabilization entities&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/321">#321&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;/ul>
-&lt;h3>0.3.0 (22/07/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/251">#251&lt;/a> Improve Circle Comparation Item options&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/307">#307&lt;/a> Add access token signature validation&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/285">#285&lt;/a> Correcting circle matcher on credentials layout&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/318">#318&lt;/a> Adding unique constraint to artifact snapshots&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/314">#314&lt;/a> New ingress options&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/300">#300&lt;/a> UI improve use fetch&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/313">#313&lt;/a> New butler deploy structure&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/287">#287&lt;/a> Improving Button Rounded Component&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/286">#286&lt;/a> Limiting release tag name length to 50 characters&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/276">#276&lt;/a> update keycloak realm and moove admin user&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/248">#248&lt;/a> Issue logout session&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/272">#272&lt;/a> Feature Redirect Home Page&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/309">#309&lt;/a> Bump lodash from 4.17.15 to 4.17.19 in /butler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/250">#250&lt;/a> Improve update deployment status&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/216">#216&lt;/a> Make upsert modules&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/306">#306&lt;/a> Update icon for Menu Item Hypotheses&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/303">#303&lt;/a> Fix keycloak reset on chart upgrade&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/297">#297&lt;/a> Preventing wrong parse of boolean string on butler&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/282">#282&lt;/a> Update doc link&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/289">#289&lt;/a> Upload coverage report&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/295">#295&lt;/a> CI Update of charts and changelog&lt;/li>
-&lt;/ul>
-&lt;h3>0.2.14 (14/07/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/294">#294&lt;/a> Cd/changelog [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/288">#288&lt;/a> Fix invalid date deploy metrics [&lt;strong>bug&lt;/strong>][&lt;strong>moove&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/291">#291&lt;/a> Fixing changelog generation [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/290">#290&lt;/a> Fixing changelog generation [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/202">#202&lt;/a> Feature Metrics dashboard [&lt;strong>docs&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/241">#241&lt;/a> fixing docker registry component tag search [&lt;strong>TESTED&lt;/strong>][&lt;strong>bug&lt;/strong>][&lt;strong>moove&lt;/strong>][&lt;strong>ui&lt;/strong>][&lt;strong>villager&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/198">#198&lt;/a> Unify resources undeployment [&lt;strong>TESTED&lt;/strong>][&lt;strong>butler&lt;/strong>][&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/263">#263&lt;/a> Fixing paged JDBC queries [&lt;strong>TESTED&lt;/strong>][&lt;strong>bug&lt;/strong>][&lt;strong>moove&lt;/strong>][&lt;strong>severity/critical&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/280">#280&lt;/a> Creating an API for deployment statistics [&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/213">#213&lt;/a> change response status when deployment already exists [&lt;strong>TESTED&lt;/strong>][&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/192">#192&lt;/a> Changing search deployed components query [&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/239">#239&lt;/a> Change virtual service template [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/190">#190&lt;/a> Unify deployment resources [&lt;strong>TESTED&lt;/strong>][&lt;strong>butler&lt;/strong>][&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/274">#274&lt;/a> Workflow adjustments for zup environments [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/273">#273&lt;/a> Changelog 0.2.13 [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/271">#271&lt;/a> Adding gren release note generation [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/268">#268&lt;/a> POC/Discussion: dont use nest dependency injection on simples tests [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/267">#267&lt;/a> Identify is not working [&lt;strong>TESTED&lt;/strong>][&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/240">#240&lt;/a> Adding var env for redis ssl and defaulting its value to false [&lt;strong>TESTED&lt;/strong>][&lt;strong>circle-matcher&lt;/strong>][&lt;strong>enhancement&lt;/strong>][&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/223">#223&lt;/a> Fix/configure ssl database connection [&lt;strong>TESTED&lt;/strong>][&lt;strong>butler&lt;/strong>][&lt;strong>enhancement&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/259">#259&lt;/a> Enhancement: adding gren to generate release notes. [&lt;strong>enhancement&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/269">#269&lt;/a> Revert &amp;ldquo;Enhancement: adding gren to generate release notes.&amp;rdquo; [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/266">#266&lt;/a> Force coverage [&lt;strong>butler&lt;/strong>][&lt;strong>circle-matcher&lt;/strong>][&lt;strong>moove&lt;/strong>][&lt;strong>octopipe&lt;/strong>][&lt;strong>ui&lt;/strong>][&lt;strong>villager&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/265">#265&lt;/a> Removing per module coverage [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/264">#264&lt;/a> Revert &amp;ldquo;Temporarily disable codecov on butler&amp;rdquo; [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/261">#261&lt;/a> Temporarily disable codecov on butler [&lt;strong>butler&lt;/strong>][&lt;strong>octopipe&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/260">#260&lt;/a> Update .env with workspace env [&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/249">#249&lt;/a> Pass the workspaceId to (circle matcher) the identify request [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/257">#257&lt;/a> CI Update of charts [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;/ul>
-&lt;h3>0.2.13 (07/07/2020)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/258">#258&lt;/a> Update charlescd-prodrelease.yml [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/256">#256&lt;/a> Sign automated commits of workflow [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/254">#254&lt;/a> Fix workflow job [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/188">#188&lt;/a> Octopipe retry callback [&lt;strong>butler&lt;/strong>][&lt;strong>octopipe&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/238">#238&lt;/a> set hostname as cookie domain [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/187">#187&lt;/a> Validation duplicate component [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/228">#228&lt;/a> Fix unused components deployment phase [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/229">#229&lt;/a> highlight opened module [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/135">#135&lt;/a> UI proxy [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/237">#237&lt;/a> Fixing codecov project threshold [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/236">#236&lt;/a> Dummy changes for codecov [&lt;strong>butler&lt;/strong>][&lt;strong>circle-matcher&lt;/strong>][&lt;strong>moove&lt;/strong>][&lt;strong>octopipe&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/226">#226&lt;/a> add callback dependency [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/227">#227&lt;/a> Add UI build step [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/220">#220&lt;/a> Add response after remove a CM [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/218">#218&lt;/a> Improve behavior after close [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/219">#219&lt;/a> When changing workspace name, tab name does not update. [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/215">#215&lt;/a> add querystring to fetch builds [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/209">#209&lt;/a> Strict eslint config and local vscode settings [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/217">#217&lt;/a> Add build URL params utility [&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/191">#191&lt;/a> Adding prod update on release [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/211">#211&lt;/a> Update environment vars process [&lt;strong>bug&lt;/strong>][&lt;strong>enhancement&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/208">#208&lt;/a> Improve environment process [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/205">#205&lt;/a> Enhancement: installation with minikube [&lt;strong>enhancement&lt;/strong>][&lt;strong>installer&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/199">#199&lt;/a> &amp;ldquo;Undeploy&amp;rdquo; option is enabled on the menu of Default circle [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/200">#200&lt;/a> Several requests to users on login [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/204">#204&lt;/a> Check &lt;code>src&lt;/code> prop before render member names' initials [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/196">#196&lt;/a> Remove React.memo [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/185">#185&lt;/a> Update git configuration name [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/183">#183&lt;/a> Removing docs [&lt;strong>docs&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/170">#170&lt;/a> UI test coverage improvement [&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/167">#167&lt;/a> Fix yaml error for octopipe deployment [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/157">#157&lt;/a> Issue resolve security libs [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/158">#158&lt;/a> create user other than root [&lt;strong>bug&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/155">#155&lt;/a> Fix/when one module fail all fail [&lt;strong>butler&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/98">#98&lt;/a> Improve UI mocks [&lt;strong>enhancement&lt;/strong>][&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/159">#159&lt;/a> Add quiz app actions [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/113">#113&lt;/a> Fix find inactive circles with empty name [&lt;strong>moove&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/154">#154&lt;/a> Trigger unit tests [&lt;strong>closed&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/153">#153&lt;/a> Trigger unit tests [&lt;strong>circle-matcher&lt;/strong>]&lt;/li>
-&lt;li>&lt;a href="https://github.com/ZupIT/charlescd/pull/130">#130&lt;/a> remove node-modules from repo (old new-ui) [&lt;strong>ui&lt;/strong>]&lt;/li>
-&lt;/ul>
-&lt;h3>0.2.12 (18/06/2020)&lt;/h3>
-&lt;h3>0.2.11 (09/06/2020)&lt;/h3>
-&lt;h3>v0.2.10 (03/06/2020)&lt;/h3>
-&lt;h3>v0.2.9 (03/06/2020)&lt;/h3>
-&lt;h3>v0.2.8 (03/06/2020)&lt;/h3>
-&lt;h3>0.2.7 (03/06/2020)&lt;/h3>
-&lt;h3>0.2.6 (03/06/2020)&lt;/h3>
-&lt;h3>0.2.5 (03/06/2020)&lt;/h3>
-&lt;h3>0.2.4 (02/06/2020)&lt;/h3>
-&lt;h3>0.2.3 (02/06/2020)&lt;/h3>
-&lt;h3>1.0.1-beta.4 (06/05/2020)&lt;/h3>
-&lt;ul>
-&lt;li>Removed rollback for octopipe deployments. This will be butler&amp;rsquo;s responsability (@lucasbfernandes in #28 )&lt;/li>
-&lt;/ul>
-&lt;h3>1.0.1-beta.3 (06/05/2020)&lt;/h3>
-&lt;ul>
-&lt;li>Add resource verification and unit test structure for octopipe (@maycommit in #26)&lt;/li>
-&lt;/ul>
-&lt;h3>1.0.1-beta.2 (04/05/2020)&lt;/h3>
-&lt;ul>
-&lt;li>Handle first pipeline error and stop execution (@maycommit in #12)&lt;/li>
-&lt;/ul></description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles C.D. – FAQ</title>
+    <link>https://docs.charlescd.io/faq/</link>
+    <description>Recent content in FAQ on Charles C.D.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://docs.charlescd.io/faq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>FAQ: About Charles</title>
+      <link>https://docs.charlescd.io/faq/about-charles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/faq/about-charles/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;What is Charles?&lt;/h2&gt;
+&lt;p&gt;CharlesCD is an open source tool that makes more agile, safe and continuous deploy, which allows development teams to validate their hypothesis with specific groups of users, simultaneously.&lt;/p&gt;
+&lt;h2&gt;What is circle deploy?&lt;/h2&gt;
+&lt;p&gt;The circle deploy is the pioneer concept created by Charles. Thanks to it, it&amp;rsquo;s possible to deploy the same application with different segmentations of users at the same time.&lt;/p&gt;
+&lt;h2&gt;What is the main difference on Charles?&lt;/h2&gt;
+&lt;p&gt;Unlike other ways of deploy, Charles allows developers to perform simultaneous segmentation and agroupment of user with circles.&lt;/p&gt;
+&lt;p&gt;With the tool, the delivery process in traditionals environments occurs in longer frequencies - weekly, biweekly or even monthly - gains a new rhythm. The feedback cycle of your product becomes faster and effective, which means that you can manage your timing in a more intelligent and assertive way. ‌&lt;/p&gt;
+&lt;p&gt;Besides, developers will be more encouraged to innovate and to make more implementations of new versions, once that identifying bugs is easier and creating circles helps on minimizing the error budget.&lt;/p&gt;
+&lt;p&gt;For more information about microservices and Charles&#39; modules, check out the &lt;a href=&#34;../../#system-architecture&#34;&gt;&lt;strong&gt;platform&amp;rsquo;s architecture&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>FAQ: Circle deploy vs Other deploys</title>
+      <link>https://docs.charlescd.io/faq/circle-deploy-vs-other-deploys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/faq/circle-deploy-vs-other-deploys/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;Circle deploy x Traditional deploy&lt;/h2&gt;
+&lt;p&gt;In traditional deploys, it&amp;rsquo;s common that the application has to pass into different environments until it gets to production. With Charles, the circle deploy system works only in production environment. The release validation is fragmented according to selected circles, in other words, you can open gradually the access to your release to more and more circles.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//deploy-tradicional%20%282%29.png&#34; alt=&#34;Process of traditional deploy &#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%283%29%20%281%29.png&#34; alt=&#34;Process of circle deploy&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Circle deploy x Blue-green deploys&lt;/h2&gt;
+&lt;p&gt;At blue-green deployment, it&amp;rsquo;s possible to create two identical environments in your infrastructure, but with different versions of an application implemented in each other. In this way, it&amp;rsquo;s possible to test your hypothesis that, once confirmed, can be migrated to one version to another.&lt;/p&gt;
+&lt;p&gt;The main benefit is that the downtime is zero, which brings more safety for the transition process. Despite this, it represents a higher cost because this deployment demands the double of infrastructure to be executed.&lt;/p&gt;
+&lt;p&gt;With Charles, the circle deploy offers to teams more confidence and agility on launching new versions, with zero downtime and no additional costs on infrastructure. Besides, it&amp;rsquo;s possible to filter, through circles, which users will validate your new application version.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//blue_green%20%281%29%20%281%29.png&#34; alt=&#34;Process of blue-green deploy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%281%29%20%281%29.png&#34; alt=&#34;Process of circle deploy&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;Circle deploy x Canary release&lt;/h2&gt;
+&lt;p&gt;At canary release, it is done the gradual publishing of a software new version from routing within the infrastructure. As soon as the version is tested and it&amp;rsquo;s more trustworthy, your access is expanded to more users from your base.&lt;/p&gt;
+&lt;p&gt;However, this technique doesn&amp;rsquo;t have any strategy for choosing the users during this expansion. For this reason, it becomes more difficult to manage the existing versions of your system, which contributes for not working with many versions, generating limits of possibilities to test hypothesis.&lt;/p&gt;
+&lt;p&gt;With Charles, the circle deploy logic follows a pattern similar to parallel change. That means that, in the platform, you can also start opening the access to a release to a reduced number of users and goes gradually expanding as soon as the system pass into tests.&lt;/p&gt;
+&lt;p&gt;The main difference of Charles is that, if you find any error or you have a hypothesis alredy validated, the reverse is easily done: you can take users off the circle or make a deploy of another version with that group or even bring a version of your application to &lt;a href=&#34;../../key-concepts#open-sea&#34;&gt;&lt;strong&gt;open sea&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;,&lt;/strong&gt; that is, to all the clients not in a Charle&amp;rsquo;s circle.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos_x_canary_releases%20%282%29.png&#34; alt=&#34;Process of Canary Release&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%2810%29.png&#34; alt=&#34;Process of circle deploy&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>FAQ: Zupitcharlescd</title>
+      <link>https://docs.charlescd.io/faq/zupitcharlescd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/faq/zupitcharlescd/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;ZupIT/charlescd&lt;/h1&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;h3&gt;0.3.10 (01/10/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/545&#34;&gt;#545&lt;/a&gt; Workflow prod oidc&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/553&#34;&gt;#553&lt;/a&gt; change npm to yarn in prodrelease&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/550&#34;&gt;#550&lt;/a&gt; Matcher s3 sync&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/552&#34;&gt;#552&lt;/a&gt; wrong react-select version change required props&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/534&#34;&gt;#534&lt;/a&gt; Add dockerhub support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/551&#34;&gt;#551&lt;/a&gt; Matcher s3 sync keycloak login&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/519&#34;&gt;#519&lt;/a&gt; Fixing filter when adding user groups at workspace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/492&#34;&gt;#492&lt;/a&gt; Filter within the metrics group&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/544&#34;&gt;#544&lt;/a&gt; fix nginx error in single file installation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/543&#34;&gt;#543&lt;/a&gt; CharleCD code of conduct&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/541&#34;&gt;#541&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.9 (25/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/540&#34;&gt;#540&lt;/a&gt; Issues&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/538&#34;&gt;#538&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.8 (25/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/537&#34;&gt;#537&lt;/a&gt; Rename compass docker-repository name&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/536&#34;&gt;#536&lt;/a&gt; Fix Create Workspace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/533&#34;&gt;#533&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.7 (25/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/535&#34;&gt;#535&lt;/a&gt; Revert &amp;ldquo;Building villager native&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/477&#34;&gt;#477&lt;/a&gt; Support to Google Cloud Registry&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/531&#34;&gt;#531&lt;/a&gt; Adding files for installation with new idm integration&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/529&#34;&gt;#529&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/532&#34;&gt;#532&lt;/a&gt; Revert &amp;ldquo;Revert &amp;ldquo;[DevCraft] IDM and microfrontend feature&amp;rdquo;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/530&#34;&gt;#530&lt;/a&gt; Revert &amp;ldquo;[DevCraft] IDM and microfrontend feature&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/507&#34;&gt;#507&lt;/a&gt; [DevCraft] IDM and microfrontend feature&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/466&#34;&gt;#466&lt;/a&gt; Charlescd adapter to work with devcraft&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/527&#34;&gt;#527&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/524&#34;&gt;#524&lt;/a&gt; Add gcr support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/526&#34;&gt;#526&lt;/a&gt; Fixing variables at workflows.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/525&#34;&gt;#525&lt;/a&gt; Fix cd configuration eks form names&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/435&#34;&gt;#435&lt;/a&gt; Building villager native&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/455&#34;&gt;#455&lt;/a&gt; Upgrade Quarkus 1.2.1 to 1.7.1 and fix Test for new version of Quarkus&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/516&#34;&gt;#516&lt;/a&gt; Issue workspace switch&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/522&#34;&gt;#522&lt;/a&gt; Revert &amp;ldquo;Support to Google Cloud Registry&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/481&#34;&gt;#481&lt;/a&gt; Bump node-fetch from 2.6.0 to 2.6.1 in /ui&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/506&#34;&gt;#506&lt;/a&gt; Feature change login process&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/497&#34;&gt;#497&lt;/a&gt; Using database permissions on moove filter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/487&#34;&gt;#487&lt;/a&gt; Remove proxy&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/480&#34;&gt;#480&lt;/a&gt; Bump node-fetch from 2.6.0 to 2.6.1 in /butler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/510&#34;&gt;#510&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/512&#34;&gt;#512&lt;/a&gt; fix-villager-swagger-path&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/503&#34;&gt;#503&lt;/a&gt; fix users load workspace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.6 (21/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/511&#34;&gt;#511&lt;/a&gt; Fix import csv bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.5 (19/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/509&#34;&gt;#509&lt;/a&gt; Change Octopipe to not update deployed resources&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/508&#34;&gt;#508&lt;/a&gt; Updating java version of moove dev release&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/495&#34;&gt;#495&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/442&#34;&gt;#442&lt;/a&gt; Fix multiple registry auth bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.4 (16/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/502&#34;&gt;#502&lt;/a&gt; Update application-k8s.properties&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/501&#34;&gt;#501&lt;/a&gt; Fix chart error&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/500&#34;&gt;#500&lt;/a&gt; Update Nginx Chart.yaml&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/499&#34;&gt;#499&lt;/a&gt; Compass copyright&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/452&#34;&gt;#452&lt;/a&gt; Removing authorization from keycloak&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/496&#34;&gt;#496&lt;/a&gt; Fix compass installation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/491&#34;&gt;#491&lt;/a&gt; lock Casl version&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/494&#34;&gt;#494&lt;/a&gt; fix compass chart&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/414&#34;&gt;#414&lt;/a&gt; Fixing workspace permissions.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/486&#34;&gt;#486&lt;/a&gt; Notification transaction&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/488&#34;&gt;#488&lt;/a&gt; Fix compass job&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/485&#34;&gt;#485&lt;/a&gt; Adding compass chart&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/483&#34;&gt;#483&lt;/a&gt; Transaction on create deployment use-case&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/463&#34;&gt;#463&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/473&#34;&gt;#473&lt;/a&gt; Fix average time&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/476&#34;&gt;#476&lt;/a&gt; Change on click expand for a redirect to that circle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/474&#34;&gt;#474&lt;/a&gt; fix hardcoded sandbox namespace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/472&#34;&gt;#472&lt;/a&gt; fix one deployment issues&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/470&#34;&gt;#470&lt;/a&gt; Update link to documentation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/428&#34;&gt;#428&lt;/a&gt; Adding filter to UserGroup findAll&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/438&#34;&gt;#438&lt;/a&gt; Circle segments validation on PATCH&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/348&#34;&gt;#348&lt;/a&gt; Reset password - Root View&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/423&#34;&gt;#423&lt;/a&gt; Segmentation view - Hide logical operator and vertical line&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/418&#34;&gt;#418&lt;/a&gt; Create metrics groups&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/468&#34;&gt;#468&lt;/a&gt; V2 one deployment circle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/467&#34;&gt;#467&lt;/a&gt; Removing comments on nginx-conf.yaml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.4-rc.3 (04/09/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/462&#34;&gt;#462&lt;/a&gt; Refinement UI&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/460&#34;&gt;#460&lt;/a&gt; Butler stabilization version concat validation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/459&#34;&gt;#459&lt;/a&gt; validate componentName + imageTag cannot be greater than 63&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/456&#34;&gt;#456&lt;/a&gt; Fix spinnaker tests, return hostValue and gatewayName on executions index&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/454&#34;&gt;#454&lt;/a&gt; Add component name v2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/453&#34;&gt;#453&lt;/a&gt; Index pagination by 0, validate query string params&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/407&#34;&gt;#407&lt;/a&gt; remove module controller&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/393&#34;&gt;#393&lt;/a&gt; add label circleId&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/451&#34;&gt;#451&lt;/a&gt; Fix ingress options v2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/450&#34;&gt;#450&lt;/a&gt; Add page indication on paginated response&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/443&#34;&gt;#443&lt;/a&gt; Codecov upgrade 1.0.7 to 1.0.13&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/441&#34;&gt;#441&lt;/a&gt; Butler stabilization execution list&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/437&#34;&gt;#437&lt;/a&gt; Add circle label on deployment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/439&#34;&gt;#439&lt;/a&gt; Add new ingress options butler v2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/434&#34;&gt;#434&lt;/a&gt; use pgcrypto to generate uuid&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/429&#34;&gt;#429&lt;/a&gt; No rollback when pod is shared&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/347&#34;&gt;#347&lt;/a&gt; Change user password&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/433&#34;&gt;#433&lt;/a&gt; create pg extension in case the database cant run uuid_generate_v4&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/432&#34;&gt;#432&lt;/a&gt; dont run cleanup query if no expired executions are found&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/427&#34;&gt;#427&lt;/a&gt; Butler stabilization fix undeployment callback&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/431&#34;&gt;#431&lt;/a&gt; dont log entire objects on deploy&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/405&#34;&gt;#405&lt;/a&gt; Hotfix: user can not edit profile picture.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/375&#34;&gt;#375&lt;/a&gt; Validating if email is already registered.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/420&#34;&gt;#420&lt;/a&gt; Update execution status and notify moove on undeployment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/417&#34;&gt;#417&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/415&#34;&gt;#415&lt;/a&gt; alter migrations and entities&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/419&#34;&gt;#419&lt;/a&gt; Fix repeated drules v2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/416&#34;&gt;#416&lt;/a&gt; Fix incomingCircleId for callbacks&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/398&#34;&gt;#398&lt;/a&gt; Hotfix: moove was allowing post and delete requests without token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.4-rc.2 (21/08/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/387&#34;&gt;#387&lt;/a&gt; Add link that opens Charles Documentation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/408&#34;&gt;#408&lt;/a&gt; Set components running to false on cleanup&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/406&#34;&gt;#406&lt;/a&gt; fix butler callback url&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/404&#34;&gt;#404&lt;/a&gt; Remove hardcoded user/pass&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/403&#34;&gt;#403&lt;/a&gt; Fix butler undeployment return&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/401&#34;&gt;#401&lt;/a&gt; fix callback url&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/400&#34;&gt;#400&lt;/a&gt; notify moove on cd callback&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/399&#34;&gt;#399&lt;/a&gt; Return the same dto for v1 and v2 deployments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/372&#34;&gt;#372&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/396&#34;&gt;#396&lt;/a&gt; Butler v2 undeploy tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/382&#34;&gt;#382&lt;/a&gt; Fix empty deploy period&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/394&#34;&gt;#394&lt;/a&gt; Butler stabilization autofix&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/380&#34;&gt;#380&lt;/a&gt; V2 Undeployments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/322&#34;&gt;#322&lt;/a&gt; Improve tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/331&#34;&gt;#331&lt;/a&gt; Validating circle segments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/391&#34;&gt;#391&lt;/a&gt; add new circles-sample tgz and change service port&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/389&#34;&gt;#389&lt;/a&gt; Fixing Octopipe Host and Circles Sample port&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/373&#34;&gt;#373&lt;/a&gt; Bump class-transformer from 0.2.3 to 0.3.1 in /butler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/388&#34;&gt;#388&lt;/a&gt; Butler stabilization lint fix&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/385&#34;&gt;#385&lt;/a&gt; enable CORS on the moove and circle matcher routes via nginx&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/335&#34;&gt;#335&lt;/a&gt; Issue modal user group layout&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/366&#34;&gt;#366&lt;/a&gt; Fixing GitLab integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.4-rc.1 (13/08/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/386&#34;&gt;#386&lt;/a&gt; added option for Octopipe to skip https validation on git requests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/384&#34;&gt;#384&lt;/a&gt; Changing circle sample&amp;rsquo;s chart template value&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/327&#34;&gt;#327&lt;/a&gt; Correction User Group Tab Layout&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/326&#34;&gt;#326&lt;/a&gt; Creating Circle Sample.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/381&#34;&gt;#381&lt;/a&gt; Butler stabilization timeout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.3 (12/08/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/379&#34;&gt;#379&lt;/a&gt; Octopipe support for gitlab&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/363&#34;&gt;#363&lt;/a&gt; Using Keycloak internal host for authentication&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/369&#34;&gt;#369&lt;/a&gt; Merge default deployments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/377&#34;&gt;#377&lt;/a&gt; validate image url to match k8s format and length&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/376&#34;&gt;#376&lt;/a&gt; validate unique components per on deploy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.2 (07/08/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/368&#34;&gt;#368&lt;/a&gt; extract functions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/343&#34;&gt;#343&lt;/a&gt; remove quiz app workflow&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/367&#34;&gt;#367&lt;/a&gt; Fixing octopipe dockerfile path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.1 (06/08/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/364&#34;&gt;#364&lt;/a&gt; Prioritize requeue deployments, fix deployment validation test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/193&#34;&gt;#193&lt;/a&gt; Unify callback resources&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/354&#34;&gt;#354&lt;/a&gt; Support for role authentication on AWS&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/338&#34;&gt;#338&lt;/a&gt; Adding jsonformatter to missing localdatetime fields&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/334&#34;&gt;#334&lt;/a&gt; Update resetVersion function to clean errors&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/333&#34;&gt;#333&lt;/a&gt; Remove React.memo from some menus&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/302&#34;&gt;#302&lt;/a&gt; Workspace Location Dropdown Issue&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/345&#34;&gt;#345&lt;/a&gt; Provider connection test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/362&#34;&gt;#362&lt;/a&gt; Fix v2 butler unusedversions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/350&#34;&gt;#350&lt;/a&gt; Circle dashboard improvement&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/360&#34;&gt;#360&lt;/a&gt; Tests mock server&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/361&#34;&gt;#361&lt;/a&gt; Fix virtualservice consolidated value&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/359&#34;&gt;#359&lt;/a&gt; Fix open sea deployment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/298&#34;&gt;#298&lt;/a&gt; Fix env string in butler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/358&#34;&gt;#358&lt;/a&gt; Spinnaker v2 integration&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/357&#34;&gt;#357&lt;/a&gt; Removing intermitent unit test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/355&#34;&gt;#355&lt;/a&gt; Spinnaker v2 tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/330&#34;&gt;#330&lt;/a&gt; Deployment dash history&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/356&#34;&gt;#356&lt;/a&gt; Update components status on callback, more handler tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/352&#34;&gt;#352&lt;/a&gt; Handler test example without testing pgboss&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/283&#34;&gt;#283&lt;/a&gt; Circles Metrics Dashboard MVP&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/344&#34;&gt;#344&lt;/a&gt; Stabilization v2 implement handler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/346&#34;&gt;#346&lt;/a&gt; Spinnaker connector v2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/278&#34;&gt;#278&lt;/a&gt; Octopipe new deployer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/316&#34;&gt;#316&lt;/a&gt; Remove global state integration test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/340&#34;&gt;#340&lt;/a&gt; Stabilization: setup queue and handler service&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/336&#34;&gt;#336&lt;/a&gt; Updating copyright&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/323&#34;&gt;#323&lt;/a&gt; Updating Deployment Graphics Dashboard&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/329&#34;&gt;#329&lt;/a&gt; Stabilization v2 modules config&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/328&#34;&gt;#328&lt;/a&gt; Fixing moove deployment template and single-file.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/308&#34;&gt;#308&lt;/a&gt; Fix Deployment callback update&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/324&#34;&gt;#324&lt;/a&gt; WIP: Stabilization entities&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/321&#34;&gt;#321&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.3.0 (22/07/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/251&#34;&gt;#251&lt;/a&gt; Improve Circle Comparation Item options&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/307&#34;&gt;#307&lt;/a&gt; Add access token signature validation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/285&#34;&gt;#285&lt;/a&gt; Correcting circle matcher on credentials layout&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/318&#34;&gt;#318&lt;/a&gt; Adding unique constraint to artifact snapshots&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/314&#34;&gt;#314&lt;/a&gt; New ingress options&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/300&#34;&gt;#300&lt;/a&gt; UI improve use fetch&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/313&#34;&gt;#313&lt;/a&gt; New butler deploy structure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/287&#34;&gt;#287&lt;/a&gt; Improving Button Rounded Component&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/286&#34;&gt;#286&lt;/a&gt; Limiting release tag name length to 50 characters&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/276&#34;&gt;#276&lt;/a&gt; update keycloak realm and moove admin user&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/248&#34;&gt;#248&lt;/a&gt; Issue logout session&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/272&#34;&gt;#272&lt;/a&gt; Feature Redirect Home Page&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/309&#34;&gt;#309&lt;/a&gt; Bump lodash from 4.17.15 to 4.17.19 in /butler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/250&#34;&gt;#250&lt;/a&gt; Improve update deployment status&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/216&#34;&gt;#216&lt;/a&gt; Make upsert modules&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/306&#34;&gt;#306&lt;/a&gt; Update icon for Menu Item Hypotheses&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/303&#34;&gt;#303&lt;/a&gt; Fix keycloak reset on chart upgrade&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/297&#34;&gt;#297&lt;/a&gt; Preventing wrong parse of boolean string on butler&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/282&#34;&gt;#282&lt;/a&gt; Update doc link&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/289&#34;&gt;#289&lt;/a&gt; Upload coverage report&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/295&#34;&gt;#295&lt;/a&gt; CI Update of charts and changelog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.2.14 (14/07/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/294&#34;&gt;#294&lt;/a&gt; Cd/changelog [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/288&#34;&gt;#288&lt;/a&gt; Fix invalid date deploy metrics [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/291&#34;&gt;#291&lt;/a&gt; Fixing changelog generation [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/290&#34;&gt;#290&lt;/a&gt; Fixing changelog generation [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/202&#34;&gt;#202&lt;/a&gt; Feature Metrics dashboard [&lt;strong&gt;docs&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/241&#34;&gt;#241&lt;/a&gt; fixing docker registry component tag search [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;][&lt;strong&gt;villager&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/198&#34;&gt;#198&lt;/a&gt; Unify resources undeployment [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/263&#34;&gt;#263&lt;/a&gt; Fixing paged JDBC queries [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;][&lt;strong&gt;severity/critical&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/280&#34;&gt;#280&lt;/a&gt; Creating an API for deployment statistics [&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/213&#34;&gt;#213&lt;/a&gt; change response status when deployment already exists [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/192&#34;&gt;#192&lt;/a&gt; Changing search deployed components query [&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/239&#34;&gt;#239&lt;/a&gt; Change virtual service template [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/190&#34;&gt;#190&lt;/a&gt; Unify deployment resources [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/274&#34;&gt;#274&lt;/a&gt; Workflow adjustments for zup environments [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/273&#34;&gt;#273&lt;/a&gt; Changelog 0.2.13 [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/271&#34;&gt;#271&lt;/a&gt; Adding gren release note generation [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/268&#34;&gt;#268&lt;/a&gt; POC/Discussion: dont use nest dependency injection on simples tests [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/267&#34;&gt;#267&lt;/a&gt; Identify is not working [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/240&#34;&gt;#240&lt;/a&gt; Adding var env for redis ssl and defaulting its value to false [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;circle-matcher&lt;/strong&gt;][&lt;strong&gt;enhancement&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/223&#34;&gt;#223&lt;/a&gt; Fix/configure ssl database connection [&lt;strong&gt;TESTED&lt;/strong&gt;][&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;enhancement&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/259&#34;&gt;#259&lt;/a&gt; Enhancement: adding gren to generate release notes. [&lt;strong&gt;enhancement&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/269&#34;&gt;#269&lt;/a&gt; Revert &amp;ldquo;Enhancement: adding gren to generate release notes.&amp;rdquo; [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/266&#34;&gt;#266&lt;/a&gt; Force coverage [&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;circle-matcher&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;][&lt;strong&gt;octopipe&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;][&lt;strong&gt;villager&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/265&#34;&gt;#265&lt;/a&gt; Removing per module coverage [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/264&#34;&gt;#264&lt;/a&gt; Revert &amp;ldquo;Temporarily disable codecov on butler&amp;rdquo; [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/261&#34;&gt;#261&lt;/a&gt; Temporarily disable codecov on butler [&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;octopipe&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/260&#34;&gt;#260&lt;/a&gt; Update .env with workspace env [&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/249&#34;&gt;#249&lt;/a&gt; Pass the workspaceId to (circle matcher) the identify request [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/257&#34;&gt;#257&lt;/a&gt; CI Update of charts [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.2.13 (07/07/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/258&#34;&gt;#258&lt;/a&gt; Update charlescd-prodrelease.yml [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/256&#34;&gt;#256&lt;/a&gt; Sign automated commits of workflow [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/254&#34;&gt;#254&lt;/a&gt; Fix workflow job [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/188&#34;&gt;#188&lt;/a&gt; Octopipe retry callback [&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;octopipe&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/238&#34;&gt;#238&lt;/a&gt; set hostname as cookie domain [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/187&#34;&gt;#187&lt;/a&gt; Validation duplicate component [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/228&#34;&gt;#228&lt;/a&gt; Fix unused components deployment phase [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/229&#34;&gt;#229&lt;/a&gt; highlight opened module [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/135&#34;&gt;#135&lt;/a&gt; UI proxy [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/237&#34;&gt;#237&lt;/a&gt; Fixing codecov project threshold [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/236&#34;&gt;#236&lt;/a&gt; Dummy changes for codecov [&lt;strong&gt;butler&lt;/strong&gt;][&lt;strong&gt;circle-matcher&lt;/strong&gt;][&lt;strong&gt;moove&lt;/strong&gt;][&lt;strong&gt;octopipe&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/226&#34;&gt;#226&lt;/a&gt; add callback dependency [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/227&#34;&gt;#227&lt;/a&gt; Add UI build step [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/220&#34;&gt;#220&lt;/a&gt; Add response after remove a CM [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/218&#34;&gt;#218&lt;/a&gt; Improve behavior after close [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/219&#34;&gt;#219&lt;/a&gt; When changing workspace name, tab name does not update. [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/215&#34;&gt;#215&lt;/a&gt; add querystring to fetch builds [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/209&#34;&gt;#209&lt;/a&gt; Strict eslint config and local vscode settings [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/217&#34;&gt;#217&lt;/a&gt; Add build URL params utility [&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/191&#34;&gt;#191&lt;/a&gt; Adding prod update on release [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/211&#34;&gt;#211&lt;/a&gt; Update environment vars process [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;enhancement&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/208&#34;&gt;#208&lt;/a&gt; Improve environment process [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/205&#34;&gt;#205&lt;/a&gt; Enhancement: installation with minikube [&lt;strong&gt;enhancement&lt;/strong&gt;][&lt;strong&gt;installer&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/199&#34;&gt;#199&lt;/a&gt; &amp;ldquo;Undeploy&amp;rdquo; option is enabled on the menu of Default circle [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/200&#34;&gt;#200&lt;/a&gt; Several requests to users on login [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/204&#34;&gt;#204&lt;/a&gt; Check &lt;code&gt;src&lt;/code&gt; prop before render member names&#39; initials [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/196&#34;&gt;#196&lt;/a&gt; Remove React.memo [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/185&#34;&gt;#185&lt;/a&gt; Update git configuration name [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/183&#34;&gt;#183&lt;/a&gt; Removing docs [&lt;strong&gt;docs&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/170&#34;&gt;#170&lt;/a&gt; UI test coverage improvement [&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/167&#34;&gt;#167&lt;/a&gt; Fix yaml error for octopipe deployment [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/157&#34;&gt;#157&lt;/a&gt; Issue resolve security libs [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/158&#34;&gt;#158&lt;/a&gt; create user other than root [&lt;strong&gt;bug&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/155&#34;&gt;#155&lt;/a&gt; Fix/when one module fail all fail [&lt;strong&gt;butler&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/98&#34;&gt;#98&lt;/a&gt; Improve UI mocks [&lt;strong&gt;enhancement&lt;/strong&gt;][&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/159&#34;&gt;#159&lt;/a&gt; Add quiz app actions [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/113&#34;&gt;#113&lt;/a&gt; Fix find inactive circles with empty name [&lt;strong&gt;moove&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/154&#34;&gt;#154&lt;/a&gt; Trigger unit tests [&lt;strong&gt;closed&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/153&#34;&gt;#153&lt;/a&gt; Trigger unit tests [&lt;strong&gt;circle-matcher&lt;/strong&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZupIT/charlescd/pull/130&#34;&gt;#130&lt;/a&gt; remove node-modules from repo (old new-ui) [&lt;strong&gt;ui&lt;/strong&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;0.2.12 (18/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.11 (09/06/2020)&lt;/h3&gt;
+&lt;h3&gt;v0.2.10 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;v0.2.9 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;v0.2.8 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.7 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.6 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.5 (03/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.4 (02/06/2020)&lt;/h3&gt;
+&lt;h3&gt;0.2.3 (02/06/2020)&lt;/h3&gt;
+&lt;h3&gt;1.0.1-beta.4 (06/05/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed rollback for octopipe deployments. This will be butler&amp;rsquo;s responsability (@lucasbfernandes in #28 )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.0.1-beta.3 (06/05/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add resource verification and unit test structure for octopipe (@maycommit in #26)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.0.1-beta.2 (04/05/2020)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Handle first pipeline error and stop execution (@maycommit in #12)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

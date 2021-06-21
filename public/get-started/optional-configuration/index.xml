@@ -1,54 +1,121 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Charles C.D. – Optional configuration</title><link>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/</link><description>Recent content in Optional configuration on Charles C.D.</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Get Started: Authentication with private registry</title><link>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/authentication-with-private-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/authentication-with-private-registry/</guid><description>
-&lt;hr>
-&lt;h2>Why do you need to authenticate?&lt;/h2>
-&lt;p>Authentication is required if you use a private registry. This way, the cluster will be able to communicate with your registry to pull the images.&lt;/p>
-&lt;h2>How do you authenticate?&lt;/h2>
-&lt;p>Kubernetes cluster uses a type of docker-registry &lt;strong>Secret&lt;/strong> to authenticate the registry container. You have to generate it.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-For more information on how to generate the Secret that will be applied in your cluster, &lt;a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">&lt;strong>access Kubernetes documentation&lt;/strong>&lt;/a>.
-&lt;/div>
-&lt;p>Once you generate the secret, it will look like:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">apiVersion: v1
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles C.D. – Optional configuration</title>
+    <link>https://docs.charlescd.io/get-started/optional-configuration/</link>
+    <description>Recent content in Optional configuration on Charles C.D.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://docs.charlescd.io/get-started/optional-configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Get Started: Authentication with private registry</title>
+      <link>https://docs.charlescd.io/get-started/optional-configuration/authentication-with-private-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/optional-configuration/authentication-with-private-registry/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;Why do you need to authenticate?&lt;/h2&gt;
+&lt;p&gt;Authentication is required if you use a private registry. This way, the cluster will be able to communicate with your registry to pull the images.&lt;/p&gt;
+&lt;h2&gt;How do you authenticate?&lt;/h2&gt;
+&lt;p&gt;Kubernetes cluster uses a type of docker-registry &lt;strong&gt;Secret&lt;/strong&gt; to authenticate the registry container. You have to generate it.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information on how to generate the Secret that will be applied in your cluster, &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&#34;&gt;&lt;strong&gt;access Kubernetes documentation&lt;/strong&gt;&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;p&gt;Once you generate the secret, it will look like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: v1
 data:
-.dockerconfigjson: &amp;lt;&amp;lt;your value&amp;gt;&amp;gt;
+  .dockerconfigjson: &amp;lt;&amp;lt;your value&amp;gt;&amp;gt;
 kind: Secret
 metadata:
-name: &amp;lt;&amp;lt;registry-name&amp;gt;&amp;gt;
+  name: &amp;lt;&amp;lt;registry-name&amp;gt;&amp;gt;
 type: kubernetes.io/dockerconfigjson
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>After this, you&amp;rsquo;ll need to apply this information in the namespace where your applications will be deployed by Charles:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">kubectl -n your-namespace apply secret-registry.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>After completing these steps, your cluster will be able to maintain communication with the registry.&lt;/p></description></item><item><title>Get Started: Configuring your ingress</title><link>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/configuring-your-ingress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/configuring-your-ingress/</guid><description>
-&lt;hr>
-&lt;p>If you want to use your own ingress instead the one provided with Charles' installation, follow the next step:&lt;/p>
-&lt;ul>
-&lt;li>On&lt;code>charlescd/install/helm-chart/values.yaml&lt;/code>, change the &lt;strong>&lt;code>enabled&lt;/code>&lt;/strong> value to &lt;strong>&lt;code>false&lt;/code>&lt;/strong>, like the example below:&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">host: charles.info.example
-class: nginx
-controller:
-nginx:
-enabled: false
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Get Started: Defining the Identity Manager</title><link>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/defining-the-identity-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://docs.charlescd.io/v1.0.x/get-started/optional-configuration/defining-the-identity-manager/</guid><description>
-&lt;hr>
-&lt;h3>What is Identity Manager (IDM)?&lt;/h3>
-&lt;p>It is responsible to manage the user identity that will access any application, in this case, Charles.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this, you&amp;rsquo;ll need to apply this information in the namespace where your applications will be deployed by Charles:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl -n your-namespace apply secret-registry.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After completing these steps, your cluster will be able to maintain communication with the registry.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Configuring your ingress</title>
+      <link>https://docs.charlescd.io/get-started/optional-configuration/configuring-your-ingress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/optional-configuration/configuring-your-ingress/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;If you want to use your own ingress instead the one provided with Charles&#39; installation, follow the next step:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On&lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt;, change the &lt;strong&gt;&lt;code&gt;enabled&lt;/code&gt;&lt;/strong&gt; value to &lt;strong&gt;&lt;code&gt;false&lt;/code&gt;&lt;/strong&gt;, like the example below:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;host: charles.info.example
+  class: nginx
+  controller:
+  nginx:
+  enabled: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Defining the Identity Manager</title>
+      <link>https://docs.charlescd.io/get-started/optional-configuration/defining-the-identity-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/optional-configuration/defining-the-identity-manager/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h3&gt;What is Identity Manager (IDM)?&lt;/h3&gt;
+&lt;p&gt;It is responsible to manage the user identity that will access any application, in this case, Charles.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
 When a user access Charles, it is verified which manager was configured during the installation, to make an identity validation of the user.
-&lt;/div>
-&lt;p>On the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if an customized IDM has been configurated, for example, Google, the user will be redirected to Google&amp;rsquo;s page to proceed the authentication. If this is not the scenario, Charles authentication screen is returned to continue the flow.&lt;/p>
-&lt;p>&lt;img src="//untitled-diagram-1-.png" alt="">&lt;/p>
-&lt;h3>Why configure an IDM?&lt;/h3>
-&lt;p>It is necessary to have an identity manager to make sure Charle&amp;rsquo;s accesses are safe. For this, Charles offers two options:&lt;/p>
-&lt;h3>Default IDM&lt;/h3>
-&lt;p>On Charles default installation, it already has Keycloak that it is used to manage the users. If you don&amp;rsquo;t have a customized IDM, you can use this one.&lt;/p>
-&lt;h3>External IDM&lt;/h3>
-&lt;p>In case you already have your own identity manager, it is necessary change some installation variables. For that, follow the instruction on &lt;a href="../../../reference/identity-manager">&lt;strong>reference section.&lt;/strong>&lt;/a>&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>There are some blocked flows when using an external IDM, see below:&lt;/p>
-&lt;ul>
-&lt;li>Create users;&lt;/li>
-&lt;li>Change password;&lt;/li>
-&lt;li>Reset password;&lt;/li>
-&lt;li>Delete users.&lt;/li>
-&lt;/ul>
-&lt;/div></description></item></channel></rss>
+&lt;/div&gt;
+
+&lt;p&gt;On the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if an customized IDM has been configurated, for example, Google, the user will be redirected to Google&amp;rsquo;s page to proceed the authentication. If this is not the scenario, Charles authentication screen is returned to continue the flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;//untitled-diagram-1-.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;Why configure an IDM?&lt;/h3&gt;
+&lt;p&gt;It is necessary to have an identity manager to make sure Charle&amp;rsquo;s accesses are safe. For this, Charles offers two options:&lt;/p&gt;
+&lt;h3&gt;Default IDM&lt;/h3&gt;
+&lt;p&gt;On Charles default installation, it already has Keycloak that it is used to manage the users. If you don&amp;rsquo;t have a customized IDM, you can use this one.&lt;/p&gt;
+&lt;h3&gt;External IDM&lt;/h3&gt;
+&lt;p&gt;In case you already have your own identity manager, it is necessary change some installation variables. For that, follow the instruction on &lt;a href=&#34;../../../reference/identity-manager&#34;&gt;&lt;strong&gt;reference section.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+&lt;p&gt;There are some blocked flows when using an external IDM, see below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create users;&lt;/li&gt;
+&lt;li&gt;Change password;&lt;/li&gt;
+&lt;li&gt;Reset password;&lt;/li&gt;
+&lt;li&gt;Delete users.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
