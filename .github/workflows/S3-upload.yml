@@ -34,7 +34,7 @@ jobs:
 
       - name: Remove static images
         shell: bash
-        working-directory: .
+        working-directory: ./
         run: rm -rf static
 
       - name: Installing Dependencies
@@ -46,7 +46,7 @@ jobs:
         shell: bash
 
       - name: Config version path
-        working-directory: .
+        working-directory: ./
         shell: bash
         run: sed -i -E "s/current_version = .*/current_version = \"$VERSION\"/g" config.toml
         env:
