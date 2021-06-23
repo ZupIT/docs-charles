@@ -3,7 +3,7 @@
 	{{ .Site.Params.version_menu }}
 </a>
 <script>
-	const url = "https://api.github.com/repos/ZupIT/docs-charles/releases";
+	const url = "https://api.github.com/repos/fandrade-zup/docs-charles/releases";
 
 	const xhttp = new XMLHttpRequest();
 	xhttp.open("GET", url, false);
@@ -16,7 +16,7 @@
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.usebeagle.io/${version}/">${version}</a>`
+		return `<a class="dropdown-item" href="https://docs.charlescd.io/${version}/">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
