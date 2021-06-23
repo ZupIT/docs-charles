@@ -15,8 +15,12 @@
 
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
+	const protocol = window.location.protocol
+	
+	const hostname = window.location.hostname
+
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.charlescd.io/${version}/">${version}</a>`
+		return `<a class="dropdown-item" href="${protocol}://${hostname}/${version}/">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
