@@ -1,7 +1,7 @@
 ---
 title: Defining the Identity Manager
 weight: 17
-description: You will find information about Identity Manager
+description: 'In this section, you will find information about Identity Manager.'
 ---
 
 ---

@@ -1,6 +1,7 @@
 ---
 title: First Deploy
 weight: 42
+description: 'In this section, you will find how to make your first deployment.'
 ---
 
 ---

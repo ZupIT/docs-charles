@@ -1,6 +1,6 @@
 ---
 title: Círculo
-weight: 47
+weight: 49
 description: >-
   Nesta seção, você encontra detalhes sobre como funcionam os círculos no
   Charles.
@@ -175,7 +175,7 @@ Para obter essa informação, siga estes passos:
 2. Clique em "default" 
 3. E, no menu à esquerda, clique em **Copy ID**
 
-![](//como-obter-o-identificador-do-meu-circulo.gif)
+![](//circle_copyid%20%281%29.gif)
 
 ## Círculos ativos e inativos
 

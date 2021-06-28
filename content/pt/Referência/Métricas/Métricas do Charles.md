@@ -1,6 +1,6 @@
 ---
 title: Métricas do Charles
-weight: 80
+weight: 84
 description: 'Nesta seção, você encontra mais informações sobre métricas do Charles.'
 ---
 

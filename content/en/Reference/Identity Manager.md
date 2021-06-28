@@ -1,7 +1,9 @@
 ---
 title: Identity Manager
-weight: 55
-description: You will find details on IDM or Identity Manager configuration
+weight: 57
+description: >-
+  In this section, you will find details on IDM (Identity Manager)
+  configuration.
 ---
 
 ---

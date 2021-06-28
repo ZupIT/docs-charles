@@ -1,6 +1,7 @@
 ---
 title: Registry
-weight: 57
+weight: 59
+description: 'In this section, you will find information about the registry.'
 ---
 
 ---

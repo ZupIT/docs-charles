@@ -1,6 +1,7 @@
 ---
 title: Ações
 weight: 30
+description: 'Nesta seção, você encontra informações sobre as ações de métricas.'
 ---
 
 ---

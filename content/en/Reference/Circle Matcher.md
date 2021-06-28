@@ -1,6 +1,6 @@
 ---
 title: Circle Matcher
-weight: 49
+weight: 51
 description: >-
   In this section, you will find more information about how Circle Matcher works
   on Charles.
@@ -28,15 +28,11 @@ Once you start using the interface, it's possible to notice that there are two w
 
 ![](//circle-matcher%20%281%29.png)
 
-The two ways to make this validation are:
+The  way to make this validation are:
 
-* **Default:** in this option, you add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**,  **you will receive all the circles related to this user.**  
+You add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**,  **you will receive all the circles related to this user.**  
 
-![Circle identification with Default option.](//circle-matcher-default%20%282%29.gif)
-
-* **JSON:** similar to the default option, with the difference that here you can copy and paste in **payload field** a **JSON** of your productive environment instead of adding manually. 
-
-![Circle identification with JSON option. ](//circle-matcher-json%20%282%29.gif)
+![](//circle-matcher.gif)
 
 {{% alert color="warning" %}}
 If you pass some information that is off the preconfigured logic conditions in the circles, the system will return indicating that the user is on the **Default** circle, on the standard version of your application.

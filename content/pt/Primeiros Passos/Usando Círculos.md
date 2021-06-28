@@ -1,6 +1,7 @@
 ---
 title: Usando Círculos
 weight: 44
+description: 'Nesta seção, você encontra mais detalhes de como usar círculos.'
 ---
 
 ---

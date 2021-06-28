@@ -1,6 +1,9 @@
 ---
 title: Grupo de métricas para monitorar a saúde
-weight: 78
+weight: 82
+description: >-
+  Nesta seção, você encontra detalhes sobre o grupo de métricas para monitorar a
+  saúde do seu software.
 ---
 
 ---

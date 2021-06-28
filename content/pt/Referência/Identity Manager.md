@@ -1,6 +1,6 @@
 ---
 title: Identity Manager
-weight: 55
+weight: 57
 description: 'Nesta seção, você encontra detalhes de como funciona o Identity Manager (IDM).'
 ---
 

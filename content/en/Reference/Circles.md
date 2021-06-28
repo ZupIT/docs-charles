@@ -1,6 +1,6 @@
 ---
 title: Circles
-weight: 47
+weight: 49
 description: >-
   In this section, you will find more information about how to use circles on
   Charles.
@@ -22,7 +22,7 @@ To create a circle, you just have to follow these steps:
 
 **1.** Click on Create Circle.  
 **2.** Give a name to your circle.  
-**3.** Define a segmentation.  
+**3.** Define segmentation.  
 **4.** \[Optional\] Implement a release.
 
 ## What is segmentation? 
@@ -43,7 +43,7 @@ Segmentations have the following fields that you have to fill:
 
 #### Key and value
 
-The **key** and **value** fields are established based on the information that will be sent in the request, that [**identifies the circles**](../../get-started/defining-a-workspace/circle-matcher) where your user belongs to. For example, the payload below could represent the information you have about a client:
+The **key** and **value** fields are established based on the information that will be sent in the request, which [**identifies the circles**](../../get-started/defining-a-workspace/circle-matcher) where your user belongs to. For example, the payload below could represent the information you have about a client:
 
 ```text
 {
@@ -196,8 +196,8 @@ We will give an example of a specific scenario where your environment has two se
 
 So, the redirect logic using **`x-circle-id`** will be:
 
-1. The user sends to the header:  `x-circle-id="QA Circle"`. On this circle, the request will be redirected to a **X version** of the service on **Application A** and the **Y version** of the service on **Application B**. 
-2. The user sends to the header:  `x-circle-id=”Dev Circle”`. On this circle, the request will be redirected to the **Z version** of the service on **Application A** and **Z version** of the service on **Application B.** 
+1. The user sends to the header:  `x-circle-id="QA Circle"`. In this circle, the request will be redirected to an **X version** of the service on **Application A** and the **Y version** of the service on **Application B**. 
+2. The user sends to the header:  `x-circle-id=”Dev Circle”`. In this circle, the request will be redirected to the **Z version** of the service on **Application A** and **Z version** of the service on **Application B.** 
 
 ![Example of Application 1 and Application 2](//versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
 
@@ -219,7 +219,7 @@ Let's supposed that, to make a request to identify a user, an ID 8756 is returne
 
 ![](//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&token=7b73c615-db6c-438e-a142-e4c131b6d606)
 
-When performing a version implementation in a circle, Charles makes all the configurations so that the routing is correctly done. To understand better how this works, let's use a scenario where a request comes from a service outside the stack, see the image above.
+When performing a version implementation in a circle, Charles makes all the configurations so that the routing is correctly done. To understand better how this works, let's use a scenario where a request comes from the service outside the stack, see the image above.
 
 The request will be received by Ingress, which performs all the routing control to the service mesh.
 
