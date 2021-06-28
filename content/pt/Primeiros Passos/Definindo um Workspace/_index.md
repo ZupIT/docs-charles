@@ -1,6 +1,6 @@
 ---
 title: Definindo um Workspace
-weight: 22
+weight: 20
 description: Esta seção descreve como você deve configurar seu workspace dentro do Charles.
 ---
 
@@ -21,7 +21,7 @@ Cada workspace possui as seguintes configurações:
 * Personalização do [**Circle Matcher**](../../../referencia/circle-matcher).
 * Registro do [**Provedor de Métricas**](adicionando-o-datasource) das suas aplicações.
 
-![Configura&#xE7;&#xE3;o do Workspace](//image%20%2818%29.png)
+![Configura&#xE7;&#xE3;o de workspace](//defining-workspace.png)
 
 {{% alert color="warning" %}}
 A criação do workspace pode ser feita apenas pelo usuário **root**. Entretanto, o preenchimento das configurações podem também ser feitas pelos usuários associados ao workspace com perfil de **mantenedor**.
@@ -33,4 +33,4 @@ Assim que seu workspace é criado, mesmo sem a definição das configurações, 
 
 Para obter essa informação, selecione o workspace desejado e, no menu à esquerda, clique em **Copy ID**:
 
-![](//workspace_copyid.gif)
+![](//workspace_copyid%20%281%29.gif)

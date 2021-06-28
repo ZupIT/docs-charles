@@ -1,13 +1,15 @@
 ---
 title: Seu primeiro acesso ao Charles
-weight: 10
+weight: 8
 description: 'Nesta seção, você encontra como acessar o Charles.'
 ---
 
 ---
 
 {{% alert color="info" %}}
-No primeiro acesso, **independente do método de instalação**, o usuário padrão de administrador é **charlesadmin@admin** e a senha **charlesadmin.**
+No primeiro acesso, **independente do método de instalação**, o usuário padrão de administrador é **charlesadmin@admin** e a senha **charlesadmin.** 
+
+Logo depois de fazer o primeiro login, troque essa senha. 
 {{% /alert %}}
 
 Há **três formas de acessar a aplicação:** 

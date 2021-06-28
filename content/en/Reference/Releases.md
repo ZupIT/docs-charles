@@ -6,13 +6,19 @@ description: 'In this section, you will find more information about releases on 
 
 ---
 
-Releases are application versions. It is different from other ways of deployment that releases generally go through lots of environments until they reach production. However, with CharlesCD it is possible that the same release will be published for different[ **circles**](circles).
+Releases are application versions. It is different from other ways of deployment that a release generally goes through lots of environments until they reach production. However, with CharlesCD it is possible that the same release will be published for different[ **circles**](circles).
 
 ## How to create releases with Charles?
 
+See how to create releases with Charles:
+
+1. Existing images on docker registry.
+
+This one offers the flexibility needed if you want cases in which the generation of artifacts or the development process is apart from CharlesCD.
+
 ### **Releases through existing images on configured Docker Registry**
 
-In this option, it is necessary that the Docker images are already available on your [**configured registry** ](../../get-started/defining-a-workspace/docker-registry)for the module. If this requirement is done, just click on the [**circles**](circles)**'** option on Charles menu and select the circle for a release deploy to be created.
+To create a release without using the hypothesis board, it is necessary that the Docker images are already available on your [**configured registry** ](../../get-started/defining-a-workspace/docker-registry)for the module. If this requirement is done, just click on the [**circles**](circles)**'** option on Charles menu and select the circle for a release deployment to be created.
 
 If you are creating the circle at this moment, click on **Insert release** and then Create release. If the circle is already created, click on **Override release** and then **Create release**.
 

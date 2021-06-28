@@ -1,6 +1,6 @@
 ---
 title: Definindo o Identity Manager
-weight: 19
+weight: 17
 description: >-
   Nesta seção, você encontra informações sobre o Identity Manager e como
   configurá-lo para instalar o Charles.

@@ -1,12 +1,14 @@
 ---
 title: Your first Charles' access
-weight: 10
+weight: 8
 ---
 
 ---
 
 {{% alert color="info" %}}
 At the first access, **regardless of the installation method**, the default admin user is **charlesadmin@admin** and the password is **charlesadmin.**
+
+It is important that, after your first login, you change this password.
 {{% /alert %}}
 
 There are three ways to access the application: 

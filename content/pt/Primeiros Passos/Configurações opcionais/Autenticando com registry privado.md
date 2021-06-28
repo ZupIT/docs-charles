@@ -1,6 +1,6 @@
 ---
 title: Autenticando com registry privado
-weight: 15
+weight: 13
 description: >-
   Nessa seção você encontra como realizar a autenticação com seu registry
   privado.

@@ -1,6 +1,6 @@
 ---
 title: Ambiente de deploy
-weight: 26
+weight: 24
 description: Esta seção descreve como funciona o ambiente de deploy no Charles.
 ---
 

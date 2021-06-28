@@ -1,6 +1,6 @@
 ---
 title: Community
-weight: 87
+weight: 91
 description: >-
   In this section, you will find the main information about how to contribute
   with our community.

@@ -43,6 +43,6 @@ Now, follow the next steps to the [**Open Sea**](https://docs.charlescd.io/key-c
 4. Click on **Search for ready releases**;
 5. Type the release name created above \(or use it again with a new version\) and click on **Deploy**.
 
-Finally, Charles will provide the created release on a cluster in the Default Circle. The deploy status will be shown and updated along the process.
+Finally, Charles will provide the created release on a cluster in the Open Sea. The deploy status will be shown and updated along the process.
 
-![](//circle_deploy_default.gif)
+![](//first-deploy%20%281%29.gif)

@@ -1,6 +1,6 @@
 ---
 title: Authentication with private registry
-weight: 15
+weight: 13
 ---
 
 ---

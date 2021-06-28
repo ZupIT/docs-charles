@@ -16,20 +16,30 @@ One good practice is to always make this identification when a user logs in to t
 
 For more information on how to configure your **Circle Matcher in a workspace**, [**see Defining Workspace section**](../../get-started/defining-a-workspace/circle-matcher) 
 
+### **How the circle identification is made?** 
+
+1. The application searches all its databases __for circles with the same informed rules in the requests.
+2. In case there isn't a compatible circle with the informed rules, Circle Matcher verifies if the user will be selected with the segmentation by percentage through its algorithm that uses selection probability. 
+3. To finish, if any circle fits in, Circle Matcher will return the default circle registered. 
+
 ## Identifying circles through CharlesCD
 
 Once you start using the interface, it's possible to notice that there are two ways to perform the circle identification. For that, access the **Circles** menu inside a **workspace** and select the icon indicated below:
 
-![](//image%20%2816%29.png)
+![](//circle-matcher%20%281%29.png)
 
-You can make the validation as shown bellow:
+The two ways to make this validation are:
 
-* In this option, you add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**, **you will receive all the circles related to this user.**  
+* **Default:** in this option, you add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**,  **you will receive all the circles related to this user.**  
 
-![](//circle_matcher.gif)
+![Circle identification with Default option.](//circle-matcher-default%20%282%29.gif)
+
+* **JSON:** similar to the default option, with the difference that here you can copy and paste in **payload field** a **JSON** of your productive environment instead of adding manually. 
+
+![Circle identification with JSON option. ](//circle-matcher-json%20%282%29.gif)
 
 {{% alert color="warning" %}}
-If you pass some information that is off the preconfigured logic conditions in the circles, the system will return indicating that the user is on _Default_ circle, on the standard version of your application.
+If you pass some information that is off the preconfigured logic conditions in the circles, the system will return indicating that the user is on the **Default** circle, on the standard version of your application.
 {{% /alert %}}
 
 ## Circle identification through API
@@ -38,7 +48,7 @@ You can integrate with your applications the **Identify** resource on the [`char
 
 For example, considering the use of the parameters below to segment:
 
-![](//image%20%2817%29.png)
+![](//circlematcher-identificacao-de-circulos-atraves-da-api%20%281%29.png)
 
 Once you send the identification request with some information, compatible circles will be returned.
 

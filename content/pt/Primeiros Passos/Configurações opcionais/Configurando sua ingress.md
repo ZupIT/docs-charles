@@ -1,6 +1,6 @@
 ---
 title: Configurando sua ingress
-weight: 17
+weight: 15
 description: 'Nesta seção, você encontra sobre como configurar a sua ingress.'
 ---
 

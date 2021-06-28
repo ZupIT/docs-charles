@@ -1,6 +1,6 @@
 ---
 title: Docker Registry
-weight: 24
+weight: 22
 ---
 
 ---

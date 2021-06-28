@@ -1,6 +1,6 @@
 ---
 title: Deploy environment
-weight: 26
+weight: 24
 ---
 
 ---

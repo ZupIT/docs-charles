@@ -1,6 +1,6 @@
 ---
 title: Caso de Uso
-weight: 80
+weight: 84
 description: >-
   Esta seção descreve através de um exemplo como realizar a implantação de uma
   aplicação por meio do Charles.

@@ -1,6 +1,6 @@
 ---
 title: Use Cases
-weight: 80
+weight: 84
 description: >-
   This section describes through an example how to make a deployment of an
   application via Charles.

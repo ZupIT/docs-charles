@@ -14,27 +14,39 @@ Uma boa prática é realizar essa identificação sempre que o usuário faz logi
 
 Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace.**](../primeiros-passos/definindo-workspace/circle-matcher)
 
+### **Como é realizada a identificação de círculos?**
+
+1. A aplicação realiza uma busca em toda a sua base de dados por círculos que tenham as mesmas regras informadas na requisição. 
+2. Caso não haja um círculo compatível com as regras informadas cadastrado, o Circle Matcher verifica se o usuário irá ser selecionado pelos círculos com segmentação por porcentagem através de seu algoritmo que utiliza probabilidade na seleção.
+3. Para finalizar, se nenhum círculo se encaixar, o Circle Matcher irá retornar o círculo default cadastrado.  
+
 ### Identificando círculos através do CharlesCD
 
 Ao utilizar a interface é possível perceber que existem duas formas de realizar a identificação dos círculos. Para isto, acesse o menu **Circles** dentro de um **workspace** e selecione o ícone indicado abaixo:
 
-![](//image%20%2816%29.png)
+![](//circle-matcher%20%282%29.png)
 
-Você pode realizar esta validação adicionando manualmente chaves e valores que definem as características de um usuário de teste. E, com base nisso, ao executar o **Send**, você receberá todos os círculos que ele se encaixa.  
+As duas formas de realizar essa validação são:
 
-![](//circle_matcher.gif)
+* **Default:** nessa opção, você adiciona manualmente chaves e valores que definem as características de um usuário de teste. E, com base nisso, ao executar o **Try**, você receberá todos os círculos que ele se encaixa.  
+
+![Identifica&#xE7;&#xE3;o dos seus c&#xED;rculos com a op&#xE7;&#xE3;o Default.](//circle-matcher-default%20%281%29.gif)
+
+* **JSON:** é similar à opção anterior, só que aqui você pode copiar e colar no **campo de payload** um **JSON** do seu ambiente produtivo ao invés de adicionar manualmente.
+
+![Identifica&#xE7;&#xE3;o dos seus c&#xED;rculos com a op&#xE7;&#xE3;o JSON.](//circle-matcher-json%20%281%29.gif)
 
 {{% alert color="warning" %}}
 Se você passar informações que estejam fora das condições lógicas configuradas nos círculos, o sistema irá retornar que aquele usuário está no círculo _Default_, ou seja, na versão padrão da sua aplicação.
 {{% /alert %}}
 
-## Identificação de círculos através da API
+## Identificação de círculos **por meio** da API
 
 Você pode integrar nas suas aplicações o recurso **Identify** do módulo [`circle-matcher`](https://github.com/ZupIT/charlescd/tree/master/circle-matcher) para detectar os círculos que o seu usuário pertence.
 
 Por exemplo, dada a utilização dos seguintes parâmetros ao segmentar:
 
-![](//image%20%2817%29.png)
+![](//circlematcher-identificacao-de-circulos-atraves-da-api.png)
 
 Ao realizar a requisição de identificação com as seguintes informações, círculos compatíveis serão retornados.
 
@@ -89,7 +101,7 @@ Como nesse exemplo existem círculos correspondentes com as informações sobre 
 
 O corpo da requisição é totalmente flexível, porém vale lembrar que as chaves devem ter a mesma nomenclatura definida nas regras de segmentação do círculo. Veja no caso a seguir:
 
-![](//image%20%2820%29.png)
+![](//circle-matcher-stony-brooks-citizens.png)
 
 O círculo **Stony Brook’s Citizens** foi criado para a identificar usuários que tenham como característica a chave **`city`** e o exato valor **`London`**. Sendo assim, ele não estará na listagem ao realizar uma requisição para o **`Identify`** caso seja informado o corpo da requisição como no exemplo abaixo:
 

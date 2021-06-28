@@ -1,6 +1,6 @@
 ---
 title: Defining a Workspace
-weight: 22
+weight: 20
 ---
 
 ---
@@ -18,11 +18,9 @@ Each workspace has the following configurations:
 * Access control and **user groups permissions**;
 * **Git,** [**Docker Registry**](https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry) and [**Continuous Deployment \(CD\)**;](https://docs.charlescd.io/reference/cd-configuration)
 * [**Circle Matcher**](https://docs.charlescd.io/reference/circle-matcher);
-* [**Metrics provider**](https://docs.charlescd.io/reference/metrics).
+* [**Metrics provider**](https://docs.charlescd.io/reference/metrics). 
 
- 
-
-![Workspace Configurations](//image%20%2819%29.png)
+![](//defining-workspace%20%281%29.png)
 
 {{% alert color="warning" %}}
 The **root** user gives you permission to create a workspace. However, users with **mantainer** profile are able to configure with the necessary information as well.
@@ -34,4 +32,4 @@ Once your workspace is created, even without the configuration definitions**,** 
 
 To get this information, select the workspace you want, and then on the left menu, click on **Copy ID.**
 
-![](//workspace_copyid.gif)
+![](//workspace_copyid%20%282%29.gif)

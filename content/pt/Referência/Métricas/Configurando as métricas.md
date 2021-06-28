@@ -22,7 +22,7 @@ A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 
 Depois de habilitar o Istio, você precisa configurar sua ferramenta para que ela possa ler as métricas expostas.
 
-Veja abaixo os detalhes da **ferramenta compatível com Charles**.
+Veja abaixo os detalhes das **ferramentas compatíveis com o Charles**.
 
 {{< tabs name="T0" >}}
 {{% tab name="Prometheus" %}}
@@ -32,7 +32,9 @@ O Prometheus é uma ferramenta de código aberto focada em monitoramento e alert
 Se quiser saber mais, sugerimos a [**doc oficial**](https://prometheus.io/).
 {{% /alert %}}
 
-É preciso configurar o Prometheus para que ele consiga ler e armazenar os dados das métricas que habilitamos, conforme o tutorial que explicamos no início.
+É preciso configurar o Prometheus para que ele consiga ler e armazenar os dados das métricas habilitadas, conforme o tutorial que explicamos no início.
+
+Para fazer isso, é necessário adicionar o job abaixo para que leia a métrica gerada pelo Istio. Para configurar, edite o arquivo **prometheus.yml** no seu **Prometheus configMap**.
 
 {{% alert color="warning" %}}
 É importante lembrar que, para que essas configurações funcionem, é necessário que seu Prometheus esteja no mesmo cluster de Kubernetes que o Istio e o restante das suas aplicações.
@@ -86,18 +88,43 @@ global:
         regex: Pending|Succeeded|Failed
         source_labels:
         - __meta_kubernetes_pod_phase
+        
 ```
+
+{{% alert color="warning" %}}
+Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, [**veja a documentação**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
+{{% /alert %}}
+
+### Metadados
+
+A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.
+
+‌Cada métrica possui uma faixa de metadado que permite uma variedade de filtros e tipos de análises a serem criadas. Foram adicionados mais metadados ao Istio e ele são descritos na tabela abaixo: 
+
+| Metadado | Descrição | Tipo |
+| :--- | :--- | :--- |
+| destination\_component | Valor presente na label "app" da POD que recebeu a requisição ou "unknown" se a informação não estiver presente.  | Texto |
+| circle\_source | Label do círculo injetado em qualquer pod do Kubernetes.   | Texto |
+| response\_code | O status HTTP da resposta daquela requisição. | Número |
+{{% /tab %}}
+
+{{% tab name="Google Analytics" %}}
+O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.
+
+Para usá-lo no seu grupo de métricas, você precisa de: 
+
+* Uma conta Google e o Analytics configurado.
+
+Se você quiser usar o Charles para analizar os dados do seu Google Analytics, você precisa adicionar uma nova métrica com a ID do circulo \(**renomeando como circle\_source**\) na label da sua métrica. 
+
+{{% alert color="info" %}}
+Para mais informações sobre o Google Analytics, [**veja a documentação**](https://developers.google.com/analytics/devguides/reporting/core/v4).
+{{% /alert %}}
 {{% /tab %}}
 {{< /tabs >}}
-
-## Metainformações
-
-A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.‌
-
-Na tabela abaixo, estão algumas metainformações existentes nas métricas do CharlesCD:
 
 | Metadado | Descrição | Tipo |
 | :--- | :--- | :--- |
 | destination\_component | Valor presente na label "app" da POD que recebeu a requisição ou "unknown" se a informação não estiver presente | Texto |
 | circle\_source | Header "x-circle-source" que é colocado pelo filtro do Envoy na interceptação de cada requisição | Texto |
-| response\_code | O status HTTP da resposta daquela requisição | Número |
+| response\_code | O status HTTP da resposta daquela requisição | Númer |

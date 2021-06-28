@@ -1,6 +1,6 @@
 ---
 title: Configuring your ingress
-weight: 17
+weight: 15
 ---
 
 ---

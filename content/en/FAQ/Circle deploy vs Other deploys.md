@@ -1,6 +1,6 @@
 ---
 title: Circle deploy vs Other deploys
-weight: 85
+weight: 89
 description: >-
   In this section, you will find an explanation about the difference between
   circle deploy and other deployments methods.
