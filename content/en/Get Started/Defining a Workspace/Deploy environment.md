@@ -1,27 +1,29 @@
 ---
 title: Deploy environment
-weight: 10
+weight: 26
 ---
 
-# Setting up a Cluster
+---
 
-It is necessary to register cluster [**Kubernetes**](https://kubernetes.io) credentials to configure your workspace. These are specific configuration to each Continuous Deployment \(CD\) tool that are integrated with Charles, at the moment it is [**Spinnaker**](https://www.spinnaker.io/) and Octopipe.
+It is necessary to register cluster [**Kubernetes**](https://kubernetes.io) credentials to configure your workspace. These are specific configurations to each Continuous Deployment \(CD\) tool that is integrated with Charles. At the moment, Charles has a native deploy or you can integrate with [**Spinnaker**](https://www.spinnaker.io/).
 
-Octopipe was developed by Charles' team. It is light, low cost and it is able to make cluster Kubernetes deploys.
+{{% alert color="info" %}}
+Charles has a module called **Octopipe** that is a low-cost and lighter way to make cluster Kubernetes deploys.
+{{% /alert %}}
 
-Follow the tutorial on how to perform your deploy using the same installation cluster:
+### How to make your deployment?
 
-1. On Charles front page, select **Settings** on the bottom left corner; 
-2. Click on **Credentials**;
-3. Click on **Add CD Configuration**;
-4. Select the option **Octopipe.**
+See below the example on how to perform your deploy using **CharlesCD** in the same installation cluster:
+
+1. Click on **Add CD Configuration**;
+2. Select the option **CharlesCD.**
 
 After these steps, fill out the next fields:
 
 1. **Name:** configuration name that will be created; 
 2. **Namespace:** Define the namespace that will be used on Kubernetes cluster deploys; 
 3. **Git provider**: Define the git provider \(**GitHub** or **GitLab**\);
-4. **Git token:**  Insert the authentication token for your git repository. This will be used to get **Helm** templates.  
+4. **Git token:** insert an authentication token that has access to the git repository where your [**Helm templates**](../../creating-your-first-module/how-to-configure-chart-template) are stored \(they will be used during the deployment of your [**application**](../../creating-your-first-module/)\). If your Git Provider is **GitHub**, "_repo_" permission is required. Otherwise, configure the accesses in **GitLab**:"API " and "_read\_repository_".
 5. Select the **Default** option.
 
-After finish your configuration, you can associate it with a module. For more information, check the [**References** ](../../../reference/cd-configuration)page.
+After finishing your configuration, you can associate it with a module later. For more information, check the [**CD Configuration**](https://docs.charlescd.io/reference/cd-configuration) page.

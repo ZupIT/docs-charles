@@ -30,19 +30,31 @@ Por esse motivo, consideramos que o Charles é a aplicação do _darwinismo_ den
 
 A metodologia implementada pelo Charles traz várias vantagens, como:
 
-* simples segmentação de usuários com base em seu perfil ou até mesmo dados demográficos;
-* criação de estratégias de implantação de maneira mais fácil e sofisticada utilizando os círculos;
-* fácil gerenciamento de versões em caso de múltiplas releases em paralelo no ambiente produtivo;
-* monitoramento dos impactos de cada versão através de métricas definidas durante a criação da implantação.
+* Simples segmentação de usuários com base em seu perfil ou até mesmo dados demográficos;
+* Criação de estratégias de implantação de maneira mais fácil e sofisticada utilizando os círculos;
+* Fácil gerenciamento de versões em caso de múltiplas releases em paralelo no ambiente produtivo;
+* Monitoramento dos impactos de cada versão através de métricas definidas durante a criação da implantação.
+
+## Requisitos
+
+Para utilizar o Charles, é preciso cumprir alguns pré-requisitos:
+
+1. **Instalação:** veja o que é necessário [**aqui**](primeiros-passos/instalando-charles/#pre-requisitos).
+2. Para o funcionamento completo da ferramenta é preciso:
+
+* Possuir um [**Registry**](primeiros-passos/definindo-workspace/docker-registry) onde as imagens das suas aplicações são armazenadas.
+* Definir um **fluxo de CI**. É esperado que esse fluxo seja ativado por meio de algum gatilho, por exemplo, um nome de branch que tenha um prefixo definido. Além disso, o pipeline deve realizar a construção da imagem da aplicação e o envio da mesma para o registry citado anteriormente.
+* Elaborar o [**Helm template**](primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template#o-que-e-o-helm) das suas aplicações. Isso é importante, porque o CD configurado por meio do Charles necessitará dessa informação para realizar o deploy da sua aplicação.
 
 ## Arquitetura do sistema
 
 A plataforma foi construída utilizando a abordagem de microsserviços e possui os seguintes módulos:
 
-![](//arquitetura-charles-nova.png)
+![](//arquitetura-charles-0.6.0.jpg)
 
 * `charlescd-ui:` responsável por prover uma interface de fácil usabilidade para todas as features fornecida pelo CharlesCD, no intuito de simplificar testes de hipóteses e _circle deployment_.
 
 * `charlescd-moove:` é um serviço backend que orquestra os testes de hipóteses de seus produtos e o pipeline de entrega até atingir seus círculos, facilitando a ponte entre **Butler**, **Villager** e **Circle Matcher**.  
 * `charlescd-butler:` responsável por orquestrar e gerenciar as releases e deploys realizados. 
-* `charlescd-circle-matcher:`gerencia todos os círculos criados, além de indicar a qual círculo um usuário pertence, com base em um conjunto de características.
+* `charlescd-circle-matcher:`gerencia todos os círculos criados, além de indicar a qual círculo um usuário pertence, com base em um conjunto de características. 
+* `charlescd-compass`: integração do provedor de dados, faz análise de métricas e executa ações configuráveis.

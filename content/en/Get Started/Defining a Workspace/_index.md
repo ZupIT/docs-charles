@@ -1,31 +1,37 @@
 ---
 title: Defining a Workspace
-weight: 6
+weight: 22
 ---
 
 ---
 
-The workspace allows you to segment CharlesCD's use in your team, defining **personalized users permissions** that will assure safety to your project.
+The workspace allows you to segment CharlesCD's use in your team, defining **personalized users' permissions** that will assure safety to your project.
 
 {{% alert color="info" %}}
 You need only one installation, and the teams will be able to use Charles with different configurations, or you may create a workspace to represent different development environments, such as staging, production, etc.
 {{% /alert %}}
 
-Each workspace has the following configuration:
+### Workspace configuration
+
+Each workspace has the following configurations:
 
 * Access control and **user groups permissions**;
-* Register on [**Docker Registry**](docker-registry), [**Git**](github) **and** [**Continuous Deployment \(CD\)**;](../../../../../reference/cd-configuration)
-* Customize the [**Circle Matcher**](../../../../reference/circle-matcher);
-* Register your applications [**metrics provider**](../../../reference/metrics/register-metrics-provider). 
+* **Git,** [**Docker Registry**](https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry) and [**Continuous Deployment \(CD\)**;](https://docs.charlescd.io/reference/cd-configuration)
+* [**Circle Matcher**](https://docs.charlescd.io/reference/circle-matcher);
+* [**Metrics provider**](https://docs.charlescd.io/reference/metrics).
+
+ 
+
+![Workspace Configurations](//image%20%2819%29.png)
 
 {{% alert color="warning" %}}
-The **root** user gives you the permission to create a workspace. However, users with **mantainer** profile are able to configure with the necessary information as well.
+The **root** user gives you permission to create a workspace. However, users with **mantainer** profile are able to configure with the necessary information as well.
 {{% /alert %}}
 
 ### How to get an identifier on my workspace?  <a id="como-obter-o-identificador-do-meu-workspace"></a>
 
 Once your workspace is created, even without the configuration definitions**,** it already has a single identifier. 
 
-To get this information, select the workspace you want and then on the left menu, click on **Copy ID.**
+To get this information, select the workspace you want, and then on the left menu, click on **Copy ID.**
 
-![](//workspaceid%20%282%29.gif)
+![](//workspace_copyid.gif)

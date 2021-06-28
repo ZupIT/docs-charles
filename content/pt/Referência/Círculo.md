@@ -1,6 +1,9 @@
 ---
 title: Círculo
-weight: 22
+weight: 47
+description: >-
+  Nesta seção, você encontra detalhes sobre como funcionam os círculos no
+  Charles.
 ---
 
 ---
@@ -13,38 +16,62 @@ Além de indicar as segmentações de clientes, os círculos também auxiliam na
 
 Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma [**série de métricas** ](metricas/)de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.
 
-## Círculos ativos e inativos
-
-O que define se um círculo é ativo ou não, é a existência de releases, isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
-
-![ Filtro de estado do c&#xED;rculo entre Ativo e Inativo.](//chrome-capture-2-%20%281%29.gif)
-
 ## Como criar círculos?
 
 Para você criar um círculo, siga os seguintes passos:
 
 **1.** Clique em **Create Circle**.  
 **2.** Dê um nome ao seu círculo.  
-**3.** Defina uma segmentação.  
+**3.** Defina uma **segmentação**.  
 **4.** \[Opcional\] Implante uma release.
 
-As segmentações são um conjunto de características que você define para agrupar seus usuários nos círculos. Para realizar essa ação, é possível segmentar seus usuários através do **preenchimento de informações de forma manual** ou por meio da **importação de um arquivo CSV**.
+## O que é uma segmentação? 
 
-![Exemplo de como criar um c&#xED;rculo](//create-circle-newww%20%283%29.gif)
+As segmentações são um **conjunto de características** que você define para agrupar seus usuários nos círculos. Existem duas maneiras de segmentar seus usuários: 
+
+1. Através do **preenchimento de informações de forma manual.**
+2. Por meio da **importação de um arquivo CSV**.
+
+### Como definir? 
+
+As segmentações possuem os seguintes campos: 
+
+* **Chave**: é o mesmo valor presente como chave payload da requisição de identificação do usuário.
+* **Condição**: é a implicação lógica que condicionará sua chave e seu valor.
+* **Valor**: são os valores existentes na sua base que poderão ser utilizados para compor a lógica de segmentação.
+
+Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](circle-matcher#identificando-circulos-atraves-do-charlescd) que o seu usuário pertence. Por exemplo, considere que o seguinte payload represente as informações que você possui do seu cliente:
+
+```text
+{
+  "id": "7f2926d5-ff08-4d49-96df-d4ba0fc07b52",
+  "name": "Alice",
+  "state": "MG",
+  "city": "Uberlândia",
+  "age": "47",
+  "groupId": "a435bd12-ae82-48c8-b164-066d91ffe3a5"
+}
+```
+
+As chaves utilizadas podem ser qualquer uma enviada no payload da sua aplicação ao circle-matcher do Charles, como: **id**, **name**, **state**, **city**, **age** e **groupId**. 
 
 {{% alert color="info" %}}
-Uma **grande vantagem de utilizar as segmentações** é a possibilidade fazer combinações lógicas entre vários atributos para criar diferentes categorias de públicos e, dessa forma, utilizá-los nos testes das hipóteses. Por exemplo, a partir da características “_profissão_” e “_região_”, pode-se criar um círculo de engenheiros da região norte, outro só com engenheiros do sudeste e um terceiro contendo todos os engenheiros do Brasil.
+É importante lembrar que o seu payload e as chaves devem ser exatamente iguais.
 {{% /alert %}}
 
-### Como obter o identificador do meu círculo?
+Veja abaixo um exemplo de como criar um círculo: 
 
-Assim que seu círculo é criado, mesmo sem a definição das configurações, ele já possui um identificador único. Para obter essa informação, selecione o círculo, clique em default e, no menu à esquerda, clique em **Copy ID**: 
+![](//circle_create_segmentation%20%282%29.gif)
 
-![](//circuloid.gif)
+{{% alert color="info" %}}
+Uma **grande vantagem de utilizar as segmentações** é a possibilidade fazer combinações lógicas entre vários atributos para criar diferentes categorias de públicos e, dessa forma, utilizá-los nos testes das hipóteses.   
+  
+Por exemplo, a partir das características “_age_” e “_state_”, é possível criar círculos por faixas etárias por região.
+{{% /alert %}}
 
 ### **Segmentação manual**
 
-Nesta segmentação, você define as lógicas que o círculo deve seguir para compor um match com usuários que atendam às características pré-determinadas.
+Nesta segmentação, você define as lógicas que o círculo deve seguir para compor uma combinação com usuários que atendam às características pré-determinadas.
 
 Essas características podem ser definidas com base nas lógicas de:
 
@@ -56,25 +83,43 @@ Essas características podem ser definidas com base nas lógicas de:
 * Higher or equal to
 * Starts With
 
-Vamos a alguns exemplos:
+Veja alguns exemplos:
 
-![](//chrome-capture-1-%20%281%29.jpg)
+![](//image%20%289%29.png)
 
 ### **Segmentação por importação de CSV**
 
-Nesta segmentação, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo _key._
+Nessa modalidade, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo _key:_
 
-![](//image%20%282%29%20%281%29.png)
+![](//image%20%2814%29.png)
 
-Depois de ter feito o upload do arquivo e salvado as configurações, aparecerá um overview demonstrando como está sua segmentação:
+Depois de ter feito o upload do arquivo e salvado as configurações, aparecerá um overview demonstrando uma prévia da sua segmentação:
 
-![](//image%20%281%29%20%281%29.png)
+![](//circle_create_segmentation_csv.gif)
 
-Essa modalidade permite, por exemplo, extrair de uma base externa de IDs dos clientes um perfil específico e importá-los direto na plataforma do Charles.
+Essa segmentação permite, por exemplo, extrair de uma base externa de IDs dos clientes um perfil específico e importá-los direto na plataforma do Charles. Quando um arquivo .csv é importado e se ele conter alguma linha em branco, ocorrerá um erro da importação, pois não é permitido a criação de segmentos dessa forma.
 
 {{% alert color="warning" %}}
-O único operador lógico suportado nesta segmentação é o OR.
+O único operador lógico suportado nesta segmentação é o OR \(Ou\).
 {{% /alert %}}
+
+### Como obter o identificador do meu círculo?
+
+Assim que seu círculo é criado, mesmo sem a definição das configurações, ele já possui um identificador único. 
+
+Para obter essa informação, siga estes passos: 
+
+1. Selecione o círculo
+2. Clique em "default" 
+3. E, no menu à esquerda, clique em **Copy ID**
+
+![](//circle_copyid.gif)
+
+## Círculos ativos e inativos
+
+O que define se um círculo é ativo ou não, é a existência de [**releases**](release), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
+
+![](//circle_filter.gif)
 
 ## Como integrar círculos com serviços?
 
@@ -82,7 +127,7 @@ Uma vez detectado o [**círculo ao qual o usuário pertence**,](circle-matcher#i
 
 ![](//como_integrar_circulos_com_servicos_copy%20%281%29.png)
 
-Na prática, em algum momento durante a interação do usuário com a sua aplicação \(**`App1`**\) - por exemplo, o login - o serviço **`Identify`** do **`charles-circle-matcher`** deverá ser acionado para obter o círculo.
+Na prática, em algum momento durante a interação do usuário com a sua aplicação \(**`App1`**\) - por exemplo, o login - o serviço **`Identify`** do **`circle-matcher`** deverá ser acionado para obter o círculo.
 
 Com isso, o ID deve ser repassado como valor no parâmetro **`x-circle-id`** localizado no header de todas as próximas chamadas dos seus serviços \(**`App2`**\). O Charles é responsável por propagar essa informação porque quando recebida no Kubernetes, será utilizada para redirecionar a requisição para a versão correspondente à release associada ao círculo.
 

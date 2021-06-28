@@ -1,14 +1,46 @@
 ---
 title: Circle Matcher
-weight: 24
-description: NY Lawyers e Stony Brook’s Citizens.
+weight: 49
+description: >-
+  In this section, you will find more information about how Circle Matcher works
+  on Charles.
 ---
 
-In this request, only the parameter **`X-Workspace-Id`** is mandatory. The requisition body is totally flexible, but it's good to remember that the keys must have the same nomenclature defined by segmentation's rules of the circle. Let's see the case below:
+---
 
-![](https://lh3.googleusercontent.com/FdPVIHDFeYJCkC_6Y1P3ZOBSqmNlGkl9q2_XyIayNKQo2Mp9IXBY7PzvpzW0Mej1P9Ox8AG12QiA1H0w5uozWP1UYWafcfwXLKBOf3G-ObIVoPHtYGOlWd5Ju01uLuScqtCn8qQ1)
+Circle Matcher is a resource that allows you to validate if your [**circles**](circles) are incoherent segmentations. You can also use it in your applications to determine in which circle your users fit better.
 
-The **Stony Brook’s Citizens** circle was created to identify users that contains as one of its characteristics the key **`city`** and the exact value **`Stony Brook`**. That means that this user won't be listed if you send a request to **`Identify`** and inform on the requisition body the information presented on the example below:
+{{% alert color="info" %}}
+One good practice is to always make this identification when a user logs in to the application. However, this can be changed according to your business needs.
+{{% /alert %}}
+
+For more information on how to configure your **Circle Matcher in a workspace**, [**see Defining Workspace section**](../../get-started/defining-a-workspace/circle-matcher) 
+
+## Identifying circles through CharlesCD
+
+Once you start using the interface, it's possible to notice that there are two ways to perform the circle identification. For that, access the **Circles** menu inside a **workspace** and select the icon indicated below:
+
+![](//image%20%2816%29.png)
+
+You can make the validation as shown bellow:
+
+* In this option, you add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**, **you will receive all the circles related to this user.**  
+
+![](//circle_matcher.gif)
+
+{{% alert color="warning" %}}
+If you pass some information that is off the preconfigured logic conditions in the circles, the system will return indicating that the user is on _Default_ circle, on the standard version of your application.
+{{% /alert %}}
+
+## Circle identification through API
+
+You can integrate with your applications the **Identify** resource on the [`charles-circle-matcher`](https://github.com/ZupIT/charlescd/tree/master/circle-matcher) module to detect the circles the user belongs to.
+
+For example, considering the use of the parameters below to segment:
+
+![](//image%20%2817%29.png)
+
+Once you send the identification request with some information, compatible circles will be returned.
 
 {% api-method method="post" host="https:// api.charlescd-circle-matcher.com/identify " path="" %}}
 {% api-method-summary %}}
@@ -16,17 +48,17 @@ Identify
 {% endapi-method-summary %}}
 
 {% api-method-description %}}
-
+The method used to identify circles based on the user's characteristics
 {% endapi-method-description %}}
 
 {% api-method-spec %}}
 {% api-method-request %}}
 {% api-method-body-parameters %}}
-{% api-method-parameter name="requestData" type="object" required=false %}}
-{"aGEee": 46, "city": "Stony Brook"}
+{% api-method-parameter name="requestData" type="object" required=true %}}
+{ "state": "NY", "profession": "Lawyer", "age": 46, "city": "Stony Brook"}
 {% endapi-method-parameter %}}
 
-{% api-method-parameter name="workspaceId" type="string" required=false %}}
+{% api-method-parameter name="workspaceId" type="string" required=true %}}
 UUID
 {% endapi-method-parameter %}}
 {% endapi-method-body-parameters %}}
@@ -35,7 +67,7 @@ UUID
 {% api-method-response %}}
 {% api-method-response-example httpCode=200 %}}
 {% api-method-response-example-description %}}
-List of all circle the users belong to
+
 {% endapi-method-response-example-description %}}
 
 ```text
@@ -43,7 +75,11 @@ List of all circle the users belong to
   "circles": [
     {
       "id": "6577ae92-648c-11ea-bc55-0242ac130003",
-      "name": "Default"
+      "name": "NY Lawyers"
+    },
+    {
+      "id": "6577b112-648c-11ea-bc55-0242ac130003",
+      "name": "Stony Brook's Citizens"
     }
   ]
 }
@@ -52,3 +88,5 @@ List of all circle the users belong to
 {% endapi-method-response %}}
 {% endapi-method-spec %}}
 {% endapi-method %}}
+
+As the example above shows, there are circles with the given information of the user, which means that **`charlescd-circle-matcher`**will return a list with all the circles. Here, there are two circles that fit with this

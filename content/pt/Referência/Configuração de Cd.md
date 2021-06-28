@@ -1,6 +1,6 @@
 ---
 title: Configuração de Cd
-weight: 26
+weight: 51
 description: >-
   Nesta seção, você encontra detalhes sobre a configuração das ferramentas de
   Continuous Deployment (CD).
@@ -8,37 +8,40 @@ description: >-
 
 ---
 
+## Por que configurar o CD? 
+
+Essa configuração é necessária para você indicar ao Charles qual é a ferramenta de CD que você utiliza para fazer os deploys no seu cluster. Outro ponto importante é que você deve fornecer o token do seu repositório git que contém os templates do helm. 
+
+Atualmente, o Charles está habilitado para usar **CharlesCD** \(Octopipe\).
+
+{{% alert color="info" %}}
+O CharlesCD está em constante evolução e, por isso, está previsto no roadmap do projeto a integração com mais ferramentas de CD. 
+{{% /alert %}}
+
+## Como configurar?
+
 O Charles utiliza uma arquitetura apropriada para ferramentas de Continuous Deployment \(CD\) e isso possibilita que ele se encaixe no ecossistema escolhido por você. Estas ferramentas são utilizadas para realizar a execução dos manifestos Kubernetes no cluster configurado e para fazer a autenticação com diversos provedores de cloud \(AWS, GCP, Azure\).
 
-Oferecemos suporte para duas ferramentas de CD: 
+Para configurar, você irá utilizar o CharlesCD.  Agora, é preciso preencher alguns campos com as autenticações que serão feitas no cluster.
 
-* [**Spinnaker**](https://www.spinnaker.io/)**,** ferramenta criada pela Netflix e que hoje é mantida por diversas empresas e a comunidade.  
-* **Octopipe**, que é uma ferramenta leve e de baixo custo e foi criada sob medida para integração com o Charles.
+* **CharlesCD**: é uma ferramenta leve e de baixo custo, criada pelo time do Charles para fazer deploys.
 
-Para cadastrar qualquer uma delas, siga os seguintes passos:
+Para cadastrar, siga os seguintes passos:
 
 1. Na tela inicial do Charles, selecione **Settings** no canto esquerdo inferior;
 2. Clique em **Credentials**;
 3. Clique em **Add CD Configuration**;
-4. Selecione as opções **Octopipe** ou **Spinnaker**, dependendo da sua preferência.
+4. Selecione a opção **CharlesCD.** 
 
-![Processo inicial de cadastro de configura&#xE7;&#xF5;es de CD](//cd-configuration-2-1%20%281%29.gif)
+## Utilizando CharlesCD
 
-## Utilizando Spinnaker
+Preencha os seguintes campos:
 
-1. **Name:** Nome da configuração que será criada;
-2. **Namespace:** Defina o namespace que será utilizado nos deploys no cluster Kubernetes;
-3. **URL**: Insira a URL de acesso ao Spinnaker;
-4. **Git account:** Insira o nome da configuração de git criada na instalação do Spinnaker;
-5. **Kubernetes account:** Insira o nome da configuração de acesso ao cluster Kubernetes criado na instalação do Spinnaker;
-
-## Utilizando Octopipe
-
-1. **Name:** Nome da configuração que será criada;
-2. **Namespace:** Defina o namespace que será utilizado nos deploys no cluster Kubernetes;
-3. **Git provider**: Defina o provedor de git a ser utilizado \(**GitHub ou GitLab**\);
-4. **Git token:** Insira o token de autenticação para o seu repositório git. Este será utilizado para a obtenção dos templates Helm;
-5. Por fim, selecione um **manager** para associar à CD Configuration. As opções são: **Default**, **EKS**, **Others.**
+1. **Name:** nome da configuração que será criada;
+2. **Namespace:** defina o namespace que será utilizado nos deploys no cluster Kubernetes. Você deve criar o seu namespace, uma vez que o Charles não faz isso;
+3. **Git provider**: defina o provedor de git a ser utilizado \(**GitHub ou GitLab**\);
+4. **Git token:** insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**](../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template) que serão utilizados durante o deployment da sua [**aplicação**](../../primeiros-passos/criando-seu-primeiro-modulo/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_".
+5. Selecione um **manager** para associar à CD Configuration. As opções são: **Default**, **EKS**, **Others.**
 
 ### Default
 

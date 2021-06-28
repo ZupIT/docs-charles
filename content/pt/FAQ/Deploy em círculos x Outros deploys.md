@@ -1,6 +1,6 @@
 ---
 title: Deploy em círculos x Outros deploys
-weight: 44
+weight: 85
 description: >-
   Nesta seção, você encontra a explicação para a diferença do deploy em círculos
   do Charles com outras formas de deployments comuns no mercado.
