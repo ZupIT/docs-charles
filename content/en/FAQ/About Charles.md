@@ -1,6 +1,6 @@
 ---
 title: About Charles
-weight: 87
+weight: 42
 ---
 
 ---
@@ -21,4 +21,13 @@ With the tool, the delivery process in traditionals environments occurs in longe
 
 Besides, developers will be more encouraged to innovate and to make more implementations of new versions, once that identifying bugs is easier and creating circles helps on minimizing the error budget.
 
-For more information about microservices and Charles' modules, check out the [**platform's architecture**](../../#system-architecture).
+## What is Charles' architecture?
+
+The architecture is structured on microservices whose modules are:
+
+* `charlescd-ui`: mirrors on front-end the workspace configuration, users, modules, hypothesis and boards, it is the plataform graphic interface. 
+* `charles-moove`: manages workspace, users, modules, hypothesis and boards, it is the whole plataform structure. 
+* `charles-butler`: orchestrates and manages releases and deploys. 
+* `charles-circle-matcher`: manages all created circles, and also points out which circle the user belongs based on their characteristics.
+
+![Charles&apos; architecture](//arquitetura-charles-nova%20%282%29%20%281%29.png)

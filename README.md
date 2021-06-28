@@ -1,3 +1,9 @@
+# Procedures to create documentation
+
+Each new version, the main branch is the default, to create a new version, after create a pull request to the main branch, you need to create a new release, for example, create a release with name v1.2.0 or 1.2.x.
+
+Every time that a new release is created, we save the current work into a new branch, called `release-VERSION`, if you need to fix or add new information to a already published documentation, you need to open a PR to the published branch, i. e., `release-VERSION`.
+
 # Docsy Example
 
 

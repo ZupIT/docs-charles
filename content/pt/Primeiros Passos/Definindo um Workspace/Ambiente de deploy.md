@@ -1,30 +1,27 @@
 ---
 title: Ambiente de deploy
-weight: 24
-description: Esta seção descreve como funciona o ambiente de deploy no Charles.
+weight: 10
 ---
 
 ---
 
-Ao configurar seu workspace é preciso cadastrar as credenciais de acesso ao cluster [**Kubernetes**](https://kubernetes.io/). Essas configurações são específicas para cada uma das ferramentas de _Continuous Deployment_ \(CD\) que são integradas ao CharlesCD. No momento, o Charles realiza o deploy nativamente ou você pode integrar com o [**Spinnaker**](https://www.spinnaker.io/). 
+Ao configurar seu workspace é preciso cadastrar as credenciais de acesso ao cluster [**Kubernetes**](https://kubernetes.io/). Essas configurações são específicas para cada uma das ferramentas de _Continuous Deployment_ \(CD\) que são integradas ao CharlesCD. No momento, damos suporte ao  [**Spinnaker**](https://www.spinnaker.io/) e _Octopipe_. 
 
 {{% alert color="info" %}}
-O **Charles** possui um módulo chamado Octopipe que é uma forma leve e de baixo custo de fazer deploy em clusters Kubernetes.
+O **Octopipe** foi desenvolvido pela equipe do Charles. É mais leve, de baixo custo e consegue fazer deploys em clusters Kubernetes.
 {{% /alert %}}
 
-### Como realizar seu deploy?
-
-Veja abaixo o exemplo de como realizar seu deploy utilizando o CharlesCD no mesmo cluster de instalação:
+Segue abaixo o exemplo de como realizar seu deploy utilizando o _Octopipe_ no mesmo cluster de instalação:
 
 1. Clique em **Add CD Configuration**;
-2. Selecione a opção **CharlesCD.**
+2. Selecione a opção **Octopipe.**
 
 Após esses passos, preencha os campos a seguir:
 
 1. **Name:** nome da configuração que será criada.
 2. **Namespace:** defina o namespace que será utilizado nos deploys no cluster _Kubernetes._
 3. **Git provider**: defina o provedor de git a ser utilizado \(**GitHub ou GitLab**\).
-4. **Git token:** insira um token de autenticação que tenha acesso repositório git onde está armazenado os seus [**templates Helm**](../../../criando-seu-primeiro-modulo/configurando-o-chart-template) que serão utilizados durante o deployment da sua [**aplicação**](../../../criando-seu-primeiro-modulo/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_".  Se for o contrário, configure no **GitLab** os acessos: "_api_ '' e "_read\_repository_".
+4. **Git token:** insira o token de autenticação para o seu repositório git. Este será utilizado para a obtenção dos templates Helm que são definidos ao cadastrar os seus [**módulos**](../../../criando-modulos).
 5. Selecione a opção **Default**.
 
-Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse [**Configurações de CD**.](../../../referencia/preparando-seu-deploy)
+Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse [**Configurações de CD**.](../../../referencia/configuracao-cd)

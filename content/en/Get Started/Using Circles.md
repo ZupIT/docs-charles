@@ -1,11 +1,11 @@
 ---
 title: Using Circles
-weight: 46
+weight: 19
 ---
 
 ---
 
-From the moment you start to create your deploys, the next step is to [**create your first circles**](../../../../../reference/circles#how-to-create-circles) to make your applications segmentation better.
+From the moment you start to create your deploys, the next step is to [**create you first circles**](../../../../../reference/circles#how-to-create-circles) to make your applications segmentation better.
 
 Follow the next steps:
 

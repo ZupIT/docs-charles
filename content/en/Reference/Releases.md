@@ -1,7 +1,6 @@
 ---
 title: Releases
-weight: 72
-description: 'In this section, you will find more information about releases on Charles.'
+weight: 32
 ---
 
 ---

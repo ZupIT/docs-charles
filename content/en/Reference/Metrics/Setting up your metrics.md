@@ -1,18 +1,13 @@
 ---
 title: Setting up your metrics
-weight: 76
-description: >-
-  In this section, you will find more information about how to set up your
-  metrics using Charles.
+weight: 36
 ---
 
 ---
+
+## Register your metrics provider
 
 ### Istio Configuration
-
-{{% alert color="danger" %}}
-All the configuration in this section were tested and validated with Istio versions between 1.2 and 1.5. Any other version is not assured to work.
-{{% /alert %}}
 
 Metrics are related to circle requests are quantified and exposed by Istio, so it's necessary to configure it to get information about each circle.
 
@@ -25,7 +20,7 @@ To configure your Istio, it is necessary to enable it, so it will be able to sho
 If your Istio is not enabled to show metrics, follow the next steps:
 
 {{% alert color="warning" %}}
-The configuration below refers to Istio's 1.5.
+The configuration below refers to Istio's 1.5 version.
 {{% /alert %}}
 
 Create a file named **telemetry.yaml with the following content:**
@@ -85,8 +80,7 @@ spec:
       destination_host: request.host | "unknown"
       destination_component: destination.labels["app"] | "unknown"
       circle_id: request.headers["x-circle-id"] | "unknown"
-      circle_source: response.headers["x-circle-source"] | "unknown"
-      request_circle_source: request.headers["x-circle-source"] | "unknown"
+      circle_source: request.headers["x-circle-source"] | "unknown"
       response_status: response.code | 200
     monitoredResourceType: '"UNSPECIFIED"'
 ---
@@ -106,8 +100,7 @@ spec:
       destination_host: request.host | "unknown"
       destination_component: destination.labels["app"] | "unknown"
       circle_id: request.headers["x-circle-id"] | "unknown"
-      circle_source: response.headers["x-circle-source"] | "unknown"
-      request_circle_source: request.headers["x-circle-source"] | "unknown"
+      circle_source: request.headers["x-circle-source"] | "unknown"
       response_status: response.code | 200
     monitoredResourceType: '"UNSPECIFIED"'
 ---     
@@ -132,7 +125,6 @@ spec:
       - circle_id
       - circle_source
       - response_status
-      - request_circle_source
     - name: charles_request_duration_seconds # Prometheus metric name
       instance_name: charlesrequestduration.instance.istio-system
       kind: DISTRIBUTION
@@ -144,7 +136,6 @@ spec:
       - circle_id
       - circle_source
       - response_status
-      - request_circle_source
       buckets:
         explicit_buckets:
           bounds:

@@ -1,9 +1,6 @@
 ---
 title: Metrics
-weight: 74
-description: >-
-  In this section, you will find more information about how to use metrics on
-  Charles.
+weight: 34
 ---
 
 ---
@@ -12,7 +9,7 @@ description: >-
 
 Metrics are indicators that allows you to quantify the performance and the applications status based on the analysis of exposed data from the own application and by the infrastructure tools.
 
-CharlesCD allows you to get the metrics of all your circles, you will be able to see their [**health**](../../../get-started/creating-your-first-module/#health-metrics) analysis and performances.
+CharlesCD allows you to get the metrics of all your circles, you will be able to see their [**health**](../../../get-started/creating-your-first-module#health-metrics) analysis and performances.
 
 ## Charles' available metrics
 

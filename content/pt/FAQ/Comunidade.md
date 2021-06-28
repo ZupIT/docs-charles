@@ -1,6 +1,6 @@
 ---
 title: Comunidade
-weight: 95
+weight: 46
 description: >-
   Nesta seção, você encontra as principais informações sobre como contribuir com
   nossa comunidade.
