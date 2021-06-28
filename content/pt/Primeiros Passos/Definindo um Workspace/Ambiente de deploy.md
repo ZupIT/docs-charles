@@ -27,4 +27,4 @@ Após esses passos, preencha os campos a seguir:
 4. **Git token:** insira um token de autenticação que tenha acesso repositório git onde está armazenado os seus [**templates Helm**](../../../criando-seu-primeiro-modulo/configurando-o-chart-template) que serão utilizados durante o deployment da sua [**aplicação**](../../../criando-seu-primeiro-modulo/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_".  Se for o contrário, configure no **GitLab** os acessos: "_api_ '' e "_read\_repository_".
 5. Selecione a opção **Default**.
 
-Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse [**Configurações de CD**.](../../../referencia/configuracao-cd)
+Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse [**Configurações de CD**.](../../../referencia/preparando-seu-deploy)

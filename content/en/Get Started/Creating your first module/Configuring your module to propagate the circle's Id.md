@@ -2,8 +2,8 @@
 title: Configuring your module to propagate the circle's Id
 weight: 39
 description: >-
-  This section describes how to use lib to propagate header "X-Circle-ID"
-  through libraries to make sure the user access correct circles
+  In this section, you will find how to use lib to propagate header
+  "X-Circle-ID" through libraries to make sure the user access correct circles.
 ---
 
 ---

@@ -1,6 +1,7 @@
 ---
 title: Using Circles
 weight: 44
+description: 'In this section, you will find more information on how to use circles.'
 ---
 
 ---

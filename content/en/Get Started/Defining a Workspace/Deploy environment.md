@@ -1,6 +1,7 @@
 ---
 title: Deploy environment
 weight: 24
+description: 'In this section, you will find information about the deployment environment.'
 ---
 
 ---

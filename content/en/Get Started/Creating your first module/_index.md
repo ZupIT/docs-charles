@@ -42,8 +42,20 @@ See the image on how to create modules:
 For more information about Helm Repository, [**check out How to configure Chart Template section**](how-to-configure-chart-template). 
 {{% /alert %}}
 
+### How do I get my module identifier?
+
+As soon as your module is created, it already has a unique identifier. To obtain this information, select the desired module and, in the menu on the left, click Copy ID:
+
+![](//copy-module-id.gif)
+
 ## What are components?
 
 {{% alert color="info" %}}
 Components are abstractions of the applications. If in your repository there are many applications, every component will match one of them.
 {{% /alert %}}
+
+### How to obtain the component identifier?
+
+After selecting the module, copy the component id using the option on the three points of the card:
+
+![](//copy-component-id.gif)

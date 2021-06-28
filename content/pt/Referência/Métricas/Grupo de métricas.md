@@ -1,6 +1,6 @@
 ---
 title: Grupo de métricas
-weight: 74
+weight: 78
 description: >-
   Nesta seção, você encontra detalhes sobre como funcionam os grupos de métricas
   no Charles.

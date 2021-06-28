@@ -2,8 +2,8 @@
 title: Circle Matcher
 weight: 26
 description: >-
-  Esta seção descreve como configurar o Circle Matcher dentro do workspace no
-  Charles
+  Nesta seção, você encontra como configurar o Circle Matcher dentro do
+  workspace no Charles.
 ---
 
 ---

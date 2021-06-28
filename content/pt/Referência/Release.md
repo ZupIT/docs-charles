@@ -1,6 +1,6 @@
 ---
 title: Release
-weight: 68
+weight: 70
 description: >-
   Nesta seção, você encontra detalhes sobre como funcionam as releases no
   Charles.

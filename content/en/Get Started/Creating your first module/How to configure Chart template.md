@@ -1,6 +1,7 @@
 ---
 title: How to configure Chart template
 weight: 37
+description: 'In this section, you will find how to configure chart template.'
 ---
 
 ---

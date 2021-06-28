@@ -1,6 +1,7 @@
 ---
 title: Circle Matcher
 weight: 26
+description: 'In this section, you will find information about the circle matcher.'
 ---
 
 ---

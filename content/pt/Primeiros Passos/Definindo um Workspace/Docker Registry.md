@@ -1,6 +1,7 @@
 ---
 title: Docker Registry
 weight: 22
+description: 'Nesta seção, você encontra tudo sobre o Docker Registry.'
 ---
 
 ---

@@ -1,6 +1,7 @@
 ---
 title: Your first Charles' access
 weight: 8
+description: 'In this section, you will find out more about your first Charles'' access.'
 ---
 
 ---
