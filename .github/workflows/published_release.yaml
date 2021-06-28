@@ -8,7 +8,7 @@ on:
 
 
 env:
-  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DEV }}
+  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
 jobs:
   deploy_hugo:
@@ -45,7 +45,7 @@ jobs:
 
       - name: Get version from branch name
         id: version
-        run: echo "::set-output name=branch_version::$(echo $GITHUB_REF | cut -d / -f 3)"
+        run: echo "::set-output name=branch_version::$(echo $GITHUB_REF | cut -d / -f 3 | cut -d - -f 2 )"
         shell: bash
 
       - name: Config version path
