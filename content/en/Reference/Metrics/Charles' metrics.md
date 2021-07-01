@@ -8,9 +8,9 @@ description: 'In this section, you will find more information about Charle''s me
 
 Charles offers metrics for you to monitor deploys and circles. 
 
-![](//metrics-circ-e-deplo.png)
+![](/shared/metrics-circ-e-deplo.png)
 
-## Deploy metrics
+## **Deploy metrics**
 
 Deploy metrics shows a dashboard view with deployment information for you to follow up, such as success or error occurrence numbers and the average implementation time.
 
@@ -26,18 +26,18 @@ There is other available information:
 
 See the example below:  
 
-![](//deploy.gif)
+![](/shared/deploy.gif)
 
-## Circles metrics 
+## **Circles metrics** 
 
 It is a management feature that helps you view and follow the technical information about your circles.
 
 The circle metrics allows you to have an overview of your circles on Charles, like:  
 
-* [**Active and inactive**](../../circles#active-and-inactive-circles) circles;
+* [**Active and inactive**](/reference/circles/) circles;
 * Circle average lifetime;
 * Last update date.
 
 Check out below: 
 
-![](//erro.gif)
+![](/shared/erro.gif)

@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-A nova versão 1.0.0 do CharlesCD trouxe mais confiabilidade nos deploys com o [**Operator**](referencia/preparando-seu-deploy), porém o Helm encontra dificuldades para adicionar elementos necessários ao Operator em uma instalação já existente, como o **Custom Resources Definition** \(CRDs\). Por isso, você precisa seguir alguns passos para uma atualização mais funcional.  Veja abaixo: 
+A nova versão 1.0.0 do CharlesCD trouxe mais confiabilidade nos deploys com o [**Operator**](/pt/referência/preparando-o-seu-deploy/), porém o Helm encontra dificuldades para adicionar elementos necessários ao Operator em uma instalação já existente, como o **Custom Resources Definition** \(CRDs\). Por isso, você precisa seguir alguns passos para uma atualização mais funcional.  Veja abaixo: 
 
 ### **Passo 1: Desinstale o CharlesCD \(instalação feita com o Helm\):**
 
@@ -40,11 +40,11 @@ helm install -n <NAMESPACE_CHARLESCD> <NOME_DA_INSTALAÇÃO> ./install/helm-char
 
 ### **Passo 3: Atualize a configuração de Deployment  para cada Workspace:**
 
-Depois de instalar, você poderá acessar o CharlesCD com seu usuário administrador da plataforma É necessário fazer uma nova configuração de deployment para seus workspaces.  Veja como fazer essa configuração em [**Configuração de Deployment**](referencia/preparando-seu-deploy#configuracao-de-deployment) 
+Depois de instalar, você poderá acessar o CharlesCD com seu usuário administrador da plataforma É necessário fazer uma nova configuração de deployment para seus workspaces.  Veja como fazer essa configuração em [**Configuração de Deployment**](/pt/referência/preparando-o-seu-deploy/) 
 
 ###  **Passo 4: Faça o override de release em cada círculo ativo**
 
-Agora, você precisa fazer o Override de Release com a última release em que o deployment em cada círculo ativo foi feito. Veja como realizar overrides de versões em '[**Como criar releases pelo Charles?**](referencia/release#como-criar-releases-pelo-charles)'.
+Agora, você precisa fazer o Override de Release com a última release em que o deployment em cada círculo ativo foi feito. Veja como realizar overrides de versões em '[**Como criar releases pelo Charles?**](/pt/referência/release/)'.
 
 {{% alert color="info" %}}
 Não se preocupe com o override de release. O CharlesCD irá reconhecer todos os manifestos que ele precisa tomar conta.
@@ -65,7 +65,7 @@ kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get
 
 Este comando mostra uma lista de manifestos relacionados ao seu workspace mais antigo que 1 hora, isto é, tudo que não houve o deployment no namespace de seu Kubernetes. Veja abaixo um exemplo:
 
-![](//image%20%2822%29.png)
+![](/shared/image%20%2822%29.png)
 
 2. Se não existir manifestos  aplicados por fora do CharlesCD, um **nginx** para servir de ingress para sua aplicação, por exemplo. Adicione no comando:
 

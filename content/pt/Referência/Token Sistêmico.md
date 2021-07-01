@@ -6,7 +6,7 @@ description: 'Nesta seção, você encontra detalhes sobre o token sistêmico.'
 
 ---
 
-## O que é?
+## **O que é?**
 
 Um token sistêmico é uma cadeia de caracteres opaca que identifica um usuário \(ou aplicação\). Ele pode ser utilizado por integrações para realizar chamadas nas APIs internas do Charles C.D. 
 
@@ -16,7 +16,7 @@ Se você deseja integrar o Charles ao seu pipeline de deployment, **você irá p
 
 Quando você acessar o Charles com o perfil de root,  o item **"System Token"** aparecerá no menu inicial Essa é a área gerencial dos tokens, onde você pode criar novos tokens, visualizar todos existentes, revogar e recriar.
 
-## Como criar?
+## **Como criar?**
 
 Para criar um token sistêmico, você precisa preencher três informações:
 
@@ -24,19 +24,19 @@ Para criar um token sistêmico, você precisa preencher três informações:
 2. Os **workspaces** que ele terá acesso;
 3. Quais os **escopos de permissionamento** o token poderá atuar dentro dos workspaces.
 
-### Workspaces
+### **Workspaces**
 
 Para selecionar os workspaces, você terá duas opções:
 
 * Permitir que o token tenha acesso a todos os worskspaces:
 
-![](//systemtoken_allworkspace.gif)
+![](/shared/systemtoken_allworkspace.gif)
 
 * Selecionar workspaces específicos:
 
-![](//systemtoken_specificworkspace.gif)
+![](/shared/systemtoken_specificworkspace.gif)
 
-### Escopos
+### **Escopos**
 
 Os escopos definem quais as ações um token pode desempenhar.  Você pode criar o seu token com um ou mais escopos. Para fazer isso, escolha entre as opções abaixo: 
 
@@ -49,13 +49,13 @@ Os escopos definem quais as ações um token pode desempenhar.  Você pode criar
 * **Deploy:** acesso completo \(_leitura e escrita_\) à implantação de releases nos círculos.
 * **Manutenção:** acesso completo \(_leitura e escrita_\) as configurações dos workspaces.
 
-## Como copiar um token?
+## **Como copiar um token?**
 
 Depois de finalizar o processo de personalização do seu token, **não se esqueça de copiá-lo**. Não é possível copiar esse token novamente. 
 
-![](//tokensistemico1.png)
+![](/shared/tokensistemico1.png)
 
-## Como revogar um token?
+## **Como revogar um token?**
 
 Para anular as permissões de um token, é só revogá-lo. Veja abaixo como fazer isso: 
 
@@ -63,12 +63,11 @@ Para anular as permissões de um token, é só revogá-lo. Veja abaixo como faze
 * Selecione o token;
 * Clique na opção **`Revoke Token`**.
 
-## Como gerar um token novamente?
+## **Como gerar um token novamente?**
 
 Se você perdeu o valor do seu token, é possível recriá-lo com todas as permissões já existentes. Quando você faz isso, o valor anterior é cancelado e o novo valor é o único válido. Veja o exemplo abaixo: 
 
-![](//tokensistemico2.gif)
-
+![](/shared/tokensistemico2.gif)
 
 
 1. No menu superior, clique em "**Regenerate**"

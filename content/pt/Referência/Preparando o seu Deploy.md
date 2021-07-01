@@ -28,7 +28,7 @@ Preencha os seguintes campos:
 1. **Butler URL:** URL do módulo de deploy Butler. Caso este esteja no mesmo cluster de instalação do Charles, utilize seu FQDN \(Fully Qualified Domain Name\). Exemplo: http://charlescd-butler.butler-namespace.svc.cluster.local:3000.
 2. **Namespace:** Defina o namespace em que os recursos serão disponibilizados no cluster. Você deve criar o seu namespace, uma vez que o Charles não faz isso;
 3. **Git provider:** Defina o provedor de git a ser utilizado \(**GitHub** ou **GitLab**\);
-4. **Git token:** Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**](../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template) que serão utilizados durante o deployment da sua [**aplicação**](../../primeiros-passos/criando-seu-primeiro-modulo/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_". 
+4. **Git token:** Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**](/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/) que serão utilizados durante o deployment da sua [**aplicação**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_". 
 
 ## **Configurando sua aplicação**
 

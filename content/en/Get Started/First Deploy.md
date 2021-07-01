@@ -7,17 +7,17 @@ description: 'In this section, you will find how to make your first deployment.'
 ---
 
 {{% alert color="info" %}}
-After you have created your first [**module**](creating-your-first-module/) and registered your [**cluster crendentials**,](defining-a-workspace/deploy-environment) you have finished all the steps needed to make your first deployment. Now, it is necessary to create a [**release** ](../../../../../reference/releases)and provide it on the configured cluster.
+After you have created your first [**module**](/get-started/creating-your-first-module/overview/) and registered your [**cluster crendentials**,](/get-started/defining-a-workspace/docker-registry/) you have finished all the steps needed to make your first deployment. Now, it is necessary to create a [**release** ](/reference/releases/) and provide it on the configured cluster.
 {{% /alert %}}
 
-### How to make the first deployment? 
+### **How to make the first deployment?** 
 
-On Charles you have to use container images already available in your configured [**registry**](../../../../reference/registry/) to create a release.
+On Charles you have to use container images already available in your configured [**registry**](/reference/registry/) to create a release.
 
 To make your first deployment, follow the steps below: 
 
 1. Go to **Circles** area;
-2. Select a [**circle**](../../../reference/circles). If you haven't created one yet, there is a **default circle** option that makes your first deploy possible; 
+2. Select a [**circle**](/reference/circles/). If you haven't created one yet, there is a **default circle** option that makes your first deploy possible; 
 3. Change the active circle filter to **inactive**;
 4. Select the "**Insert a release**" option;
 5. After that, select "**Create a release**" and fill the fields: 
@@ -36,7 +36,7 @@ After the process above, your release is ready to deploy.
 
 The [**open sea**](../../key-concepts#open-sea) deployment is where you send your application to the registered segmentation on Charles.
 
-Now, follow the next steps to the [**Open Sea**](https://docs.charlescd.io/key-concepts) deploy:
+Now, follow the next steps to the [**Open Sea**](/key-concepts/) deploy:
 
 1. On Charles homepage, click on **Circles**; 
 2. Click on the Default circle \(it represents the open sea\) 
@@ -46,4 +46,4 @@ Now, follow the next steps to the [**Open Sea**](https://docs.charlescd.io/key-c
 
 Finally, Charles will provide the created release on a cluster in the Open Sea. The deploy status will be shown and updated along the process.
 
-![](//first-deploy%20%281%29.gif)
+![](/shared/first-deploy%20%281%29.gif)
