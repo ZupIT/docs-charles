@@ -32,7 +32,7 @@ To make your first deployment, follow the steps below:
 After the process above, your release is ready to deploy. 
 {{% /alert %}}
 
-### Open Sea deploy
+### **Open Sea deploy**
 
 The [**open sea**](../../key-concepts#open-sea) deployment is where you send your application to the registered segmentation on Charles.
 

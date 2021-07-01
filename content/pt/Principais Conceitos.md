@@ -3,8 +3,7 @@ title: Principais Conceitos
 weight: 2
 description: >-
   Nesta seção, você encontra definições para os principais termos e expressões
-  utilizadas na documentação e na plataforma do Charles ou ainda em discussões
-  dentro da comunidade de desenvolvedores.
+  utilizadas na documentação e na plataforma do Charles.
 ---
 
 ---

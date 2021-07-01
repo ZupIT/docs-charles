@@ -24,12 +24,11 @@ After you finish your Istio configuration it is necessary to configure your metr
 
 See below the details of the tools Charles will be able to read.
 
-{{< tabs name="T0" >}}
-{{% tab name="Prometheus" %}}
+## **Prometheus** 
 Prometheus is an open-source system for monitoring and alerting toolkit. It is the main monitoring recommendation on [**Cloud Native Computing Foundation**](https://cncf.io/)
 
 {{% alert color="info" %}}
-If you want to know more about Prometheus, check out [**their documentation**](https://prometheus.io/)
+If you want to know more about Prometheus, check out [**Prometheus' documentation**](https://prometheus.io/)
 {{% /alert %}}
 
 In order for Prometheus to be able to read and store metrics data, you have to configure it.
@@ -141,9 +140,11 @@ If you want to know more about Prometheus and Kubernetes service discovery,  che
 | destination\_component | Value on the label 'app' of the pod that received the request or unknown if there is no information about it. | Text |
 | circle\_source | Circle label injected into any Kubernetes pods. | Text |
 | response\_code | HTTP status of the response. | Numeric |
-{{% /tab %}}
 
-{{% tab name="Google Analytics" %}}
+
+
+## **Google Analytics** 
+
 Google Analytics is one of the data sources that Charles can connect to read your metrics. 
 
 To be able to use it in your metrics group, you will need
@@ -179,7 +180,6 @@ Google Analytics provides a tag to track the data of your application, just inse
 If you want to use Charles to analyze your Google Analytics data, you need to add a new metric with your circle ID \(**renaming it as circle\_source**\) in your metrics label.
 
 {{% alert color="info" %}}
-For more information about it, check out [**their documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
-{{% /alert %}}
-{{% /tab %}}
-{{< /tabs >}}
+For more information about it, check out [**Analytics' documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
+
+
