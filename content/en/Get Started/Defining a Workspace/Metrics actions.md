@@ -14,7 +14,7 @@ After you had registered your metrics group, Charles follows up and offers actio
 
 In workspace configuration, click on the section **Add Metric Action** and follow the steps: 
 
-**Step 1.** Add action configuration**;  
+**Step 1.** Add action configuration;  
 **Step 2.** Type a nickname for your action;  
 **Step 3.** Type a description;  
 **Step 4.** Select a plugin to run the action.
