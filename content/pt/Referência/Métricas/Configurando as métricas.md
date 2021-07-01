@@ -10,7 +10,7 @@ description: >-
 
 A configuração de métricas no Charles é realizada no **Istio** e no seu **próprio provedor**. Veja os detalhes abaixo. 
 
-## Configurando Istio
+## **Configurando Istio** 
 
 As métricas relacionadas às requisições de cada círculo podem ser quantificadas e expostas pelo Istio.
 
@@ -18,13 +18,13 @@ As métricas relacionadas às requisições de cada círculo podem ser quantific
 A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 {{% /alert %}}
 
-## Configurando sua própria ferramenta de métricas
+## **Configurando sua própria ferramenta de métricas**
 
 Depois de habilitar o Istio, você precisa configurar sua ferramenta para que ela possa ler as métricas expostas.
 
 Veja abaixo os detalhes das **ferramentas compatíveis com o Charles**.
 
-{{< tabs name="T0" >}}
+{{< tabs id="T1" >}}
 {{% tab name="Prometheus" %}}
 O Prometheus é uma ferramenta de código aberto focada em monitoramento e alertas. É considerada a principal recomendação para monitoramento do [**Cloud Native Computing Foundation**](https://cncf.io/), além de uma das principais ferramentas do mercado.
 
@@ -133,7 +133,7 @@ Mude o nome do **namespace** para um onde sua aplicação está deployada.
 Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, [**veja a documentação**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
 {{% /alert %}}
 
-### Metadados
+### **Metadados**
 
 A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.
 
@@ -158,8 +158,11 @@ Se você quiser usar o Charles para analizar os dados do seu Google Analytics, v
 {{% alert color="info" %}}
 Para mais informações sobre o Google Analytics, [**veja a documentação**](https://developers.google.com/analytics/devguides/reporting/core/v4).
 {{% /alert %}}
+
 {{% /tab %}}
 {{< /tabs >}}
+
+
 
 | Metadado | Descrição | Tipo |
 | :--- | :--- | :--- |

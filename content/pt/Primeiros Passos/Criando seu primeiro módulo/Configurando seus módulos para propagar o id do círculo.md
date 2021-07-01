@@ -10,11 +10,11 @@ description: >-
 
 ## Por que configurar? 
 
-Quando você trabalha em cenários com vários microsserviços, configurar os módulos é uma forma de garantir a propagação de header `x-circle-id` e com isso certificar o [**roteamento dos usuários para as versões corretas**](../../../../referencia/circulo#como-integrar-circulos-com-servicos). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microserviços que fazem parte do seu teste de hipótese.
+Quando você trabalha em cenários com vários microsserviços, configurar os módulos é uma forma de garantir a propagação de header `x-circle-id` e com isso certificar o [**roteamento dos usuários para as versões corretas**](/pt/referência/círculo/). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microserviços que fazem parte do seu teste de hipótese.
 
 Por exemplo, se você testar uma feature entre microserviços que tenham integrações em um fluxo de abertura de conta, é necessário garantir que o usuário será redirecionado a todas as versões corretas que estão no teste de hipóteses, criado para esse fluxo.
 
-Para garantir isso, você pode utilizar uma biblioteca de propagação do header `x-circle-id`, que faz com que o [**id do círculo identificado pelo `circle-matcher`**](../../../referencia/circle-matcher#identificacao-de-circulos-atraves-da-api)seja repassado entre todas as requisições dentro da malha de microserviço, garantindo assim, que os usuários sejam redirecionados para a versão correta do seu teste de hipótese.
+Para garantir isso, você pode utilizar uma biblioteca de propagação do header `x-circle-id`, que faz com que o [**id do círculo identificado pelo `circle-matcher`**](/pt/referência/circle-matcher/) seja repassado entre todas as requisições dentro da malha de microserviço, garantindo assim, que os usuários sejam redirecionados para a versão correta do seu teste de hipótese.
 
 {{% alert color="info" %}}
 Caso exista um microserviço dentro do fluxo que não faz parte do seu teste, o valor do círculo será repassado, mas a sua requisição cairá em mar aberto, porque não há nenhuma versão destinada para aquele círculo. 
@@ -24,7 +24,7 @@ Caso exista um microserviço dentro do fluxo que não faz parte do seu teste, o 
 
 Veja o workflow abaixo que mostra como a configuração funciona: 
 
-![](//header-propagation-ptbr-v2.png)
+![](/shared/header-propagation-ptbr-v2.png)
 
 > 1. Ao realizar a chamada de um microserviço, o id do círculo que o usuário pertence é obtido por meio do módulo `circle-matcher`.
 > 2. O id é inserido no header de todas as próximas requisições com a chave **`X-Circle-Id`**.
@@ -36,7 +36,7 @@ Se você quiser que sua requisição chegue na versão correta do `butler`, é p
 
 Quando acontece um teste no `moove` e se ele estiver integrado com o `villager` e o `butler`, a propagação do header `X-Circle-Id` faz com que você procure por versões do `villager` e do `butler` na mesma versão do `moove`, porém como esse não é o cenário, essas requisições entre o `moove` e suas integrações serão tratadas pelo mar aberto.
 
-## Como adicionar? 
+## **Como adicionar?**
 
 O Charles possui uma biblioteca \(lib\) que funciona para qualquer aplicação **Java** que utilize o **Spring** como framework e outra para **.NET Core.** As libs foram construídas por não existir nenhuma alternativa amplamente utilizada para esse cenário. 
 

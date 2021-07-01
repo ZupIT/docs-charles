@@ -10,7 +10,7 @@ description: >-
 
 Charles' metrics configuration is performed on Istio and on your own metrics provider. See more details below. 
 
-## Istio Configuration
+## **Istio Configuration**
 
 Metrics related to circle requests are quantified and exposed by Istio, so it's necessary to configure it to get information about each circle.
 
@@ -18,7 +18,7 @@ Metrics related to circle requests are quantified and exposed by Istio, so it's 
 The configuration in this section can be done starting with Istio =&gt;1.7 versions. 
 {{% /alert %}}
 
-## Configuring your metrics' tool
+## **Configuring your metrics' tool**
 
 After you finish your Istio configuration it is necessary to configure your metrics tool.
 
@@ -132,7 +132,7 @@ Change the **namespace** to the name where your application is deployed.
 If you want to know more about Prometheus and Kubernetes service discovery,  check out [**their documentation**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
 {{% /alert %}}
 
-### Metadata
+### **Metadata**
 
 ‌Each metric has a metadata range that allows a variety of filter and analysis types to be created. More metadata was added to Istio and you can see them described in the table below:
 
@@ -168,7 +168,7 @@ Google Analytics provides a tag to track the data of your application, just inse
 
 ![](https://lh5.googleusercontent.com/kxknRbNhadC8RM6gjtuiVH0qBMvx9_hUx46JO_ixr48HtreQCGrWpo5_4CIlFLfKCnukYXl7H-rKJcXuktI08nuvPXOdJ2AwndiMryvHef4pzVw_ocnZPJbo0eEllDCq6QUA_Hda)
 
-### Metadata
+### **Metadata**
 
 ‌Each metric has a metadata range that allows a variety of filter and analysis types to be created. More metadata was added to Istio and you can see them described in the table below:
 

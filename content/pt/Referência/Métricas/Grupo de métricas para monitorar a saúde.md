@@ -8,15 +8,15 @@ description: >-
 
 ---
 
-## O que é?
+## **O que é?**
 
 Quando sua aplicação já fez o deployment, é uma boa prática checar a saúde, confirmar se o software está funcionando bem ou observar se precisa de algum cuidado específico. 
 
-Você pode fazer isso com o Charles, utilizando o [**datasource configurado anteriormente**](../../../primeiros-passos/definindo-workspace/adicionando-o-datasource) para criar um grupo de métricas especifico que informa o status da sua imagem em que foi feito o deploy. 
+Você pode fazer isso com o Charles, utilizando o [**datasource configurado anteriormente**](/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/) para criar um grupo de métricas especifico que informa o status da sua imagem em que foi feito o deploy. 
 
  Você encontra abaixo os detalhes.
 
-## Requisitos
+## **Requisitos**
 
 Para monitorar suas métricas, é preciso ter: 
 
@@ -25,14 +25,14 @@ Para monitorar suas métricas, é preciso ter:
 
 ## Como monitorar?
 
-1. Você precisar criar seu **grupo de métricas** e **sua própria métrica**, para fazer isso [**siga os passos aqui**](grupo-de-metricas);
+1. Você precisar criar seu **grupo de métricas** e **sua própria métrica**, para fazer isso [**siga os passos aqui**](/pt/referência/métricas/grupo-de-métricas/);
 2. No modo avançado, execute o **PromQL queries** para monitorar suas métricas. 
 
 {{% alert color="info" %}}
 Para saber mais sobre o **PromQL**, veja a [**documentação**](https://prometheus.io/docs/prometheus/latest/querying/basics/).
 {{% /alert %}}
 
-## Exemplos de métricas
+## **Exemplos de métricas**
 
 Depois de ter criado o seu grupo de métricas, você também pode criar suas própria métrica. Veja alguns exemplos abaixo.
 
@@ -40,7 +40,7 @@ Depois de ter criado o seu grupo de métricas, você também pode criar suas pr�
 Quando você utiliza algum desses exemplos, você pode criar várias métricas, como a proporção de erro pelo total de requisições e você também pode disparar uma ação se essa métrica atingir 10%. 
 {{% /alert %}}
 
-### Métrica de latência 
+### **Métrica de latência** 
 
 Aqui, a métrica foi criada para oferecer uma média de latência. Ela divide a duração \(em milissegundos\) das requisições no último minuto pelo total de requisições no mesmo tempo. 
 
@@ -68,10 +68,10 @@ round (
 ```
 
 {{% alert color="info" %}}
-Depois que você instalou o Istio e Prometheus e habilitou o Istio injection em seus pods,  o seu Datasource terá as métricas do Istio. Essas métricas podem ser usadas para construir outras mais avançadas. Veja mais sobre essa métrica na [**documentação** **Istio Standard Metrics**](https://istio.io/latest/docs/reference/config/metrics/)
+Depois que você instalou o Istio e Prometheus e habilitou o Istio injection em seus pods,  o seu Datasource terá as métricas do Istio. Essas métricas podem ser usadas para construir outras mais avançadas. Veja mais sobre essa métrica na [**documentação do Istio Standard Metrics**](https://istio.io/latest/docs/reference/config/metrics/)
 {{% /alert %}}
 
-### Métrica do total de requisições 
+### **Métrica do total de requisições** 
 
 Essa métrica oferece o total de requisições no último minuto: 
 
@@ -86,7 +86,7 @@ ceil (
 ) 
 ```
 
-### Métricas de erro de requisção
+### **Métricas de erro de requisição**
 
 Essa métrica mostra quais as requisições no último minuto, mas apenas para a status de resposta com o código 404: 
 

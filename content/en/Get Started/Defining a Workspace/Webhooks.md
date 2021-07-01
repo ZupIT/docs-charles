@@ -6,13 +6,13 @@ description: 'In this section, you will find information about webhooks.'
 
 ---
 
-## What is it?
+## **What is it?**
 
 Webhook is a resource that watches events in a system. When these events happen, the webhook sends a notification to people interested in receiving information about it. 
 
 Charles has a module called **`charlescd-hermes`** responsible for identifying these events and send notifications to the subscribers when it happens. 
 
-### How to register it?
+### **How to register it?**
 
 It is necessary to subscribe to use webhooks on Charles. Follow the steps below to do it: 
 
@@ -25,7 +25,7 @@ It is necessary to subscribe to use webhooks on Charles. Follow the steps below 
 
 After that, a card will appear with the success or fail status of the last message sent, see the image below: 
 
-![](//image%20%286%29.png)
+![](/shared/image%20%286%29.png)
 
 The event's information is sent in the **content** property. Your exposed service needs to accept this property in the request body. 
 
@@ -39,11 +39,11 @@ Each event payload contains unique properties. You can find them in the individu
 | executionId | String | Execution log id. Allows tracking all the message life cycle.  |
 | event | Object | Event detail. |
 
-## Events
+## **Events**
 
 The observable events are the **beginning** and **end** of **deploy** and **undeploy**. 
 
-### Deploy
+### **Deploy**
 
 If you register a webhook to receive information about **deploy** events of a specific workspace, when a deploy automatically starts and ends, you will receive a notification with details of the event.
 
@@ -115,7 +115,7 @@ When the event is triggered, an HTTP POST payload is sent to the subscribed webh
   </tbody>
 </table>
 
-### Deploy payload example 
+### **Deploy payload example** 
 
 ```text
 {
@@ -182,7 +182,7 @@ When the event is triggered, an HTTP POST payload is sent to the subscribed webh
 }
 ```
 
-### Undeploy 
+### **Undeploy** 
 
 When you register a webhook to receive information about **undeploy** events of a specific workspace or when an undeployment automatically starts and ends, you will receive a notification with details of the event.
 
@@ -254,7 +254,7 @@ When the event is triggered, an HTTP POST payload is sent to the subscribed webh
   </tbody>
 </table>
 
-### Event payload example 
+### **Event payload example** 
 
 ```text
 {
