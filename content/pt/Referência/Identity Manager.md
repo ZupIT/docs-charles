@@ -18,7 +18,7 @@ Em`charlescd/install/helm-chart/values.yaml`, altere os valores nos módulos:
 internalIdmEnabled: false
 ```
 
-* `internalIdmEnabled` : Referencia se o moove deve utilizar o IDM padrão ou não. Para informar que você utilizará um IDM externo, informe o valor `false`.
+* `internalIdmEnabled`: Referência se o moove deve utilizar o IDM padrão ou não. Para informar que você utilizará um IDM externo, informe o valor `false`.
 
 ### **ui**
 

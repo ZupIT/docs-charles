@@ -10,11 +10,11 @@ description: >-
 
 ## Why configure it? 
 
-When you work with multiple microservices scenarios, you need to configure the modules to propagate the`X-Circle-Id` header that makes sure the [**requests are being redirected to the right version of your application**](../../../../reference/circles#how-do-you-define-it). Then your user base will get to the same version of all microservice that are part of your hypothesis test.
+When you work with multiple microservices scenarios, you need to configure the modules to propagate the`X-Circle-Id` header that makes sure the [**requests are being redirected to the right version of your application**](/reference/circles/). Then your user base will get to the same version of all microservice that are part of your hypothesis test.
 
 For example, if you test a feature between microservices that have integration with an opening flow account, it is necessary to make sure your user will get to the correct versions that are on your hypothesis test, created for this specific flow. 
 
-You can do this using a library to propagate the `X-Circle-Id` header, which makes the [**circle id identified by the circle-matcher** ](../../defining-a-workspace/circle-matcher)pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version. 
+You can do this using a library to propagate the `X-Circle-Id` header, which makes the [**circle id identified by the circle-matcher** ](/reference/circle-matcher/)pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version. 
 
 {{% alert color="info" %}}
 If there is a microservice inside this flow that isn't part of your test, the circle value will be passed, but your request will fall into the open sea because there isn't any version for that circle. 
@@ -24,7 +24,7 @@ If there is a microservice inside this flow that isn't part of your test, the ci
 
 See below: 
 
-![](//header-propagation-v2-en.png)
+![](/shared/header-propagation-v2-en.png)
 
 > 1. When you make a microservice request, `circle matcher` gets the circle id for this specific request. 
 > 2. The id is inserted in the header with the `X-Circle-Id` key.

@@ -39,18 +39,18 @@ A metodologia implementada pelo Charles traz várias vantagens, como:
 
 Para utilizar o Charles, é preciso cumprir alguns pré-requisitos:
 
-1. **Instalação:** veja o que é necessário [**aqui**](primeiros-passos/instalando-charles/#pre-requisitos).
+1. **Instalação:** veja o que é necessário [**na seção Instalando o Charles**](/pt/primeiros-passos/instalando-o-charles/visao-geral/).
 2. Para o funcionamento completo da ferramenta é preciso:
 
-* Possuir um [**Registry**](primeiros-passos/definindo-workspace/docker-registry) onde as imagens das suas aplicações são armazenadas.
+* Possuir um [**Registry**](/pt/primeiros-passos/definindo-um-workspace/docker-registry/) onde as imagens das suas aplicações são armazenadas.
 * Definir um **fluxo de CI**. É esperado que esse fluxo seja ativado por meio de algum gatilho, por exemplo, um nome de branch que tenha um prefixo definido. Além disso, o pipeline deve realizar a construção da imagem da aplicação e o envio da mesma para o registry citado anteriormente.
-* Elaborar o [**Helm template**](primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template#o-que-e-o-helm) das suas aplicações. Isso é importante, porque o CD configurado por meio do Charles necessitará dessa informação para realizar o deploy da sua aplicação.
+* Elaborar o [**Helm template**](/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/) das suas aplicações. Isso é importante, porque o CD configurado por meio do Charles necessitará dessa informação para realizar o deploy da sua aplicação.
 
 ## Arquitetura do sistema
 
 A plataforma foi construída utilizando a abordagem de microsserviços e possui os seguintes módulos:
 
-![](//arquitetura-charles-0.7.0.jpg)
+![](/shared/arquitetura-charles-0.7.0.jpg)
 
 * `charlescd-ui:` responsável por prover uma interface de fácil usabilidade para todas as features fornecida pelo CharlesCD, no intuito de simplificar testes de hipóteses e _circle deployment_.
 

@@ -9,17 +9,17 @@ description: >-
 ---
 
 {{% alert color="info" %}}
-Após criar o seu primeiro [**módulo** ](criando-seu-primeiro-modulo/)e cadastrar as [**credenciais do seu cluster**,](definindo-workspace/ambiente-de-deploy) você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](../../../../../referencia/release) e disponibilizá-la no cluster configurado.
+Após criar o seu primeiro [**módulo**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/)e cadastrar as [**credenciais do seu cluster**](definindo-workspace/ambiente-de-deploy), você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](/pt/referência/release/) e disponibilizá-la no cluster configurado.
 {{% /alert %}}
 
 ### Como fazer o primeiro deploy?
 
-No CharlesCD, é preciso utilizar imagens de containers já disponíveis no [**registry** ](definindo-workspace/docker-registry)configurado para criar uma release. 
+No CharlesCD, é preciso utilizar imagens de containers já disponíveis no [**registry** ](/pt/primeiros-passos/definindo-um-workspace/docker-registry/)configurado para criar uma release. 
 
 Para fazer seu primeiro deploy, siga os passos abaixo:
 
 1. Acesse a área "**Círculos**" **\(Circles\)**;
-2. Selecione um [**círculo**](../../../referencia/circulo). Caso você não tenha criado um ainda, a opção que irá aparecer é a do **círculo default** para que seja possível você realizar o  primeiro deploy;
+2. Selecione um [**círculo**](/pt/referência/círculo/). Caso você não tenha criado um ainda, a opção que irá aparecer é a do **círculo default** para que seja possível você realizar o  primeiro deploy;
 3. Altere o filtro do círculo de ativo para **inativo;** 
 4. Selecione a opção "**Insert a release**";
 5. Depois selecione "**Create a release**" e preencha os campos: 
@@ -36,9 +36,9 @@ Depois que você realizou o processo acima, sua release está pronta para o depl
 
 ### Deploy em mar aberto
 
-O **deploy em** [**mar aberto**](../../principais-conceitos#mar-aberto-default) é aquele em que você envia sua aplicação para toda segmentação cadastrada no Charles. 
+O **deploy em** [**mar aberto**](/pt/principais-conceitos/) é aquele em que você envia sua aplicação para toda segmentação cadastrada no Charles. 
 
-Para realizar o deploy neste caso, siga os passos abaixo:[ ](../principais-conceitos#mar-aberto-default)
+Para realizar o deploy neste caso, siga os passos abaixo:
 
 1. Na tela inicial do Charles, clique em **Circles**;
 2. Clique no círculo **Default** \(Este representa o mar aberto\);
@@ -48,4 +48,4 @@ Para realizar o deploy neste caso, siga os passos abaixo:[ ](../principais-conce
 
 Depois disso, o Charles se encarregará de disponibilizar a release criada no cluster configurado em mar aberto. O status do deploy será exibido e atualizado conforme o progresso.
 
-![](//first-deploy.gif)
+![](/shared/first-deploy.gif)

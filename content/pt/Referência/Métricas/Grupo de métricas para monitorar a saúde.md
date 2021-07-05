@@ -1,6 +1,7 @@
 ---
 title: Grupo de métricas para monitorar a saúde
 weight: 78
+description: 'Nesta seção, você encontra mais informações sobre grupo de métricas para monitorar a saúde.'
 ---
 
 ---
@@ -9,7 +10,7 @@ weight: 78
 
 Quando sua aplicação já fez o deployment, é uma boa prática checar a saúde, confirmar se o software está funcionando bem ou observar se precisa de algum cuidado específico. 
 
-Você pode fazer isso com o Charles, utilizando o [**datasource configurado anteriormente**](../../../primeiros-passos/definindo-workspace/adicionando-o-datasource) para criar um grupo de métricas especifico que informa o status da sua imagem em que foi feito o deploy. 
+Você pode fazer isso com o Charles, utilizando o [**datasource configurado anteriormente**](/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/) para criar um grupo de métricas especifico que informa o status da sua imagem em que foi feito o deploy. 
 
  Você encontra abaixo os detalhes.
 
@@ -22,7 +23,7 @@ Para monitorar suas métricas, é preciso ter:
 
 ## Como monitorar?
 
-1. Você precisar criar seu **grupo de métricas** e **sua própria métrica**, para fazer isso [**siga os passos aqui**](grupo-de-metricas);
+1. Você precisar criar seu **grupo de métricas** e **sua própria métrica**, para fazer isso [**siga os passos aqui**](/pt/referência/métricas/grupo-de-métricas/);
 2. No modo avançado, execute o **PromQL queries** para monitorar suas métricas. 
 
 {{% alert color="info" %}}

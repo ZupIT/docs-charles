@@ -108,7 +108,9 @@ A partir de cada métrica, é possível extrair uma série de metainformações,
 | response\_code | O status HTTP da resposta daquela requisição. | Número |
 {{% /tab %}}
 
-{{% tab name="Google Analytics" %}}
+
+
+## **Google Analytics** 
 O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.
 
 Para usá-lo no seu grupo de métricas, você precisa de: 
@@ -118,10 +120,9 @@ Para usá-lo no seu grupo de métricas, você precisa de:
 Se você quiser usar o Charles para analizar os dados do seu Google Analytics, você precisa adicionar uma nova métrica com a ID do circulo \(**renomeando como circle\_source**\) na label da sua métrica. 
 
 {{% alert color="info" %}}
-Para mais informações sobre o Google Analytics, [**veja a documentação**](https://developers.google.com/analytics/devguides/reporting/core/v4).
+Para mais informações sobre o Google Analytics, [**veja a documentação do Analytics**](https://developers.google.com/analytics/devguides/reporting/core/v4).
 {{% /alert %}}
-{{% /tab %}}
-{{< /tabs >}}
+
 
 | Metadado | Descrição | Tipo |
 | :--- | :--- | :--- |

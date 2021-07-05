@@ -25,7 +25,7 @@ It is necessary to subscribe to use webhooks on Charles. Follow the steps below 
 
 After that, a card will appear with the success or fail status of the last message sent, see the image below: 
 
-![](//image%20%286%29.png)
+![](/shared/image%20%286%29.png)
 
 ### **Webhook payload object common properties**
 
