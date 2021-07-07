@@ -12,7 +12,7 @@ Enter the data below to grant Charles access to your Google Cloud Registry:
 * **Project ID:** access Google Cloud Platform, select your project and copy the id;
 * **JSON key:** add the generated JSON key. For more information on [**how to generate your JSON key**](https://cloud.google.com/container-registry/docs/advanced-authentication#json-key). 
 
-If you have any doubts about how to proceed or find the information above, you can visit [**Google Container Registry**](https://cloud.google.com/container-registry) **documentation.** 
+If you have any doubts about how to proceed or find the information above, you can visit [**Google Container Registry documentation**](https://cloud.google.com/container-registry).
 
 {{% alert color="info" %}}
 The connection test feature makes sure that the credentials informed are valid.

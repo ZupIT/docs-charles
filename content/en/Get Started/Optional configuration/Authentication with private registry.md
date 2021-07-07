@@ -1,6 +1,8 @@
 ---
 title: Authentication with private registry
 weight: 13
+description: >-
+  In this section, you will find more information about authentication with private registry.
 ---
 
 ---

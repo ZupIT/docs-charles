@@ -10,7 +10,7 @@ description: 'In this section, you will find information about health monitoring
 
 When your application is deployed, it’s a good practice to check its health, confirm if the software is working fine or if it needs special care. 
 
-You can do this with Charles, using your [**previously configured metrics datasource**](../../../get-started/defining-a-workspace/datasource) to create **metric groups** that will let you know the status of your deployed image.
+You can do this with Charles, using your [**previously configured metrics datasource**](/get-started/defining-a-workspace/datasource/) to create **metric groups** that will let you know the status of your deployed image.
 
 See more details below. 
 
@@ -23,7 +23,7 @@ To monitor your metrics you need to have:
 
 ## How can you monitor? 
 
-1. You have to create your **metrics group and your own metric,** to do that follow the [**steps here**](metrics-group)**;**
+1. You have to create your **metrics group and your own metric,** to do that follow the [**steps in the metrics group section**](/reference/metrics/metrics-group/);
 2. In the advanced mode, execute **PromQL queries** to monitor your metrics.
 
 {{% alert color="info" %}}

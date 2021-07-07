@@ -29,7 +29,7 @@ Veja abaixo os detalhes das **ferramentas compatíveis com o Charles**.
 O Prometheus é uma ferramenta de código aberto focada em monitoramento e alertas. É considerada a principal recomendação para monitoramento do [**Cloud Native Computing Foundation**](https://cncf.io/), além de uma das principais ferramentas do mercado.
 
 {{% alert color="info" %}}
-Se quiser saber mais, sugerimos a [**doc oficial**](https://prometheus.io/).
+Se quiser saber mais, sugerimos a [**documentação oficial**](https://prometheus.io/).
 {{% /alert %}}
 
 É preciso configurar o Prometheus para que ele consiga ler e armazenar os dados das métricas habilitadas, conforme o tutorial que explicamos no início.
@@ -108,7 +108,7 @@ A partir de cada métrica, é possível extrair uma série de metainformações,
 | response\_code | O status HTTP da resposta daquela requisição. | Número |
 {{% /tab %}}
 
-{{% tab name="Google Analytics" %}}
+### Google Analytics
 O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.
 
 Para usá-lo no seu grupo de métricas, você precisa de: 
@@ -120,8 +120,7 @@ Se você quiser usar o Charles para analizar os dados do seu Google Analytics, v
 {{% alert color="info" %}}
 Para mais informações sobre o Google Analytics, [**veja a documentação**](https://developers.google.com/analytics/devguides/reporting/core/v4).
 {{% /alert %}}
-{{% /tab %}}
-{{< /tabs >}}
+
 
 | Metadado | Descrição | Tipo |
 | :--- | :--- | :--- |
