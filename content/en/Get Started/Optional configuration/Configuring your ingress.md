@@ -1,6 +1,8 @@
 ---
 title: Configuring your ingress
 weight: 15
+description: >-
+  In this section, you will find more information on how to configure your ingress.
 ---
 
 ---

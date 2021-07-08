@@ -90,7 +90,7 @@ global:
 ```
 
 {{% alert color="warning" %}}
-If you want to know more about Prometheus and Kubernetes service discovery,  check out [**their documentation**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
+If you want to know more about Prometheus and Kubernetes service discovery, check out [**their documentation**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
 {{% /alert %}}
 
 ### Metadata
@@ -104,7 +104,8 @@ If you want to know more about Prometheus and Kubernetes service discovery,  che
 | response\_code | HTTP status of the response. | Numeric |
 {{% /tab %}}
 
-{{% tab name="Google Analytics" %}}
+## **Google Analytics** 
+
 Google Analytics is one of the data sources that Charles can connect to read your metrics. 
 
 To be able to use in your metrics group, you will need
@@ -116,5 +117,4 @@ If you want to use Charles to analyze your Google Analytics data, you need to ad
 {{% alert color="info" %}}
 For more information about it, check out [**their documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
 {{% /alert %}}
-{{% /tab %}}
-{{< /tabs >}}
+

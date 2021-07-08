@@ -7,7 +7,7 @@ description: 'Nesta seção, você encontra como instalar o Charles via Helm.'
 ---
 
 {{% alert color="info" %}}
-Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](.././#pre-requisitos) estão devidamente instalados.
+Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](/pt/primeiros-passos/instalando-o-charles/visao-geral/) estão devidamente instalados.
 {{% /alert %}}
 
 Esta instalação é indicada para quem possui uma infraestrutura já montada, devido um ambiente mais complexo ou há algumas limitações de segurança e/ou escalabilidade, o que exige uma **customização mais completa da instalação** do CharlesCD.
@@ -21,7 +21,7 @@ Para realizar o processo, é necessário ter instalado:
 
 ### Como instalar?
 
-Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Você encontra [aqui toda a **documentação dos campos editáveis**.](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
+Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Você encontra [toda a **documentação dos campos editáveis**.](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
 
 {{% alert color="warning" %}}
 As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**](https://github.com/ZupIT/charlescd/blob/master/install/helm-chart/values.yaml) As principais senhas para personalizar estão em:

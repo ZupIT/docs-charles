@@ -2,7 +2,7 @@
 title: Autenticando com registry privado
 weight: 13
 description: >-
-  Nessa seção você encontra como realizar a autenticação com seu registry
+  Nesta seção, você encontra como realizar a autenticação com seu registry
   privado.
 ---
 
@@ -10,7 +10,7 @@ description: >-
 
 ## Por que autenticar?
 
-Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**](../../definindo-workspace/docker-registry) quando for preciso fazer o pull das imagens durante alguma implantação.
+Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**](/pt/primeiros-passos/definindo-um-workspace/docker-registry/) quando for preciso fazer o pull das imagens durante alguma implantação.
 
 ## Como autenticar?
 
