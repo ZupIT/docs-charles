@@ -6,11 +6,11 @@ description: 'Nesta seção, você encontra informações sobre as ações de m�
 
 ---
 
-## O que é? 
+## **O que é?**  
 
-Depois de [**cadastrar seu grupo de métricas**](../../../../referencia/metricas/grupo-de-metricas), o Charles mostra o acompanhamento dessas métricas e oferece ações para cada uma delas. Ação é um tipo de trigger que será disparado quando todos os limites \(thresholds\) são alcançados.
+Depois de [**cadastrar seu grupo de métricas**](/pt/referência/métricas/grupo-de-métricas/), o Charles mostra o acompanhamento dessas métricas e oferece ações para cada uma delas. Ação é um tipo de trigger que será disparado quando todos os limites \(thresholds\) são alcançados.
 
-## Como configurar? 
+## **Como configurar?** 
 
 Em configurações do workspace, clique na seção **Add Metric Action** e siga os passos:
 
@@ -19,10 +19,10 @@ Em configurações do workspace, clique na seção **Add Metric Action** e siga 
 **3. Type a description:** Descreva o sua action;  
 **4. Select a plugin:** Selecione um plugin para executar a ação.
 
-![](//workspace_metricaction%20%282%29.gif)
+![](/shared/workspace_metricaction%20%282%29.gif)
 
 {{% alert color="info" %}}
 O único plugin disponível no momento é o **circle deployment**. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
 {{% /alert %}}
 
-Para mais informações sobre **Action**, veja a [**seção de Referência**](../../../referencia/metricas/acoes).
+Para mais informações sobre **Action**, veja a [**seção de Referência**](/pt/referência/métricas/ações/).

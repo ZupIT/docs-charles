@@ -1,6 +1,8 @@
 ---
 title: Sobre o Charles
 weight: 91
+description: >-
+  Nesta seção, você encontra mais detalhes sobre o Charles.
 ---
 
 ---

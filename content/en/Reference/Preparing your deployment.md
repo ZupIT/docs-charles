@@ -28,7 +28,7 @@ Fill in these fields:
 1. **Butler URL:**  Butler's deploy module URL. If this is in the same Charles' installation cluster, use your FQDN \(Fully Qualified Domain Name\). Example: **http://charlescd-butler.butler-namespace.svc.cluster.local:3000.**
 2. **Namespace:** Define the namespace where the resources will be available in the cluster. You have to create your namespace, once Charles does not do it;
 3. **Git provider:** defines the git provider you will use \(**GitHub or GitLab**\);
-4. **Git token:** Insert an authentication token that has access to the git repository where your [**helm templates**](../../get-started/creating-your-first-module/) are stored \(they will be used during the deployment of your application\). If your Git Provider is **GitHub**, "_repo_" permission is required Otherwise, configure the accesses in **GitLab:** "_API_" and "_read\_repository_".
+4. **Git token:** Insert an authentication token that has access to the git repository where your [**helm templates**](/get-started/creating-your-first-module/how-to-configure-chart-template/) are stored \(they will be used during the deployment of your application\). If your Git Provider is **GitHub**, "_repo_" permission is required Otherwise, configure the accesses in **GitLab:** "_API_" and "_read\_repository_".
 
 ## **Configuring your application**
 
