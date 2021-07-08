@@ -7,10 +7,10 @@ description: 'In this section, you will find how to install Charles with Helm.'
 ---
 
 {{% alert color="warning" %}}
-Before proceeding, make sure all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure all the [**requirements**](/get-started/installing-charles/overview/) are properly installed.
 {{% /alert %}}
 
-## How to install? 
+## **How to install?** 
 
 This installation stands out because of the customization. To do this, you have access to a helm template with all the available fields to change, including the database and the consumed resources.
 
@@ -47,7 +47,7 @@ It's important to remember that, in case of no customization at all, by default 
 So, don't forget to customize the fields if you want something more manageable. 
 {{% /alert %}}
 
-### Change the default passwords
+### **Change the default passwords**
 
 After installing CharlesCD, remember to change some **default passwords,** check out below:
 
@@ -61,4 +61,4 @@ After installing CharlesCD, remember to change some **default passwords,** check
 Log in CharlesCD with:  
 **1**. **User:** charlesadmin@admin  
 **2. Password:** charlesadmin;  
-**3.** Go to A**ccount &gt; Profile** and then **Change Password.**
+**3.** Go to **Account &gt; Profile** and then **Change Password.**

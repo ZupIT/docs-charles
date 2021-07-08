@@ -59,7 +59,7 @@ Uma vez instalado o Microk8s, você deve habilitar os seguintes add-ons:
 * **Storage:** Criação de volumes e persistências das PODs;
 * **MetalLB:** Acesso aos serviços expostos pelo Kubernetes. Para este add-on, você terá que escolher um range de IPs onde o Load Balancer irá atribuir para a exposição dos seus serviços.
 
-Siga os passos abaixo para habilitar o Microk8s no Charles: 
+### Siga os passos abaixo para habilitar o Microk8s no Charles: 
 
 **Passo 1:** Prepare o Microk8s para receber o CharlesCD.
 
@@ -121,7 +121,7 @@ microk8s.kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-Veja mais sobre como mudar o [**host file**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/) 
+Veja mais como mudar o [**host file**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/).
 {{% /alert %}}
 
 **Passo 3:** Digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.
@@ -139,14 +139,14 @@ kubectl get svc -n charles
 // get external IP value
 ```
 
-**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**veja aqui como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
+**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**acesse esse tutorial de como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
 
 ```text
 <IP-EXTERNAL-CHARLES>       charles.info.example
 ```
 
 {{% alert color="info" %}}
-Caso queira usar essa instalação em ambientes de produção ou desenvolvimento, deverá expor a aplicação usando um DNS.
+Se você quiser usar essa instalação em ambientes de produção ou desenvolvimento, você precisa expor a aplicação usando um DNS.
 
 Depois de apontar seu DNS para o IP externo, faça o clone das configurações \(seja o singlefile ou os arquivos do helm\) e troque todas as ocorrências de http://charles.info.example para o seu novo DNS, depois execute o comando de instalação novamente.
 {{% /alert %}}

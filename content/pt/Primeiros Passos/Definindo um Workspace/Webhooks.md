@@ -6,13 +6,13 @@ description: 'Nesta seção, você encontra informações sobre webhooks.'
 
 ---
 
-## O que é? 
+## **O que é?**  
 
 Webhook é um recurso que observa os eventos de um sistema.  Quando os eventos acontecem, o webhook tem a função de enviar uma notificação para os interessados cadastrados em receber as informações desse evento. 
 
-O Charles possui o módulo**`charlescd-hermes`**, que é responsável por identificar esses eventos e enviar aos inscritos as notificações. 
+O Charles possui o módulo **`charlescd-hermes`**, que é responsável por identificar esses eventos e enviar aos inscritos as notificações. 
 
-### Como cadastrar? 
+### **Como cadastrar?**  
 
 É necessário criar configurações de webhook para utilizar essa funcionalidade no Charle. Para isso, siga os passos abaixo: 
 
@@ -25,7 +25,7 @@ O Charles possui o módulo**`charlescd-hermes`**, que é responsável por identi
 
 Depois do cadastro, um card aparecerá com o status de sucesso ou erro da última mensagem enviada. Veja a imagem abaixo: 
 
-![Exemplo de mensagem de erro para solicita&#xE7;&#xE3;o do webhooks](//image%20%286%29.png)
+![Exemplo de mensagem de erro para solicita&#xE7;&#xE3;o do webhooks](/shared/image%20%286%29.png)
 
 As informações do evento são enviadas na propriedade **content**. O seu serviço exposto precisa aceitar essa propriedade no corpo da requisição.
 
@@ -40,11 +40,11 @@ Cada payload de evento possui propriedades únicas. Você pode encontrá-las nas
 | executionId | String | O id de execução do evento. Permite rastrear todo ciclo de vida da notificação. |
 | event | Object | Detalhes do evento. |
 
-## Eventos
+## **Eventos** 
 
 Os eventos observáveis são **início** e **finalização** de **deploy** e **undeploy.** 
 
-### Deploy
+### **Deploy** 
 
 Quando você cadastra um webhook para receber informações sobre eventos de **deploy** de um determinado workspace, ou quando um deploy for iniciado e finalizado automaticamente, você irá receber uma notificação com detalhes do evento.  
 
@@ -65,7 +65,7 @@ Veja abaixo:
 | features | Object | Informações das features do deploy/undeploy.  |
 | error | String | Mensagem de erro em caso de status com erro. |
 
-### Exemplo de payload do evento **de Deploy**
+### **Exemplo de payload do evento de Deploy**
 
 ```text
 {
@@ -130,7 +130,7 @@ Veja abaixo:
 }
 ```
 
-###  Undeploy
+###  **Undeploy** 
 
 Quando você cadastra um webhook para receber informações sobre eventos de **undeploy,** de um determinado workspace, quando um undeploy for iniciado e finalizado automaticamente você irá receber uma notificação com detalhes do evento.
 
@@ -148,7 +148,7 @@ Quando o evento é disparado, um payload HTTP POST é enviado a URL do webhook c
 | features | Object | Informações das features do deploy/undeploy.  |
 | error | String | Mensagem de erro em caso de status com erro. |
 
-### Exemplo de payload do evento **de Undeploy**
+### **Exemplo de payload do evento de Undeploy**
 
 ```text
 "content": "{

@@ -2,7 +2,7 @@
 title: Caso de Uso
 weight: 88
 description: >-
-  Esta seção mostra com um exemplo, como realizar a implantação de uma aplicação
+  Nesta seção você encontra com um exemplo de como realizar a implantação de uma aplicação
   por meio do Charles.
 ---
 

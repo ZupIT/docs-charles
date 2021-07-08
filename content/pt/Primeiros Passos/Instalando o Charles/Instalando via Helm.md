@@ -7,10 +7,10 @@ description: 'Nesta seção, você encontra como instalar o Charles via Helm.'
 ---
 
 {{% alert color="warning" %}}
-Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](.././#pre-requisitos) estão devidamente instalados.
+Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](/pt/primeiros-passos/instalando-o-charles/visão-geral/) estão devidamente instalados.
 {{% /alert %}}
 
-## Como instalar?
+## **Como instalar?**
 
 O principal diferencial nessa instalação é a customização. E para instalar, você tem acesso a um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Veja a [**documentação dos campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
 
@@ -43,17 +43,17 @@ heml install --create-namespace -n <namespace> charlescd . -f values.yaml
 É importante lembrar que, caso não seja feita nenhuma customização, por padrão o Charles instala o PostgreSQL, Redis, Keycloak e RabbitMQ.  Por isso, não deixe de customizar os campos caso queira algo gerenciável. 
 {{% /alert %}}
 
-### Troque a senha padrão \(default password\) 
+### **Troque a senha padrão \(default password\)** 
 
 Depois de instalar o CharlesCD, troque algumas **senhas padrão**, veja abaixo: 
 
-**Senha do Keycloak**:   
+- **Senha do Keycloak**:   
 **1.** Acesse: **http://&lt;charlescd-url&gt;/keycloak/auth;**  
 **2.** Clique em **Administration Console;**   
 **3.**  Insira a senha do usuário do Keycloak \(admin - firstpassword\) e troque a senha padrão.
 
-**Senha do CharlesCD:**  
+- **Senha do CharlesCD:**  
 Acesse o CharlesCD e logue com  
-**1. Usuário:** **charlesadmin@admin  
-2. Senha**: **charlesadmin;  
-3.** Vá até **Account &gt; Profile** e depois em **Change Password** e escolha sua nova senha.
+**1. Usuário:** charlesadmin@admin; 
+**2. Senha**: charlesadmin;  
+**3.** Vá até **Account &gt; Profile** e depois em **Change Password** e escolha sua nova senha.

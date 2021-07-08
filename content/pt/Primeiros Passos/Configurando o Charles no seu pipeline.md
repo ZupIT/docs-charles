@@ -8,94 +8,62 @@ description: >-
 
 ---
 
-## Por que integrar o Charles ao seu pipeline de Continuous Delivery?
+## **Por que integrar o Charles ao seu pipeline de Continuous Delivery?**
 
 Integrações são capazes de garantir mais velocidade ao seu time. A entrega contínua \(CD\) permite que você pegue o código armazenado no repositório e o entregue à produção \(ou em qualquer outro ambiente\)  continuamente. 
 
 A configuração de um CD gera um processo mais rápido e eficaz para colocar seu produto no mercado antes da concorrência,  e isso permite que seu time crie novos recursos e correções de bugs para manter seus clientes satisfeitos.
 
-## Pré-requisitos
+## **Pré-requisitos**
 
 Para integrar o Charles C.D. no seu pipeline, você precisa saber algumas informações. Veja abaixo quais são e como consegui-las:
 
-* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. **Veja mais detalhes na seção do token sistêmico**.
-* **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**](definindo-workspace/#como-obter-o-identificador-do-meu-workspace)
-* **`module.id`**: Esse Id representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo.**](criando-seu-primeiro-modulo/#como-obter-o-identificador-do-meu-modulo)
-* **`component.id`**: Esse identificador representa o componente e [**pode ser buscado nos detalhes do módulo**](criando-seu-primeiro-modulo/#como-obter-o-identificador-dos-componentes).
+* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção do token sistêmico**](/pt/referência/token-sistêmico/).
+* **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/)
+* **`module.id`**: Esse Id representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo.**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/)
+* **`component.id`**: Esse identificador representa o componente e [**pode ser buscado nos detalhes do módulo**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/).
 * **`component.version`**: Neste campo informe o nome da tag da imagem do seu componente.
 * **`component.artifact`**:  Este é o nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.
-* **`circle.id`**: Esse Id representa o círculo cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o círculo.**](../referencia/circulo#como-obter-o-identificador-do-meu-circulo-1)
-* **`build.id`**: Este Id representa a composição do deploy criada na primeira requisição[ **citada abaixo**](configurando-o-charles-no-seu-pipeline#criar-composicao-do-deploy). Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
+* **`circle.id`**: Esse Id representa o círculo cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o círculo.**](/pt/referência/círculo/)
+* **`build.id`**: Este Id representa a composição do deploy criada na primeira requisição[ **citada abaixo**](/pt/primeiros-passos/configurando-o-charles-no-seu-pipeline/). Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
 
-## Como integrar?
+## **Como integrar?**
 
 Você pode fazer essa integração utilizando um **token sistêmico** e uma sequência de requisições HTTPS. Veja como nos dois passos abaixo:
 
-{% api-method method="post" host="https://charles.info.example" path="/moove/v2/builds/compose" %}}
-{% api-method-summary %}}
-Passo 1: Criar composição do deploy
-{% endapi-method-summary %}}
+### **Passo 1: Criar composição do deploy**
 
-{% api-method-description %}}
+`POST` ```https://charles.info.example/moove/v2/builds/compose``` 
+
+
 Esta requisição cria uma composição que representará sua release em um círculo.  E você pode misturar versões diferentes com vários componentes.
-{% endapi-method-description %}}
 
-{% api-method-spec %}}
-{% api-method-request %}}
-{% api-method-headers %}}
-{% api-method-parameter name="x-charles-token" type="string" required=false %}}
-Token sistêmico.
-{% endapi-method-parameter %}}
+### **Requisição**
 
-{% api-method-parameter name="x-workspace-id" type="string" required=true %}}
-Identificador do workspace.
-{% endapi-method-parameter %}}
-{% endapi-method-headers %}}
+**Headers**
 
-{% api-method-body-parameters %}}
-{% api-method-parameter name="releaseName" type="string" required=true %}}
-Nome escolhido para a release.
-{% endapi-method-parameter %}}
+| Key | Tipo | Descrição |
+| :--- | :--- | :--- |
+| x-charles-token | String | Token sistêmico. |
+| x-workspace-id | String | Identificador do workspace.|
 
-{% api-method-parameter name="modules" type="array" required=true %}}
-Lista de módulos.
-{% endapi-method-parameter %}}
 
-{% api-method-parameter name="module" type="object" required=true %}}
-Objeto que representa o módulo.
-{% endapi-method-parameter %}}
+**Body Parameters**: Todos obrigatórios
 
-{% api-method-parameter name="module.id" type="string" required=true %}}
-Identificador do Módulo
-{% endapi-method-parameter %}}
+| Key | Tipo | Descrição |
+| :--- | :--- | :--- |
+| releaseName| String | Nome escolhido para a release.  |
+| modules | String | Lista de módulos. |
+| module | object | Objeto que representa o módulo. |
+| module.id | string | Identificador do Módulo |
+| module.components | array | Lista dos componentes que irão compor o deploy. |
+| component | Object | Informações do autor do evento. |
+| component.id | string| Identificador do componente. |
+| component.version | String | Nome da tag da imagem. |
+| component.artifact | string | Nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}  |
 
-{% api-method-parameter name="module.components" type="array" required=true %}}
-Lista dos componentes que irão compor o deploy.
-{% endapi-method-parameter %}}
 
-{% api-method-parameter name="component" type="object" required=true %}}
-Componente do módulo.
-{% endapi-method-parameter %}}
-
-{% api-method-parameter name="component.id" type="string" required=true %}}
-Identificador do component.
-{% endapi-method-parameter %}}
-
-{% api-method-parameter name="component.version" type="string" required=true %}}
-Nome da tag da imagem.
-{% endapi-method-parameter %}}
-
-{% api-method-parameter name="component.artifact" type="string" required=true %}}
-Nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}
-{% endapi-method-parameter %}}
-{% endapi-method-body-parameters %}}
-{% endapi-method-request %}}
-
-{% api-method-response %}}
-{% api-method-response-example httpCode=201 %}}
-{% api-method-response-example-description %}}
-
-{% endapi-method-response-example-description %}}
+### **Resposta**
 
 ```
 {
@@ -143,10 +111,6 @@ Nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-N
    "deployments":[]
 }
 ```
-{% endapi-method-response-example %}}
-{% endapi-method-response %}}
-{% endapi-method-spec %}}
-{% endapi-method %}}
 
 Veja abaixo um exemplo da requisição no formato **CURL**:
 
@@ -178,45 +142,29 @@ curl 'https://charlescd.api.com/moove/v2/builds/compose' \
 ```
 
 
+### **Passo 2: Implantar a release criada na requisição anterior em um círculo.**
+`POST` `https://charles.info.example/path="/moove/v2/deployments` 
 
-{% api-method method="post" host="https://charles.info.example" path="/moove/v2/deployments" %}}
-{% api-method-summary %}}
-Passo 2: Implantar a release criada na requisição anterior em um círculo.
-{% endapi-method-summary %}}
-
-{% api-method-description %}}
 Esta requisição implanta a release composta criada anteriormente em um círculo.
-{% endapi-method-description %}}
 
-{% api-method-spec %}}
-{% api-method-request %}}
-{% api-method-headers %}}
-{% api-method-parameter name="x-workspace-id" type="string" required=true %}}
-Identificador do workspace.
-{% endapi-method-parameter %}}
+### **Requisição**
 
-{% api-method-parameter name="x-charles-token" type="string" required=true %}}
-Token sistêmico.
-{% endapi-method-parameter %}}
-{% endapi-method-headers %}}
+**Headers**: Todos obrigatórios:
 
-{% api-method-body-parameters %}}
-{% api-method-parameter name="circleId" type="string" required=true %}}
-Identificador do círculo que receberá o deployment.
-{% endapi-method-parameter %}}
+| Key | Tipo | Descrição |
+| :--- | :--- | :--- |
+| x-workspace-id | String | Identificador do workspace. |
+| x-charles-token | String | Token sistêmico.|
 
-{% api-method-parameter name="buildId" type="string" required=true %}}
-Identificador do build criado na requisição anterior.
-{% endapi-method-parameter %}}
-{% endapi-method-body-parameters %}}
-{% endapi-method-request %}}
+**Body Parameters**: Todos obrigatórios: 
 
-{% api-method-response %}}
-{% api-method-response-example httpCode=201 %}}
-{% api-method-response-example-description %}}
+| Key | Tipo | Descrição |
+| :--- | :--- | :--- |
+| circleId| String | Identificador do círculo que receberá o deployment.  |
+| buildId | String | Identificador do build criado na requisição anterior. |
 
-{% endapi-method-response-example-description %}}
 
+### **Resposta**
 ```
 {
    "id":"0000070c-1ed8-4d33-ad91-04ea50100000",
@@ -279,11 +227,6 @@ Identificador do build criado na requisição anterior.
    ]
 }
 ```
-{% endapi-method-response-example %}}
-{% endapi-method-response %}}
-{% endapi-method-spec %}}
-{% endapi-method %}}
-
 Veja um exemplo da requisição no formato **CURL**:
 
 ```text
@@ -297,4 +240,4 @@ curl 'https://charlescd.api.com/moove/v2/deployments' \
 }'
 ```
 
-Você pode acompanhar a conclusão dos deployments utilizando os [**Webhooks**](definindo-workspace/web).
+Você pode acompanhar a conclusão dos deployments utilizando os [**Webhooks**](/pt/primeiros-passos/definindo-um-workspace/webhooks/).
