@@ -104,17 +104,19 @@ If you want to know more about Prometheus and Kubernetes service discovery,  che
 | response\_code | HTTP status of the response. | Numeric |
 {{% /tab %}}
 
-{{% tab name="Google Analytics" %}}
+
+## **Google Analytics** 
+
 Google Analytics is one of the data sources that Charles can connect to read your metrics. 
 
-To be able to use in your metrics group, you will need
+To be able to use it in your metrics group, you will need
 
 * A Google account and the Analytics configured.
 
-If you want to use Charles to analyze your Google Analytics data, you need to add a new metric with your circle ID \(**renaming it as circle\_source**\) in your metrics label.
-
 {{% alert color="info" %}}
-For more information about it, check out [**their documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
+If you want to use Charles to analyze your Google Analytics data, you need to add a new metric with your circle ID \(**renaming it as circle\_source**\) in your metrics label.
 {{% /alert %}}
-{{% /tab %}}
-{{< /tabs >}}
+
+
+For more information about it, check out [**their documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
+

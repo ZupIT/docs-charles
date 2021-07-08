@@ -1,13 +1,14 @@
 ---
 title: Circle Matcher
 weight: 26
+description: 'In this section, you will find information about Circle Matcher.'
 ---
 
 ---
 
 ## Why do you have to configure it?
 
-When [**creating a workspace**](../../.././), you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment since Charles can handle, at the same time, different environments in multiple workspaces.
+When [**creating a workspace**](/get-started/defining-a-workspace/overview/), you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment since Charles can handle, at the same time, different environments in multiple workspaces.
 
 Circle Matcher is an independent module, despite that, it is possible to install it in any area you want inside its architecture, for example, a public cluster.
 
@@ -17,7 +18,7 @@ This configuration is necessary, so you are able to perform operations in Charle
 It is important to remember, in Charle's context, the Circle Matcher module receives most of the environment's requests because it is the application that identifies the user based on the rules that you have configured while managing a circle.
 {{% /alert %}}
 
- If you want to know more about **Circle Matcher**, see the [**References section**](../../../../reference/circle-matcher). 
+ If you want to know more about **Circle Matcher**, see the [**Reference's section**](/reference/circle-matcher/). 
 
 ## How must be configured?
 
@@ -41,4 +42,4 @@ The difference is in terms of performance, it is recommended to use Kubernetes s
 
 In this section, you saw how to create your Circle Matcher. To continue your workspace configuration, Charles offers metrics that need to be configured. 
 
-👉 Go to [**Setting up your metrics** ](../../../reference/metrics/setting-up-your-metrics)and find out how Charles uses metrics.
+👉 Go to [**Setting up your metrics** ](/reference/metrics/setting-up-your-metrics/)and find out how Charles uses metrics.

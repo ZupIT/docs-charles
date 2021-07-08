@@ -120,7 +120,7 @@ microk8s.kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-For more information on **how to change the host file,** [**access here.** ](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)
+For more information on **how to change the host file,** [**check out this tutorial.** ](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)
 {{% /alert %}}
 
 **Step 3:** type in your browser **http://charles.info.example** and the entire application will be available.

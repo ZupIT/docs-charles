@@ -1,6 +1,7 @@
 ---
 title: Deploy environment
 weight: 24
+description: 'In this section, you will find information about Deploy Environment.'
 ---
 
 ---
@@ -23,7 +24,7 @@ After these steps, fill out the next fields:
 1. **Name:** configuration name that will be created; 
 2. **Namespace:** Define the namespace that will be used on Kubernetes cluster deploys; 
 3. **Git provider**: Define the git provider \(**GitHub** or **GitLab**\);
-4. **Git token:** insert an authentication token that has access to the git repository where your [**Helm templates**](../../creating-your-first-module/how-to-configure-chart-template) are stored \(they will be used during the deployment of your [**application**](../../creating-your-first-module/)\). If your Git Provider is **GitHub**, "_repo_" permission is required. Otherwise, configure the accesses in **GitLab**:"API " and "_read\_repository_".
+4. **Git token:** insert an authentication token that has access to the git repository where your [**Helm templates**](/get-started/creating-your-first-module/how-to-configure-chart-template/) are stored \(they will be used during the deployment of your [**application**](/get-started/creating-your-first-module/overview/)\). If your Git Provider is **GitHub**, "_repo_" permission is required. Otherwise, configure the accesses in **GitLab**:"API " and "_read\_repository_".
 5. Select the **Default** option.
 
-After finishing your configuration, you can associate it with a module later. For more information, check the [**CD Configuration**](https://docs.charlescd.io/reference/cd-configuration) page.
+After finishing your configuration, you can associate it with a module later. For more information, check the [**CD Configuration**](/reference/cd-configuration/) page.

@@ -8,9 +8,9 @@ description: >-
 
 ---
 
-Circles are the main approach related to the [**new deploy concept**](../../../faq/about-charles#what-is-circle-deploy) brought by Charles. It enables user group creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
+Circles are the main approach related to the [**new deploy concept**](/faq/about-charles/) brought by Charles. It enables user group creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
 
-![Circle generation with Charles deployments](//deploy_em_circulos%20%289%29%20%281%29.png)
+![Circle generation with Charles deployments](/shared/deploy_em_circulos%20%289%29%20%281%29.png)
 
 Circles indicate client segmentation and also support the version management created for a specific audience.
 
@@ -43,7 +43,7 @@ Segmentations have the following fields that you have to fill:
 
 #### Key and value
 
-The **key** and **value** fields are established based on the information that will be sent in the request, that [**identifies the circles**](../../get-started/defining-a-workspace/circle-matcher) where your user belongs to. For example, the payload below could represent the information you have about a client:
+The **key** and **value** fields are established based on the information that will be sent in the request, that [**identifies the circles**](/reference/circle-matcher/) where your user belongs to. For example, the payload below could represent the information you have about a client:
 
 ```text
 {
@@ -86,7 +86,7 @@ If in your configuration there are circles with segmentation by rules and circle
 
 See the example on how to create a circle below: 
 
-![How to create a circle](//chrome-capture-7-.gif)
+![How to create a circle](/shared/chrome-capture-7-.gif)
 
 {{% alert color="info" %}}
 **The best advantage to use segmentation** is the possibility to combine logic with several attributes to create different audience categories and, in this way, use them on hypothesis tests. 
@@ -111,17 +111,17 @@ These characteristics can be defined based on the following logic:
 
 See some examples below:
 
-![](//segmentacao-manual.png)
+![](/shared/segmentacao-manual.png)
 
 ### **Segmentation by CSV importation**
 
 This segmentation is used only in the first CSV column to create rules. The first line in the first column must contain the key name and the same one must be informed on the key field.
 
-![Example of CSV importation](//chrome-capture-5-.jpg)
+![Example of CSV importation](/shared/chrome-capture-5-.jpg)
 
 After you have finished the file upload and saved the configuration, an overview will show up demonstrating how your segmentation is:
 
-![Overview of CVS importation](//image%20%284%29.png)
+![Overview of CVS importation](/shared/image%20%284%29.png)
 
 This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a .csv file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.
 
@@ -148,19 +148,19 @@ Now, the algorithm for identification draws a number between 1 and 100, and afte
 
 If there isn't a configured circle or an active one, the available amount will be 100%, like the image below: 
 
-![](//perc1.png)
+![](/shared/perc1.png)
 
 If you have, for example, three active circles by percentage and each one of them have a 30% value, the available amount for your new circle will be 10%, see below:  
 
-![](//perc2.png)
+![](/shared/perc2.png)
 
 After the segmentation is created, the available percentage will be only altered if a new release is deployed for that circle, and then it will become active.
 
-![](//perc3.png)
+![](/shared/perc3.png)
 
 If, for example, the **percentage hits the available 100%**, it is necessary to change or remove the configured active circles in order to make more space, after that you are able to create a new circle. 
 
-![](//perc4.png)
+![](/shared/perc4.png)
 
 ### How to get **my circle's identifier**? 
 
@@ -168,19 +168,19 @@ Once your circle is created, even without the configuration, it already has a si
 
 To get this information, select the workspace you want, and then on the left menu, click on **Copy ID.**
 
-![](//como-obter-o-identificador-do-meu-circulo%20%281%29.gif)
+![](/shared/como-obter-o-identificador-do-meu-circulo%20%281%29.gif)
 
 ## Active and inactive circles
 
 The existence of releases defines if a circle is active or not, which are the implemented versions for user segmentation. Therefore, active circles have implemented releases while the inactive circle doesn't have any.
 
-![](//circulo-ativo-e-inativo.gif)
+![](/shared/circulo-ativo-e-inativo.gif)
 
 ## How to integrate circle with services?
 
 Once the **circle to which the user belongs** is detected, this information must be passed on to all next requests through the `x-circle-id`parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Check out how it works below:
 
-![](//como_integrar_circulos_com_servicos_copy%20%282%29.png)
+![](/shared/como_integrar_circulos_com_servicos_copy%20%282%29.png)
 
 At some point during the interaction of the user and your application **\(App1\)**, for example, the login - the **`Identify`** service of **`charles-circle-matcher`** - must be triggered to get the circle.
 
@@ -192,14 +192,14 @@ If the **`x-circle-id`** is not passed on, all the requests will be redirected t
 
 We will give an example of a specific scenario where your environment has two services: **Application A** and **Application B** and your circles must use the following versions:
 
-![](//versoes_diferentes_na_minha_release_eng%20%281%29.png)
+![](/shared/versoes_diferentes_na_minha_release_eng%20%281%29.png)
 
 So, the redirect logic using **`x-circle-id`** will be:
 
 1. The user sends to the header:  `x-circle-id="QA Circle"`. On this circle, the request will be redirected to a **X version** of the service on **Application A** and the **Y version** of the service on **Application B**. 
 2. The user sends to the header:  `x-circle-id=”Dev Circle”`. On this circle, the request will be redirected to the **Z version** of the service on **Application A** and **Z version** of the service on **Application B.** 
 
-![Example of Application 1 and Application 2](//versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
+![Example of Application 1 and Application 2](/shared/versoes_diferentes_na_minha_release_ii_eng%20%281%29.png)
 
 ## How to route your circles with Kubernetes Clusters?
 
@@ -217,7 +217,7 @@ Besides that, there is a default \(v1\) version for users that don't fit in any 
 
 Let's supposed that, to make a request to identify a user, an ID 8756 is returned. This information will be passed by the next service interaction through the header `x-circle-id`. The image below shows how Charles uses the internal resources to route the correct release.
 
-![](//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&token=7b73c615-db6c-438e-a142-e4c131b6d606)
+![](/shared/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&token=7b73c615-db6c-438e-a142-e4c131b6d606)
 
 When performing a version implementation in a circle, Charles makes all the configurations so that the routing is correctly done. To understand better how this works, let's use a scenario where a request comes from a service outside the stack, see the image above.
 

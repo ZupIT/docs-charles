@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**data source you previously registered**](../../../get-started/defining-a-workspace/datasource) 
+The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**data source you previously registered**](/get-started/defining-a-workspace/datasource/) 
 
 ## **How to create?**
 
@@ -18,7 +18,7 @@ To create your metrics group, follow the next steps:
 
      **Step 2:** In **'Add metrics group'**, type the name you want for your group and click on **'Add group'**: 
 
-![](//criacaogroup%20%281%29.gif)
+![](/shared/criacaogroup%20%281%29.gif)
 
 Now you are able to register your metrics**:**
 
@@ -30,7 +30,7 @@ Now you are able to register your metrics**:**
 
 See the example below: 
 
-![](//metric+filter%20%281%29.gif)
+![](/shared/metric+filter%20%281%29.gif)
 
    **Step 6:** Define a **Threshold** to establish a limit to your metric. 
 
@@ -40,7 +40,7 @@ See the example below:
 For example, if you want to know if your application hits 50 errors, just customize the **threshold** and you will be notified when you hit this metric. 
 {{% /alert %}}
 
-![](//threshold%20%281%29.gif)
+![](/shared/threshold%20%281%29.gif)
 
 {{% alert color="success" %}}
 Done! You have registered your metrics group.
@@ -48,7 +48,7 @@ Done! You have registered your metrics group.
 
 Now, you can follow up the result with graphics and the available information, as you can see below: 
 
-![](//graficos%20%281%29.gif)
+![](/shared/graficos%20%281%29.gif)
 
 ## **Metrics group: Advanced**
 
@@ -56,8 +56,8 @@ You can customize your own metric with the metrics' group advanced function. Thi
 
 Check out the example below, it shows where to use **PromQL** to build queries in Prometheus, creating a new metric type: 
 
-![](//advanced%20%281%29.png)
+![](/shared/advanced%20%281%29.png)
 
 {{% alert color="info" %}}
-To see more examples of the advanced mode, check out [**this section**](metric-groups-to-health-monitoring)
+To see more examples of the advanced mode, check out [**the metrics groups health monitoring section**](/reference/metrics/metric-groups-to-health-monitoring/)
 {{% /alert %}}

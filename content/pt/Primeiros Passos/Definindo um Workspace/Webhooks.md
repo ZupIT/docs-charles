@@ -25,7 +25,7 @@ O Charles possui o módulo**`charlescd-hermes`**, que é responsável por identi
 
 Depois do cadastro, um card aparecerá com o status de sucesso ou erro da última mensagem enviada. Veja a imagem abaixo: 
 
-![Exemplo de mensagem de erro para solicita&#xE7;&#xE3;o do webhooks](//image%20%286%29.png)
+![Exemplo de mensagem de erro para solicita&#xE7;&#xE3;o do webhooks](/shared/image%20%286%29.png)
 
 ### **Propriedade comum dos objetos do payload de webhook**
 

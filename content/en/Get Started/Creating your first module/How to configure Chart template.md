@@ -1,6 +1,7 @@
 ---
 title: How to configure Chart template
 weight: 37
+description: In this section, you will find how to configure chart template.
 ---
 
 ---
@@ -12,7 +13,7 @@ Helm Charts is a package manager that allows you to define, install and update K
 In Charles' context,  [**Chart Template**](https://helm.sh/docs/chart_template_guide/getting_started/) is used like a file collection related to the Kubernetes configuration.
 
 {{% alert color="info" %}}
-If you haven't configured your module yet, [**access it here**](.././) It is important to remember, you have to register the URL in this module. 
+If you haven't configured your module yet, [**access the Overview to do it**](/get-started/creating-your-first-module/overview/). It is important to remember, you have to register the URL in this module. 
 {{% /alert %}}
 
 ## How to configure the chart template?
@@ -27,9 +28,9 @@ The structure below has the necessary templates to deploy a module that contains
 
 The image below shows how your directory must look like: 
 
-![ Chart template directory of circle-sample](//screen-shot-2020-08-13-at-09.16.04.png)
+![ Chart template directory of circle-sample](/shared/screen-shot-2020-08-13-at-09.16.04.png)
 
-### Step 2: configure the directory items 
+### **Step 2: configure the directory items**
 
 After you have created the directory, now you have to configure it. See below which files are necessary to configure: 
 

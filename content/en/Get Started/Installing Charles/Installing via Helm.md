@@ -6,7 +6,7 @@ weight: 6
 ---
 
 {{% alert color="info" %}}
-Before proceeding, make sure that all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure that all the [**requirements**](/get-started/installing-charles/overview/) are properly installed.
 {{% /alert %}}
 
 This installation is recommended for those who already have an infrastructure to deal with a more complex environment or who have some limitations of security/scalability, which demands **more complete install customization** of CharlesCD.  
