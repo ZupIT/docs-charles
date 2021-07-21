@@ -1,6 +1,8 @@
 ---
 title: Deploy environment
 weight: 10
+description: >-
+  In this section, you will find more information about deploy environment. 
 ---
 
 # Setting up a Cluster
@@ -24,4 +26,4 @@ After these steps, fill out the next fields:
 4. **Git token:**  Insert the authentication token for your git repository. This will be used to get **Helm** templates.  
 5. Select the **Default** option.
 
-After finish your configuration, you can associate it with a module. For more information, check the [**References** ](../../../reference/cd-configuration)page.
+After finish your configuration, you can associate it with a module. For more information, check the [**References section** ](/reference/cd-configuration/) page.

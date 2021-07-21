@@ -1,6 +1,8 @@
 ---
 title: Docker Registry
 weight: 8
+description: >-
+  Nesta seção, você vai encontrar mais informações sobre docker registry.
 ---
 
 ---
@@ -26,4 +28,4 @@ Em caso de dúvidas para encontrar essas informações, sugerimos a documentaç�
 * **Username**: ID da entidade de serviço que será usada pelo Kubernetes para acessar o registro;
 * **Password**: Senha da entidade de serviço.
 
-Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da [**Azure Container Registry**](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-concepts).
+Em caso de dúvidas para encontrar essas informações, siga a documentação da [**Azure Container Registry**](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-concepts).

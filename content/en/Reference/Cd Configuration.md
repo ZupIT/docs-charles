@@ -1,6 +1,9 @@
 ---
 title: Cd Configuration
 weight: 26
+description: >-
+  In this section, you will find more information about CD configuration. 
+
 ---
 
 ---
@@ -27,7 +30,7 @@ It is necessary to register a CD configuration linked to your docker. To be able
 3. Insert a git **token;**
 4. Select a **manager** to associate with the CD Configuration. 
 
-![](//cd-configuration-2%20%281%29%20%281%29.gif)
+![](/shared/cd-configuration-2%20%281%29%20%281%29.gif)
 
 ### **Default**
 

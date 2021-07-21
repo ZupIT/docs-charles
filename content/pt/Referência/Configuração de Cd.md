@@ -1,8 +1,8 @@
 ---
-title: Configuração de Cd
+title: Configuração de CD
 weight: 26
 description: >-
-  Nesta seção, você encontra detalhes sobre a configuração das ferramentas de
+  Nesta seção, você encontra informações sobre a configuração das ferramentas de
   Continuous Deployment (CD).
 ---
 
@@ -22,7 +22,7 @@ Para cadastrar qualquer uma delas, siga os seguintes passos:
 3. Clique em **Add CD Configuration**;
 4. Selecione as opções **Octopipe** ou **Spinnaker**, dependendo da sua preferência.
 
-![Processo inicial de cadastro de configura&#xE7;&#xF5;es de CD](//cd-configuration-2-1%20%281%29.gif)
+![Processo inicial de cadastro de configura&#xE7;&#xF5;es de CD](/shared/cd-configuration-2-1%20%281%29.gif)
 
 ## Utilizando Spinnaker
 

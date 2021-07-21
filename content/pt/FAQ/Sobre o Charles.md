@@ -1,6 +1,8 @@
 ---
 title: Sobre o Charles
 weight: 42
+description: >-
+  Nesta seção, você encontra informações sobre o Charles.
 ---
 
 ---
@@ -15,7 +17,7 @@ O deploy em círculos é um conceito pioneiro trazido pelo Charles. Graças a el
 
 ## Qual diferencial do Charles? 
 
-Diferente de outras modalidades de deploy, o Charles possibilita a realização simultânea de segmentações de usuários por meio de [**círculos**. ](../../referencia/circulos)
+Diferente de outras modalidades de deploy, o Charles possibilita a realização simultânea de segmentações de usuários por meio de [**círculos**](/pt/referência/círculo/).
 
 Utilizando a ferramenta, o processo de entrega que em ambientes tradicionais ocorre em frequências demoradas - semanal, quinzenal ou até mesmo mensal -, ganha um novo ritmo. O ciclo de feedback do seu produto se torna mais rápido e eficaz e, com isso, você consegue fazer a gestão do timing de forma mais inteligente e assertiva. 
 
@@ -25,7 +27,7 @@ Além disso, os desenvolvedores são encorajados a inovarem e realizarem várias
 
 A plataforma foi construída utilizando a abordagem de microsserviços e possui os seguintes módulos:
 
-![](//arquitetura-charles-nova.png)
+![](/shared/arquitetura-charles-nova.png)
 
 * `charlescd-ui:` responsável por prover uma interface de fácil usabilidade para todas as features fornecida pelo CharlesCD, no intuito de simplificar testes de hipóteses e _circle deployment_.
 

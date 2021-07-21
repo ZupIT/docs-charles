@@ -1,12 +1,14 @@
 ---
 title: Installing Charles
 weight: 4
+description: >-
+  In this section, you will find information on how to install Charles. 
 ---
 
 ---
 
 {{% alert color="info" %}}
-The installing process was created considering some use cases, and each of them have its own specific tutorial. If you need to install CharlesCD with more customization, we suggest to check the [**customized installation section**.](installing-charles#case-2-customized-installation)
+The installing process was created considering some use cases, and each of them have its own specific tutorial. If you need to install CharlesCD with more customization, check out the [**customized installation**.](/get-started/installing-charles/)
 {{% /alert %}}
 
 ## Introduction
@@ -18,7 +20,7 @@ The CharlesCD installation considers these components:
 1. Seven specific modules of **Charles' architecture;** 
 2. **Keycloak**, used for product authentication and authorization;
 3. A **PostgreSQL database** for back-end modules \( `charles-application`, `charles-circle-matcher`, `deploy` and `villager`\) and Keycloak;
-4. A **Redis**, to be used by [**Circle Matcher**. ](../../reference/circle-matcher)
+4. A **Redis**, to be used by [**Circle Matcher**](/reference/circle-matcher/).
 
 ### Continuous Delivery Platform
 
@@ -37,13 +39,13 @@ If you want more information about how to configure Spinnaker or Octopipe, check
 **At the first access, regardless of the installation method, the default admin user is charlesadmin@zup.com.br and the password is 123mudar.**
 {{% /alert %}}
 
-### Case \#1: Quick Installation
+### **Case \#1: Quick Installation**
 
 This installation is recommended for those who never used Charles before and just want a **first contact in testing environment**, without looking for scalability or security.
 
 In this case, you will have to:
 
-* Use an **yaml** file with all the [**components**](installing-charles#components);
+* Use an **yaml** file with all the [**components**](/get-started/installing-charles/);
 * Use a **Load Balancer** previously configured.
 
 To create this structure, you have to execute the files in a configured cluster, such as minikube, GKE, EKS, etc. The steps to be executed are:
