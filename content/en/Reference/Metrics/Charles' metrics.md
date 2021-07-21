@@ -1,13 +1,15 @@
 ---
 title: Charles' metrics
 weight: 76
+description: >-
+  In this section, you will find more information about Charles' metrics.
 ---
 
 ---
 
 Charles offers metrics for you to monitor deploys and circles. 
 
-![](//metrics-circ-e-deplo.png)
+![](/shared/metrics-circ-e-deplo.png)
 
 ## Deploy metrics
 
@@ -25,7 +27,7 @@ There is other available information:
 
 See the example below:  
 
-![](//deploy.gif)
+![](/shared/deploy.gif)
 
 ## Circles metrics 
 
@@ -33,10 +35,10 @@ It is a management feature that helps you view and follow the technical informat
 
 The circle metrics allows you to have an overview of your circles on Charles, like:  
 
-* [**Active and inactive**](../../circles#active-and-inactive-circles) circles;
+* [**Active and inactive**](/reference/circles/) circles;
 * Circle average lifetime;
 * Last update date.
 
 See below: 
 
-![](//erro.gif)
+![](/shared/erro.gif)

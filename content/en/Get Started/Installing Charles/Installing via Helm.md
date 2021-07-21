@@ -1,12 +1,14 @@
 ---
 title: Installing via Helm
 weight: 8
+description: >-
+  In this section, you will find how to install Charles via Helm.
 ---
 
 ---
 
 {{% alert color="info" %}}
-Before proceeding, make sure that all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure that all the [**requirements**](/get-started/installing-charles/overview/) are properly installed.
 {{% /alert %}}
 
 This installation is recommended for those who already have an infrastructure to deal with a more complex environment or who have some limitations of security/scalability, which demands **more complete install customization** of CharlesCD.  

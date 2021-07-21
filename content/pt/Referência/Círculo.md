@@ -8,13 +8,13 @@ description: >-
 
 ---
 
-Os círculos são o principal diferencial do [**novo conceito de deploy** ](../../../faq/sobre-charles#o-que-e-deploy-em-circulos)trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
+Os círculos são o principal diferencial do [**novo conceito de deploy**](/pt/faq/deploy-em-círculos-x-outros-deploys/) trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
 
-![Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles](//deploy_em_circulos%20%288%29%20%281%29.png)
+![Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles](/shared/deploy_em_circulos%20%288%29%20%281%29.png)
 
 Além de indicar as segmentações de clientes, os círculos também auxiliam na gestão de versões implantadas para este público.
 
-Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma [**série de métricas** ](metricas/)de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.
+Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma [**série de métricas**](/pt/referência/métricas/configurando-as-métricas/) de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.
 
 ## Como criar círculos?
 
@@ -40,7 +40,7 @@ As segmentações possuem os seguintes campos:
 * **Condição**: é a implicação lógica que condicionará sua chave e seu valor.
 * **Valor**: são os valores existentes na sua base que poderão ser utilizados para compor a lógica de segmentação.
 
-Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](circle-matcher#identificando-circulos-atraves-do-charlescd) que o seu usuário pertence. Por exemplo, considere que o seguinte payload represente as informações que você possui do seu cliente:
+Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](/pt/referência/círculo/) que o seu usuário pertence. Por exemplo, considere que o seguinte payload represente as informações que você possui do seu cliente:
 
 ```text
 {
@@ -61,7 +61,7 @@ As chaves utilizadas podem ser qualquer uma enviada no payload da sua aplicaçã
 
 Veja abaixo um exemplo de como criar um círculo: 
 
-![](//circle_create_segmentation%20%282%29.gif)
+![](/shared/circle_create_segmentation%20%282%29.gif)
 
 {{% alert color="info" %}}
 Uma **grande vantagem de utilizar as segmentações** é a possibilidade fazer combinações lógicas entre vários atributos para criar diferentes categorias de públicos e, dessa forma, utilizá-los nos testes das hipóteses.   
@@ -85,17 +85,17 @@ Essas características podem ser definidas com base nas lógicas de:
 
 Veja alguns exemplos:
 
-![](//image%20%289%29.png)
+![](/shared/image%20%289%29.png)
 
 ### **Segmentação por importação de CSV**
 
 Nessa modalidade, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo _key:_
 
-![](//image%20%2814%29.png)
+![](/shared/image%20%2814%29.png)
 
 Depois de ter feito o upload do arquivo e salvado as configurações, aparecerá um overview demonstrando uma prévia da sua segmentação:
 
-![](//circle_create_segmentation_csv.gif)
+![](/shared/circle_create_segmentation_csv.gif)
 
 Essa segmentação permite, por exemplo, extrair de uma base externa de IDs dos clientes um perfil específico e importá-los direto na plataforma do Charles. Quando um arquivo .csv é importado e se ele conter alguma linha em branco, ocorrerá um erro da importação, pois não é permitido a criação de segmentos dessa forma.
 
@@ -113,19 +113,19 @@ Para obter essa informação, siga estes passos:
 2. Clique em "default" 
 3. E, no menu à esquerda, clique em **Copy ID**
 
-![](//circle_copyid.gif)
+![](/shared/circle_copyid.gif)
 
 ## Círculos ativos e inativos
 
 O que define se um círculo é ativo ou não, é a existência de [**releases**](release), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
 
-![](//circle_filter.gif)
+![](/shared/circle_filter.gif)
 
 ## Como integrar círculos com serviços?
 
 Uma vez detectado o [**círculo ao qual o usuário pertence**,](circle-matcher#identificacao-de-circulos-atraves-da-api) essa informação deve ser repassada para todas as próximas requisições através do parâmetro **`x-circle-id`** no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:
 
-![](//como_integrar_circulos_com_servicos_copy%20%281%29.png)
+![](/shared/como_integrar_circulos_com_servicos_copy%20%281%29.png)
 
 Na prática, em algum momento durante a interação do usuário com a sua aplicação \(**`App1`**\) - por exemplo, o login - o serviço **`Identify`** do **`circle-matcher`** deverá ser acionado para obter o círculo.
 
@@ -137,14 +137,14 @@ Caso o **`x-circle-id`** não seja repassado, todas as requisições serão redi
 
 Para facilitar o entendimento, vamos exemplificar com um cenário onde o seu ambiente possui dois serviços: **Aplicação A** e **Aplicação B** e os seus círculos devem fazer o uso das seguintes versões:
 
-![](//versoes_diferentes_na_minha_release%20%281%29%20%281%29.png)
+![](/shared/versoes_diferentes_na_minha_release%20%281%29%20%281%29.png)
 
 Sendo assim, a lógica de redirecionamento utilizando o **`x-circle-id`**será:
 
 1. O usuário envia no header: `x-circle-id="Círculo QA"`. Nesse círculo, a chamada será redirecionada para a **versão X** do serviço **Aplicação A** e a **versão Y** do serviço **Aplicação B**. 
 2. O usuário envia no header: `x-circle-id=”Circulo Dev”`. Nesse círculo, a chamada será redirecionada para a **versão Z** do serviço **Aplicação A e a versão Z** do serviço **Aplicação B.**
 
-![](//versoes_diferentes_na_minha_release_ii-1-%20%281%29.png)
+![](/shared/versoes_diferentes_na_minha_release_ii-1-%20%281%29.png)
 
 ## Como rotear círculos com cluster de Kubernetes?
 
@@ -162,7 +162,7 @@ Além disso, existe uma versão default \(v1\) para usuários que não se encaix
 
 Suponha que, ao realizar a requisição para identificação do usuário, seja retornado o id 8756. Com isso, essa informação deverá ser repassada nas próximas interações com serviços através do header `x-circle-id`. A imagem abaixo retrata como o Charles utiliza internamente os recursos para rotear a release correta:
 
-![](//cluster_de_kubernetes%20%281%29%20%281%29.png)
+![](/shared/cluster_de_kubernetes%20%281%29%20%281%29.png)
 
 Ao realizar a implantação de uma versão em um círculo, o Charles realiza todas as configurações para que o roteamento seja feito da maneira correta. Para entender melhor como ele acontece, vamos utilizar um cenário onde uma requisição vem de um serviço fora da stack, como mostra na figura acima.
 

@@ -1,12 +1,14 @@
 ---
 title: Installing via Single File
 weight: 6
+description: >-
+  In this section, you will find how to install Charles via single file.
 ---
 
 ---
 
 {{% alert color="info" %}}
-Before proceeding, make sure that all the [**requirements**](.././#requirements) are properly installed.
+Before proceeding, make sure that all the [**requirements**](/get-started/installing-charles/overview/) are properly installed.
 {{% /alert %}}
 
 This installation is recommended for those who never used Charles before and just want the **first contact in a testing environment**, without looking for scalability or security.
@@ -19,7 +21,7 @@ In this case, you will have to:
 ### How to install? 
 
 {{% alert color="danger" %}}
-This installation uses standard passwords that can be found in our repository. To change them, you have to choose [**helm installation**](installing-via-helm) where you can make the password change. 
+This installation uses standard passwords that can be found in our repository. To change them, you have to choose [**helm installation**](/get-started/installing-charles/installing-via-helm/) where you can make the password change. 
 {{% /alert %}}
 
 To create this structure, you have to execute the files in a configured cluster, such as minikube, microk8s, GKE, EKS, etc. The steps to be executed are:

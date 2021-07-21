@@ -13,7 +13,7 @@ O Helm Charts é um gerenciador de pacotes que permite você definir, instalar e
 No contexto do Charles, o [**Chart Template**](https://helm.sh/docs/chart_template_guide/getting_started/) é usado como uma coleção de arquivos relacionados a configurações do Kubernetes. 
 
 {{% alert color="info" %}}
-Se você não tiver configurado o **seu módulo,** [**acesse aqui**](.././). É importante lembrar que você deve cadastrar a URL no módulo.
+Se você não tiver configurado o **seu módulo,** [**veja a seção de módulos**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). É importante lembrar que você deve cadastrar a URL no módulo.
 {{% /alert %}}
 
 ## Como configurar o chart template? 
@@ -28,7 +28,7 @@ Para começar, você precisa salvar os seus templates em uma ferramenta de versi
 
 A imagem demonstra como seu diretório deve ficar:  
 
-![ Diret&#xF3;rio de chart template do circle-sample](//screen-shot-2020-08-13-at-09.16.04.png)
+![ Diret&#xF3;rio de chart template do circle-sample](/shared/screen-shot-2020-08-13-at-09.16.04.png)
 
 ### Passo 2: Configure os itens do diretório 
 

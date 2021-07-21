@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**provider you previously registered.** ](../../../get-started/defining-a-workspace/register-metrics-provider)
+The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**provider you previously registered.** ](/reference/circles/)
 
 ### **How to create?**
 
@@ -16,7 +16,7 @@ To create your metrics group, follow the next steps:
 
 1. In **add metrics group**, type the name you want for your group and click on **add group**: 
 
-![](//criacaogroup%20%281%29.gif)
+![](/shared/criacaogroup%20%281%29.gif)
 
 After you have created your group, now you are able to register your metrics.
 
@@ -28,13 +28,13 @@ After you have created your group, now you are able to register your metrics.
 
 See the example below: 
 
-![](//metric+filter%20%281%29.gif)
+![](/shared/metric+filter%20%281%29.gif)
 
 5.  After that, define a **Threshold** to establish a limit to your metric. 
 
 For example, if you want to know if your application hits 50 errors, just customize the **threshold** and you will be notified when you hit this metric. 
 
-![](//threshold%20%281%29.gif)
+![](/shared/threshold%20%281%29.gif)
 
 {{% alert color="success" %}}
 Done! You have registered your metrics group.
@@ -42,7 +42,7 @@ Done! You have registered your metrics group.
 
 Now, you can follow up the result with graphics and the available information, as you can see below: 
 
-![](//graficos%20%281%29.gif)
+![](/shared/graficos%20%281%29.gif)
 
 ### **Metrics group: Advanced**
 
@@ -50,4 +50,4 @@ There is an **advanced** function inside the metrics group, you can customize yo
 
 See the example below: 
 
-![](//advanced%20%281%29.png)
+![](/shared/advanced%20%281%29.png)

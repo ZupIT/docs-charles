@@ -1,7 +1,7 @@
 ---
 title: Defining the Identity Manager
 weight: 19
-description: You will find information about Identity Manager
+description: In this section, you will find information about Identity Manager.
 ---
 
 ---
@@ -16,7 +16,7 @@ When a user access Charles, it is verified which manager was configured during t
 
 In the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if a customized IDM has been configurated, for example, Google, the user will be redirected to Google's page to proceed with the authentication. If this is not the scenario, Charles' authentication screen is returned to continue the flow.
 
-![](//untitled-diagram-1-.png)
+![](/shared/untitled-diagram-1-.png)
 
 ### Why configure an IDM? 
 
@@ -28,7 +28,7 @@ On Charles default installation, it already has Keycloak that it is used to mana
 
 ### External IDM 
 
-In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**reference section.**](../../../reference/identity-manager)
+In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**reference section**](../../../reference/identity-manager).
 
 {{% alert color="info" %}}
 There are some blocked flows when using an external IDM, see below:

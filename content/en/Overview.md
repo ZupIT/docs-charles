@@ -2,7 +2,7 @@
 title: Overview
 weight: 1
 description: >-
-  In this section, we will help you find all the basic information about
+  In this section, you will find all the basic information about
   Charles.
 ---
 
@@ -13,7 +13,7 @@ description: >-
 CharlesCD is an open-source tool that makes deployments more agile, continuous, and safe, which allows development teams to perform hypothesis validations with a specific group of users, simultaneously.
 
 {{% alert color="warning" %}}
-The product brings a new concept to the community: **the** **deployment in circles of users on Kubernetes clusters**.
+The product brings a new concept to the community: **the deployment in circles of users on Kubernetes clusters**.
 {{% /alert %}}
 
 This kind of deployment makes it possible to create a segment with your clients' specific characteristics and, at the same time, submit several versions of the same application to test this circle of users.
@@ -41,18 +41,18 @@ The methodology implemented by Charles brings a lot of advantages such as:
 
 In order to user Charles, it is necessary to fulfill some requirements: 
 
-1. **Installation:** see what you need [**here**](get-started/installing-charles/#requirements).
+1. **Installation:** see what you need [**in the requirements section**](/get-started/installing-charles/overview/).
 2. To make the tool work properly, you will need: 
 
-* A [**Registry**](get-started/defining-a-workspace/docker-registry) where the images of your application are stored.
+* A [**Registry**](/get-started/defining-a-workspace/docker-registry/) where the images of your application are stored.
 * Define a **CI flow.** It is expected that this flow is active through a trigger, for example, a branch name that has a defined prefix. Besides that, the pipeline must build the application's image and upload it to the registry mentioned before. 
-* Prepare the [**Helm template**](get-started/creating-your-first-module/how-to-configure-chart-template#what-is-helm) of your applications. This is important, a configured CD through Charles will need this information to make the deployments of your application. 
+* Prepare the [**Helm template**](/get-started/creating-your-first-module/how-to-configure-chart-template/) of your applications. This is important, a configured CD through Charles will need this information to make the deployments of your application. 
 
 ## **System architecture**
 
 The platform was built using a microservice approach, and it has the following modules:
 
-![](//arquitetura-charles-0.6.0.jpg)
+![](/shared/arquitetura-charles-0.6.0.jpg)
 
 * `charlescd-ui:`  mirrors on front-end the workspace configuration, users, modules, hypothesis and boards. It is the platform graphical interface.  
 * `charles-moove:` manages workspaces, users, modules, hypothesis and boards. It is the whole platform structure.   
