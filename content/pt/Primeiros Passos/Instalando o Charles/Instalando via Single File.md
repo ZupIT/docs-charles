@@ -7,20 +7,20 @@ description: 'Nesta seção, você encontra como instalar o Charles via Single F
 ---
 
 {{% alert color="info" %}}
-Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](../.././#pre-requisitos) estão devidamente instalados.
+Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](/pt/primeiros-passos/instalando-o-charles/visao-geral/) estão devidamente instalados.
 {{% /alert %}}
 
 Esta é a instalação mais recomendada para quem nunca usou o CharlesCD e já quer ter o **primeiro contato em um ambiente de testes,** sem olhar ainda para escalabilidade ou segurança.
 
 Neste caso, você irá utilizar: 
 
-* um arquivo **yaml** com todos os [**componentes**](.././#componentes);
+* um arquivo **yaml** com todos os [**componentes**](/pt/primeiros-passos/instalando-o-charles/visao-geral/);
 * um **Load Balancer** pré-configurado. 
 
 ### Como instalar?
 
 {{% alert color="danger" %}}
-Esta instalação utiliza senhas padrões que podem ser encontradas no nosso repositório. Para trocá-las, opte pela [**instalação via helm**](instalando-via-helm) onde você pode realizar a troca das senhas.
+Esta instalação utiliza senhas padrões que podem ser encontradas no nosso repositório. Para trocá-las, opte pela [**instalação via helm**](/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/) onde você pode realizar a troca das senhas.
 {{% /alert %}}
 
 Para criar esta estrutura, basta executar os arquivos em algum cluster pré-configurado, como Minikube, GKE, EKS, etc. Os passos a serem executados são estes:

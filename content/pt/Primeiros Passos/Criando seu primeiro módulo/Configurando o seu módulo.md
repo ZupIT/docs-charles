@@ -8,11 +8,11 @@ description: Essa seção descreve como utilizar a lib de propagar o header "X-C
 
 ## Por que configurar? 
 
-A configuração do módulo é necessária porque, ao trabalhar em cenários com vários microsserviços, você precisa garantir que ocorra a propagação de header `X-Circle-Id` requirida para garantir o [**roteamento das versões corretas**](../../../../referencia/circulo#como-integrar-circulos-com-servicos). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microsserviços que fazem parte do seu teste de hipótese.
+A configuração do módulo é necessária porque, ao trabalhar em cenários com vários microsserviços, você precisa garantir que ocorra a propagação de header `X-Circle-Id` requirida para garantir o [**roteamento das versões corretas**](/pt/referência/circle-matcher/). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microsserviços que fazem parte do seu teste de hipótese.
 
 Por exemplo, quando você testa uma feature entre microsserviços que tenham integrações em um fluxo de abertura de conta, é necessário garantir que o usuário irá bater em todas as versões corretas que estão no teste de hipótese criado para esse fluxo.
 
-Essa garantia é feita por uma biblioteca de propagação do header X-Circle-Id, que faz com que o [**id do círculo identificado pelo `circle-matcher`**](../../../referencia/circle-matcher#identificacao-de-circulos-atraves-da-api) seja repassado entre todas as requisições dentro da malha de microsserviços, garantindo que os usuários serão redirecionados para a versão correta do seu teste de hipótese.
+Essa garantia é feita por uma biblioteca de propagação do header X-Circle-Id, que faz com que o [**id do círculo identificado pelo `circle-matcher`**](/pt/referência/circle-matcher/) seja repassado entre todas as requisições dentro da malha de microsserviços, garantindo que os usuários serão redirecionados para a versão correta do seu teste de hipótese.
 
 {{% alert color="info" %}}
 Caso tenha microsserviços dentro deste fluxo que não fazem parte do seu teste, o valor do círculo será repassado só que a sua requisição cairá em mar aberto, pois não há nenhuma versão destinada para aquele círculo. 
@@ -22,7 +22,7 @@ Caso tenha microsserviços dentro deste fluxo que não fazem parte do seu teste,
 
 Veja abaixo: 
 
-![](//header-propagation-ptbr-v2.png)
+![](/shared/header-propagation-ptbr-v2.png)
 
 > 1. Ao realizar a chamada de um microsserviço, antes é obtido através do módulo `circle-matcher`o id do círculo que o usuário pertence.
 > 2. O id é inserido no header de todas as próximas requisições com a chave `X-Circle-Id`.
@@ -44,5 +44,5 @@ Para usá-las, você precisa adicioná-las a sua aplicação:
 * [**Lib para .NET**](https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20)
 
 {{% alert color="info" %}}
-Para o **Node.js** já existe uma lib e você pode [**encontrar** **aqui**](https://www.npmjs.com/package/hpropagate). 
+Para o **Node.js** já existe uma lib e você pode [**encontrar aqui**](https://www.npmjs.com/package/hpropagate). 
 {{% /alert %}}

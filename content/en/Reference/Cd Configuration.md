@@ -8,7 +8,7 @@ description: 'In this section, you''ll find how to make the CD configuration'
 
 ## Why do you have to configure the CD? 
 
-This configuration is necessary to point to Charles which CD tool you use to make deploys in your cluster. It is also important to mention that you have to provide your git repository token that contains the [**helm templates.** ](../../../get-started/creating-your-first-module/how-to-configure-chart-template#what-is-helm)
+This configuration is necessary to point to Charles which CD tool you use to make deploys in your cluster. It is also important to mention that you have to provide your git repository token that contains the [**helm templates.** ](/get-started/creating-your-first-module/how-to-configure-chart-template/)
 
 At this moment, Charles is able to use CharlesCD \(Octopipe\). 
 
@@ -38,7 +38,7 @@ Fill the following fields:
 1. **Name:** configuration name that it will be created; 
 2. **Namespace:** defines the namespace that will be used on Kubernetes cluster deploys. You have to create your namespace, once Charles does not do it;
 3. **Git provider**: defines the git provider to be used \(**GitHub** or **GitLab**\);
-4. **Git token:** insert an authentication token that has access to the git repository where your [**Helm templates**](../../get-started/creating-your-first-module/how-to-configure-chart-template) are stored \(they will be used during the deployment of your [**application**](../../get-started/creating-your-first-module/)\). If your Git Provider is **GitHub**, "_repo_" permission is required. Otherwise, configure the accesses in **GitLab**: "API" and "_read\_repository_".
+4. **Git token:** insert an authentication token that has access to the git repository where your [**Helm templates**](/get-started/creating-your-first-module/how-to-configure-chart-template/) are stored \(they will be used during the deployment of your [**application**](/get-started/creating-your-first-module/overview/)\). If your Git Provider is **GitHub**, "_repo_" permission is required. Otherwise, configure the accesses in **GitLab**: "API" and "_read\_repository_".
 5. Select a **manager** to associate with the CD configuration. The options are **Default**, **EKS,** and **Others.**
 
 ### **Default**

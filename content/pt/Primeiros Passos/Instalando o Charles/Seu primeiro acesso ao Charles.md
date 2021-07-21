@@ -38,7 +38,7 @@ kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-Para mais informações de como mudar o host do seu sistema, [**acesse aqui**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
+Para mais informações de como mudar o host do seu sistema, [**acesse o tutorial**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
 {{% /alert %}}
 
 **Passo 3:** Por fim, digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.
@@ -119,7 +119,7 @@ microk8s.kubectl get svc -n charles
 ```
 
 {{% alert color="info" %}}
-Para mais informações sobre como mudar o **host file**, [**acesse aqui**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
+Para mais informações sobre como mudar o **host file**, [**acesse o tutorial**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/). 
 {{% /alert %}}
 
 **Passo 3:** Digite no seu navegador **http://charles.info.example** e a aplicação estará disponível.
@@ -137,7 +137,7 @@ kubectl get svc -n charles
 // get external IP value
 ```
 
-**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**veja aqui como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
+**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**veja como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
 
 ```text
 <IP-EXTERNAL-CHARLES>       charles.info.example

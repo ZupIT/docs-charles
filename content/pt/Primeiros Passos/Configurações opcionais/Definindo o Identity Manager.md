@@ -18,7 +18,7 @@ Quando o usuário acessa o Charles, é verificado qual gerenciador responsável 
 
 No exemplo da imagem abaixo, é ilustrado um fluxo onde se faz a verificação de qual foi a configuração feita para gerenciar os usuários. Nesse caso, quando o usuário tenta acessar o Charles e ainda não está autenticado, se tiver sido configurado um IDM personalizado, como o Google, por exemplo, o usuário é redirecionado para a própria página do Google para fazer a autenticação. Caso contrário, a tela de autenticação do Charles é retornada para dar sequência ao fluxo.
 
-![](//untitled-diagram-1-.png)
+![](/shared/untitled-diagram-1-.png)
 
 ### Porque configurar um IDM?
 
@@ -30,7 +30,7 @@ Na instalação padrão do Charles, já existe o **Keycloak** que é utilizado p
 
 ### IDM Externa
 
-Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na [**referência sobre IDM**](../../../referencia/identity-manager).
+Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na [**referência sobre IDM**](/pt/referência/identity-manager/).
 
 {{% alert color="info" %}}
 Há alguns fluxos bloqueados quando um IDM externo é utilizado, veja abaixo: 

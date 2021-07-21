@@ -6,23 +6,23 @@ description: 'Nesta seção, você encontra detalhes sobre como funciona o Circl
 
 ---
 
-O Circle Matcher é um recurso que permite você validar se os seus [**círculos**](circulo) estão com segmentações coerentes. Você também pode utilizá-lo em suas aplicações para determinar em qual círculo os seus usuários se encaixam.
+O Circle Matcher é um recurso que permite você validar se os seus [**círculos**](/pt/referência/círculo/) estão com segmentações coerentes. Você também pode utilizá-lo em suas aplicações para determinar em qual círculo os seus usuários se encaixam.
 
 {{% alert color="info" %}}
 Uma boa prática é realizar essa identificação sempre que o usuário faz login na aplicação. Porém, isso pode ser alterado de acordo com a necessidade da sua regra de negócio.
 {{% /alert %}}
 
-Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace.**](../primeiros-passos/definindo-workspace/circle-matcher)
+Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace.**](/pt/referência/circle-matcher/)
 
 ### Identificando círculos através do CharlesCD
 
 Ao utilizar a interface é possível perceber que existem duas formas de realizar a identificação dos círculos. Para isto, acesse o menu **Circles** dentro de um **workspace** e selecione o ícone indicado abaixo:
 
-![](//image%20%2816%29.png)
+![](/shared/image%20%2816%29.png)
 
 Você pode realizar esta validação adicionando manualmente chaves e valores que definem as características de um usuário de teste. E, com base nisso, ao executar o **Send**, você receberá todos os círculos que ele se encaixa.  
 
-![](//circle_matcher.gif)
+![](/shared/circle_matcher.gif)
 
 {{% alert color="warning" %}}
 Se você passar informações que estejam fora das condições lógicas configuradas nos círculos, o sistema irá retornar que aquele usuário está no círculo _Default_, ou seja, na versão padrão da sua aplicação.
@@ -34,38 +34,26 @@ Você pode integrar nas suas aplicações o recurso **Identify** do módulo [`ci
 
 Por exemplo, dada a utilização dos seguintes parâmetros ao segmentar:
 
-![](//image%20%2817%29.png)
+![](/shared/image%20%2817%29.png)
 
 Ao realizar a requisição de identificação com as seguintes informações, círculos compatíveis serão retornados.
 
-{% api-method method="post" host="https://" path="api.charlescd-circle-matcher.com/identify" %}}
-{% api-method-summary %}}
-Identify
-{% endapi-method-summary %}}
 
-{% api-method-description %}}
-Método utilizado para identificar círculos, baseado em características de um usuário.
-{% endapi-method-description %}}
+#### `POST Identify` `https://api.charlescd-circle-matcher.com/identify` 
 
-{% api-method-spec %}}
-{% api-method-request %}}
-{% api-method-body-parameters %}}
-{% api-method-parameter name="requestData" type="object" required=true %}}
-{ "state": "NY", "profession": "Lawyer", "age": 46, "city": "Stony Brook"
-{% endapi-method-parameter %}}
+Esta requisição implanta a release composta criada anteriormente em um círculo.
 
-{% api-method-parameter name="workspaceId" type="string" required=true %}}
-UUID
-{% endapi-method-parameter %}}
-{% endapi-method-body-parameters %}}
-{% endapi-method-request %}}
+### **Request**
 
-{% api-method-response %}}
-{% api-method-response-example httpCode=200 %}}
-{% api-method-response-example-description %}}
+**Body Parameters**: All required:
 
-{% endapi-method-response-example-description %}}
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| requestData | object | { "state": "NY", "profession": "Lawyer", "age": 46, "city": "Stony Brook"  |
+| workspaceId | String | UUID |
 
+
+### **Response**
 ```text
 {
   "circles": [
@@ -80,47 +68,31 @@ UUID
   ]
 }
 ```
-{% endapi-method-response-example %}}
-{% endapi-method-response %}}
-{% endapi-method-spec %}}
-{% endapi-method %}}
+
 
 Como nesse exemplo existem círculos correspondentes com as informações sobre o usuário, o **`charlescd-circle-matcher`**retorna uma lista com eles. Aqui, dois círculos se encaixaram: NY Lawyers e Stony Brook’s Citizens. A ordem de retorno dos círculos é feita pela data de criação, portanto o círculo mais recente será o primeiro da lista.
 
 O corpo da requisição é totalmente flexível, porém vale lembrar que as chaves devem ter a mesma nomenclatura definida nas regras de segmentação do círculo. Veja no caso a seguir:
 
-![](//image%20%2820%29.png)
+![](/shared/circle-matcher-stony-brooks-citizens.png)
 
 O círculo **Stony Brook’s Citizens** foi criado para a identificar usuários que tenham como característica a chave **`city`** e o exato valor **`London`**. Sendo assim, ele não estará na listagem ao realizar uma requisição para o **`Identify`** caso seja informado o corpo da requisição como no exemplo abaixo:
 
-{% api-method method="post" host="https://" path="api.charlescd-circle-matcher.com/identify" %}}
-{% api-method-summary %}}
-Identify
-{% endapi-method-summary %}}
+#### `POST Identify` `https://api.charlescd-circle-matcher.com/identify` 
 
-{% api-method-description %}}
 Método utilizado para identificar círculos, baseado em características de um usuário.
-{% endapi-method-description %}}
 
-{% api-method-spec %}}
-{% api-method-request %}}
-{% api-method-body-parameters %}}
-{% api-method-parameter name="requestData" type="object" required=true %}}
-{ "age": 46, "city": "London" }
-{% endapi-method-parameter %}}
+### **Request**
 
-{% api-method-parameter name="workspaceId" type="string" required=true %}}
-UUID
-{% endapi-method-parameter %}}
-{% endapi-method-body-parameters %}}
-{% endapi-method-request %}}
+**Body Parameters**: All required:
 
-{% api-method-response %}}
-{% api-method-response-example httpCode=200 %}}
-{% api-method-response-example-description %}}
-Listagem de todos os círculos aos quais o usuário pertence
-{% endapi-method-response-example-description %}}
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| requestData | object | { "age": 46, "city": "London" } |
+| workspaceId | String | UUID |
 
+
+### **Response**
 ```
 {
   "circles": [
@@ -131,7 +103,3 @@ Listagem de todos os círculos aos quais o usuário pertence
   ]
 }
 ```
-{% endapi-method-response-example %}}
-{% endapi-method-response %}}
-{% endapi-method-spec %}}
-{% endapi-method %}}

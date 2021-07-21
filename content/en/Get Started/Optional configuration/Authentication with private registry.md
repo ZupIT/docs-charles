@@ -1,6 +1,9 @@
 ---
 title: Authentication with private registry
 weight: 15
+description: >-
+  In this section, you will find more information about private registry.
+
 ---
 
 ---
@@ -14,7 +17,7 @@ Authentication is required if you use a private registry. This way, the cluster 
 Kubernetes cluster uses a type of docker-registry **Secret** to authenticate the registry container. You have to generate it. 
 
 {{% alert color="info" %}}
- For more information on how to generate the Secret that will be applied in your cluster, [**access Kubernetes documentation**](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/). 
+ For more information on how to generate the Secret that will be applied in your cluster, [**access Kubernetes' documentation**](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/). 
 {{% /alert %}}
 
 Once you generate the secret, it will look like this:

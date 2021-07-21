@@ -1,18 +1,18 @@
 ---
 title: Configuring your module
 weight: 39
-description: This section describes how to use lib to propagate header
+description: In this section, you will find how to use lib to propagate header.
 ---
 
 ---
 
 ## Why configure it? 
 
-The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to [**propagate the header `X-Circle-Id` that ensures the requests are being redirected to the right version of your application**](../../../../reference/circles#how-to-integrate-circle-with-services). This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.
+The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to [**propagate the header `X-Circle-Id` that ensures the requests are being redirected to the right version of your application**](/reference/circles/). This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.
 
 For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow. 
 
-This process is made by a library to propagate the header `X-Circle-Id`, which makes the circle id pass all the requests inside the microservice mesh, making sure that you get to the [**correct version of your hypothesis test**](../../../reference/circle-matcher#identify). 
+This process is made by a library to propagate the header `X-Circle-Id`, which makes the circle id pass all the requests inside the microservice mesh, making sure that you get to the [**correct version of your hypothesis test**](/reference/circle-matcher/). 
 
 {{% alert color="info" %}}
 If there is a microservice inside this flow that doesn't make part of your test, the circle value will be passed, but your request will fall into the open sea because there isn't any version for that circle. 
@@ -22,7 +22,7 @@ If there is a microservice inside this flow that doesn't make part of your test,
 
 See below: 
 
-![](//header-propagation-v2-en.png)
+![](/shared/header-propagation-v2-en.png)
 
 > 1. When you make a microservice request, `circle matcher` gets the circle id for this specific request. 
 > 2. The id is inserted in the header with the `X-Circle-Id` key.
@@ -44,5 +44,5 @@ To use them, you need to add them to your application:
 * [**Lib para .NET**](https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20)
 
 {{% alert color="info" %}}
-For **Node.js** there is already a lib and [**you can find it here**](https://www.npmjs.com/package/hpropagate) 
+For **Node.js** there is already a lib and [**check out in the documentation**](https://www.npmjs.com/package/hpropagate) 
 {{% /alert %}}
