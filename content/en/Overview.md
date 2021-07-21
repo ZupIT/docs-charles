@@ -2,7 +2,7 @@
 title: Overview
 weight: 1
 description: >-
-  In this section, we will help you find all the basic information about
+  In this section, you will find all the basic information about
   Charles.
 ---
 
@@ -39,7 +39,7 @@ The methodology implemented by Charles brings a lot of advantages such as:
 
 The platform was built using a microservice approach, and it has the following modules:
 
-![Charles architecture](/0.2.x/shared/arquitetura-charles-nova%20%283%29%20%281%29%20%281%29%20%281%29.png)
+![Charles architecture](/shared/arquitetura-charles-nova%20%283%29%20%281%29%20%281%29%20%281%29.png)
 
 * `charlescd-ui:`  mirrors on front-end the workspace configuration, users, modules, hypothesis and boards. It is the platform graphical interface.  
 * `charles-moove:` manages workspaces, users, modules, hypothesis and boards. It is the whole platform structure.   

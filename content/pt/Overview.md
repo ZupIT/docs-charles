@@ -39,7 +39,7 @@ A metodologia implementada pelo Charles traz várias vantagens, como:
 
 A plataforma foi construída utilizando a abordagem de microsserviços e possui os seguintes módulos:
 
-![](//arquitetura-charles-nova.png)
+![](/shared/arquitetura-charles-nova.png)
 
 * `charlescd-ui:` responsável por prover uma interface de fácil usabilidade para todas as features fornecida pelo CharlesCD, no intuito de simplificar testes de hipóteses e _circle deployment_.
 

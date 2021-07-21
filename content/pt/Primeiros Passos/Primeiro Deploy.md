@@ -9,10 +9,10 @@ description: >-
 ---
 
 {{% alert color="info" %}}
-Após criar o seu primeiro [**módulo** ](criando-modulos)e cadastrar as [**credenciais do seu cluster**,](definindo-workspace/configurando-cluster) você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](../../../referencia/release) e disponibilizá-la no cluster configurado.
+Após criar o seu primeiro [**módulo**](/pt/primeiros-passos/criando-seu-primeiro-módulo/) e cadastrar as [**credenciais do seu cluster**,](/pt/primeiros-passos/definindo-um-workspace/ambiente-de-deploy/) você completou todos os passos de configuração necessários para a realização do seu primeiro deploy. Agora, é necessário criar uma [**release**](/pt/referência/release/) e disponibilizá-la no cluster configurado.
 {{% /alert %}}
 
-No CharlesCD, oferecemos duas alternativas para a criação de uma release: utilizar o fluxo de um quadro de [**hipótese**](../../referencia/hipotese) ou criá-la a partir de imagens docker já disponíveis no [**registry** ](definindo-workspace/docker-registry)configurado. 
+No CharlesCD, oferecemos duas alternativas para a criação de uma release: utilizar o fluxo de um quadro de [**hipótese**](/pt/referência/hipótese/) ou criá-la a partir de imagens docker já disponíveis no [**registry** ](/pt/primeiros-passos/definindo-um-workspace/docker-registry/) configurado. 
 
 Nesta seção de passos iremos focar a primeira abordagem:
 
@@ -28,9 +28,9 @@ Nesta seção de passos iremos focar a primeira abordagem:
 
 Depois que você realizou o processo acima, sua release está pronta para o deploy. No exemplo abaixo, é a release em destaque: 
 
-![](//chrome-capture-4-.gif)
+![](/shared/chrome-capture-4-.gif)
 
-Agora siga os seguintes passos para o deploy em[ **mar aberto:**](../principais-conceitos#mar-aberto-default)
+Agora siga os seguintes passos para o deploy em[ **mar aberto:**](/pt/principais-conceitos/)
 
 1. Na tela inicial do Charles, clique em **Circles**;
 2. Clique no círculo **Default** \(Este representa o mar aberto\);
@@ -40,4 +40,4 @@ Agora siga os seguintes passos para o deploy em[ **mar aberto:**](../principais-
 
 Depois disso, o Charles se encarregará de disponibilizar a release criada no cluster configurado em mar aberto. O status do deploy será exibido e atualizado conforme o progresso.
 
-![Exemplo de deploy em mar aberto](//primeiro-deploy.gif)
+![Exemplo de deploy em mar aberto](/shared/primeiro-deploy.gif)

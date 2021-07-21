@@ -1,6 +1,8 @@
 ---
 title: Git credentials
 weight: 12
+description: >-
+  In this section, you will find more information about Git credentials. 
 ---
 
 ---

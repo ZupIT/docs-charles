@@ -1,6 +1,8 @@
 ---
 title: Hypothesis
 weight: 30
+description: >-
+  In this section, you will find more information about hypothesis. 
 ---
 
 ---
@@ -11,7 +13,7 @@ Its possible that one hypothesis may have one or more features that are directly
 
 Imagine a situation in which two teams work on the same product and have different ideas to raise the client conversion rate. Team A suggests adding a button on the page, meanwhile Team B believes that include a ‘selling suggestion’ box will be more assertive.
 
-![](//hypothesis%20%281%29.png)
+![](/shared/hypothesis%20%281%29.png)
 
 Charles makes it possible for both teams to create different hypothesis, so each team is able to lead the development through a board that is automatically created and then they also can independently select different users circles to validate the results of each hypothesis.
 
@@ -24,7 +26,7 @@ There are two types of cards:
 1. **Action:** cards that involve coding like the new features implementation or fixes on the project. 
 2. **Feature:** cards that indicate an action to be done, for example, perform a field test with the users. 
 
-![](//ref-hipoteses2%20%282%29.png)
+![](/shared/ref-hipoteses2%20%282%29.png)
 
 When a feature card is added, Charles creates a new git branch for the client that is directly stored in the used SCM, Git or Bitbucket, for example.
 
@@ -45,6 +47,6 @@ After this process is finished and the codes are mixed, a new release ramificati
 
 * **Releases Deployed:** the cards on this column show where the hypothesis builds are implemented.
 
-![](//ref-hipoteses%20%281%29%20%281%29.png)
+![](/shared/ref-hipoteses%20%281%29%20%281%29.png)
 
 When a hypothesis is moved to the **Ready to Go** column, you indicate to the system that a specific card can go through a **Generate Release Candidate** process, which means the hypothesis will transform into a branch release of the master release on your git.

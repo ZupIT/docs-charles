@@ -1,6 +1,8 @@
 ---
 title: About Charles
 weight: 42
+description: >-
+  In this section, you will find details abour Charles. 
 ---
 
 ---
@@ -30,4 +32,4 @@ The architecture is structured on microservices whose modules are:
 * `charles-butler`: orchestrates and manages releases and deploys. 
 * `charles-circle-matcher`: manages all created circles, and also points out which circle the user belongs based on their characteristics.
 
-![Charles&apos; architecture](//arquitetura-charles-nova%20%282%29%20%281%29.png)
+![Charles&apos; architecture](/shared/arquitetura-charles-nova%20%282%29%20%281%29.png)

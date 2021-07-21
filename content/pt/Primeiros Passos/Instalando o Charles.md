@@ -1,12 +1,15 @@
 ---
 title: Instalando o Charles
 weight: 4
+description: >-
+  Nesta seção, você vai encontrar mais informações como instalar o Charles.
+---
 ---
 
 ---
 
 {{% alert color="info" %}}
-O processo de instalação foi criado considerando alguns casos de uso. Logo, para cada um deles, você encontrará um tutorial específico. Se for necessário instalar o CharlesCD com algumas customizações, sugerimos conferir a seção de [**instalação com helm charts**. ](instalando-charles#caso-2-instalacao-com-helm-charts)
+O processo de instalação foi criado considerando alguns casos de uso. Logo, para cada um deles, você encontrará um tutorial específico. Se for necessário instalar o CharlesCD com algumas customizações, sugerimos conferir a seção de [**instalação com helm charts**](/pt/primeiros-passos/instalando-o-charles/).
 {{% /alert %}}
 
 ## Introdução
@@ -15,7 +18,7 @@ O processo de instalação foi criado considerando alguns casos de uso. Logo, pa
 
 A instalação do CharlesCD consiste nos seguintes **componentes**:
 
-1. Módulos específicos da[ **arquitetura do Charles.**](../#arquitetura-do-sistema) 
+1. Módulos específicos da[ **arquitetura do Charles.**](/pt/overview/) 
 2. **Keycloak**, usado para autenticação e autorização no projeto.
 
 3. Um **banco PostgreSQL** que servirá os módulos de back-end \(`charlescd-moove`, `charlescd-butler` e `charlescd-villager`\) e o Keycloak. 
@@ -29,7 +32,7 @@ Atualmente, o Charles tem suporte para duas plataformas de Continuous Delivery \
 * **Octopipe:** plataforma nativa, criada pela equipe do CharlesCD para possibilitar uma instalação sem configuração prévia.
 
 {{% alert color="info" %}}
-Você pode saber mais sobre a **configuração do Spinnaker e do Octopipe** na seção [**Configuração de CD**.](../../referencia/configuracao-cd)
+Você pode saber mais sobre a **configuração do Spinnaker e do Octopipe** na seção [**Configuração de CD**](/pt/referência/configuração-de-cd/).
 {{% /alert %}}
 
 ## Principais casos de instalação 
@@ -38,13 +41,13 @@ Você pode saber mais sobre a **configuração do Spinnaker e do Octopipe** na s
 **No primeiro acesso, independente do método de instalação, o usuário padrão de administrador é charlesadmin@zup.com.br e a senha 123mudar.**
 {{% /alert %}}
 
-### Caso 1: Instalação rápida 
+### **Caso 1: Instalação rápida**
 
 Esta é a instalação mais recomendada para quem nunca usou o CharlesCD antes e já quer ter o **primeiro contato em um ambiente de testes,** sem olhar ainda para escalabilidade ou segurança.
 
 Neste caso, você irá utilizar: 
 
-* um arquivo _yaml_ com todos os [**componentes**](instalando-charles#componentes);
+* um arquivo _yaml_ com todos os [**componentes**](/pt/primeiros-passos/instalando-o-charles/);
 * um _Load Balancer_ pré-configurado. 
 
 Para criar esta estrutura, basta executar os arquivos em algum cluster pré-configurado, como minikube, GKE, EKS, etc. Os passos a serem executados são estes:
@@ -113,7 +116,7 @@ Como essa instalação serve **apenas para o uso em ambiente de testes**, não r
 
 ### 
 
-### Caso 2: Instalação com helm charts
+###  **Caso 2: Instalação com helm charts**
 
 Esta é a instalação indicada para quem possui uma infraestrutura já montada devido a um ambiente mais complexo ou possua algumas limitações de segurança e/ou escalabilidade, exigindo uma **customização mais completa da instalação** do CharlesCD.
 

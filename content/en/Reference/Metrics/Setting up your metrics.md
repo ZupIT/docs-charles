@@ -1,6 +1,8 @@
 ---
 title: Setting up your metrics
 weight: 36
+description: >-
+  In this section, you will find more information about how to set up your metrics using Charles.
 ---
 
 ---
@@ -46,7 +48,7 @@ $ istioctl manifest apply -f telemetry.yaml
 ```
 
 {{% alert color="warning" %}}
-To run the command above, it is necessary to have configured the **istioctl**, if you haven't done that, please click [**here**](https://istio.io/docs/setup/getting-started/#download).
+To run the command above, it is necessary to have configured the **istioctl**, if you haven't done that,[**check out Istio documentation**](https://istio.io/docs/setup/getting-started/#download).
 {{% /alert %}}
 
 To show the metrics related to Charles, you have to run the command:

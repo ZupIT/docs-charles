@@ -1,6 +1,8 @@
 ---
 title: Hipótese
 weight: 30
+description: >-
+  Nesta seção, você encontra informações sobre hipóteses.
 ---
 
 ---
@@ -11,7 +13,7 @@ As hipóteses são as alternativas cadastradas na plataforma para resolver algum
 
 Imagine uma situação na qual duas equipes trabalham no mesmo produto e têm ideias diferentes para aumentar a taxa de conversão de clientes. A equipe A sugere adicionar um botão na página, enquanto a equipe B acredita que incluir um box de "_sugestão de venda_" será mais assertivo.
 
-![](//hipoteses-1-.png)
+![](/shared/hipoteses-1-.png)
 
 Dessa forma, o Charles possibilita que as duas equipes criem duas hipóteses distintas. Assim, cada uma, poderá conduzir o desenvolvimento através de um board gerado automaticamente. A partir disso, cada equipe poderá selecionar de forma independente, os círculos com usuários distintos para validar os resultados de cada uma das hipóteses.
 
@@ -24,7 +26,7 @@ Esses cartões podem ser de dois tipos:
 1. **Action:** são os cartões que envolvem codificação, como a implementação de novas funcionalidades \(features\) ou ajustes em partes do projeto. 
 2. **Feature:** são os cartões que indicam uma ação a ser feita, como por exemplo, realizar um teste de campo com os usuários. 
 
-![](//ref-hipoteses2%20%281%29.png)
+![](/shared/ref-hipoteses2%20%281%29.png)
 
 Quando um cartão de feature é adicionado, o Charles cria uma nova branch no git do cliente que, por sua vez, é armazenada diretamente no SCM utilizado, seja ele Git ou Bitbucket.
 
@@ -45,6 +47,6 @@ Depois que esse processo termina e todos os códigos são mesclados, uma nova ra
 
 * **Releases Deployed:** os cartões nessa coluna mostram de onde estão implantados os builds da hipótese.
 
-![](//ref-hipoteses.png)
+![](/shared/ref-hipoteses.png)
 
 Quando uma hipótese é movida para coluna **Ready To Go**, você indica ao sistema que aquele cartão pode passar pelo processo de **Generate Release Candidate**, ou seja, a hipótese se transformará em uma release branch da release master presente no seu git.
