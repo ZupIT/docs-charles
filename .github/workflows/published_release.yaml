@@ -1,4 +1,4 @@
-name: Official Doc
+name: Published Release
 
 on:
   push:
