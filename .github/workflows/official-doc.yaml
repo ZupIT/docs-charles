@@ -50,7 +50,7 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.release_tag }}
 
-      - name: Intall Dependencies
+      - name: Install Dependencies
         run: yarn
 
       - name: Build
