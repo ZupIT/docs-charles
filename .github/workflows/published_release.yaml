@@ -1,11 +1,10 @@
-name: Official Doc
+name: Published Release
 
 on:
   push:
     branches: [ release* ]
     tags:
       - "!*"
-
 
 env:
   AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}

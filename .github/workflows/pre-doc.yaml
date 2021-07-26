@@ -1,4 +1,4 @@
-name: Official Doc
+name: Pre Doc
 
 on:
   push:
@@ -120,7 +120,7 @@ jobs:
       - name: Build
         run: hugo -D --minify -b $BASE_URL/$VERSION
         env:
-          BASE_URL: https://docs.charlescd.io
+          BASE_URL: https://pre-docs.charlescd.io
           VERSION: ${{ steps.version.outputs.branch_version }}
 
       - name: remove FAQ
