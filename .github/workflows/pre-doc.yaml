@@ -2,7 +2,7 @@ name: Pre Doc
 
 on:
   push:
-    branches: [ pre-doc* ]
+    branches: [ pre-doc*, thallesfreitaszup-patch-1 ]
 
 env:
   AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DEV }}
