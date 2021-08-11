@@ -30,7 +30,7 @@ Para instalar o Charles, será necessário um ambiente com os seguintes requisit
 * [**Kubernetes**](https://kubernetes.io/docs/setup/)
 * [**Helm** ](https://helm.sh/docs/intro/install/)
 * [**Istio**](https://istio.io/archive/) \(versão &gt;= 1.7 e [_**sidecar injector habilitado**_](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#automatic-sidecar-injection) no namespace de deploy das suas aplicações\).
-* [**Prometheus**](https://prometheus.io/docs/prometheus/latest/getting_started/)**,** caso queira utilizar [**métricas**](../../referencia/metricas/)
+* [**Prometheus**](https://prometheus.io/docs/prometheus/latest/getting_started/)**,** caso queira utilizar [**métricas**](/pt/referência/métricas/visao-geral/).
 
 ## **Recursos mínimos**
 
