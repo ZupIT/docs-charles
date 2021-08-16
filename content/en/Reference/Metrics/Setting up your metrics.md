@@ -128,7 +128,7 @@ Change the **namespace** to the name where your application is deployed.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-If you want to know more about Prometheus and Kubernetes service discovery,  check out [**their documentation**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
+If you want to know more about Prometheus and Kubernetes service discovery,  check out [**the documentation**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
 {{% /alert %}}
 
 ### **Metadata**

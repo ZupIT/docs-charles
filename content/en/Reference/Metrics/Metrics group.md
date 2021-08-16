@@ -14,25 +14,25 @@ The metrics group is a functionality that allows you to register and organize an
 
 To create your metrics group, follow the next steps: 
 
-     **Step 1:**  Go to the **"Circles"** section, on the left menu and choose the circle  you want to create a new metric group;
+  **Step 1:**  Go to the **"Circles"** section, on the left menu and choose the circle  you want to create a new metric group;
 
-     **Step 2:** In **'Add metrics group'**, type the name you want for your group and click on **'Add group'**: 
+  **Step 2:** In **'Add metrics group'**, type the name you want for your group and click on **'Add group'**: 
 
 ![](/shared/criacaogroup%20%281%29.gif)
 
 Now you are able to register your metrics**:**
 
-   **Step 3**: Click on '**Add metric'**  and put the metrics name you want; 
+**Step 3**: Click on '**Add metric'**  and put the metrics name you want; 
 
-   **Step 4:** Click on **'Select a Datasource':** select your metrics Datasource already registered;
+**Step 4:** Click on **'Select a Datasource':** select your metrics Datasource already registered;
 
-  **Step 5:** Click on **Metric:**  **Choose one** and use the **Filter** option to customize with the value and the conditional you need.  Here is where your Datasource will return the metrics. 
+**Step 5:** Click on **Metric:**  **Choose one** and use the **Filter** option to customize with the value and the conditional you need.  Here is where your Datasource will return the metrics. 
 
 See the example below: 
 
 ![](/shared/metric+filter%20%281%29.gif)
 
-   **Step 6:** Define a **Threshold** to establish a limit to your metric. 
+**Step 6:** Define a **Threshold** to establish a limit to your metric. 
 
 {{% alert color="info" %}}
 **Thresholds** are predetermined limits that you can configure in Charles. It informs you when one of them reaches the goal.
