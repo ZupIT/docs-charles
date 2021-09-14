@@ -51,6 +51,12 @@ contentDir = "content/en"
 version_menu = "Versions"
 # Weight used for sorting.
 weight = 1
+
+  [[languages.en.menu.main]]
+      name = "Community"
+      weight = 20
+      url = "http://opensource.zup.com.br/"
+
 [languages.pt]
 title = "Charles C.D."
 description = "Documentação Charles C.D."
@@ -59,6 +65,11 @@ contentDir = "content/pt"
 time_format_default = "02/01/2006"
 time_format_blog = "02/01/2006"
 version_menu = "Versões"
+
+  [[languages.pt.menu.main]]
+      name = "Comunidade"
+      weight = 20
+      url = "http://opensource.zup.com.br/"
 
 [markup]
   [markup.goldmark]
@@ -71,6 +82,7 @@ version_menu = "Versões"
       style = "tango"
       # Uncomment if you want your chosen highlight style used for code blocks without a specified language
       # guessSyntax = "true"
+
 
 # Everything below this are Site Params
 
