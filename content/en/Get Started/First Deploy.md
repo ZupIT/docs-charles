@@ -36,6 +36,10 @@ After the process above, your release is ready to deploy.
 
 The [**open sea**](../../key-concepts#open-sea) deployment is where you send your application to the registered segmentation on Charles.
 
+{{% alert color="info" %}}
+Every open sea deploy is [**incremental**](#Incremental-deploy). 
+{{% /alert %}} 
+ 
 Now, follow the next steps to the [**Open Sea**](/key-concepts/) deploy:
 
 1. On Charles homepage, click on **Circles**; 
@@ -47,3 +51,24 @@ Now, follow the next steps to the [**Open Sea**](/key-concepts/) deploy:
 Finally, Charles will provide the created release on a cluster in the Open Sea. The deploy status will be shown and updated along the process.
 
 ![](/shared/first-deploy%20%281%29.gif)
+
+
+### **Incremental deploy**
+
+The incremental deployment allows you to use the previous deployments and add them to the actual one. For example, you already made a Beagle deployment and now you want to do a Ritchie one, you will see both of them in your current circle status.  
+
+{{% alert color="warning" %}}
+If you don't choose the incremental deployment (choose override release, for example) what has been deployed before in your circle will be removed and it will remain only the current deployment. 
+{{% /alert %}}
+
+To make an incremental deployment, follow the steps below:
+
+1. On Charles homepage, click on  **Circles**;
+2. Click on **Default circle**;
+3. Click on  **Incremental Deployment** on the left corner;
+4. Clique em **Search for ready releases**;
+5. Type your release name created in the previous steps  (or you can reproduce again with a new version), select, and click on **Deploy**.
+
+Check out below: 
+
+![](/shared/deploy-incremental.gif)
