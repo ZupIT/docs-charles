@@ -1,7 +1,6 @@
 name: Migration
 
-on:
- workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
   predoc_deploy_hugo:
