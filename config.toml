@@ -55,7 +55,8 @@ weight = 1
   [[languages.en.menu.main]]
       name = "Community"
       weight = 20
-      url = "http://opensource.zup.com.br/"
+      url = "http://forum.zup.com.br/"
+      
 
 [languages.pt]
 title = "Charles C.D."
@@ -69,7 +70,7 @@ version_menu = "Versões"
   [[languages.pt.menu.main]]
       name = "Comunidade"
       weight = 20
-      url = "http://opensource.zup.com.br/"
+      url = "http://forum.zup.com.br/"
 
 [markup]
   [markup.goldmark]

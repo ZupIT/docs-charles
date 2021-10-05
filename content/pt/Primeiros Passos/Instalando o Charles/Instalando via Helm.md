@@ -33,8 +33,6 @@ As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**
 Para mais detalhes, acesse os [**campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart).
 {{% /alert %}}
 
-- Para garantir que as dependências dos charts estão presentes e atualizadas com uma versão compatível, utilize dentro da pasta  **/charlescd/install/helm-chart**  o comando abaixo:  
- 
 ```text
 helm install --create-namespace -n <namespace> charlescd . -f values.yaml
 ```
