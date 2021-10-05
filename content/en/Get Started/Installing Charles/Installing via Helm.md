@@ -23,7 +23,7 @@ The passwords used by Charles are stored in the [**values.yaml**](https://github
 * CharlesApplications.moove.database.password
 * CharlesApplications.villager.database.password
 * CharlesApplications.circlematcher.redis.password
-* CharlesApplications.keycloak.keycloak.extraEnv.DB\_PASSWORD
+* CharlesApplications.keycloak.keycloak.extraEnv.DB_PASSWORD
 * CharlesApplications.postgresql.postgresqlPassword
 * CharlesApplications.redis.password
 * CharlesApplications.compass.database.password
@@ -32,19 +32,23 @@ The passwords used by Charles are stored in the [**values.yaml**](https://github
 * CharlesApplications.gate.database.password
 * CharlesApplications.compass.moove.database.password
 
-For more details, access the link mentioned before about editable fields. 
+For more details, access the  [**editable fields**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart). 
 {{% /alert %}}
 
-To install with helm charts, run the command below inside the **/charlescd/install/helm-chart** folder after you have customized the fields: 
-
+- To make sure the charts dependencies are present and updated with a compatible version, use in the **/charlescd/install/helm-chart** folder the command below:  
+ 
 ```text
-heml install --create-namespace -n <namespace> charlescd . -f values.yaml
+helm install --create-namespace -n <namespace> charlescd . -f values.yaml
+```
+
+- To install with Helm Charts,  after you have customized the fields, run the command below inside the **/charlescd/install/helm-chart** folder: 
+
+```
+helm install --create-namespace -n <namespace> charlescd . -f values.yaml
 ```
 
 {{% alert color="warning" %}}
-It's important to remember that, in case of no customization at all, by default Charles installs PostgreSQL, Redis, Keycloak, and RabbitMQ. 
-
-So, don't forget to customize the fields if you want something more manageable. 
+If you don't customize anything, Charles installs by default **PostgreSQL**, **Redis**, **Keycloak**, and **RabbitMQ**.  So, don't forget to customize the fields if you want something manageable. 
 {{% /alert %}}
 
 ### **Change the default passwords**

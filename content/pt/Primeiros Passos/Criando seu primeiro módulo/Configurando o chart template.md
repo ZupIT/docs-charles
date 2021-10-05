@@ -13,7 +13,7 @@ O Helm Charts é um gerenciador de pacotes que permite você definir, instalar e
 No contexto do Charles, o [**Chart Template**](https://helm.sh/docs/chart_template_guide/getting_started/) é usado como uma coleção de arquivos relacionados a configurações do Kubernetes. 
 
 {{% alert color="info" %}}
-Se você não tiver configurado o **seu módulo,** [**veja como fazer isso nessa seção**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). É importante lembrar que você deve cadastrar a URL no módulo.
+Se você não tiver configurado o **seu módulo,** [**veja como fazer na seção: 'Criando seu primeiro módulo'**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). É importante lembrar que você deve cadastrar a URL no módulo.
 {{% /alert %}}
 
 ## **Como configurar o chart template?** 
@@ -22,30 +22,40 @@ Siga os próximos passos para configurar o app de exemplo.
 
 ### **Passo 1: Crie um diretório do chart template**
 
-Para começar, você precisa salvar os seus templates em uma ferramenta de versionamento da sua preferência. Assim que criar um novo chart template, você precisa dar ao diretório o mesmo nome do componente ao qual ele se refere 
-
- A estrutura abaixo contém os templates necessários para se fazer o deploy de um módulo que possui um componente chamado “circles-sample”. 
-
-A imagem demonstra como seu diretório deve ficar:  
+Salve os seus templates na sua ferramenta de versionamento. Assim que você criar um novo chart template, você precisa nomear o diretório com o mesmo nome do componente ao qual ele se refere. 
+A estrutura abaixo contém os templates necessários para fazer o deployment de um módulo que possui um componente chamado **“circles-sample”**.  O seu diretório precisa estar dessa forma:  
 
 ![ Diret&#xF3;rio de chart template do circle-sample](/shared/screen-shot-2020-08-13-at-09.16.04.png)
 
 ### **Passo 2: Configure os itens do diretório** 
 
-Depois de criado o diretório, você deve configurá-lo. Veja quais arquivos são necessários para seguir com essa configuração: 
+Configure o diretório, veja abaixo quais arquivos são necessários para você configurar: 
 
-* **templates/ :** contém nossos modelos. 
+1. **templates/ :** contém os modelos. 
 
   * **deployment.yaml:** descreve a estrutura de [**deployment**](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
   * **service.yaml:** descreve a estrutura do [**service**](https://kubernetes.io/docs/concepts/services-networking/service/). 
 
-* O arquivo **Chart.yaml** contém uma descrições como version, name, description. É necessário definir a version como "darwin". 
-* O arquivo **circles-sample.yaml** possui os valores que serão utilizados nos nossos templates. 
+2. O arquivo **Chart.yaml** contém uma descrições como version, name, description. É necessário definir a version como **"darwin"**. 
 
-Essas são as informações que o Charles precisa ter no templates. Vale ressaltar que você pode incrementar esses templates da forma como você preferir.
+3. O arquivo **circles-sample.yaml** possui os valores que serão utilizados nos nossos templates. 
 
-{{% alert color="info" %}}
-Com o seu diretório configurado de acordo com a estrutura acima, vá até a pasta "circles-sample" e execute o comando  **"`helm package .`"**.  
+Essas são as informações que o Charles precisa ter no templates, você também pode [**incrementar os templates**](https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates) como quiser.
 
-Ao final desse comando, você terá uma arquivo **tgz** com o nome de circles-samples-darwin. Nossa ferramenta de CD procura esse **tgz** para executar o template
-{{% /alert %}}
+### **Passo 3: Adicione informações do Charles no seu template** 
+O Charles sobrescreve alguns campos nos arquivos de [**Values do Helm**](https://helm.sh/docs/chart_template_guide/values_files/) que podem ser adicionados ao seu template. Veja abaixo:
+
+- **"`.Values.tag`"**: A tag escolhida na hora de criar a release.
+- **"`.Values.component`"**: O nome do componente selecionado para o deployment.
+- **"`.Values.circleId`"**: ID do círculo em que o deploy foi realizado.
+- **"`.Values.image.url`"**: URL completa da imagem em que o deployment irá acontecer.
+
+Para mais informações de como criar seu próprio template, acesse [**alguns exemplos no repositório do Charles**](https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates).
+
+### **Passo 3:  Execute o comando `"helm package ."`** 
+Depois que você configurou o diretório:
+- Acesse a pasta "circles-sample";
+- Execute o comando "`helm package .`".  
+
+Depois disso, você terá uma arquivo **tgz**  com o nome de **circles-samples-darwin**. O Charles procura o **tgz** para executar o template. 
+

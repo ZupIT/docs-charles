@@ -10,7 +10,7 @@ description: Nesta seção, você encontra mais informações para instalar o Ch
 
 A instalação do CharlesCD consiste nos seguintes **componentes**:
 
-1. Módulos específicos da[ **arquitetura do Charles**](/pt/overview/)
+1. Módulos específicos da [**arquitetura do Charles**](/pt/overview/)
 2. **Keycloak**, usado para autenticação e autorização no projeto. Entretanto, caso você já tenha um Identity Manager \(IDM\) e queira utilizá-lo, basta fazer a sua configuração durante a instalação do Charles, [**veja como habilitá-lo na seção IDM**](/pt/referência/identity-manager/)
 3. Um **banco PostgreSQL** que servirá os módulos de backend \(`charlescd-moove`
 

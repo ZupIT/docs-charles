@@ -38,6 +38,10 @@ Depois que você realizou o processo acima, sua release está pronta para o depl
 
 O **deploy em** [**mar aberto**](/pt/principais-conceitos/) é aquele em que você envia sua aplicação para toda segmentação cadastrada no Charles. 
 
+{{% alert color="info" %}}
+Todo deploy em mar aberto é [**incremental**](#Deploy-incremental). 
+{{% /alert %}}
+
 Para realizar o deploy neste caso, siga os passos abaixo:
 
 1. Na tela inicial do Charles, clique em **Circles**;
@@ -49,3 +53,24 @@ Para realizar o deploy neste caso, siga os passos abaixo:
 Depois disso, o Charles se encarregará de disponibilizar a release criada no cluster configurado em mar aberto. O status do deploy será exibido e atualizado conforme o progresso.
 
 ![](/shared/first-deploy.gif)
+
+
+### **Deploy incremental**
+
+O deployment incremental permite você utilizar os deployments anteriores e adicioná-los ao atual. Por exemplo, você já fez um deployment do Beagle e agora quer fazer um do Ritchie, você verá os dois no estado atual do seu círculo.  
+
+{{% alert color="warning" %}}
+Se você não escolher o deploy incremental (escolher sobrescrever uma release) o que já foi deployado antes no seu circulo irá ser removido e ficará apenas o deploy atual.
+{{% /alert %}}
+
+Para realizar o deploy neste caso, siga os passos abaixo:
+
+1. Na tela inicial do Charles, clique em **Circles**;
+2. Clique no círculo **Default** 
+3. Clique em **Incremental Deployment** no canto direito superior;
+4. Clique em **Search for ready releases**;
+5. Digite o nome da release criada nos passos acima \(ou os reproduza novamente com uma nova versão\), a selecione e clique em **Deploy.**
+
+Veja abaixo:
+
+![](/shared/deploy-incremental.gif)
