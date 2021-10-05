@@ -33,7 +33,7 @@ As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**
 Para mais detalhes, acesse o link citado acima, que possui toda a documentação dos campos editáveis.
 {{% /alert %}}
 
-Para instalar com helm charts, execute o comando abaixo, dentro da pasta _**/charlescd/install/helm-chart,**_ após a customização dos campos: 
+Para instalar com helm charts, execute o comando abaixo, dentro da pasta **/charlescd/install/helm-chart,** após a customização dos campos: 
 
 ```text
 heml install --create-namespace -n <namespace> charlescd . -f values.yaml

@@ -1,5 +1,5 @@
 ---
-title: Ações
+title: Ações de métricas
 weight: 30
 description: 'Nesta seção, você encontra informações sobre as ações de métricas.'
 ---
@@ -22,7 +22,7 @@ Em configurações do workspace, clique na seção **Add Metric Action** e siga 
 ![](/shared/workspace_metricaction%20%282%29.gif)
 
 {{% alert color="info" %}}
-O único plugin disponível no momento é o **circle deployment**. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
+Os plugins disponíveis são **circle deployment** e **circle undeployment**. O Charles pode fazer o  próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
 {{% /alert %}}
 
 Para mais informações sobre **Action**, veja a [**seção de Referência**](/pt/referência/métricas/ações/).
