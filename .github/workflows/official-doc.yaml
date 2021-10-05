@@ -52,7 +52,7 @@ jobs:
           extended: true
 
       - name: S3 upload (images)
-        run: aws s3 sync --follow-symlinks static/shared s3://$AWS_S3_BUCKET/shared/ --delete
+        run: aws s3 sync --follow-symlinks static/shared s3://${{ secrets.AWS_S3_BUCKET }}/shared/ --delete
 
       - name: Installing Dependencies
         run: yarn
@@ -76,6 +76,6 @@ jobs:
           VERSION: ${{ steps.version.outputs.branch_version }}
 
       - name: S3 upload
-        run: aws s3 sync --follow-symlinks public s3://$AWS_S3_BUCKET/$VERSION/ --delete
+        run: aws s3 sync --follow-symlinks public s3://${{ secrets.AWS_S3_BUCKET }}/$VERSION/ --delete
         env:
           VERSION: ${{ steps.version.outputs.branch_version }}
