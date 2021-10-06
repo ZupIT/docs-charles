@@ -14,7 +14,7 @@ Before proceeding, make sure all the [**requirements**](/get-started/installing-
 
 This installation stands out because of the customization. To do this, you have access to a helm template with all the available fields to change, including the database and the consumed resources.
 
-Check out the [**documentation of the editable fields**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart)
+Check out the [**documentation of the editable fields**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
 
 {{% alert color="info" %}}
 The passwords used by Charles are stored in the [**values.yaml**](https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml) file.  The main passwords to customized are:
@@ -35,10 +35,10 @@ The passwords used by Charles are stored in the [**values.yaml**](https://github
 For more details, access the  [**editable fields**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart). 
 {{% /alert %}}
 
-- To make sure the charts dependencies are present and updated with a compatible version, use in the **/charlescd/install/helm-chart** folder the command below:  
+- To make sure the charts dependencies are present and updated with a compatible version, use in the **`/charlescd/install/helm-chart`** folder the command below:  
  
 ```text
-helm install --create-namespace -n <namespace> charlescd . -f values.yaml
+helm dependency update
 ```
 
 - To install with Helm Charts,  after you have customized the fields, run the command below inside the **/charlescd/install/helm-chart** folder: 
