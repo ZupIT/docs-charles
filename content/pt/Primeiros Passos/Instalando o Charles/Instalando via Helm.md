@@ -12,16 +12,16 @@ Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](/pt/pri
 
 ## **Como instalar?**
 
-O principal diferencial nessa instalação é a customização. E para instalar, você tem acesso a um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Veja a [**documentação dos campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
+Esta instalação é customizável, para você instalar acesse um **template helm** com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Veja a [**documentação dos campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart) 
 
 {{% alert color="info" %}}
 As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**](https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml) As principais senhas para personalizar são:
 
 * CharlesApplications.butler.database.password
-* CharlesApplications.moove.database.password
+* CharlesApplications.moove.database.password 
 * CharlesApplications.villager.database.password
 * CharlesApplications.circlematcher.redis.password
-* CharlesApplications.keycloak.keycloak.extraEnv.DB\_PASSWORD
+* CharlesApplications.keycloak.keycloak.extraEnv.DB_PASSWORD
 * CharlesApplications.postgresql.postgresqlPassword
 * CharlesApplications.redis.password
 * CharlesApplications.compass.database.password
@@ -30,17 +30,23 @@ As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**
 * CharlesApplications.gate.database.password
 * CharlesApplications.compass.moove.database.password
 
-Para mais detalhes, acesse o link citado acima, que possui toda a documentação dos campos editáveis.
+Para mais detalhes, acesse os [**campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart).
 {{% /alert %}}
 
-Para instalar com helm charts, execute o comando abaixo, dentro da pasta _**/charlescd/install/helm-chart,**_ após a customização dos campos: 
+- Para garantir que as dependências dos charts estão presentes e atualizadas com uma versão compatível, utilize dentro da pasta **`/charlescd/install/helm-chart`** o comando abaixo:
 
-```text
-heml install --create-namespace -n <namespace> charlescd . -f values.yaml
+```
+helm dependency update
+```
+
+- Para instalar com Helm Charts, depois que você customizou os campos, execute o comando abaixo dentro da pasta **`/charlescd/install/helm-chart`**: 
+
+```
+helm install --create-namespace -n <namespace> charlescd . -f values.yaml
 ```
 
 {{% alert color="warning" %}}
-É importante lembrar que, caso não seja feita nenhuma customização, por padrão o Charles instala o PostgreSQL, Redis, Keycloak e RabbitMQ.  Por isso, não deixe de customizar os campos caso queira algo gerenciável. 
+Se você não fizer nenhuma customização, por padrão o Charles instala o **PostgreSQL**, **Redis**, **Keycloak** e **RabbitMQ**.  Por isso, não deixe de customizar os campos se você precisa de algo gerenciável. 
 {{% /alert %}}
 
 ### **Troque a senha padrão \(default password\)** 
