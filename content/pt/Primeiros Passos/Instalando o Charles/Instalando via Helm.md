@@ -18,7 +18,7 @@ Esta instalação é customizável, para você instalar acesse um **template hel
 As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**](https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml) As principais senhas para personalizar são:
 
 * CharlesApplications.butler.database.password
-* CharlesApplications.moove.database.password
+* CharlesApplications.moove.database.password 
 * CharlesApplications.villager.database.password
 * CharlesApplications.circlematcher.redis.password
 * CharlesApplications.keycloak.keycloak.extraEnv.DB_PASSWORD
@@ -33,11 +33,13 @@ As senhas utilizadas pelo Charles estão armazenadas no arquivo [**values.yaml**
 Para mais detalhes, acesse os [**campos editáveis**](https://github.com/ZupIT/charlescd/tree/master/install/helm-chart).
 {{% /alert %}}
 
-```text
-helm install --create-namespace -n <namespace> charlescd . -f values.yaml
+- Para garantir que as dependências dos charts estão presentes e atualizadas com uma versão compatível, utilize dentro da pasta **`/charlescd/install/helm-chart`** o comando abaixo:
+
+```
+helm dependency update
 ```
 
-- Para instalar com Helm Charts,  depois que você customizou os campos, execute o comando abaixo dentro da pasta **/charlescd/install/helm-chart**: 
+- Para instalar com Helm Charts, depois que você customizou os campos, execute o comando abaixo dentro da pasta **`/charlescd/install/helm-chart`**: 
 
 ```
 helm install --create-namespace -n <namespace> charlescd . -f values.yaml
