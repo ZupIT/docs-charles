@@ -1,4 +1,20 @@
-name: Official Doc
+#
+  # Copyright 2020, 2021 ZUP IT SERVICOS EM TECNOLOGIA E INOVACAO SA
+  #
+  # Licensed under the Apache License, Version 2.0 (the "License");
+  # you may not use this file except in compliance with the License.
+  # You may obtain a copy of the License at
+  #
+  #  http://www.apache.org/licenses/LICENSE-2.0
+  #
+  # Unless required by applicable law or agreed to in writing, software
+  # distributed under the License is distributed on an "AS IS" BASIS,
+  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  # See the License for the specific language governing permissions and
+  # limitations under the License.
+#
+
+name: Update Published Release
 
 on:
   push:
@@ -6,39 +22,34 @@ on:
     tags:
       - "!*"
 
-
-env:
-  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-
 jobs:
   deploy_hugo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f #v2.3.4
         with:
           submodules: true
           fetch-depth: 0
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@0d9a5be0dceea74e09396820e1e522ba4a110d2f #v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-duration-seconds: 1200
+          role-session-name: UpdatePublishedReleaseDocS3Session
+          role-skip-session-tagging: true
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@c03b5dbed22245418539b65eb9a3b1d5fdd9a0a6 #v2.5.0
         with:
           hugo-version: '0.83.1'
           extended: true
 
       - name: S3 upload (images)
-        run: aws s3 sync --follow-symlinks static/shared s3://$AWS_S3_BUCKET/shared/ --delete
-
-      - name: Remove static images
-        shell: bash
-        working-directory: static
-        run: rm -rf shared
+        run: aws s3 sync --follow-symlinks static/shared s3://${{ secrets.AWS_S3_BUCKET }}/shared/ --delete
 
       - name: Installing Dependencies
         run: yarn
@@ -58,15 +69,10 @@ jobs:
       - name: Build
         run: hugo -D --minify -b $BASE_URL/$VERSION
         env:
-          BASE_URL: https://docs.charlescd.io
+          BASE_URL: ${{ secrets.URL_DOC }}
           VERSION: ${{ steps.version.outputs.branch_version }}
 
-      - name: remove FAQ
-        shell: bash
-        working-directory: public
-        run: rm -rf faq & rm -rf pt/faq
-
       - name: S3 upload
-        run: aws s3 sync --follow-symlinks public s3://$AWS_S3_BUCKET/$VERSION/ --delete
+        run: aws s3 sync --follow-symlinks public s3://${{ secrets.AWS_S3_BUCKET }}/$VERSION/ --delete
         env:
           VERSION: ${{ steps.version.outputs.branch_version }}
