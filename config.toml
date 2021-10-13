@@ -51,6 +51,13 @@ contentDir = "content/en"
 version_menu = "Versions"
 # Weight used for sorting.
 weight = 1
+
+  [[languages.en.menu.main]]
+      name = "Community"
+      weight = 20
+      url = "http://forum.zup.com.br/"
+      
+
 [languages.pt]
 title = "Charles C.D."
 description = "Documentação Charles C.D."
@@ -59,6 +66,11 @@ contentDir = "content/pt"
 time_format_default = "02/01/2006"
 time_format_blog = "02/01/2006"
 version_menu = "Versões"
+
+  [[languages.pt.menu.main]]
+      name = "Comunidade"
+      weight = 20
+      url = "http://forum.zup.com.br/"
 
 [markup]
   [markup.goldmark]
@@ -71,6 +83,7 @@ version_menu = "Versões"
       style = "tango"
       # Uncomment if you want your chosen highlight style used for code blocks without a specified language
       # guessSyntax = "true"
+
 
 # Everything below this are Site Params
 
@@ -100,21 +113,26 @@ current_version = ""
 url_latest_version = "https://example.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/ZupIT/docs-charles/tree/master"
+github_repo = "https://github.com/ZupIT/docs-charles"
+
+# Github default branch
+github_branch = "main"
+
+
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/ZupIT/docs-charles/tree/master"
+github_project_repo = "https://github.com/ZupIT/charlescd"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
