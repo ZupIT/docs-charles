@@ -1,7 +1,8 @@
 ---
 title: Release assinadas
 weight: 9
-description: 'Nesta seção, você encontra informações sobre releases assinadas do CharlesCD.'
+description: >-
+  Nesta seção, você encontra informações sobre releases assinadas do CharlesCD.
 ---
 
 ---
@@ -39,3 +40,7 @@ Para você verificar a assinatura, siga os passos abaixo:
 ```
 sha256sum --check --ignore-missing checksums.txt
 ```
+
+Nesta seção, você encontra informações sobre releases assinadas do CharlesCD
+
+In this section, you will find information about CharlesCD's signed releases

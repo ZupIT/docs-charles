@@ -1,7 +1,8 @@
 ---
 title: Signed Releases
 weight: 9
-description: 'In this section, you will find information about CharlesCD's signed releases.'
+description: >-
+  In this section, you will find information about CharlesCD's signed releases.
 ---
 
 ---
