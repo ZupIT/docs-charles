@@ -8,7 +8,7 @@ description: 'In this section, you will find more information about Action.'
 
 ## **Adding an action**
 
-After you have[ **configured your action**](/get-started/defining-a-workspace/datasource/), you have to register it in your metrics group and add it to your circle. 
+After you have[ **configured your action**]({{< ref path="/Get Started/Defining a Workspace/Datasource.md" lang="en">}}), you have to register it in your metrics group and add it to your circle. 
 
 Follow the next steps below to do that: 
 
@@ -26,7 +26,7 @@ Follow the next steps below to do that:
 
 Actions are triggers that will be triggered when all the predetermined thresholds are reached in a metric group. 
 
-[**Metric groups**](/reference/metrics/metrics-group/) create metrics you want to track and you can also add actions to this group. When you get to the threshold, the action will be triggered and what is described in your plugin will happen, for example, make deployment of one circle in another circle. 
+[**Metric groups**]({{< ref path="/Reference/Metrics/Metrics group.md" lang="en">}}) create metrics you want to track and you can also add actions to this group. When you get to the threshold, the action will be triggered and what is described in your plugin will happen, for example, make deployment of one circle in another circle. 
 
 You can track the action's status in the '**Metrics group**' board, check out below: 
 

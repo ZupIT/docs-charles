@@ -18,7 +18,7 @@ In the example below, you can see a flow where there is a verification of what c
 
 ![](/shared/untitled-diagram-1-.png)
 
-### **Why configure an IDM?** 
+### **Why do you to configure an IDM?** 
 
 It is necessary to have an identity manager to make sure Charle's accesses are safe. For this, Charles offers two options:
 
@@ -28,7 +28,9 @@ On Charles default installation, it already has Keycloak that it is used to mana
 
 ### **External IDM** 
 
-In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**IDM's section.**](/reference/identity-manager/)
+In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**IDM's section.**]
+({{< ref path="/Reference/Identity Manager.md" lang="en">}}).
+
 
 {{% alert color="info" %}}
 There are some blocked flows when using an external IDM, see below:
@@ -37,4 +39,5 @@ There are some blocked flows when using an external IDM, see below:
 * Change password;
 * Reset password; 
 * Delete users. 
+
 {{% /alert %}}

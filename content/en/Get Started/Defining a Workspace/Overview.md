@@ -6,7 +6,7 @@ description: 'In this section, you will find how to define your workspace.'
 
 ---
 
-The workspace allows you to segment CharlesCD's use in your team, defining **personalized users' permissions** that will assure safety to your project.
+The workspace allows you to segment CharlesCD's use in your team, defining **customized users' permissions** that will assure safety to your project.
 
 {{% alert color="info" %}}
 You need only one installation, and the teams will be able to use Charles with different configurations, or you may create a workspace to represent different development environments, such as staging, production, etc.
@@ -17,9 +17,10 @@ You need only one installation, and the teams will be able to use Charles with d
 Each workspace has the following configurations:
 
 * Access control and **user groups permissions**;
-* **Git,** [**Docker Registry**](/get-started/defining-a-workspace/docker-registry/) and [**Continuous Deployment \(CD\)**;](/reference/preparing-your-deployment/)
-* [**Circle Matcher**](/reference/circle-matcher/);
-* [**Metrics provider**](/reference/metrics/setting-up-your-metrics/). 
+* **Git,** [**Docker Registry**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}})
+* [**Continuous Deployment \(CD\)**:]({{< ref path="/Get Started/First Deploy.md" lang="en">}})
+* [**Circle Matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}});
+* [**Metrics provider**]({{< ref path="/Reference/Metrics/Setting up your metrics.md" lang="en">}}). 
 
 ![](/shared/defining-workspace%20%281%29.png)
 
@@ -29,7 +30,7 @@ The **root** user gives you permission to create a workspace. However, users wit
 
 ### **How to get an identifier on my workspace?** 
 
-Once your workspace is created, even without the configuration definitions**,** it already has a single identifier. 
+Once your workspace is created, even without the configuration definitions, it already has a single identifier. 
 
 To get this information, select the workspace you want, and then on the left menu, click on **Copy ID.**
 

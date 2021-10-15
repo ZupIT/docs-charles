@@ -10,7 +10,7 @@ Injeção de propriedades é uma operação importante para preparar suas aplica
 
 Veja abaixo quais são: 
 
-* **name:**  Nome do recurso Kubernetes.  Alguns recursos manejados pelo Charles precisam ter os seus nomes alterados para que seja possível disponibilizar versões diferentes de uma mesma aplicação em círculos diferentes. A propriedade name terá o seguinte valor: **&lt;originalManifest.metadata.name&gt;-&lt;tag&gt;-&lt;deploymentId&gt;** 
+* **name:**  Nome do recurso Kubernetes.  Alguns recursos manejados pelo Charles precisam ter os seus nomes alterados para que seja possível disponibilizar versões diferentes de uma mesma aplicação em círculos diferentes. A propriedade name terá o seguinte valor: **`<originalManifest.metadata.name>-<tag>-<deploymentId>`**; 
 * **originalManifest.metadata.name:** Nome gerado pelo chart da aplicação;
 * **tag:** Tag da imagem;
 * **deploymentId:** Identificador único da entidade deployment criada pelo Butler.

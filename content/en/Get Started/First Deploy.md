@@ -7,7 +7,10 @@ description: 'In this section, you will find how to make your first deployment.'
 ---
 
 {{% alert color="info" %}}
-After you have created your first [**module**](/get-started/creating-your-first-module/overview/) and registered your [**cluster crendentials**,](/get-started/defining-a-workspace/docker-registry/) you have finished all the steps needed to make your first deployment. Now, it is necessary to create a [**release** ](/reference/releases/) and provide it on the configured cluster.
+After you have created your first [**module**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}}) and registered your [**cluster crendentials**,]
+({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}}) you have finished all the steps needed to make your first deployment. 
+
+Now, it is necessary to create a [**release**]({{< ref path="/Reference/Releases.md" lang="en">}}) and provide it on the configured cluster.
 {{% /alert %}}
 
 ### **How to make the first deployment?** 
@@ -17,7 +20,7 @@ On Charles you have to use container images already available in your configured
 To make your first deployment, follow the steps below: 
 
 1. Go to **Circles** area;
-2. Select a [**circle**](/reference/circles/). If you haven't created one yet, there is a **default circle** option that makes your first deploy possible; 
+2. Select a [**circle**]({{< ref path="/Reference/Circles.md" lang="en">}}). If you haven't created one yet, there is a **default circle** option that makes your first deploy possible; 
 3. Change the active circle filter to **inactive**;
 4. Select the "**Insert a release**" option;
 5. After that, select "**Create a release**" and fill the fields: 
@@ -34,13 +37,13 @@ After the process above, your release is ready to deploy.
 
 ### **Open Sea deploy**
 
-The [**open sea**](../../key-concepts#open-sea) deployment is where you send your application to the registered segmentation on Charles.
+The [**open sea**]({{< ref path="/Key concepts.md" lang="en">}}) deployment is where you send your application to the registered segmentation on Charles.
 
 {{% alert color="info" %}}
 Every open sea deploy is [**incremental**](#Incremental-deploy). 
 {{% /alert %}} 
  
-Now, follow the next steps to the [**Open Sea**](/key-concepts/) deploy:
+Now, follow the next steps to the [**Open Sea**]({{< ref path="/Key concepts.md" lang="en">}}) deploy:
 
 1. On Charles homepage, click on **Circles**; 
 2. Click on the Default circle \(it represents the open sea\) 

@@ -129,7 +129,7 @@ Mude o nome do **namespace** para um onde sua aplicação está deployada.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, [**veja a documentação**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
+Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, [**acesse a documentação**](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config).
 {{% /alert %}}
 
 ### **Metadados**
@@ -155,5 +155,5 @@ Para usá-lo no seu grupo de métricas, você precisa de:
 Se você quiser usar o Charles para analizar os dados do seu Google Analytics, você precisa adicionar uma nova métrica com a ID do circulo \(**renomeando como circle\_source**\) na label da sua métrica. 
 
 {{% alert color="info" %}}
-Para mais informações sobre o Google Analytics, [**veja a documentação do Analytics**](https://developers.google.com/analytics/devguides/reporting/core/v4).
+Para mais informações sobre o Google Analytics, [**acesse a documentação do Analytics**](https://developers.google.com/analytics/devguides/reporting/core/v4).
 {{% /alert %}}
