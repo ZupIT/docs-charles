@@ -18,7 +18,7 @@ In the example below, you can see a flow where there is a verification of what c
 
 ![](/shared/untitled-diagram-1-.png)
 
-### **Why do you to configure an IDM?** 
+### **Why do you have to configure an IDM?** 
 
 It is necessary to have an identity manager to make sure Charle's accesses are safe. For this, Charles offers two options:
 
