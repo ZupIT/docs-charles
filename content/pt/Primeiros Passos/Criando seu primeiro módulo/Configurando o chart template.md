@@ -1,7 +1,7 @@
 ---
 title: Configurando o chart template
 weight: 37
-description: Esta seção descreve como configurar o chart template no ambiente do Charles. 
+description: Nesta seção, você encontra como configurar o chart template no ambiente do Charles. 
 ---
 
 ---
@@ -23,7 +23,7 @@ Veja abaixo o exemplo de um repositório contendo o chart da componente **http-h
 O módulo de deploy Butler utiliza charts helm para disponibilizar as suas aplicações no Cluster. Esses charts devem estar disponíveis em um repositório Github ou Gitlab e acessíveis por meio do token cadastrado na configuração de deployment. A URL deles é providenciada junto ao cadastro do módulo.
 
 {{% alert color="info" %}}
-Se você não tiver configurado o **seu módulo,** [**veja como fazer na seção: 'Criando seu primeiro módulo'**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). É importante lembrar que você deve cadastrar a URL no módulo.
+Se você não tiver configurado o **seu módulo,** [**veja como fazer na seção: 'Criando seu primeiro módulo'**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Visao geral.md" lang="pt">}}). É importante lembrar que você deve cadastrar a URL no módulo.
 {{% /alert %}}
 
 ### **Templates**

@@ -1,7 +1,7 @@
 ---
 title: Ambiente de deploy
 weight: 24
-description: Esta seção descreve como funciona o ambiente de deploy no Charles.
+description: Nesta seção, você encontra como funciona o ambiente de deploy no Charles.
 ---
 
 ---
@@ -25,12 +25,12 @@ Siga os passos abaixo:
 
 Preencha os seguintes campos:
 
-1. **Butler URL:** URL do módulo de deploy Butler. Caso este esteja no mesmo cluster de instalação do Charles, utilize seu FQDN \(Fully Qualified Domain Name\). Exemplo: http://charlescd-butler.butler-namespace.svc.cluster.local:3000.
+1. **Butler URL:** URL do módulo de deploy Butler. Caso este esteja no mesmo cluster de instalação do Charles, utilize seu FQDN \(Fully Qualified Domain Name\). Exemplo: `http://charlescd-butler.butler-namespace.svc.cluster.local:3000`.
 2. **Namespace:** Defina o namespace em que os recursos serão disponibilizados no cluster. Você deve criar o seu namespace, uma vez que o Charles não faz isso;
 3. **Git provider:** Defina o provedor de git a ser utilizado \(**GitHub** ou **GitLab**\);
-4. **Git token:** Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**](/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/) que serão utilizados durante o deployment da sua [**aplicação**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_". 
+4. **Git token:** Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Configurando o chart template.md" lang="pt">}}) que serão utilizados durante o deployment da sua [**aplicação**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Visao geral.md" lang="pt">}}). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_". 
 
 {{% alert color="info" %}}
 To avoid dependency of a specific user in the authentication token field, use [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
 {{% /alert %}}
-
+ 
