@@ -233,4 +233,4 @@ A requisição será recebida pela Ingress, que realiza o controle do tráfego p
 1. Uma vez permitida a entrada da requisição, o Virtual Service consulta o conjunto de regras de roteamento de tráfego a serem aplicadas no host endereçado. Nesse caso, a avaliação acontece através da especificação do header `x-circle-id`de maneira que o tráfego corresponda ao serviço "**application**".  
 2. Além do serviço, também é necessário saber qual subconjunto definido no registro. Essa verificação é feita no \_\_**Destination Rules.**  
 3. O redirecionamento do tráfego é realizado com base nas informações anteriores, chegando então à versão do serviço.   
-4. Caso o `x-circle-id` não seja informado, existe uma regra definida no _Virtual Service_ que irá encaminhar para a versão padrão \(v1\).
+4. Caso o `x-circle-id` não seja informado, existe uma regra definida no _Virtual Service_ que irá encaminhar para a versão padrão \(v1\). 
