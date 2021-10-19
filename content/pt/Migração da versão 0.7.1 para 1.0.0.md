@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-A nova versão 1.0.0 do CharlesCD trouxe mais confiabilidade nos deploys com o [**Operator**](/pt/referência/preparando-o-seu-deploy/), porém o Helm encontra dificuldades para adicionar elementos necessários ao Operator em uma instalação já existente, como o **Custom Resources Definition** \(CRDs\). Por isso, você precisa seguir alguns passos para uma atualização mais funcional.  Veja abaixo: 
+A nova versão 1.0.0 do CharlesCD trouxe mais confiabilidade nos deploys com o [**Operator**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Ambiente de deploy.md" lang="pt">}}), porém o Helm encontra dificuldades para adicionar elementos necessários ao Operator em uma instalação já existente, como o **Custom Resources Definition** \(CRDs\). Por isso, você precisa seguir alguns passos para uma atualização mais funcional.  Veja abaixo: 
 
 ### **Passo 1: Desinstale o CharlesCD \(instalação feita com o Helm\):**
 
@@ -40,11 +40,12 @@ helm install -n <NAMESPACE_CHARLESCD> <NOME_DA_INSTALAÇÃO> ./install/helm-char
 
 ### **Passo 3: Atualize a configuração de Deployment  para cada Workspace:**
 
-Depois de instalar, você poderá acessar o CharlesCD com seu usuário administrador da plataforma É necessário fazer uma nova configuração de deployment para seus workspaces.  Veja como fazer essa configuração em [**Configuração de Deployment**](/pt/referência/preparando-o-seu-deploy/) 
+Depois de instalar, você poderá acessar o CharlesCD com seu usuário administrador da plataforma É necessário fazer uma nova configuração de deployment para seus workspaces.  Veja como fazer essa configuração em [**Configuração de Deployment**]({{< ref path="/Primeiros Passos/Primeiro Deploy.md" lang="pt">}}).
+
 
 ###  **Passo 4: Faça o override de release em cada círculo ativo**
 
-Agora, você precisa fazer o Override de Release com a última release em que o deployment em cada círculo ativo foi feito. Veja como realizar overrides de versões em '[**Como criar releases pelo Charles?**](/pt/referência/release/)'.
+Agora, você precisa fazer o Override de Release com a última release em que o deployment em cada círculo ativo foi feito. Veja como realizar overrides de versões em '[**Como criar releases pelo Charles?**]({{< ref path="/Referência/Release.md" lang="pt">}})'.
 
 {{% alert color="info" %}}
 Não se preocupe com o override de release. O CharlesCD irá reconhecer todos os manifestos que ele precisa tomar conta.

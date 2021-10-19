@@ -2,7 +2,7 @@
 title: Configurando seus módulos para propagar o id do círculo
 weight: 39
 description: >-
-  Essa seção descreve como propagar o header "X-Circle-Id" através de
+  Nesta seção, você encontra como propagar o header "X-Circle-Id" através de
   bibliotecas para garantir que o usuário acesse os círculos corretos.
 ---
 
@@ -10,11 +10,11 @@ description: >-
 
 ## Por que configurar? 
 
-Quando você trabalha em cenários com vários microsserviços, configurar os módulos é uma forma de garantir a propagação de header `x-circle-id` e com isso certificar o [**roteamento dos usuários para as versões corretas**](/pt/referência/círculo/). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microserviços que fazem parte do seu teste de hipótese.
+Quando você trabalha em cenários com vários microsserviços, configurar os módulos é uma forma de garantir a propagação de header `x-circle-id` e com isso certificar o [**roteamento dos usuários para as versões corretas**](({{< ref path="/Referência/Círculo.md" lang="pt">}}). Dessa forma, você torna possível que o usuário da sua base chegue na mesma versão de todos os microserviços que fazem parte do seu teste de hipótese.
 
 Por exemplo, se você testar uma feature entre microserviços que tenham integrações em um fluxo de abertura de conta, é necessário garantir que o usuário será redirecionado a todas as versões corretas que estão no teste de hipóteses, criado para esse fluxo.
 
-Para garantir isso, você pode utilizar uma biblioteca de propagação do header `x-circle-id`, que faz com que o [**id do círculo identificado pelo `circle-matcher`**](/pt/referência/circle-matcher/) seja repassado entre todas as requisições dentro da malha de microserviço, garantindo assim, que os usuários sejam redirecionados para a versão correta do seu teste de hipótese.
+Para garantir isso, você pode utilizar uma biblioteca de propagação do header `x-circle-id`, que faz com que o [**id do círculo identificado pelo `circle-matcher`**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}) seja repassado entre todas as requisições dentro da malha de microserviço, garantindo assim, que os usuários sejam redirecionados para a versão correta do seu teste de hipótese.
 
 {{% alert color="info" %}}
 Caso exista um microserviço dentro do fluxo que não faz parte do seu teste, o valor do círculo será repassado, mas a sua requisição cairá em mar aberto, porque não há nenhuma versão destinada para aquele círculo. 
