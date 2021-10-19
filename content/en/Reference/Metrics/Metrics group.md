@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**data source you previously registered**](/get-started/defining-a-workspace/datasource/) 
+The metrics group is a functionality that allows you to register and organize any kind of metrics in a group inside your application. These metrics are related to the [**data source you previously registered**]({{< ref path="/Get Started/Defining a Workspace/Datasource.md" lang="en">}}).
 
 ## **How to create?**
 
@@ -59,5 +59,5 @@ Check out the example below, it shows where to use **PromQL** to build queries i
 ![](/shared/advanced%20%281%29.png)
 
 {{% alert color="info" %}}
-To see more examples of the advanced mode, check out [**the metrics group to health monitoring section**](/reference/metrics/metric-groups-to-health-monitoring/)
+To see more examples of the advanced mode, check out [**the metrics group to health monitoring section**]({{< ref path="/Reference/Metrics/Metric groups to health monitoring.md" lang="en">}}).
 {{% /alert %}}

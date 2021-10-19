@@ -6,13 +6,13 @@ description: 'Nesta seção, você encontra detalhes sobre como funciona o Circl
 
 ---
 
-O Circle Matcher é um recurso que permite você validar se os seus [**círculos**](/pt/referência/círculo/) estão com segmentações coerentes. Você também pode utilizá-lo em suas aplicações para determinar em qual círculo os seus usuários se encaixam.
+O Circle Matcher é um recurso que permite você validar se os seus [**círculos**]({{< ref path="/Referência/Círculo.md" lang="pt">}}) estão com segmentações coerentes. Você também pode utilizá-lo em suas aplicações para determinar em qual círculo os seus usuários se encaixam.
 
 {{% alert color="info" %}}
 Uma boa prática é realizar essa identificação sempre que o usuário faz login na aplicação. Porém, isso pode ser alterado de acordo com a necessidade da sua regra de negócio.
 {{% /alert %}}
 
-Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace.**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/)
+Para mais informações de como configurar seu Circle Matcher em um workspace,[ **veja a seção Definindo um Workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 
 ### **Como é realizada a identificação de círculos?**
 
