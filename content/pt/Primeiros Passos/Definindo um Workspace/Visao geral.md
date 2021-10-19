@@ -1,7 +1,7 @@
 ---
 title: Visão Geral
 weight: 20
-description: Esta seção descreve como você deve configurar seu workspace dentro do Charles.
+description: Nesta seção, você encontra como você deve configurar seu workspace dentro do Charles.
 ---
 
 ---
@@ -16,12 +16,13 @@ Com apenas uma instalação, vários times podem utilizar o Charles com configur
 
 Cada workspace possui as seguintes configurações:
 
-* Definição dos acessos e [**permissões dos grupos de usuários**.](/pt/referência/grupo-de-usuários/)
-* Cadastros de credenciais do [**Git**]()**,** [**Docker Registry**](/pt/primeiros-passos/definindo-um-workspace/docker-registry/) e de [**Continuous Deployment \(CD\)**](/pt/referência/preparando-o-seu-deploy/).
-* Personalização do [**Circle Matcher**](/pt/referência/circle-matcher/).
-* Registro do [**Provedor de Métricas**](/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/) das suas aplicações.
+* Definição dos acessos e [**permissões dos grupos de usuários**]({{< ref path="/Referência/Grupo de Usuários.md" lang="pt">}}).
+* Cadastros de credenciais do [**Git**](https://github.com/), [**Docker Registry**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Docker Registry.md" lang="pt">}}) e de [**Continuous Deployment \(CD\)**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Ambiente de deploy.md" lang="pt">}}).
+* Personalização do [**Circle Matcher**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}).
+* Registro do [**Provedor de Métricas**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Adicionando o Datasource.md" lang="pt">}})
+ das suas aplicações.
 
-![Configura&#xE7;&#xE3;o de workspace](/shared/defining-workspace.png)
+![](/shared/defining-workspace.png)
 
 {{% alert color="warning" %}}
 A criação do workspace pode ser feita apenas pelo usuário **root**. Entretanto, o preenchimento das configurações podem também ser feitas pelos usuários associados ao workspace com perfil de **mantenedor**.

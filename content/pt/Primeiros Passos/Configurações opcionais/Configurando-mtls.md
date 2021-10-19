@@ -64,5 +64,5 @@ butler:
 
 ```
 
-**Passo 8:** Depois disso, siga os passos da [**instalação do Charles**](/pt/primeiros-passos/instalando-o-charles/visão-geral/).
+**Passo 8:** Depois disso, siga os passos da [**instalação do Charles**]({{< ref path="/Primeiros Passos/Instalando o Charles/Visão geral.md" lang="pt">}}).
 
