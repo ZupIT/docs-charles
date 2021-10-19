@@ -139,7 +139,7 @@ kubectl get svc -n charles
 // get external IP value
 ```
 
-**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**acesse esse tutorial de como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
+**Passo 2:** Adicione a linha abaixo no seu arquivo de host do OS \([**acesse o tutorial de como mudar o host**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)\) caso você queira acessar do browser da sua máquina:
 
 ```text
 <IP-EXTERNAL-CHARLES>       charles.info.example

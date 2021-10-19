@@ -21,4 +21,4 @@ With the tool, the delivery process in traditional environments occurs in longer
 
 Besides, developers will be more encouraged to innovate and to make more implementations of new versions, once that identifying bugs is easier and creating circles helps on minimizing the error budget.
 
-For more information about microservices and Charles' modules, check out the [**platform's architecture**](/overview/).
+For more information about microservices and Charles' modules, check out the [**platform's architecture**]({{< ref path="/overview.md" lang="en">}}).

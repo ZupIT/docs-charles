@@ -8,13 +8,13 @@ description: >-
 
 ---
 
-Os círculos são o principal diferencial do [**novo conceito de deploy** ](/pt/faq/sobre-o-charles/)trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
+Os círculos são o principal diferencial do [**novo conceito de deploy**]({{< ref path="/FAQ/Deploy em círculos x Outros deploys.md" lang="pt">}}) trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.
 
-![Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles](/shared/deploy_em_circulos%20%288%29%20%281%29.png)
+![](/shared/deploy_em_circulos%20%288%29%20%281%29.png)
 
 Além de indicar as segmentações de clientes, os círculos também auxiliam na gestão de versões implantadas para este público.
 
-Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma [**série de métricas** ](/pt/referência/métricas/visao-geral/) de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.
+Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma [**série de métricas**]({{< ref path="/Referência/Métricas/Visao geral.md" lang="pt">}}) de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.
 
 ## **Como criar círculos?**
 
@@ -43,7 +43,7 @@ As segmentações manuais possuem os seguintes campos:
 
 #### **Chave e valor**
 
-Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**](/pt/referência/circle-matcher/) aos quais o seu usuário pertence. Por exemplo, considere que o seguinte payload representa as informações que você possui do seu cliente:
+Os campos **chave** e **valor** são estabelecidos com base nas informações que serão enviadas na requisição que [**identifica os círculos**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}) aos quais o seu usuário pertence. Por exemplo, considere que o seguinte payload representa as informações que você possui do seu cliente:
 
 ```text
 {
@@ -134,7 +134,7 @@ O único operador lógico suportado nesta segmentação é o OR \(Ou\).
 
 O valor da porcentagem para cada círculo é definido entre 0 e 100, e a soma de todos os círculos ativos não pode ultrapassar 100%.
 
-#### Exemplos de segmentação por porcentagem
+#### **Exemplos de segmentação por porcentagem**
 
 Supondo que você criou dois círculos com porcentagem: 
 
@@ -179,13 +179,13 @@ Para obter essa informação, siga estes passos:
 
 ## Círculos ativos e inativos
 
-O que define se um círculo é ativo ou não, é a existência de [**releases**](/pt/referência/release/), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
+O que define se um círculo é ativo ou não, é a existência de [**releases**]({{< ref path="/Referência/Release.md" lang="pt">}}), isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.
 
 ![](/shared/circulo-ativo-e-inativo%20%281%29.gif)
 
 ## Como integrar círculos com serviços?
 
-Uma vez detectado o [**círculo ao qual o usuário pertence**,](/pt/referência/circle-matcher/) essa informação deve ser repassada para todas as próximas requisições através do parâmetro **`x-circle-id`** no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:
+Uma vez detectado o [**círculo ao qual o usuário pertence**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}), essa informação deve ser repassada para todas as próximas requisições através do parâmetro **`x-circle-id`** no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:
 
 ![](/shared/como_integrar_circulos_com_servicos_copy%20%281%29.png)
 
@@ -233,4 +233,4 @@ A requisição será recebida pela Ingress, que realiza o controle do tráfego p
 1. Uma vez permitida a entrada da requisição, o Virtual Service consulta o conjunto de regras de roteamento de tráfego a serem aplicadas no host endereçado. Nesse caso, a avaliação acontece através da especificação do header `x-circle-id`de maneira que o tráfego corresponda ao serviço "**application**".  
 2. Além do serviço, também é necessário saber qual subconjunto definido no registro. Essa verificação é feita no \_\_**Destination Rules.**  
 3. O redirecionamento do tráfego é realizado com base nas informações anteriores, chegando então à versão do serviço.   
-4. Caso o `x-circle-id` não seja informado, existe uma regra definida no _Virtual Service_ que irá encaminhar para a versão padrão \(v1\).
+4. Caso o `x-circle-id` não seja informado, existe uma regra definida no _Virtual Service_ que irá encaminhar para a versão padrão \(v1\). 

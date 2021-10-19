@@ -14,7 +14,7 @@ Circle Matcher is a resource that allows you to validate if your [**circles**](/
 One good practice is to always make this identification when a user logs in to the application. However, this can be changed according to your business needs.
 {{% /alert %}}
 
-For more information on how to configure your **Circle Matcher in a workspace**, [**see Defining Workspace section**](/get-started/defining-a-workspace/overview/) 
+For more information on how to configure your **Circle Matcher in a workspace**, [**see Defining Workspace section**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}})
 
 ### **How the circle identification is made?** 
 

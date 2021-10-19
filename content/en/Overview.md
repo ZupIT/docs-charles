@@ -38,12 +38,13 @@ The methodology implemented by Charles brings a lot of advantages such as:
 
 In order to user Charles, it is necessary to fulfill some requirements: 
 
-1. **Installation:** see what you need [**in the installation section**](/get-started/installing-charles/overview/).
+1. **Installation:** see what you need [**in the installation section**]({{< ref path="/Get Started/Installing Charles/Overview.md" lang="en">}}).
 2. To make the tool work properly, you will need: 
 
-* A [**Registry**](/get-started/defining-a-workspace/docker-registry/) where the images of your application are stored.
+* A [**Registry**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}})
+ where the images of your application are stored.
 * Define a **CI flow.** It is expected that this flow is active through a trigger, for example, a branch name that has a defined prefix. Besides that, the pipeline must build the application's image and upload it to the registry mentioned before. 
-* Prepare the [**Helm template**](/get-started/creating-your-first-module/how-to-configure-chart-template/) of your applications. This is important, a configured CD through Charles will need this information to make the deployments of your application. 
+* Prepare the [**Helm template**]({{< ref path="/Get Started/Installing Charles/Installing via Helm.md" lang="en">}}) of your applications. This is important, a configured CD through Charles will need this information to make the deployments of your application. 
 
 ## **System architecture**
 
@@ -51,10 +52,10 @@ The platform was built using a microservice approach, and it has the following m
 
 ![](/shared/arquitetura-charlesc.d.jpg)
 
-* `charlescd-ui:`  mirrors on the front-end the workspace configuration, users, modules, hypothesis, and boards. It is the platform graphical interface.  
-* `charles-moove:` manages workspaces, users, modules, hypothesis, and boards. It is the whole platform structure.   
-* `charles-butler:` orchestrates and manages releases and deploys. 
-* `charles-circle-matcher:`manages all created circles, and points out which circle each user belongs to, based on their characteristics. 
-* `charlescd-compass`: data providers integration, make metrics analysis and execute configurable actions.
-* `charlescd-hermes`: notifies external services previously subscribed of deploy and undeploy events.  
-* `charlescd-gate`: control users' permissions according to the resources available in Charles' APIs.
+* **`charlescd-ui:`**  mirrors on the front-end the workspace configuration, users, modules, hypothesis, and boards. It is the platform graphical interface.  
+* **`charles-moove:`** manages workspaces, users, modules, hypothesis, and boards. It is the whole platform structure.   
+* **`charles-butler:`** orchestrates and manages releases and deploys. 
+* **`charles-circle-matcher:`** manages all created circles, and points out which circle each user belongs to, based on their characteristics. 
+* **`charlescd-compass`**: data providers integration, make metrics analysis and execute configurable actions.
+* **`charlescd-hermes`**: notifies external services previously subscribed of deploy and undeploy events.  
+* **`charlescd-gate`**: control users' permissions according to the resources available in Charles' APIs.

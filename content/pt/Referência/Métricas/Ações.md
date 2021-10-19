@@ -26,7 +26,7 @@ Siga os próximo passos para fazer isso:
 
 Ações são triggers que serão disparados quando todos os limites \(threshold\) predeterminados são alcançados em um grupo de métricas.
 
-O [**grupo de métricas**](/pt/referência/métricas/grupo-de-métricas/) cria métricas que você deseja acompanhar e você também pode adicionar ações a esse grupo. Quando todos thresholds são alcançados, a ação será disparada e ocorrerá o que está descrito no plugin como, por exemplo, fazer o deploy daquele círculo em um outro círculo.
+O [**grupo de métricas**]({{< ref path="/Referência/Métricas/Grupo de métricas.md" lang="pt">}}) cria métricas que você deseja acompanhar e você também pode adicionar ações a esse grupo. Quando todos thresholds são alcançados, a ação será disparada e ocorrerá o que está descrito no plugin como, por exemplo, fazer o deploy daquele círculo em um outro círculo.
 
 Você pode acompanhar o status da ação no quadro dentro de **'Grupo de métricas**', veja abaixo:
 

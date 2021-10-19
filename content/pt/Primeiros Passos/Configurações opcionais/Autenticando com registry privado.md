@@ -8,11 +8,11 @@ description: >-
 
 ---
 
-## Por que autenticar?
+## **Por que autenticar?**
 
-Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**](/pt/primeiros-passos/definindo-um-workspace/docker-registry/) quando for preciso fazer o pull das imagens durante alguma implantação.
+Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu [**registry**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Docker Registry.md" lang="pt">}}) quando for preciso fazer o pull das imagens durante alguma implantação.
 
-## Como autenticar?
+## **Como autenticar?**
 
 O cluster Kubernetes utiliza o tipo **secret** do **docker-registy** para autenticar o registry container. 
 

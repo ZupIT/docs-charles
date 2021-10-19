@@ -10,17 +10,17 @@ description: >-
 
 ## **Circle Matcher**
 
-Trata-se de um serviço HTTP que permite você identificar a qual segmentação o usuário pertence, a partir de regras lógicas previamente definidas. Para isso, o [**Circle Matcher**](/pt/referência/circle-matcher/) recebe na requisição um JSON com os atributos sobre o usuário, e retorna uma lista de círculos.
+Trata-se de um serviço HTTP que permite você identificar a qual segmentação o usuário pertence, a partir de regras lógicas previamente definidas. Para isso, o [**Circle Matcher**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}) recebe na requisição um JSON com os atributos sobre o usuário, e retorna uma lista de círculos.
 
 ## **Círculos**
 
-[**Círculos** ](/pt/referência/círculo/)são grupos de usuários criados a partir de características específicas dentro de um mesmo ambiente na plataforma do Charles. Dessa forma, o desenvolvedor pode segmentar os usuários de acordo com as regras \(AND ou OR\) que mais fizerem sentido para testar aquela release.
+[**Círculos**]({{< ref path="/Referência/Círculo.md" lang="pt">}}) são grupos de usuários criados a partir de características específicas dentro de um mesmo ambiente na plataforma do Charles. Dessa forma, o desenvolvedor pode segmentar os usuários de acordo com as regras \(AND ou OR\) que mais fizerem sentido para testar aquela release.
 
-Por exemplo, é possível [**criar um círculo**](/pt/referência/circulo#como-criar-circulos) de engenheiros da região Norte do Brasil, outro de engenheiros do sudeste e um terceiro contendo todos os engenheiros brasileiros. Baseado nessa segmentação de clientes, pode-se elaborar diversas lógicas de deploy.
+Por exemplo, é possível [**criar um círculo**]({{< ref path="/Referência/Círculo.md" lang="pt">}}) de engenheiros da região Norte do Brasil, outro de engenheiros do sudeste e um terceiro contendo todos os engenheiros brasileiros. Baseado nessa segmentação de clientes, pode-se elaborar diversas lógicas de deploy.
 
 ## **Componentes**
 
-Fazem parte dos [**módulos**](/pt/primeiros-passos/criando-seu-primeiro-módulo/visao-geral/) que são criados dentro do Charles. Os componentes funcionam como abstrações das aplicações, o que significa dizer que eles possuem suas próprias configurações e que cada parte deles corresponde a uma aplicação do módulo em que você estiver trabalhando. Caso você trabalhe com um monorepo, cada uma das suas aplicações serão cadastradas como componentes dentro de um único módulo.
+Fazem parte dos [**módulos**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Visao geral.md" lang="pt">}}) que são criados dentro do Charles. Os componentes funcionam como abstrações das aplicações, o que significa dizer que eles possuem suas próprias configurações e que cada parte deles corresponde a uma aplicação do módulo em que você estiver trabalhando. Caso você trabalhe com um monorepo, cada uma das suas aplicações serão cadastradas como componentes dentro de um único módulo.
 
 ## **Mar Aberto** \(Default\)
 
