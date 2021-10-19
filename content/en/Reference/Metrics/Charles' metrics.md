@@ -34,7 +34,7 @@ It is a management feature that helps you view and follow the technical informat
 
 The circle metrics allows you to have an overview of your circles on Charles, like:  
 
-* [**Active and inactive**](/reference/circles/) circles;
+* [**Active and inactive**]({{< ref path="/Reference/Circles.md" lang="en">}}) circles;
 * Circle average lifetime;
 * Last update date.
 

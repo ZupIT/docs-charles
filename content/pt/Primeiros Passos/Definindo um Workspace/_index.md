@@ -1,7 +1,7 @@
 ---
 title: Definindo um Workspace
 weight: 20
-description: Esta seção descreve como você deve configurar seu workspace dentro do Charles.
+description: Nesta seção, você encontra como configurar seu workspace dentro do Charles.
 ---
 
 ---

@@ -14,12 +14,16 @@
   # limitations under the License.
 #
 
-name: Migration
+name: Update Published Release
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches: [ release* ]
+    tags:
+      - "!*"
 
 jobs:
-  predoc_deploy_hugo:
+  deploy_hugo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f #v2.3.4
@@ -32,10 +36,10 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION}}
+          aws-region: ${{ secrets.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 1200
-          role-session-name: PreDocS3Session
+          role-session-name: UpdatePublishedReleaseDocS3Session
           role-skip-session-tagging: true
 
       - name: Setup Hugo
@@ -52,7 +56,7 @@ jobs:
 
       - name: Get version from branch name
         id: version
-        run: echo "::set-output name=branch_version::$(echo $GITHUB_REF | cut -d / -f 3)"
+        run: echo "::set-output name=branch_version::$(echo $GITHUB_REF | cut -d / -f 3 | cut -d - -f 2 )"
         shell: bash
 
       - name: Config version path
@@ -65,7 +69,7 @@ jobs:
       - name: Build
         run: hugo -D --minify -b $BASE_URL/$VERSION
         env:
-          BASE_URL:  https://docs.charlescd.io
+          BASE_URL: ${{ secrets.URL_DOC }}
           VERSION: ${{ steps.version.outputs.branch_version }}
 
       - name: S3 upload
