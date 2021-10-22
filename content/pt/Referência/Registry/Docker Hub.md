@@ -9,7 +9,7 @@ Informe os dados abaixo para conceder acesso a Charles ao seu Docker Hub:
 
 **Nome**: esse nome representará sua configuração no Charles;
 
-* **URL do seu registry**: a URL do seu Docker Hub [**https://registry.hub.docker.com**](https://registry.hub.docker.com/)**;** 
+* **URL do seu registry**: a URL do seu Docker Hub [**https://registry.hub.docker.com**](https://registry.hub.docker.com/);
 * **Username:**  adicione o seu **dockerid**;
 * **Password:** a senha do seu Docker Hub ou o **token de acesso**. Veja a baixo como gerar: 
 

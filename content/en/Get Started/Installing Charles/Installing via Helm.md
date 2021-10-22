@@ -7,7 +7,7 @@ description: 'In this section, you will find how to install Charles with Helm.'
 ---
 
 {{% alert color="warning" %}}
-Before proceeding, make sure all the [**requirements**](/get-started/installing-charles/overview/) are properly installed.
+Before proceeding, make sure all the [**requirements**]({{< ref path="/Get Started/Installing Charles/Overview.md" lang="en">}}) are properly installed.
 {{% /alert %}}
 
 ## **How to install?** 

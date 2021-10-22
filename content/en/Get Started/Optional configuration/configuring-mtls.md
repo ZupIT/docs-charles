@@ -63,4 +63,4 @@ butler:
 
 ```
 
-**Step 8:** After that, follow [**Charles' installation steps**](/get-started/installing-charles/overview/).
+**Step 8:** After that, follow [**Charles' installation steps**]({{< ref path="/Get Started/Installing Charles/Overview.md" lang="en">}}).

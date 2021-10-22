@@ -18,7 +18,7 @@ However, if everyone in a team has the same permission, you are able to create o
 
 * _Product X Team._
 
-![Preview of User Group &quot;Data Analysts do Produto X&quot;](/shared/image%20%283%29%20%282%29.png)
+![](/shared/image%20%283%29%20%282%29.png)
 
 ## **Permissions for user groups in your workspace**
 
@@ -34,7 +34,7 @@ The following profiles are available:
 * **Analyst**: is able to view modules. They have permission to edit and delete circles and modules. And also view the modules' configuration.
 * **Reader**: is able to view circles and modules.
 
-![Permission options to associate users&apos; groups on a workspace.](/shared/chrome-capture-3-%20%282%29.gif)
+![](/shared/chrome-capture-3-%20%282%29.gif)
 
 ### **Permissions map**
 
