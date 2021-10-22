@@ -16,7 +16,7 @@ To edit, run and build this project, you will need:
     - To check the installation, run `yarn -v` in your terminal.
 * [**Node**](https://nodejs.org/en/)
     - To check the installation, run `npm -v` and `node -v` in your terminal.
-* * [**Hugo**](https://gohugo.io/getting-started/installing/)
+* [**Hugo**](https://gohugo.io/getting-started/installing/)
     - To check the installation, run `hugo version` in your terminal.
 
 ## Install
@@ -34,7 +34,7 @@ hugo -D --minify
 
 ## Running
 
-For run this project run the command:
+To run this project run the command:
 
 ```
 http-server
