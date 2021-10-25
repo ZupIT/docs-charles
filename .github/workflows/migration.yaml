@@ -22,7 +22,7 @@ jobs:
   predoc_deploy_hugo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f #v2.3.4
+      - uses: actions/checkout@fd47087372161c6f2a7b96d2ef87e944d89023ed
         with:
           submodules: true
           fetch-depth: 0
