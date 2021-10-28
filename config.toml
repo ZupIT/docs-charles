@@ -56,8 +56,12 @@ weight = 1
       name = "Community"
       weight = 20
       url = "http://forum.zup.com.br/"
-      
 
+  [[languages.en.menu.main]]
+      name = "C4Model"
+      weight = 30
+      url = "https://docs.charlescd.io/c4model/en/#/"
+      
 [languages.pt]
 title = "Charles C.D."
 description = "Documentação Charles C.D."
@@ -71,6 +75,11 @@ version_menu = "Versões"
       name = "Comunidade"
       weight = 20
       url = "http://forum.zup.com.br/"
+
+  [[languages.pt.menu.main]]
+      name = "C4Model"
+      weight = 30
+      url = "https://docs.charlescd.io/c4model/pt-br/#/"
 
 [markup]
   [markup.goldmark]
