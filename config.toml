@@ -76,6 +76,13 @@ version_menu = "Versões"
       weight = 20
       url = "http://forum.zup.com.br/"
 
+
+   [[languages.pt.menu.main]]
+      name = "C4Model"
+      weight = 30
+      url = "https://docs.charlescd.io/c4model/pt-br/#/"
+     
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
