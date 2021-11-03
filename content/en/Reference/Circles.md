@@ -14,8 +14,7 @@ Circles are the main approach related to the [**new deploy concept**]({{< ref pa
 
 Circles indicate client segmentation and also support the version management created for a specific audience.
 
-Once the right people are chosen to have access to your release associated with a circle, Charles will generate a[ **series of business or performance metrics**]
-({{< ref path="/Reference/Metrics/Charles' metrics.md" lang="en">}}). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
+Once the right people are chosen to have access to your release associated with a circle, Charles will generate a[ **series of business or performance metrics**]({{< ref path="/Reference/Metrics/Charles' metrics.md" lang="en">}}). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
 
 ## **How to create circles?**
 
@@ -44,7 +43,7 @@ Segmentations have the following fields that you have to fill:
 
 #### **Key and value**
 
-The **key** and **value** fields are established based on the information that will be sent in the request, which [**identifies the circles**](/reference/circle-matcher/) where your user belongs to. For example, the payload below could represent the information you have about a client:
+The **key** and **value** fields are established based on the information that will be sent in the request, which [**identifies the circles**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}) where your user belongs to. For example, the payload below could represent the information you have about a client:
 
 ```text
 {

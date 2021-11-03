@@ -23,7 +23,7 @@ To monitor your metrics you need to have:
 
 ## **How can you monitor?** 
 
-1. You have to create your **metrics group and your own metric,** to do that follow the [**steps here**]({{< ref path="/Reference/Metrics/Metrics group.md" lang="en">}});
+1. You have to create your **metrics group and your own metric,** to do that follow the [**steps in the Metrics group section**]({{< ref path="/Reference/Metrics/Metrics group.md" lang="en">}});
 2. In the advanced mode, execute **PromQL queries** to monitor your metrics.
 
 {{% alert color="info" %}}

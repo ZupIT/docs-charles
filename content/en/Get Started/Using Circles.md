@@ -6,12 +6,12 @@ description: 'In this section, you will find more information on how to use circ
 
 ---
 
-From the moment you start to create your deploys, the next step is to [**create your first circles**](/reference/circles/) to make your application segmentation better.
+From the moment you start to create your deploys, the next step is to [**create your first circles**]({{< ref path="/Reference/Circles.md" lang="en">}}) to make your application segmentation better.
 
 Follow the next steps:
 
 {{% alert color="info" %}}
-Before you follow the steps, make sure you have already installed and configured [**Circle Matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}) on your [**workspace**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}})
+Before you follow the steps, make sure you have already installed and configured [**Circle Matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}) on your [**workspace**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}}).
 {{% /alert %}}
 
 1. [**Create your circle**]({{< ref path="/Reference/Circles.md" lang="en">}});

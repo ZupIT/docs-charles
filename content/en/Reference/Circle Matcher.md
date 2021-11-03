@@ -8,13 +8,13 @@ description: >-
 
 --- 
 
-Circle Matcher is a resource that allows you to validate if your [**circles**](/reference/circles/) are incoherent segmentations. You can also use it in your applications to determine in which circle your users fit better.
+Circle Matcher is a resource that allows you to validate if your [**circles**]({{< ref path="/Reference/Circles.md" lang="en">}}) are incoherent segmentations. You can also use it in your applications to determine in which circle your users fit better.
 
 {{% alert color="info" %}}
 One good practice is to always make this identification when a user logs in to the application. However, this can be changed according to your business needs.
 {{% /alert %}}
 
-For more information on how to configure your **Circle Matcher in a workspace**, [**see Defining Workspace section**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}})
+For more information on how to configure your Circle Matcher in a workspace, [**check out the Defining Workspace section**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}}).
 
 ### **How the circle identification is made?** 
 

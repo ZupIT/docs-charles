@@ -38,7 +38,7 @@ See the image on how to create modules:
 ![](/shared/creating-your-first-module%20%281%29.png)
 
 {{% alert color="info" %}}
-For more information about Helm Repository, [**check out how to configure Chart Template section**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}).
+For more information about Helm Repository, [**check out the Chart Template section**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}).
 {{% /alert %}}
 
 ### **How do I get my module identifier?**

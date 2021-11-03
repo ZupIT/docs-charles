@@ -31,6 +31,6 @@ Preencha os seguintes campos:
 4. **Git token:** Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus [**templates Helm**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Configurando o chart template.md" lang="pt">}}) que serão utilizados durante o deployment da sua [**aplicação**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Visao geral.md" lang="pt">}}). Caso o seu Git Provider seja **GitHub**, é necessário a permissão "_repo_". Se não, configure no **GitLab** os acessos: "_api_ " e "_read\_repository_". 
 
 {{% alert color="info" %}}
-To avoid dependency of a specific user in the authentication token field, use [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
+No campo token de autenticação para evitar a dependência de um usuário especifíco, utilize o [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
 {{% /alert %}}
  

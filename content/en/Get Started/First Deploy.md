@@ -7,8 +7,7 @@ description: 'In this section, you will find how to make your first deployment.'
 ---
 
 {{% alert color="info" %}}
-After you have created your first [**module**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}}) and registered your [**cluster crendentials**,]
-({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}}) you have finished all the steps needed to make your first deployment. 
+After you have created your first [**module**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}}) and registered your [**cluster crendentials**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}}) you have finished all the steps needed to make your first deployment. 
 
 Now, it is necessary to create a [**release**]({{< ref path="/Reference/Releases.md" lang="en">}}) and provide it on the configured cluster.
 {{% /alert %}}

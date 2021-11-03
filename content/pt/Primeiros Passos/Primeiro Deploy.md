@@ -20,8 +20,7 @@ No CharlesCD, é preciso utilizar imagens de containers já disponíveis no [**r
 Para fazer seu primeiro deploy, siga os passos abaixo:
 
 1. Acesse a área "**Círculos**" **\(Circles\)**;
-2. Selecione um [**círculo**]
-({{< ref path="/Referência/Círculo.md" lang="pt">}}). Caso você não tenha criado um ainda, a opção que irá aparecer é a do **círculo default** para que seja possível você realizar o  primeiro deploy;
+2. Selecione um [**círculo**]({{< ref path="/Referência/Círculo.md" lang="pt">}}). Caso você não tenha criado um ainda, a opção que irá aparecer é a do **círculo default** para que seja possível você realizar o  primeiro deploy;
 3. Altere o filtro do círculo de ativo para **inativo;** 
 4. Selecione a opção "**Insert a release**";
 5. Depois selecione "**Create a release**" e preencha os campos: 

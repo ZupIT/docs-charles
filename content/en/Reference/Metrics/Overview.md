@@ -1,5 +1,5 @@
 ---
-title: Metrics
+title: Overview
 weight: 74
 description: >-
   In this section, you will find more information about how to use metrics on

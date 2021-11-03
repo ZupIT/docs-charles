@@ -31,6 +31,6 @@ Fill in these fields:
 4. **Git token:** Insert an authentication token that has access to the git repository where your [**helm templates**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}) are stored \(they will be used during the deployment of your application\). If your Git Provider is **GitHub**, "_repo_" permission is required Otherwise, configure the accesses in **GitLab:** "_API_" and "_read\_repository_".
 
 {{% alert color="info" %}}
-No campo token de autenticação para evitar a dependência de um usuário especifíco, utilize o [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
+To avoid the dependency of a specific user in the authentication token field, use [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
 {{% /alert %}}
 

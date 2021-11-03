@@ -17,7 +17,7 @@ Com apenas uma instalação, vários times podem utilizar o Charles com configur
 Cada workspace possui as seguintes configurações:
 
 * Definição dos acessos e [**permissões dos grupos de usuários**]({{< ref path="/Referência/Grupo de Usuários.md" lang="pt">}}).
-* Cadastros de credenciais do [**Git**](https://github.com/), [**Docker Registry**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Docker Registry.md" lang="pt">}}) e de [**Continuous Deployment \(CD\)**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Ambiente de deploy.md" lang="pt">}}).
+* Cadastros de credenciais do [**Git**](https://github.com/), [**Docker Registry**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Docker Registry.md" lang="pt">}}) e de [**Continuous Deployment \(CD\)**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Ambiente de deploy.md" lang="pt">}}). 
 * Personalização do [**Circle Matcher**]({{< ref path="/Referência/Circle Matcher.md" lang="pt">}}).
 * Registro do [**Provedor de Métricas**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Adicionando o Datasource.md" lang="pt">}})
  das suas aplicações.

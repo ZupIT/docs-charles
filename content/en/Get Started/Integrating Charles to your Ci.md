@@ -24,8 +24,7 @@ To integrate Charles C.D. into your pipeline, you will need to know some informa
 * **`component.id`**: This identifier represents the component and it [**can be found in the module details**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}}).
 * **`component.version`**: It is where you inform the name of the tag of your component's image.
 * **`component.artifact`**:  This is the name of the artifact. For example:  {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.
-* **`circle.id`**: This Id represents the circle registered in Charles. [**Copy the ID in the existing menu when viewing the circle**]
-({{< ref path="/Reference/Circle Matcher.md" lang="en">}}).
+* **`circle.id`**: This Id represents the circle registered in Charles. [**Copy the ID in the existing menu when viewing the circle**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}).
 * **`build.id`**: This Id represents the deployment's composition created in the first request mentioned below. This information is returned as the value of the ID key in the JSON format response.
 
 ## **How to integrate?**

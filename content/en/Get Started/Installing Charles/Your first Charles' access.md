@@ -152,5 +152,5 @@ After doing this, clone the configurations \(it can be single-file or the helm f
 {{% /alert %}}
 
 {{% alert color="danger" %}}
-The purpose of this installation is only for tests. Using this for the production environment is not recommended due to lack o backup, high availability, etc.
+The purpose of this installation is only for tests. Using this for the production environment is not recommended due to lack of backup, high availability, etc.
 {{% /alert %}}

@@ -16,10 +16,10 @@ You need only one installation, and the teams will be able to use Charles with d
 
 Each workspace has the following configurations:
 
-* Access control and **user groups permissions**;
-* **Git,** [**Docker Registry**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}})
-* [**Continuous Deployment \(CD\)**:]({{< ref path="/Get Started/First Deploy.md" lang="en">}})
-* [**Circle Matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}});
+* Access control and [**user groups permissions**]({{< ref path="/Reference/Users Groups.md" lang="en">}}).
+* Register your credentials: [**Git**](https://github.com/), [**Docker Registry**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}}) and 
+  [**Continuous Deployment \(CD\)**:]({{< ref path="/Get Started/First Deploy.md" lang="en">}}).
+* [**Circle Matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}).
 * [**Metrics provider**]({{< ref path="/Reference/Metrics/Setting up your metrics.md" lang="en">}}). 
 
 ![](/shared/defining-workspace%20%281%29.png)

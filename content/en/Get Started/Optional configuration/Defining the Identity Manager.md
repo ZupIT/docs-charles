@@ -28,9 +28,7 @@ On Charles default installation, it already has Keycloak that it is used to mana
 
 ### **External IDM** 
 
-In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**IDM's section.**]
-({{< ref path="/Reference/Identity Manager.md" lang="en">}}).
-
+In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [**IDM's section**]({{< ref path="/Reference/Identity Manager.md">}}).
 
 {{% alert color="info" %}}
 There are some blocked flows when using an external IDM, see below:
