@@ -2,7 +2,7 @@
 title: Configuring your module to propagate the circle's Id
 weight: 39
 description: >-
-  In this section, you will find how to use lib to propagate header
+  In this section, you will find how to use a lib to propagate header
   "X-Circle-ID" through libraries to make sure the user access correct circles.
 ---
 
@@ -10,11 +10,11 @@ description: >-
 
 ## **Why configure it?** 
 
-When you work with multiple microservices scenarios, you need to configure the modules to propagate the`X-Circle-Id` header that makes sure the [**requests are being redirected to the right version of your application**](/reference/circles/). Then your user base will get to the same version of all microservice that are part of your hypothesis test.
+When you work with multiple microservices scenarios, you need to configure the modules to propagate the `X-Circle-Id` header that makes sure the [**requests are being redirected to the right version of your application**]({{< ref path="/Reference/Circles.md" lang="en">}}). Then your user base will get to the same version of all microservice that are part of your hypothesis test.
 
 For example, if you test a feature between microservices that have integration with an opening flow account, it is necessary to make sure your user will get to the correct versions that are on your hypothesis test, created for this specific flow. 
 
-You can do this using a library to propagate the `X-Circle-Id` header, which makes the [**circle id identified by the circle-matcher** ](/reference/circle-matcher/)pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version. 
+You can do this using a library to propagate the `X-Circle-Id` header, which makes the [**circle id identified by the circle-matcher**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}})pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version. 
 
 {{% alert color="info" %}}
 If there is a microservice inside this flow that isn't part of your test, the circle value will be passed, but your request will fall into the open sea because there isn't any version for that circle. 
@@ -46,5 +46,5 @@ To use them, you need to add them to your application:
 * [**Lib para .NET**](https://github.com/ZupIT/charlescd/tree/master/tracing/dotnet-core%20)
 
 {{% alert color="info" %}}
-For **Node.js** there is already a lib and[ **you can check it on npm page**](https://www.npmjs.com/package/hpropagate)
+For **Node.js** there is already a lib and [**you can check it on npm page**](https://www.npmjs.com/package/hpropagate)
 {{% /alert %}}

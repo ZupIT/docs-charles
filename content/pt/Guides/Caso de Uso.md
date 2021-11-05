@@ -2,18 +2,18 @@
 title: Caso de Uso
 weight: 88
 description: >-
-  Nesta seção você encontra com um exemplo de como realizar a implantação de uma aplicação
+  Nesta seção, você encontra um exemplo de como realizar a implantação de uma aplicação
   por meio do Charles.
 ---
 
 ---
 
-## Circles Sample
+## **Circles Sample**
 
 Circles Sample é uma aplicação desenvolvida pelo nosso time para que você possa implantá-la em um ambiente de testes e conhecer melhor sobre o conceito de **deploy em círculos**. Além disso, ela pode ser utilizada para entender como configurar o chart template da sua aplicação.
 
 {{% alert color="info" %}}
- Para reproduzir este caso de uso é necessário que você já tenha um workspace definido, para saber mais [**veja essa seção**](../../../../../../primeiros-passos/definindo-workspace/)
+ Para reproduzir este caso de uso é necessário que você já tenha um workspace definido, para saber mais [**sobre workspaces, veja a seção de Primeiros Passos**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 {{% /alert %}}
 
 O caso de uso se baseia nos seguintes passos:
@@ -23,19 +23,19 @@ O caso de uso se baseia nos seguintes passos:
 3. Configuração para acesso ao Circles Sample através do seu cluster de Kubernetes;
 4. Teste da aplicação utilizando círculos diferentes.
 
-### Cadastrando o Circles Sample nos seus módulos
+### **Cadastre o Circles Sample nos seus módulos**
 
 O projeto está disponibilizado no [**repositório**](http://github.com/zupit/charlescd) oficial, para fazer o cadastro do módulo, siga as configurações abaixo:
 
 {{% alert color="warning" %}}
-É necessário um passo anterior onde seja feito upload da imagem da aplicação no seu [**registry**](../../../../../primeiros-passos/definindo-workspace/docker-registry) cadastrado.
+Você precisa fazer o upload da imagem da aplicação no seu [**registry**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Docker Registry.md" lang="pt">}}) cadastrado.
 {{% /alert %}}
 
 ![](//screen-shot-2020-08-12-at-17.34.57.png)
 
-Para acessar o chart template do Circles Sample,[ **clique aqui**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). Caso tenha dúvida sobre essa configuração, veja a [**referência com um passo-a-passo**](../../../../primeiros-passos/criando-seu-primeiro-modulo/configurando-o-chart-template).
+Para acessar o chart template do Circles Sample,[ **acesse o repositório**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). Caso tenha dúvida sobre essa configuração, veja a [**referência com o passo-a-passo**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Configurando o chart template.md" lang="pt">}}).
 
-### Implantando uma versão no círculo Default
+### **Implante uma versão no círculo Default**
 
 Para implantar o exemplo no círculo default, siga os passos: 
 
@@ -49,7 +49,7 @@ Para implantar o exemplo no círculo default, siga os passos:
 No campo **Version name** você deve informar o nome completo da release que você deseja utilizar.
 {{% /alert %}}
 
-### Expondo a aplicação
+### **Expondo a aplicação**
 
 #### Minikube
 
@@ -62,11 +62,11 @@ Para acessar a aplicação utilizando o Minikube, execute o `minikube tunnel`  e
 ```
 
 
-#### Cluster
+#### **Cluster**
 
 Caso a instalação tenha sido feita em outro ambiente garanta que o Circles Sample esteja no mesmo domínio do `moove`.
 
-### Acessando Circles Sample
+### **Acesse o Circles Sample**
 
 Acesse [http://localhost:8080](http://localhost:8080)
 
@@ -74,9 +74,10 @@ Acesse [http://localhost:8080](http://localhost:8080)
 
 Ao acessar a tela do circles sample, você precisa preencher um formulário para que o sample consiga acessar a API do `moove` e listar os círculos do workspace que você definiu. Veja abaixo como: 
 
-* **Insert URL Moove:** insira a API de acesso ao [**moove**](../../../../#arquitetura-do-sistema).
-* **Authorization:** informe o token de acesso a api do [**moove**](../#arquitetura-do-sistema). `Bearer access-token`
+* **Insert URL Moove:** insira a API de acesso ao [**moove**]({{< ref path="/Overview.md" lang="pt">}}).
+* **Authorization:** informe o token de acesso a api do [**moove**]({{< ref path="/Overview.md" lang="pt">}}) `Bearer access-token`.
 * **Workspace ID:** informe o id do workspace que você deseja acessar.
+
 
 {{% alert color="info" %}}
 Essas informações podem ser obtidas no header de alguma requisição como, por exemplo, listagem de círculos, hipóteses, etc. Ou na aba de cookies do browser.

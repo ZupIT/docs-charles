@@ -13,7 +13,7 @@ description: >-
 Circles Sample is developed by our team in order to make you able to implement it in a test environment and to get to know the deploy in circles concept better. Besides, it can be helpful to understand how to configure the chart template of your application,
 
 {{% alert color="info" %}}
- To run this use case, you must already have a defined workspace, to know more about it, [**check out more on the defining workspace section**](/get-started/defining-a-workspace/overview/).
+ To run this use case, you must already have a defined workspace, for more information,  [**check out the Defining workspace section**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}}).
 {{% /alert %}}
 
 The use case is based on the following steps:
@@ -28,12 +28,12 @@ The use case is based on the following steps:
 The project is available in the official [**repository**](http://github.com/zupit/charlescd), to register your module, follow the configuration below: 
 
 {{% alert color="warning" %}}
-Before the steps, it is necessary to make an application image upload in your registered [**registry**](/get-started/defining-a-workspace/docker-registry/). 
+Before the steps, it is necessary to make an application image upload in your registered  [**registry**]({{< ref path="/Get Started/Defining a Workspace/Docker registry.md" lang="en">}}).
 {{% /alert %}}
 
 ![](/shared/usscreen-shot-2020-08-12-at-17.34.57.png)
 
-To access the Circles Sample chart template, [**click here**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). If you have any doubts about this configuration, check here for a **step-by-step reference**. 
+To access the Circles Sample chart template, [**access the repository**](https://api.github.com/repos/zupit/charlescd/contents/samples/circles). If you have any doubts about this configuration, check here for a **step-by-step reference**. 
 
 ### **Implementing a default circle version** 
 
@@ -53,7 +53,7 @@ On the **Version name** field, you have to inform the full name of the release y
 
 #### **Minikube**
 
-To access the application using Minikube, run the`minikube tunnel` and verify if the **external-ip** generated to the Charles Sample is different from the **127.0.0.1 \(localhost\)**. In this case, change your host like the example below: 
+To access the application using Minikube, run the `minikube tunnel` and verify if the **external-ip** generated to the Charles Sample is different from the **127.0.0.1 \(localhost\)**. In this case, change your host like the example below: 
 
 
 ```bash
@@ -74,8 +74,8 @@ Access [http://localhost:8080](http://localhost:8080)
 
 When accessing the circles' sample screen, you need to fill out a form, so the sample is able to access the `moove` API to list the workspace circles you have defined. See below how to it: 
 
-1. **Insert URL Moove:** insert an API to access a [**moove**](/overview/).
-2. **Authorization:** inform the access token to the [**moove**](/overview/) API `Bearer access-token`
+1. **Insert URL Moove:** insert an API to access a [**moove**]({{< ref path="/Overview.md" lang="en">}}).
+2. **Authorization:** inform the access token to the [**moove**]({{< ref path="/Overview.md" lang="en">}}) API `Bearer access-token`.
 3. **Workspace ID:** inform the workspace id you want to access. 
 
 {{% alert color="info" %}}

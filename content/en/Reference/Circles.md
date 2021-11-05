@@ -8,13 +8,13 @@ description: >-
 
 ---
 
-Circles are the main approach related to the [**new deploy concept**](/faq/circle-deploy-vs-other-deploys/) brought by Charles. It enables user group creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
+Circles are the main approach related to the [**new deploy concept**](({{< ref path="/FAQ/Circle deploy vs Other deploys.md" lang="en">}}) brought by Charles. It enables user group creation with several characteristics and promotes simultaneous application tests for a great number of possible users.
 
 ![Circle generation with Charles deployments](/shared/deploy_em_circulos%20%289%29%20%281%29.png)
 
 Circles indicate client segmentation and also support the version management created for a specific audience.
 
-Once the right people are chosen to have access to your release associated with a circle, Charles will generate a[ **series of business or performance metrics**](/reference/metrics/charles-metrics/). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
+Once the right people are chosen to have access to your release associated with a circle, Charles will generate a [**series of business or performance metrics**]({{< ref path="/Reference/Metrics/Charles' metrics.md" lang="en">}}). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.
 
 ## **How to create circles?**
 
@@ -43,7 +43,7 @@ Segmentations have the following fields that you have to fill:
 
 #### **Key and value**
 
-The **key** and **value** fields are established based on the information that will be sent in the request, which [**identifies the circles**](/reference/circle-matcher/) where your user belongs to. For example, the payload below could represent the information you have about a client:
+The **key** and **value** fields are established based on the information that will be sent in the request, which [**identifies the circles**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}) where your user belongs to. For example, the payload below could represent the information you have about a client:
 
 ```text
 {

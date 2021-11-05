@@ -24,7 +24,7 @@ See below how the configuration works on each one of them:
 
 On the minikube, the **load balancer** does not automatically create an **external IP,** to make this possible, follow the steps: 
 
-**Step 1**: Just run the command below:
+**Step 1**: Run the command below:
 
 ```text
 minikube tunnel
@@ -55,13 +55,13 @@ For more information on how to install Microk8s visit the [**project's website**
 
 Once Microk8s is installed, you have to enable the following add-ons:
 
-* **DNS:** discovery of services within the cluster; 
-* **Storage:** creating volumes and persistence of PODs; 
-* **MetalLB:** access to the services exposed by Kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.
+* **DNS:** Discovery of services within the cluster; 
+* **Storage:** Creating volumes and persistence of PODs; 
+* **MetalLB:** Access to the services exposed by Kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.
 
 Follow the next steps to enable Microk8s on Charles: 
 
-**Step 1:** prepare Microk8s to receive the CharlesCD;
+**Step 1:** Prepare Microk8s to receive the CharlesCD;
 
 ```text
 microk8s enable dns storage metallb
@@ -114,7 +114,7 @@ microk8s.kubectl get svc -n charles
 
 ```
 
-**Passo 2:** now that you have the **external ip,** **replace the ip-external-charles,** add this line on your OS host file:
+**Passo 2:** Now that you have the **external ip,** **replace the ip-external-charles,** add this line on your OS host file:
 
 ```text
 <IP-EXTERNAL-CHARLES>       charles.info.example
@@ -124,7 +124,7 @@ microk8s.kubectl get svc -n charles
 For more information on **how to change the host file,** [**check the tutorial**](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)
 {{% /alert %}}
 
-**Step 3:** type in your browser **http://charles.info.example** and the entire application will be available.
+**Step 3:** Type in your browser **http://charles.info.example** and the entire application will be available.
 
 ## **3. Cloud Provider \(AWS, GCP, AZURE\)**
 
@@ -152,5 +152,5 @@ After doing this, clone the configurations \(it can be single-file or the helm f
 {{% /alert %}}
 
 {{% alert color="danger" %}}
-The purpose of this installation is only for tests. Using this for the production environment is not recommended due to lack o backup, high availability, etc.
+This installation is only for tests. It is not recommended for a production environment due to the lack of backup, high availability, etc.
 {{% /alert %}}

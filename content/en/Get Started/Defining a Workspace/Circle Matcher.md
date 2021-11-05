@@ -18,7 +18,7 @@ This configuration is necessary, so you are able to perform operations in Charle
 It is important to remember, in Charle's context, the Circle Matcher module receives most of the environment's requests because it is the application that identifies the user based on the rules that you have configured while managing a circle.
 {{% /alert %}}
 
- If you want to know more about **Circle Matcher**, check out the [**Reference section**](/reference/circle-matcher/). 
+If you want to know more about **Circle Matcher**, check out the [**Reference section**]({{< ref path="/Reference/Circle Matcher.md">}}). 
 
 ## **How must be configured?**
 
@@ -40,6 +40,5 @@ The difference is in terms of performance, it is recommended to use Kubernetes s
 
 ## Next steps
 
-In this section, you saw how to create your Circle Matcher. To continue your workspace configuration, Charles offers metrics that need to be configured. 
-
-👉 Go to [**Setting up your metrics**](/reference/metrics/setting-up-your-metrics/) and find out how Charles uses metrics.
+Continue your workspace configuration, Charles offers metrics that need to be configured. 
+- Go to [**Setting up your metrics**]({{< ref path="/Reference/Metrics/Setting up your metrics.md" lang="en">}}) and find out how Charles uses metrics.

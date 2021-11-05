@@ -1,7 +1,7 @@
 ---
 title: Optional configuration
 weight: 11
-description: 'Here, you''ll find details about Charles'' optional configurations.'
+description: 'In this section, you''ll find details about Charles'' optional configurations.'
 ---
 
 ---
