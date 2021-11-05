@@ -1,7 +1,7 @@
 ---
 title: Instalando via Kind
 weight: 7
-description: 'Nesta seção, você encontra como instalar o Charles via Kind no seu ambiente local..'
+description: 'Nesta seção, você encontra como instalar o Charles via Kind no seu ambiente local.'
 ---
 
 # **Como fazer o deploy do CharlesCD no Kubernetes com o KinD**

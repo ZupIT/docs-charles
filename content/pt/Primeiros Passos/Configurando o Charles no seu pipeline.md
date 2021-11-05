@@ -18,14 +18,19 @@ A configuração de um CD gera um processo mais rápido e eficaz para colocar se
 
 Para integrar o Charles C.D. no seu pipeline, você precisa saber algumas informações. Veja abaixo quais são e como consegui-las:
 
-* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção do token sistêmico**](/pt/referência/token-sistêmico/).
-* **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/)
-* **`module.id`**: Esse Id representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo.**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/)
-* **`component.id`**: Esse identificador representa o componente e [**pode ser buscado nos detalhes do módulo**](/pt/primeiros-passos/definindo-um-workspace/visao-geral/).
+* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção do token sistêmico**]({{< ref path="/Referência/Token Sistêmico.md" lang="pt">}}).
+.
+* **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
+
+* **`module.id`**: Esse Id representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
+
+* **`component.id`**: Esse identificador representa o componente e [**pode ser buscado nos detalhes do módulo**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
+
 * **`component.version`**: Neste campo informe o nome da tag da imagem do seu componente.
 * **`component.artifact`**:  Este é o nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.
-* **`circle.id`**: Esse Id representa o círculo cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o círculo.**](/pt/referência/círculo/)
-* **`build.id`**: Este Id representa a composição do deploy criada na primeira requisição[ **citada abaixo**](/pt/primeiros-passos/configurando-o-charles-no-seu-pipeline/). Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
+* **`circle.id`**: Esse Id representa o círculo cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o círculo**]({{< ref path="/Referência/Círculo.md" lang="pt">}}).
+
+* **`build.id`**: Este Id representa a composição do deploy criada na primeira requisição[ **citada abaixo**]. Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
 
 ## **Como integrar?**
 
@@ -240,4 +245,4 @@ curl 'https://charlescd.api.com/moove/v2/deployments' \
 }'
 ```
 
-Você pode acompanhar a conclusão dos deployments utilizando os [**Webhooks**](/pt/primeiros-passos/definindo-um-workspace/webhooks/).
+Você pode acompanhar a conclusão dos deployments utilizando os [**Webhooks**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Webhooks.md" lang="pt">}}).

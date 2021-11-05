@@ -22,7 +22,7 @@ See the below an example of a repository containing the component's chart  **htt
 The deployment module Butler uses helm charts to make your application available in the cluster.  These charts must be available in a Github or Gitlab repository and accessible through a token, previously registered in the deployment configuration. The URL is provided along with the module registration. 
 
 {{% alert color="info" %}}
-If you haven't configured your module yet, [**see how to do it in 'Creating your module' section**](/get-started/creating-your-first-module/overview/) It is important to remember, you have to register the URL in this module. 
+If you haven't configured your module yet, [**see how to do it in the 'Creating your module' section**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}). It is important to remember, you have to register the URL in this module. 
 {{% /alert %}}
 
 ### **Templates**

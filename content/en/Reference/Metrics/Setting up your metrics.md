@@ -180,6 +180,4 @@ Google Analytics provides a tag to track the data of your application, just inse
 If you want to use Charles to analyze your Google Analytics data, you need to add a new metric with your circle ID \(**renaming it as circle\_source**\) in your metrics label.
 
 {{% alert color="info" %}}
-For more information about it, check out [**Analytics' documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4)
-
-
+For more information about it, check out [**Analytics' documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4).

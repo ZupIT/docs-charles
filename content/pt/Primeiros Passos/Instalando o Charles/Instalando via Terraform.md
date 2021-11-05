@@ -1,7 +1,7 @@
 ---
 title: Instalando via Terraform
 weight: 6
-description: 'Nesta seção, você encontra como instalar o Charles no seu ambiente local via Terraform..'
+description: 'Nesta seção, você encontra como instalar o Charles no seu ambiente local via Terraform.'
 ---
 
 ---

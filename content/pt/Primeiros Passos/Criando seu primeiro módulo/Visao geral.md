@@ -1,7 +1,7 @@
 ---
 title: Visão Geral
 weight: 35
-description: Esta seção descreve como você pode criar seu primeiro módulo no Charles.
+description: Nesta seção, você encontra informações para criar seu primeiro módulo no Charles.
 ---
 
 ---
@@ -39,7 +39,7 @@ Veja a imagem de como criar módulos:
 ![](/shared/creating-your-first-module.png)
 
 {{% alert color="info" %}}
-Para saber mais sobre a configuração do repositório do helm, [**acesse a seção Configurando o chart template**](/pt/primeiros-passos/criando-seu-primeiro-módulo/configurando-o-chart-template/) 
+Para saber mais sobre a configuração do repositório do helm, [**acesse a seção Configurando o chart template**]({{< ref path="/Primeiros Passos/Criando seu primeiro módulo/Configurando o chart template.md" lang="pt">}}).
 {{% /alert %}}
 
 ### **Como obter o identificador do meu módulo?**

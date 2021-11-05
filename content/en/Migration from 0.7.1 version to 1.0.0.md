@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-The new CharlesCD's 1.0.0 version brought more reliability in deployments with [**Operator**](/reference/preparing-your-deployment/), however, Helm finds some difficulties to add the necessary elements to Operator in an existing installation, like  **Custom Resources Definition** \(CRDs\). To change that, you need to follow some steps for a more functional update. See below: 
+The new CharlesCD's 1.0.0 version brought more reliability in deployments with [**Operator**]({{< ref path="/Get Started/Defining a Workspace/Deploy environment.md" lang="en">}}), however, Helm finds some difficulties to add the necessary elements to Operator in an existing installation, like  **Custom Resources Definition** \(CRDs\). To change that, you need to follow some steps for a more functional update. See below: 
 
 ### **Step 1: Uninstall CharlesCD \(installation with Helm\):**
 
@@ -40,11 +40,11 @@ helm install -n <NAMESPACE_CHARLESCD> <NOME_DA_INSTALAÇÃO> ./install/helm-char
 
 ### **Step 3: Update the deployment configuration for each Workspace:**
 
-After installing, you can access CharlesCD with your admin user. It is necessary to do a new deployment configuration for your workspaces. See how to this configuration in [**Deployment Configuration**](/reference/preparing-your-deployment/).  
+After installing, you can access CharlesCD with your admin user. It is necessary to do a new deployment configuration for your workspaces. See how to this configuration in [**Deployment environment**]({{< ref path="/Get Started/Defining a Workspace/Deploy environment.md" lang="en">}}).  
 
 ###  **Step 4: Override the release in each active circle:**
 
-Now, you need to override the release with the latest release where each active circle deployment has been made. See how to perform version overrides in [**'How to create Charles release?**](/reference/releases/)'.
+Now, you need to override the release with the latest release where each active circle deployment has been made. See how to perform version overrides in [**'How to create Charles release?**]({{< ref path="/Reference/Releases.md" lang="en">}})'.
 
 {{% alert color="info" %}}
 Don't worry about the override release. CharlesCD will recognize all manifest it needs to take care of. 

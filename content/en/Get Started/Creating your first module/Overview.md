@@ -7,7 +7,7 @@ description: 'In this section, you will find how to create your first module on 
 
 After creating and configuring your workspace, it is necessary to add the modules.
 
-A **module** is your application stored in a [**Git repository previously registered**](/get-started/defining-a-workspace/overview/).
+A **module** is your application stored in a [**Git repository previously registered**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}})
 
 ## How to create your modules?
 
@@ -38,7 +38,7 @@ See the image on how to create modules:
 ![](/shared/creating-your-first-module%20%281%29.png)
 
 {{% alert color="info" %}}
-For more information about Helm Repository, [**check out how to configure Chart Template section**](/get-started/creating-your-first-module/how-to-configure-chart-template/). 
+For more information about Helm Repository, [**check out how to configure Chart Template section**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}).
 {{% /alert %}}
 
 ### **How do I get my module identifier?**

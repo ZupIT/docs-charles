@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-O grupo de métricas é uma funcionalidade que permite você cadastrar e organizar em grupos qualquer tipo de métrica dentro da sua aplicação. Essas métricas são relacionadas com o [**provedor que você cadastrou anteriormente**](/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/). 
+O grupo de métricas é uma funcionalidade que permite você cadastrar e organizar em grupos qualquer tipo de métrica dentro da sua aplicação. Essas métricas são relacionadas com o [**provedor que você cadastrou anteriormente**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Adicionando o Datasource.md" lang="pt">}}). 
 
 ### **Como criar um grupo?**
 
@@ -57,4 +57,3 @@ Você pode customizar sua própria métrica com a funcão **advanced.** Essa op�
 Veja o exemplo abaixo_,_ mostra onde usar o **PromQL** para fazer queries no Prometheus, criando um novo tipo de métrica: 
 
 ![](/shared/advanced.png)
-
