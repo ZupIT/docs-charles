@@ -30,7 +30,7 @@ Once you start using the interface, it's possible to notice that there are two w
 
 The  way to make this validation are:
 
-You add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**,  **you will receive all the circles related to this user.**  
+You add manually keys and values to define the characteristics of a user test. Based on that, once you run the **Try**, **you will receive all the circles related to this user.**  
 
 ![](/shared/circle-matcher.gif)
 

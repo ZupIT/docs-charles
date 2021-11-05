@@ -10,7 +10,7 @@ description: >-
 
 ## **Por que configurar?**
 
-Quando você  [**cria um workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}), é preciso informar ao Charles para qual Circle Matcher esse workspace atual apontará. É possível que haja um Circle Matcher para cada ambiente, já que o Charles lida, ao mesmo tempo, com diferentes ambientes em vários workspaces. 
+Quando você [**cria um workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}), é preciso informar ao Charles para qual Circle Matcher esse workspace atual apontará. É possível que haja um Circle Matcher para cada ambiente, já que o Charles lida, ao mesmo tempo, com diferentes ambientes em vários workspaces. 
 
 Apesar do Circle Matcher ser um módulo independente no Charles, é possível instalá-lo em qualquer área de preferência dentro da arquitetura como, por exemplo, em um cluster público. 
 
@@ -38,6 +38,7 @@ Caso prefira usar o Circle Matcher no mesmo namespace em que Charles está insta
 A diferença é que, em termos de desempenho, o mais recomendado é usar o nome do serviço do Kubernetes. 
 
 > Exemplo: **http://charlescd-circle-matcher:8080**.
+
 ## Próximos passos 
 
 Continue sua configuração de um workspace, o Charles oferece métricas que precisam ser configuradas.

@@ -18,7 +18,7 @@ A configuração de um CD gera um processo mais rápido e eficaz para colocar se
 
 Para integrar o Charles C.D. no seu pipeline, você precisa saber algumas informações. Veja abaixo quais são e como consegui-las:
 
-* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção do token sistêmico**]({{< ref path="/Referência/Token Sistêmico.md" lang="pt">}}).
+* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção de token sistêmico**]({{< ref path="/Referência/Token Sistêmico.md" lang="pt">}}).
 .
 * **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 
