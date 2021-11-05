@@ -26,4 +26,3 @@ You have to follow the next steps:
 6. Make the configuration based on the selected tool. 
 
 ![](/shared/workspace_datasource.gif)
-

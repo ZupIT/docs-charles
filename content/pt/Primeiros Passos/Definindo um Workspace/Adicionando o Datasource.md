@@ -23,4 +23,3 @@ Para realizar a configuração de cadastro, basta seguir os seguintes passos:
 6. Faça a configuração baseada na ferramenta selecionada.
 
 ![](/shared/workspace_datasource%20%281%29.gif)
-

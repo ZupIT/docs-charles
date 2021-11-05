@@ -57,4 +57,3 @@ Você pode customizar sua própria métrica com a funcão **advanced.** Essa op�
 Veja o exemplo abaixo_,_ mostra onde usar o **PromQL** para fazer queries no Prometheus, criando um novo tipo de métrica: 
 
 ![](/shared/advanced.png)
-

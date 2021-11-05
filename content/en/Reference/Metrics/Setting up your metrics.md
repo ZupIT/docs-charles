@@ -181,4 +181,3 @@ If you want to use Charles to analyze your Google Analytics data, you need to ad
 
 {{% alert color="info" %}}
 For more information about it, check out [**Analytics' documentation**](https://developers.google.com/analytics/devguides/reporting/core/v4).
-

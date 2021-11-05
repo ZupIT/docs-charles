@@ -33,4 +33,3 @@ Preencha os seguintes campos:
 {{% alert color="info" %}}
 No campo token de autenticação para evitar a dependência de um usuário especifíco, utilize o [**Machine Account**](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users). 
 {{% /alert %}}
-

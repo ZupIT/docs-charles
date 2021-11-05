@@ -19,4 +19,3 @@ Certifique-se de que você já tenha instalado e configurado o [**Circle Matcher
 3. Faça o deploy no círculo criado. 
 
 ![](/shared/first-deploy%20%282%29.gif)
-
