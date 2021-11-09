@@ -19,7 +19,7 @@
 
 	const versionsList = removeDuplicatedVersions.map((version) => {
 		const urlVersion = version.concat(".x")
-		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}/">${version}</a>`
+		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}{{ .Site.LanguagePrefix }}">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
