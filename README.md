@@ -1,16 +1,16 @@
 # **CharlesCD Documentation**
 
-his repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) and contains **[CharlesCD](https://charlescd.io/)** official documentation.
+This repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) and contains **[CharlesCD](https://charlescd.io/)** official documentation.
 
 ## **Table of contents**
-1. [**About**](#About)
-2. [**Getting Started**](#getting-started)
+### 1. [**About**](#About)
+### 2. [**Getting Started**](#getting-started)
 > #### i. [**Requirements**](#requirements)
 > #### ii. [**Installation**](#installation)
 > #### iii. [**Build**](#build)
-3. [**How to contribute?**](#how-to-contribute)
-4. [**Code of Conduct**](#code-of-conduct)
-5. [**Community**](#community)
+### 3. [**Contributing Guide**](#contributing-guide)
+### 4. [**Code of Conduct**](#code-of-conduct)
+### 5. [**Community**](#community)
 
 
 ## **About** 
@@ -64,35 +64,12 @@ Once you've cloned this repo, from the `root` folder, run the command:
 hugo server
 ```
 
-## **How to contribute?**
+## **Contributing Guide**
+Check out CharlesCD's [**Contributing Guide**](https://github.com/ZupIT/docs-charles/blob/main/CONTRIBUTING.md) to contribute to our documentation. 
 
-You can suggest a change, a fix, or improvements to our documentation, such as: 
-- Add missing information.
-- Fix a grammar or code error.
-- Suggest a new section.
-- Translate. 
-
-###  **Contributing Guide**
-Check out Ritchie's [**contributing guide**](https://github.com/ZupIT/charlescd/blob/main/CONTRIBUTING.md). 
-
-### **Open an issue**
-Follow the steps below: 
-
-**Step 1.** Access [**GitHub Issues**](https://github.com/ZupIT/docs-horusec/issues) and open an issue;
-
-**Step 2.** Describe the issue or change you want to make; 
-
-**Step 3.** Make your changes;
-
-**Step 4.** Open a pull request open a PR to the published branch, i. e., **`release-VERSION`** and fill in the template; 
-
-**Step 5.** CharlesCD's team will check your issue, review it, and then approve your PR. 
-Is this the first CharlesCD repository you visit? Check out other [**repositories**](https://github.com/ZupIT/charlescd).
-
-Every time that a new release is created, we save the current work into a new branch, called `release-VERSION`,
 
 ## **Code of Conduct**
-Please read the [**code of conduct**](https://github.com/ZupIT/charlescd/blob/main/CODE_OF_CONDUCT.md).
+Please read the [**Code of Conduct**](https://github.com/ZupIT/docs-charles/blob/main/CODE_OF_CONDUCT.md).
 
 ## **Community**
 
