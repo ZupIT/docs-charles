@@ -5,9 +5,9 @@ This repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) 
 ## **Table of contents**
 ### 1. [**About**](#About)
 ### 2. [**Getting Started**](#getting-started)
-> #### i. [**Requirements**](#requirements)
-> #### ii. [**Installation**](#installation)
-> #### iii. [**Build**](#build)
+> #### 2.1. [**Requirements**](#requirements)
+> #### 2.2. [**Installation**](#installation)
+> #### 2.3. [**Build**](#build)
 ### 3. [**Contributing Guide**](#contributing-guide)
 ### 4. [**Code of Conduct**](#code-of-conduct)
 ### 5. [**Community**](#community)
@@ -65,7 +65,7 @@ hugo server
 ```
 
 ## **Contributing Guide**
-Check out CharlesCD's [**Contributing Guide**](https://github.com/ZupIT/docs-charles/blob/main/CONTRIBUTING.md) to contribute to our documentation. 
+Check out CharlesCD's documentation [**Contributing Guide**](https://github.com/ZupIT/docs-charles/blob/main/CONTRIBUTING.md) to contribute to our documentation. 
 
 
 ## **Code of Conduct**

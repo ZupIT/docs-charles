@@ -5,10 +5,10 @@ This is CharlesCD's documentation contributing guide. We'd love to accept your p
 
 ## **Table of contents**
 ### 1. [**Before you contribute**](#before-you-contribute)
-> #### i. [**Legal**](#legal)
-> #### ii. [**Community Guidelines**](#community-guidelines)
+> #### 1.1. [**Legal**](#legal)
+> #### 1.2 [**Community Guidelines**](#community-guidelines)
 ### 2. [**Prerequisites**](#prerequisites)
-> #### i.   [**Developer Certificate of Origin**](#developer-certificate-of-origin)
+> #### 2.1. [**Developer Certificate of Origin**](#developer-certificate-of-origin)
 ### 3. [**How to contribute?**](#how-to-contribute?)
 ### 4. [**Code of Conduct**](#code-of-conduct)
 ### 5. [**Community**](#community)
@@ -54,7 +54,7 @@ You can also manually sign your commits during GitHub reviews and suggestions, f
 Signed-off-by: Name < e-mail address >
 ```
 
-For this method, your name and e-mail must be the same registered to your GitHub account.
+For this method, your name and e-mail must be the same registered on your GitHub account.
 
 ### **Pull Requests**
 When you open a PR, follow the requisites below:
@@ -81,7 +81,8 @@ Follow the steps below:
 **Step 4.** Open a pull request open a PR to the published branch, i. e., **`release-VERSION`** and fill in the template; 
 
 **Step 5.** CharlesCD's team will check your issue, review it, and then approve your PR. 
-Is this the first CharlesCD repository you visit? Check out other [**repositories**](https://github.com/ZupIT/charlescd).
+
+- Is this the first CharlesCD repository you visit? Check out other [**repositories**](https://github.com/ZupIT/charlescd).
 
 Every time that a new release is created, we save the current work into a new branch, called `release-VERSION`.
 
