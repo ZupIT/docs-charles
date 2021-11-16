@@ -1,5 +1,5 @@
 ---
-title: Configurando o Charles no seu pipeline
+title: Configurando o Charles ao seu pipeline
 weight: 46
 description: >-
   Nesta seção, você encontra os passos para configurar o Charles em seu
@@ -16,13 +16,12 @@ A configuração de um CD gera um processo mais rápido e eficaz para colocar se
 
 ## **Pré-requisitos**
 
-Para integrar o Charles C.D. no seu pipeline, você precisa saber algumas informações. Veja abaixo quais são e como consegui-las:
+Para integrar o Charles C.D. ao seu pipeline, você precisa saber algumas informações. Veja abaixo quais são e como conseguí-las:
 
-* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível regerar essa informação. [**Veja mais detalhes na seção de token sistêmico**]({{< ref path="/Referência/Token Sistêmico.md" lang="pt">}}).
-.
-* **`x-workspace-id`**: Esse Id representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
+* **`x-charles-token`**: É um hash criado quando um **token sistêmico** é gerado. Caso tenha perdido o valor, é possível gerar de novo essa informação. [**Veja mais detalhes na seção de token sistêmico**]({{< ref path="/Referência/Token Sistêmico.md" lang="pt">}}).
+* **`x-workspace-id`**: Esse ID representa o workspace onde suas configurações de ambiente e círculos estão. [**Copie o ID no menu existente ao visualizar o workspace**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 
-* **`module.id`**: Esse Id representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
+* **`module.id`**: Esse ID representa o projeto cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o módulo**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 
 * **`component.id`**: Esse identificador representa o componente e [**pode ser buscado nos detalhes do módulo**]({{< ref path="/Primeiros Passos/Definindo um Workspace/Visao geral.md" lang="pt">}}).
 
@@ -30,7 +29,7 @@ Para integrar o Charles C.D. no seu pipeline, você precisa saber algumas inform
 * **`component.artifact`**:  Este é o nome do artefato. Por exemplo: {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.
 * **`circle.id`**: Esse Id representa o círculo cadastrado no Charles.[ **Copie o ID no menu existente ao visualizar o círculo**]({{< ref path="/Referência/Círculo.md" lang="pt">}}).
 
-* **`build.id`**: Este Id representa a composição do deploy criada na primeira requisição[ **citada abaixo**]. Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
+* **`build.id`**: Este ID representa a composição do deploy criada na primeira requisição[ **citada abaixo**]. Esta informação é retornada como valor da chave `id` na resposta em formato de JSON.
 
 ## **Como integrar?**
 

@@ -8,7 +8,7 @@ description: 'In this section, you will find information about the circle matche
 
 ## **Why do you have to configure it?**
 
-When [**creating a workspace**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}}), you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment since Charles can handle, at the same time, different environments in multiple workspaces.
+When [**creating a workspace**]({{< ref path="/Get Started/Defining a Workspace/Overview.md" lang="en">}}), you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible to have a Circle Matcher for each environment since Charles can handle different environments at the same time in multiple workspaces.
 
 Circle Matcher is an independent module, despite that, it is possible to install it in any area you want inside its architecture, for example, a public cluster.
 

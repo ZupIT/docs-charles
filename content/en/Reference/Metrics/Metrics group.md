@@ -14,7 +14,7 @@ The metrics group is a functionality that allows you to register and organize an
 
 To create your metrics group, follow the next steps: 
 
-  **Step 1:**  Go to the **"Circles"** section, on the left menu and choose the circle  you want to create a new metric group;
+  **Step 1:**  Go to the **"Circles"** section on the left menu and choose the circle you want to create a new metric group;
 
   **Step 2:** In **'Add metrics group'**, type the name you want for your group and click on **'Add group'**: 
 
@@ -26,7 +26,7 @@ Now you are able to register your metrics**:**
 
 **Step 4:** Click on **'Select a Datasource':** select your metrics Datasource already registered;
 
-**Step 5:** Click on **Metric:**  **Choose one** and use the **Filter** option to customize with the value and the conditional you need.  Here is where your Datasource will return the metrics. 
+**Step 5:** Click on **Metric:** **Choose one** and use the **Filter** option to customize with the value and the conditional you need. Here is where your Datasource will return the metrics. 
 
 See the example below: 
 
