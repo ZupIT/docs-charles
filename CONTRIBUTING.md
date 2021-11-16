@@ -90,5 +90,4 @@ Every time that a new release is created, we save the current work into a new br
 Please read the [**Code of Conduct**](https://github.com/ZupIT/docs-charles/blob/main/CODE_OF_CONDUCT.md).
 
 ## **Community**
-
-If you have any questions or ideas, let's chat in our [**Zup Open Source Forum**](https://forum.zup.com.br).
+Do you have any question about CharlesCD? Let's chat in our [**Zup Open Source Forum**](https://forum.zup.com.br).

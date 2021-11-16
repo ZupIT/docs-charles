@@ -14,7 +14,7 @@ This repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) 
 
 
 ## **About** 
-
+ 
 CharlesCD is an open source tool that makes deployments more agile, continuous, and safe, which allows development teams to perform hypothesis validations with a specific group of users, simultaneously.
 
 For more information, check out [**CharlesCD documentation**](https://docs.charlescd.io/) 
@@ -73,7 +73,7 @@ Please read the [**Code of Conduct**](https://github.com/ZupIT/docs-charles/blob
 
 ## **Community**
 
-If you have any questions or ideas, let's chat in our [**Zup Open Source Forum**](https://forum.zup.com.br) or [**GitHub Issues**](https://github.com/ZupIT/docs-charles/issues).
+Do you have any questions or ideas? Let's chat in our [**Zup Open Source Forum**](https://forum.zup.com.br) or [**GitHub Issues**](https://github.com/ZupIT/docs-charles/issues).
 
 
 Keep evolving :rocket:
