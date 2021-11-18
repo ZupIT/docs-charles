@@ -19,14 +19,13 @@ Setting up a CD creates a quick and effective process to put your product to mar
 To integrate Charles C.D. into your pipeline, you will need to know some information. Check out below what they are and how to get them:
 
 * **`x-charles-token`**: It is a hash created when a systemic token is generated. If it has lost its value, it is possible to regenerate this information. **See more details in the systemic token section.**
-* **`x-workspace-id`**: This Id represents the workspace where your environment settings and circles are. [**Copy the ID in the existing menu when viewing the workspace.**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}})
-* **`module.id`**: This Id represents the project registered with Charles. [**Copy the ID in the existing menu when viewing the module.**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}})
+* **`x-workspace-id`**: This ID represents the workspace where your environment settings and circles are. [**Copy the ID in the existing menu when viewing the workspace.**]({{< ref path="/Get Started/Creating your first module/How to configure Chart template.md" lang="en">}}).
+* **`module.id`**: This ID represents the project registered with Charles. [**Copy the ID in the existing menu when viewing the module.**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}})
 * **`component.id`**: This identifier represents the component and it [**can be found in the module details**]({{< ref path="/Get Started/Creating your first module/Overview.md" lang="en">}}).
 * **`component.version`**: It is where you inform the name of the tag of your component's image.
 * **`component.artifact`**:  This is the name of the artifact. For example:  {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.
-* **`circle.id`**: This Id represents the circle registered in Charles. [**Copy the ID in the existing menu when viewing the circle**]
-({{< ref path="/Reference/Circle Matcher.md" lang="en">}}).
-* **`build.id`**: This Id represents the deployment's composition created in the first request mentioned below. This information is returned as the value of the ID key in the JSON format response.
+* **`circle.id`**: This ID represents the circle registered in Charles. [**Copy the ID in the existing menu when viewing the circle**]({{< ref path="/Reference/Circle Matcher.md" lang="en">}}).
+* **`build.id`**: This ID represents the deployment's composition created in the first request mentioned below. This information is returned as the value of the ID key in the JSON format response.
 
 ## **How to integrate?**
 

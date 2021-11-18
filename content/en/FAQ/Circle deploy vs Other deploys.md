@@ -8,7 +8,7 @@ description: >-
 
 ---
 
-## Circle deploy x Traditional deploy
+## **Circle deploy x Traditional deploy**
 
 In traditional deploys, it's common that the application has to pass into different environments until it gets to production. With Charles, the circle deploy system works only in the production environment. The release validation is fragmented according to selected circles, in other words, you can open gradually the access to your release to more and more circles.
 
@@ -16,7 +16,7 @@ In traditional deploys, it's common that the application has to pass into differ
 
 ![Process of circle deploy](/shared/deploy_em_circulos%20%283%29%20%281%29.png)
 
-## Circle deploy x Blue-green deploys
+## **Circle deploy x Blue-green deploys**
 
 At blue-green deployment, it's possible to create two identical environments in your infrastructure, but with different versions of an application implemented in each other. In this way, it's possible to test your hypothesis that, once confirmed, can be migrated from one version to another.
 
@@ -28,7 +28,7 @@ With Charles, the circle deploy offers to teams more confidence and agility on l
 
 ![Process of circle deploy](/shared/deploy_em_circulos%20%281%29%20%281%29.png)
 
-## Circle deploy x Canary release
+## **Circle deploy x Canary release**
 
 At canary release, it is done the gradual publishing of a software new version from routing within the infrastructure. As soon as the version is tested and it's more trustworthy, your access is expanded to more users from your base.
 

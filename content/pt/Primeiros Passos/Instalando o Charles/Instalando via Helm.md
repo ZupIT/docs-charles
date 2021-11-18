@@ -7,7 +7,7 @@ description: 'Nesta seção, você encontra como instalar o Charles via Helm.'
 ---
 
 {{% alert color="warning" %}}
-Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**](/pt/primeiros-passos/instalando-o-charles/visão-geral/) estão devidamente instalados.
+Antes de prosseguir, tenha certeza de que todos os [**pré-requisitos**]({{< ref path="/Primeiros Passos/Instalando o Charles/Visão geral.md" lang="pt">}}) estão devidamente instalados.
 {{% /alert %}}
 
 ## **Como instalar?**

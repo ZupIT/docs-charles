@@ -24,4 +24,4 @@ The delivery process in traditional environments occurs weekly, biweekly, or eve
 
 Developers will be more encouraged to innovate and implement new versions because identifying bugs will be easier and creating circles helps minimize budget errors
 
-For more information about microservices and Charles' modules, check out the [**platform's architecture**](/overview/).
+For more information about microservices and Charles' modules, check out the [**platform's architecture**]({{< ref path="/overview.md" lang="en">}}).
