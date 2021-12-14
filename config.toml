@@ -97,6 +97,7 @@ version_menu = "Versões"
 # Everything below this are Site Params
 
 [params]
+gtm_id="GTM-M6FKWWL"
 copyright = "Zup IT"
 privacy_policy = "https://insights.zup.com.br/politica-privacidade"
 
