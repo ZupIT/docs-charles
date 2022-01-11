@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://docs.charlescd.io/overview/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://docs.charlescd.io/key-concepts/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/</loc>
     <lastmod>2021-06-14T13:39:24-03:00</lastmod>
@@ -32,112 +32,157 @@
                 />
   </url><url>
     <loc>https://docs.charlescd.io/get-started/installing-charles/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
-    <loc>https://docs.charlescd.io/get-started/installing-charles/installing-via-single-file/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <loc>https://docs.charlescd.io/get-started/installing-charles/overview/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/installing-charles/installing-via-helm/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/installing-charles/installing-via-terraform/</loc>
+    <lastmod>2021-10-19T17:22:50-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/installing-charles/installing-via-kind/</loc>
+    <lastmod>2021-10-19T17:22:50-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/installing-charles/your-first-charles-access/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/installing-charles/signed-releases/</loc>
+    <lastmod>2021-10-15T17:58:00-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T12:35:08-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/optional-configuration/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-06-28T16:27:43-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/optional-configuration/authentication-with-private-registry/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/optional-configuration/configuring-your-ingress/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/optional-configuration/configuring-mtls/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/optional-configuration/defining-the-identity-manager/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-18T09:57:44-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/defining-a-workspace/overview/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/deploy-environment/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/circle-matcher/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
-  </url><url>
-    <loc>https://docs.charlescd.io/get-started/defining-a-workspace/git-credentials/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/datasource/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/defining-a-workspace/metrics-actions/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/defining-a-workspace/webhooks/</loc>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/creating-your-first-module/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/creating-your-first-module/overview/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
-    <loc>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <loc>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/creating-your-first-module/properties-injections/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/first-deploy/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/get-started/using-circles/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/get-started/integrating-charles-to-your-ci/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/circles/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/circle-matcher/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
-  </url><url>
-    <loc>https://docs.charlescd.io/reference/cd-configuration/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/users-groups/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
-  </url><url>
-    <loc>https://docs.charlescd.io/reference/hypothesis/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/identity-manager/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/registry/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/registry/overview/</loc>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/registry/azure-container-registry/</loc>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/registry/docker-hub/</loc>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/registry/ecr/</loc>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/registry/gcr/</loc>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/releases/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/system-token/</loc>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/metrics/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/metrics/overview/</loc>
+    <lastmod>2021-07-01T11:20:16-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/metrics/setting-up-your-metrics/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-07-01T12:35:08-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/metrics/metrics-group/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/metrics/action/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
+  </url><url>
+    <loc>https://docs.charlescd.io/reference/metrics/metric-groups-to-health-monitoring/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/reference/metrics/charles-metrics/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/guides/use-cases/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/guides/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -150,10 +195,10 @@
                 />
   </url><url>
     <loc>https://docs.charlescd.io/faq/about-charles/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/faq/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -166,13 +211,13 @@
                 />
   </url><url>
     <loc>https://docs.charlescd.io/faq/circle-deploy-vs-other-deploys/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url><url>
-    <loc>https://docs.charlescd.io/faq/zupitcharlescd/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <loc>https://docs.charlescd.io/faq/community/</loc>
+    <lastmod>2021-06-28T16:38:08-03:00</lastmod>
   </url><url>
     <loc>https://docs.charlescd.io/release-notes/</loc>
-    <lastmod>2021-06-14T13:39:24-03:00</lastmod>
+    <lastmod>2021-10-06T17:48:55-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -183,5 +228,8 @@
                 hreflang="en"
                 href="https://docs.charlescd.io/release-notes/"
                 />
+  </url><url>
+    <loc>https://docs.charlescd.io/migration-from-0.7.1-version-to-1.0.0/</loc>
+    <lastmod>2021-10-15T17:52:04-03:00</lastmod>
   </url>
 </urlset>

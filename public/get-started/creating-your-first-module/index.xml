@@ -14,6 +14,75 @@
     
     
     <item>
+      <title>Get Started: Overview</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/overview/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;After creating and configuring your workspace, it is necessary to add the modules.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;module&lt;/strong&gt; is your application stored in a &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/overview/&#34;&gt;&lt;strong&gt;Git repository previously registered&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How to create your modules?&lt;/h2&gt;
+&lt;p&gt;To add it, access the &lt;strong&gt;Modules&lt;/strong&gt; menu on your &lt;strong&gt;workspace&lt;/strong&gt; and set the following properties:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: This field should be the junction of the organization and the module names, as it is in your git. For example: &lt;code&gt;ZupIt/charlescd&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL Git&lt;/strong&gt;: Your repository&amp;rsquo;s URL. For example &lt;a href=&#34;https://github.com/ZupIT/charlescd&#34;&gt;https://github.com/ZupIT/charlescd&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you have a lot of applications on your repository, register them with the components and add the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Name of the component&lt;/strong&gt;: application&amp;rsquo;s name, the same on your repository;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Metrics&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Latency Threshold:&lt;/strong&gt; latency (ms);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Error Threshold:&lt;/strong&gt; HTTP error (%).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In both cases, you must add a risk value that you want to receive an alert if your component reaches the rate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Add Helm Chart repository:&lt;/strong&gt;  inform your repository where the helm template of your application is in, see the example on how to fill in the fields with this URL:  &lt;a href=&#34;https://gitlab.com/charlito/charlescd/moove?ref=master%60%20&#34;&gt;&lt;strong&gt;https://gitlab.com/charlito/charlescd/moove?ref=master&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Insert URL:&lt;/strong&gt; &lt;a href=&#34;http://gitlab.com&#34;&gt;http://gitlab.com&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert Organization:&lt;/strong&gt; charlito;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert repository:&lt;/strong&gt; charlescd;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert path:&lt;/strong&gt; moove;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert branch:&lt;/strong&gt; master.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the image on how to create modules:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/creating-your-first-module%20%281%29.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information about Helm Repository, &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;check out how to configure Chart Template section&lt;/strong&gt;&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;How do I get my module identifier?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;As soon as your module is created, it already has a unique identifier. To obtain this information, select the desired module and, in the menu on the left, click Copy ID:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/copy-module-id.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;What are components?&lt;/strong&gt;&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Components are abstractions of the applications. If in your repository there are many applications, every component will match one of them.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;How to obtain the component identifier?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After selecting the module, copy the component id using the option on the three points of the card:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/copy-component-id.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Get Started: How to configure Chart template</title>
       <link>https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -23,78 +92,102 @@
         
         
         &lt;hr&gt;
-&lt;h2&gt;What is Helm?&lt;/h2&gt;
-&lt;p&gt;Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless the complexity.&lt;/p&gt;
-&lt;p&gt;On Charles context,  &lt;a href=&#34;https://helm.sh/docs/chart_template_guide/getting_started/&#34;&gt;&lt;strong&gt;Chart Template&lt;/strong&gt;&lt;/a&gt; is used like a file collection related to the Kubernetes configuration.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;What is Helm?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless of the complexity.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Charts template in CharlesCD context&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://helm.sh/docs/chart_template_guide/getting_started/&#34;&gt;&lt;strong&gt;Chart Template&lt;/strong&gt;&lt;/a&gt; is used like a file collection related to the Kubernetes configuration.&lt;/p&gt;
+&lt;p&gt;The charts must follow the &lt;a href=&#34;https://helm.sh/docs/topics/charts/&#34;&gt;&lt;strong&gt;Helm pattern&lt;/strong&gt;&lt;/a&gt; and they need to be contained in a folder with the registered component on Charles. You don&amp;rsquo;t need to run any command to bundle the chart, Charles downloads and it finishes automatically.&lt;/p&gt;
+&lt;p&gt;See the below an example of a repository containing the component&amp;rsquo;s chart  &lt;strong&gt;http-https-echo&lt;/strong&gt; on GitHub:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/Rt7_Lw1DbK152QKt3brsCYyzF0DAQ4wuoWsdCVyUaZjf9Hlh64EaK7YnHjF16W_xo2BQzlUJyUeUsooPzqwmMIKF7ttUXRej3eM56uWu6WH4QNCiByixeV4zEdHLwEGRq7NCruhH&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The deployment module Butler uses helm charts to make your application available in the cluster.  These charts must be available in a Github or Gitlab repository and accessible through a token, previously registered in the deployment configuration. The URL is provided along with the module registration.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-If you haven&amp;rsquo;t configured your module yet, &lt;a href=&#34;.././&#34;&gt;&lt;strong&gt;access here&lt;/strong&gt;&lt;/a&gt; It is important to remember, you have to register the URL in this module.
+If you haven&amp;rsquo;t configured your module yet, &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;see how to do it in &amp;lsquo;Creating your module&amp;rsquo; section&lt;/strong&gt;&lt;/a&gt;. It is important to remember, you have to register the URL in this module.
 &lt;/div&gt;
 
-&lt;h2&gt;How to configure the chart template?&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;Templates&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The only requirements for templates to work with Charles are &lt;strong&gt;labels component&lt;/strong&gt; and &lt;strong&gt;tag&lt;/strong&gt; to be present in the Deployment resource manifests.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+It is not necessary to insert the values in the &lt;em&gt;&lt;strong&gt;values&lt;/strong&gt;&lt;/em&gt; files of your chart, Charles will provide them.
+&lt;/div&gt;
+
+&lt;p&gt;See the example below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;component: {{ .Values.component }}
+tag: {{ .Values.tag }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Butler internally stores the compiled charts in entities that represent each deployment request. Thereby, Charles can perform more efficient rollbacks.&lt;/p&gt;
+&lt;h1&gt;&lt;strong&gt;How to configure the chart template?&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Follow the next steps to try out our sample app.&lt;/p&gt;
-&lt;h3&gt;&lt;strong&gt;Step 1: create a chart template directory&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;To start, you need to save your templates in any git repository you want. When you create a new chart template, you must give the directory the same name as the component as it refers to.&lt;/p&gt;
-&lt;p&gt;The structure below has the necessary templates to deploy a module that contains a component called &amp;ldquo;circles-sample&amp;rdquo;, it is available here.&lt;/p&gt;
-&lt;p&gt;The image below shows how your directory must look like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//screen-shot-2020-08-13-at-09.16.04.png&#34; alt=&#34; Chart template directory of circle-sample&#34;&gt;&lt;/p&gt;
-&lt;h3&gt;Step 2: configure the directory items&lt;/h3&gt;
-&lt;p&gt;After you have created the directory, now you have to configure it. See below which files are necessary to configure:&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3&gt;&lt;strong&gt;Step 1: Create a chart template directory&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Save your templates in your versioning tool. When you create a new chart template, you need to name the directory with the same component&amp;rsquo;s name it refers to.&lt;/p&gt;
+&lt;p&gt;The structure below has the necessary templates to deploy a module that contains a component called &lt;strong&gt;&amp;ldquo;circles-sample&amp;rdquo;&lt;/strong&gt;, your directory needs to look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/screen-shot-2020-08-13-at-09.16.04.png&#34; alt=&#34; Diret&amp;#xF3;rio de chart template do circle-sample&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 2: Configure the directory&amp;rsquo;s items&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After you have created the directory, now you have to configure it. See below the files you need to configure:&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;templates/&lt;/strong&gt; : it has the models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;templates/:&lt;/strong&gt; It has the models.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;deployment.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;&lt;strong&gt;deployment&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;service.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deployment.yaml:&lt;/strong&gt; Describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;&lt;strong&gt;deployment&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;service.yaml:&lt;/strong&gt; Describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;strong&gt;Chart.yaml&lt;/strong&gt; file contains the descriptions as version, name, description. It is necessary to define the version as &amp;ldquo;darwin&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Chart.yaml&lt;/strong&gt; file contains the descriptions like version, name, description. It is necessary to define the version as &lt;strong&gt;&amp;ldquo;darwin&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;strong&gt;circles-sample.yaml&lt;/strong&gt; file has the values that it will be used in the templates.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;circles-sample.yaml&lt;/strong&gt; file has the values that will be used in the templates.&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These are the information Charles needs to have on the templates, you can &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates&#34;&gt;&lt;strong&gt;customize them&lt;/strong&gt;&lt;/a&gt; if you want to.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 3: Add Charles&#39; information to your template&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Charles overwrites some &lt;a href=&#34;https://helm.sh/docs/chart_template_guide/values_files/&#34;&gt;&lt;strong&gt;Helm Values&lt;/strong&gt;&lt;/a&gt; file fields, you can add them to your template. Check out below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.tag&lt;/code&gt;&amp;quot;&lt;/strong&gt;: A tag you choose when creating arelease.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.component&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Component&amp;rsquo;s name for the deployment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.circleId&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Circles ID where the deployment was made.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.image.url&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Image&amp;rsquo;s URL where the deployment will happen.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This information Charles needs to have on the templates. It is important to remember that you can customize these templates the way you want it.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;After you have configured your directory according to the structure above, go to the &amp;ldquo;circles-samples&amp;rdquo; folder and run the command &lt;strong&gt;&amp;quot;&lt;code&gt;helm package .&lt;/code&gt;&amp;quot;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;In the end of this command, you will have a &lt;strong&gt;tgz&lt;/strong&gt; file with the circles-samples-darwin name. Our CD tool looks for this &lt;strong&gt;tgz&lt;/strong&gt; to run the template.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;For more information on how to create your own template, &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates&#34;&gt;&lt;strong&gt;access Charles&#39; repository examples&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 4:  Run the &lt;code&gt;&amp;quot;helm package .&amp;quot;&lt;/code&gt; command&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After you have configured your directory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access the &lt;strong&gt;&amp;ldquo;circles-sample&amp;rdquo;&lt;/strong&gt; folder;;&lt;/li&gt;
+&lt;li&gt;Execute o comando &amp;ldquo;&lt;code&gt;helm package .&lt;/code&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, you will have a &lt;strong&gt;tgz&lt;/strong&gt; file with the &lt;strong&gt;circles-samples-darwin&lt;/strong&gt; name. Charles looks for the &lt;strong&gt;tgz&lt;/strong&gt; to execute the template.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Get Started: Configuring your module</title>
-      <link>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</link>
+      <title>Get Started: Configuring your module to propagate the circle&#39;s Id</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</guid>
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/</guid>
       <description>
         
         
         &lt;hr&gt;
-&lt;h2&gt;Why configure it?&lt;/h2&gt;
-&lt;p&gt;The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to &lt;a href=&#34;../../../../reference/circles#how-to-integrate-circle-with-services&#34;&gt;&lt;strong&gt;propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt; that ensures the requests are being redirected to the right version of your application&lt;/strong&gt;&lt;/a&gt;. This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.&lt;/p&gt;
-&lt;p&gt;For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow.&lt;/p&gt;
-&lt;p&gt;This process is made by a library to propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt;, that makes the circle id to pass all the requests inside the microservice mesh, making sure that you get to the &lt;a href=&#34;../../../reference/circle-matcher#identify&#34;&gt;&lt;strong&gt;correct version of you hypothesis test&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Why configure it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When you work with multiple microservices scenarios, you need to configure the modules to propagate the &lt;code&gt;X-Circle-Id&lt;/code&gt; header that makes sure the &lt;a href=&#34;https://docs.charlescd.io/reference/circles/&#34;&gt;&lt;strong&gt;requests are being redirected to the right version of your application&lt;/strong&gt;&lt;/a&gt;. Then your user base will get to the same version of all microservice that are part of your hypothesis test.&lt;/p&gt;
+&lt;p&gt;For example, if you test a feature between microservices that have integration with an opening flow account, it is necessary to make sure your user will get to the correct versions that are on your hypothesis test, created for this specific flow.&lt;/p&gt;
+&lt;p&gt;You can do this using a library to propagate the &lt;code&gt;X-Circle-Id&lt;/code&gt; header, which makes the &lt;a href=&#34;https://docs.charlescd.io/reference/circle-matcher/&#34;&gt;&lt;strong&gt;circle id identified by the circle-matcher&lt;/strong&gt;&lt;/a&gt;pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-If there is a microservice inside this flow that doesn&amp;rsquo;t make part of your test, the circle value will be passed, but your request will fall into the open sea, because there isn&amp;rsquo;t any version for that circle.
+If there is a microservice inside this flow that isn&amp;rsquo;t part of your test, the circle value will be passed, but your request will fall into the open sea because there isn&amp;rsquo;t any version for that circle.
 &lt;/div&gt;
 
 &lt;h3&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;See below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//header-propagation-v2-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/header/header-propagation-v2-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;When you make a microservice request, &lt;code&gt;circle matcher&lt;/code&gt; gets the circle id for this specific request.&lt;/li&gt;
@@ -102,10 +195,10 @@ If there is a microservice inside this flow that doesn&amp;rsquo;t make part of 
 &lt;li&gt;The propagate header library makes it possible to pass the &lt;code&gt;x-circle-id&lt;/code&gt; in the header to request to another microservice, in this case &lt;code&gt;butler&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;When a hypothesis test happens on &lt;code&gt;butler&lt;/code&gt;, for example, it is integrated with &lt;code&gt;moove&lt;/code&gt; which is a microservice that answers the requests on the frontend.&lt;/p&gt;
+&lt;p&gt;When a hypothesis test happens on &lt;code&gt;butler&lt;/code&gt;, for example, it is integrated with &lt;code&gt;moove&lt;/code&gt; which is a microservice that answers the requests on the front end.&lt;/p&gt;
 &lt;p&gt;If you want your request to get to the &lt;code&gt;butler&lt;/code&gt; correct version, it is necessary that &lt;code&gt;moove&lt;/code&gt; pass the &lt;code&gt;x-Circle-Id&lt;/code&gt; header (obtained by circle matcher) in the requests made for it. If involves more than one &lt;strong&gt;microservice&lt;/strong&gt;, you have to propagate the header to make sure the user gets the same version of that circle.&lt;/p&gt;
 &lt;p&gt;When a test happens with &lt;code&gt;moove&lt;/code&gt; module, for example, and if it is integrated with &lt;code&gt;villager&lt;/code&gt; and &lt;code&gt;butler&lt;/code&gt;, the &lt;code&gt;x-circle-id&lt;/code&gt;  header propagation makes you look for &lt;code&gt;villager&lt;/code&gt; and  &lt;code&gt;butler&lt;/code&gt; versions that are the same &lt;code&gt;moove&lt;/code&gt; ones, however, this is not the scenario, these requests between &lt;code&gt;moove&lt;/code&gt; and its integration will be treated by the open sea.&lt;/p&gt;
-&lt;h2&gt;How to add it?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;How to add it?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Charles has a library that works for any &lt;strong&gt;Java&lt;/strong&gt; application that uses &lt;strong&gt;Spring&lt;/strong&gt; as a framework and another one for &lt;strong&gt;.NET Core&lt;/strong&gt;. These libs were built because there wasn&amp;rsquo;t another way used in these development environments.&lt;/p&gt;
 &lt;p&gt;To use them, you need to add them to your application:&lt;/p&gt;
 &lt;ul&gt;
@@ -116,9 +209,105 @@ If there is a microservice inside this flow that doesn&amp;rsquo;t make part of 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&#34;https://www.npmjs.com/package/hpropagate&#34;&gt;&lt;strong&gt;you can find it here&lt;/strong&gt;&lt;/a&gt;
+For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&#34;https://www.npmjs.com/package/hpropagate&#34;&gt;&lt;strong&gt;you can check it on npm page&lt;/strong&gt;&lt;/a&gt;
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Properties injections</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/properties-injections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/properties-injections/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Properties injections is an important operation to prepare your application in the manifests performed by Butler.&lt;/p&gt;
+&lt;p&gt;See them below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;name:&lt;/strong&gt;  Kubernetes’ resource name.  Some resources managed by Charles need to have their names altered, in order to make different versions of the same application available in different circles. The property name will have the following value:    &lt;strong&gt;&lt;code&gt; &amp;lt;originalManifest.metadata.name&amp;gt;-&amp;lt;tag&amp;gt;-&amp;lt;deploymentId&amp;gt;&lt;/code&gt;;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;originalManifest.metadata.name:&lt;/strong&gt; Name generated by the application’s chart;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tag:&lt;/strong&gt; Image’s tag;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deploymentId:&lt;/strong&gt; Deployment’s entity unique identifier created by Butler.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+This update only happens in &lt;strong&gt;Deployment’s&lt;/strong&gt; type resources.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;namespace:&lt;/strong&gt; Your deployment&amp;rsquo;s namespace. This namespace is described during the Workspace configuration and indicates which namespace the deployment will happen. If the charts insert this value in the manifests, Charles will overwrite them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;labels:&lt;/strong&gt; Kubernetes’ resources labels.&lt;br&gt;
+In order to make Butler’s reconciliation cycle and Istio’s routes created correctly work, some labels need to be available in all resources applied to the cluster. See them below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;deploymentId:&lt;/strong&gt; Unique identifier of the deployment&amp;rsquo;s entity created by Butler;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;circleId:&lt;/strong&gt; Unique circle&amp;rsquo;s identifier where the deployment will be created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;See below an example of a generated manifest after the chart compilation:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-https-echo
+  labels:
+    component: http-https-echo
+    tag: v1
+spec:
+  template:
+    metadata:
+      name: http-https-echo
+      labels:
+        component: http-https-echo
+        tag: v1
+    spec:
+      containers:
+        - name: http-https-echo
+          image: mendhak/http-https-echo:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      component: http-https-echo
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the property injection, this same manifest will be:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-https-echo-v1-bc0e1df9-c008-4d86-b534-d782badf3741
+  namespace: example-namespace
+  labels:
+    component: http-https-echo
+    tag: v1
+    deploymentId: bc0e1df9-c008-4d86-b534-d782badf3741
+    circleId: b4b62bc2-4dfd-4673-bc67-cc2cbcf9bb2f
+spec:
+  template:
+    metadata:
+      name: http-https-echo
+      labels:
+        component: http-https-echo
+        tag: v1
+        deploymentId: bc0e1df9-c008-4d86-b534-d782badf3741
+        circleId: b4b62bc2-4dfd-4673-bc67-cc2cbcf9bb2f
+    spec:
+      containers:
+        - name: http-https-echo
+          image: mendhak/http-https-echo:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      component: http-https-echo
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this configuration, you can use Charles to perform deployment in your application in segmented circles.&lt;/p&gt;
 
       </description>
     </item>

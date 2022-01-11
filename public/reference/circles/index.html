@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4DSKFN');</script>
+    
+
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -25,12 +33,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.charlescd.io/reference/circles/" /><meta property="article:section" content="Reference" />
 
-<meta property="article:modified_time" content="2021-06-14T13:39:24-03:00" /><meta property="og:site_name" content="Charles C.D." />
+<meta property="article:modified_time" content="2021-10-15T17:52:04-03:00" /><meta property="og:site_name" content="Charles C.D." />
 
 <meta itemprop="name" content="Circles">
 <meta itemprop="description" content="In this section, you will find more information about how to use circles on Charles.">
-<meta itemprop="dateModified" content="2021-06-14T13:39:24-03:00" />
-<meta itemprop="wordCount" content="1237">
+<meta itemprop="dateModified" content="2021-10-15T17:52:04-03:00" />
+<meta itemprop="wordCount" content="1729">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Circles"/>
 <meta name="twitter:description" content="In this section, you will find more information about how to use circles on Charles."/>
@@ -48,12 +56,23 @@
   integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
 
 
 
     <title>Circles | Charles C.D.</title>
   </head>
+  
   <body class="td-page">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DSKFN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -70,6 +89,22 @@
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="http://forum.zup.com.br/" target="_blank" ><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/c4model/en/#/" target="_blank" ><span>C4Model</span></a>
+			</li>
 			
 			
 			<li class="nav-item dropdown d-none d-lg-block">
@@ -90,8 +125,11 @@
 
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
+	var charlescd_url = window.location.protocol + "//" + window.location.hostname + ((window.location.port == '80') ? '' : (window.location.port == '443') ? '' : ":" + window.location.port);
+
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.usebeagle.io/${version}/">${version}</a>`
+		const urlVersion = version.concat(".x")
+		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
@@ -118,7 +156,19 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b8ff15df6e8ec263bcd18911d691c4a5c96ec153918a7ef08a7d97d3aada4be450740169b406a6c4a80443e77eb1ff29356a75ac3058b6ac8abeb8988f2b7957.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
 
 </div>
 </nav>
@@ -217,7 +267,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-single-file" href="/get-started/installing-charles/installing-via-single-file/">Installing via Single File</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesoverview" href="/get-started/installing-charles/overview/">Overview</a>
       
       
       
@@ -229,7 +279,25 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-terraform" href="/get-started/installing-charles/installing-via-terraform/">Installing via Terraform</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-kind" href="/get-started/installing-charles/installing-via-kind/">Installing via Terraform local environment</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesyour-first-charles-access" href="/get-started/installing-charles/your-first-charles-access/">Your first Charles&#39; access</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlessigned-releases" href="/get-started/installing-charles/signed-releases/">Signed Releases</a>
       
       
     </li>
@@ -272,6 +340,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedoptional-configurationconfiguring-mtls" href="/get-started/optional-configuration/configuring-mtls/">Configuring MTLS</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedoptional-configurationdefining-the-identity-manager" href="/get-started/optional-configuration/defining-the-identity-manager/">Defining the Identity Manager</a>
       
       
@@ -303,6 +377,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspaceoverview" href="/get-started/defining-a-workspace/overview/">Overview</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacedocker-registry" href="/get-started/defining-a-workspace/docker-registry/">Docker registry</a>
       
       
@@ -321,12 +401,6 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacegit-credentials" href="/get-started/defining-a-workspace/git-credentials/">Git credentials</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacedatasource" href="/get-started/defining-a-workspace/datasource/">Datasource</a>
       
       
@@ -334,6 +408,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacemetrics-actions" href="/get-started/defining-a-workspace/metrics-actions/">Metrics actions</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacewebhooks" href="/get-started/defining-a-workspace/webhooks/">Webhooks</a>
       
       
     </li>
@@ -364,13 +444,25 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleoverview" href="/get-started/creating-your-first-module/overview/">Overview</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-modulehow-to-configure-chart-template" href="/get-started/creating-your-first-module/how-to-configure-chart-template/">How to configure Chart template</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleconfiguring-your-module" href="/get-started/creating-your-first-module/configuring-your-module/">Configuring your module</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleconfiguring-your-module-to-propagate-the-circles-id" href="/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/">Configuring your module to propagate the circle&#39;s Id</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleproperties-injections" href="/get-started/creating-your-first-module/properties-injections/">Properties injections</a>
       
       
     </li>
@@ -389,6 +481,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedusing-circles" href="/get-started/using-circles/">Using Circles</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedintegrating-charles-to-your-ci" href="/get-started/integrating-charles-to-your-ci/">Integrating Charles to your CI</a>
       
       
     </li>
@@ -431,19 +529,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencecd-configuration" href="/reference/cd-configuration/">Cd Configuration</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceusers-groups" href="/reference/users-groups/">Users Groups</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencehypothesis" href="/reference/hypothesis/">Hypothesis</a>
       
       
       
@@ -471,6 +557,36 @@
       
       
       
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryoverview" href="/reference/registry/overview/">Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryazure-container-registry" href="/reference/registry/azure-container-registry/">Azure Container Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistrydocker-hub" href="/reference/registry/docker-hub/">Docker Hub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryecr" href="/reference/registry/ecr/">ECR</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistrygcr" href="/reference/registry/gcr/">GCR</a>
+      
+      
     </li>
   </ul>
 </ul>
@@ -481,6 +597,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencereleases" href="/reference/releases/">Releases</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencesystem-token" href="/reference/system-token/">System Token</a>
       
       
       
@@ -505,6 +627,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsoverview" href="/reference/metrics/overview/">Metrics</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricssetting-up-your-metrics" href="/reference/metrics/setting-up-your-metrics/">Setting up your metrics</a>
       
       
@@ -512,6 +640,18 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsmetrics-group" href="/reference/metrics/metrics-group/">Metrics group</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsaction" href="/reference/metrics/action/">Action</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsmetric-groups-to-health-monitoring" href="/reference/metrics/metric-groups-to-health-monitoring/">Metric groups to health monitoring</a>
       
       
       
@@ -597,7 +737,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-faqzupitcharlescd" href="/faq/zupitcharlescd/">Zupitcharlescd</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-faqcommunity" href="/faq/community/">Community</a>
       
       
     </li>
@@ -610,6 +750,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-release-notes" href="/release-notes/">Release Notes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-migration-from-071-version-to-100" href="/migration-from-0.7.1-version-to-1.0.0/">Migration from 0.7.1 version to 1.0.0</a>
       
       
     </li>
@@ -643,12 +789,12 @@
 
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/edit/master/content/en/Reference/Circles.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/new/master/content/en/Reference/Circles.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new?title=Circles" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/ZupIT/docs-charles/edit/main/content/en/Reference/Circles.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/ZupIT/docs-charles/new/main/content/en/Reference/Circles.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/ZupIT/docs-charles/issues/new?title=Circles" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<a href="https://github.com/ZupIT/charlescd/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 
 </div>
 
@@ -659,22 +805,25 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#">How to create circles?</a></li>
-    <li><a href="#">What is a segmentation?</a>
+    <li><a href="#"><strong>How to create circles?</strong></a></li>
+    <li><a href="#">What is segmentation?</a>
       <ul>
-        <li><a href="#">How do you define it?</a></li>
+        <li><a href="#"><strong>Segmentations fields</strong></a></li>
+        <li><a href="#"><strong>Percentage</strong></a></li>
+        <li><a href="#"><strong>Circle creation example</strong></a></li>
         <li><a href="#"><strong>Manual segmentation</strong></a></li>
         <li><a href="#"><strong>Segmentation by CSV importation</strong></a></li>
-        <li><a href="#">How to get <strong>my circle&rsquo;s identifier</strong>?  <a id="como-obter-o-identificador-do-meu-workspace"></a></a></li>
+        <li><a href="#"><strong>Segmentation by percentage</strong></a></li>
+        <li><a href="#"><strong>How to get my circle&rsquo;s identifier</strong>?</a></li>
       </ul>
     </li>
-    <li><a href="#">Active and inactive circles</a></li>
-    <li><a href="#">How to integrate circle with services?</a>
+    <li><a href="#"><strong>Active and inactive circles</strong></a></li>
+    <li><a href="#"><strong>How to integrate circle with services?</strong></a>
       <ul>
-        <li><a href="#"><strong>Mix of services with different versions of my release</strong></a></li>
+        <li><a href="#"><strong>A mix of services with different versions of my release</strong></a></li>
       </ul>
     </li>
-    <li><a href="#">How to route your circles with Kubernetes Clusters?</a></li>
+    <li><a href="#"><strong>How to route your circles with Kubernetes Clusters?</strong></a></li>
   </ul>
 </nav>
 
@@ -711,31 +860,34 @@
 	<h1>Circles</h1>
 	<div class="lead">In this section, you will find more information about how to use circles on Charles.</div>
 	<hr>
-<p>Circles are the main approach related to the <a href="../../../faq/about-charles#what-is-circle-deploy"><strong>new deploy concept</strong></a> brought by Charles. It enables user groups creation with several characteristics and promotes simultaneous application tests for a great number of possible users.</p>
-<p><img src="//deploy_em_circulos%20%289%29%20%281%29.png" alt="Circle generation with Charles deployments"></p>
-<p>Circles indicate clients segmentation and also support the version management created for a specific audience.</p>
-<p>Once the right people are chosen to have access to your release associated to a circle, Charles will generate a<a href="metrics/#charles-available-metrics"> <strong>series of business or performance metrics</strong></a>. This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.</p>
-<h2>How to create circles?</h2>
+<p>Circles are the main approach related to the <a href="https://docs.charlescd.io/faq/circle-deploy-vs-other-deploys/"><strong>new deploy concept</strong></a> brought by Charles. It enables user group creation with several characteristics and promotes simultaneous application tests for a great number of possible users.</p>
+<p><img src="/shared/deploy_em_circulos%20%289%29%20%281%29.png" alt="Circle generation with Charles deployments"></p>
+<p>Circles indicate client segmentation and also support the version management created for a specific audience.</p>
+<p>Once the right people are chosen to have access to your release associated with a circle, Charles will generate a[ <strong>series of business or performance metrics</strong>]
+(https://docs.charlescd.io/reference/metrics/charles-metrics/). This information will give you better hypothesis results or even a better view on a feature in analysis and that will enable more assertive tests.</p>
+<h2><strong>How to create circles?</strong></h2>
 <p>To create a circle, you just have to follow these steps:</p>
 <p><strong>1.</strong> Click on Create Circle.<br>
 <strong>2.</strong> Give a name to your circle.<br>
-<strong>3.</strong> Define a segmentation.<br>
+<strong>3.</strong> Define segmentation.<br>
 <strong>4.</strong> [Optional] Implement a release.</p>
-<h2>What is a segmentation?</h2>
-<p>Segmentations are a subset of characteristics that you define to put all your users together in a circle. To make this happen, there are two ways to segment your users:</p>
+<h2>What is segmentation?</h2>
+<p>Segmentations are a <strong>subset of characteristics or percentage values</strong> that you define to put all your users together in a circle. There are three ways to segment your users:</p>
 <ul>
 <li><strong>By filling in information manually</strong></li>
 <li>Through a <strong>CVS file importation</strong>.</li>
+<li>Through a <strong>percentage value related to the total amount of access to your application</strong>.</li>
 </ul>
-<h3>How do you define it?</h3>
+<h3><strong>Segmentations fields</strong></h3>
 <p>Segmentations have the following fields that you have to fill:</p>
 <ul>
 <li><strong>Key:</strong> it is the same value in the user&rsquo;s identify request payload.</li>
-<li><strong>Conditional:</strong> it is the logic implication that will condition your key and value.</li>
+<li><strong>Conditional:</strong> it is the logical implication that will condition your key and value.</li>
 <li><strong>Value:</strong> they are the values in your base that can be used to make the segmentation logic.</li>
 </ul>
-<p>The key and value fields are established based on the information that will be sent in the request, that <a href="../../get-started/defining-a-workspace/circle-matcher"><strong>identifies the circles</strong></a> where your user belong to. For example, the following payload could represent the information you have about a client:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{
+<h4><strong>Key and value</strong></h4>
+<p>The <strong>key</strong> and <strong>value</strong> fields are established based on the information that will be sent in the request, which <a href="/reference/circle-matcher/"><strong>identifies the circles</strong></a> where your user belongs to. For example, the payload below could represent the information you have about a client:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{
   &#34;id&#34;: &#34;7f2926d5-ff08-4d49-96df-d4ba0fc07b52&#34;,
   &#34;name&#34;: &#34;Alice&#34;,
   &#34;state&#34;: &#34;MG&#34;,
@@ -743,28 +895,50 @@
   &#34;age&#34;: &#34;47&#34;,
   &#34;groupId&#34;: &#34;a435bd12-ae82-48c8-b164-066d91ffe3a5&#34;
 }
-</code></pre></div><p>The keys used could be any of the ones sent in your application payload to the Charles' circle-matcher, such as: <strong>id</strong>, <strong>name</strong>, <strong>state</strong>, <strong>city</strong>, <strong>age</strong> e <strong>groupId</strong>.</p>
+</code></pre></div><p>The keys used could be any of the ones sent in your application payload to the Charles' circle-matcher, such as <strong>id</strong>, <strong>name</strong>, <strong>state</strong>, <strong>city</strong>, <strong>age</strong> e <strong>groupId</strong>.</p>
+
+
+<div class="alert alert-warning" role="alert">
+
+<strong>Your payload and your keys must be the same.</strong>
+</div>
+
+<h3><strong>Percentage</strong></h3>
+<p>The segmentation by percentage has the following field:</p>
+<ul>
+<li><strong>Percentage</strong>: value that indicates the percentage (%) of the requests that will be directed to a circle. For example, in a scenario where there is a circle with a percentage of 10% for every 100 requests, approximately 10 will go to the circle.</li>
+</ul>
 
 
 <div class="alert alert-info" role="alert">
 
-It is important to remember that your payload and your keys must be the same.
+<p>The sum of the active circles' factors with segmentation by percentage should never exceed 100.</p>
+<p>If it is equal to 100, it means that the <strong>Default</strong> circle will never be indicated by the Circle Matcher.</p>
+
 </div>
 
+<p>This happens only to users that belong to a <strong>Default</strong> circle, meaning the users belonging to circles with manual or CSV segmentation will never be directed to circles with segmentation by percentage.</p>
+<p>If in your configuration there are circles with segmentation by rules and circles with segmentation by percentage, see the Circle Matcher identification logic below:</p>
+<ol>
+<li>It verifies if the payload matches some segmentation circle by rules. If it does, these circles will be returned and the circle&rsquo;s search is ended.</li>
+<li>If there isn&rsquo;t any compatible circle and there are active circles with segmentation by percentage, a random number between 1 and 100 is drawn and if it is less than or equal to the circle&rsquo;s factor, this one is returned.</li>
+<li>In case any of the previous steps finds a compatible circle, the <strong>Default&rsquo;s</strong> circle id is returned.</li>
+</ol>
+<h3><strong>Circle creation example</strong></h3>
 <p>See the example on how to create a circle below:</p>
-<p><img src="//chrome-capture-7-.gif" alt="How to create a circle"></p>
+<p><img src="/shared/chrome-capture-7-.gif" alt="How to create a circle"></p>
 
 
 <div class="alert alert-info" role="alert">
 
 <p><strong>The best advantage to use segmentation</strong> is the possibility to combine logic with several attributes to create different audience categories and, in this way, use them on hypothesis tests.</p>
-<p>For example, using the characteristics ‘profession’ and ‘region’, you are able to create a circle with engineers from the brazilian north region, another one with engineers from the southeast and a third one with all brazilians engineers.</p>
+<p>For example, using the characteristics ‘profession’ and ‘region’, you are able to create a circle with engineers from the Brazilian north region, another one with engineers from the southeast, and the third one with all Brazilian engineers.</p>
 
 </div>
 
 <h3><strong>Manual segmentation</strong></h3>
 <p>On this kind of segmentation, you define the logic the circle will follow to build a match with predetermined characteristics.</p>
-<p>This characteristics can be defined based on the following logics:</p>
+<p>These characteristics can be defined based on the following logic:</p>
 <ul>
 <li>Equal to</li>
 <li>Not Equal</li>
@@ -776,12 +950,12 @@ It is important to remember that your payload and your keys must be the same.
 <li>Starts With</li>
 </ul>
 <p>See some examples below:</p>
-<p><img src="//image%20%285%29.png" alt="Example of manual segmentation"></p>
+<p><img src="/shared/segmentacao-manual.png" alt=""></p>
 <h3><strong>Segmentation by CSV importation</strong></h3>
-<p>This segmentation is used only in the first CSV column to create rules. The first line in the first column must contain the key name and the same one must be informed on the key field.<em>.</em></p>
-<p><img src="//chrome-capture-5-.jpg" alt="Example of CSV importation"></p>
+<p>This segmentation is used only in the first CSV column to create rules. The first line in the first column must contain the key name and the same one must be informed on the key field.</p>
+<p><img src="/shared/chrome-capture-5-.jpg" alt="Example of CSV importation"></p>
 <p>After you have finished the file upload and saved the configuration, an overview will show up demonstrating how your segmentation is:</p>
-<p><img src="//image%20%284%29.png" alt="Overview of CVS importation"></p>
+<p><img src="/shared/image%20%284%29.png" alt="Overview of CVS importation"></p>
 <p>This way allows you to extract from an external client’s IDs base, a specific profile and import them directly on Charles. When a .csv file is imported and if it contains some empty lines, it will occur an importation error, because empty segments are not allowed.</p>
 
 
@@ -790,29 +964,51 @@ It is important to remember that your payload and your keys must be the same.
 OR is the only logic operator supported on this segmentation.
 </div>
 
-<h3>How to get <strong>my circle&rsquo;s identifier</strong>?  <a id="como-obter-o-identificador-do-meu-workspace"></a></h3>
+<h3><strong>Segmentation by percentage</strong></h3>
+<p>It is a kind of segmentation that distributes to the circles the number of requests not filtered in a manual segmentation. These requests are delivered, proportionally between configured circles and the default circle. The value of the percentage for each circle is defined between 0 and 100, and the sum of all active circles cannot exceed 100%.</p>
+<h4><strong>Segmentation by percentage example</strong></h4>
+<p>Suppose you have created two circles with percentage:</p>
+<ul>
+<li>Circle <strong>A,</strong> with 15%.</li>
+<li>Circle <strong>B,</strong> with 26%.</li>
+</ul>
+<p>Now, the algorithm for identification draws a number between 1 and 100, and after that, it analyzes:</p>
+<ol>
+<li>If the number is less than or equal to 15, circle <strong>A</strong> is returned.</li>
+<li>If the number is bigger than 15 and less than or equal to 41 (15 + 26), <strong>circle B</strong> is returned.</li>
+<li>If the number is bigger than 41, the <strong>Default</strong> circle is returned.</li>
+</ol>
+<p>If there isn&rsquo;t a configured circle or an active one, the available amount will be 100%, like the image below:</p>
+<p><img src="/shared/perc1.png" alt=""></p>
+<p>If you have, for example, three active circles by percentage and each one of them have a 30% value, the available amount for your new circle will be 10%, see below:</p>
+<p><img src="/shared/perc2.png" alt=""></p>
+<p>After the segmentation is created, the available percentage will be only altered if a new release is deployed for that circle, and then it will become active.</p>
+<p><img src="/shared/perc3.png" alt=""></p>
+<p>If, for example, the <strong>percentage hits the available 100%</strong>, it is necessary to change or remove the configured active circles in order to make more space, after that you are able to create a new circle.</p>
+<p><img src="/shared/perc4.png" alt=""></p>
+<h3><strong>How to get my circle&rsquo;s identifier</strong>?</h3>
 <p>Once your circle is created, even without the configuration, it already has a single identifier.</p>
-<p>To get this information, select the workspace you want and then on the left menu, click on <strong>Copy ID.</strong></p>
-<p><img src="//circuloid%20%282%29.gif" alt=""></p>
-<h2>Active and inactive circles</h2>
-<p>The existence of releases defines if a circle is active or not, which is the implemented versions for users segmentation. Therefore, active circles have implemented releases while the inactive circle doesn&rsquo;t have any.</p>
-<p><img src="//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7rKxDdQhwf1rfMyili%2F-M7rMicKEB9xYtEJ-28B%2Fchrome-capture%20%282%29.gif?alt=media&amp;token=04dfdbc0-4976-489e-aee4-44ec4946640f" alt="Active and Inactive circle filter"></p>
-<h2>How to integrate circle with services?</h2>
-<p>Once the <strong>circle which the user belongs</strong> to is detected, this information must be passed on to all next requests through the <code>x-circle-id</code> parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Let&rsquo;s see how it woks on example below:</p>
-<p><img src="//como_integrar_circulos_com_servicos_copy%20%282%29.png" alt=""></p>
+<p>To get this information, select the workspace you want, and then on the left menu, click on <strong>Copy ID.</strong></p>
+<p><img src="/shared/como-obter-o-identificador-do-meu-circulo%20%281%29.gif" alt=""></p>
+<h2><strong>Active and inactive circles</strong></h2>
+<p>The existence of releases defines if a circle is active or not, which are the implemented versions for user segmentation. Therefore, active circles have implemented releases while the inactive circle doesn&rsquo;t have any.</p>
+<p><img src="/shared/circulo-ativo-e-inativo.gif" alt=""></p>
+<h2><strong>How to integrate circle with services?</strong></h2>
+<p>Once the <strong>circle to which the user belongs</strong> is detected, this information must be passed on to all next requests through the <code>x-circle-id</code>parameter on the header. Charles detects by the circle’s ID which application version a determined request must be forward. Check out how it works below:</p>
+<p><img src="/shared/como_integrar_circulos_com_servicos_copy%20%282%29.png" alt=""></p>
 <p>At some point during the interaction of the user and your application <strong>(App1)</strong>, for example, the login - the <strong><code>Identify</code></strong> service of <strong><code>charles-circle-matcher</code></strong> - must be triggered to get the circle.</p>
-<p>By that, the ID must be passed on as value in the <strong><code>x-circle-id</code></strong> parameter located on the header of all next requests of your services <strong>(<code>App2</code>).</strong> Charles is responsible to disseminate this information because when it&rsquo;s received on Kubernetes, it will be used to redirect the request to a corresponding release version associated with a circle.</p>
+<p>By that, the ID must be passed on as a value in the <strong><code>x-circle-id</code></strong> parameter located on the header of all next requests of your services <strong>(<code>App2</code>).</strong> Charles is responsible to disseminate this information because when it&rsquo;s received on Kubernetes, it will be used to redirect the request to a corresponding release version associated with a circle.</p>
 <p>If the <strong><code>x-circle-id</code></strong> is not passed on, all the requests will be redirected to <strong>Default</strong> versions, which means it will use the standard releases of your applications, without a specific segmentation.</p>
-<h3><strong>Mix of services with different versions of my release</strong></h3>
+<h3><strong>A mix of services with different versions of my release</strong></h3>
 <p>We will give an example of a specific scenario where your environment has two services: <strong>Application A</strong> and <strong>Application B</strong> and your circles must use the following versions:</p>
-<p><img src="//versoes_diferentes_na_minha_release_eng%20%281%29.png" alt=""></p>
+<p><img src="/shared/versoes_diferentes_na_minha_release_eng%20%281%29.png" alt=""></p>
 <p>So, the redirect logic using <strong><code>x-circle-id</code></strong> will be:</p>
 <ol>
-<li>The user sends to the header:  <code>x-circle-id=&quot;QA Circle&quot;</code>. On this circle, the request will be redirect to a <strong>X version</strong> of the service on <strong>Application A</strong> and the <strong>Y version</strong> of the service on <strong>Application B</strong>.</li>
-<li>The user sends to the header:  <code>x-circle-id=”Dev Circle”</code>. On this circle, the request will be redirect to the <strong>Z version</strong> of the service on <strong>Application A</strong> and <strong>Z version</strong> of the service on <strong>Application B.</strong></li>
+<li>The user sends to the header:  <code>x-circle-id=&quot;QA Circle&quot;</code>. In this circle, the request will be redirected to an <strong>X version</strong> of the service on <strong>Application A</strong> and the <strong>Y version</strong> of the service on <strong>Application B</strong>.</li>
+<li>The user sends to the header:  <code>x-circle-id=”Dev Circle”</code>. In this circle, the request will be redirected to the <strong>Z version</strong> of the service on <strong>Application A</strong> and <strong>Z version</strong> of the service on <strong>Application B.</strong></li>
 </ol>
-<p><img src="//versoes_diferentes_na_minha_release_ii_eng%20%281%29.png" alt="Example of Application 1 and Application 2"></p>
-<h2>How to route your circles with Kubernetes Clusters?</h2>
+<p><img src="/shared/versoes_diferentes_na_minha_release_ii_eng%20%281%29.png" alt="Example of Application 1 and Application 2"></p>
+<h2><strong>How to route your circles with Kubernetes Clusters?</strong></h2>
 <p><strong>Charles</strong> involves <a href="https://kubernetes.io/docs/home/"><strong>Kubernetes</strong></a> and <a href="https://istio.io/docs/"><strong>Istio</strong></a> on traffic routing. Let&rsquo;s think about a scenario where there are two circles:</p>
 <ul>
 <li>Campinas residents (identify by ID 1234);</li>
@@ -825,13 +1021,13 @@ OR is the only logic operator supported on this segmentation.
 </ul>
 <p>Besides that, there is a default (v1) version for users that don&rsquo;t fit in any specific circle.</p>
 <p>Let&rsquo;s supposed that, to make a request to identify a user, an ID 8756 is returned. This information will be passed by the next service interaction through the header <code>x-circle-id</code>. The image below shows how Charles uses the internal resources to route the correct release.</p>
-<p><img src="//assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&amp;token=7b73c615-db6c-438e-a142-e4c131b6d606" alt=""></p>
-<p>When performing a version implementation in a circle, Charles makes all the configuration so that the routing is correctly done. To understand better how this works, let&rsquo;s use a scenario where a request comes from a service outside the stack, see the image above.</p>
+<p><img src="/shared/assets%2F-LzaqMnnQTjZO7P6hApv%2F-M7yHDr-VbK_tS0wCwGh%2F-M7yIFBInQf9HruABKEt%2FScreen_Shot_2020-05-22_at_10.08.35.png?alt=media&amp;token=7b73c615-db6c-438e-a142-e4c131b6d606" alt=""></p>
+<p>When performing a version implementation in a circle, Charles makes all the configurations so that the routing is correctly done. To understand better how this works, let&rsquo;s use a scenario where a request comes from the service outside the stack, see the image above.</p>
 <p>The request will be received by Ingress, which performs all the routing control to the service mesh.</p>
 <ol>
 <li>Once the request entry is allowed, Virtual Service inquiries the traffic routing rules to be applied on the addressed host. In this case, the evaluation happens through<code>x-circle-id</code> header specification, in a way that the traffic corresponds to the <strong>application</strong> service.</li>
 <li>Besides the service, it is also necessary to know which subset is defined on the register. This verification is made on <strong>Destination rules</strong>.</li>
-<li>The traffic redirect is peformed based on previous information, until it gets to the service version.</li>
+<li>The traffic redirect is performed based on previous information until it gets to the service version.</li>
 <li>If the <code>x-circle-id</code> is not informed, there is a rule defined by Virtual Service that will forward to the default version (v1).</li>
 </ol>
 
@@ -898,7 +1094,7 @@ OR is the only logic operator supported on this segmentation.
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top"><div class="dr-last-modified-text">
-  Last modified June 14, 2021: <a  href="https://github.com/ZupIT/docs-charles/tree/master/commit/f941ab7e765b44d580cfb9a160ddeb15b7e89b39">chore: set base files (f941ab7)</a>
+  Last modified October 15, 2021: <a  href="https://github.com/ZupIT/docs-charles/commit/4c3e15421f430e6dd894df58da29ba6cb1588d87">Doc review (4c3e154)</a>
 </div></div>
 </div>
 
@@ -975,7 +1171,7 @@ OR is the only logic operator supported on this segmentation.
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 Zup IT All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 Zup IT <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="privacy-link">Creative Commons</a></small>
         <small class="ml-1"><a href="https://insights.zup.com.br/politica-privacidade" target="_blank" class="privacy-link">Privacy Policy</a></small>
 	
 		
@@ -1001,7 +1197,9 @@ OR is the only logic operator supported on this segmentation.
 
 
 
-<script src="/js/main.min.057190eed2389d3933deb5786cc889f2751d6043b1fdf0752ee4fbe80977282b.js" integrity="sha256-BXGQ7tI4nTkz3rV4bMiJ8nUdYEOx/fB1LuT76Al3KCs=" crossorigin="anonymous"></script>
+
+
+<script src="/js/main.min.844601e17077974a1f4ec2657087c4a34c3f5b1125b89596e5dd2511142d1821.js" integrity="sha256-hEYB4XB3l0ofTsJlcIfEo0w/WxEluJWW5d0lERQtGCE=" crossorigin="anonymous"></script>
 
 
 

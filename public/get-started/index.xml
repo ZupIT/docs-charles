@@ -14,58 +14,42 @@
     
     
     <item>
-      <title>Get Started: Installing via Single File</title>
-      <link>https://docs.charlescd.io/get-started/installing-charles/installing-via-single-file/</link>
+      <title>Get Started: Overview</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.charlescd.io/get-started/installing-charles/installing-via-single-file/</guid>
+      <guid>https://docs.charlescd.io/get-started/installing-charles/overview/</guid>
       <description>
         
         
         &lt;hr&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-Before proceeding, make sure that all the &lt;a href=&#34;.././#requirements&#34;&gt;&lt;strong&gt;requirements&lt;/strong&gt;&lt;/a&gt; are properly installed.
-&lt;/div&gt;
-
-&lt;p&gt;This installation is recommended for those who never used Charles before and just want the &lt;strong&gt;first contact in a testing environment&lt;/strong&gt;, without looking for scalability or security.&lt;/p&gt;
-&lt;p&gt;In this case, you will have to:&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Components&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;CharlesCD&amp;rsquo;s installation considers these &lt;strong&gt;components&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Charles&#39; architecture&lt;/strong&gt; specific modules;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keycloak&lt;/strong&gt;, used for the project&amp;rsquo;s authentication and authorization. However, if you already have an Identity Manager (IDM) and you want to use it, you have just to configure it during Charles&#39; installation, &lt;a href=&#34;https://docs.charlescd.io/reference/identity-manager/&#34;&gt;&lt;strong&gt;check out how to enable it in the IDM section&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;PostgreSQL database&lt;/strong&gt; for backend modules (&lt;code&gt;charlescd-moove&lt;/code&gt;, &lt;code&gt;charlescd-butler&lt;/code&gt; ,&lt;code&gt;charlescd-villager&lt;/code&gt;, &lt;code&gt;charlescd-gate&lt;/code&gt; e &lt;code&gt;charlescd-compass&lt;/code&gt;) and Keycloak;&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;Redis:&lt;/strong&gt;  To be used by &lt;code&gt;charlescd-circle-matcher&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;RabbitMQ&lt;/strong&gt; for &lt;code&gt;charlescd-hermes&lt;/code&gt;&#39; use.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ingress:&lt;/strong&gt; It is used to expose the HTTP and HTTPS routes outside the cluster to services inside the cluster. When you install Charles, it already has a default ingress, however, if you want to use your own, see how to enable it in the &lt;a href=&#34;https://docs.charlescd.io/get-started/installing-charles/installing-via-helm/&#34;&gt;&lt;strong&gt;Installing via Helm section&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;To install Charles will be necessary an environment with the following requisites:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Use a &lt;strong&gt;yaml&lt;/strong&gt; file with all the &lt;a href=&#34;https://docs.charlescd.io/get-started/installing-charles#components&#34;&gt;&lt;strong&gt;components&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;Use a &lt;strong&gt;Load Balancer&lt;/strong&gt; previously configured.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/setup/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://istio.io/archive/&#34;&gt;&lt;strong&gt;Istio&lt;/strong&gt;&lt;/a&gt; (version&amp;gt;= 1.7  and &lt;a href=&#34;https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#automatic-sidecar-injection&#34;&gt;&lt;strong&gt;enabled sidecar injection&lt;/strong&gt;&lt;/a&gt; on the deploy namespace of your application).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://prometheus.io/docs/prometheus/latest/getting_started/&#34;&gt;&lt;strong&gt;Prometheus&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;,&lt;/strong&gt; in case you want to use &lt;a href=&#34;https://docs.charlescd.io/reference/metrics/setting-up-your-metrics/&#34;&gt;&lt;strong&gt;metrics&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;How to install?&lt;/h3&gt;
-
-
-&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
-
-This installation uses standard passwords that can be found in our repository. To change them, you have to choose &lt;a href=&#34;installing-via-helm&#34;&gt;&lt;strong&gt;helm installation&lt;/strong&gt;&lt;/a&gt; where you can make the password change.
-&lt;/div&gt;
-
-&lt;p&gt;To create this structure, you have to execute the files in a configured cluster, such as minikube, microk8s, GKE, EKS, etc. The steps to be executed are:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl create namespace charles
-
-kubectl apply -n charles -f https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At the end of the process, you will have inside of the namespace &lt;code&gt;charles&lt;/code&gt; all the modules of the project and its dependencies installed in a simpler way. Here you will find the&lt;a href=&#34;https://raw.githubusercontent.com/ZupIT/charlescd/master/install/helm-chart/single-file.yaml&#34;&gt; &lt;strong&gt;files in the repository&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p&gt;
-&lt;p&gt;After doing this, clone the single-file.yaml and change all occurrences from &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; to &amp;lt;your-dns&amp;gt;, then execute the install command again.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;kubectl install -f &amp;lt;single-file-path&amp;gt; -n charles&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
-
-The purpose of this installation is only for tests. Using this for production environment is not recommended due to lack o backup, high availability, etc.
-&lt;/div&gt;
-
+&lt;h2&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The minimum resources considering only the installation of Charles are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Microk8s&lt;/strong&gt;: 2GB of RAM;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minikube&lt;/strong&gt;: 4GB of RAM.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cluster&lt;/strong&gt;: 2GB of RAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;In this section, you saw components, requirements, and resources to install Charles. To continue the installation, see:&lt;/p&gt;
 
       </description>
     </item>
@@ -82,51 +66,495 @@ The purpose of this installation is only for tests. Using this for production en
         &lt;hr&gt;
 
 
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Before proceeding, make sure all the &lt;a href=&#34;https://docs.charlescd.io/get-started/installing-charles/overview/&#34;&gt;&lt;strong&gt;requirements&lt;/strong&gt;&lt;/a&gt; are properly installed.
+&lt;/div&gt;
+
+&lt;h2&gt;&lt;strong&gt;How to install?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This installation stands out because of the customization. To do this, you have access to a helm template with all the available fields to change, including the database and the consumed resources.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt;&lt;strong&gt;documentation of the editable fields&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Before proceeding, make sure that all the &lt;a href=&#34;.././#requirements&#34;&gt;&lt;strong&gt;requirements&lt;/strong&gt;&lt;/a&gt; are properly installed.
+&lt;p&gt;The passwords used by Charles are stored in the &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml&#34;&gt;&lt;strong&gt;values.yaml&lt;/strong&gt;&lt;/a&gt; file.  The main passwords to customized are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CharlesApplications.butler.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.moove.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.villager.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.circlematcher.redis.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li&gt;
+&lt;li&gt;CharlesApplications.postgresql.postgresqlPassword&lt;/li&gt;
+&lt;li&gt;CharlesApplications.redis.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.compass.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.hermes.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.rabbitmq.auth.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.gate.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.compass.moove.database.password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more details, access the  &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt;&lt;strong&gt;editable fields&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
 &lt;/div&gt;
 
-&lt;p&gt;This installation is recommended for those who already has an infrastructure to deal with a more complex environment or who has some limitations of security/scalability, which demands a &lt;strong&gt;more complete install customization&lt;/strong&gt; of CharlesCD.&lt;/p&gt;
-&lt;h3&gt;Requisites&lt;/h3&gt;
-&lt;p&gt;To run the process, you must have the following programs:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;&lt;strong&gt;Kubectl&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;To make sure the charts dependencies are present and updated with a compatible version, use in the &lt;strong&gt;&lt;code&gt;/charlescd/install/helm-chart&lt;/code&gt;&lt;/strong&gt; folder the command below:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;How does it works?&lt;/h3&gt;
-&lt;p&gt;This installation is recommended if you want a specific customization. To make this happen, there is a helm template with all the available fields to be altered, including the database and consumed resources. You will find the documentation with the&lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt; &lt;strong&gt;editable fields here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;helm dependency update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;To install with Helm Charts,  after you have customized the fields, run the command below inside the &lt;strong&gt;/charlescd/install/helm-chart&lt;/strong&gt; folder:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm install --create-namespace -n &amp;lt;namespace&amp;gt; charlescd . -f values.yaml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+If you don&amp;rsquo;t customize anything, Charles installs by default &lt;strong&gt;PostgreSQL&lt;/strong&gt;, &lt;strong&gt;Redis&lt;/strong&gt;, &lt;strong&gt;Keycloak&lt;/strong&gt;, and &lt;strong&gt;RabbitMQ&lt;/strong&gt;.  So, don&amp;rsquo;t forget to customize the fields if you want something manageable.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Change the default passwords&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After installing CharlesCD, remember to change some &lt;strong&gt;default passwords,&lt;/strong&gt; check out below:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Keycloak password&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;1&lt;/strong&gt;. Access: &lt;strong&gt;http://&amp;lt;charlescd-url&amp;gt;/keycloak/auth;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;2&lt;/strong&gt;. Click on &lt;strong&gt;Administration Console;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;3.&lt;/strong&gt; Enter with Keycloak user and password (admin - firstpassword) and change the default password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CharlesCD password:&lt;/strong&gt;&lt;br&gt;
+Log in CharlesCD with:&lt;br&gt;
+&lt;strong&gt;1&lt;/strong&gt;. &lt;strong&gt;User:&lt;/strong&gt; charlesadmin@admin&lt;br&gt;
+&lt;strong&gt;2. Password:&lt;/strong&gt; charlesadmin;&lt;br&gt;
+&lt;strong&gt;3.&lt;/strong&gt; Go to &lt;strong&gt;Account &amp;gt; Profile&lt;/strong&gt; and then &lt;strong&gt;Change Password.&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Installing via Terraform</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/installing-via-terraform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/installing-via-terraform/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h1&gt;&lt;strong&gt;Deploying CharlesCD on Kubernetes with Terraform&lt;/strong&gt;&lt;/h1&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;The passwords used by Charles are stored in the &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/master/install/helm-chart/values.yaml&#34;&gt;&lt;strong&gt;values.yaml&lt;/strong&gt;&lt;/a&gt; file.  The main passwords to customized are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;butler.database.password&lt;/li&gt;
-&lt;li&gt;moove, database.password&lt;/li&gt;
-&lt;li&gt;villager.database.password&lt;/li&gt;
-&lt;li&gt;circlematcher.redis.password&lt;/li&gt;
-&lt;li&gt;keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li&gt;
-&lt;li&gt;postgresql.postgresqlPassword&lt;/li&gt;
-&lt;li&gt;redis.password&lt;/li&gt;
-&lt;li&gt;compass.database.password&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For more details, access the link mentioned before about editable fields.&lt;/p&gt;
-
+This installation does not require &lt;code&gt;kubectl&lt;/code&gt;, but you can&amp;rsquo;t perform some of the examples in our documentation without it. If you want to install it, check out the &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;&lt;strong&gt;installation docs&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;p&gt;To complete the installation with helm charts, just run the command below after you customized the fields:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;// customize everything you need in the file values.yaml before you execute the following command
-helm install charlescd &amp;lt;repo-folder&amp;gt; -n &amp;lt;namespace&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;See below what you need in your machine:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.terraform.io/downloads.html&#34;&gt;&lt;strong&gt;Terraform&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;How to install?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Follow the steps below:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt; Download at  &lt;a href=&#34;https://github.com/ZupIT/charlescd-local-cluster&#34;&gt;&lt;strong&gt;&lt;code&gt;charlescd-local-cluster&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; repository. From &lt;strong&gt;charles-local-cluster&lt;/strong&gt; folder run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;make up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt; Access &lt;a href=&#34;http://charles.lvh.me/&#34;&gt;&lt;strong&gt;http://charles.lvh.me/&lt;/strong&gt;&lt;/a&gt; on your browser and log in with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User: &lt;strong&gt;&lt;code&gt;charlesadmin@admin&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Password: &lt;code&gt;g_wl!U8Uyf2)$KKw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can start to play with CharlesCD!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Installing via Terraform local environment</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/installing-via-kind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/installing-via-kind/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;&lt;strong&gt;Deploying CharlesCD on Kubernetes with KinD&lt;/strong&gt;&lt;/h1&gt;
+
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;It&amp;rsquo;s important to remember that, in case of no customization at all, the final result is the same as in case #1 in which, for standard, we install the PostgreSQL, Redis, Keycloak and CharlesCD.&lt;/p&gt;
-&lt;p&gt;So, you must not forget to customize the fields in case you want something manageable.&lt;/p&gt;
-
+&lt;strong&gt;This is not recommended for a production environment&lt;/strong&gt;. The team recommends this installation if you want to test and develop CharlesCD.
 &lt;/div&gt;
 
+&lt;h2&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;See below what you need in your machine:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/#installation&#34;&gt;&lt;strong&gt;KinD&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/&#34;&gt;&lt;strong&gt;Kubectl&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Follow the next steps:&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 1. Create Kubernetes clusters with KinD&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;You need to forward ports from the host to the Istio ingress to be able to access the Charles UI. You can do this by creating a kind cluster with &lt;strong&gt;&lt;code&gt;extraPortMappings&lt;/code&gt;&lt;/strong&gt;, see below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt;&amp;lt;EOF | kind create cluster --name &amp;quot;charles-testing&amp;quot; --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.20.7
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: &amp;quot;ingress-ready=true&amp;quot;
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 30001
+    hostPort: 443
+    protocol: TCP
+  - containerPort: 30002
+    hostPort: 15021
+    protocol: TCP
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Step 2. Install Istio on Kubernetes&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Install Istio Operator&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Instead of manually installing Istio you can let the Istio Operator manage this for you:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export ISTIO_VERSION=1.7.8
+
+curl -L https://istio.io/downloadIstio | sh -
+
+helm upgrade -i istio-operator ./istio-${ISTIO_VERSION}/manifests/charts/istio-operator \
+    --set watchedNamespaces=&amp;quot;istio-system&amp;quot; \
+    --set hub=&amp;quot;docker.io/istio&amp;quot; \
+    --set tag=&amp;quot;${ISTIO_VERSION}-distroless&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Install Istio and configure Istio Ingress as NodePort&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once Istio Operator is installed, just create its Kubernetes resource mapping the node ports that were previously configured on &lt;strong&gt;&lt;code&gt;extraPortMappings&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace istio-system
+
+kubectl apply -f - &amp;lt;&amp;lt;EOF
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  name: control-plane
+  namespace: istio-system
+spec:
+  profile: demo
+  components:
+    egressGateways:
+      - enabled: false
+        name: istio-egressgateway
+    ingressGateways:
+      - enabled: true
+        k8s:
+          nodeSelector:
+            ingress-ready: &amp;quot;true&amp;quot;
+          service:
+            ports:
+              - name: status-port
+                nodePort: 30002
+                port: 15021
+                targetPort: 15021
+              - name: http2
+                nodePort: 30000
+                port: 80
+                targetPort: 8080
+              - name: https
+                nodePort: 30001
+                port: 443
+                targetPort: 8443
+        name: istio-ingressgateway
+  values:
+    gateways:
+      istio-ingressgateway:
+        type: NodePort
+    global:
+      defaultPodDisruptionBudget:
+        enabled: false
+EOF
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When the installation is completed and the Istio Ingress pod is running, you&amp;rsquo;ll be able to get its health check endpoint:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl http://localhost:15021/healthz/ready -I
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Step 3. Deploy applications packaged by Bitnami Helm Charts&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;CharlesCD needs some infrastructure components to work. You have to deploy these components quickly and easily using Bitnami Helm Charts:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm repo add bitnami https://charts.bitnami.com/bitnami
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy Redis&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace cache
+
+kubectl create secret generic redis -n cache --from-literal=password=&amp;quot;cmXeuBSE6ElcCnEH&amp;quot;
+
+helm upgrade -i redis bitnami/redis --version 15.3.2 -n cache \
+    --set architecture=&amp;quot;standalone&amp;quot; \
+    --set auth.existingSecret=&amp;quot;redis&amp;quot; \
+    --set auth.existingSecretPasswordKey=&amp;quot;password&amp;quot; \
+    --set image.tag=&amp;quot;6.2.6-debian-10-r10&amp;quot; \
+    --set nameOverride=&amp;quot;redis&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy RabbitMQ&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace queue
+
+helm upgrade -i rabbitmq bitnami/rabbitmq --version 8.22.0 -n queue \
+    --set auth.erlangCookie=&amp;quot;%d_3uIt&amp;amp;B7qyh2Gc&amp;quot; \
+    --set auth.password=&amp;quot;dI5FYfnN33i9xA9#&amp;quot; \
+    --set image.tag=&amp;quot;3.9.7-debian-10-r17&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy PostgreSQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use a single Postgres instance to save your computing resources. Create a script to configure all databases and their respective users:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt;&amp;lt; EOF &amp;gt; ./userdata.sql
+    -- CharlesCD Moove
+    create database charlescd_moove_db;
+    create user charlescd_moove with encrypted password &#39;GnozoAWuCGoIYF6Z&#39;;
+    alter user charlescd_moove with superuser;
+    grant all privileges on database charlescd_moove_db to charlescd_moove;
+
+    -- CharlesCD Villager
+    create database charlescd_villager_db;
+    create user charlescd_villager with encrypted password &#39;pnvvseJ8BW2jNsrc&#39;;
+    alter user charlescd_villager with superuser;
+    grant all privileges on database charlescd_villager_db to charlescd_villager;
+
+    -- CharlesCD Butler
+    create database charlescd_butler_db;
+    create user charlescd_butler with encrypted password &#39;fNq1milqfZI6v3aU&#39;;
+    alter user charlescd_butler with superuser;
+    grant all privileges on database charlescd_butler_db to charlescd_butler;
+
+    -- CharlesCD Hermes
+    create database charlescd_hermes_db;
+    create user charlescd_hermes with encrypted password &#39;SN1rLfyMG96CzZyl&#39;;
+    alter user charlescd_hermes with superuser;
+    grant all privileges on database charlescd_hermes_db to charlescd_hermes;
+
+    -- CharlesCD Compass
+    create database charlescd_compass_db;
+    create user charlescd_compass with encrypted password &#39;5Pzmuji7NFYJAazk&#39;;
+    alter user charlescd_compass with superuser;
+    grant all privileges on database charlescd_compass_db to charlescd_compass;
+
+    -- CharlesCD Keycloak
+    create database keycloak_db;
+    create user keycloak with encrypted password &#39;seDnCGd3cz8G5QCy&#39;;
+    alter user keycloak with superuser;
+    grant all privileges on database keycloak_db to keycloak;
+EOF
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, just create a secret containing this script and pass it to &lt;strong&gt;&lt;code&gt;initdbScriptsSecret&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace database
+
+kubectl create secret generic userdata --from-file=&amp;quot;./userdata.sql&amp;quot;
+
+helm upgrade -i postgresql bitnami/postgresql --version 10.9.5 -n database \
+    --set fullnameOverride=&amp;quot;postgresql&amp;quot; \
+    --set image.tag=&amp;quot;13&amp;quot; \
+    --set initdbScriptsSecret=&amp;quot;userdata&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy Keycloak&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace iam
+
+kubectl create secret generic database-env-vars -n iam \
+    --from-literal=KEYCLOAK_DATABASE_HOST=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_NAME=&amp;quot;keycloak_db&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_PORT=&amp;quot;5432&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_USER=&amp;quot;keycloak&amp;quot;
+
+kubectl create secret generic keycloak-passwords -n iam \
+    --from-literal=adminPassword=&amp;quot;:gjUzkk{:h2bPB_6&amp;quot; \
+    --from-literal=databasePassword=&amp;quot;seDnCGd3cz8G5QCy&amp;quot; \
+    --from-literal=managementPassword=&amp;quot;cRF5mz:2oLKHdeT&amp;quot;
+  
+helm upgrade -i keycloak bitnami/keycloak --version 5.0.7 -n iam -f - &amp;lt;&amp;lt;EOF
+    auth: 
+      adminUser: admin
+      existingSecretPerPassword: 
+        adminPassword: 
+          name: keycloak-passwords
+        databasePassword: 
+          name: keycloak-passwords
+        managementPassword: 
+          name: keycloak-passwords
+    externalDatabase: 
+      existingSecret: database-env-vars
+    image: 
+      repository: bitnami/keycloak
+      tag: &amp;quot;15.0.2-debian-10-r52&amp;quot;
+    ingress: 
+      annotations: 
+        kubernetes.io/ingress.class: istio
+      enabled: true
+      hostname: keycloak.lvh.me
+      pathType: Prefix
+    nameOverride: keycloak
+    postgresql: 
+      enabled: false
+    service: 
+      type: ClusterIP
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Step 4. Setup Keycloak realm, clients, and users&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Keycloak is in charge of CharlesCD users, you need to configure it for that. There are many ways you can do this, but in this example, it will be with Keycloak APIs:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# authorize with username / password
+ACCESS_TOKEN=$(curl -s &#39;http://keycloak.lvh.me/auth/realms/master/protocol/openid-connect/token&#39; \
+    --header &#39;Content-Type: application/x-www-form-urlencoded&#39; \
+    --data-urlencode &#39;client_id=admin-cli&#39; \
+    --data-urlencode &#39;client_secret=a=Dg0&amp;gt;PGyscSNu)i&#39; \
+    --data-urlencode &#39;grant_type=password&#39; \
+    --data-urlencode &#39;username=admin&#39; \
+    --data-urlencode &#39;password=:gjUzkk{:h2bPB_6&#39; \
+    | jq &#39;.access_token&#39; -r)
+
+# create realm
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;enabled&amp;quot;:true,&amp;quot;id&amp;quot;:&amp;quot;charlescd&amp;quot;,&amp;quot;realm&amp;quot;:&amp;quot;charlescd&amp;quot;}&#39;
+
+# create public client
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/clients&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;clientId&amp;quot;:&amp;quot;charlescd-client&amp;quot;,&amp;quot;directAccessGrantsEnabled&amp;quot;:true,&amp;quot;implicitFlowEnabled&amp;quot;:true,&amp;quot;publicClient&amp;quot;:true,&amp;quot;redirectUris&amp;quot;:[&amp;quot;http://charles.lvh.me/*&amp;quot;],&amp;quot;serviceAccountsEnabled&amp;quot;:true,&amp;quot;webOrigins&amp;quot;:[&amp;quot;*&amp;quot;]}&#39;
+
+# create confidential client
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/clients&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;clientId&amp;quot;:&amp;quot;realm-charlescd&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;vO]i?GSWWr0$zIZR&amp;quot;,&amp;quot;serviceAccountsEnabled&amp;quot;:true,&amp;quot;standardFlowEnabled&amp;quot;:false}&#39;
+
+# create admin user
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/users&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;username&amp;quot;:&amp;quot;charlesadmin@admin&amp;quot;,&amp;quot;enabled&amp;quot;:true,&amp;quot;emailVerified&amp;quot;:true,&amp;quot;email&amp;quot;:&amp;quot;charlesadmin@admin&amp;quot;,&amp;quot;attributes&amp;quot;:{&amp;quot;isRoot&amp;quot;:[&amp;quot;true&amp;quot;]}}&#39;
+
+# get admin user identifier
+USER_ID=$(curl -s &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/users?username=charlesadmin@admin&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    | jq &#39;.[0].id&#39; -r)
+
+# create admin credentials
+curl -X PUT &amp;quot;http://keycloak.lvh.me/auth/admin/realms/charlescd/users/${USER_ID}/reset-password&amp;quot; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;type&amp;quot;:&amp;quot;password&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;g_wl!U8Uyf2)$KKw&amp;quot;,&amp;quot;temporary&amp;quot;:false}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Step 5. Deploy CharlesCD&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Now, all required components are up and running, you can finally install CharlesCD pointing to them:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export CHARLESCD_VERSION=1.0.1
+
+kubectl create namespace continuous-deployment
+
+curl https://github.com/ZupIT/charlescd/archive/refs/tags/${CHARLESCD_VERSION}.zip -OJL
+unzip ./charlescd-${CHARLESCD_VERSION}.zip
+( cd ./charlescd-${CHARLESCD_VERSION}/install/helm-chart ; helm dependency update )
+
+helm upgrade -i charlescd ./charlescd-${CHARLESCD_VERSION}/install/helm-chart -n continuous-deployment \
+    --set CharlesApplications.butler.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.butler.database.name=&amp;quot;charlescd_butler_db&amp;quot; \
+    --set CharlesApplications.butler.database.password=&amp;quot;fNq1milqfZI6v3aU&amp;quot; \
+    --set CharlesApplications.butler.database.user=&amp;quot;charlescd_butler&amp;quot; \
+    --set CharlesApplications.butler.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.butler.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.butler.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.butler.resources.limits=null \
+    --set CharlesApplications.circleMatcher.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.circleMatcher.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.circleMatcher.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.circleMatcher.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.circleMatcher.redis.host=&amp;quot;redis-master.cache.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.circleMatcher.redis.password=&amp;quot;cmXeuBSE6ElcCnEH&amp;quot; \
+    --set CharlesApplications.circleMatcher.resources.limits=null \
+    --set CharlesApplications.compass.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.compass.database.name=&amp;quot;charlescd_compass_db&amp;quot; \
+    --set CharlesApplications.compass.database.password=&amp;quot;5Pzmuji7NFYJAazk&amp;quot; \
+    --set CharlesApplications.compass.database.user=&amp;quot;charlescd_compass&amp;quot; \
+    --set CharlesApplications.compass.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.compass.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.compass.moove.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.compass.moove.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.compass.moove.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.compass.moove.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.compass.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.compass.resources.limits=null \
+    --set CharlesApplications.gate.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.gate.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.gate.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.gate.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.gate.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.gate.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.gate.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.gate.resources.limits=null \
+    --set CharlesApplications.hermes.amqp.url=&amp;quot;amqp://user:dI5FYfnN33i9xA9#@rabbitmq.queue.svc.cluster.local:5672/&amp;quot; \
+    --set CharlesApplications.hermes.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.hermes.database.name=&amp;quot;charlescd_hermes_db&amp;quot; \
+    --set CharlesApplications.hermes.database.password=&amp;quot;SN1rLfyMG96CzZyl&amp;quot; \
+    --set CharlesApplications.hermes.database.user=&amp;quot;charlescd_hermes&amp;quot; \
+    --set CharlesApplications.hermes.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.hermes.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.hermes.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.hermes.resources.limits=null \
+    --set CharlesApplications.moove.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.moove.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.moove.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.moove.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.moove.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.moove.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.moove.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.moove.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.moove.resources.limits=null \
+    --set CharlesApplications.ui.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.apiHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.authUri=&amp;quot;http://keycloak.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.ui.idmRedirectHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.ui.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.ui.resources.limits=null \
+    --set CharlesApplications.villager.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.villager.database.name=&amp;quot;charlescd_villager_db&amp;quot; \
+    --set CharlesApplications.villager.database.password=&amp;quot;pnvvseJ8BW2jNsrc&amp;quot; \
+    --set CharlesApplications.villager.database.user=&amp;quot;charlescd_villager&amp;quot; \
+    --set CharlesApplications.villager.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.villager.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.villager.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.villager.resources.limits=null \
+    --set envoy.idm.endpoint=&amp;quot;keycloak.lvh.me&amp;quot; \
+    --set envoy.idm.path=&amp;quot;/auth/realms/charlescd/protocol/openid-connect/userinfo&amp;quot; \
+    --set hostGlobal=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set ingress.enabled=&amp;quot;false&amp;quot; \
+    --set keycloak.enabled=&amp;quot;false&amp;quot; \
+    --set nginx_ingress_controller.enabled=&amp;quot;false&amp;quot; \
+    --set postgresql.enabled=&amp;quot;false&amp;quot; \
+    --set rabbitmq.enabled=&amp;quot;false&amp;quot; \
+    --set redis.enabled=&amp;quot;false&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To access CharlesCD UI on your browser, create an Ingress resource using the host &lt;strong&gt;&lt;code&gt;charles.lvh.me&lt;/code&gt;&lt;/strong&gt;.
+The wildcard DNS service &lt;strong&gt;&lt;code&gt;lvh.me&lt;/code&gt;&lt;/strong&gt; will always resolve to &lt;strong&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/strong&gt; so you don&amp;rsquo;t need to modify the &lt;strong&gt;&lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/strong&gt; file or run your own DNS server:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl apply -f - &amp;lt;&amp;lt;EOF
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      annotations:
+        kubernetes.io/ingress.class: istio
+      name: charlescd
+      namespace: continuous-deployment
+    spec:
+      rules:
+        - host: charles.lvh.me
+          http:
+            paths:
+              - backend:
+                  service:
+                    name: envoy-proxy
+                    port:
+                      number: 80
+                path: /
+                pathType: Prefix
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, access &lt;strong&gt;&lt;a href=&#34;http://charles.lvh.me/&#34;&gt;http://charles.lvh.me/&lt;/a&gt;&lt;/strong&gt; on your browser:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Log in with the user &lt;strong&gt;&lt;code&gt;charlesadmin@admin&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Password: &lt;strong&gt;&lt;code&gt;g_wl!U8Uyf2)$KKw&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can start to play with CharlesCD!&lt;/p&gt;
 
       </description>
     </item>
@@ -145,7 +573,9 @@ helm install charlescd &amp;lt;repo-folder&amp;gt; -n &amp;lt;namespace&amp;gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-At the first access, &lt;strong&gt;regardless of the installation method&lt;/strong&gt;, the default admin user is &lt;strong&gt;charlesadmin@admin&lt;/strong&gt; and the password is &lt;strong&gt;charlesadmin.&lt;/strong&gt;
+&lt;p&gt;At the first access, &lt;strong&gt;regardless of the installation method&lt;/strong&gt;, the default admin user is &lt;strong&gt;charlesadmin@admin&lt;/strong&gt; and the password is &lt;strong&gt;charlesadmin.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It is important that, after your first login, you change this password.&lt;/p&gt;
+
 &lt;/div&gt;
 
 &lt;p&gt;There are three ways to access the application:&lt;/p&gt;
@@ -158,12 +588,12 @@ At the first access, &lt;strong&gt;regardless of the installation method&lt;/str
 &lt;h2&gt;&lt;strong&gt;1. Minikube&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;On the minikube, the &lt;strong&gt;load balancer&lt;/strong&gt; does not automatically create an &lt;strong&gt;external IP,&lt;/strong&gt; to make this possible, follow the steps:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: Just run the command below:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;minikube tunnel
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;minikube tunnel
 // enter your root password, then open another terminal tab and run:
 kubectl get svc -n charles
 // now the nginx IP external appears
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Now that you have the &lt;strong&gt;external ip,&lt;/strong&gt; &lt;strong&gt;replace the ip-external-charles&lt;/strong&gt; and add this line on your host file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -172,8 +602,8 @@ For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; In your browser type &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; and the entire application is available.&lt;/p&gt;
-&lt;h2&gt;2. Microk8s&lt;/h2&gt;
-&lt;p&gt;Microk8s is available for Microsoft Windows, Apple MacOS and Linux platforms.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;2. Microk8s&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Microk8s is available for Microsoft Windows, Apple MacOS, and Linux platforms.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -185,11 +615,11 @@ For more information on how to install Microk8s visit the &lt;a href=&#34;https:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;DNS:&lt;/strong&gt; discovery of services within the cluster;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Storage:&lt;/strong&gt; creating volumes and persistence of PODs;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MetalLB:&lt;/strong&gt; access to the services exposed by kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MetalLB:&lt;/strong&gt; access to the services exposed by Kubernetes - For this addon, you will have to choose a range of IPs where Load Balancer will assign for the exposure of its services.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Follow the next steps to enable Microk8s on Charles:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; prepare Microk8s to receive the CharlesCD;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;microk8s enable dns storage metallb
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;microk8s enable dns storage metallb
 Enabling DNS
 Applying manifest
 serviceaccount/coredns created
@@ -238,29 +668,29 @@ microk8s.kubectl create namespace charles
 microk8s.kubectl get svc -n charles
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; now that you have the &lt;strong&gt;external ip,&lt;/strong&gt; &lt;strong&gt;replace the ip-external-charles,&lt;/strong&gt; add this line on your OS host file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt; &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;access here.&lt;/strong&gt; &lt;/a&gt;
+For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt; &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;check the tutorial&lt;/strong&gt;&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; type in your browser &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; and the entire application will be  available.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; type in your browser &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; and the entire application will be available.&lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;3. Cloud Provider (AWS, GCP, AZURE)&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;On Cloud Provider, if you install on a managed kubernetes, &lt;strong&gt;the external ip for the nginx load balancer is created automatically&lt;/strong&gt;,&lt;/p&gt;
+&lt;p&gt;On Cloud Provider, if you install on a managed Kubernetes, &lt;strong&gt;the external ip for the nginx load balancer is created automatically&lt;/strong&gt;,&lt;/p&gt;
 &lt;p&gt;When all the components are ready follow the next steps:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Just take the external IP with the command below and add it to your hosts file.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl get svc -n charles
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Just take the external IP with the command below and add it to your hosts&#39; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl get svc -n charles
 // get external IP value
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;  Add the line below in you &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;OS host file&lt;/strong&gt;&lt;/a&gt;, if you want to access the browser in your device.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;  Add the line below in your &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;OS host file&lt;/strong&gt;&lt;/a&gt;, if you want to access the browser on your device.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 &lt;p&gt;If you want to use this installation in a productive or development environment you will probably expose the application using a DNS.&lt;/p&gt;
-&lt;p&gt;After doing this, clone the configurations (it can be singlefile or the helm files) and change all occurrences from &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; to your new DNS, then run the install command again.&lt;/p&gt;
+&lt;p&gt;After doing this, clone the configurations (it can be single-file or the helm files) and change all occurrences from &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; to your new DNS, then run the install command again.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -268,10 +698,43 @@ For more information on &lt;strong&gt;how to change the host file,&lt;/strong&gt
 
 &lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
 
-The purpose of this installation is only for tests. Using this for production environment is not recommended due to lack o backup, high availability, etc.
+The purpose of this installation is only for tests. Using this for the production environment is not recommended due to lack o backup, high availability, etc.
 &lt;/div&gt;
 
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Signed Releases</title>
+      <link>https://docs.charlescd.io/get-started/installing-charles/signed-releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/installing-charles/signed-releases/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;What is it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;CharlesCD&amp;rsquo;s signed releases allow you to verify the origin of the artifacts generated in your release.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+CharlesCD will start to sign the releases in the 1.0.2 version.
+&lt;/div&gt;
+
+&lt;h2&gt;&lt;strong&gt;How can you verify it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Follow the steps below to verify the signed release:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Access the &lt;a href=&#34;https://github.com/ZupIT/charlescd/releases/&#34;&gt;&lt;strong&gt;repository&lt;/strong&gt;&lt;/a&gt; and choose the release you need to download.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Download the artifact you need (zip or tar.gz), &lt;strong&gt;&lt;code&gt;checksum.txt&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;checksum.txt.sig&lt;/code&gt;&lt;/strong&gt;;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3.&lt;/strong&gt; Import Charles&#39; public key with the command below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; gpg --recv-keys A8CDAF8572A7A5BD291E7469D3EA886A72F6D154
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 4.&lt;/strong&gt; Check if the &lt;strong&gt;&lt;code&gt;checksum.txt&lt;/code&gt;&lt;/strong&gt; signature is valid:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; gpg --verify checksum.txt.sig checksum.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 5.&lt;/strong&gt; Check if the downloaded &lt;strong&gt;&lt;code&gt;tgz&lt;/code&gt;&lt;/strong&gt; has the &lt;strong&gt;&lt;code&gt;checksum&lt;/code&gt;&lt;/strong&gt; corresponding to the repository:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sha256sum --check --ignore-missing checksums.txt
+&lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
     
@@ -285,19 +748,19 @@ The purpose of this installation is only for tests. Using this for production en
         
         
         &lt;hr&gt;
-&lt;h2&gt;Why do you need to authenticate?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;Why do you need to authenticate?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Authentication is required if you use a private registry. This way, the cluster will be able to communicate with your registry to pull the images.&lt;/p&gt;
-&lt;h2&gt;How do you authenticate?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;How do you authenticate?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Kubernetes cluster uses a type of docker-registry &lt;strong&gt;Secret&lt;/strong&gt; to authenticate the registry container. You have to generate it.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-For more information on how to generate the Secret that will be applied in your cluster, &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&#34;&gt;&lt;strong&gt;access Kubernetes documentation&lt;/strong&gt;&lt;/a&gt;.
+For more information on how to generate the Secret that will be applied in your cluster, &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&#34;&gt;&lt;strong&gt;check out the Kubernetes documentation&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;p&gt;Once you generate the secret, it will look like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: v1
+&lt;p&gt;Once you generate the secret, it will look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: v1
 data:
   .dockerconfigjson: &amp;lt;&amp;lt;your value&amp;gt;&amp;gt;
 kind: Secret
@@ -305,7 +768,7 @@ metadata:
   name: &amp;lt;&amp;lt;registry-name&amp;gt;&amp;gt;
 type: kubernetes.io/dockerconfigjson
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this, you&amp;rsquo;ll need to apply this information in the namespace where your applications will be deployed by Charles:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl -n your-namespace apply secret-registry.yaml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl -n your-namespace apply secret-registry.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After completing these steps, your cluster will be able to maintain communication with the registry.&lt;/p&gt;
 
       </description>
@@ -321,16 +784,73 @@ type: kubernetes.io/dockerconfigjson
         
         
         &lt;hr&gt;
-&lt;p&gt;If you want to use your own ingress instead the one provided with Charles&#39; installation, follow the next step:&lt;/p&gt;
+&lt;p&gt;If you want to use your own ingress instead of the one provided with Charles&#39; installation, follow the next step:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;On&lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt;, change the &lt;strong&gt;&lt;code&gt;enabled&lt;/code&gt;&lt;/strong&gt; value to &lt;strong&gt;&lt;code&gt;false&lt;/code&gt;&lt;/strong&gt;, like the example below:&lt;/li&gt;
+&lt;li&gt;On &lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt;, change the &lt;strong&gt;&lt;code&gt;enabled&lt;/code&gt;&lt;/strong&gt; value to &lt;strong&gt;&lt;code&gt;true&lt;/code&gt;&lt;/strong&gt;, like the example below:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;host: charles.info.example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;ingress:
+  enabled: true
+  host: charles.info.example
   class: nginx
-  controller:
-  nginx:
-  enabled: false
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Configuring MTLS</title>
+      <link>https://docs.charlescd.io/get-started/optional-configuration/configuring-mtls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/optional-configuration/configuring-mtls/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Mutual Transport Layer Security (MTLS) is recommended when you want to &lt;strong&gt;install Charles in a different cluster where your applications are.&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This configuration is necessary to guarantee safe communication between Charles&#39; services because they can be exposed in a different cluster. In this scenario, only one Charles component needs to be in the same cluster of your applications: &lt;code&gt;charlescd-butler&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;How to enable MTLS?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Follow the steps below to enable MTLS in your application:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Access &lt;code&gt;charlescd/install/mtls-job/values.yaml&lt;/code&gt;  and add the domain where you will use Charles, see the example below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mtls:
+  domain: .charles.com
+  enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Run the manifest, it generates secrets with certificates for each component and the certified authority.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+The certificates generated will be self-signed.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; In the project&amp;rsquo;s root folder, run the command below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm install mtls-job ./install/mtls-job/ --namespace charlescd --values=./install/mtls-job/values.yaml
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; If you want to use your own certificates and not the ones generated by the job,  &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/create-tls-secrets.sh&#34;&gt;&lt;strong&gt;use the &amp;lsquo;create secrets&amp;rsquo; script&lt;/strong&gt;&lt;/a&gt; to help you create secrets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt; Copy a cluster&amp;rsquo;s secret to another, and now:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy the secrets inside the yaml&amp;rsquo;s manifests, to do that use &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/copy-secrets.sh&#34;&gt;&lt;strong&gt;&amp;lsquo;copy secrets&amp;rsquo; script&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Apply the manifest in the destination cluster using the &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/apply-secrets.sh&#34;&gt;&lt;strong&gt;&amp;lsquo;apply secrets&amp;rsquo; script&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt; Access &lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt;  in moove&amp;rsquo;s configuration and change the property value  &lt;code&gt;mtls/enabled&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;. Check out below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;moove:
+    mtls:
+      enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt; Make the same change you did in step 6, but now for the &lt;strong&gt;butler component&lt;/strong&gt;, when you want to install in another cluster, see the example below:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;butler:
+    mtls:
+        enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt; After that, follow &lt;a href=&#34;https://docs.charlescd.io/get-started/installing-charles/overview/&#34;&gt;&lt;strong&gt;Charles&#39; installation steps&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
       </description>
     </item>
     
@@ -344,7 +864,7 @@ type: kubernetes.io/dockerconfigjson
         
         
         &lt;hr&gt;
-&lt;h3&gt;What is Identity Manager (IDM)?&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;What is Identity Manager (IDM)?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;It is responsible to manage the user identity that will access any application, in this case, Charles.&lt;/p&gt;
 
 
@@ -353,14 +873,15 @@ type: kubernetes.io/dockerconfigjson
 When a user access Charles, it is verified which manager was configured during the installation, to make an identity validation of the user.
 &lt;/div&gt;
 
-&lt;p&gt;On the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if an customized IDM has been configurated, for example, Google, the user will be redirected to Google&amp;rsquo;s page to proceed the authentication. If this is not the scenario, Charles authentication screen is returned to continue the flow.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//untitled-diagram-1-.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3&gt;Why configure an IDM?&lt;/h3&gt;
+&lt;p&gt;In the example below, you can see a flow where there is a verification of what configuration was made to manage the users. In this case, when a user tries to access Charles and it is not yet authenticated, if a customized IDM has been configurated, for example, Google, the user will be redirected to Google&amp;rsquo;s page to proceed with the authentication. If this is not the scenario, Charles&#39; authentication screen is returned to continue the flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/untitled-diagram-1-.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Why do you have to configure an IDM?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;It is necessary to have an identity manager to make sure Charle&amp;rsquo;s accesses are safe. For this, Charles offers two options:&lt;/p&gt;
-&lt;h3&gt;Default IDM&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;Default IDM&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;On Charles default installation, it already has Keycloak that it is used to manage the users. If you don&amp;rsquo;t have a customized IDM, you can use this one.&lt;/p&gt;
-&lt;h3&gt;External IDM&lt;/h3&gt;
-&lt;p&gt;In case you already have your own identity manager, it is necessary change some installation variables. For that, follow the instruction on &lt;a href=&#34;../../../reference/identity-manager&#34;&gt;&lt;strong&gt;reference section.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;External IDM&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;In case you already have your own identity manager, it is necessary to change some installation variables. For that, follow the instructions in the [&lt;strong&gt;IDM&amp;rsquo;s section.&lt;/strong&gt;]
+(https://docs.charlescd.io/reference/identity-manager/).&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -375,6 +896,49 @@ When a user access Charles, it is verified which manager was configured during t
 
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Overview</title>
+      <link>https://docs.charlescd.io/get-started/defining-a-workspace/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/defining-a-workspace/overview/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;The workspace allows you to segment CharlesCD&amp;rsquo;s use in your team, defining &lt;strong&gt;customized users&#39; permissions&lt;/strong&gt; that will assure safety to your project.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+You need only one installation, and the teams will be able to use Charles with different configurations, or you may create a workspace to represent different development environments, such as staging, production, etc.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Workspace configuration&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Each workspace has the following configurations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access control and &lt;strong&gt;user groups permissions&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git,&lt;/strong&gt; &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry/&#34;&gt;&lt;strong&gt;Docker Registry&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.charlescd.io/get-started/first-deploy/&#34;&gt;&lt;strong&gt;Continuous Deployment (CD)&lt;/strong&gt;:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.charlescd.io/reference/circle-matcher/&#34;&gt;&lt;strong&gt;Circle Matcher&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.charlescd.io/reference/metrics/setting-up-your-metrics/&#34;&gt;&lt;strong&gt;Metrics provider&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/defining-workspace%20%281%29.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+The &lt;strong&gt;root&lt;/strong&gt; user gives you permission to create a workspace. However, users with &lt;strong&gt;mantainer&lt;/strong&gt; profile are able to configure with the necessary information as well.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;How to get an identifier on my workspace?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Once your workspace is created, even without the configuration definitions, it already has a single identifier.&lt;/p&gt;
+&lt;p&gt;To get this information, select the workspace you want, and then on the left menu, click on &lt;strong&gt;Copy ID.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_copyid%20%282%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -412,29 +976,32 @@ This is mandatory information.
         
         
         &lt;hr&gt;
-&lt;p&gt;It is necessary to register cluster &lt;a href=&#34;https://kubernetes.io&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; credentials to configure your workspace. These are specific configurations to each Continuous Deployment (CD) tool that is integrated with Charles. At the moment, the Charles has a native deploy or you can integrate with &lt;a href=&#34;https://www.spinnaker.io/&#34;&gt;&lt;strong&gt;Spinnaker&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The deployment module monitors and applies the cluster resources. To do that, it uses the &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/operator&#34;&gt;&lt;strong&gt;Operator&lt;/strong&gt;&lt;/a&gt; pattern that performs reconciliation cycles to make sure that the cluster will always be in the state you need. Kubernetes&#39; logs will also be collected in real-time.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Configure your workspace&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;It is necessary to register cluster &lt;a href=&#34;https://kubernetes.io&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; credentials to configure your workspace. These are specific configurations to each Continuous Deployment (CD) tool that is integrated with Charles. At the moment, Charles has a native deploy or you can integrate with &lt;a href=&#34;https://www.spinnaker.io/&#34;&gt;&lt;strong&gt;Spinnaker&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Deployment configuration&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Charles has an architecture that adapts to different Kubernetes installations. The only requirement is that your deployment module is installed on the destination cluster with an accessible URL. The deployment configuration indicates what URL is and which Git credentials will be used to search the helm charts. Without this configuration, Charles won&amp;rsquo;t be able to perform deploys.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;How can you register the configuration?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;SFollow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In &lt;strong&gt;Workspaces,&lt;/strong&gt; at the left menu, select your workspace and then click on &lt;strong&gt;Settings ;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click on &lt;strong&gt;Credentials;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click on &lt;strong&gt;Add Deployment Configuration;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fill in these fields:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Butler URL:&lt;/strong&gt;  Butler&amp;rsquo;s deploy module URL. If this is in the same Charles&#39; installation cluster, use your FQDN (Fully Qualified Domain Name). Example: &lt;strong&gt;&lt;a href=&#34;http://charlescd-butler.butler-namespace.svc.cluster.local:3000&#34;&gt;http://charlescd-butler.butler-namespace.svc.cluster.local:3000&lt;/a&gt;.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Namespace:&lt;/strong&gt; Define the namespace where the resources will be available in the cluster. You have to create your namespace, once Charles does not do it;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git provider:&lt;/strong&gt; defines the git provider you will use (&lt;strong&gt;GitHub or GitLab&lt;/strong&gt;);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git token:&lt;/strong&gt; Insert an authentication token that has access to the git repository where your &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;helm templates&lt;/strong&gt;&lt;/a&gt; are stored (they will be used during the deployment of your application). If your Git Provider is &lt;strong&gt;GitHub&lt;/strong&gt;, &amp;ldquo;&lt;em&gt;repo&lt;/em&gt;&amp;rdquo; permission is required Otherwise, configure the accesses in &lt;strong&gt;GitLab:&lt;/strong&gt; &amp;ldquo;&lt;em&gt;API&lt;/em&gt;&amp;rdquo; and &amp;ldquo;&lt;em&gt;read_repository&lt;/em&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Charles has a module called &lt;strong&gt;Octopipe&lt;/strong&gt; that is light and low cost way to make cluster Kubernetes deploys.
+No campo token de autenticação para evitar a dependência de um usuário especifíco, utilize o &lt;a href=&#34;https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users&#34;&gt;&lt;strong&gt;Machine Account&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;h3&gt;How to make your deploy?&lt;/h3&gt;
-&lt;p&gt;See below the example on how to perform your deploy using &lt;strong&gt;CharlesCD&lt;/strong&gt; in the same installation cluster:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Click on &lt;strong&gt;Add CD Configuration&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Select the option &lt;strong&gt;CharlesCD.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;After these steps, fill out the next fields:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; configuration name that will be created;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Namespace:&lt;/strong&gt; Define the namespace that will be used on Kubernetes cluster deploys;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Git provider&lt;/strong&gt;: Define the git provider (&lt;strong&gt;GitHub&lt;/strong&gt; or &lt;strong&gt;GitLab&lt;/strong&gt;);&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Git token:&lt;/strong&gt; insert an authentication token that has access to the git repository where your &lt;a href=&#34;../../creating-your-first-module/how-to-configure-chart-template&#34;&gt;&lt;strong&gt;Helm templates&lt;/strong&gt;&lt;/a&gt; are stored (they will be used during the deployment of your  &lt;a href=&#34;../../creating-your-first-module/&#34;&gt;&lt;strong&gt;application&lt;/strong&gt;&lt;/a&gt;). If your Git Provider is &lt;strong&gt;GitHub&lt;/strong&gt;, &amp;ldquo;&lt;em&gt;repo&lt;/em&gt;&amp;rdquo; permission is required. Otherwise, configure the accesses in &lt;strong&gt;GitLab&lt;/strong&gt;:&amp;quot;&lt;em&gt;api&lt;/em&gt; &amp;quot; and &amp;ldquo;&lt;em&gt;read_repository&lt;/em&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Select the &lt;strong&gt;Default&lt;/strong&gt; option.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;After finishing your configuration, you can associate it with a module later. For more information, check the &lt;a href=&#34;https://docs.charlescd.io/reference/cd-configuration&#34;&gt;&lt;strong&gt;CD Configuration&lt;/strong&gt;&lt;/a&gt; page.&lt;/p&gt;
 
       </description>
     </item>
@@ -449,62 +1016,35 @@ Charles has a module called &lt;strong&gt;Octopipe&lt;/strong&gt; that is light 
         
         
         &lt;hr&gt;
-&lt;h2&gt;Why do you have to configure?&lt;/h2&gt;
-&lt;p&gt;When &lt;a href=&#34;../../.././&#34;&gt;&lt;strong&gt;creating a workspace&lt;/strong&gt;&lt;/a&gt;, you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment, since Charles can handle, at the same time, different environments in multiple workspaces.&lt;/p&gt;
-&lt;p&gt;Circle Matcher is a independent module, despite that, it is possible to install it in any area you want inside its architecture, for example, a public cluster.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Why do you have to configure it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/overview/&#34;&gt;&lt;strong&gt;creating a workspace&lt;/strong&gt;&lt;/a&gt;, you have to inform Charles to which Circle Matcher that current workspace will point to. It is possible that there is a Circle Matcher for each environment since Charles can handle, at the same time, different environments in multiple workspaces.&lt;/p&gt;
+&lt;p&gt;Circle Matcher is an independent module, despite that, it is possible to install it in any area you want inside its architecture, for example, a public cluster.&lt;/p&gt;
 &lt;p&gt;This configuration is necessary, so you are able to perform operations in Charles, like creating and editing segments in a circle.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-It is important to remember, on Charle&amp;rsquo;s context, the Circle Matcher module receives most of the environment&amp;rsquo;s request, because it is the application that identifies the user based on the rules that you have configured while managing a circle.
+It is important to remember, in Charle&amp;rsquo;s context, the Circle Matcher module receives most of the environment&amp;rsquo;s requests because it is the application that identifies the user based on the rules that you have configured while managing a circle.
 &lt;/div&gt;
 
-&lt;p&gt;If you want to know more about &lt;strong&gt;Circle Matcher&lt;/strong&gt;, see the &lt;a href=&#34;../../../../reference/circle-matcher&#34;&gt;&lt;strong&gt;References section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;How must be configured&lt;/h2&gt;
-&lt;h4&gt;Option 1: Configure Circle Matcher in a separate architecture&lt;/h4&gt;
+&lt;p&gt;If you want to know more about &lt;strong&gt;Circle Matcher&lt;/strong&gt;, check out the [&lt;strong&gt;Reference section&lt;/strong&gt;]
+(https://docs.charlescd.io/reference/circle-matcher/).&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;How must be configured?&lt;/strong&gt;&lt;/h2&gt;
+&lt;h4&gt;&lt;strong&gt;Option 1: Configure Circle Matcher in a separate architecture&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;You have to configure the public DNS that points to your desired Circle Matcher.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Example: &lt;strong&gt;&lt;a href=&#34;http://charles.info.example/charlescd-circle-matcher&#34;&gt;http://charles.info.example/charlescd-circle-matcher&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4&gt;Option 2: Configure Circle Matcher in the same Charles&#39; namespace&lt;/h4&gt;
+&lt;h4&gt;&lt;strong&gt;Option 2: Configure Circle Matcher in the same Charles&#39; namespace&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;If you want to use Circle Matcher in the same namespace that Charles is installed, you can use the same DNS reference.&lt;/p&gt;
 &lt;p&gt;The difference is in terms of performance, it is recommended to use Kubernetes service name.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Example: &lt;strong&gt;http://charlescd-circle-matcher:8080&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Next steps&lt;/h2&gt;
-&lt;p&gt;On this section, you saw how to create your Circle Matcher. To continue your workspace configuration, Charles offers metrics that need to be configured.&lt;/p&gt;
-&lt;p&gt;👉 Go to &lt;a href=&#34;../../../reference/metrics/setting-up-your-metrics&#34;&gt;&lt;strong&gt;Setting up your metrics&lt;/strong&gt; &lt;/a&gt;and find out how Charles uses metrics.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Get Started: Git credentials</title>
-      <link>https://docs.charlescd.io/get-started/defining-a-workspace/git-credentials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.charlescd.io/get-started/defining-a-workspace/git-credentials/</guid>
-      <description>
-        
-        
-        &lt;hr&gt;
-&lt;p&gt;While you are configuring your workspace, you need to register on Git, to grant access to your repositories. This access is important because Charles will be able to create, delete and merge branches during the hypothesis board use, and it is also possible to view and create releases.&lt;/p&gt;
-&lt;h3&gt;How to configure?&lt;/h3&gt;
-&lt;p&gt;There are two register categories: GitHub and GitLab. To configure it, add the following information:&lt;/p&gt;
-&lt;h3&gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: this name will be used by your Charles configuration.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL&lt;/strong&gt;: if you have a custom domain, add it here. If you don&amp;rsquo;t, add a pattern value here &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt; (without the trailing &amp;ldquo;/&amp;quot;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Token&lt;/strong&gt;: when &lt;a href=&#34;https://help.github.com/pt/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line&#34;&gt;&lt;strong&gt;this token&lt;/strong&gt;&lt;/a&gt; is generated, it needs to have all access to the &lt;strong&gt;&amp;ldquo;repo&amp;rdquo;&lt;/strong&gt; item.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;strong&gt;GitLab&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: this name will be used by your Charles configuration.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL&lt;/strong&gt;: if you have a custom domain, add it here. If you don&amp;rsquo;t, add a pattern value here &lt;a href=&#34;https://gitlab.com/&#34;&gt;https://gitlab.com&lt;/a&gt; (without the trailing &amp;ldquo;/&amp;quot;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Token&lt;/strong&gt;: check out GitLab&amp;rsquo;s documentation&lt;a href=&#34;https://docs.gitlab.com/ee/api/#personalproject-access-tokens&#34;&gt; &lt;strong&gt;on how to create a token&lt;/strong&gt;&lt;/a&gt; It&amp;rsquo;s important to highlight that the token needs to have the following accesses: &amp;ldquo;&lt;strong&gt;api&amp;rdquo;&lt;/strong&gt; and &lt;strong&gt;&amp;ldquo;read_repository&amp;rdquo;.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;In this section, you saw how to create your Circle Matcher. To continue your workspace configuration, Charles offers metrics that need to be configured.&lt;/p&gt;
+&lt;p&gt;👉 Go to [&lt;strong&gt;Setting up your metrics&lt;/strong&gt;]
+(https://docs.charlescd.io/reference/metrics/setting-up-your-metrics/) and find out how Charles uses metrics.&lt;/p&gt;
 
       </description>
     </item>
@@ -519,25 +1059,25 @@ It is important to remember, on Charle&amp;rsquo;s context, the Circle Matcher m
         
         
         &lt;hr&gt;
-&lt;p&gt;In order to quatify your application&amp;rsquo;s performances and follow up its status, Charles offers two types of Datasource: Prometheus and Google Analytics.&lt;/p&gt;
+&lt;p&gt;In order to quantify your application&amp;rsquo;s performances and follow up on its status, Charles offers two types of Datasource: Prometheus and Google Analytics.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
-Before you add the Datasource, it is necessary to finish your &lt;a href=&#34;../../../reference/metrics/setting-up-your-metrics&#34;&gt;&lt;strong&gt;metrics configuration&lt;/strong&gt;&lt;/a&gt;.
+Before you add the Datasource, it is necessary to finish your &lt;a href=&#34;https://docs.charlescd.io/reference/metrics/setting-up-your-metrics/&#34;&gt;&lt;strong&gt;metrics configuration&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;h3&gt;How to configure?&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;How to configure?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;You have to follow the next steps:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Click on your name, on the botton left corner and then select &lt;strong&gt;Settings&lt;/strong&gt;.;&lt;/li&gt;
+&lt;li&gt;Click on your name, on the bottom left corner and then select &lt;strong&gt;Settings&lt;/strong&gt;;&lt;/li&gt;
 &lt;li&gt;Click on &lt;strong&gt;Credentials;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Click on &lt;strong&gt;Add Datasource;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Select your &lt;strong&gt;tool option, Prometheus&lt;/strong&gt; or &lt;strong&gt;Google Analytics;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Select your &lt;strong&gt;tool option;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Data source health:&lt;/strong&gt; this option gives you more details about your circle&amp;rsquo;s health;&lt;/li&gt;
 &lt;li&gt;Make the configuration based on the selected tool.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//datasource.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_datasource.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -552,39 +1092,417 @@ Before you add the Datasource, it is necessary to finish your &lt;a href=&#34;..
         
         
         &lt;hr&gt;
-&lt;h2&gt;What is it?&lt;/h2&gt;
-&lt;p&gt;After you had &lt;a href=&#34;../../../../../reference/metrics/metrics-group&#34;&gt;&lt;strong&gt;register your metrics group&lt;/strong&gt;&lt;/a&gt;, Charles follows up and offers actions for each one of them.&lt;/p&gt;
-&lt;h2&gt;How to configure?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;What is it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;After you had registered your metrics group, Charles follows up and offers actions for each one of them. Action is a kind of trigger that will be triggered when all the predetermined thresholds are reached.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;How to configure?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;In workspace configuration, click on the section &lt;strong&gt;Add Metric Action&lt;/strong&gt; and follow the steps:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Add action configuration&lt;/strong&gt;: add a configuration action;&lt;br&gt;
-&lt;strong&gt;2. Type a nickname:&lt;/strong&gt; writer a name for your action;&lt;br&gt;
-&lt;strong&gt;3. Type a description:&lt;/strong&gt; describe the action;&lt;br&gt;
-&lt;strong&gt;4. Select a plugin:&lt;/strong&gt; select a plugin to run the action.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//usandoactions-metricas%20%282%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Add action configuration;&lt;br&gt;
+&lt;strong&gt;Step 2.&lt;/strong&gt; Type a nickname for your action;&lt;br&gt;
+&lt;strong&gt;Step 3.&lt;/strong&gt; Type a description;&lt;br&gt;
+&lt;strong&gt;Step 4.&lt;/strong&gt; Select a plugin to run the action.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_metricaction%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-The only available plugin so far is &lt;strong&gt;circle deployment&lt;/strong&gt;. Charles allows you to make your own plugin, the way you want and to fulfill your application&amp;rsquo;s purpose, for example, an action that sends an email to warn your circle status.
+The available plugins are &lt;strong&gt;circle deployment&lt;/strong&gt; and &lt;strong&gt;circle undeployment&lt;/strong&gt;. Charles allows you to make your own plugin, the way you want and to fulfill your application&amp;rsquo;s purpose, for example, an action that sends an email to warn your circle status.
 &lt;/div&gt;
 
-&lt;h3&gt;Adding an action&lt;/h3&gt;
-&lt;p&gt;After you have configured your action, you have to register in your metrics group and add it to your circle. To do that:&lt;/p&gt;
+&lt;p&gt;Inside your circle, you register the &lt;a href=&#34;https://docs.charlescd.io/reference/metrics/metrics-group/&#34;&gt;&lt;strong&gt;metrics group&lt;/strong&gt;&lt;/a&gt;, which is responsible to create metrics that you want to track and you can also add action to this group. When you get to the threshold, the action will be triggered and what is described in your plugin will happen, like for example, make deployment of one circle in another circle.&lt;/p&gt;
+&lt;p&gt;For more information about &lt;strong&gt;Action&lt;/strong&gt;, check out the &lt;a href=&#34;https://docs.charlescd.io/reference/metrics/action/&#34;&gt;&lt;strong&gt;Reference section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Webhooks</title>
+      <link>https://docs.charlescd.io/get-started/defining-a-workspace/webhooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/defining-a-workspace/webhooks/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;What is it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Webhook is a resource that watches events in a system. When these events happen, the webhook sends a notification to people interested in receiving information about it.&lt;/p&gt;
+&lt;p&gt;Charles has a module called &lt;strong&gt;&lt;code&gt;charlescd-hermes&lt;/code&gt;&lt;/strong&gt; responsible for identifying these events and send notifications to the subscribers when it happens.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;How to register it?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;It is necessary to subscribe to use webhooks on Charles. Follow the steps below to do it:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Access Metrics group;&lt;/li&gt;
-&lt;li&gt;Select &amp;lsquo;&lt;strong&gt;Add action&lt;/strong&gt;&amp;rsquo; and fill the fields:
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Type a nickname for action:&lt;/strong&gt;  Select the name of your action;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Select action type:&lt;/strong&gt; Select the action you have configured before;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Action configuration:&lt;/strong&gt; Configuration to run the chosen plugin.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;In &lt;strong&gt;Workspace&lt;/strong&gt;, click on &lt;strong&gt;&amp;lsquo;Add Webhook&amp;rsquo;&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Fill the fields:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; add the webhook description;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Webhook URL:&lt;/strong&gt; put the service URL;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secret (Optional):&lt;/strong&gt; add the application key;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Choose the event:  &lt;strong&gt;deploy&lt;/strong&gt;, &lt;strong&gt;undeploy,&lt;/strong&gt; or &lt;strong&gt;both&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//adicionando-a-action-correto%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3&gt;How does it work?&lt;/h3&gt;
-&lt;p&gt;Inside your circle you register the &lt;a href=&#34;../../reference/metrics/metrics-group&#34;&gt;&lt;strong&gt;metrics group&lt;/strong&gt;&lt;/a&gt;, which it is responsible to create metrics that you want to track and you can also add action to this group. When you get to the threshold, the action will be triggered and what it is described in your plugin will happen, like for example, make a deploy of one circle in another circle.&lt;/p&gt;
-&lt;p&gt;You can track the action&amp;rsquo;s status in the &amp;lsquo;Metrics group&amp;rsquo; board, see below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//status-actionsgif.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After that, a card will appear with the success or fail status of the last message sent, see the image below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/image%20%286%29.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The event&amp;rsquo;s information is sent in the &lt;strong&gt;content&lt;/strong&gt; property. Your exposed service needs to accept this property in the request body.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Webhook payload object common properties&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Each event payload contains unique properties. You can find them in the individual event type sections. See below the common properties:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;subscriptionId&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Webhook&amp;rsquo;s id subscription.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;executionId&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Execution log id. Allows tracking all the message life cycle.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;event&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Event detail.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;strong&gt;Events&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The observable events are the &lt;strong&gt;beginning&lt;/strong&gt; and &lt;strong&gt;end&lt;/strong&gt; of &lt;strong&gt;deploy&lt;/strong&gt; and &lt;strong&gt;undeploy&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;If you register a webhook to receive information about &lt;strong&gt;deploy&lt;/strong&gt; events of a specific workspace, when a deploy automatically starts and ends, you will receive a notification with details of the event.&lt;/p&gt;
+&lt;p&gt;When the event is triggered, an HTTP POST payload is sent to the subscribed webhook URL, see below:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;type&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;
+        &lt;p&gt;Event type. The possible values are&lt;/p&gt;
+        &lt;p&gt;&lt;em&gt;START_DEPLOY &lt;/em&gt;and&lt;em&gt; FINISH_DEPLOY&lt;/em&gt;
+        &lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;status&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event status. The possible values are &lt;em&gt;SUCCESS&lt;/em&gt; and &lt;em&gt;ERROR&lt;/em&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;date&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event&amp;apos;s execution date.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;timeExecution&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Long&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event&amp;apos;s execution time.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;worspaceId&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Workspace Id.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;author&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Information about the event&amp;apos;s author.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;circle&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Information about the circle&amp;apos;s deploy/undeploy.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;release&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Deploy/undeploy information.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;features&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Feature information if you are using the hypothesis board.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;error&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Error message in case there is a status with an error.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;Deploy payload example&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;{
+  &amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+  &amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+  &amp;#34;event&amp;#34;: {
+    &amp;#34;type&amp;#34;: &amp;#34;FINISH_DEPLOY&amp;#34;,
+    &amp;#34;status&amp;#34;: &amp;#34;FAIL&amp;#34;,
+    &amp;#34;error&amp;#34;: &amp;#34;Failed to pull image nexus.mydomain.co.uk/nginx Error: image nginx:latest not found&amp;#34;,
+    &amp;#34;date&amp;#34;: &amp;#34;2020-01-10 22:00:00&amp;#34;,
+    &amp;#34;workspaceId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+    &amp;#34;author&amp;#34;: {
+      &amp;#34;email&amp;#34;: &amp;#34;charlescd@zup.com.br&amp;#34;,
+      &amp;#34;name&amp;#34;: &amp;#34;CharlesCD&amp;#34;
+    },
+    &amp;#34;circle&amp;#34;: {
+      &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+      &amp;#34;name&amp;#34;: &amp;#34;circle-qas&amp;#34;
+    },
+    &amp;#34;release&amp;#34;: {
+      &amp;#34;tag&amp;#34;: &amp;#34;tag&amp;#34;,
+      &amp;#34;modules&amp;#34;: [
+        {
+          &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+          &amp;#34;name&amp;#34;: &amp;#34;ZupIt/charlescd&amp;#34;,
+          &amp;#34;componentes&amp;#34;: [
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;charlescd-moove&amp;#34;
+            },
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;charlescd-villager&amp;#34;
+            }
+          ]
+        },
+        {
+          &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+          &amp;#34;name&amp;#34;: &amp;#34;ZupIt/horusec&amp;#34;,
+          &amp;#34;componentes&amp;#34;: [
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130005&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;horusec-account&amp;#34;
+            },
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130006&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;horusec-analytics&amp;#34;
+            }
+          ]
+        }
+      ],
+      &amp;#34;features&amp;#34;: [
+        {
+          &amp;#34;name&amp;#34;: &amp;#34;new-moove-feature&amp;#34;,
+          &amp;#34;branchName&amp;#34;: &amp;#34;feature/moove-feature&amp;#34;
+        },
+        {
+          &amp;#34;name&amp;#34;: &amp;#34;new-horusec-feature&amp;#34;,
+          &amp;#34;branchName&amp;#34;: &amp;#34;feature/horusec-feature&amp;#34;
+        }
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;&lt;strong&gt;Undeploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;When you register a webhook to receive information about &lt;strong&gt;undeploy&lt;/strong&gt; events of a specific workspace or when an undeployment automatically starts and ends, you will receive a notification with details of the event.&lt;/p&gt;
+&lt;p&gt;When the event is triggered, an HTTP POST payload is sent to the subscribed webhook URL, see below:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+      &lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;type&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;
+        &lt;p&gt;Event type. The possible values are&lt;/p&gt;
+        &lt;p&gt;&lt;em&gt;START_DEPLOY &lt;/em&gt;and&lt;em&gt; FINISH_DEPLOY&lt;/em&gt;
+        &lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;status&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event status. The possible values are &lt;em&gt;SUCCESS&lt;/em&gt; and &lt;em&gt;ERROR&lt;/em&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;date&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event&amp;apos;s execution date.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;timeExecution&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Long&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Event&amp;apos;s execution time.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;worspaceId&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Workspace Id.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;author&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Information about the event&amp;apos;s author.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;circle&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Information about the circle&amp;apos;s deploy/undeploy.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;release&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Deploy/undeploy information.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;features&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Feature information if you are using the hypothesis board.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;error&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+      &lt;td style=&#34;text-align:left&#34;&gt;Error message in case there is a status with an error.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;Event payload example&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;{
+  &amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+  &amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+  &amp;#34;event&amp;#34;: {
+    &amp;#34;type&amp;#34;: &amp;#34;START_UNDEPLOY&amp;#34;,
+    &amp;#34;status&amp;#34;: &amp;#34;SUCCESS&amp;#34;,
+    &amp;#34;date&amp;#34;: &amp;#34;2020-01-10 22:00:00&amp;#34;,
+    &amp;#34;workspaceId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+    &amp;#34;author&amp;#34;: {
+      &amp;#34;email&amp;#34;: &amp;#34;charlescd@zup.com.br&amp;#34;,
+      &amp;#34;name&amp;#34;: &amp;#34;CharlesCd&amp;#34;
+    },
+    &amp;#34;circle&amp;#34;: {
+      &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+      &amp;#34;name&amp;#34;: &amp;#34;circle-qas&amp;#34;
+    },
+    &amp;#34;release&amp;#34;: {
+      &amp;#34;tag&amp;#34;: &amp;#34;tag&amp;#34;,
+      &amp;#34;modules&amp;#34;: [
+        {
+          &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+          &amp;#34;name&amp;#34;: &amp;#34;ZupIt/charlescd&amp;#34;,
+          &amp;#34;componentes&amp;#34;: [
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;charlescd-moove&amp;#34;
+            },
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;charlescd-villager&amp;#34;
+            }
+          ]
+        },
+        {
+          &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130004&amp;#34;,
+          &amp;#34;name&amp;#34;: &amp;#34;ZupIt/horusec&amp;#34;,
+          &amp;#34;componentes&amp;#34;: [
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130005&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;horusec-account&amp;#34;
+            },
+            {
+              &amp;#34;id&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130006&amp;#34;,
+              &amp;#34;name&amp;#34;: &amp;#34;horusec-analytics&amp;#34;
+            }
+          ]
+        }
+      ],
+      &amp;#34;features&amp;#34;: [
+        {
+          &amp;#34;name&amp;#34;: &amp;#34;new-moove-feature&amp;#34;,
+          &amp;#34;branchName&amp;#34;: &amp;#34;feature/moove-feature&amp;#34;
+        },
+        {
+          &amp;#34;name&amp;#34;: &amp;#34;new-horusec-feature&amp;#34;,
+          &amp;#34;branchName&amp;#34;: &amp;#34;feature/horusec-feature&amp;#34;
+        }
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Overview</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/overview/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;After creating and configuring your workspace, it is necessary to add the modules.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;module&lt;/strong&gt; is your application stored in a &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/overview/&#34;&gt;&lt;strong&gt;Git repository previously registered&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How to create your modules?&lt;/h2&gt;
+&lt;p&gt;To add it, access the &lt;strong&gt;Modules&lt;/strong&gt; menu on your &lt;strong&gt;workspace&lt;/strong&gt; and set the following properties:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: This field should be the junction of the organization and the module names, as it is in your git. For example: &lt;code&gt;ZupIt/charlescd&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL Git&lt;/strong&gt;: Your repository&amp;rsquo;s URL. For example &lt;a href=&#34;https://github.com/ZupIT/charlescd&#34;&gt;https://github.com/ZupIT/charlescd&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you have a lot of applications on your repository, register them with the components and add the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Name of the component&lt;/strong&gt;: application&amp;rsquo;s name, the same on your repository;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Metrics&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Latency Threshold:&lt;/strong&gt; latency (ms);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Error Threshold:&lt;/strong&gt; HTTP error (%).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In both cases, you must add a risk value that you want to receive an alert if your component reaches the rate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Add Helm Chart repository:&lt;/strong&gt;  inform your repository where the helm template of your application is in, see the example on how to fill in the fields with this URL:  &lt;a href=&#34;https://gitlab.com/charlito/charlescd/moove?ref=master%60%20&#34;&gt;&lt;strong&gt;https://gitlab.com/charlito/charlescd/moove?ref=master&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Insert URL:&lt;/strong&gt; &lt;a href=&#34;http://gitlab.com&#34;&gt;http://gitlab.com&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert Organization:&lt;/strong&gt; charlito;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert repository:&lt;/strong&gt; charlescd;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert path:&lt;/strong&gt; moove;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insert branch:&lt;/strong&gt; master.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the image on how to create modules:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/creating-your-first-module%20%281%29.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+For more information about Helm Repository, &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;check out how to configure Chart Template section&lt;/strong&gt;&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;How do I get my module identifier?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;As soon as your module is created, it already has a unique identifier. To obtain this information, select the desired module and, in the menu on the left, click Copy ID:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/copy-module-id.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;What are components?&lt;/strong&gt;&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Components are abstractions of the applications. If in your repository there are many applications, every component will match one of them.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;How to obtain the component identifier?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After selecting the module, copy the component id using the option on the three points of the card:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/copy-component-id.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -599,78 +1517,102 @@ The only available plugin so far is &lt;strong&gt;circle deployment&lt;/strong&g
         
         
         &lt;hr&gt;
-&lt;h2&gt;What is Helm?&lt;/h2&gt;
-&lt;p&gt;Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless the complexity.&lt;/p&gt;
-&lt;p&gt;On Charles context,  &lt;a href=&#34;https://helm.sh/docs/chart_template_guide/getting_started/&#34;&gt;&lt;strong&gt;Chart Template&lt;/strong&gt;&lt;/a&gt; is used like a file collection related to the Kubernetes configuration.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;What is Helm?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Helm Charts is a package manager that allows you to define, install and update Kubernetes applications, regardless of the complexity.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Charts template in CharlesCD context&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://helm.sh/docs/chart_template_guide/getting_started/&#34;&gt;&lt;strong&gt;Chart Template&lt;/strong&gt;&lt;/a&gt; is used like a file collection related to the Kubernetes configuration.&lt;/p&gt;
+&lt;p&gt;The charts must follow the &lt;a href=&#34;https://helm.sh/docs/topics/charts/&#34;&gt;&lt;strong&gt;Helm pattern&lt;/strong&gt;&lt;/a&gt; and they need to be contained in a folder with the registered component on Charles. You don&amp;rsquo;t need to run any command to bundle the chart, Charles downloads and it finishes automatically.&lt;/p&gt;
+&lt;p&gt;See the below an example of a repository containing the component&amp;rsquo;s chart  &lt;strong&gt;http-https-echo&lt;/strong&gt; on GitHub:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/Rt7_Lw1DbK152QKt3brsCYyzF0DAQ4wuoWsdCVyUaZjf9Hlh64EaK7YnHjF16W_xo2BQzlUJyUeUsooPzqwmMIKF7ttUXRej3eM56uWu6WH4QNCiByixeV4zEdHLwEGRq7NCruhH&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The deployment module Butler uses helm charts to make your application available in the cluster.  These charts must be available in a Github or Gitlab repository and accessible through a token, previously registered in the deployment configuration. The URL is provided along with the module registration.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-If you haven&amp;rsquo;t configured your module yet, &lt;a href=&#34;.././&#34;&gt;&lt;strong&gt;access here&lt;/strong&gt;&lt;/a&gt; It is important to remember, you have to register the URL in this module.
+If you haven&amp;rsquo;t configured your module yet, &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;see how to do it in &amp;lsquo;Creating your module&amp;rsquo; section&lt;/strong&gt;&lt;/a&gt;. It is important to remember, you have to register the URL in this module.
 &lt;/div&gt;
 
-&lt;h2&gt;How to configure the chart template?&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;Templates&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The only requirements for templates to work with Charles are &lt;strong&gt;labels component&lt;/strong&gt; and &lt;strong&gt;tag&lt;/strong&gt; to be present in the Deployment resource manifests.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+It is not necessary to insert the values in the &lt;em&gt;&lt;strong&gt;values&lt;/strong&gt;&lt;/em&gt; files of your chart, Charles will provide them.
+&lt;/div&gt;
+
+&lt;p&gt;See the example below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;component: {{ .Values.component }}
+tag: {{ .Values.tag }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Butler internally stores the compiled charts in entities that represent each deployment request. Thereby, Charles can perform more efficient rollbacks.&lt;/p&gt;
+&lt;h1&gt;&lt;strong&gt;How to configure the chart template?&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Follow the next steps to try out our sample app.&lt;/p&gt;
-&lt;h3&gt;&lt;strong&gt;Step 1: create a chart template directory&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;To start, you need to save your templates in any git repository you want. When you create a new chart template, you must give the directory the same name as the component as it refers to.&lt;/p&gt;
-&lt;p&gt;The structure below has the necessary templates to deploy a module that contains a component called &amp;ldquo;circles-sample&amp;rdquo;, it is available here.&lt;/p&gt;
-&lt;p&gt;The image below shows how your directory must look like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//screen-shot-2020-08-13-at-09.16.04.png&#34; alt=&#34; Chart template directory of circle-sample&#34;&gt;&lt;/p&gt;
-&lt;h3&gt;Step 2: configure the directory items&lt;/h3&gt;
-&lt;p&gt;After you have created the directory, now you have to configure it. See below which files are necessary to configure:&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3&gt;&lt;strong&gt;Step 1: Create a chart template directory&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Save your templates in your versioning tool. When you create a new chart template, you need to name the directory with the same component&amp;rsquo;s name it refers to.&lt;/p&gt;
+&lt;p&gt;The structure below has the necessary templates to deploy a module that contains a component called &lt;strong&gt;&amp;ldquo;circles-sample&amp;rdquo;&lt;/strong&gt;, your directory needs to look like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/screen-shot-2020-08-13-at-09.16.04.png&#34; alt=&#34; Diret&amp;#xF3;rio de chart template do circle-sample&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 2: Configure the directory&amp;rsquo;s items&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After you have created the directory, now you have to configure it. See below the files you need to configure:&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;templates/&lt;/strong&gt; : it has the models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;templates/:&lt;/strong&gt; It has the models.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;deployment.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;&lt;strong&gt;deployment&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;service.yaml:&lt;/strong&gt; describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deployment.yaml:&lt;/strong&gt; Describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;&lt;strong&gt;deployment&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;service.yaml:&lt;/strong&gt; Describes the &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/a&gt; structure.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;strong&gt;Chart.yaml&lt;/strong&gt; file contains the descriptions as version, name, description. It is necessary to define the version as &amp;ldquo;darwin&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Chart.yaml&lt;/strong&gt; file contains the descriptions like version, name, description. It is necessary to define the version as &lt;strong&gt;&amp;ldquo;darwin&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;strong&gt;circles-sample.yaml&lt;/strong&gt; file has the values that it will be used in the templates.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;circles-sample.yaml&lt;/strong&gt; file has the values that will be used in the templates.&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These are the information Charles needs to have on the templates, you can &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates&#34;&gt;&lt;strong&gt;customize them&lt;/strong&gt;&lt;/a&gt; if you want to.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 3: Add Charles&#39; information to your template&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Charles overwrites some &lt;a href=&#34;https://helm.sh/docs/chart_template_guide/values_files/&#34;&gt;&lt;strong&gt;Helm Values&lt;/strong&gt;&lt;/a&gt; file fields, you can add them to your template. Check out below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.tag&lt;/code&gt;&amp;quot;&lt;/strong&gt;: A tag you choose when creating arelease.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.component&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Component&amp;rsquo;s name for the deployment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.circleId&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Circles ID where the deployment was made.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;&lt;code&gt;.Values.image.url&lt;/code&gt;&amp;quot;&lt;/strong&gt;: Image&amp;rsquo;s URL where the deployment will happen.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This information Charles needs to have on the templates. It is important to remember that you can customize these templates the way you want it.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;After you have configured your directory according to the structure above, go to the &amp;ldquo;circles-samples&amp;rdquo; folder and run the command &lt;strong&gt;&amp;quot;&lt;code&gt;helm package .&lt;/code&gt;&amp;quot;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;In the end of this command, you will have a &lt;strong&gt;tgz&lt;/strong&gt; file with the circles-samples-darwin name. Our CD tool looks for this &lt;strong&gt;tgz&lt;/strong&gt; to run the template.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;For more information on how to create your own template, &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/main/samples/circles/circles-sample/templates&#34;&gt;&lt;strong&gt;access Charles&#39; repository examples&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 4:  Run the &lt;code&gt;&amp;quot;helm package .&amp;quot;&lt;/code&gt; command&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After you have configured your directory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access the &lt;strong&gt;&amp;ldquo;circles-sample&amp;rdquo;&lt;/strong&gt; folder;;&lt;/li&gt;
+&lt;li&gt;Execute o comando &amp;ldquo;&lt;code&gt;helm package .&lt;/code&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, you will have a &lt;strong&gt;tgz&lt;/strong&gt; file with the &lt;strong&gt;circles-samples-darwin&lt;/strong&gt; name. Charles looks for the &lt;strong&gt;tgz&lt;/strong&gt; to execute the template.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Get Started: Configuring your module</title>
-      <link>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</link>
+      <title>Get Started: Configuring your module to propagate the circle&#39;s Id</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module/</guid>
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/</guid>
       <description>
         
         
         &lt;hr&gt;
-&lt;h2&gt;Why configure it?&lt;/h2&gt;
-&lt;p&gt;The module configuration is necessary because when you work in a scenario with multiple microservices, you need to make sure to &lt;a href=&#34;../../../../reference/circles#how-to-integrate-circle-with-services&#34;&gt;&lt;strong&gt;propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt; that ensures the requests are being redirected to the right version of your application&lt;/strong&gt;&lt;/a&gt;. This way, you make it possible for your base user to get on the same version of all microservice that are part of your hypothesis test.&lt;/p&gt;
-&lt;p&gt;For example, when you test a feature between microservices that have integration in an account opening flow, it is necessary to make sure your user will get in all correct versions that are on your hypothesis test created for this specific flow.&lt;/p&gt;
-&lt;p&gt;This process is made by a library to propagate the header &lt;code&gt;X-Circle-Id&lt;/code&gt;, that makes the circle id to pass all the requests inside the microservice mesh, making sure that you get to the &lt;a href=&#34;../../../reference/circle-matcher#identify&#34;&gt;&lt;strong&gt;correct version of you hypothesis test&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Why configure it?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When you work with multiple microservices scenarios, you need to configure the modules to propagate the &lt;code&gt;X-Circle-Id&lt;/code&gt; header that makes sure the &lt;a href=&#34;https://docs.charlescd.io/reference/circles/&#34;&gt;&lt;strong&gt;requests are being redirected to the right version of your application&lt;/strong&gt;&lt;/a&gt;. Then your user base will get to the same version of all microservice that are part of your hypothesis test.&lt;/p&gt;
+&lt;p&gt;For example, if you test a feature between microservices that have integration with an opening flow account, it is necessary to make sure your user will get to the correct versions that are on your hypothesis test, created for this specific flow.&lt;/p&gt;
+&lt;p&gt;You can do this using a library to propagate the &lt;code&gt;X-Circle-Id&lt;/code&gt; header, which makes the &lt;a href=&#34;https://docs.charlescd.io/reference/circle-matcher/&#34;&gt;&lt;strong&gt;circle id identified by the circle-matcher&lt;/strong&gt;&lt;/a&gt;pass all the requests inside the microservice mesh, and the users will be redirected to the right hypothesis test version.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-If there is a microservice inside this flow that doesn&amp;rsquo;t make part of your test, the circle value will be passed, but your request will fall into the open sea, because there isn&amp;rsquo;t any version for that circle.
+If there is a microservice inside this flow that isn&amp;rsquo;t part of your test, the circle value will be passed, but your request will fall into the open sea because there isn&amp;rsquo;t any version for that circle.
 &lt;/div&gt;
 
 &lt;h3&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;See below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//header-propagation-v2-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/header/header-propagation-v2-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;When you make a microservice request, &lt;code&gt;circle matcher&lt;/code&gt; gets the circle id for this specific request.&lt;/li&gt;
@@ -678,10 +1620,10 @@ If there is a microservice inside this flow that doesn&amp;rsquo;t make part of 
 &lt;li&gt;The propagate header library makes it possible to pass the &lt;code&gt;x-circle-id&lt;/code&gt; in the header to request to another microservice, in this case &lt;code&gt;butler&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;When a hypothesis test happens on &lt;code&gt;butler&lt;/code&gt;, for example, it is integrated with &lt;code&gt;moove&lt;/code&gt; which is a microservice that answers the requests on the frontend.&lt;/p&gt;
+&lt;p&gt;When a hypothesis test happens on &lt;code&gt;butler&lt;/code&gt;, for example, it is integrated with &lt;code&gt;moove&lt;/code&gt; which is a microservice that answers the requests on the front end.&lt;/p&gt;
 &lt;p&gt;If you want your request to get to the &lt;code&gt;butler&lt;/code&gt; correct version, it is necessary that &lt;code&gt;moove&lt;/code&gt; pass the &lt;code&gt;x-Circle-Id&lt;/code&gt; header (obtained by circle matcher) in the requests made for it. If involves more than one &lt;strong&gt;microservice&lt;/strong&gt;, you have to propagate the header to make sure the user gets the same version of that circle.&lt;/p&gt;
 &lt;p&gt;When a test happens with &lt;code&gt;moove&lt;/code&gt; module, for example, and if it is integrated with &lt;code&gt;villager&lt;/code&gt; and &lt;code&gt;butler&lt;/code&gt;, the &lt;code&gt;x-circle-id&lt;/code&gt;  header propagation makes you look for &lt;code&gt;villager&lt;/code&gt; and  &lt;code&gt;butler&lt;/code&gt; versions that are the same &lt;code&gt;moove&lt;/code&gt; ones, however, this is not the scenario, these requests between &lt;code&gt;moove&lt;/code&gt; and its integration will be treated by the open sea.&lt;/p&gt;
-&lt;h2&gt;How to add it?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;How to add it?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Charles has a library that works for any &lt;strong&gt;Java&lt;/strong&gt; application that uses &lt;strong&gt;Spring&lt;/strong&gt; as a framework and another one for &lt;strong&gt;.NET Core&lt;/strong&gt;. These libs were built because there wasn&amp;rsquo;t another way used in these development environments.&lt;/p&gt;
 &lt;p&gt;To use them, you need to add them to your application:&lt;/p&gt;
 &lt;ul&gt;
@@ -692,9 +1634,105 @@ If there is a microservice inside this flow that doesn&amp;rsquo;t make part of 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&#34;https://www.npmjs.com/package/hpropagate&#34;&gt;&lt;strong&gt;you can find it here&lt;/strong&gt;&lt;/a&gt;
+For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&#34;https://www.npmjs.com/package/hpropagate&#34;&gt;&lt;strong&gt;you can check it on npm page&lt;/strong&gt;&lt;/a&gt;
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Properties injections</title>
+      <link>https://docs.charlescd.io/get-started/creating-your-first-module/properties-injections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/creating-your-first-module/properties-injections/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Properties injections is an important operation to prepare your application in the manifests performed by Butler.&lt;/p&gt;
+&lt;p&gt;See them below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;name:&lt;/strong&gt;  Kubernetes’ resource name.  Some resources managed by Charles need to have their names altered, in order to make different versions of the same application available in different circles. The property name will have the following value:    &lt;strong&gt;&lt;code&gt; &amp;lt;originalManifest.metadata.name&amp;gt;-&amp;lt;tag&amp;gt;-&amp;lt;deploymentId&amp;gt;&lt;/code&gt;;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;originalManifest.metadata.name:&lt;/strong&gt; Name generated by the application’s chart;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tag:&lt;/strong&gt; Image’s tag;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deploymentId:&lt;/strong&gt; Deployment’s entity unique identifier created by Butler.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+This update only happens in &lt;strong&gt;Deployment’s&lt;/strong&gt; type resources.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;namespace:&lt;/strong&gt; Your deployment&amp;rsquo;s namespace. This namespace is described during the Workspace configuration and indicates which namespace the deployment will happen. If the charts insert this value in the manifests, Charles will overwrite them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;labels:&lt;/strong&gt; Kubernetes’ resources labels.&lt;br&gt;
+In order to make Butler’s reconciliation cycle and Istio’s routes created correctly work, some labels need to be available in all resources applied to the cluster. See them below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;deploymentId:&lt;/strong&gt; Unique identifier of the deployment&amp;rsquo;s entity created by Butler;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;circleId:&lt;/strong&gt; Unique circle&amp;rsquo;s identifier where the deployment will be created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;See below an example of a generated manifest after the chart compilation:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-https-echo
+  labels:
+    component: http-https-echo
+    tag: v1
+spec:
+  template:
+    metadata:
+      name: http-https-echo
+      labels:
+        component: http-https-echo
+        tag: v1
+    spec:
+      containers:
+        - name: http-https-echo
+          image: mendhak/http-https-echo:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      component: http-https-echo
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the property injection, this same manifest will be:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-https-echo-v1-bc0e1df9-c008-4d86-b534-d782badf3741
+  namespace: example-namespace
+  labels:
+    component: http-https-echo
+    tag: v1
+    deploymentId: bc0e1df9-c008-4d86-b534-d782badf3741
+    circleId: b4b62bc2-4dfd-4673-bc67-cc2cbcf9bb2f
+spec:
+  template:
+    metadata:
+      name: http-https-echo
+      labels:
+        component: http-https-echo
+        tag: v1
+        deploymentId: bc0e1df9-c008-4d86-b534-d782badf3741
+        circleId: b4b62bc2-4dfd-4673-bc67-cc2cbcf9bb2f
+    spec:
+      containers:
+        - name: http-https-echo
+          image: mendhak/http-https-echo:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      component: http-https-echo
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this configuration, you can use Charles to perform deployment in your application in segmented circles.&lt;/p&gt;
 
       </description>
     </item>
@@ -713,34 +1751,75 @@ For &lt;strong&gt;Node.js&lt;/strong&gt; there is already a lib and &lt;a href=&
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-After you have created your first &lt;a href=&#34;creating-your-first-module/&#34;&gt;&lt;strong&gt;module&lt;/strong&gt;&lt;/a&gt; and registered your &lt;a href=&#34;defining-a-workspace/deploy-environment&#34;&gt;&lt;strong&gt;cluster crendentials&lt;/strong&gt;,&lt;/a&gt; you have finished all the steps needed to make your first deploy. Now, it is necessary to create a &lt;a href=&#34;../../../reference/releases&#34;&gt;&lt;strong&gt;release&lt;/strong&gt; &lt;/a&gt;and provide it on the configured cluster.
+&lt;p&gt;After you have created your first &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/overview/&#34;&gt;&lt;strong&gt;module&lt;/strong&gt;&lt;/a&gt; and registered your [&lt;strong&gt;cluster crendentials&lt;/strong&gt;,]
+(&lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry/&#34;&gt;https://docs.charlescd.io/get-started/defining-a-workspace/docker-registry/&lt;/a&gt;) you have finished all the steps needed to make your first deployment.&lt;/p&gt;
+&lt;p&gt;Now, it is necessary to create a &lt;a href=&#34;https://docs.charlescd.io/reference/releases/&#34;&gt;&lt;strong&gt;release&lt;/strong&gt;&lt;/a&gt; and provide it on the configured cluster.&lt;/p&gt;
+
 &lt;/div&gt;
 
-&lt;p&gt;Charles offers two alternatives to create a release: use the &lt;a href=&#34;../../reference/hyphotesis&#34;&gt;&lt;strong&gt;hypothesis&lt;/strong&gt; &lt;/a&gt;flow chart or create it with docker images already available on your configured &lt;a href=&#34;defining-a-workspace/docker-registry&#34;&gt;&lt;strong&gt;registry&lt;/strong&gt;.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Here, we will focus on the first approach with the following steps:&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;How to make the first deployment?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;On Charles you have to use container images already available in your configured &lt;a href=&#34;https://docs.charlescd.io/reference/registry/&#34;&gt;&lt;strong&gt;registry&lt;/strong&gt;&lt;/a&gt; to create a release.&lt;/p&gt;
+&lt;p&gt;To make your first deployment, follow the steps below:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Click on &lt;strong&gt;Hypothesis&lt;/strong&gt; in the homepage left side bar;&lt;/li&gt;
-&lt;li&gt;Fill the name with the new hypothesis, on the &lt;strong&gt;Create new hypothesis&lt;/strong&gt; field (at the bottom of the hypothesis list) and press enter.&lt;/li&gt;
-&lt;li&gt;At the new created hypothesis board, click on &lt;strong&gt;+Card&lt;/strong&gt; at the bottom of the &lt;strong&gt;To do&lt;/strong&gt; list column;&lt;/li&gt;
-&lt;li&gt;Type the name of your new card and press Enter;&lt;/li&gt;
-&lt;li&gt;Click on the card and associate it to a Module previously created. After this, a &lt;strong&gt;branch with the name of the card will be created in the configured repository&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Perform your work on this branch. After finish, move the card to &lt;strong&gt;Ready to Go&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Click on &lt;strong&gt;Generate release candidate&lt;/strong&gt; at the bottom of the column &lt;strong&gt;Ready to Go&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Type the release name you want to create and click on &lt;strong&gt;Generate&lt;/strong&gt;. A branch with the prefix &lt;strong&gt;&amp;ldquo;release-darwin-&amp;rdquo; will be created on the module repository, after that the configured CI tool will turn off&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;A new card with &lt;strong&gt;Building&lt;/strong&gt; status will show up at the &lt;strong&gt;Builds&lt;/strong&gt; column. Wait until the status change to &lt;strong&gt;Built&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Go to &lt;strong&gt;Circles&lt;/strong&gt; area;&lt;/li&gt;
+&lt;li&gt;Select a &lt;a href=&#34;https://docs.charlescd.io/reference/circles/&#34;&gt;&lt;strong&gt;circle&lt;/strong&gt;&lt;/a&gt;. If you haven&amp;rsquo;t created one yet, there is a &lt;strong&gt;default circle&lt;/strong&gt; option that makes your first deploy possible;&lt;/li&gt;
+&lt;li&gt;Change the active circle filter to &lt;strong&gt;inactive&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Select the &amp;ldquo;&lt;strong&gt;Insert a release&lt;/strong&gt;&amp;rdquo; option;&lt;/li&gt;
+&lt;li&gt;After that, select &amp;ldquo;&lt;strong&gt;Create a release&lt;/strong&gt;&amp;rdquo; and fill the fields:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lsquo;Release name&amp;rsquo;:&lt;/strong&gt; choose a name for your release;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lsquo;Select a module&amp;rsquo;;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Select a component&#39;;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Version name&lt;/strong&gt;&#39;: type the name of your tag (it is necessary to be the same one shown in your Registry).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;After you have done the whole process above, your release will be ready to deploy.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//primeiro_deploy-1-%20%282%29%20%282%29.png&#34; alt=&#34;Example of release created and ready to deploy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Now, just follow the next steps to the &lt;a href=&#34;https://docs.charlescd.io/key-concepts&#34;&gt;&lt;strong&gt;Open Sea&lt;/strong&gt;&lt;/a&gt; deploy:&lt;/p&gt;
+&lt;p&gt;5 . Click on &amp;lsquo;&lt;strong&gt;Deploy&lt;/strong&gt;&amp;rsquo; button and wait for a status on the green card. When processing, you will see &amp;ldquo;&lt;strong&gt;deploying&lt;/strong&gt;&amp;rdquo;, but at the end, it will show up as &amp;ldquo;&lt;strong&gt;deployed&lt;/strong&gt;&amp;rdquo;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+
+After the process above, your release is ready to deploy.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Open Sea deploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;https://docs.charlescd.io/key-concepts/&#34;&gt;&lt;strong&gt;open sea&lt;/strong&gt;&lt;/a&gt; deployment is where you send your application to the registered segmentation on Charles.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Every open sea deploy is &lt;a href=&#34;#Incremental-deploy&#34;&gt;&lt;strong&gt;incremental&lt;/strong&gt;&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;p&gt;Now, follow the next steps to the &lt;a href=&#34;https://docs.charlescd.io/key-concepts/&#34;&gt;&lt;strong&gt;Open Sea&lt;/strong&gt;&lt;/a&gt; deploy:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;On Charles homepage, click on &lt;strong&gt;Circles&lt;/strong&gt;;&lt;/li&gt;
 &lt;li&gt;Click on the Default circle (it represents the open sea)&lt;/li&gt;
 &lt;li&gt;Click on &lt;strong&gt;Override release&lt;/strong&gt; in upper right corner;&lt;/li&gt;
 &lt;li&gt;Click on &lt;strong&gt;Search for ready releases&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Type the release name created above and click on &lt;strong&gt;Deploy&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Type the release name created above (or use it again with a new version) and click on &lt;strong&gt;Deploy&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Finally, Charles will provide the created release on cluster in the Open Sea. The deploy status will be shown and updated along the process.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//primeiro-deploy%20%281%29%20%281%29%20%282%29.gif&#34; alt=&#34;Example of a deploy in open sea&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Finally, Charles will provide the created release on a cluster in the Open Sea. The deploy status will be shown and updated along the process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/first-deploy%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Incremental deploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The incremental deployment allows you to use the previous deployments and add them to the actual one. For example, you already made a Beagle deployment and now you want to do a Ritchie one, you will see both of them in your current circle status.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+If you don&amp;rsquo;t choose the incremental deployment (choose override release, for example) what has been deployed before in your circle will be removed and it will remain only the current deployment.
+&lt;/div&gt;
+
+&lt;p&gt;To make an incremental deployment, follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On Charles homepage, click on  &lt;strong&gt;Circles&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Click on &lt;strong&gt;Default circle&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Click on  &lt;strong&gt;Incremental Deployment&lt;/strong&gt; on the left corner;&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Search for ready releases&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Type your release name created in the previous steps  (or you can reproduce again with a new version), select, and click on &lt;strong&gt;Deploy&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Check out below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/deploy-incremental.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -755,21 +1834,325 @@ After you have created your first &lt;a href=&#34;creating-your-first-module/&#3
         
         
         &lt;hr&gt;
-&lt;p&gt;From the moment you start to create your deploys, the next step is to &lt;a href=&#34;../../../../../reference/circles#how-to-create-circles&#34;&gt;&lt;strong&gt;create your first circles&lt;/strong&gt;&lt;/a&gt; to make your applications segmentation better.&lt;/p&gt;
+&lt;p&gt;From the moment you start to create your deploys, the next step is to &lt;a href=&#34;https://docs.charlescd.io/reference/circles/&#34;&gt;&lt;strong&gt;create your first circles&lt;/strong&gt;&lt;/a&gt; to make your application segmentation better.&lt;/p&gt;
 &lt;p&gt;Follow the next steps:&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Before you follow the steps, make sure you have already installed and configured &lt;a href=&#34;../../../reference/circle-matcher&#34;&gt;&lt;strong&gt;Circle Matcher&lt;/strong&gt;&lt;/a&gt; on your &lt;a href=&#34;defining-a-workspace/&#34;&gt;&lt;strong&gt;workspace&lt;/strong&gt;__&lt;/a&gt;__
+Before you follow the steps, make sure you have already installed and configured &lt;a href=&#34;https://docs.charlescd.io/reference/circle-matcher/&#34;&gt;&lt;strong&gt;Circle Matcher&lt;/strong&gt;&lt;/a&gt; on your &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/overview/&#34;&gt;&lt;strong&gt;workspace&lt;/strong&gt;&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;../reference/circles#how-to-create-circles&#34;&gt;&lt;strong&gt;Create your circle&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.charlescd.io/reference/circles/&#34;&gt;&lt;strong&gt;Create your circle&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;Use circle matcher to verify if the logic rules created for the segmentation are correctly identifying the users.&lt;/li&gt;
-&lt;li&gt;Make your deploy on the circle created before.&lt;/li&gt;
+&lt;li&gt;Make your deployment on the circle created before.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//usando-circulos%20%282%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/using-circles.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Get Started: Integrating Charles to your CI</title>
+      <link>https://docs.charlescd.io/get-started/integrating-charles-to-your-ci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/get-started/integrating-charles-to-your-ci/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;Why do you have to integrate Charles into your Continuous Delivery pipeline?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Integrations speed up your team and the Continuous Delivery (CD) allows you to take the code stored in the repository and deliver it continuously to production (or any other environment).&lt;/p&gt;
+&lt;p&gt;Setting up a CD creates a quick and effective process to put your product to market before the competition, and it allows your team to launch new features and bug fixes in order to make your client happy with the result.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;To integrate Charles C.D. into your pipeline, you will need to know some information. Check out below what they are and how to get them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;x-charles-token&lt;/code&gt;&lt;/strong&gt;: It is a hash created when a systemic token is generated. If it has lost its value, it is possible to regenerate this information. &lt;strong&gt;See more details in the systemic token section.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;x-workspace-id&lt;/code&gt;&lt;/strong&gt;: This Id represents the workspace where your environment settings and circles are. &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/how-to-configure-chart-template/&#34;&gt;&lt;strong&gt;Copy the ID in the existing menu when viewing the workspace.&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;module.id&lt;/code&gt;&lt;/strong&gt;: This Id represents the project registered with Charles. &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/overview/&#34;&gt;&lt;strong&gt;Copy the ID in the existing menu when viewing the module.&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;component.id&lt;/code&gt;&lt;/strong&gt;: This identifier represents the component and it &lt;a href=&#34;https://docs.charlescd.io/get-started/creating-your-first-module/overview/&#34;&gt;&lt;strong&gt;can be found in the module details&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;component.version&lt;/code&gt;&lt;/strong&gt;: It is where you inform the name of the tag of your component&amp;rsquo;s image.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;component.artifact&lt;/code&gt;&lt;/strong&gt;:  This is the name of the artifact. For example:  {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;circle.id&lt;/code&gt;&lt;/strong&gt;: This Id represents the circle registered in Charles. [&lt;strong&gt;Copy the ID in the existing menu when viewing the circle&lt;/strong&gt;]
+(https://docs.charlescd.io/reference/circle-matcher/).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;build.id&lt;/code&gt;&lt;/strong&gt;: This Id represents the deployment&amp;rsquo;s composition created in the first request mentioned below. This information is returned as the value of the ID key in the JSON format response.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;strong&gt;How to integrate?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;You can do this integration using a &lt;strong&gt;systemic token&lt;/strong&gt; and a sequence of HTTPS requests. See below the two steps:&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Step 1: Create deployment composition (aka build)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;POST&lt;/code&gt; &lt;code&gt;https://charles.info.example/moove/v2/builds/compose&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This request creates a composition that represents your release in a circle. You can mix two different versions with several components.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Request&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Headers&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;x-charles-token&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Systemic Token&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;x-workspace-id&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Workspace&amp;rsquo;s identifier.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Body Parameters&lt;/strong&gt;: All required:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;releaseName&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Release name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;modules&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;List of modules.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;module&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;object&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;An object that represents the modules.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;module.id&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;string&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Module&amp;rsquo;s identifier.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;module.components&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;array&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;List of components that composes the deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;component&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Information about the author&amp;rsquo;s event.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;component.id&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;string&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Component&amp;rsquo;s identifier.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;component.version&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Image tag name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;component.artifact&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;string&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Artifact name. For example {YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;Response&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+   &amp;quot;id&amp;quot;:&amp;quot;0000053e-14cc-4bae-85df-364a70eb0000&amp;quot;,
+   &amp;quot;author&amp;quot;:{
+      &amp;quot;id&amp;quot;:&amp;quot;00000afe-aa7a-4536-be1b-34eaad4c0000&amp;quot;,
+      &amp;quot;name&amp;quot;:&amp;quot;Charles Admin&amp;quot;,
+      &amp;quot;email&amp;quot;:&amp;quot;admin@email.com&amp;quot;
+   },
+   &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-19 12:08:54&amp;quot;,
+   &amp;quot;features&amp;quot;:[
+      {
+         &amp;quot;id&amp;quot;:&amp;quot;17c28af1-d7bf-4c8c-9895-ab4944fb5a9e&amp;quot;,
+         &amp;quot;name&amp;quot;:&amp;quot;release-test-0.1&amp;quot;,
+         &amp;quot;branchName&amp;quot;:&amp;quot;release-test-0.1&amp;quot;,
+         &amp;quot;authorId&amp;quot;:&amp;quot;00000afe-aa7a-4536-be1b-34eaad4c0000&amp;quot;,
+         &amp;quot;authorName&amp;quot;:&amp;quot;Charles Admin&amp;quot;,
+         &amp;quot;modules&amp;quot;:[
+            {
+               &amp;quot;id&amp;quot;:&amp;quot;00000df6-6c34-4410-9bea-77ee56900000&amp;quot;,
+               &amp;quot;name&amp;quot;:&amp;quot;ZupIT/charlescd&amp;quot;,
+               &amp;quot;gitRepositoryAddress&amp;quot;:&amp;quot;https://github.com/zupit/charlescd&amp;quot;,
+               &amp;quot;helmRepository&amp;quot;:&amp;quot;{HELM_URL}&amp;quot;,
+               &amp;quot;createdAt&amp;quot;:&amp;quot;2020-11-20 13:11:31&amp;quot;,
+               &amp;quot;components&amp;quot;:[
+                  {
+                     &amp;quot;id&amp;quot;:&amp;quot;00000143-8208-4f95-9986-10b909c00000&amp;quot;,
+                     &amp;quot;name&amp;quot;:&amp;quot;charlescd-ui&amp;quot;,
+                  },
+                  {
+                     &amp;quot;id&amp;quot;:&amp;quot;000009ea-ada9-40fd-bddf-51c921200000&amp;quot;,
+                     &amp;quot;name&amp;quot;:&amp;quot;charlescd-moove&amp;quot;
+                  }
+               ]
+            }
+         ],
+         &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-19 12:08:54&amp;quot;,
+         &amp;quot;branches&amp;quot;:[
+            &amp;quot;https://github.com/zupit/charlescd/tree/release-test-0.1&amp;quot;
+         ]
+      }
+   ],
+   &amp;quot;tag&amp;quot;:&amp;quot;release-test-0.1&amp;quot;,
+   &amp;quot;status&amp;quot;:&amp;quot;BUILT&amp;quot;,
+   &amp;quot;deployments&amp;quot;:[]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out an example of the request in &lt;strong&gt;CURL&lt;/strong&gt; format:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;curl &amp;#39;https://charlescd.api.com/moove/v2/builds/compose&amp;#39; \
+  -H &amp;#39;x-workspace-id: 000009c4-9f58-4236-9936-ffcb04b00000&amp;#39; \
+  -H &amp;#39;x-charles-token: {YOUR_SYSTEM_TOKEN}&amp;#39; \
+  -H &amp;#39;content-type: application/json&amp;#39; \
+  --data-binary &amp;#39;{
+   &amp;#34;modules&amp;#34;:[
+      {
+         &amp;#34;id&amp;#34;:&amp;#34;00000f6-6c34-4410-9bea-77ee56900000&amp;#34;,
+         &amp;#34;components&amp;#34;:[
+            {
+               &amp;#34;id&amp;#34;:&amp;#34;000009ea-ada9-40fd-bddf-51c921200000&amp;#34;,
+               &amp;#34;version&amp;#34;:&amp;#34;{YOUR-TAG-NAME}&amp;#34;,
+               &amp;#34;artifact&amp;#34;:&amp;#34;{YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}&amp;#34;
+            },
+            {
+               &amp;#34;id&amp;#34;:&amp;#34;00000143-8208-4f95-9986-10b909c00000&amp;#34;,
+               &amp;#34;version&amp;#34;:&amp;#34;{YOUR-TAG-NAME}&amp;#34;,
+               &amp;#34;artifact&amp;#34;:&amp;#34;{YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}&amp;#34;
+            }
+         ]
+      }
+   ],
+   &amp;#34;releaseName&amp;#34;:&amp;#34;release-test-0.1&amp;#34;
+}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;&lt;strong&gt;Step 2: Deploy the release created in the previous request in a circle.&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;POST&lt;/code&gt; &lt;code&gt;https://charles.info.example/path=&amp;quot;/moove/v2/deployments&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This request implements the composite release, previously created in a circle.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Request&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Headers&lt;/strong&gt;: All required:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;x-workspace-id&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Workspace&amp;rsquo;s Identifier.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;x-charles-token&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Systemic Token.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Body Parameters&lt;/strong&gt;: All required:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;circleId&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Identifier of the circle that will receive the deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;buildId&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Build identifier created in the previous request.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;Response&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+   &amp;quot;id&amp;quot;:&amp;quot;0000070c-1ed8-4d33-ad91-04ea50100000&amp;quot;,
+   &amp;quot;author&amp;quot;:{
+      &amp;quot;id&amp;quot;:&amp;quot;00000afe-aa7a-4536-be1b-34eaad400000&amp;quot;,
+      &amp;quot;name&amp;quot;:&amp;quot;Charles Admin&amp;quot;,
+      &amp;quot;email&amp;quot;:&amp;quot;admin@email.com&amp;quot;
+   },
+   &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-19 12:08:54&amp;quot;,
+   &amp;quot;deployedAt&amp;quot;:null,
+   &amp;quot;circle&amp;quot;:{
+      &amp;quot;id&amp;quot;:&amp;quot;000006b3-6e04-4c48-aca9-c9297e100000&amp;quot;,
+      &amp;quot;name&amp;quot;:&amp;quot;Circle name&amp;quot;,
+      &amp;quot;author&amp;quot;:{
+         &amp;quot;id&amp;quot;:&amp;quot;00000afe-aa7a-4536-be1b-34eaad400000&amp;quot;,
+         &amp;quot;name&amp;quot;:&amp;quot;Charles Admin&amp;quot;,
+         &amp;quot;email&amp;quot;:&amp;quot;admin@email.com&amp;quot;
+      },
+      &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-15 17:25:56&amp;quot;,
+      &amp;quot;matcherType&amp;quot;:&amp;quot;REGULAR&amp;quot;,
+      &amp;quot;rules&amp;quot;:{
+         &amp;quot;type&amp;quot;:&amp;quot;CLAUSE&amp;quot;,
+         &amp;quot;clauses&amp;quot;:[
+            {
+               &amp;quot;type&amp;quot;:&amp;quot;RULE&amp;quot;,
+               &amp;quot;content&amp;quot;:{
+                  &amp;quot;key&amp;quot;:&amp;quot;email&amp;quot;,
+                  &amp;quot;value&amp;quot;:[
+                     &amp;quot;test&amp;quot;
+                  ],
+                  &amp;quot;condition&amp;quot;:&amp;quot;EQUAL&amp;quot;
+               }
+            }
+         ],
+         &amp;quot;logicalOperator&amp;quot;:&amp;quot;OR&amp;quot;
+      },
+      &amp;quot;importedAt&amp;quot;:null,
+      &amp;quot;importedKvRecords&amp;quot;:0
+   },
+   &amp;quot;buildId&amp;quot;:&amp;quot;0000053e-14cc-4bae-85df-364a70e00000&amp;quot;,
+   &amp;quot;tag&amp;quot;:&amp;quot;{IMAGE_TAG_NAME}&amp;quot;,
+   &amp;quot;status&amp;quot;:&amp;quot;DEPLOYING&amp;quot;,
+   &amp;quot;artifacts&amp;quot;:[
+      {
+         &amp;quot;id&amp;quot;:&amp;quot;00000652-e4fb-41c7-a6da-33bee0600000&amp;quot;,
+         &amp;quot;artifact&amp;quot;:&amp;quot;{YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}&amp;quot;,
+         &amp;quot;version&amp;quot;:&amp;quot;{IMAGE_TAG_NAME}&amp;quot;,
+         &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-19 12:08:54&amp;quot;,
+         &amp;quot;componentName&amp;quot;:&amp;quot;charlescd-ui&amp;quot;,
+         &amp;quot;moduleName&amp;quot;:&amp;quot;ZupIT/charlescd&amp;quot;
+      },
+      {
+         &amp;quot;id&amp;quot;:&amp;quot;000000d2-4a50-408a-be38-c8e932200000&amp;quot;,
+         &amp;quot;artifact&amp;quot;:&amp;quot;{YOUR-REGISTRY-URL}-{YOUR-IMAGE-NAME}:{YOUR-TAG-NAME}&amp;quot;,
+         &amp;quot;version&amp;quot;:&amp;quot;{IMAGE_TAG_NAME}&amp;quot;,
+         &amp;quot;createdAt&amp;quot;:&amp;quot;2021-04-19 12:08:54&amp;quot;,
+         &amp;quot;componentName&amp;quot;:&amp;quot;charlescd-moove&amp;quot;,
+         &amp;quot;moduleName&amp;quot;:&amp;quot;ZupIT/charlescd&amp;quot;
+      }
+   ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Check out an example of the request in &lt;strong&gt;CURL&lt;/strong&gt; format:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;curl &amp;#39;https://charlescd.api.com/moove/v2/deployments&amp;#39; \
+  -H &amp;#39;x-workspace-id: 000009c4-9f58-4236-9936-ffcb04b00000&amp;#39; \
+  -H &amp;#39;x-charles-token: {YOUR_SYSTEM_TOKEN}&amp;#39; \
+  -H &amp;#39;content-type: application/json&amp;#39; \
+  --data-binary &amp;#39;{
+   &amp;#34;buildId&amp;#34;:&amp;#34;82a7d53e-14cc-4bae-85df-364a70eb9df7&amp;#34;,
+   &amp;#34;circleId&amp;#34;:&amp;#34;1611b6b3-6e04-4c48-aca9-c9297e18d66d&amp;#34;
+}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can follow up on the deployments&#39; completion using &lt;a href=&#34;https://docs.charlescd.io/get-started/defining-a-workspace/webhooks/&#34;&gt;&lt;strong&gt;Webhooks&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

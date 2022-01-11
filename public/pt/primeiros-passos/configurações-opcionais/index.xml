@@ -23,9 +23,9 @@
         
         
         &lt;hr&gt;
-&lt;h2&gt;Por que autenticar?&lt;/h2&gt;
-&lt;p&gt;Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu &lt;a href=&#34;../../definindo-workspace/docker-registry&#34;&gt;&lt;strong&gt;registry&lt;/strong&gt;&lt;/a&gt; quando for preciso fazer o pull das imagens durante alguma implantação.&lt;/p&gt;
-&lt;h2&gt;Como autenticar?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;Por que autenticar?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Em casos de registries privados, essa autenticação garantirá o sucesso na comunicação com o seu &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/docker-registry/&#34;&gt;&lt;strong&gt;registry&lt;/strong&gt;&lt;/a&gt; quando for preciso fazer o pull das imagens durante alguma implantação.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Como autenticar?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;O cluster Kubernetes utiliza o tipo &lt;strong&gt;secret&lt;/strong&gt; do &lt;strong&gt;docker-registy&lt;/strong&gt; para autenticar o registry container.&lt;/p&gt;
 
 
@@ -35,7 +35,7 @@ Para mais informações de como gerar esse &lt;strong&gt;secret&lt;/strong&gt; p
 &lt;/div&gt;
 
 &lt;p&gt;Uma vez gerado o secret, ele ter uma formatação parecida com o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: v1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;apiVersion: v1
 data:
   .dockerconfigjson: &amp;lt;&amp;lt;your value&amp;gt;&amp;gt;
 kind: Secret
@@ -43,7 +43,7 @@ metadata:
   name: &amp;lt;&amp;lt;registry-name&amp;gt;&amp;gt;
 type: kubernetes.io/dockerconfigjson
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Com o secret em mãos, você precisará aplicar essa informação no namespace onde suas aplicações serão implantados pelo Charles:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl -n your-namespace apply secret-registry.yaml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl -n your-namespace apply secret-registry.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalizando desses passos, seu cluster conseguirá manter a comunicação com o registry.&lt;/p&gt;
 
       </description>
@@ -63,12 +63,69 @@ type: kubernetes.io/dockerconfigjson
 &lt;ul&gt;
 &lt;li&gt;em &lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt;, nas configurações de ingress, mude o valor de &lt;strong&gt;&lt;code&gt;enabled&lt;/code&gt;&lt;/strong&gt; para &lt;strong&gt;&lt;code&gt;true&lt;/code&gt;&lt;/strong&gt; como no exemplo abaixo.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;ingress:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;ingress:
   enabled: true
   host: charles.info.example
   class: nginx
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Primeiros Passos: Configurando MTLS</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/configurando-mtls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/configurando-mtls/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+A opção de Mutual Transport Layer Security (MTLS) é recomendada quando você quiser instalar o Charles em &lt;strong&gt;um cluster diferente de onde estão suas aplicações.&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Essa configuração é necessária para garantir uma comunicação segura entre o serviços no Charles, já que  podem estar expostos em cluster diferentes. Nesse cenário, apenas um componente do Charles precisa estar no mesmo cluster que as suas aplicações, o charlescd-butler.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Como habilitar o MTLS?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Siga os passos abaixo para habilitar o MTLS na sua aplicação:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo 1:&lt;/strong&gt; Acesse &lt;code&gt;charlescd/install/mtls-job/values.yaml&lt;/code&gt; e coloque o domínio em que o Charles será utilizado, veja o exemplo abaixo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mtls:
+  domain: .charles.com
+  enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; Execute os manifestos, eles geram as secrets com os certificados de cada componente e a autoridade certificadora.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+The certificates generated will be self-signed.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Passo 3:&lt;/strong&gt; Na pasta raiz do projeto, execute o comando:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm install mtls-job ./install/mtls-job/ --namespace charlescd --values=./install/mtls-job/values.yaml
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 4:&lt;/strong&gt; Se você quiser utilizar certificados próprios e não aqueles gerados pelo job, utilize &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/create-tls-secrets.sh&#34;&gt;&lt;strong&gt;o script de &amp;lsquo;create secrets&amp;rsquo;&lt;/strong&gt;&lt;/a&gt; para auxiliar na criação das secrets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo 5:&lt;/strong&gt; Copie as secrets de um cluster para outro. E depois:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copie as secrets dentro de manifestos yaml, para fazer isso utilize o &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/copy-secrets.sh&#34;&gt;&lt;strong&gt;script de &amp;lsquo;copy secrets&amp;rsquo;&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Aplique os manifestos no cluster destino, use o &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/security/mtls/install/helm-chart/scripts/apply-secrets.sh&#34;&gt;&lt;strong&gt;script de &amp;lsquo;apply secrets&amp;rsquo;&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Passo 6:&lt;/strong&gt; Acesse &lt;code&gt;charlescd/install/helm-chart/values.yaml&lt;/code&gt; nas configurações do moove e mude o valor da propriedade &lt;code&gt;mtls/enabled&lt;/code&gt; para &lt;code&gt;true&lt;/code&gt;. Veja abaixo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;moove:
+    mtls:
+      enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 7:&lt;/strong&gt; Faça a mesma alteração do passo 6, mas agora para o &lt;strong&gt;componente butler&lt;/strong&gt;, quando você instalá-lo em outro cluster, veja o exemplo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;butler:
+    mtls:
+        enabled: true
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 8:&lt;/strong&gt; Depois disso, siga os passos da &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/&#34;&gt;&lt;strong&gt;instalação do Charles&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
       </description>
     </item>
     
@@ -82,7 +139,7 @@ type: kubernetes.io/dockerconfigjson
         
         
         &lt;hr&gt;
-&lt;h3&gt;O que é Identity Manager (IDM)?&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;O que é Identity Manager (IDM)?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;É o responsável por gerenciar a identidade dos usuários que acessarão uma determinada aplicação, neste caso, o Charles.&lt;/p&gt;
 
 
@@ -92,13 +149,13 @@ Quando o usuário acessa o Charles, é verificado qual gerenciador responsável 
 &lt;/div&gt;
 
 &lt;p&gt;No exemplo da imagem abaixo, é ilustrado um fluxo onde se faz a verificação de qual foi a configuração feita para gerenciar os usuários. Nesse caso, quando o usuário tenta acessar o Charles e ainda não está autenticado, se tiver sido configurado um IDM personalizado, como o Google, por exemplo, o usuário é redirecionado para a própria página do Google para fazer a autenticação. Caso contrário, a tela de autenticação do Charles é retornada para dar sequência ao fluxo.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//untitled-diagram-1-.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3&gt;Porque configurar um IDM?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/untitled-diagram-1-.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Porque configurar um IDM?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Para garantir a segurança dos acessos ao Charles, é necessário ter um gerenciador de identidade. Para isso, o Charles oferece duas opções:&lt;/p&gt;
-&lt;h3&gt;IDM Padrão&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;IDM Padrão&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Na instalação padrão do Charles, já existe o &lt;strong&gt;Keycloak&lt;/strong&gt; que é utilizado para fazer a gestão dos usuários. Portanto, se você não tem um IDM personalizado que queira utilizar, a instalação padrão te oferece esse suporte.&lt;/p&gt;
-&lt;h3&gt;IDM Externa&lt;/h3&gt;
-&lt;p&gt;Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na &lt;a href=&#34;../../../referencia/identity-manager&#34;&gt;&lt;strong&gt;referência sobre IDM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;IDM Externa&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Caso você tenha seu próprio gerenciador de identidade, é necessário alterar algumas variáveis na instalação. Para isso, siga nossas instruções na &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/identity-manager/&#34;&gt;&lt;strong&gt;referência sobre IDM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

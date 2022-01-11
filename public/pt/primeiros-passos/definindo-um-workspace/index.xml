@@ -14,6 +14,49 @@
     
     
     <item>
+      <title>Primeiros Passos: Visão Geral</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/visao-geral/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/visao-geral/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;O workspace permite que você segmente o uso do CharlesCD dentro da sua empresa ou do seu time. Com ele se define as &lt;strong&gt;permissões personalizadas dos usuários&lt;/strong&gt;, o que garante mais segurança para o seu projeto.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+Com apenas uma instalação, vários times podem utilizar o Charles com configurações distintas ou, se preferir, criar um workspace para representar diferentes ambientes de desenvolvimento como, por exemplo, homologação, produção, etc.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Configurações do workspace&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Cada workspace possui as seguintes configurações:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Definição dos acessos e &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/grupo-de-usu%C3%A1rios/&#34;&gt;&lt;strong&gt;permissões dos grupos de usuários&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Cadastros de credenciais do &lt;a href=&#34;https://github.com/&#34;&gt;&lt;strong&gt;Git&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/docker-registry/&#34;&gt;&lt;strong&gt;Docker Registry&lt;/strong&gt;&lt;/a&gt; e de &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/ambiente-de-deploy/&#34;&gt;&lt;strong&gt;Continuous Deployment (CD)&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Personalização do &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/circle-matcher/&#34;&gt;&lt;strong&gt;Circle Matcher&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Registro do &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/adicionando-o-datasource/&#34;&gt;&lt;strong&gt;Provedor de Métricas&lt;/strong&gt;&lt;/a&gt;
+das suas aplicações.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/defining-workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+A criação do workspace pode ser feita apenas pelo usuário &lt;strong&gt;root&lt;/strong&gt;. Entretanto, o preenchimento das configurações podem também ser feitas pelos usuários associados ao workspace com perfil de &lt;strong&gt;mantenedor&lt;/strong&gt;.
+&lt;/div&gt;
+
+&lt;h3&gt;&lt;strong&gt;Como obter o identificador do meu workspace?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Assim que seu workspace é criado, mesmo sem a definição das configurações, ele já possui um identificador único.&lt;/p&gt;
+&lt;p&gt;Para obter essa informação, selecione o workspace desejado e, no menu à esquerda, clique em &lt;strong&gt;Copy ID&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_copyid%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Primeiros Passos: Docker Registry</title>
       <link>https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/docker-registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -46,29 +89,32 @@ Essa informação é obrigatória.
         
         
         &lt;hr&gt;
+&lt;p&gt;O módulo de deploy aplica e monitora os recursos no cluster. E para fazer isso, ele utiliza o padrão &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/operator&#34;&gt;&lt;strong&gt;Operator&lt;/strong&gt;&lt;/a&gt; que realiza os ciclos de reconciliação garantindo que o cluster sempre estará no estado que você precisa. Os logs do Kubernetes também serão coletados em tempo real.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Configurando o workspace&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Ao configurar seu workspace é preciso cadastrar as credenciais de acesso ao cluster &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;. Essas configurações são específicas para cada uma das ferramentas de &lt;em&gt;Continuous Deployment&lt;/em&gt; (CD) que são integradas ao CharlesCD. No momento, o Charles realiza o deploy nativamente ou você pode integrar com o &lt;a href=&#34;https://www.spinnaker.io/&#34;&gt;&lt;strong&gt;Spinnaker&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Configuração de Deployment&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;O Charles possui uma arquitetura adaptável a diferentes instalações Kubernetes. O único requisito é que seu módulo de deploy esteja instalado no cluster de destino com uma URL acessível. A configuração de deployment indica qual é essa URL e quais credenciais do Git serão utilizadas para buscar os charts helm. Sem esta configuração o Charles não conseguirá realizar deploys.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Como cadastrar a configuração?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Siga os passos abaixo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Em &lt;strong&gt;Workspaces,&lt;/strong&gt; no menu lateral esquerdo, selecione o workspace desejado, em seguida selecione &lt;strong&gt;Settings ;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Credentials;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Add Deployment Configuration;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Preencha os seguintes campos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Butler URL:&lt;/strong&gt; URL do módulo de deploy Butler. Caso este esteja no mesmo cluster de instalação do Charles, utilize seu FQDN (Fully Qualified Domain Name). Exemplo: &lt;code&gt;http://charlescd-butler.butler-namespace.svc.cluster.local:3000&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Namespace:&lt;/strong&gt; Defina o namespace em que os recursos serão disponibilizados no cluster. Você deve criar o seu namespace, uma vez que o Charles não faz isso;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git provider:&lt;/strong&gt; Defina o provedor de git a ser utilizado (&lt;strong&gt;GitHub&lt;/strong&gt; ou &lt;strong&gt;GitLab&lt;/strong&gt;);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git token:&lt;/strong&gt; Insira um token de autenticação que tenha acesso repositório git onde está armazenado seus &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-o-chart-template/&#34;&gt;&lt;strong&gt;templates Helm&lt;/strong&gt;&lt;/a&gt; que serão utilizados durante o deployment da sua &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/visao-geral/&#34;&gt;&lt;strong&gt;aplicação&lt;/strong&gt;&lt;/a&gt;. Caso o seu Git Provider seja &lt;strong&gt;GitHub&lt;/strong&gt;, é necessário a permissão &amp;ldquo;&lt;em&gt;repo&lt;/em&gt;&amp;rdquo;. Se não, configure no &lt;strong&gt;GitLab&lt;/strong&gt; os acessos: &amp;ldquo;&lt;em&gt;api&lt;/em&gt; &amp;quot; e &amp;ldquo;&lt;em&gt;read_repository&lt;/em&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-O &lt;strong&gt;Charles&lt;/strong&gt; possui um módulo chamado Octopipe que é uma forma leve e de baixo custo de fazer deploy em clusters Kubernetes.
+To avoid dependency of a specific user in the authentication token field, use &lt;a href=&#34;https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users&#34;&gt;&lt;strong&gt;Machine Account&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;h3&gt;Como realizar seu deploy?&lt;/h3&gt;
-&lt;p&gt;Veja abaixo o exemplo de como realizar seu deploy utilizando o CharlesCD no mesmo cluster de instalação:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Clique em &lt;strong&gt;Add CD Configuration&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Selecione a opção &lt;strong&gt;CharlesCD.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Após esses passos, preencha os campos a seguir:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; nome da configuração que será criada.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Namespace:&lt;/strong&gt; defina o namespace que será utilizado nos deploys no cluster &lt;em&gt;Kubernetes.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Git provider&lt;/strong&gt;: defina o provedor de git a ser utilizado (&lt;strong&gt;GitHub ou GitLab&lt;/strong&gt;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Git token:&lt;/strong&gt; insira um token de autenticação que tenha acesso repositório git onde está armazenado os seus &lt;a href=&#34;../../../criando-seu-primeiro-modulo/configurando-o-chart-template&#34;&gt;&lt;strong&gt;templates Helm&lt;/strong&gt;&lt;/a&gt; que serão utilizados durante o deployment da sua &lt;a href=&#34;../../../criando-seu-primeiro-modulo/&#34;&gt;&lt;strong&gt;aplicação&lt;/strong&gt;&lt;/a&gt;. Caso o seu Git Provider seja &lt;strong&gt;GitHub&lt;/strong&gt;, é necessário a permissão &amp;ldquo;&lt;em&gt;repo&lt;/em&gt;&amp;rdquo;.  Se for o contrário, configure no &lt;strong&gt;GitLab&lt;/strong&gt; os acessos: &amp;ldquo;&lt;em&gt;api&lt;/em&gt; &#39;&#39; e &amp;ldquo;&lt;em&gt;read_repository&lt;/em&gt;&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Selecione a opção &lt;strong&gt;Default&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Depois de finalizar sua configuração, você pode futuramente associá-la a um módulo. Para mais informações, acesse &lt;a href=&#34;../../../referencia/preparando-seu-deploy&#34;&gt;&lt;strong&gt;Configurações de CD&lt;/strong&gt;.&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -83,25 +129,25 @@ O &lt;strong&gt;Charles&lt;/strong&gt; possui um módulo chamado Octopipe que é
         
         
         &lt;hr&gt;
-&lt;h2&gt;Por que configurar?&lt;/h2&gt;
-&lt;p&gt;Quando você  &lt;a href=&#34;../../../.././&#34;&gt;&lt;strong&gt;cria um workspace&lt;/strong&gt;&lt;/a&gt;, é preciso informar ao Charles para qual Circle Matcher esse workspace atual apontará. É possível que haja um Circle Matcher para cada ambiente, já que o Charles lida, ao mesmo tempo, com diferentes ambientes em vários workspaces.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Por que configurar?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Quando você  &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/visao-geral/&#34;&gt;&lt;strong&gt;cria um workspace&lt;/strong&gt;&lt;/a&gt;, é preciso informar ao Charles para qual Circle Matcher esse workspace atual apontará. É possível que haja um Circle Matcher para cada ambiente, já que o Charles lida, ao mesmo tempo, com diferentes ambientes em vários workspaces.&lt;/p&gt;
 &lt;p&gt;Apesar do Circle Matcher ser um módulo independente no Charles, é possível instalá-lo em qualquer área de preferência dentro da arquitetura como, por exemplo, em um cluster público.&lt;/p&gt;
 &lt;p&gt;Essa configuração é necessária para que você possa executar operações dentro do Charles, como criar ou editar segmentos de um círculo.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Vale lembrar que, no contexto do Charles, o módulo do Circle Matcher é o que mais recebe solicitações no ambiente por identificar os usuários com base nas regras que você configurou ao &lt;a href=&#34;../../../../../referencia/circulo#como-criar-circulos&#34;&gt;&lt;strong&gt;gerenciar um círculo&lt;/strong&gt;&lt;/a&gt;.
+Vale lembrar que, no contexto do Charles, o módulo do Circle Matcher é o que mais recebe solicitações no ambiente por identificar os usuários com base nas regras que você configurou ao &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/c%C3%ADrculo/&#34;&gt;&lt;strong&gt;gerenciar um círculo&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;p&gt;Se você deseja saber mais sobre o que é um Circle Matcher, &lt;a href=&#34;../../../../referencia/circle-matcher&#34;&gt;&lt;strong&gt;veja a seção Referência&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Como deve ser configurado&lt;/h2&gt;
-&lt;h4&gt;Opção 1: Configurar o Circle Matcher em uma arquitetura à parte&lt;/h4&gt;
+&lt;p&gt;Se você deseja saber mais sobre o que é um Circle Matcher, &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/circle-matcher/&#34;&gt;&lt;strong&gt;veja a seção Referência&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Como você deve configurar?&lt;/strong&gt;&lt;/h2&gt;
+&lt;h4&gt;&lt;strong&gt;Opção 1: Configurar o Circle Matcher em uma arquitetura à parte&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;Você deve configurar o DNS público que aponta para o Circle Matcher desejado.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Exemplo: &lt;strong&gt;&lt;a href=&#34;http://charles.info.example/charlescd-circle-matcher&#34;&gt;http://charles.info.example/charlescd-circle-matcher&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4&gt;Opção 2: Configurar o Circle Matcher no mesmo namespace do Charles&lt;/h4&gt;
+&lt;h4&gt;&lt;strong&gt;Opção 2: Configurar o Circle Matcher no mesmo namespace do Charles&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;Caso prefira usar o Circle Matcher no mesmo namespace em que Charles está instalado, você pode usar a mesma referência de DNS.&lt;/p&gt;
 &lt;p&gt;A diferença é que, em termos de desempenho, o mais recomendado é usar o nome do serviço do Kubernetes.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -109,7 +155,7 @@ Vale lembrar que, no contexto do Charles, o módulo do Circle Matcher é o que m
 &lt;/blockquote&gt;
 &lt;h2&gt;Próximos passos&lt;/h2&gt;
 &lt;p&gt;Nesta seção, você viu como criar seu Circle Matcher. Para continuar sua configuração de um workspace, o Charles oferece métricas que precisam ser configuradas.&lt;/p&gt;
-&lt;p&gt;👉 Vá para página &lt;a href=&#34;../../../referencia/metricas/configurando-metricas&#34;&gt;&lt;strong&gt;Configurando as métricas&lt;/strong&gt;&lt;/a&gt; e descubra como Charles utiliza as métricas.&lt;/p&gt;
+&lt;p&gt;👉 Vá para página &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/&#34;&gt;&lt;strong&gt;Configurando as métricas&lt;/strong&gt;&lt;/a&gt; e descubra como Charles utiliza as métricas.&lt;/p&gt;
 
       </description>
     </item>
@@ -129,10 +175,10 @@ Vale lembrar que, no contexto do Charles, o módulo do Circle Matcher é o que m
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
-Antes de adicionar o Datasource, é necessário ter finalizado a &lt;a href=&#34;../../../referencia/metricas/configurando-metricas&#34;&gt;&lt;strong&gt;configuração de métricas&lt;/strong&gt;&lt;/a&gt;.
+Antes de adicionar o Datasource, é necessário ter finalizado a &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/&#34;&gt;&lt;strong&gt;configuração de métricas&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
-&lt;h3&gt;Como configurar?&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;Como configurar?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Para realizar a configuração de cadastro, basta seguir os seguintes passos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Clique no seu nome, no canto inferior esquerdo e, em seguida, selecione &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/li&gt;
@@ -142,13 +188,13 @@ Antes de adicionar o Datasource, é necessário ter finalizado a &lt;a href=&#34
 &lt;li&gt;&lt;strong&gt;Data source health:&lt;/strong&gt; essa opção é para saber mais detalhes sobre a saúde do seu círculo.&lt;/li&gt;
 &lt;li&gt;Faça a configuração baseada na ferramenta selecionada.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//workspace_datasource%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_datasource%20%281%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Primeiros Passos: Ações</title>
+      <title>Primeiros Passos: Ações de métricas</title>
       <link>https://docs.charlescd.io/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -157,23 +203,24 @@ Antes de adicionar o Datasource, é necessário ter finalizado a &lt;a href=&#34
         
         
         &lt;hr&gt;
-&lt;h2&gt;O que é?&lt;/h2&gt;
-&lt;p&gt;Depois de &lt;a href=&#34;../../../../referencia/metricas/grupo-de-metricas&#34;&gt;&lt;strong&gt;cadastrar seu grupo de métricas&lt;/strong&gt;&lt;/a&gt;, o Charles mostra o acompanhamento dessas métricas e oferece ações para cada uma delas. Ação é um tipo de trigger que será disparado quando todos os limites (thresholds) são alcançados.&lt;/p&gt;
-&lt;h2&gt;Como configurar?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;O que é?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Depois de &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/&#34;&gt;&lt;strong&gt;cadastrar seu grupo de métricas&lt;/strong&gt;&lt;/a&gt;, o Charles mostra o acompanhamento dessas métricas e oferece ações para cada uma delas. Ação é um tipo de trigger que será disparado quando todos os limites (thresholds) são alcançados.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Como configurar?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Em configurações do workspace, clique na seção &lt;strong&gt;Add Metric Action&lt;/strong&gt; e siga os passos:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. Add action configuration&lt;/strong&gt;: Adicione uma ação de configuração;&lt;br&gt;
 &lt;strong&gt;2. Type a nickname:&lt;/strong&gt; Escreva um nome para sua action;&lt;br&gt;
 &lt;strong&gt;3. Type a description:&lt;/strong&gt; Descreva o sua action;&lt;br&gt;
 &lt;strong&gt;4. Select a plugin:&lt;/strong&gt; Selecione um plugin para executar a ação.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//workspace_metricaction%20%282%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/workspace_metricaction%20%282%29.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/strong&gt;. Ele permite que o Charles faça o seu próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
+Os plugins disponíveis são &lt;strong&gt;circle deployment&lt;/strong&gt; e &lt;strong&gt;circle undeployment&lt;/strong&gt;. O Charles pode fazer o  próprio plugin para atender às necessidades da sua aplicação como, por exemplo, uma action que envie e-mail para avisar o status do círculo.
 &lt;/div&gt;
 
-&lt;p&gt;Para mais informações sobre &lt;strong&gt;Action&lt;/strong&gt;, veja a &lt;a href=&#34;../../../referencia/metricas/acoes&#34;&gt;&lt;strong&gt;seção de Referência&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para mais informações sobre &lt;strong&gt;Action&lt;/strong&gt;, veja a &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/&#34;&gt;&lt;strong&gt;seção de Referência&lt;/strong&gt;&lt;/a&gt;
+.&lt;/p&gt;
 
       </description>
     </item>
@@ -188,10 +235,10 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
         
         
         &lt;hr&gt;
-&lt;h2&gt;O que é?&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;O que é?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Webhook é um recurso que observa os eventos de um sistema.  Quando os eventos acontecem, o webhook tem a função de enviar uma notificação para os interessados cadastrados em receber as informações desse evento.&lt;/p&gt;
-&lt;p&gt;O Charles possui o módulo**&lt;code&gt;charlescd-hermes&lt;/code&gt;**, que é responsável por identificar esses eventos e enviar aos inscritos as notificações.&lt;/p&gt;
-&lt;h3&gt;Como cadastrar?&lt;/h3&gt;
+&lt;p&gt;O Charles possui o módulo &lt;strong&gt;&lt;code&gt;charlescd-hermes&lt;/code&gt;&lt;/strong&gt;, que é responsável por identificar esses eventos e enviar aos inscritos as notificações.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Como cadastrar?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;É necessário criar configurações de webhook para utilizar essa funcionalidade no Charle. Para isso, siga os passos abaixo:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Em &lt;strong&gt;Workspace&lt;/strong&gt;, clique em &lt;strong&gt;&amp;lsquo;Add Webhook&amp;rsquo;&lt;/strong&gt;;&lt;/li&gt;
@@ -205,7 +252,7 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
 &lt;li&gt;Escolha o evento: &lt;strong&gt;deploy&lt;/strong&gt;, &lt;strong&gt;undeploy&lt;/strong&gt; ou &lt;strong&gt;ambos&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Depois do cadastro, um card aparecerá com o status de sucesso ou erro da última mensagem enviada. Veja a imagem abaixo:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//image%20%286%29.png&#34; alt=&#34;Exemplo de mensagem de erro para solicita&amp;#xE7;&amp;#xE3;o do webhooks&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared/image%20%286%29.png&#34; alt=&#34;Exemplo de mensagem de erro para solicita&amp;#xE7;&amp;#xE3;o do webhooks&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As informações do evento são enviadas na propriedade &lt;strong&gt;content&lt;/strong&gt;. O seu serviço exposto precisa aceitar essa propriedade no corpo da requisição.&lt;/p&gt;
 &lt;h3&gt;&lt;strong&gt;Propriedade comum dos objetos do payload de webhook&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Cada payload de evento possui propriedades únicas. Você pode encontrá-las nas seções individuais de eventos. Abaixo estão as propriedades comuns:&lt;/p&gt;
@@ -240,9 +287,9 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2&gt;Eventos&lt;/h2&gt;
+&lt;h2&gt;&lt;strong&gt;Eventos&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Os eventos observáveis são &lt;strong&gt;início&lt;/strong&gt; e &lt;strong&gt;finalização&lt;/strong&gt; de &lt;strong&gt;deploy&lt;/strong&gt; e &lt;strong&gt;undeploy.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Deploy&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Quando você cadastra um webhook para receber informações sobre eventos de &lt;strong&gt;deploy&lt;/strong&gt; de um determinado workspace, ou quando um deploy for iniciado e finalizado automaticamente, você irá receber uma notificação com detalhes do evento.&lt;/p&gt;
 &lt;p&gt;Quando o evento é disparado, um payload HTTP POST é enviado a URL do webhook cadastrado.&lt;/p&gt;
 &lt;p&gt;Veja abaixo:&lt;/p&gt;
@@ -307,8 +354,8 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3&gt;Exemplo de payload do evento &lt;strong&gt;de Deploy&lt;/strong&gt;&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;{
+&lt;h3&gt;&lt;strong&gt;Exemplo de payload do evento de Deploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;{
 	&amp;#34;content&amp;#34;: &amp;#34;{
 		&amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
 		&amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
@@ -368,7 +415,7 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
 		}
 	}&amp;#34;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;Undeploy&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;&lt;strong&gt;Undeploy&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Quando você cadastra um webhook para receber informações sobre eventos de &lt;strong&gt;undeploy,&lt;/strong&gt; de um determinado workspace, quando um undeploy for iniciado e finalizado automaticamente você irá receber uma notificação com detalhes do evento.&lt;/p&gt;
 &lt;p&gt;Quando o evento é disparado, um payload HTTP POST é enviado a URL do webhook cadastrado, veja abaixo:&lt;/p&gt;
 &lt;table&gt;
@@ -427,8 +474,8 @@ O único plugin disponível no momento é o &lt;strong&gt;circle deployment&lt;/
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3&gt;Exemplo de payload do evento &lt;strong&gt;de Undeploy&lt;/strong&gt;&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;#34;content&amp;#34;: &amp;#34;{
+&lt;h3&gt;&lt;strong&gt;Exemplo de payload do evento de Undeploy&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;#34;content&amp;#34;: &amp;#34;{
     &amp;#34;subscriptionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
     &amp;#34;executionId&amp;#34;: &amp;#34;5d4c95b4-6f83-11ea-bc55-0242ac130003&amp;#34;,
     &amp;#34;event&amp;#34;: {

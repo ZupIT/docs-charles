@@ -28,10 +28,10 @@
 &lt;h2&gt;O que é deploy em círculos?&lt;/h2&gt;
 &lt;p&gt;O deploy em círculos é um conceito pioneiro trazido pelo Charles. Graças a ele, é possível que você realize o deploy de uma mesma aplicação para diferentes segmentações de usuários ao mesmo tempo.&lt;/p&gt;
 &lt;h2&gt;Qual diferencial do Charles?&lt;/h2&gt;
-&lt;p&gt;Diferente de outras modalidades de deploy, o Charles possibilita a realização simultânea de segmentações de usuários por meio de &lt;a href=&#34;../../../referencia/circulo&#34;&gt;&lt;strong&gt;círculos&lt;/strong&gt;. &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diferente de outras modalidades de deploy, o Charles possibilita a realização simultânea de segmentações de usuários por meio de &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/c%C3%ADrculo/&#34;&gt;&lt;strong&gt;círculos&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Utilizando a ferramenta, o processo de entrega que em ambientes tradicionais ocorre em frequências demoradas - semanal, quinzenal ou até mesmo mensal -, ganha um novo ritmo. O ciclo de feedback do seu produto se torna mais rápido e eficaz e, com isso, você consegue fazer a gestão do timing de forma mais inteligente e assertiva.&lt;/p&gt;
 &lt;p&gt;Além disso, os desenvolvedores são encorajados a inovarem e realizarem várias implantações de novas versões, pois a identificação de bugs ocorre em menos tempo e a criação de círculos auxilia na minimização do error budget.&lt;/p&gt;
-&lt;p&gt;Para saber mais sobre a abordagem de microsserviços e os módulos do Charles, veja &lt;a href=&#34;../../#arquitetura-do-sistema&#34;&gt;&lt;strong&gt;a arquitetura da plataforma.&lt;/strong&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para saber mais sobre a abordagem de microsserviços e os módulos do Charles, veja &lt;a href=&#34;https://docs.charlescd.io/pt/overview/&#34;&gt;&lt;strong&gt;a arquitetura da plataforma.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -48,21 +48,21 @@
         &lt;hr&gt;
 &lt;h2&gt;Deploy em círculos x Deploy tradicional&lt;/h2&gt;
 &lt;p&gt;Nos deploys tradicionais, é comum que a aplicação precise passar por diversos ambientes até chegar à produção. Já com o Charles, o sistema de deploys em círculos funciona somente em um ambiente de produção. A validação por release é fragmentada de acordo com os círculos selecionados, ou seja, você pode ir ampliando gradativamente o acesso à release a mais e mais círculos.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//deploy-tradicional.png&#34; alt=&#34;Processo de deploy tradicional&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%285%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculos&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//deploy-tradicional.png&#34; alt=&#34;Processo de deploy tradicional&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//deploy_em_circulos%20%285%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculos&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Deploy em círculos x Blue-green deploys&lt;/h2&gt;
 &lt;p&gt;No blue-green deployment, ou implantação azul-verde, são criados dois ambientes idênticos na infraestrutura, porém com diferentes versões de uma aplicação implantados em cada um. Dessa forma, é possível testar suas hipóteses que, uma vez confirmadas, podem migrar de uma versão para outra.&lt;/p&gt;
 &lt;p&gt;O principal benefício desta técnica é que o downtime é zero, trazendo mais segurança para a transição. Apesar disso, o custo para o blue-green deployment é bastante elevado, já que demanda o dobro de infraestrutura para ser executado.&lt;/p&gt;
 &lt;p&gt;No caso do Charles, o deploy em círculos oferece ao time mais confiança e rapidez no lançamento de novas versões, com downtime zero e sem custos adicionais de infraestrutura. Além disso, é possível refinar através dos círculos quem serão os usuários que farão a validação da sua nova versão.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//blue_green.png&#34; alt=&#34;Processo de deploy blue-green&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%287%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculos&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//blue_green.png&#34; alt=&#34;Processo de deploy blue-green&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//deploy_em_circulos%20%287%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculos&#34;&gt;&lt;/p&gt;
 &lt;h2&gt;Deploy em círculos x Canary releases&lt;/h2&gt;
 &lt;p&gt;No canary release, ou implantação canário, é feita a publicação gradual da nova versão de um software a partir de um roteamento dentro da infraestrutura. À medida em que a versão é testada e se torna mais confiável, seu acesso é expandido a mais usuários da base.&lt;/p&gt;
 &lt;p&gt;Entretanto, essa técnica não propõe nenhuma estratégia de escolha de usuários para a expansão. Por esse motivo, torna-se mais difícil gerenciar as versões existentes do sistema, o que contribui para que você não opere com tanto versionamento e, assim, limite suas possibilidades de testar hipóteses.&lt;/p&gt;
 &lt;p&gt;No caso do Charles, a lógica de deploys em círculos segue um padrão parecido de mudança paralela. Isto significa que na plataforma você também começa liberando o acesso à release a um número reduzido de usuários e vai expandindo o acesso à medida que o sistema passa por testes.&lt;/p&gt;
 &lt;p&gt;O grande diferencial da plataforma é que, caso algum problema seja encontrado ou a hipótese já tenha sido validada, a reversão é realizada de forma simples: você pode retirar os usuários daquele círculo, realizar o deploy de outra versão para aquele grupo ou levar a versão da aplicação para mar aberto, isto é, para todos os clientes que não estão inseridos em um círculo dentro do Charles.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos_x_canary_releases%20%281%29.png&#34; alt=&#34;Processo de release can&amp;#xE1;rio&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//deploy_em_circulos%20%286%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//deploy_em_circulos_x_canary_releases%20%281%29.png&#34; alt=&#34;Processo de release can&amp;#xE1;rio&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.charlescd.io/shared//deploy_em_circulos%20%286%29.png&#34; alt=&#34;Processo de deploy em c&amp;#xED;rculo&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

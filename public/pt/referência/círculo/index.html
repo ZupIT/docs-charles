@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="pt" class="no-js">
   <head>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4DSKFN');</script>
+    
+
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -48,12 +56,23 @@
   integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
 
 
 
     <title>Círculo | Charles C.D.</title>
   </head>
+  
   <body class="td-page">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DSKFN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -70,6 +89,22 @@
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="http://forum.zup.com.br/" target="_blank" ><span>Comunidade</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/pt/c4model/pt-br/#/" target="_blank" ><span>C4Model</span></a>
+			</li>
 			
 			
 			<li class="nav-item dropdown d-none d-lg-block">
@@ -90,8 +125,11 @@
 
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
+	var charlescd_url = window.location.protocol + "//" + window.location.hostname + ((window.location.port == '80') ? '' : (window.location.port == '443') ? '' : ":" + window.location.port);
+
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.usebeagle.io/${version}/">${version}</a>`
+		const urlVersion = version.concat(".x")
+		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}\/pt">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
@@ -118,7 +156,19 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b8ff15df6e8ec263bcd18911d691c4a5c96ec153918a7ef08a7d97d3aada4be450740169b406a6c4a80443e77eb1ff29356a75ac3058b6ac8abeb8988f2b7957.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
 
 </div>
 </nav>
@@ -217,13 +267,37 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesvisc3a3o-geral" href="/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalando-via-helm" href="/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/">Instalando via Helm</a>
       
       
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalling-via-terraform" href="/pt/primeiros-passos/instalando-o-charles/installing-via-terraform/">Instalando via Terraform</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalling-via-kind" href="/pt/primeiros-passos/instalando-o-charles/installing-via-kind/">Instalando via Kind no seu ambiente local</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesseu-primeiro-acesso-ao-charles" href="/pt/primeiros-passos/instalando-o-charles/seu-primeiro-acesso-ao-charles/">Seu primeiro acesso ao Charles</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesrelease-assinadas" href="/pt/primeiros-passos/instalando-o-charles/release-assinadas/">Release assinadas</a>
       
       
     </li>
@@ -266,6 +340,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurac3a7c3b5es-opcionaisconfigurando-mtls" href="/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/configurando-mtls/">Configurando MTLS</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurac3a7c3b5es-opcionaisdefinindo-o-identity-manager" href="/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/definindo-o-identity-manager/">Definindo o Identity Manager</a>
       
       
@@ -297,6 +377,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspacevisao-geral" href="/pt/primeiros-passos/definindo-um-workspace/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspacedocker-registry" href="/pt/primeiros-passos/definindo-um-workspace/docker-registry/">Docker Registry</a>
       
       
@@ -321,7 +407,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspaceac3a7c3b5es" href="/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/">Ações</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspaceac3a7c3b5es" href="/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/">Ações de métricas</a>
       
       
       
@@ -358,6 +444,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3dulovisao-geral" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloconfigurando-o-chart-template" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-o-chart-template/">Configurando o chart template</a>
       
       
@@ -365,6 +457,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloconfigurando-seus-mc3b3dulos-para-propagar-o-id-do-cc3adrculo" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-seus-m%C3%B3dulos-para-propagar-o-id-do-c%C3%ADrculo/">Configurando seus módulos para propagar o id do círculo</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloinjecao-de-propriedade" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/injecao-de-propriedade/">Injeção de propriedade</a>
       
       
     </li>
@@ -389,6 +487,183 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurando-o-charles-no-seu-pipeline" href="/pt/primeiros-passos/configurando-o-charles-no-seu-pipeline/">Configurando o Charles no seu pipeline</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aancia" data-toggle="collapse" data-target="#ptreferc3aancia" aria-expanded="true" aria-controls="ptreferc3aancia" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Referência</a>
+    </li>
+  
+  <ul>
+    <li class="collapse show" id="ptreferc3aancia">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-ptreferc3aanciacc3adrculo" href="/pt/refer%C3%AAncia/c%C3%ADrculo/">Círculo</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacircle-matcher" href="/pt/refer%C3%AAncia/circle-matcher/">Circle Matcher</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciagrupo-de-usuc3a1rios" href="/pt/refer%C3%AAncia/grupo-de-usu%C3%A1rios/">Grupo de Usuários</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaidentity-manager" href="/pt/refer%C3%AAncia/identity-manager/">Identity Manager</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aanciaregistry" data-toggle="collapse" data-target="#ptreferc3aanciaregistry" aria-expanded="true" aria-controls="ptreferc3aanciaregistry" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
+    </li>
+  
+  <ul>
+    <li class="collapse " id="ptreferc3aanciaregistry">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryvisao-geral" href="/pt/refer%C3%AAncia/registry/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryazure-container-registry" href="/pt/refer%C3%AAncia/registry/azure-container-registry/">Azure Container Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrydocker-hub" href="/pt/refer%C3%AAncia/registry/docker-hub/">Docker Hub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryecr" href="/pt/refer%C3%AAncia/registry/ecr/">ECR</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrygcr" href="/pt/refer%C3%AAncia/registry/gcr/">GCR</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciarelease" href="/pt/refer%C3%AAncia/release/">Release</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciatoken-sistc3aamico" href="/pt/refer%C3%AAncia/token-sist%C3%AAmico/">Token Sistêmico</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aanciamc3a9tricas" data-toggle="collapse" data-target="#ptreferc3aanciamc3a9tricas" aria-expanded="true" aria-controls="ptreferc3aanciamc3a9tricas" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Métricas</a>
+    </li>
+  
+  <ul>
+    <li class="collapse " id="ptreferc3aanciamc3a9tricas">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasvisao-geral" href="/pt/refer%C3%AAncia/m%C3%A9tricas/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasconfigurando-as-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/">Configurando as métricas</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/">Grupo de métricas</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasac3a7c3b5es" href="/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/">Ações</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas-para-monitorar-a-sac3bade" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/">Grupo de métricas para monitorar a saúde</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasmc3a9tricas-do-charles" href="/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/">Métricas do Charles</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -480,184 +755,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptfc3b3rum" href="/pt/f%C3%B3rum/">Fórum</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptmigrac3a7c3a3o-da-versc3a3o-071-para-100" href="/pt/migra%C3%A7%C3%A3o-da-vers%C3%A3o-0.7.1-para-1.0.0/">Migração da versão 0.7.1 para 1.0.0</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aancia" data-toggle="collapse" data-target="#ptreferc3aancia" aria-expanded="true" aria-controls="ptreferc3aancia" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Referência</a>
-    </li>
-  
-  <ul>
-    <li class="collapse show" id="ptreferc3aancia">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-ptreferc3aanciacc3adrculo" href="/pt/refer%C3%AAncia/c%C3%ADrculo/">Círculo</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacircle-matcher" href="/pt/refer%C3%AAncia/circle-matcher/">Circle Matcher</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciapreparando-o-seu-deploy" href="/pt/refer%C3%AAncia/preparando-o-seu-deploy/">Preparando o seu Deploy</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciagrupo-de-usuc3a1rios" href="/pt/refer%C3%AAncia/grupo-de-usu%C3%A1rios/">Grupo de Usuários</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaidentity-manager" href="/pt/refer%C3%AAncia/identity-manager/">Identity Manager</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aanciaregistry" data-toggle="collapse" data-target="#ptreferc3aanciaregistry" aria-expanded="true" aria-controls="ptreferc3aanciaregistry" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
-    </li>
-  
-  <ul>
-    <li class="collapse " id="ptreferc3aanciaregistry">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryazure-container-registry" href="/pt/refer%C3%AAncia/registry/azure-container-registry/">Azure Container Registry</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrydocker-hub" href="/pt/refer%C3%AAncia/registry/docker-hub/">Docker Hub</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryecr" href="/pt/refer%C3%AAncia/registry/ecr/">ECR</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrygcr" href="/pt/refer%C3%AAncia/registry/gcr/">GCR</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciarelease" href="/pt/refer%C3%AAncia/release/">Release</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciatoken-sistc3aamico" href="/pt/refer%C3%AAncia/token-sist%C3%AAmico/">Token Sistêmico</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aanciamc3a9tricas" data-toggle="collapse" data-target="#ptreferc3aanciamc3a9tricas" aria-expanded="true" aria-controls="ptreferc3aanciamc3a9tricas" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Métricas</a>
-    </li>
-  
-  <ul>
-    <li class="collapse " id="ptreferc3aanciamc3a9tricas">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasconfigurando-as-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/">Configurando as métricas</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/">Grupo de métricas</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasac3a7c3b5es" href="/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/">Ações</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas-para-monitorar-a-sac3bade" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/">Grupo de métricas para monitorar a saúde</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasmc3a9tricas-do-charles" href="/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/">Métricas do Charles</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
       
       
     </li>
@@ -691,12 +789,12 @@
 
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/edit/master/content/pt/Refer%c3%aancia/C%c3%adrculo.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/new/master/content/pt/Refer%c3%aancia/C%c3%adrculo.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new?title=C%c3%adrculo" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/ZupIT/docs-charles/edit/main/content/pt/Refer%c3%aancia/C%c3%adrculo.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/ZupIT/docs-charles/new/main/content/pt/Refer%c3%aancia/C%c3%adrculo.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/ZupIT/docs-charles/issues/new?title=C%c3%adrculo" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<a href="https://github.com/ZupIT/charlescd/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 
 </div>
 
@@ -707,12 +805,12 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#">Como criar círculos?</a></li>
-    <li><a href="#">O que é uma segmentação?</a>
+    <li><a href="#"><strong>Como criar círculos?</strong></a></li>
+    <li><a href="#"><strong>O que é uma segmentação?</strong></a>
       <ul>
-        <li><a href="#">Campos de uma segmentação</a></li>
-        <li><a href="#">Porcentagem</a></li>
-        <li><a href="#">Exemplo de criação de círculo</a></li>
+        <li><a href="#"><strong>Campos de uma segmentação</strong></a></li>
+        <li><a href="#"><strong>Porcentagem</strong></a></li>
+        <li><a href="#"><strong>Exemplo de criação de círculo</strong></a></li>
         <li><a href="#"><strong>Segmentação manual</strong></a></li>
         <li><a href="#"><strong>Segmentação por importação de CSV</strong></a></li>
         <li><a href="#"><strong>Segmentação por porcentagem</strong></a></li>
@@ -762,33 +860,33 @@
 	<h1>Círculo</h1>
 	<div class="lead">Nesta seção, você encontra detalhes sobre como funcionam os círculos no Charles.</div>
 	<hr>
-<p>Os círculos são o principal diferencial do <a href="../../../faq/sobre-charles#o-que-e-deploy-em-circulos"><strong>novo conceito de deploy</strong> </a>trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.</p>
-<p><img src="//deploy_em_circulos%20%288%29%20%281%29.png" alt="Representa&#xE7;&#xE3;o dos c&#xED;rculos gerados no Charles"></p>
+<p>Os círculos são o principal diferencial do <a href="https://docs.charlescd.io/pt/faq/deploy-em-c%C3%ADrculos-x-outros-deploys/"><strong>novo conceito de deploy</strong></a> trazido pelo Charles. Ele possibilita a criação de grupos de usuários a partir de diversas características e, dessa forma, promove testes simultâneos de aplicações para o maior número possível de usuários.</p>
+<p><img src="/shared/deploy_em_circulos%20%288%29%20%281%29.png" alt=""></p>
 <p>Além de indicar as segmentações de clientes, os círculos também auxiliam na gestão de versões implantadas para este público.</p>
-<p>Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma <a href="metricas/"><strong>série de métricas</strong> </a>de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.</p>
-<h2>Como criar círculos?</h2>
+<p>Uma vez escolhidas as pessoas certas para terem acesso à sua release associada ao círculo, o Charles irá gerar uma <a href="https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/visao-geral/"><strong>série de métricas</strong></a> de negócio ou desempenho. Essas informações te darão maior visibilidade dos resultados de uma hipótese ou feature em análise, possibilitando testes mais assertivos.</p>
+<h2><strong>Como criar círculos?</strong></h2>
 <p>Para você criar um círculo, siga os seguintes passos:</p>
 <p><strong>1.</strong> Clique em <strong>Create Circle</strong>.<br>
 <strong>2.</strong> Dê um nome ao seu círculo.<br>
 <strong>3.</strong> Defina uma <strong>segmentação</strong>.<br>
 <strong>4.</strong> [Opcional] Implante uma release.</p>
-<h2>O que é uma segmentação?</h2>
+<h2><strong>O que é uma segmentação?</strong></h2>
 <p>As segmentações são um <strong>conjunto de características ou um valor percentual</strong>  que você define para agrupar seus usuários nos círculos. Existem três maneiras de segmentar seus usuários:</p>
 <ol>
 <li>Por meio do <strong>preenchimento de regras de forma manual.</strong></li>
 <li>Por meio da <strong>importação de um arquivo CSV</strong>.</li>
 <li>Por meio de um <strong>valor de porcentagem em relação ao total de acessos à aplicação</strong></li>
 </ol>
-<h3>Campos de uma segmentação</h3>
+<h3><strong>Campos de uma segmentação</strong></h3>
 <p>As segmentações manuais possuem os seguintes campos:</p>
 <ul>
 <li><strong>Chave</strong>: é o mesmo valor presente como chave <em>payload</em> da requisição de identificação do usuário.</li>
 <li><strong>Condição</strong>: é a implicação lógica que condicionará sua chave e seu valor.</li>
 <li><strong>Valor</strong>: são os valores existentes na sua base que poderão ser utilizados para compor a lógica de segmentação.</li>
 </ul>
-<h4>Chave e valor</h4>
-<p>Os campos <strong>chave</strong> e <strong>valor</strong> são estabelecidos com base nas informações que serão enviadas na requisição que <a href="circle-matcher#identificando-circulos-atraves-do-charlescd"><strong>identifica os círculos</strong></a> aos quais o seu usuário pertence. Por exemplo, considere que o seguinte payload representa as informações que você possui do seu cliente:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{
+<h4><strong>Chave e valor</strong></h4>
+<p>Os campos <strong>chave</strong> e <strong>valor</strong> são estabelecidos com base nas informações que serão enviadas na requisição que <a href="https://docs.charlescd.io/pt/refer%C3%AAncia/circle-matcher/"><strong>identifica os círculos</strong></a> aos quais o seu usuário pertence. Por exemplo, considere que o seguinte payload representa as informações que você possui do seu cliente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{
   &#34;id&#34;: &#34;7f2926d5-ff08-4d49-96df-d4ba0fc07b52&#34;,
   &#34;name&#34;: &#34;Alice&#34;,
   &#34;state&#34;: &#34;MG&#34;,
@@ -804,7 +902,7 @@
 <strong>O seu payload e as chaves devem ser iguais.</strong>
 </div>
 
-<h3>Porcentagem</h3>
+<h3><strong>Porcentagem</strong></h3>
 <p>A segmentação por porcentagem possui o seguinte campo:</p>
 <ul>
 <li><strong>Porcentagem</strong>: valor que indica o percentual (%) das requisições que serão direcionadas para um círculo. Por exemplo, em um cenário que exista um circulo com porcentagem de 10%,  a cada 100 requisições, aproximadamente 10 serão direcionadas para o círculo.</li>
@@ -825,9 +923,9 @@
 <li>Se não encontrar nenhum círculo compatível e existir círculos ativos com segmentação por porcentagem,  um número aleatório entre 1 e 100 é sorteado e se ele for menor ou igual ao fator do círculo, este é retornado.</li>
 <li>Caso nenhum dos passos anteriores encontre um círculo compatível, o id do círculo <strong>Default</strong> é retornado.</li>
 </ol>
-<h3>Exemplo de criação de círculo</h3>
+<h3><strong>Exemplo de criação de círculo</strong></h3>
 <p>Veja abaixo um exemplo de como criar um círculo:</p>
-<p><img src="//circle_create_segmentation.gif" alt="Como criar c&#xED;rculos"></p>
+<p><img src="/shared/circle_create_segmentation.gif" alt="Como criar c&#xED;rculos"></p>
 
 
 <div class="alert alert-info" role="alert">
@@ -850,12 +948,12 @@
 <li>Starts With</li>
 </ul>
 <p>Veja alguns exemplos:</p>
-<p><img src="//segmentacao-manual%20%281%29.png" alt=""></p>
+<p><img src="/shared/segmentacao-manual%20%281%29.png" alt=""></p>
 <h3><strong>Segmentação por importação de CSV</strong></h3>
 <p>Nessa modalidade, é utilizada apenas a primeira coluna do CSV para criar as regras. Sendo assim, a primeira linha da primeira coluna deve conter o nome da chave e a mesma deve ser informada no campo <strong>key</strong><em>:</em></p>
-<p><img src="//chrome-capture-5-.jpg" alt="Exemplo de importa&#xE7;&#xE3;o por CSV "></p>
+<p><img src="/shared/chrome-capture-5-.jpg" alt="Exemplo de importa&#xE7;&#xE3;o por CSV "></p>
 <p>Depois de ter feito o upload do arquivo e salvado as configurações, aparecerá um overview demonstrando como está sua segmentação:</p>
-<p><img src="//image%20%284%29.png" alt="Overview"></p>
+<p><img src="/shared/image%20%284%29.png" alt="Overview"></p>
 <p>Essa segmentação permite, por exemplo, extrair de uma base externa de IDs dos clientes um perfil específico e importá-los direto na plataforma do Charles. Quando um arquivo .csv é importado e se ele conter alguma linha em branco, ocorrerá um erro da importação, pois não é permitido a criação de segmentos dessa forma.</p>
 
 
@@ -867,7 +965,7 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
 <h3><strong>Segmentação por porcentagem</strong></h3>
 <p>É o tipo de segmento que distribui aos círculos a quantidade total de requisições que não foram filtradas em alguma segmentação manual. Essas requisições são entregues, de maneira proporcional, entre o círculos configurados para essa segmentação e o círculo default.</p>
 <p>O valor da porcentagem para cada círculo é definido entre 0 e 100, e a soma de todos os círculos ativos não pode ultrapassar 100%.</p>
-<h4>Exemplos de segmentação por porcentagem</h4>
+<h4><strong>Exemplos de segmentação por porcentagem</strong></h4>
 <p>Supondo que você criou dois círculos com porcentagem:</p>
 <ul>
 <li>O círculo <strong>A,</strong> com 15%</li>
@@ -880,13 +978,13 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
 <li>Se o número for maior que 41, é retornado o círculo <strong>Default</strong>.</li>
 </ol>
 <p>Se não houver nenhum círculo configurado ou ativo, a quantidade disponível será de 100%, como na imagem abaixo:</p>
-<p><img src="//perc1.png" alt=""></p>
+<p><img src="/shared/perc1.png" alt=""></p>
 <p>Se você, por exemplo, possui três círculos ativos por porcentagem e cada um tem o valor de 30% , a quantidade disponível para seu novo círculo será de 10%. Veja abaixo:</p>
-<p><img src="//perc2.png" alt=""></p>
+<p><img src="/shared/perc2.png" alt=""></p>
 <p>Depois que a segmentação é criada, o percentual disponível só será alterado caso uma release seja implantada para aquele círculo e ele se torne ativo.</p>
-<p><img src="//perc3.png" alt=""></p>
+<p><img src="/shared/perc3.png" alt=""></p>
 <p>Se, por exemplo, <strong>a porcentagem</strong> <strong>atingir os 100% disponíveis,</strong>  é necessário alterar ou remover os círculos ativos e configurados para que haja espaço para você criar um novo círculo.</p>
-<p><img src="//perc4.png" alt=""></p>
+<p><img src="/shared/perc4.png" alt=""></p>
 <h3>Como obter o identificador do meu círculo?</h3>
 <p>Assim que seu círculo é criado, mesmo sem a definição das configurações, ele já possui um identificador único.</p>
 <p>Para obter essa informação, siga estes passos:</p>
@@ -895,25 +993,25 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
 <li>Clique em &ldquo;default&rdquo;</li>
 <li>E, no menu à esquerda, clique em <strong>Copy ID</strong></li>
 </ol>
-<p><img src="//circle_copyid%20%281%29.gif" alt=""></p>
+<p><img src="/shared/circle_copyid%20%281%29.gif" alt=""></p>
 <h2>Círculos ativos e inativos</h2>
-<p>O que define se um círculo é ativo ou não, é a existência de <a href="release"><strong>releases</strong></a>, isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.</p>
-<p><img src="//circulo-ativo-e-inativo%20%281%29.gif" alt=""></p>
+<p>O que define se um círculo é ativo ou não, é a existência de <a href="https://docs.charlescd.io/pt/refer%C3%AAncia/release/"><strong>releases</strong></a>, isto é, de versões implantadas para aquela segmentação de usuários. Por isso, os círculos ativos são os que possuem releases implantadas, enquanto os círculos inativos ainda não possuem nenhuma.</p>
+<p><img src="/shared/circulo-ativo-e-inativo%20%281%29.gif" alt=""></p>
 <h2>Como integrar círculos com serviços?</h2>
-<p>Uma vez detectado o <a href="circle-matcher#identificacao-de-circulos-atraves-da-api"><strong>círculo ao qual o usuário pertence</strong>,</a> essa informação deve ser repassada para todas as próximas requisições através do parâmetro <strong><code>x-circle-id</code></strong> no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:</p>
-<p><img src="//como_integrar_circulos_com_servicos_copy%20%281%29.png" alt=""></p>
+<p>Uma vez detectado o <a href="https://docs.charlescd.io/pt/refer%C3%AAncia/circle-matcher/"><strong>círculo ao qual o usuário pertence</strong></a>, essa informação deve ser repassada para todas as próximas requisições através do parâmetro <strong><code>x-circle-id</code></strong> no header. Isso acontece porque o Charles detecta pelo ID do círculo para qual versão da aplicação uma determinada requisição deve ser encaminhada. Vejamos o exemplo abaixo:</p>
+<p><img src="/shared/como_integrar_circulos_com_servicos_copy%20%281%29.png" alt=""></p>
 <p>Na prática, em algum momento durante a interação do usuário com a sua aplicação (<strong><code>App1</code></strong>) - por exemplo, o login - o serviço <strong><code>Identify</code></strong> do <strong><code>circle-matcher</code></strong> deverá ser acionado para obter o círculo.</p>
 <p>Com isso, o ID deve ser repassado como valor no parâmetro <strong><code>x-circle-id</code></strong> localizado no header de todas as próximas chamadas dos seus serviços (<strong><code>App2</code></strong>). O Charles é responsável por propagar essa informação porque quando recebida no Kubernetes, será utilizada para redirecionar a requisição para a versão correspondente à release associada ao círculo.</p>
 <p>Caso o <strong><code>x-circle-id</code></strong> não seja repassado, todas as requisições serão redirecionadas para versões <strong>Default</strong>, ou seja, para releases padrões das suas aplicações sem uma segmentação específica.</p>
 <h3><strong>Mescla de serviços com versões diferentes na minha release</strong></h3>
 <p>Para facilitar o entendimento, vamos exemplificar com um cenário onde o seu ambiente possui dois serviços: <strong>Aplicação A</strong> e <strong>Aplicação B</strong> e os seus círculos devem fazer o uso das seguintes versões:</p>
-<p><img src="//versoes_diferentes_na_minha_release%20%281%29%20%281%29.png" alt=""></p>
+<p><img src="/shared/versoes_diferentes_na_minha_release%20%281%29%20%281%29.png" alt=""></p>
 <p>Sendo assim, a lógica de redirecionamento utilizando o **<code>x-circle-id</code>**será:</p>
 <ol>
 <li>O usuário envia no header: <code>x-circle-id=&quot;Círculo QA&quot;</code>. Nesse círculo, a chamada será redirecionada para a <strong>versão X</strong> do serviço <strong>Aplicação A</strong> e a <strong>versão Y</strong> do serviço <strong>Aplicação B</strong>.</li>
 <li>O usuário envia no header: <code>x-circle-id=”Circulo Dev”</code>. Nesse círculo, a chamada será redirecionada para a <strong>versão Z</strong> do serviço <strong>Aplicação A e a versão Z</strong> do serviço <strong>Aplicação B.</strong></li>
 </ol>
-<p><img src="//versoes_diferentes_na_minha_release_ii-1-%20%281%29.png" alt=""></p>
+<p><img src="/shared/versoes_diferentes_na_minha_release_ii-1-%20%281%29.png" alt=""></p>
 <h2>Como rotear círculos com cluster de Kubernetes?</h2>
 <p>O <strong>Charles</strong> envolve o <a href="https://kubernetes.io/docs/home/"><strong>Kubernetes</strong></a> e o <a href="https://istio.io/docs/"><strong>Istio</strong></a> no roteamento de tráfego, considere o seguinte cenário onde existe dois círculos:</p>
 <ul>
@@ -927,7 +1025,7 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
 </ul>
 <p>Além disso, existe uma versão default (v1) para usuários que não se encaixam em algum círculo específico.</p>
 <p>Suponha que, ao realizar a requisição para identificação do usuário, seja retornado o id 8756. Com isso, essa informação deverá ser repassada nas próximas interações com serviços através do header <code>x-circle-id</code>. A imagem abaixo retrata como o Charles utiliza internamente os recursos para rotear a release correta:</p>
-<p><img src="//cluster_de_kubernetes%20%281%29%20%281%29.png" alt=""></p>
+<p><img src="/shared/cluster_de_kubernetes%20%281%29%20%281%29.png" alt=""></p>
 <p>Ao realizar a implantação de uma versão em um círculo, o Charles realiza todas as configurações para que o roteamento seja feito da maneira correta. Para entender melhor como ele acontece, vamos utilizar um cenário onde uma requisição vem de um serviço fora da stack, como mostra na figura acima.</p>
 <p>A requisição será recebida pela Ingress, que realiza o controle do tráfego para a malha de serviços.</p>
 <ol>
@@ -1077,7 +1175,7 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 Zup IT All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 Zup IT <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="privacy-link">Creative Commons</a></small>
         <small class="ml-1"><a href="https://insights.zup.com.br/politica-privacidade" target="_blank" class="privacy-link">Privacy Policy</a></small>
 	
 		
@@ -1103,7 +1201,9 @@ O único operador lógico suportado nesta segmentação é o OR (Ou).
 
 
 
-<script src="/js/main.min.057190eed2389d3933deb5786cc889f2751d6043b1fdf0752ee4fbe80977282b.js" integrity="sha256-BXGQ7tI4nTkz3rV4bMiJ8nUdYEOx/fB1LuT76Al3KCs=" crossorigin="anonymous"></script>
+
+
+<script src="/js/main.min.844601e17077974a1f4ec2657087c4a34c3f5b1125b89596e5dd2511142d1821.js" integrity="sha256-hEYB4XB3l0ofTsJlcIfEo0w/WxEluJWW5d0lERQtGCE=" crossorigin="anonymous"></script>
 
 
 

@@ -14,6 +14,28 @@
     
     
     <item>
+      <title>Referência: Visão Geral</title>
+      <link>https://docs.charlescd.io/pt/refer%C3%AAncia/registry/visao-geral/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/refer%C3%AAncia/registry/visao-geral/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;Por que configurar o Registry?  &lt;a id=&#34;why-do-you-have-to-configure-a-registry&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;‌Um dos pontos para o Charles trabalhar é saber onde estão as imagens da sua aplicação. Para fazer isso, é esperado que você armazene-as em um docker registry e garanta o acesso a elas.&lt;/p&gt;
+&lt;p&gt;Uma vez que essa configuração foi feita, Charles está preparado para ler seu registro e fazer algumas ações, como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirmar se a tag informada quando um estiver fazendo um deploy em um círculo é válida.&lt;/li&gt;
+&lt;li&gt;Usar essa permissão durante a geração de uma release por meio do quadro &lt;code&gt;villager&lt;/code&gt; para procurar pela tag no registry e garantir que ela seja enviada e usada.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;‌Charles já está integrado com alguns docker registries, escolha um e adicione as informações necessárias:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Referência: Azure Container Registry</title>
       <link>https://docs.charlescd.io/pt/refer%C3%AAncia/registry/azure-container-registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -55,7 +77,7 @@ A funcionalidade de Connection Test garante que as credenciais informadas são v
 &lt;p&gt;Informe os dados abaixo para conceder acesso a Charles ao seu Docker Hub:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Nome&lt;/strong&gt;: esse nome representará sua configuração no Charles;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: a URL do seu Docker Hub &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;&lt;strong&gt;https://registry.hub.docker.com&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: a URL do seu Docker Hub &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;&lt;strong&gt;https://registry.hub.docker.com&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt;  adicione o seu &lt;strong&gt;dockerid&lt;/strong&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; a senha do seu Docker Hub ou o &lt;strong&gt;token de acesso&lt;/strong&gt;. Veja a baixo como gerar:&lt;/li&gt;
 &lt;/ul&gt;
@@ -89,12 +111,12 @@ A funcionalidade de Connection Test garante que as credenciais informadas são v
 &lt;p&gt;Informe os dados abaixo para conceder acesso a Charles ao seu Amazon ECR:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Nome&lt;/strong&gt;: esse nome representará sua configuração no Charles;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: segundo a convenção, a URL para o seu registry padrão é  &lt;a href=&#34;https://aws_account_id.dkr.ecr.region.amazonaws.com&#34;&gt;https://&lt;strong&gt;aws_account_id&lt;/strong&gt;.dkr.ecr.region.amazonaws.com&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: segundo a convenção, a URL para o seu registry padrão é &lt;a href=&#34;https://aws_account_id.dkr.ecr.region.amazonaws.com&#34;&gt;https://&lt;strong&gt;aws_account_id&lt;/strong&gt;.dkr.ecr.region.amazonaws.com&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Access Key&lt;/strong&gt;: informação de segurança gerada pela AWS ECR;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Secret Key&lt;/strong&gt;: informação de segurança gerada pela AWS ECR;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Region&lt;/strong&gt;: a região de onde você está operando.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da &lt;a href=&#34;https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html&#34;&gt;&lt;strong&gt;Amazon ECR&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Em caso de dúvidas para encontrar essas informações, acesse a documentação da &lt;a href=&#34;https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html&#34;&gt;&lt;strong&gt;Amazon ECR&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -119,11 +141,11 @@ A funcionalidade de Connection Test garante que as credenciais informadas são v
 &lt;p&gt;Informe os dados abaixo para conceder acesso a Charles ao seu Google Cloud Registry:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Nome&lt;/strong&gt;: esse nome representará sua configuração no Charles;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: a URL do seu GCR, como&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; (%20https://gcr.io)&lt;a href=&#34;%20https://gcr.io&#34;&gt;&lt;strong&gt;https://gcr.io&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Project ID:&lt;/strong&gt; acesse o &lt;em&gt;Google Cloud Platform&lt;/em&gt;, selecione seu projeto e &lt;a href=&#34;https://support.google.com/googleapi/answer/7014113?hl=en&#34;&gt;&lt;strong&gt;copie o id&lt;/strong&gt;;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;JSON key:&lt;/strong&gt; adicione o JSON key gerado. Para mais informações de &lt;a href=&#34;https://cloud.google.com/container-registry/docs/advanced-authentication#json-key&#34;&gt;&lt;strong&gt;como gerar seu json key, veja aqui&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL do seu registry&lt;/strong&gt;: a URL do seu GCR, como &lt;a href=&#34;https://gcr.io&#34;&gt;&lt;strong&gt;https://gcr.io&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Project ID:&lt;/strong&gt; acesse o &lt;em&gt;Google Cloud Platform&lt;/em&gt;, selecione seu projeto e &lt;a href=&#34;https://support.google.com/googleapi/answer/7014113?hl=en&#34;&gt;&lt;strong&gt;copie o id&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JSON key:&lt;/strong&gt; adicione o JSON key gerado. Para mais informações de &lt;a href=&#34;https://cloud.google.com/container-registry/docs/advanced-authentication#json-key&#34;&gt;&lt;strong&gt;como gerar seu json key, acesse o tutorial&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Em caso de dúvidas para encontrar essas informações, sugerimos a documentação da &lt;a href=&#34;https://cloud.google.com/container-registry&#34;&gt;&lt;strong&gt;Google Container Registry&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Em caso de dúvidas para encontrar essas informações, acesse a documentação da &lt;a href=&#34;https://cloud.google.com/container-registry&#34;&gt;&lt;strong&gt;Google Container Registry&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

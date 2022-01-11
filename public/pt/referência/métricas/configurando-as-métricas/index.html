@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="pt" class="no-js">
   <head>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4DSKFN');</script>
+    
+
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -30,7 +38,7 @@
 <meta itemprop="name" content="Configurando as métricas">
 <meta itemprop="description" content="Nesta seção, você encontra detalhe de como configurar suas métricas no Charles.">
 
-<meta itemprop="wordCount" content="506">
+<meta itemprop="wordCount" content="464">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Configurando as métricas"/>
 <meta name="twitter:description" content="Nesta seção, você encontra detalhe de como configurar suas métricas no Charles."/>
@@ -48,12 +56,23 @@
   integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
 
 
 
     <title>Configurando as métricas | Charles C.D.</title>
   </head>
+  
   <body class="td-page">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DSKFN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -70,6 +89,22 @@
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="http://forum.zup.com.br/" target="_blank" ><span>Comunidade</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/pt/c4model/pt-br/#/" target="_blank" ><span>C4Model</span></a>
+			</li>
 			
 			
 			<li class="nav-item dropdown d-none d-lg-block">
@@ -90,8 +125,11 @@
 
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
+	var charlescd_url = window.location.protocol + "//" + window.location.hostname + ((window.location.port == '80') ? '' : (window.location.port == '443') ? '' : ":" + window.location.port);
+
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.usebeagle.io/${version}/">${version}</a>`
+		const urlVersion = version.concat(".x")
+		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}\/pt">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
@@ -118,7 +156,19 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b8ff15df6e8ec263bcd18911d691c4a5c96ec153918a7ef08a7d97d3aada4be450740169b406a6c4a80443e77eb1ff29356a75ac3058b6ac8abeb8988f2b7957.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
 
 </div>
 </nav>
@@ -217,13 +267,37 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesvisc3a3o-geral" href="/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalando-via-helm" href="/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/">Instalando via Helm</a>
       
       
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalling-via-terraform" href="/pt/primeiros-passos/instalando-o-charles/installing-via-terraform/">Instalando via Terraform</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesinstalling-via-kind" href="/pt/primeiros-passos/instalando-o-charles/installing-via-kind/">Instalando via Kind no seu ambiente local</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesseu-primeiro-acesso-ao-charles" href="/pt/primeiros-passos/instalando-o-charles/seu-primeiro-acesso-ao-charles/">Seu primeiro acesso ao Charles</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosinstalando-o-charlesrelease-assinadas" href="/pt/primeiros-passos/instalando-o-charles/release-assinadas/">Release assinadas</a>
       
       
     </li>
@@ -266,6 +340,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurac3a7c3b5es-opcionaisconfigurando-mtls" href="/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/configurando-mtls/">Configurando MTLS</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurac3a7c3b5es-opcionaisdefinindo-o-identity-manager" href="/pt/primeiros-passos/configura%C3%A7%C3%B5es-opcionais/definindo-o-identity-manager/">Definindo o Identity Manager</a>
       
       
@@ -297,6 +377,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspacevisao-geral" href="/pt/primeiros-passos/definindo-um-workspace/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspacedocker-registry" href="/pt/primeiros-passos/definindo-um-workspace/docker-registry/">Docker Registry</a>
       
       
@@ -321,7 +407,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspaceac3a7c3b5es" href="/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/">Ações</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosdefinindo-um-workspaceac3a7c3b5es" href="/pt/primeiros-passos/definindo-um-workspace/a%C3%A7%C3%B5es/">Ações de métricas</a>
       
       
       
@@ -358,6 +444,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3dulovisao-geral" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloconfigurando-o-chart-template" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-o-chart-template/">Configurando o chart template</a>
       
       
@@ -365,6 +457,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloconfigurando-seus-mc3b3dulos-para-propagar-o-id-do-cc3adrculo" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/configurando-seus-m%C3%B3dulos-para-propagar-o-id-do-c%C3%ADrculo/">Configurando seus módulos para propagar o id do círculo</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passoscriando-seu-primeiro-mc3b3duloinjecao-de-propriedade" href="/pt/primeiros-passos/criando-seu-primeiro-m%C3%B3dulo/injecao-de-propriedade/">Injeção de propriedade</a>
       
       
     </li>
@@ -389,6 +487,183 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptprimeiros-passosconfigurando-o-charles-no-seu-pipeline" href="/pt/primeiros-passos/configurando-o-charles-no-seu-pipeline/">Configurando o Charles no seu pipeline</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aancia" data-toggle="collapse" data-target="#ptreferc3aancia" aria-expanded="true" aria-controls="ptreferc3aancia" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Referência</a>
+    </li>
+  
+  <ul>
+    <li class="collapse show" id="ptreferc3aancia">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacc3adrculo" href="/pt/refer%C3%AAncia/c%C3%ADrculo/">Círculo</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacircle-matcher" href="/pt/refer%C3%AAncia/circle-matcher/">Circle Matcher</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciagrupo-de-usuc3a1rios" href="/pt/refer%C3%AAncia/grupo-de-usu%C3%A1rios/">Grupo de Usuários</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaidentity-manager" href="/pt/refer%C3%AAncia/identity-manager/">Identity Manager</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aanciaregistry" data-toggle="collapse" data-target="#ptreferc3aanciaregistry" aria-expanded="true" aria-controls="ptreferc3aanciaregistry" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
+    </li>
+  
+  <ul>
+    <li class="collapse " id="ptreferc3aanciaregistry">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryvisao-geral" href="/pt/refer%C3%AAncia/registry/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryazure-container-registry" href="/pt/refer%C3%AAncia/registry/azure-container-registry/">Azure Container Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrydocker-hub" href="/pt/refer%C3%AAncia/registry/docker-hub/">Docker Hub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryecr" href="/pt/refer%C3%AAncia/registry/ecr/">ECR</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrygcr" href="/pt/refer%C3%AAncia/registry/gcr/">GCR</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciarelease" href="/pt/refer%C3%AAncia/release/">Release</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciatoken-sistc3aamico" href="/pt/refer%C3%AAncia/token-sist%C3%AAmico/">Token Sistêmico</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  
+    <li class="td-sidebar-nav__section-title">
+      <a href="#ptreferc3aanciamc3a9tricas" data-toggle="collapse" data-target="#ptreferc3aanciamc3a9tricas" aria-expanded="true" aria-controls="ptreferc3aanciamc3a9tricas" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Métricas</a>
+    </li>
+  
+  <ul>
+    <li class="collapse show" id="ptreferc3aanciamc3a9tricas">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasvisao-geral" href="/pt/refer%C3%AAncia/m%C3%A9tricas/visao-geral/">Visão Geral</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-ptreferc3aanciamc3a9tricasconfigurando-as-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/">Configurando as métricas</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/">Grupo de métricas</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasac3a7c3b5es" href="/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/">Ações</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas-para-monitorar-a-sac3bade" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/">Grupo de métricas para monitorar a saúde</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasmc3a9tricas-do-charles" href="/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/">Métricas do Charles</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -480,184 +755,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptfc3b3rum" href="/pt/f%C3%B3rum/">Fórum</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-ptmigrac3a7c3a3o-da-versc3a3o-071-para-100" href="/pt/migra%C3%A7%C3%A3o-da-vers%C3%A3o-0.7.1-para-1.0.0/">Migração da versão 0.7.1 para 1.0.0</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aancia" data-toggle="collapse" data-target="#ptreferc3aancia" aria-expanded="true" aria-controls="ptreferc3aancia" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Referência</a>
-    </li>
-  
-  <ul>
-    <li class="collapse show" id="ptreferc3aancia">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacc3adrculo" href="/pt/refer%C3%AAncia/c%C3%ADrculo/">Círculo</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciacircle-matcher" href="/pt/refer%C3%AAncia/circle-matcher/">Circle Matcher</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciapreparando-o-seu-deploy" href="/pt/refer%C3%AAncia/preparando-o-seu-deploy/">Preparando o seu Deploy</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciagrupo-de-usuc3a1rios" href="/pt/refer%C3%AAncia/grupo-de-usu%C3%A1rios/">Grupo de Usuários</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaidentity-manager" href="/pt/refer%C3%AAncia/identity-manager/">Identity Manager</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aanciaregistry" data-toggle="collapse" data-target="#ptreferc3aanciaregistry" aria-expanded="true" aria-controls="ptreferc3aanciaregistry" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Registry</a>
-    </li>
-  
-  <ul>
-    <li class="collapse " id="ptreferc3aanciaregistry">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryazure-container-registry" href="/pt/refer%C3%AAncia/registry/azure-container-registry/">Azure Container Registry</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrydocker-hub" href="/pt/refer%C3%AAncia/registry/docker-hub/">Docker Hub</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistryecr" href="/pt/refer%C3%AAncia/registry/ecr/">ECR</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciaregistrygcr" href="/pt/refer%C3%AAncia/registry/gcr/">GCR</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciarelease" href="/pt/refer%C3%AAncia/release/">Release</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciatoken-sistc3aamico" href="/pt/refer%C3%AAncia/token-sist%C3%AAmico/">Token Sistêmico</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-    <li class="td-sidebar-nav__section-title">
-      <a href="#ptreferc3aanciamc3a9tricas" data-toggle="collapse" data-target="#ptreferc3aanciamc3a9tricas" aria-expanded="true" aria-controls="ptreferc3aanciamc3a9tricas" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Métricas</a>
-    </li>
-  
-  <ul>
-    <li class="collapse show" id="ptreferc3aanciamc3a9tricas">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-ptreferc3aanciamc3a9tricasconfigurando-as-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/configurando-as-m%C3%A9tricas/">Configurando as métricas</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas/">Grupo de métricas</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasac3a7c3b5es" href="/pt/refer%C3%AAncia/m%C3%A9tricas/a%C3%A7%C3%B5es/">Ações</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasgrupo-de-mc3a9tricas-para-monitorar-a-sac3bade" href="/pt/refer%C3%AAncia/m%C3%A9tricas/grupo-de-m%C3%A9tricas-para-monitorar-a-sa%C3%BAde/">Grupo de métricas para monitorar a saúde</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-ptreferc3aanciamc3a9tricasmc3a9tricas-do-charles" href="/pt/refer%C3%AAncia/m%C3%A9tricas/m%C3%A9tricas-do-charles/">Métricas do Charles</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
       
       
     </li>
@@ -691,12 +789,12 @@
 
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/edit/master/content/pt/Refer%c3%aancia/M%c3%a9tricas/Configurando%20as%20m%c3%a9tricas.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/new/master/content/pt/Refer%c3%aancia/M%c3%a9tricas/Configurando%20as%20m%c3%a9tricas.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new?title=Configurando%20as%20m%c3%a9tricas" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/ZupIT/docs-charles/edit/main/content/pt/Refer%c3%aancia/M%c3%a9tricas/Configurando%20as%20m%c3%a9tricas.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/ZupIT/docs-charles/new/main/content/pt/Refer%c3%aancia/M%c3%a9tricas/Configurando%20as%20m%c3%a9tricas.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/ZupIT/docs-charles/issues/new?title=Configurando%20as%20m%c3%a9tricas" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
-<a href="https://github.com/ZupIT/docs-charles/tree/master/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<a href="https://github.com/ZupIT/charlescd/issues/new/choose" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 
 </div>
 
@@ -704,6 +802,19 @@
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#"><strong>Configurando Istio</strong></a></li>
+    <li><a href="#"><strong>Configurando sua própria ferramenta de métricas</strong></a></li>
+    <li><a href="#"><strong>Prometheus</strong></a>
+      <ul>
+        <li><a href="#"><strong>Metadados</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#"><strong>Google Analytics</strong></a></li>
+  </ul>
+</nav>
 
 
 
@@ -749,7 +860,7 @@
 	<div class="lead">Nesta seção, você encontra detalhe de como configurar suas métricas no Charles.</div>
 	<hr>
 <p>A configuração de métricas no Charles é realizada no <strong>Istio</strong> e no seu <strong>próprio provedor</strong>. Veja os detalhes abaixo.</p>
-<h2>Configurando Istio</h2>
+<h2><strong>Configurando Istio</strong></h2>
 <p>As métricas relacionadas às requisições de cada círculo podem ser quantificadas e expostas pelo Istio.</p>
 
 
@@ -758,24 +869,29 @@
 A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 </div>
 
-<h2>Configurando sua própria ferramenta de métricas</h2>
+<h2><strong>Configurando sua própria ferramenta de métricas</strong></h2>
 <p>Depois de habilitar o Istio, você precisa configurar sua ferramenta para que ela possa ler as métricas expostas.</p>
 <p>Veja abaixo os detalhes das <strong>ferramentas compatíveis com o Charles</strong>.</p>
-<div class='code-tabs'>
-  <ul class="nav nav-tabs"></ul>
-  <div class="tab-content">
-<div class="tab-pane" title="">
-  <p>O Prometheus é uma ferramenta de código aberto focada em monitoramento e alertas. É considerada a principal recomendação para monitoramento do <a href="https://cncf.io/"><strong>Cloud Native Computing Foundation</strong></a>, além de uma das principais ferramentas do mercado.</p>
+<h2><strong>Prometheus</strong></h2>
+<p>O Prometheus é uma ferramenta de código aberto focada em monitoramento e alertas. É considerada a principal recomendação para monitoramento do <a href="https://cncf.io/"><strong>Cloud Native Computing Foundation</strong></a>, além de uma das principais ferramentas do mercado.</p>
+
+
 <div class="alert alert-info" role="alert">
-<p>Se quiser saber mais, sugerimos a <a href="https://prometheus.io/"><strong>doc oficial</strong></a>.</p>
+
+Se quiser saber mais, veja a <a href="https://prometheus.io/"><strong>documentação do Prometheus</strong></a>.
 </div>
+
 <p>É preciso configurar o Prometheus para que ele consiga ler e armazenar os dados das métricas habilitadas, conforme o tutorial que explicamos no início.</p>
 <p>Para fazer isso, é necessário adicionar o job abaixo para que leia a métrica gerada pelo Istio. Para configurar, edite o arquivo <strong>prometheus.yml</strong> no seu <strong>Prometheus configMap</strong>.</p>
+
+
 <div class="alert alert-warning" role="alert">
-<p>É importante lembrar que, para que essas configurações funcionem, é necessário que seu Prometheus esteja no mesmo cluster de Kubernetes que o Istio e o restante das suas aplicações.</p>
+
+É importante lembrar que, para que essas configurações funcionem, é necessário que seu Prometheus esteja no mesmo cluster de Kubernetes que o Istio e o restante das suas aplicações.
 </div>
+
 <p>Basta adicionar o job abaixo para realizar a configuração.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">global</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">global</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">scrape_interval</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">     </span><span style="color:#000">15s</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">scrape_timeout</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#000">10s</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">evaluation_interval</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">15s</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -855,13 +971,21 @@ A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">regex</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Pending|Succeeded|Failed</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">source_labels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span>- <span style="color:#000">__meta_kubernetes_pod_phase</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><div class="alert alert-info" role="alert">
-<p>Mude o nome do <strong>namespace</strong> para um onde sua aplicação está deployada.</p>
+</span></code></pre></div>
+
+<div class="alert alert-info" role="alert">
+
+Mude o nome do <strong>namespace</strong> para um onde sua aplicação está deployada.
 </div>
+
+
+
 <div class="alert alert-warning" role="alert">
-<p>Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config"><strong>veja a documentação</strong></a>.</p>
+
+Para saber mais sobre o serviço de discovery do Prometheus e Kubernetes, <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config"><strong>acesse a documentação</strong></a>.
 </div>
-<h3>Metadados</h3>
+
+<h3><strong>Metadados</strong></h3>
 <p>A partir de cada métrica, é possível extrair uma série de metainformações, ou seja, de atributos ou informações complementares a essas métricas e que podem ser obtidas com diversos tipos de filtros e análises.</p>
 <p>‌Cada métrica possui uma faixa de metadado que permite uma variedade de filtros e tipos de análises a serem criadas. Foram adicionados mais metadados ao Istio e ele são descritos na tabela abaixo:</p>
 <table>
@@ -890,49 +1014,20 @@ A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 </tr>
 </tbody>
 </table>
-
- </div>
-
-<div class="tab-pane" title="">
-  <p>O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.</p>
+<h2><strong>Google Analytics</strong></h2>
+<p>O Google Analytics é um dos data sources que o Charles pode conectar para ler suas métricas.</p>
 <p>Para usá-lo no seu grupo de métricas, você precisa de:</p>
 <ul>
 <li>Uma conta Google e o Analytics configurado.</li>
 </ul>
 <p>Se você quiser usar o Charles para analizar os dados do seu Google Analytics, você precisa adicionar uma nova métrica com a ID do circulo (<strong>renomeando como circle_source</strong>) na label da sua métrica.</p>
+
+
 <div class="alert alert-info" role="alert">
-<p>Para mais informações sobre o Google Analytics, <a href="https://developers.google.com/analytics/devguides/reporting/core/v4"><strong>veja a documentação</strong></a>.</p>
+
+Para mais informações sobre o Google Analytics, <a href="https://developers.google.com/analytics/devguides/reporting/core/v4"><strong>acesse a documentação do Analytics</strong></a>.
 </div>
 
- </div>
-</div>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Metadado</th>
-<th style="text-align:left">Descrição</th>
-<th style="text-align:left">Tipo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">destination_component</td>
-<td style="text-align:left">Valor presente na label &ldquo;app&rdquo; da POD que recebeu a requisição ou &ldquo;unknown&rdquo; se a informação não estiver presente</td>
-<td style="text-align:left">Texto</td>
-</tr>
-<tr>
-<td style="text-align:left">circle_source</td>
-<td style="text-align:left">Header &ldquo;x-circle-source&rdquo; que é colocado pelo filtro do Envoy na interceptação de cada requisição</td>
-<td style="text-align:left">Texto</td>
-</tr>
-<tr>
-<td style="text-align:left">response_code</td>
-<td style="text-align:left">O status HTTP da resposta daquela requisição</td>
-<td style="text-align:left">Númer</td>
-</tr>
-</tbody>
-</table>
 
 	
 		<style>
@@ -1074,7 +1169,7 @@ A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 Zup IT All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 Zup IT <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="privacy-link">Creative Commons</a></small>
         <small class="ml-1"><a href="https://insights.zup.com.br/politica-privacidade" target="_blank" class="privacy-link">Privacy Policy</a></small>
 	
 		
@@ -1100,7 +1195,9 @@ A configuração pode ser feita a partir da versão =&gt;1.7 do Istio.
 
 
 
-<script src="/js/main.min.057190eed2389d3933deb5786cc889f2751d6043b1fdf0752ee4fbe80977282b.js" integrity="sha256-BXGQ7tI4nTkz3rV4bMiJ8nUdYEOx/fB1LuT76Al3KCs=" crossorigin="anonymous"></script>
+
+
+<script src="/js/main.min.844601e17077974a1f4ec2657087c4a34c3f5b1125b89596e5dd2511142d1821.js" integrity="sha256-hEYB4XB3l0ofTsJlcIfEo0w/WxEluJWW5d0lERQtGCE=" crossorigin="anonymous"></script>
 
 
 

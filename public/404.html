@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4DSKFN');</script>
+    
+
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -43,12 +51,23 @@
   integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
 
 
 
     <title>404 Page not found | Charles C.D.</title>
   </head>
+  
   <body class="td-404">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DSKFN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -65,6 +84,22 @@
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="http://forum.zup.com.br/" target="_blank" ><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/c4model/en/#/" target="_blank" ><span>C4Model</span></a>
+			</li>
 			
 			
 			<li class="nav-item dropdown d-none d-lg-block">
@@ -85,8 +120,11 @@
 
 	const div = `<div class="dropdown-menu" aria-labelledby="navbarDropdown">`
 
+	var charlescd_url = window.location.protocol + "//" + window.location.hostname + ((window.location.port == '80') ? '' : (window.location.port == '443') ? '' : ":" + window.location.port);
+
 	const versionsList = removeDuplicatedVersions.map((version) => {
-		return `<a class="dropdown-item" href="https://docs.usebeagle.io/${version}/">${version}</a>`
+		const urlVersion = version.concat(".x")
+		return `<a class="dropdown-item" href="${charlescd_url}/${urlVersion}">${version}</a>`
 	})
 
 	const dropdownMenu = div + versionsList.join("") + "</div>"
@@ -113,7 +151,19 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b8ff15df6e8ec263bcd18911d691c4a5c96ec153918a7ef08a7d97d3aada4be450740169b406a6c4a80443e77eb1ff29356a75ac3058b6ac8abeb8988f2b7957.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
 
 </div>
 </nav>
@@ -212,7 +262,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-single-file" href="/get-started/installing-charles/installing-via-single-file/">Installing via Single File</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesoverview" href="/get-started/installing-charles/overview/">Overview</a>
       
       
       
@@ -224,7 +274,25 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-terraform" href="/get-started/installing-charles/installing-via-terraform/">Installing via Terraform</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesinstalling-via-kind" href="/get-started/installing-charles/installing-via-kind/">Installing via Terraform local environment</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlesyour-first-charles-access" href="/get-started/installing-charles/your-first-charles-access/">Your first Charles&#39; access</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedinstalling-charlessigned-releases" href="/get-started/installing-charles/signed-releases/">Signed Releases</a>
       
       
     </li>
@@ -267,6 +335,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedoptional-configurationconfiguring-mtls" href="/get-started/optional-configuration/configuring-mtls/">Configuring MTLS</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedoptional-configurationdefining-the-identity-manager" href="/get-started/optional-configuration/defining-the-identity-manager/">Defining the Identity Manager</a>
       
       
@@ -298,6 +372,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspaceoverview" href="/get-started/defining-a-workspace/overview/">Overview</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacedocker-registry" href="/get-started/defining-a-workspace/docker-registry/">Docker registry</a>
       
       
@@ -316,12 +396,6 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacegit-credentials" href="/get-started/defining-a-workspace/git-credentials/">Git credentials</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacedatasource" href="/get-started/defining-a-workspace/datasource/">Datasource</a>
       
       
@@ -329,6 +403,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacemetrics-actions" href="/get-started/defining-a-workspace/metrics-actions/">Metrics actions</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-starteddefining-a-workspacewebhooks" href="/get-started/defining-a-workspace/webhooks/">Webhooks</a>
       
       
     </li>
@@ -359,13 +439,25 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleoverview" href="/get-started/creating-your-first-module/overview/">Overview</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-modulehow-to-configure-chart-template" href="/get-started/creating-your-first-module/how-to-configure-chart-template/">How to configure Chart template</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleconfiguring-your-module" href="/get-started/creating-your-first-module/configuring-your-module/">Configuring your module</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleconfiguring-your-module-to-propagate-the-circles-id" href="/get-started/creating-your-first-module/configuring-your-module-to-propagate-the-circles-id/">Configuring your module to propagate the circle&#39;s Id</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedcreating-your-first-moduleproperties-injections" href="/get-started/creating-your-first-module/properties-injections/">Properties injections</a>
       
       
     </li>
@@ -384,6 +476,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedusing-circles" href="/get-started/using-circles/">Using Circles</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-get-startedintegrating-charles-to-your-ci" href="/get-started/integrating-charles-to-your-ci/">Integrating Charles to your CI</a>
       
       
     </li>
@@ -426,19 +524,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencecd-configuration" href="/reference/cd-configuration/">Cd Configuration</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceusers-groups" href="/reference/users-groups/">Users Groups</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencehypothesis" href="/reference/hypothesis/">Hypothesis</a>
       
       
       
@@ -466,6 +552,36 @@
       
       
       
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryoverview" href="/reference/registry/overview/">Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryazure-container-registry" href="/reference/registry/azure-container-registry/">Azure Container Registry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistrydocker-hub" href="/reference/registry/docker-hub/">Docker Hub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistryecr" href="/reference/registry/ecr/">ECR</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referenceregistrygcr" href="/reference/registry/gcr/">GCR</a>
+      
+      
     </li>
   </ul>
 </ul>
@@ -476,6 +592,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencereleases" href="/reference/releases/">Releases</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencesystem-token" href="/reference/system-token/">System Token</a>
       
       
       
@@ -500,6 +622,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsoverview" href="/reference/metrics/overview/">Metrics</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricssetting-up-your-metrics" href="/reference/metrics/setting-up-your-metrics/">Setting up your metrics</a>
       
       
@@ -507,6 +635,18 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsmetrics-group" href="/reference/metrics/metrics-group/">Metrics group</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsaction" href="/reference/metrics/action/">Action</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-referencemetricsmetric-groups-to-health-monitoring" href="/reference/metrics/metric-groups-to-health-monitoring/">Metric groups to health monitoring</a>
       
       
       
@@ -592,7 +732,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-faqzupitcharlescd" href="/faq/zupitcharlescd/">Zupitcharlescd</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-faqcommunity" href="/faq/community/">Community</a>
       
       
     </li>
@@ -605,6 +745,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-release-notes" href="/release-notes/">Release Notes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-migration-from-071-version-to-100" href="/migration-from-0.7.1-version-to-1.0.0/">Migration from 0.7.1 version to 1.0.0</a>
       
       
     </li>
@@ -722,7 +868,7 @@
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 Zup IT All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 Zup IT <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="privacy-link">Creative Commons</a></small>
         <small class="ml-1"><a href="https://insights.zup.com.br/politica-privacidade" target="_blank" class="privacy-link">Privacy Policy</a></small>
 	
 		
@@ -748,7 +894,9 @@
 
 
 
-<script src="/js/main.min.057190eed2389d3933deb5786cc889f2751d6043b1fdf0752ee4fbe80977282b.js" integrity="sha256-BXGQ7tI4nTkz3rV4bMiJ8nUdYEOx/fB1LuT76Al3KCs=" crossorigin="anonymous"></script>
+
+
+<script src="/js/main.min.844601e17077974a1f4ec2657087c4a34c3f5b1125b89596e5dd2511142d1821.js" integrity="sha256-hEYB4XB3l0ofTsJlcIfEo0w/WxEluJWW5d0lERQtGCE=" crossorigin="anonymous"></script>
 
 
 

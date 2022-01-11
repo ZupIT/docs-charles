@@ -13,5 +13,149 @@
       
     
     
+    <item>
+      <title>Reference: Registry</title>
+      <link>https://docs.charlescd.io/reference/registry/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/reference/registry/overview/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;Why do you have to configure a Registry?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;One of the main points for Charles to work is to know where are the images of your applications. To do this, you are expected to store them in a docker registry and grant access to it.&lt;/p&gt;
+&lt;p&gt;Once you make this configuration, Charles is able to read your registry and do some actions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Validates if the tag you are informing when deploying in a circle is valid;&lt;/li&gt;
+&lt;li&gt;During the generation of a release through the board, &lt;code&gt;villager&lt;/code&gt; uses this permission to search for the tag in the registry and ensure that it has been sent and can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Charles is already integrated with some docker registries, choose one and add the information:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Reference: Azure Container Registry</title>
+      <link>https://docs.charlescd.io/reference/registry/azure-container-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/reference/registry/azure-container-registry/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;Enter the data below to grant Charles access to your Azure Container Registry:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; custom name to identify your configuration;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your registry&amp;rsquo;s URL&lt;/strong&gt;: the URL pattern for your registry is &lt;a href=&#34;https://registry_name.azurecr.io/&#34;&gt;https://&lt;strong&gt;registry-name&lt;/strong&gt;.azurecr.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username&lt;/strong&gt;: this is the service&amp;rsquo;s entity ID that will be used by Kubernetes to access the registry;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password&lt;/strong&gt;: service&amp;rsquo;s entity password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any doubts about how to proceed or find the information above, you can visit &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/container-registry/container-registry-concepts&#34;&gt;&lt;strong&gt;Azure Container Registry&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The connection test feature makes sure that the credentials informed are valid.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Reference: Docker Hub</title>
+      <link>https://docs.charlescd.io/reference/registry/docker-hub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/reference/registry/docker-hub/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;Enter the data below to grant Charles access to your Docker Hub:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: custom name to identify your configuration;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your registry&amp;rsquo;s URL:&lt;/strong&gt;  Docker Hub URL (&lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;&lt;strong&gt;https://registry.hub.docker.com&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;);&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt;  add your &lt;strong&gt;dockerid&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; your Dockerhub password or access token. See below how to generate one:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Access your docker account;&lt;/li&gt;
+&lt;li&gt;Go to &lt;strong&gt;account settings&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Select the option &lt;strong&gt;Security&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Click on &amp;ldquo;&lt;strong&gt;new access token&amp;rdquo;&lt;/strong&gt; button and copy the generated token.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The connection test feature makes sure that the credentials informed are valid.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Reference: ECR</title>
+      <link>https://docs.charlescd.io/reference/registry/ecr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/reference/registry/ecr/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;Enter the data below to grant Charles access to your Amazon ECR:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: custom name to identify your configuration;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your registry&amp;rsquo;s URL&lt;/strong&gt;: according to the convention, the URL pattern for your registry is: &lt;a href=&#34;https://aws_account_id.dkr.ecr.region.amazonaws.com&#34;&gt;https://&lt;strong&gt;aws_account_id&lt;/strong&gt;.dkr.ecr.&lt;strong&gt;region&lt;/strong&gt;.amazonaws.com&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Access Key&lt;/strong&gt;: security information generated by AWS IAM;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secret Key&lt;/strong&gt;: security information generated by AWS IAM;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Region&lt;/strong&gt;: the region where you are located.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any doubts about how to proceed or find the information above, you can visit &lt;a href=&#34;https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html&#34;&gt;&lt;strong&gt;Amazon ECR&lt;/strong&gt;&lt;/a&gt; &lt;a href=&#34;https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html&#34;&gt;&lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The connection test feature makes sure that the credentials informed are valid.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Reference: GCR</title>
+      <link>https://docs.charlescd.io/reference/registry/gcr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/reference/registry/gcr/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;p&gt;Enter the data below to grant Charles access to your Google Cloud Registry:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: custom name to identify your configuration;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your registry&amp;rsquo;s URL&lt;/strong&gt;: your GCR&amp;rsquo;s URL like&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; (%20https://gcr.io)&lt;a href=&#34;%20https://gcr.io&#34;&gt;&lt;strong&gt;https://gcr.io&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Project ID:&lt;/strong&gt; access Google Cloud Platform, select your project and copy the id;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JSON key:&lt;/strong&gt; add the generated JSON key. For more information on &lt;a href=&#34;https://cloud.google.com/container-registry/docs/advanced-authentication#json-key&#34;&gt;&lt;strong&gt;how to generate your JSON key&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any doubts about how to proceed or find the information above, you can visit &lt;a href=&#34;https://cloud.google.com/container-registry&#34;&gt;&lt;strong&gt;Google Container Registry&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;documentation.&lt;/strong&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+The connection test feature makes sure that the credentials informed are valid.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
   </channel>
 </rss>

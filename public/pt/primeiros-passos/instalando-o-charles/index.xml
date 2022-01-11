@@ -14,6 +14,61 @@
     
     
     <item>
+      <title>Primeiros Passos: Visão Geral</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;Componentes&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A instalação do CharlesCD consiste nos seguintes &lt;strong&gt;componentes&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Módulos específicos da &lt;a href=&#34;https://docs.charlescd.io/pt/overview/&#34;&gt;&lt;strong&gt;arquitetura do Charles&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keycloak&lt;/strong&gt;, usado para autenticação e autorização no projeto. Entretanto, caso você já tenha um Identity Manager (IDM) e queira utilizá-lo, basta fazer a sua configuração durante a instalação do Charles, &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/identity-manager/&#34;&gt;&lt;strong&gt;veja como habilitá-lo na seção IDM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Um &lt;strong&gt;banco PostgreSQL&lt;/strong&gt; que servirá os módulos de backend (&lt;code&gt;charlescd-moove&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;, &lt;code&gt;charlescd-butler&lt;/code&gt;, &lt;code&gt;charlescd-villager&lt;/code&gt;, &lt;code&gt;charlescd-gate, charlescd-hermes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e &lt;code&gt;charlescd-compass&lt;/code&gt;) e o Keycloak.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Um &lt;strong&gt;Redis&lt;/strong&gt; para uso do &lt;code&gt;charlescd-circle-matcher&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Um &lt;strong&gt;RabbitMQ&lt;/strong&gt; para uso do &lt;code&gt;charlescd-hermes.&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ingress,&lt;/strong&gt; usado para expor as rotas HTTP e HTTPs de fora do cluster para serviços dentro do cluster. Quando você instala o Charles, ele já possui uma ingress padrão, no entanto se você quiser usar a sua própria, &lt;strong&gt;veja os passos para habilitá-la na&lt;/strong&gt; &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/&#34;&gt;&lt;strong&gt;seção Instalando via Helm&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;&lt;strong&gt;Pré-Requisitos&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Para instalar o Charles, será necessário um ambiente com os seguintes requisitos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/setup/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://istio.io/archive/&#34;&gt;&lt;strong&gt;Istio&lt;/strong&gt;&lt;/a&gt; (versão &amp;gt;= 1.7 e &lt;a href=&#34;https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#automatic-sidecar-injection&#34;&gt;&lt;em&gt;&lt;strong&gt;sidecar injector habilitado&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; no namespace de deploy das suas aplicações).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://prometheus.io/docs/prometheus/latest/getting_started/&#34;&gt;&lt;strong&gt;Prometheus&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;,&lt;/strong&gt; caso queira utilizar &lt;a href=&#34;https://docs.charlescd.io/pt/refer%C3%AAncia/m%C3%A9tricas/visao-geral/&#34;&gt;&lt;strong&gt;métricas&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;strong&gt;Recursos mínimos&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Os recursos mínimos considerando apenas a instalação do Charles são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Microk8s&lt;/strong&gt;: 2GB de RAM;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minikube&lt;/strong&gt;: 4GB de RAM;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cluster&lt;/strong&gt;: 2GB de RAM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Próximos passos&lt;/h2&gt;
+&lt;p&gt;Nesta seção, você viu os componentes, pré-requisitos e recursos mínimos para instalar o Charles. Para continuar a instalação veja:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Primeiros Passos: Instalando via Helm</title>
       <link>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/instalando-via-helm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -25,65 +80,501 @@
         &lt;hr&gt;
 
 
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Antes de prosseguir, tenha certeza de que todos os &lt;a href=&#34;https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/vis%C3%A3o-geral/&#34;&gt;&lt;strong&gt;pré-requisitos&lt;/strong&gt;&lt;/a&gt; estão devidamente instalados.
+&lt;/div&gt;
+
+&lt;h2&gt;&lt;strong&gt;Como instalar?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Esta instalação é customizável, para você instalar acesse um &lt;strong&gt;template helm&lt;/strong&gt; com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. Veja a &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt;&lt;strong&gt;documentação dos campos editáveis&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Antes de prosseguir, tenha certeza de que todos os &lt;a href=&#34;.././#pre-requisitos&#34;&gt;&lt;strong&gt;pré-requisitos&lt;/strong&gt;&lt;/a&gt; estão devidamente instalados.
+&lt;p&gt;As senhas utilizadas pelo Charles estão armazenadas no arquivo &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml&#34;&gt;&lt;strong&gt;values.yaml&lt;/strong&gt;&lt;/a&gt; As principais senhas para personalizar são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CharlesApplications.butler.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.moove.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.villager.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.circlematcher.redis.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li&gt;
+&lt;li&gt;CharlesApplications.postgresql.postgresqlPassword&lt;/li&gt;
+&lt;li&gt;CharlesApplications.redis.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.compass.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.hermes.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.rabbitmq.auth.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.gate.database.password&lt;/li&gt;
+&lt;li&gt;CharlesApplications.compass.moove.database.password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para mais detalhes, acesse os &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt;&lt;strong&gt;campos editáveis&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
 &lt;/div&gt;
 
-&lt;p&gt;Esta instalação é indicada para quem possui uma infraestrutura já montada, devido um ambiente mais complexo ou há algumas limitações de segurança e/ou escalabilidade, o que exige uma &lt;strong&gt;customização mais completa da instalação&lt;/strong&gt; do CharlesCD.&lt;/p&gt;
-&lt;h3&gt;Requisitos&lt;/h3&gt;
-&lt;p&gt;Para realizar o processo, é necessário ter instalado:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;&lt;strong&gt;Kubectl&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Para garantir que as dependências dos charts estão presentes e atualizadas com uma versão compatível, utilize dentro da pasta &lt;strong&gt;&lt;code&gt;/charlescd/install/helm-chart&lt;/code&gt;&lt;/strong&gt; o comando abaixo:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Como instalar?&lt;/h3&gt;
-&lt;p&gt;Aqui o principal diferencial é a customização. Para isso, foi disponibilizado um &lt;strong&gt;template helm&lt;/strong&gt; com todos os campos disponíveis para alteração, incluindo os de banco de dados e recursos consumidos. &lt;strong&gt;Veja a&lt;/strong&gt; &lt;a href=&#34;https://github.com/ZupIT/charlescd/tree/master/install/helm-chart&#34;&gt;&lt;strong&gt;documentação dos campos editáveis&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm dependency update
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Para instalar com Helm Charts, depois que você customizou os campos, execute o comando abaixo dentro da pasta &lt;strong&gt;&lt;code&gt;/charlescd/install/helm-chart&lt;/code&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm install --create-namespace -n &amp;lt;namespace&amp;gt; charlescd . -f values.yaml
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;As senhas utilizadas pelo Charles estão armazenadas no arquivo &lt;a href=&#34;https://github.com/ZupIT/charlescd/blob/main/install/helm-chart/values.yaml&#34;&gt;&lt;strong&gt;values.yaml&lt;/strong&gt;&lt;/a&gt; As principais senhas para personalizar estão em:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;butler.database.password&lt;/li&gt;
-&lt;li&gt;moove, database.password&lt;/li&gt;
-&lt;li&gt;villager.database.password&lt;/li&gt;
-&lt;li&gt;circlematcher.redis.password&lt;/li&gt;
-&lt;li&gt;keycloak.keycloak.extraEnv.DB_PASSWORD&lt;/li&gt;
-&lt;li&gt;postgresql.postgresqlPassword&lt;/li&gt;
-&lt;li&gt;redis.password&lt;/li&gt;
-&lt;li&gt;compass.database.password&lt;/li&gt;
-&lt;li&gt;hermes.database.password&lt;/li&gt;
-&lt;li&gt;rabbitmq.auth.password&lt;/li&gt;
-&lt;li&gt;gate.database.password&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Para mais detalhes, acesse o link citado acima, que possui toda a documentação dos campos editáveis.&lt;/p&gt;
-
+Se você não fizer nenhuma customização, por padrão o Charles instala o &lt;strong&gt;PostgreSQL&lt;/strong&gt;, &lt;strong&gt;Redis&lt;/strong&gt;, &lt;strong&gt;Keycloak&lt;/strong&gt; e &lt;strong&gt;RabbitMQ&lt;/strong&gt;.  Por isso, não deixe de customizar os campos se você precisa de algo gerenciável.
 &lt;/div&gt;
 
-&lt;p&gt;Para realizar a instalação com helm charts, basta executar o comando abaixo após a customização dos campos:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;// customize tudo que precisa no arquivo values.yaml antes de executar o seguinte comando
-helm install charlescd &amp;lt;repo-folder&amp;gt; -n &amp;lt;namespace&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-
-&lt;p&gt;É importante lembrar que, caso não seja feita nenhuma customização, o resultado final será igual à instalação via singlefile em que, por padrão, instalamos o PostgreSQL, Redis, Keycloak e Octopipe.&lt;/p&gt;
-&lt;p&gt;Por isso, não deixe de customizar os campos caso queira algo gerenciável.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h3&gt;Troque a senha padrão (default password)&lt;/h3&gt;
+&lt;h3&gt;&lt;strong&gt;Troque a senha padrão (default password)&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Depois de instalar o CharlesCD, troque algumas &lt;strong&gt;senhas padrão&lt;/strong&gt;, veja abaixo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Senha do Keycloak&lt;/strong&gt;:&lt;br&gt;
 &lt;strong&gt;1.&lt;/strong&gt; Acesse: &lt;strong&gt;http://&amp;lt;charlescd-url&amp;gt;/keycloak/auth;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;2.&lt;/strong&gt; Clique em &lt;strong&gt;Administration Console;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;3.&lt;/strong&gt;  Insira a senha do usuário do Keycloak (admin - firstpassword) e troque a senha padrão.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Senha do CharlesCD:&lt;/strong&gt;&lt;br&gt;
 Acesse o CharlesCD e logue com&lt;br&gt;
-&lt;strong&gt;1. Usuário:&lt;/strong&gt; &lt;strong&gt;charlesadmin@admin&lt;br&gt;
-2. Senha&lt;/strong&gt;: &lt;strong&gt;charlesadmin;&lt;br&gt;
-3.&lt;/strong&gt; Vá até &lt;strong&gt;Account &amp;gt; Profile&lt;/strong&gt; e depois em &lt;strong&gt;Change Password&lt;/strong&gt; e escolha sua nova senha.&lt;/p&gt;
+&lt;strong&gt;1. Usuário:&lt;/strong&gt; charlesadmin@admin;
+&lt;strong&gt;2. Senha&lt;/strong&gt;: charlesadmin;&lt;br&gt;
+&lt;strong&gt;3.&lt;/strong&gt; Vá até &lt;strong&gt;Account &amp;gt; Profile&lt;/strong&gt; e depois em &lt;strong&gt;Change Password&lt;/strong&gt; e escolha sua nova senha.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Primeiros Passos: Instalando via Terraform</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/installing-via-terraform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/installing-via-terraform/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h1&gt;&lt;strong&gt;Como fazer o deploy do CharlesCD no Kubernetes com o Terraform&lt;/strong&gt;&lt;/h1&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+Para essa instalação não é necessário o &lt;code&gt;kubectl&lt;/code&gt;, mas sem ele, você não poderá realizar alguns exemplos na nossa documentação. Se você quiser instalar, acesse a &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;&lt;strong&gt;docs de instalação.&lt;/strong&gt;&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2&gt;&lt;strong&gt;Requisitos&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Veja o que você precisa instalar na sua máquina:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.terraform.io/downloads.html&#34;&gt;&lt;strong&gt;Terraform&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;Como instalar?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Siga os passos abaixo:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt; Faça o download no repositório &lt;a href=&#34;https://github.com/ZupIT/charlescd-local-cluster&#34;&gt;&lt;strong&gt;&lt;code&gt;charlescd-local-cluster&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;. Na pasta &lt;strong&gt;charles-local-cluster&lt;/strong&gt;, rode o comando:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;make up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt; Acesse o &lt;a href=&#34;http://charles.lvh.me/&#34;&gt;&lt;strong&gt;http://charles.lvh.me/&lt;/strong&gt;&lt;/a&gt; no seu navegador e faça o login com:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usuário: &lt;strong&gt;&lt;code&gt;charlesadmin@admin&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Senha: &lt;code&gt;g_wl!U8Uyf2)$KKw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Agora você pode usar o CharlesCD!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Primeiros Passos: Instalando via Kind no seu ambiente local</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/installing-via-kind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/installing-via-kind/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;&lt;strong&gt;Como fazer o deploy do CharlesCD no Kubernetes com o KinD&lt;/strong&gt;&lt;/h1&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+&lt;strong&gt;Esta instalação não recomendada para ambientes de produção.&lt;/strong&gt;. O time recomenda instalar se você quiser testar ou desenvolver o CharlesCD.
+&lt;/div&gt;
+
+&lt;p&gt;Para mais informações, acesse o repositório  &lt;a href=&#34;https://github.com/ZupIT/charlescd-local-cluster&#34;&gt;&lt;strong&gt;charlescd-local-cluster&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Requisitos&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Veja o que você precisa instalar na sua máquina:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;&lt;strong&gt;Helm&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/#installation&#34;&gt;&lt;strong&gt;KinD&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/&#34;&gt;&lt;strong&gt;Kubectl&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;E siga os passos abaixo:&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Passo 1. Crie os clusters Kubernetes com KinD&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Você precisa encaminhar as portas do host para a ingress do Istio para conseguir acessar o Charles UI. Você pode fazer isso criando um cluster kind com  &lt;strong&gt;&lt;code&gt;extraPortMappings&lt;/code&gt;&lt;/strong&gt;, veja abaixo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt;&amp;lt;EOF | kind create cluster --name &amp;quot;charles-testing&amp;quot; --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.20.7
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: &amp;quot;ingress-ready=true&amp;quot;
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 30001
+    hostPort: 443
+    protocol: TCP
+  - containerPort: 30002
+    hostPort: 15021
+    protocol: TCP
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Passo 2. Instale o Istio no Kubernetes&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Instale o Istio Operator&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ao invés de instalar o Istio manualmente, você pode deixar o Istio Operator gerenciar isso para você:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export ISTIO_VERSION=1.7.8
+
+curl -L https://istio.io/downloadIstio | sh -
+
+helm upgrade -i istio-operator ./istio-${ISTIO_VERSION}/manifests/charts/istio-operator \
+    --set watchedNamespaces=&amp;quot;istio-system&amp;quot; \
+    --set hub=&amp;quot;docker.io/istio&amp;quot; \
+    --set tag=&amp;quot;${ISTIO_VERSION}-distroless&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Instale o Istio e configure a Istio Ingress como NodePort&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uma vez que o Istio Operator está instalado, crie o mapeamento de recurso do Kubernetes nas portas node que foram configuradas anteriomente no &lt;strong&gt;&lt;code&gt;extraPortMappings&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace istio-system
+
+kubectl apply -f - &amp;lt;&amp;lt;EOF
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  name: control-plane
+  namespace: istio-system
+spec:
+  profile: demo
+  components:
+    egressGateways:
+      - enabled: false
+        name: istio-egressgateway
+    ingressGateways:
+      - enabled: true
+        k8s:
+          nodeSelector:
+            ingress-ready: &amp;quot;true&amp;quot;
+          service:
+            ports:
+              - name: status-port
+                nodePort: 30002
+                port: 15021
+                targetPort: 15021
+              - name: http2
+                nodePort: 30000
+                port: 80
+                targetPort: 8080
+              - name: https
+                nodePort: 30001
+                port: 443
+                targetPort: 8443
+        name: istio-ingressgateway
+  values:
+    gateways:
+      istio-ingressgateway:
+        type: NodePort
+    global:
+      defaultPodDisruptionBudget:
+        enabled: false
+EOF
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Quando a instalação está completa e a pod da Igress do Istio está rodando, você poderá obter a verificação de integridade do serviço:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl http://localhost:15021/healthz/ready -I
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Passo 3.  Faça o deploy das aplicações empacotadas pelo Bitnami Helm Charts&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;CharlesCD precisa de alguns componentes de infraestrutura para funcionar. Você precisar fazer o deploy desses componentes de forma rápida e fácil usando o Bitnami Helm Charts:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helm repo add bitnami https://charts.bitnami.com/bitnami
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy Redis&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace cache
+
+kubectl create secret generic redis -n cache --from-literal=password=&amp;quot;cmXeuBSE6ElcCnEH&amp;quot;
+
+helm upgrade -i redis bitnami/redis --version 15.3.2 -n cache \
+    --set architecture=&amp;quot;standalone&amp;quot; \
+    --set auth.existingSecret=&amp;quot;redis&amp;quot; \
+    --set auth.existingSecretPasswordKey=&amp;quot;password&amp;quot; \
+    --set image.tag=&amp;quot;6.2.6-debian-10-r10&amp;quot; \
+    --set nameOverride=&amp;quot;redis&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy RabbitMQ&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace queue
+
+helm upgrade -i rabbitmq bitnami/rabbitmq --version 8.22.0 -n queue \
+    --set auth.erlangCookie=&amp;quot;%d_3uIt&amp;amp;B7qyh2Gc&amp;quot; \
+    --set auth.password=&amp;quot;dI5FYfnN33i9xA9#&amp;quot; \
+    --set image.tag=&amp;quot;3.9.7-debian-10-r17&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy PostgreSQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Para salvar os seus recursos computacionais, use uma única instância Postgres. Para isso, crie um script para configurar toda a base de dados e os seus respectivos usuários:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt;&amp;lt; EOF &amp;gt; ./userdata.sql
+    -- CharlesCD Moove
+    create database charlescd_moove_db;
+    create user charlescd_moove with encrypted password &#39;GnozoAWuCGoIYF6Z&#39;;
+    alter user charlescd_moove with superuser;
+    grant all privileges on database charlescd_moove_db to charlescd_moove;
+
+    -- CharlesCD Villager
+    create database charlescd_villager_db;
+    create user charlescd_villager with encrypted password &#39;pnvvseJ8BW2jNsrc&#39;;
+    alter user charlescd_villager with superuser;
+    grant all privileges on database charlescd_villager_db to charlescd_villager;
+
+    -- CharlesCD Butler
+    create database charlescd_butler_db;
+    create user charlescd_butler with encrypted password &#39;fNq1milqfZI6v3aU&#39;;
+    alter user charlescd_butler with superuser;
+    grant all privileges on database charlescd_butler_db to charlescd_butler;
+
+    -- CharlesCD Hermes
+    create database charlescd_hermes_db;
+    create user charlescd_hermes with encrypted password &#39;SN1rLfyMG96CzZyl&#39;;
+    alter user charlescd_hermes with superuser;
+    grant all privileges on database charlescd_hermes_db to charlescd_hermes;
+
+    -- CharlesCD Compass
+    create database charlescd_compass_db;
+    create user charlescd_compass with encrypted password &#39;5Pzmuji7NFYJAazk&#39;;
+    alter user charlescd_compass with superuser;
+    grant all privileges on database charlescd_compass_db to charlescd_compass;
+
+    -- CharlesCD Keycloak
+    create database keycloak_db;
+    create user keycloak with encrypted password &#39;seDnCGd3cz8G5QCy&#39;;
+    alter user keycloak with superuser;
+    grant all privileges on database keycloak_db to keycloak;
+EOF
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Agora, crie uma secret com esse script e passe para &lt;strong&gt;&lt;code&gt;initdbScriptsSecret&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace database
+
+kubectl create secret generic userdata --from-file=&amp;quot;./userdata.sql&amp;quot;
+
+helm upgrade -i postgresql bitnami/postgresql --version 10.9.5 -n database \
+    --set fullnameOverride=&amp;quot;postgresql&amp;quot; \
+    --set image.tag=&amp;quot;13&amp;quot; \
+    --set initdbScriptsSecret=&amp;quot;userdata&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Deploy Keycloak&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create namespace iam
+
+kubectl create secret generic database-env-vars -n iam \
+    --from-literal=KEYCLOAK_DATABASE_HOST=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_NAME=&amp;quot;keycloak_db&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_PORT=&amp;quot;5432&amp;quot; \
+    --from-literal=KEYCLOAK_DATABASE_USER=&amp;quot;keycloak&amp;quot;
+
+kubectl create secret generic keycloak-passwords -n iam \
+    --from-literal=adminPassword=&amp;quot;:gjUzkk{:h2bPB_6&amp;quot; \
+    --from-literal=databasePassword=&amp;quot;seDnCGd3cz8G5QCy&amp;quot; \
+    --from-literal=managementPassword=&amp;quot;cRF5mz:2oLKHdeT&amp;quot;
+  
+helm upgrade -i keycloak bitnami/keycloak --version 5.0.7 -n iam -f - &amp;lt;&amp;lt;EOF
+    auth: 
+      adminUser: admin
+      existingSecretPerPassword: 
+        adminPassword: 
+          name: keycloak-passwords
+        databasePassword: 
+          name: keycloak-passwords
+        managementPassword: 
+          name: keycloak-passwords
+    externalDatabase: 
+      existingSecret: database-env-vars
+    image: 
+      repository: bitnami/keycloak
+      tag: &amp;quot;15.0.2-debian-10-r52&amp;quot;
+    ingress: 
+      annotations: 
+        kubernetes.io/ingress.class: istio
+      enabled: true
+      hostname: keycloak.lvh.me
+      pathType: Prefix
+    nameOverride: keycloak
+    postgresql: 
+      enabled: false
+    service: 
+      type: ClusterIP
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Passo 4. Configure o Keycloak realm, clientes e usuários&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Keycloak é responsável pelos usuários do CharlesCD, você precisa configurá-lo para isso. Há várias formas de configurar, mas nesse exemplo será com as APIs do Keycloak:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# authorize with username / password
+ACCESS_TOKEN=$(curl -s &#39;http://keycloak.lvh.me/auth/realms/master/protocol/openid-connect/token&#39; \
+    --header &#39;Content-Type: application/x-www-form-urlencoded&#39; \
+    --data-urlencode &#39;client_id=admin-cli&#39; \
+    --data-urlencode &#39;client_secret=a=Dg0&amp;gt;PGyscSNu)i&#39; \
+    --data-urlencode &#39;grant_type=password&#39; \
+    --data-urlencode &#39;username=admin&#39; \
+    --data-urlencode &#39;password=:gjUzkk{:h2bPB_6&#39; \
+    | jq &#39;.access_token&#39; -r)
+
+# create realm
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;enabled&amp;quot;:true,&amp;quot;id&amp;quot;:&amp;quot;charlescd&amp;quot;,&amp;quot;realm&amp;quot;:&amp;quot;charlescd&amp;quot;}&#39;
+
+# create public client
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/clients&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;clientId&amp;quot;:&amp;quot;charlescd-client&amp;quot;,&amp;quot;directAccessGrantsEnabled&amp;quot;:true,&amp;quot;implicitFlowEnabled&amp;quot;:true,&amp;quot;publicClient&amp;quot;:true,&amp;quot;redirectUris&amp;quot;:[&amp;quot;http://charles.lvh.me/*&amp;quot;],&amp;quot;serviceAccountsEnabled&amp;quot;:true,&amp;quot;webOrigins&amp;quot;:[&amp;quot;*&amp;quot;]}&#39;
+
+# create confidential client
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/clients&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;clientId&amp;quot;:&amp;quot;realm-charlescd&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;vO]i?GSWWr0$zIZR&amp;quot;,&amp;quot;serviceAccountsEnabled&amp;quot;:true,&amp;quot;standardFlowEnabled&amp;quot;:false}&#39;
+
+# create admin user
+curl -X POST &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/users&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;username&amp;quot;:&amp;quot;charlesadmin@admin&amp;quot;,&amp;quot;enabled&amp;quot;:true,&amp;quot;emailVerified&amp;quot;:true,&amp;quot;email&amp;quot;:&amp;quot;charlesadmin@admin&amp;quot;,&amp;quot;attributes&amp;quot;:{&amp;quot;isRoot&amp;quot;:[&amp;quot;true&amp;quot;]}}&#39;
+
+# get admin user identifier
+USER_ID=$(curl -s &#39;http://keycloak.lvh.me/auth/admin/realms/charlescd/users?username=charlesadmin@admin&#39; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    | jq &#39;.[0].id&#39; -r)
+
+# create admin credentials
+curl -X PUT &amp;quot;http://keycloak.lvh.me/auth/admin/realms/charlescd/users/${USER_ID}/reset-password&amp;quot; \
+    --header &amp;quot;Authorization: Bearer ${ACCESS_TOKEN}&amp;quot; \
+    --header &#39;Content-Type: application/json&#39; \
+    --data-raw &#39;{&amp;quot;type&amp;quot;:&amp;quot;password&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;g_wl!U8Uyf2)$KKw&amp;quot;,&amp;quot;temporary&amp;quot;:false}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;strong&gt;Passo 5. Faça o Deploy do CharlesCD&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Agora que todos os componentes necessários estão instalados e funcionando, você pode finalmente instalar o CharlesCD apontando para eles:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export CHARLESCD_VERSION=1.0.1
+
+kubectl create namespace continuous-deployment
+
+curl https://github.com/ZupIT/charlescd/archive/refs/tags/${CHARLESCD_VERSION}.zip -OJL
+unzip ./charlescd-${CHARLESCD_VERSION}.zip
+( cd ./charlescd-${CHARLESCD_VERSION}/install/helm-chart ; helm dependency update )
+
+helm upgrade -i charlescd ./charlescd-${CHARLESCD_VERSION}/install/helm-chart -n continuous-deployment \
+    --set CharlesApplications.butler.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.butler.database.name=&amp;quot;charlescd_butler_db&amp;quot; \
+    --set CharlesApplications.butler.database.password=&amp;quot;fNq1milqfZI6v3aU&amp;quot; \
+    --set CharlesApplications.butler.database.user=&amp;quot;charlescd_butler&amp;quot; \
+    --set CharlesApplications.butler.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.butler.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.butler.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.butler.resources.limits=null \
+    --set CharlesApplications.circleMatcher.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.circleMatcher.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.circleMatcher.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.circleMatcher.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.circleMatcher.redis.host=&amp;quot;redis-master.cache.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.circleMatcher.redis.password=&amp;quot;cmXeuBSE6ElcCnEH&amp;quot; \
+    --set CharlesApplications.circleMatcher.resources.limits=null \
+    --set CharlesApplications.compass.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.compass.database.name=&amp;quot;charlescd_compass_db&amp;quot; \
+    --set CharlesApplications.compass.database.password=&amp;quot;5Pzmuji7NFYJAazk&amp;quot; \
+    --set CharlesApplications.compass.database.user=&amp;quot;charlescd_compass&amp;quot; \
+    --set CharlesApplications.compass.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.compass.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.compass.moove.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.compass.moove.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.compass.moove.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.compass.moove.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.compass.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.compass.resources.limits=null \
+    --set CharlesApplications.gate.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.gate.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.gate.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.gate.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.gate.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.gate.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.gate.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.gate.resources.limits=null \
+    --set CharlesApplications.hermes.amqp.url=&amp;quot;amqp://user:dI5FYfnN33i9xA9#@rabbitmq.queue.svc.cluster.local:5672/&amp;quot; \
+    --set CharlesApplications.hermes.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.hermes.database.name=&amp;quot;charlescd_hermes_db&amp;quot; \
+    --set CharlesApplications.hermes.database.password=&amp;quot;SN1rLfyMG96CzZyl&amp;quot; \
+    --set CharlesApplications.hermes.database.user=&amp;quot;charlescd_hermes&amp;quot; \
+    --set CharlesApplications.hermes.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.hermes.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.hermes.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.hermes.resources.limits=null \
+    --set CharlesApplications.moove.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.moove.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.moove.database.name=&amp;quot;charlescd_moove_db&amp;quot; \
+    --set CharlesApplications.moove.database.password=&amp;quot;GnozoAWuCGoIYF6Z&amp;quot; \
+    --set CharlesApplications.moove.database.user=&amp;quot;charlescd_moove&amp;quot; \
+    --set CharlesApplications.moove.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.moove.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.moove.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.moove.resources.limits=null \
+    --set CharlesApplications.ui.allowedOriginHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.apiHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.authUri=&amp;quot;http://keycloak.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.ui.idmRedirectHost=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set CharlesApplications.ui.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.ui.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.ui.resources.limits=null \
+    --set CharlesApplications.villager.database.host=&amp;quot;postgresql.database.svc.cluster.local&amp;quot; \
+    --set CharlesApplications.villager.database.name=&amp;quot;charlescd_villager_db&amp;quot; \
+    --set CharlesApplications.villager.database.password=&amp;quot;pnvvseJ8BW2jNsrc&amp;quot; \
+    --set CharlesApplications.villager.database.user=&amp;quot;charlescd_villager&amp;quot; \
+    --set CharlesApplications.villager.healthCheck.initialDelay=&amp;quot;5&amp;quot; \
+    --set CharlesApplications.villager.image.tag=&amp;quot;${CHARLESCD_VERSION}&amp;quot; \
+    --set CharlesApplications.villager.pullPolicy=&amp;quot;IfNotPresent&amp;quot; \
+    --set CharlesApplications.villager.resources.limits=null \
+    --set envoy.idm.endpoint=&amp;quot;keycloak.lvh.me&amp;quot; \
+    --set envoy.idm.path=&amp;quot;/auth/realms/charlescd/protocol/openid-connect/userinfo&amp;quot; \
+    --set hostGlobal=&amp;quot;http://charles.lvh.me&amp;quot; \
+    --set ingress.enabled=&amp;quot;false&amp;quot; \
+    --set keycloak.enabled=&amp;quot;false&amp;quot; \
+    --set nginx_ingress_controller.enabled=&amp;quot;false&amp;quot; \
+    --set postgresql.enabled=&amp;quot;false&amp;quot; \
+    --set rabbitmq.enabled=&amp;quot;false&amp;quot; \
+    --set redis.enabled=&amp;quot;false&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Para acessar o CharlesCD UI no seu navegador, crie um recurso da Ingress utilizando o host &lt;strong&gt;&lt;code&gt;charles.lvh.me&lt;/code&gt;&lt;/strong&gt;.
+O serviço  do DNS &lt;strong&gt;&lt;code&gt;lvh.me&lt;/code&gt;&lt;/strong&gt; sempre resolverá para &lt;strong&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/strong&gt; então, você não precisa modificar o arquivo &lt;strong&gt;&lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/strong&gt; ou rodar no seu próprio servidor DNS:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl apply -f - &amp;lt;&amp;lt;EOF
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      annotations:
+        kubernetes.io/ingress.class: istio
+      name: charlescd
+      namespace: continuous-deployment
+    spec:
+      rules:
+        - host: charles.lvh.me
+          http:
+            paths:
+              - backend:
+                  service:
+                    name: envoy-proxy
+                    port:
+                      number: 80
+                path: /
+                pathType: Prefix
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Agora, acesse &lt;strong&gt;&lt;a href=&#34;http://charles.lvh.me/&#34;&gt;http://charles.lvh.me/&lt;/a&gt;&lt;/strong&gt; no seu navegador::&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Faça o login com o usuário &lt;strong&gt;&lt;code&gt;charlesadmin@admin&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Senha: &lt;strong&gt;&lt;code&gt;g_wl!U8Uyf2)$KKw&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Agora você pode usar o CharlesCD!&lt;/p&gt;
 
       </description>
     </item>
@@ -117,12 +608,12 @@ Acesse o CharlesCD e logue com&lt;br&gt;
 &lt;h2&gt;&lt;strong&gt;1. Minikube&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;No minikube, o &lt;strong&gt;load balancer nginx não cria automaticamente um IP externo.&lt;/strong&gt; Para tornar isso possível, siga os passos:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Passo 1:&lt;/strong&gt; Execute o comando abaixo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;minikube tunnel
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;minikube tunnel
 // digite sua senha root, em uma nova aba do terminal e execute:
 kubectl get svc -n charles
 // agora o IP externo está disponível
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; Agora que você tem um IP externo, troque o valor &amp;lt;ip-external-charles&amp;gt; pelo IP externo e adicione essa linha no seu arquivo de host do OS:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -146,9 +637,9 @@ Acesse o site do projeto para saber mais sobre &lt;a href=&#34;https://microk8s.
 &lt;li&gt;&lt;strong&gt;Storage:&lt;/strong&gt; Criação de volumes e persistências das PODs;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MetalLB:&lt;/strong&gt; Acesso aos serviços expostos pelo Kubernetes. Para este add-on, você terá que escolher um range de IPs onde o Load Balancer irá atribuir para a exposição dos seus serviços.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Siga os passos abaixo para habilitar o Microk8s no Charles:&lt;/p&gt;
+&lt;h3&gt;Siga os passos abaixo para habilitar o Microk8s no Charles:&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Passo 1:&lt;/strong&gt; Prepare o Microk8s para receber o CharlesCD.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;microk8s enable dns storage metallb
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;microk8s enable dns storage metallb
 Enabling DNS
 Applying manifest
 serviceaccount/coredns created
@@ -197,12 +688,12 @@ microk8s.kubectl create namespace charles
 microk8s.kubectl get svc -n charles
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; Agora que você tem um IP externo, troque o valor &lt;strong&gt;&amp;lt;ip-external-charles&amp;gt;&lt;/strong&gt; pelo IP externo e adicione a linha no seu arquivo de host do OS:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-Veja mais sobre como mudar o &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;host file&lt;/strong&gt;&lt;/a&gt;
+Veja mais como mudar o &lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;host file&lt;/strong&gt;&lt;/a&gt;.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Passo 3:&lt;/strong&gt; Digite no seu navegador &lt;strong&gt;&lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt;&lt;/strong&gt; e a aplicação estará disponível.&lt;/p&gt;
@@ -210,19 +701,54 @@ Veja mais sobre como mudar o &lt;a href=&#34;https://www.howtogeek.com/howto/273
 &lt;p&gt;No caso do Cloud Provider, você pode criar automaticamente o &lt;strong&gt;IP externo para o load balancer nginx&lt;/strong&gt;  ao fazer sua instalação em um cluster de kubernetes gerenciado.&lt;/p&gt;
 &lt;p&gt;Siga os passos quando todos os componentes estiverem prontos.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Passo 1:&lt;/strong&gt;  Obtenha o IP externo com o comando.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl get svc -n charles
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;kubectl get svc -n charles
 // get external IP value
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; Adicione a linha abaixo no seu arquivo de host do OS (&lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;veja aqui como mudar o host&lt;/strong&gt;&lt;/a&gt;) caso você queira acessar do browser da sua máquina:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Passo 2:&lt;/strong&gt; Adicione a linha abaixo no seu arquivo de host do OS (&lt;a href=&#34;https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/&#34;&gt;&lt;strong&gt;acesse o tutorial de como mudar o host&lt;/strong&gt;&lt;/a&gt;) caso você queira acessar do browser da sua máquina:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&amp;lt;IP-EXTERNAL-CHARLES&amp;gt;       charles.info.example
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
-&lt;p&gt;Caso queira usar essa instalação em ambientes de produção ou desenvolvimento, deverá expor a aplicação usando um DNS.&lt;/p&gt;
+&lt;p&gt;Se você quiser usar essa instalação em ambientes de produção ou desenvolvimento, você precisa expor a aplicação usando um DNS.&lt;/p&gt;
 &lt;p&gt;Depois de apontar seu DNS para o IP externo, faça o clone das configurações (seja o singlefile ou os arquivos do helm) e troque todas as ocorrências de &lt;a href=&#34;http://charles.info.example&#34;&gt;http://charles.info.example&lt;/a&gt; para o seu novo DNS, depois execute o comando de instalação novamente.&lt;/p&gt;
 
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Primeiros Passos: Release assinadas</title>
+      <link>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/release-assinadas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.charlescd.io/pt/primeiros-passos/instalando-o-charles/release-assinadas/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;O que é?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;As releases assinadas do CharlesCD permitem a verificação da procedência dos artefatos gerados na sua release.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+As releases do Charles serão assinadas a partir da versão 1.0.2.
+&lt;/div&gt;
+
+&lt;h2&gt;&lt;strong&gt;Como verificar?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Para você verificar a assinatura, siga os passos abaixo:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo 1.&lt;/strong&gt; Acesse o &lt;a href=&#34;https://github.com/ZupIT/charlescd/releases/&#34;&gt;&lt;strong&gt;repositório&lt;/strong&gt;&lt;/a&gt; e escolha a release que você precisa fazer o download.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo 2.&lt;/strong&gt; Faça o download do artefato desejado (zip ou tar.gz), do &lt;strong&gt;&lt;code&gt;checksum.txt&lt;/code&gt;&lt;/strong&gt; e do &lt;strong&gt;&lt;code&gt;checksum.txt.sig&lt;/code&gt;&lt;/strong&gt;;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo 3.&lt;/strong&gt; Importe a chave pública do charles com o comando:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; gpg --recv-keys A8CDAF8572A7A5BD291E7469D3EA886A72F6D154
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 4.&lt;/strong&gt; Cheque se a assinatura do &lt;strong&gt;&lt;code&gt;checksum.txt&lt;/code&gt;&lt;/strong&gt; é válida:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; gpg --verify checksum.txt.sig checksum.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Passo 5.&lt;/strong&gt;  Cheque se o &lt;strong&gt;&lt;code&gt;tgz&lt;/code&gt;&lt;/strong&gt; baixado possui o &lt;strong&gt;&lt;code&gt;checksum&lt;/code&gt;&lt;/strong&gt; correspondente ao do repositório:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sha256sum --check --ignore-missing checksums.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nesta seção, você encontra informações sobre releases assinadas do CharlesCD&lt;/p&gt;
+&lt;p&gt;In this section, you will find information about CharlesCD&amp;rsquo;s signed releases&lt;/p&gt;
 
       </description>
     </item>
