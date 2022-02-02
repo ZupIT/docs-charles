@@ -8,9 +8,10 @@ This repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) 
 > #### 2.1. [**Requirements**](#requirements)
 > #### 2.2. [**Installation**](#installation)
 > #### 2.3. [**Build**](#build)
-### 3. [**Contributing Guide**](#contributing-guide)
-### 4. [**Code of Conduct**](#code-of-conduct)
-### 5. [**Community**](#community)
+### 3. [**Issues**](#issues)
+### 4. [**Contributing Guide**](#contributing-guide)
+### 5. [**Code of Conduct**](#code-of-conduct)
+### 6. [**Community**](#community)
 
 
 ## **About** 
@@ -63,6 +64,10 @@ Once you've cloned this repo, from the `root` folder, run the command:
 ```
 hugo server
 ```
+
+## **Issues**
+
+To open or track an issue for this project, in order to better coordinate your discussions, we recommend that you use the [**Issues tab**](https://github.com/ZupIT/charlescd/issues) in the main [**CharlesCD**](https://github.com/ZupIT/charlescd) repository.
 
 ## **Contributing Guide**
 Check out CharlesCD's documentation [**Contributing Guide**](https://github.com/ZupIT/docs-charles/blob/main/CONTRIBUTING.md) to contribute to our documentation. 
