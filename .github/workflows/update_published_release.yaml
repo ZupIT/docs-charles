@@ -43,7 +43,7 @@ jobs:
           role-skip-session-tagging: true
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@c03b5dbed22245418539b65eb9a3b1d5fdd9a0a6 #v2.5.0
+        uses: peaceiris/actions-hugo@808d10a6aac88104619e8d47fca8a56eaeb71b12 #v2.5.0
         with:
           hugo-version: '0.83.1'
           extended: true
