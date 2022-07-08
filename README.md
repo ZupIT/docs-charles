@@ -1,3 +1,5 @@
+# The Charles project has been archived by Zup Innovation. It might start again eventually; however, we won't deliver support for now.
+
 # **CharlesCD Documentation**
 
 This repository uses [**hugo server**](https://gohugo.io/commands/hugo_server/) and contains **[CharlesCD](https://charlescd.io/)** official documentation.
